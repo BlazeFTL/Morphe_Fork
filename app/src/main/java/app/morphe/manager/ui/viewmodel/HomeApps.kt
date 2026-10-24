@@ -41,14 +41,12 @@ internal fun <K, V> changedMapKeys(previous: Map<K, V>, current: Map<K, V>): Set
 
 /**
  * The patch update waiting for an installed app: the source carrying it, the version the app
- * was patched with and the one the source is at now. [subject] is null when no changelog
- * narrowed the update down.
+ * was patched with and the one the source is at now.
  */
 data class AppPatchUpdate(
     val bundleUid: Int,
     val patchedWithVersion: String?,
-    val availableVersion: String,
-    val subject: ChangelogSubject? = null
+    val availableVersion: String
 ) {
     /** The source and the version it is at, which an ignored update is remembered by. */
     val release: String get() = "$bundleUid:$availableVersion"
@@ -1023,20 +1021,11 @@ class HomeApps(
                 val entries = runCatching { source.fetchChangelogSince(storedVersion) }.getOrNull()
                     ?: return@firstNotNullOfOrNull unscoped
 
-                val subject = ChangelogSubject(
-                    appNames = appNames,
-                    patchNames = app.selectionPayload?.bundles
-                        ?.find { it.bundleUid == bundleUid }?.patches.orEmpty().toSet(),
-                    packageName = app.originalPackageName,
-                    otherAppNames = bundlesInfo[bundleUid]?.listedApps().orEmpty()
-                        .minus(app.originalPackageName)
-                        .mapNotNullTo(mutableSetOf()) { appMetadata[it]?.displayName }
-                )
-                AppPatchUpdate(bundleUid, storedVersion, currentVersion, subject).takeIf {
+                unscoped.takeIf {
                     ChangelogParser.hasChangesFor(
                         entries = entries,
                         installedVersion = storedVersion,
-                        subject = subject,
+                        subject = changelogSubject(app, bundleUid, appNames, bundlesInfo, appMetadata),
                     )
                 }
             }
@@ -1046,6 +1035,34 @@ class HomeApps(
 
         _appUpdatesAvailable.value = updates
     }
+
+    /**
+     * What picks [app]'s changes out of the changelog of the [bundleUid] source, the same the
+     * update badge is judged by. Null when the whole changelog is the app's: the source lists only
+     * this app, or no name of it is known to match scopes against.
+     */
+    suspend fun changelogSubject(app: InstalledApp, bundleUid: Int): ChangelogSubject? = withContext(Dispatchers.IO) {
+        val bundlesInfo = patchBundleRepository.allBundlesInfoFlow.first()
+        if (bundlesInfo[bundleUid]?.listedApps()?.singleOrNull() == app.originalPackageName) return@withContext null
+        val appNames = resolveChangelogNames(app.originalPackageName).ifEmpty { return@withContext null }
+        changelogSubject(app, bundleUid, appNames, bundlesInfo, patchBundleRepository.allAppMetadata.value)
+    }
+
+    private fun changelogSubject(
+        app: InstalledApp,
+        bundleUid: Int,
+        appNames: Set<String>,
+        bundlesInfo: Map<Int, PatchBundleInfo>,
+        appMetadata: Map<String, BundleAppMetadata>
+    ) = ChangelogSubject(
+        appNames = appNames,
+        patchNames = app.selectionPayload?.bundles
+            ?.find { it.bundleUid == bundleUid }?.patches.orEmpty().toSet(),
+        packageName = app.originalPackageName,
+        otherAppNames = bundlesInfo[bundleUid]?.listedApps().orEmpty()
+            .minus(app.originalPackageName)
+            .mapNotNullTo(mutableSetOf()) { appMetadata[it]?.displayName }
+    )
 
     /**
      * Resolves candidate changelog scope names for [packageName].

@@ -963,14 +963,12 @@ private fun BundleChangelogContent(
             )
             is BundleChangelogState.Error -> ChangelogError(error = current.throwable)
             is BundleChangelogState.Entries -> {
-                if (current.entries.isEmpty()) {
-                    Text(
-                        text = stringResource(R.string.changelog_empty),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(LocalDialogBarInsets.current)
+                // Releases with nothing for the app still leave its history below them to read
+                if (current.entries.isEmpty() && older.entries?.isEmpty() == true) {
+                    EmptyState(
+                        message = stringResource(R.string.changelog_empty),
+                        icon = MaterialSymbols.Rounded.History,
+                        modifier = Modifier.padding(LocalDialogBarInsets.current)
                     )
                 } else {
                     // The release the app was patched with, the point its changes are counted from,
