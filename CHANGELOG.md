@@ -1,3 +1,16 @@
+# [2.2.0-dev.2](https://github.com/MorpheApp/morphe-manager/compare/v2.2.0-dev.1...v2.2.0-dev.2) (2026-10-24)
+
+
+### Bug Fixes
+
+* Fail patching that runs out of memory instead of hanging ([76b5477](https://github.com/MorpheApp/morphe-manager/commit/76b5477eca7a97b393a95cc5880d90d1ab47354a))
+
+
+### Features
+
+* Option to open the APK download helper right away ([901ecc0](https://github.com/MorpheApp/morphe-manager/commit/901ecc04bf9b6575d58fd64a630578f4d7e150e6))
+* Update a local source from an opened .mpp file ([eb9cd44](https://github.com/MorpheApp/morphe-manager/commit/eb9cd44e3eed29a63fb24e0a1427ef7a7ab27b46))
+
 # [2.2.0-dev.1](https://github.com/MorpheApp/morphe-manager/compare/v2.1.0...v2.2.0-dev.1) (2026-10-24)
 
 
