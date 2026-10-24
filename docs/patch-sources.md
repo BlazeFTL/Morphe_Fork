@@ -129,7 +129,9 @@ verify those patches.
 
 Pick one or more `.mpp` patch bundles from storage, **Add more files** adds further ones to the
 same step. Local sources never update on their own: when a new file comes out, tap **Update**
-on the source card and pick it.
+on the source card and pick it. A new version of a local source is recognized by its bundle
+name, so picking it here or opening it from a file manager offers to update that source instead
+of adding a second one, and its patch selection and options stay as they were.
 
 ### Choosing which apps a source brings
 
