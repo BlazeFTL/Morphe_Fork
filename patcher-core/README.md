@@ -3,7 +3,7 @@
 Everything about a patching run that does not need Android. The app runs it in the `:patcher`
 process of `PatcherService`, started by `PatcherProcesses` for every run, on one of two VMs:
 
-- JVM, the default: an embedded HotSpot 17 with a heap of a third of the RAM (1-3 GB, at most
+- JVM, the default: an embedded HotSpot 17 with a heap of a third of the RAM (1.5-3 GB, at most
   1 GB in a 32-bit process). Shipped for arm64-v8a, armeabi-v7a and x86_64.
 - ART, the runtime of the process itself, within the heap Android gives the app. Used when the
   setting is off, on 32-bit x86, and when the JVM fails to start.
