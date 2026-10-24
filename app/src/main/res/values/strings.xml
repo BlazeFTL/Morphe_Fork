@@ -34,6 +34,9 @@
     <string name="deep_link_add_source_only_universal">Only the universal patches are added. You can add apps from the source\'s app list</string>
     <!-- Asked when the link names an app of a source that is already added -->
     <string name="deep_link_add_source_app_back">This source is already added. Add this app from the existing source?</string>
+    <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">This is a new version of %s. Do you want to update it?</string>
+    <string name="mpp_import_unreadable">This file cannot be read</string>
 
     <!-- Home Screen - Update Notifications -->
     <string name="home_update_available">Morphe update available</string>

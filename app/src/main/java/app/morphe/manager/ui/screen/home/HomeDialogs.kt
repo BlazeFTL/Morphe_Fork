@@ -35,6 +35,7 @@ import app.morphe.manager.domain.bundles.PatchBundleSource.Extensions.sourceType
 import app.morphe.manager.domain.bundles.PatchBundleSource.Extensions.usesPrerelease
 import app.morphe.manager.domain.bundles.recommended
 import app.morphe.manager.domain.repository.PatchBundleRepository
+import app.morphe.manager.domain.repository.PatchBundleRepository.LocalFileCheck
 import app.morphe.manager.domain.repository.SourceMuteRepository
 import app.morphe.manager.patcher.patch.PatchBundleInfo
 import app.morphe.manager.patcher.patch.PatchInfo
@@ -146,11 +147,12 @@ fun HomeDialogs(
         )
     }
 
-    // .mpp file opened from file manager: Add bundle confirmation dialog
-    DialogHost(target = homeViewModel.pendingMppUri) {
+    // .mpp file opened from file manager: Add or update bundle confirmation dialog
+    DialogHost(target = homeViewModel.pendingMpp) { pending ->
         MppImportDialog(
-            manifest = homeViewModel.pendingMppManifest,
-            fileName = homeViewModel.pendingMppFileName,
+            manifest = pending.manifest,
+            fileName = pending.fileName,
+            check = pending.check,
             onConfirm = { chooseApps -> homeViewModel.confirmMppImport(chooseApps) },
             onDismiss = { homeViewModel.dismissMppImport() }
         )
@@ -597,13 +599,13 @@ fun DialogHostScope.MeteredPatchingDialog(
 }
 
 /**
- * Asks before adding a source handed over from outside Morphe, by a link or by a file opened in a
- * file manager. Laid out like the result of a patching run: [icon] over [heading] and the
- * [question], then [details] on what would be added.
+ * Asks before adding a source handed over from outside Morphe, or updating one, by a link or by
+ * a file opened in a file manager. Laid out like the result of a patching run: [icon] over
+ * [heading] and the [question], then [details] on what would be added.
  *
  * [offersChooseApps] asks under the details whether to open the app list once the source has
  * loaded, for a source added whole. [warns] says to trust the source, which one already added was
- * trusted for.
+ * trusted for. [confirmText] and [confirmIcon] name what confirming does, adding by default.
  */
 @Composable
 private fun DialogHostScope.AddSourceConfirmDialog(
@@ -615,7 +617,10 @@ private fun DialogHostScope.AddSourceConfirmDialog(
     offersChooseApps: Boolean,
     warns: Boolean,
     onConfirm: (chooseApps: Boolean) -> Unit,
-    onDismiss: () -> Unit
+    onDismiss: () -> Unit,
+    confirmText: String = stringResource(R.string.add),
+    confirmIcon: ImageVector = MaterialSymbols.Rounded.Extension,
+    confirmEnabled: Boolean = true
 ) {
     var chooseApps by rememberSaveable { mutableStateOf(false) }
 
@@ -623,9 +628,10 @@ private fun DialogHostScope.AddSourceConfirmDialog(
         onDismissRequest = onDismiss,
         footer = {
             AppDialogButtonRow(
-                primaryText = stringResource(R.string.add),
+                primaryText = confirmText,
                 onPrimaryClick = { onConfirm(chooseApps) },
-                primaryIcon = MaterialSymbols.Rounded.Extension,
+                primaryIcon = confirmIcon,
+                primaryEnabled = confirmEnabled,
                 secondaryText = stringResource(android.R.string.cancel),
                 onSecondaryClick = onDismiss
             )
@@ -880,11 +886,15 @@ private fun DeepLinkScopeRow(
 /**
  * Confirmation dialog shown when a .mpp file is opened from a file manager, headed by the name its
  * manifest gives, or the file's while it is read.
+ *
+ * As in the add source dialog, a file that [check] finds to be another version of a local source
+ * updates it, and one already added has nothing to confirm.
  */
 @Composable
 fun DialogHostScope.MppImportDialog(
     manifest: MppManifest?,
     fileName: String?,
+    check: LocalFileCheck?,
     onConfirm: (chooseApps: Boolean) -> Unit,
     onDismiss: () -> Unit
 ) {
@@ -908,15 +918,27 @@ fun DialogHostScope.MppImportDialog(
         }
     }
 
+    val isUpdate = check is LocalFileCheck.Update
+    val isAdded = check == LocalFileCheck.Duplicate
+
     AddSourceConfirmDialog(
         heading = manifest?.name ?: fileName ?: stringResource(R.string.deep_link_add_source_title),
         subheading = manifest?.description,
-        question = stringResource(R.string.deep_link_add_source_message),
+        question = when (check) {
+            is LocalFileCheck.Update -> stringResource(R.string.mpp_import_update_message, check.title)
+            LocalFileCheck.Duplicate -> stringResource(R.string.sources_management_already_exists)
+            LocalFileCheck.NotBundle -> stringResource(R.string.mpp_import_unreadable)
+            else -> stringResource(R.string.deep_link_add_source_message)
+        },
         icon = {
             SourceIcon(
                 icon = MaterialSymbols.Rounded.Extension,
-                mark = MaterialSymbols.Rounded.Draft.autoMirrored,
-                markColor = MaterialTheme.colorScheme.inverseSurface
+                mark = when {
+                    isUpdate -> MaterialSymbols.Rounded.Update
+                    isAdded -> MaterialSymbols.Rounded.Check
+                    else -> MaterialSymbols.Rounded.Draft.autoMirrored
+                },
+                markColor = if (isAdded) SemanticTone.Success.accent else MaterialTheme.colorScheme.inverseSurface
             )
         },
         details = if (rows.isEmpty()) null else {
@@ -929,10 +951,14 @@ fun DialogHostScope.MppImportDialog(
                 }
             }
         },
-        offersChooseApps = true,
-        warns = true,
+        // Shown while the file is read too, as most files opened add a source
+        offersChooseApps = check == null || check is LocalFileCheck.New,
+        warns = !isAdded,
         onConfirm = onConfirm,
-        onDismiss = onDismiss
+        onDismiss = onDismiss,
+        confirmText = stringResource(if (isUpdate) R.string.update else R.string.add),
+        confirmIcon = if (isUpdate) MaterialSymbols.Rounded.Update else MaterialSymbols.Rounded.Extension,
+        confirmEnabled = check is LocalFileCheck.New || isUpdate
     )
 }
 
