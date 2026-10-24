@@ -1062,8 +1062,18 @@ def comp_click(src):
     if not f or f.bo is None:
         return None
     body_m = m[f.bo:f.bc + 1]
-    if "combinedClickable" in body_m:
+    if "combinedclickable" in body_m.lower():
         return src
+    rx0 = re.compile(
+        r"if\s*\(\s*onClick\s*!=\s*null\s*\)\s*\{(\s*)Modifier\.shapedClickable\(\s*([^,()]+?)\s*,\s*enabled\s*=\s*enabled\s*,\s*onClick\s*=\s*onClick\s*\)(\s*)\}\s*else\s*Modifier")
+    h = rx0.search(body_m)
+    if h:
+        new = ("if (onClick != null || onLongClick != null) {" + h.group(1)
+               + "Modifier.shapedCombinedClickable(" + h.group(2)
+               + ", enabled = enabled, onLongClick = onLongClick, onClick = onClick ?: {})"
+               + h.group(3) + "} else Modifier")
+        a, b = f.bo + h.start(), f.bo + h.end()
+        return src[:a] + new + src[b:]
     rx1 = re.compile(
         r"if\s*\(\s*onClick\s*!=\s*null\s*\)\s*\{(\s*)Modifier\.clickable\(\s*enabled\s*=\s*enabled\s*,\s*onClick\s*=\s*onClick\s*\)(\s*)\}\s*else\s*Modifier")
     h = rx1.search(body_m)
