@@ -149,9 +149,8 @@ fun DialogHostScope.InstalledAppInfoDialog(
     // Where the install stands against the newest version the enabled sources cover. Keyed by the
     // package the sources know it as, which is the original one for a build that was renamed.
     val catalogPackageName = installedApp?.originalPackageName ?: packageName
-    val supportedVersions by homeViewModel.recommendedVersionsFlow.collectAsStateWithLifecycle()
+    val supportedVersion by viewModel.supportedVersion.collectAsStateWithLifecycle()
     val ignoredVersions by homeViewModel.apps.ignoredAppVersions.collectAsStateWithLifecycle()
-    val supportedVersion = supportedVersions[catalogPackageName]
     val ignoredVersion = ignoredVersions[catalogPackageName]
     val installedVersionStatus = remember(supportedVersion, ignoredVersion, appInfo, installedApp) {
         versionStatus(

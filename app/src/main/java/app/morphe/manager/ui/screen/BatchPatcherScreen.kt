@@ -295,7 +295,7 @@ fun BatchPatcherScreen(
                         },
                         onNeedApk = {
                             apkDownloadHelpers.showInstructions {
-                                viewModel.beginApkSearch(choice.item, choice.selectedVersion?.version)
+                                viewModel.beginApkSearch(choice.item, choice.selectedVersion?.target?.version)
                             }
                         },
                         onUseSaved = { viewModel.useApkSource(preferInstalled = false) },

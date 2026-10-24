@@ -27,7 +27,6 @@ import app.morphe.manager.patcher.patch.BundleAppMetadata
 import app.morphe.manager.patcher.patch.PatchBundleInfo
 import app.morphe.manager.ui.model.*
 import app.morphe.manager.util.*
-import app.morphe.patcher.patch.AppTarget
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.sync.Semaphore
@@ -385,16 +384,18 @@ class HomeApps(
      */
     private data class HomeBundleState(
         val bundleState: PatchBundleRepository.BundleState,
-        val supportedVersions: Map<String, AppTarget>,
+        val compatibleVersions: Map<String, List<BundledAppTarget>>,
         val ignoredVersions: Map<String, String>,
-        val keptFrom: Map<String, Set<Int>>
+        val keptFrom: Map<String, Set<Int>>,
+        val patchedFrom: Map<String, Set<Int>>
     )
 
     private val _homeBundleStateFlow = combine(
         patchBundleRepository.bundleState,
-        versionCatalog.recommendedVersions,
+        versionCatalog.compatibleVersions,
         homeAppButtonPrefs.ignoredVersions,
         sourceMuteRepository.mutedSources,
+        installedAppRepository.patchedFromBundles,
         ::HomeBundleState
     )
 
@@ -524,7 +525,7 @@ class HomeApps(
     /** The home cards for [inputs], or the cached ones while the bundles load. */
     private suspend fun buildHomeCards(inputs: HomeInputs): HomeCards? {
         val (homeBundle, homePrefs, installedApps, updatesMap, trackedSnapshots) = inputs
-        val (bundleState, supportedVersions, ignoredVersions, keptFrom) = homeBundle
+        val (bundleState, compatibleVersions, ignoredVersions, keptFrom, patchedFrom) = homeBundle
         val ready = bundleState as? PatchBundleRepository.BundleState.Ready
             ?: return cachedHomeCards?.toCards(installedApps, homePrefs)
 
@@ -618,10 +619,13 @@ class HomeApps(
                 savedApkFile = savedPatchedApk,
                 hasUpdate = hasUpdate,
                 // Keyed by the package the sources know: a clone shares that package with the
-                // app it was copied from rather than carrying one of its own
+                // app it was copied from rather than carrying one of its own. Measured against
+                // the sources the install was patched from, which a rebuild goes back to
                 versionStatus = versionStatus(
                     installedVersion = packageInfo?.versionName ?: installedApp?.version,
-                    supported = supportedVersions[packageName],
+                    supported = compatibleVersions[packageName].orEmpty().supportedFor(
+                        installedApp?.let { patchedFrom[it.currentPackageName] }.orEmpty()
+                    ),
                     ignoredVersion = ignoredVersions[packageName]
                 ),
                 patchCount = 0,
