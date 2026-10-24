@@ -934,7 +934,7 @@ Patches are not affected: enable pre-release patches for each source in the patc
     <string name="settings_advanced_update_interval_daily">Daily</string>
     <string name="settings_advanced_update_interval_weekly">Weekly</string>
     <string name="settings_advanced_update_interval_monthly">Monthly</string>
-    <string name="settings_advanced_update_interval_battery_warning">Background checks may not work reliably on some devices. Manufacturers like Xiaomi, Huawei, Samsung, and OnePlus often aggressively restrict background processes to save battery</string>
+    <string name="settings_advanced_update_interval_battery_warning">Background checks may not run reliably on devices that restrict background apps, such as Xiaomi, Huawei, Samsung and OnePlus</string>
 
     <string name="settings_advanced_external_batch_patch">Allow external triggers</string>
     <string name="settings_advanced_external_batch_patch_description">Lets automation apps start batch patching</string>
@@ -1003,7 +1003,7 @@ Patches are not affected: enable pre-release patches for each source in the patc
     <string name="settings_advanced_patch_options_custom_branding_app_name_hint">Enter custom name</string>
     <string name="settings_advanced_patch_options_path_gone">This folder cannot be read anymore. Pick it again or clear it, otherwise patching will stop and ask about it</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon">App icon</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">The icon the app is patched with. It is also used where the app cannot change it later, such as Android Auto and the app list of the system settings</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">The icon the app is patched with, also used where it cannot be changed later, such as Android Auto</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">The custom app icon needs a folder with icon images</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon">Custom icon</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"Folder with images to use as a custom icon.
@@ -1114,7 +1114,7 @@ The image dimensions must be as follows:
     <string name="settings_auto_uninstall_with_shizuku">Auto-uninstall on conflict</string>
     <string name="settings_auto_uninstall_with_shizuku_description">Uninstalls the existing app on a signature conflict. This can remove app data</string>
     <string name="settings_ignore_install_target_rules">Ignore install target requirements</string>
-    <string name="settings_ignore_install_target_rules_description">Lets patches the install target requires be turned off and those it rules out be turned on. The patched app may not work</string>
+    <string name="settings_ignore_install_target_rules_description">Allows turning off patches the install target requires and turning on those it rules out. The patched app may not work</string>
     <string name="settings_auto_uninstall_warning_title">Enable auto-uninstall?</string>
     <string name="settings_auto_uninstall_warning_message">If Android reports a signature conflict during Shizuku auto-install, Morphe will uninstall the existing app before installing the patched APK</string>
     <string name="settings_auto_uninstall_warning_risk">This can remove app data. If the patched APK fails to install after uninstalling, the previous app may already be gone</string>
@@ -1145,7 +1145,7 @@ Details: %2$s"</string>
     <string name="settings_system_battery_optimization_description">Keeps the patcher running when the app is minimized</string>
     <string name="settings_system_process_runtime">Patcher runtime</string>
     <string name="settings_system_jvm_runtime_enable">Use embedded VM</string>
-    <string name="settings_system_jvm_runtime_description">Patches in a Java VM that Morphe carries, which can use as much memory as the device spares. Turn off to patch with the runtime of Android</string>
+    <string name="settings_system_jvm_runtime_description">Patches in Morphe\'s own Java VM, which can use more memory. Turn off to use the runtime of Android</string>
     <string name="settings_system_jvm_runtime_unavailable">Needs an ARM or 64-bit x86 device</string>
     <string name="settings_system_patcher_completion_sound">Completion sound</string>
     <string name="settings_system_patcher_completion_sound_description">Plays a distinct tone for success or failure when patching finishes</string>
