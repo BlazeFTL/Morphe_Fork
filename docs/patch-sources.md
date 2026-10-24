@@ -133,6 +133,22 @@ on the source card and pick it. A new version of a local source is recognized by
 name, so picking it here or opening it from a file manager offers to update that source instead
 of adding a second one, and its patch selection and options stay as they were.
 
+#### Updating from a computer
+
+When you build patches yourself, the new file can be handed to Morphe over `adb`. Push it, look
+up its id in the media store, and open it:
+
+```
+adb push patches.mpp /sdcard/Download/latest.mpp
+adb shell content query --uri content://media/external/file --projection _id:_display_name
+adb shell am start -a android.intent.action.VIEW -t application/vnd.ms-project \
+  --grant-read-uri-permission -d content://media/external/file/<id> \
+  -n app.morphe.manager/app.morphe.manager.MainActivity
+```
+
+Morphe asks to update the local source with that bundle name, which takes one tap. It always
+asks, since any app can open a file this way.
+
 ### Choosing which apps a source brings
 
 Some sources carry patches for hundreds of apps when you only want one or two. Tick **Pick
