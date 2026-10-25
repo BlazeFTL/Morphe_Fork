@@ -696,14 +696,6 @@ class HomeViewModel(
     fun getBundleDisplayName(uid: Int): String? =
         allBundlesInfoState.value[uid]?.name
 
-    /**
-     * Returns the set of experimental version strings for a package from all currently enabled
-     * bundles, narrowed to the versions the user is actually offered. Used by the UI to show
-     * "Experimental" badges on specific versions.
-     */
-    fun getExperimentalVersionsForPackage(packageName: String): Set<String> =
-        compatibleVersions[packageName].orEmpty().offered().experimentalVersions()
-
     suspend fun persistReinstalledApp(
         app: InstalledApp,
         packageName: String,

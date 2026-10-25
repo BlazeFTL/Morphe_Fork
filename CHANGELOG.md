@@ -1,3 +1,15 @@
+# [2.2.0-dev.3](https://github.com/MorpheApp/morphe-manager/compare/v2.2.0-dev.2...v2.2.0-dev.3) (2026-10-24)
+
+
+### Bug Fixes
+
+* Judge app versions by the source they are picked from ([caed35a](https://github.com/MorpheApp/morphe-manager/commit/caed35a27a37fad17f7ac327ff3a39da8ce932e9))
+
+
+### Features
+
+* Open an app's patch notes from its info dialog ([55b625e](https://github.com/MorpheApp/morphe-manager/commit/55b625e659e57878ad978b5ddcbf254a92d44f7c))
+
 # [2.2.0-dev.2](https://github.com/MorpheApp/morphe-manager/compare/v2.2.0-dev.1...v2.2.0-dev.2) (2026-10-24)
 
 

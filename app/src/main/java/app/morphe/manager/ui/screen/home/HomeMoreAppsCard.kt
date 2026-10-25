@@ -5,21 +5,16 @@
 
 package app.morphe.manager.ui.screen.home
 
-import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyListScope
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.morphe.manager.R
 import app.morphe.manager.ui.screen.shared.ConfirmDialog
-import app.morphe.manager.ui.screen.shared.Defaults
 import app.morphe.manager.ui.screen.shared.DialogHost
 import app.morphe.manager.ui.screen.shared.GlassPlaceholderIcon
 import app.morphe.manager.util.AppCardColorDefaults
@@ -64,28 +59,13 @@ private fun MoreAppsCard(
     modifier: Modifier = Modifier
 ) {
     var showHideDialog by remember { mutableStateOf(false) }
-    val actionThresholdPx = with(LocalDensity.current) { 90.dp.toPx() }
-    val offsetX = remember { Animatable(0f) }
     val hideAction = rememberHideSwipeAction()
     val gradientColors = AppCardColorDefaults.defaultGradientColors
 
     SwipeableCardContainer(
-        modifier = modifier,
-        offsetX = offsetX,
-        actionThresholdPx = actionThresholdPx,
-        onSwipeToStart = { showHideDialog = true },
-        onSwipeToEnd = null,
-        background = { startProgress, endProgress ->
-            SwipeBackground(
-                startProgress = startProgress,
-                endProgress = endProgress,
-                startConfig = hideAction,
-                endConfig = null,
-                modifier = Modifier
-                    .matchParentSize()
-                    .clip(RoundedCornerShape(Defaults.CornerLargeIncreased))
-            )
-        }
+        start = SwipeAction(hideAction) { showHideDialog = true },
+        end = null,
+        modifier = modifier
     ) {
         // A long press stands in for the swipe where there is none, on a remote
         AppCardLayout(

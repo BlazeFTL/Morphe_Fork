@@ -111,6 +111,11 @@ fun DialogHostScope.ExpertModeDialog(
     val prereleaseBundleUids = allPatchesInfo.mapNotNullTo(mutableSetOf()) { (bundle, _) ->
         bundle.uid.takeIf(usesPrerelease)
     }
+    // Sources marking the APK's version experimental. A run leaves out the ones whose experimental
+    // versions are off, so a source added back by hand says what its patches are applied to
+    val experimentalBundleUids = allPatchesInfo.mapNotNullTo(mutableSetOf()) { (bundle, _) ->
+        bundle.uid.takeIf { bundle.isVersionExperimental }
+    }
     val selectedPatchForOptions = remember { mutableStateOf<Pair<Int, PatchInfo>?>(null) }
     val search = rememberSearchFieldState()
     val showMultipleSourcesWarning = remember { mutableStateOf(false) }
@@ -191,13 +196,15 @@ fun DialogHostScope.ExpertModeDialog(
         patchesWithMissingRequired,
         patchesWithCustomOptions,
         prereleaseBundleUids,
+        experimentalBundleUids,
         retiredNotices.value
     ) {
         PatchMarkers(
             newPatches = newPatches,
             missingRequiredOptions = patchesWithMissingRequired,
             customOptions = patchesWithCustomOptions,
-            prereleaseNotices = prereleaseBundleUids - retiredNotices.value
+            prereleaseNotices = prereleaseBundleUids - retiredNotices.value,
+            experimentalNotices = experimentalBundleUids
         )
     }
 
@@ -625,7 +632,8 @@ private data class PatchMarkers(
     val newPatches: Map<Int, Set<String>>,
     val missingRequiredOptions: Map<Int, Set<String>>,
     val customOptions: Map<Int, Set<String>>,
-    val prereleaseNotices: Set<Int>
+    val prereleaseNotices: Set<Int>,
+    val experimentalNotices: Set<Int>
 )
 
 /** How long a pre-release warning holds its place, long enough to read it once. */
@@ -660,6 +668,22 @@ private fun LazyListScope.prereleaseNotice() = item(key = "prerelease-notice") {
             .endsBlock(),
         icon = MaterialSymbols.Rounded.Warning,
         tone = SemanticTone.Warning,
+        density = NoticeDensity.Compact
+    )
+}
+
+/**
+ * Header for a source marking the APK's version experimental. Unlike the pre-release warning it
+ * stays, since it matters for as long as the source's patches can be switched on.
+ */
+private fun LazyListScope.experimentalVersionNotice() = item(key = "experimental-version-notice") {
+    Notice(
+        text = stringResource(R.string.expert_mode_experimental_version_notice),
+        modifier = Modifier
+            .animatedListItem(this)
+            .endsBlock(),
+        icon = VersionTag.Experimental.icon,
+        tone = VersionTag.Experimental.tone,
         density = NoticeDensity.Compact
     )
 }
@@ -768,6 +792,7 @@ private fun BundlePatchList(
     ) {
         leadingRows()
         if (bundle.uid in markers.prereleaseNotices) prereleaseNotice()
+        if (bundle.uid in markers.experimentalNotices) experimentalVersionNotice()
 
         // Kept in the list rather than laid over it, so the message holds its place under a notice
         // and an opening keyboard shortens the surrounding page instead of moving it
