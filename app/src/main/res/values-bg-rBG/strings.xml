@@ -170,8 +170,6 @@
     <string name="sources_filter_all_description">Всички източници</string>
     <string name="sources_filter_enabled_description">Патчите за източниците са взети от</string>
     <string name="sources_filter_disabled_description">Източници, изключени</string>
-    <string name="sources_filter_updates">Актуализации</string>
-    <string name="sources_filter_updates_description">Източници с по-нова версия за получаване</string>
     <string name="sources_filter_issues">Изискват внимание</string>
     <string name="sources_filter_issues_description">Източници, които са блокирани, неуспешно заредени или изискват по-нова Morphe</string>
     <string name="sources_sort_manual">Ръчна подредба</string>
@@ -200,6 +198,7 @@
     <string name="sources_prerelease_warning_title">Активиране на предварителни пачове ли?</string>
     <string name="sources_prerelease_warning_message">Предварителните версии все още са в разработка. Пачовете може да се провалят или да счупят приложението, а функциите може да се променят без предупреждение.</string>
     <string name="expert_mode_prerelease_notice">Този източник е на предварителни пачове. Пачването може да се провали или да се държи неочаквано.</string>
+    <string name="expert_mode_experimental_version_notice">Този източник има само експериментална поддръжка за тази версия на приложението. Пачовете му могат да бъдат нестабилни или непълни</string>
     <string name="sources_management_experimental_versions_toggle">Експериментални версии на приложението</string>
     <string name="sources_management_experimental_versions_toggle_description">Показва и поправя експериментални цели на приложението</string>
     <string name="sources_management_already_exists">Този източник вече е добавен</string>
@@ -242,8 +241,7 @@
     <string name="sources_dialog_choose_apps_description">Изберете кои от неговите приложения да запазите, след като източникът се зареди.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Източници на пачове от трети страни</string>
-    <string name="sources_dialog_community_notice_message">"Общностните източници на пачове се създават и поддържат от техните автори. Morphe не преглежда и не проверява пачове от трети страни и не носи отговорност за тяхното съдържание или за това какво правят на вашето устройство.
-Всичко, което добавите от този уебсайт, използвате на свой собствен риск."</string>
+    <string name="sources_dialog_community_notice_message">"Източниците на общностните пачове се създават и поддържат от техните собствени автори. Morphe не преглежда и не проверява пачове от трети страни и не носи отговорност за тяхното съдържание или за това какво правят на вашето устройство"</string>
     <string name="sources_update_success">Успешно обновяване</string>
     <string name="sources_update_unavailable">Няма достъпно обновление</string>
     <string name="sources_download_fail">Неуспешно сваляне на източника: %s</string>
@@ -708,6 +706,7 @@
     <string name="patched_app_save_failed_toast">Import</string>
     <string name="plugin_activity_dialog_body">Потребителски интеракция е нужна, за да продължите с този плагин.</string>
     <string name="patcher_process_killed_message">Системата спря програма за обновяване преди тя да приключи, обикновено с цел освобождаване на памет. Затворете други приложения и опитайте отново</string>
+    <string name="patcher_process_crashed_message">Патчерът crashed преди да приключи. Ако се случи отново, изключете \"Use embedded VM\" в настройките и докладвайте проблема с лога</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Програмата за патчове свърши с паметта при куп от %1$s МБ. Това приложение е твърде голямо за избраните патчове. Опитайте да патчувате с по-малко източници на патчове или изберете по-малко патчове</string>
     <string name="install_app_success">Инсталирано успешно</string>
@@ -1354,7 +1353,6 @@ morphe_header_custom_dark.png
     <string name="expanded">Разширен</string>
     <string name="collapse">Свиване</string>
     <string name="collapsed">Сгънат</string>
-    <string name="available">Достъпен</string>
     <string name="continue_">Toast</string>
     <string name="version">New downloader plugins available. Click here to configure them.</string>
     <!-- Who made a patch source, as a field label -->

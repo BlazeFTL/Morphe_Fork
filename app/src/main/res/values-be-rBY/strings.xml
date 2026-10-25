@@ -122,6 +122,7 @@
     <string name="home_greeting_super_late_5">Начны і прадуктыўны</string>
     <!-- Halloween greetings, shown instead of the ones above around October 31 -->
     <!-- Pun on "Trick or treat" -->
+    <string name="home_greeting_halloween_1">Жарт ці патч?</string>
     <!-- Pun on "Something wicked this way comes", a line from Shakespeare's Macbeth -->
     <!-- Winter holiday greetings, shown instead of the ones above from late December to early January -->
     <!-- Pun on the song "Let It Snow! Let It Snow! Let It Snow!" -->
@@ -279,16 +280,88 @@
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <!-- Patcher Screen - Mini-games -->
     <!-- Settings -->
+    <string name="appearance">Выгляд</string>
     <!-- Settings - Appearance Tab - Background animation -->
+    <string name="settings_appearance_background">Фонавая анімацыя</string>
+    <string name="settings_appearance_background_circles">Кругі</string>
+    <string name="settings_appearance_background_rings">Кольцы</string>
+    <string name="settings_appearance_background_mesh">Рашотка</string>
+    <string name="settings_appearance_background_space">Космас</string>
+    <string name="settings_appearance_background_shapes">Фігуры</string>
+    <string name="settings_appearance_background_snow">Снег</string>
+    <string name="settings_appearance_background_grid">Сетка</string>
+    <string name="settings_appearance_background_particles">Часціцы</string>
+    <string name="settings_appearance_background_lava">Лававая лампа</string>
+    <string name="settings_appearance_background_halloween">Хэлоўін</string>
+    <string name="settings_appearance_background_fireworks">Феерверкі</string>
+    <string name="settings_appearance_background_none">Няма</string>
+    <string name="settings_appearance_background_random">Выпадковая</string>
+    <string name="settings_appearance_background_random_interval_launch">Пры запуску</string>
+    <string name="settings_appearance_background_random_interval_daily">Штодзённа</string>
+    <string name="settings_appearance_background_random_interval_3days">Кожныя 3 дні</string>
+    <string name="settings_appearance_parallax_effect">Эфект паралакса</string>
+    <string name="settings_appearance_seasonal_themes">Сезонныя тэмы</string>
+    <string name="settings_appearance_seasonal_themes_description">Святочныя фоны і віншаванні падчас святаў</string>
     <!-- %1$s is a holiday background name, such as Halloween. %2$s is a date, such as November 1 -->
     <!-- Settings - Appearance Tab - Theme -->
+    <string name="settings_appearance_display">Адлюстраванне</string>
+    <string name="settings_appearance_effects">Эфекты</string>
+    <string name="settings_appearance_theme">Тэма</string>
+    <string name="settings_appearance_theme_mode">Рэжым тэмы</string>
+    <string name="settings_appearance_system">Сістэма</string>
+    <string name="settings_appearance_light">Светлы</string>
+    <string name="settings_appearance_dark">Цёмны</string>
+    <string name="settings_appearance_dynamic">Material You</string>
+    <string name="settings_appearance_monochrome">Манахромны</string>
+    <string name="settings_appearance_color_style">Стыль колера</string>
+    <string name="settings_appearance_accent_color">Акцэнтны колер</string>
+    <string name="settings_appearance_pure_black">Чыста чорны</string>
+    <string name="settings_appearance_pure_black_description">Выкарыстоўвае чыста чорны фон</string>
+    <string name="settings_appearance_color_accents">Колеры праграмы і крыніцы</string>
+    <string name="settings_appearance_color_accents_description">Выкарыстоўвае колер кожнай праграмы і крыніцы замест акцэнту</string>
+    <string name="settings_appearance_outlines">Контуры</string>
+    <string name="settings_appearance_blur">Размыццё</string>
     <!-- Settings - Appearance Tab - Language Selector -->
     <string name="settings_appearance_app_language">Мова праграмы</string>
     <string name="settings_appearance_app_language_current">Бягучая мова</string>
+    <string name="settings_appearance_translate">Дапамажці ў перакладзе Morphe</string>
     <!-- Settings - Appearance Tab - Interface Scale -->
     <string name="settings_appearance_ui_scale">Маштаб інтэрфейсу</string>
     <!-- Settings - Appearance Tab - Home Screen Section -->
+    <string name="settings_appearance_home_screen">Галоўны экран</string>
+    <string name="settings_appearance_greeting_phrases">Прывітальныя фразы</string>
+    <string name="settings_appearance_greeting_phrases_subtitle">Паказвае прывітальнае паведамленне</string>
+    <string name="settings_appearance_repatch_notice">Паведамленне аб перапатчынгу</string>
+    <string name="settings_appearance_repatch_notice_description">Паказвае банер, калі прапатчаныя праграмы можна перапатчыць</string>
+    <string name="settings_appearance_more_apps_card">Больш картак праграм</string>
+    <string name="settings_appearance_app_card_colors">Колеры карткі праграмы</string>
+    <string name="settings_appearance_app_card_colors_default">Звычайны</string>
+    <string name="settings_appearance_app_card_colors_accent">Акцэнт</string>
+    <string name="settings_appearance_app_card_colors_gradient">Градыент</string>
+    <string name="settings_appearance_app_card_colors_solid">Аднастайны</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
+    <string name="settings_appearance_app_icon_selector_title">Іконка праграмы</string>
+    <string name="settings_appearance_app_icon_light_2">Неба</string>
+    <string name="settings_appearance_app_icon_light_3">Захад сонца</string>
+    <string name="settings_appearance_app_icon_light_4">Лаванда</string>
+    <string name="settings_appearance_app_icon_light_5">Ледавік</string>
+    <string name="settings_appearance_app_icon_light_6">Туман</string>
+    <string name="settings_appearance_app_icon_light_7">Пясок</string>
+    <string name="settings_appearance_app_icon_dark_1">Бірузовая</string>
+    <string name="settings_appearance_app_icon_dark_2">Пустэча</string>
+    <string name="settings_appearance_app_icon_dark_3">Слівовая</string>
+    <string name="settings_appearance_app_icon_dark_4">Паўночная</string>
+    <string name="settings_appearance_app_icon_dark_5">Шыферная</string>
+    <string name="settings_appearance_app_icon_accent_1">Аўрора</string>
+    <string name="settings_appearance_app_icon_accent_2">Чарніла</string>
+    <string name="settings_appearance_app_icon_accent_3">Папера</string>
+    <string name="settings_appearance_app_icon_accent_4">Змярканне</string>
+    <string name="settings_appearance_app_icon_background">Фон</string>
+    <string name="settings_appearance_app_icon_mark">Лагатып</string>
+    <string name="settings_appearance_app_icon_mark_color">Колер</string>
+    <string name="settings_appearance_app_icon_mark_white">Белы</string>
+    <string name="settings_appearance_app_icon_mark_black">Чорны</string>
+    <string name="settings_appearance_app_icon_change_dialog_title">Змяніць колер іконкі?</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <!-- Settings - Advanced Tab - Updates Section -->
     <!-- "Morphe" here is the app itself, not the patches. Do not translate this as pre-release patches -->

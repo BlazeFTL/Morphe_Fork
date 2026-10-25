@@ -170,8 +170,6 @@
     <string name="sources_filter_all_description">כל המקורות</string>
     <string name="sources_filter_enabled_description">תיקוני מקורות נלקחים מ</string>
     <string name="sources_filter_disabled_description">מקורות כבויים</string>
-    <string name="sources_filter_updates">עדכונים</string>
-    <string name="sources_filter_updates_description">מקורות עם גרסה חדשה יותר להשגה</string>
     <string name="sources_filter_issues">צריכים תשומת לב</string>
     <string name="sources_filter_issues_description">מקורות שנחסמו, נכשלו בטעינה או דורשים Morphe עדכני</string>
     <string name="sources_sort_manual">הזמנה ידנית</string>
@@ -200,6 +198,7 @@
     <string name="sources_prerelease_warning_title">להפעיל תיקונים לגרסאות מוקדמות?</string>
     <string name="sources_prerelease_warning_message">גרסאות מוקדמות עדיין בפיתוח. תיקונים עלולים להיכשל או לשבור את האפליקציה, ותכונות עשויות להשתנות ללא אזהרה</string>
     <string name="expert_mode_prerelease_notice">מקור זה נמצא בגרסה מוקדמת. תיקונים עלולים להיכשל או להתנהג באופן בלתי צפוי</string>
+    <string name="expert_mode_experimental_version_notice">למקור זה יש תמיכה ניסיונית בלבד עבור גרסת אפליקציה זו. הפאטצ\'ים שלו עשויים להיות לא יציבים או לא מלאים</string>
     <string name="sources_management_experimental_versions_toggle">גרסאות אפליקציה ניסיוניות</string>
     <string name="sources_management_experimental_versions_toggle_description">מציג ומתקן יעדים ניסיוניים של אפליקציות</string>
     <string name="sources_management_already_exists">מקור זה כבר נוסף</string>
@@ -242,9 +241,7 @@
     <string name="sources_dialog_choose_apps_description">בחר אילו מהאפליקציות של מקור זה לשמור לאחר טעינתו.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">מקורות תיקונים של צד שלישי</string>
-    <string name="sources_dialog_community_notice_message">"מקורות תיקוני קהילה נעשים ומתוחזקים על ידי מחבריהם. Morphe אינו בודק או מאמת תיקוני צד שלישי, ואינו אחראי לתוכנם או למה שהם עושים במכשירך.
-
-כל דבר שתוסיף מאתר זה בשימוש על אחריותך בלבד."</string>
+    <string name="sources_dialog_community_notice_message">"מקורות של תיקוני קהילה נוצרו ומתוחזקים על ידי מחבריהם. Morphe אינה בודקת או מאמתת תיקונים של צד שלישי, ואינה אחראית על תוכנם או על פעולתם במכשיר שלך"</string>
     <string name="sources_update_success">עדכון הצליח</string>
     <string name="sources_update_unavailable">אין עדכון זמין</string>
     <string name="sources_download_fail">שגגה להוריד תצוגים: %s</string>
@@ -709,6 +706,7 @@
     <string name="patched_app_save_failed_toast">נכשל לשמור אפליקציה מתוקנת</string>
     <string name="plugin_activity_dialog_body">נדרש אינטראקציה של המשתמש כדי להמשיך עם תוסף זה</string>
     <string name="patcher_process_killed_message">המערכת עצרה את המתקן לפני השלמתו, בדרך כלל כדי לשחרר זיכרון. סגור אפליקציות אחרות ונסה שוב</string>
+    <string name="patcher_process_crashed_message">הפאצ\'ר קרס לפני שסיים. אם זה קורה שוב, כבה את \"Use embedded VM\" בהגדרות ודווח על הבעיה עם הלוג</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">מחולל הפאץ\' מיעד את זיכרון ה-heap עם %1$s MB. האפליקציה גדולה מדי עבור הפאצ\'ים הנבחרים. נסה לגנון עם מעט מקורות פאץ\', או בחר בפאצ\'ים fewer</string>
     <string name="install_app_success">הותקן בהצלחה</string>
@@ -1365,7 +1363,6 @@ drawable-xxhdpi: 387x144 פיקסלים
     <string name="expanded">מורחב</string>
     <string name="collapse">צמצם</string>
     <string name="collapsed">מכווץ</string>
-    <string name="available">זמין</string>
     <string name="continue_">המשך</string>
     <string name="version">גרסה</string>
     <!-- Who made a patch source, as a field label -->

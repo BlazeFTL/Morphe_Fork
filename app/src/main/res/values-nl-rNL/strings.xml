@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Elke bron</string>
     <string name="sources_filter_enabled_description">Bronpatches worden afkomstig van</string>
     <string name="sources_filter_disabled_description">Bronnen uitgeschakeld</string>
-    <string name="sources_filter_updates">Updates</string>
-    <string name="sources_filter_updates_description">Bronnen met een nieuwere versie om te ontvangen</string>
     <string name="sources_filter_issues">Aandacht nodig</string>
     <string name="sources_filter_issues_description">Bronnen die zijn geblokkeerd, niet kunnen laden of een nieuwere Morphe nodig hebben</string>
     <string name="sources_sort_manual">Handmatige volgorde</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Pre-release patches inschakelen?</string>
     <string name="sources_prerelease_warning_message">Pre-release builds zijn nog in ontwikkeling. Patches kunnen falen of de app breken, en functies kunnen zonder waarschuwing veranderen.</string>
     <string name="expert_mode_prerelease_notice">Deze bron heeft pre-release patches. Patchen kan falen of onverwacht gedrag vertonen.</string>
+    <string name="expert_mode_experimental_version_notice">Deze bron heeft slechts experimentele ondersteuning voor deze app-versie. De patches kunnen onstabiel of onvolledig zijn</string>
     <string name="sources_management_experimental_versions_toggle">Experimentele app-versies</string>
     <string name="sources_management_experimental_versions_toggle_description">Toont en patcht experimentele app-targets</string>
     <string name="sources_management_already_exists">Deze bron is al toegevoegd</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Kies welke van de apps je wilt behouden zodra de bron is geladen.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Bronnen voor patches van derden</string>
-    <string name="sources_dialog_community_notice_message">"Community-patchbronnen worden gemaakt en onderhouden door hun eigen auteurs. Morphe beoordeelt of verifieert patches van derden niet en is niet verantwoordelijk voor hun inhoud of voor wat ze op uw apparaat doen.
-
-Alles wat u van deze website toevoegt, gebruikt u op eigen risico"</string>
+    <string name="sources_dialog_community_notice_message">"Bronnen voor community-patches worden gemaakt en onderhouden door hun eigen auteurs. Morphe beoordeelt of verifieert patches van derden niet en is niet verantwoordelijk voor hun inhoud of voor wat ze op uw apparaat doen"</string>
     <string name="sources_update_success">Bijwerken geslaagd</string>
     <string name="sources_update_unavailable">Geen bijwerken beschikbaar</string>
     <string name="sources_download_fail">Kan bronnen niet downloaden: %s</string>
@@ -708,6 +705,7 @@ Deïnstalleren wist alle app-gegevens permanent."</string>
     <string name="patched_app_save_failed_toast">Kon gepatchte app niet opslaan</string>
     <string name="plugin_activity_dialog_body">Gebruikersinteractie is vereist om te kunnen doorgaan met deze plugin</string>
     <string name="patcher_process_killed_message">Het systeem heeft de patcher gestopt voordat deze klaar was, meestal om geheugen vrij te maken. Sluit andere apps en probeer opnieuw</string>
+    <string name="patcher_process_crashed_message">De patcher is gecrasht voordat deze klaar was. Als dit opnieuw gebeurt, schakel dan \"Gebruik ingebedde VM\" uit in de instellingen en rapporteer het probleem met het logbestand</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">De patcher is buiten geheugen geraakt met een heap van %1$s MB. Deze app is te groot voor de geselecteerde patches. Probeer te patchen met minder patchbronnen, of selecteer minder patches</string>
     <string name="install_app_success">Succesvol geïnstalleerd</string>
@@ -1354,7 +1352,6 @@ Details: %2$s"</string>
     <string name="expanded">Uitgebreid</string>
     <string name="collapse">Inklappen</string>
     <string name="collapsed">Ingeklapt</string>
-    <string name="available">Beschikbaar</string>
     <string name="continue_">Doorgaan</string>
     <string name="version">Versie</string>
     <!-- Who made a patch source, as a field label -->

@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Svaki izvor</string>
     <string name="sources_filter_enabled_description">Izvori patcheva su preuzeti iz</string>
     <string name="sources_filter_disabled_description">Izvori isključeni</string>
-    <string name="sources_filter_updates">Ažuriranja</string>
-    <string name="sources_filter_updates_description">Izvori s novijom verzijom za dobivanje</string>
     <string name="sources_filter_issues">Potrebna pažnja</string>
     <string name="sources_filter_issues_description">Izvori koji su blokirani, nisu se uspjeli učitati ili trebaju noviju Morphe</string>
     <string name="sources_sort_manual">Ručni redoslijed</string>
@@ -200,6 +198,7 @@
     <string name="sources_prerelease_warning_message">Predizdanja su još uvijek u razvoju. Patchevi mogu propasti ili prekinuti rad aplikacije, a značajke se mogu promijeniti bez upozorenja.</string>
     <string name="expert_mode_prerelease_notice">
 Ovaj izvor se nalazi na predizdanjima patcheva. Patchanje može propasti ili se ponašati neočekivano.</string>
+    <string name="expert_mode_experimental_version_notice">Ovaj izvor ima samo eksperimentalnu podršku za ovu verziju aplikacije. Njegovi zakrpe mogu biti nestabilne ili nepotpune</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentalne verzije aplikacije</string>
     <string name="sources_management_experimental_versions_toggle_description">Prikazuje i patcha eksperimentalne ciljne aplikacije</string>
     <string name="sources_management_already_exists">Ovaj izvor je već dodan</string>
@@ -242,9 +241,7 @@ Ovaj izvor se nalazi na predizdanjima patcheva. Patchanje može propasti ili se 
     <string name="sources_dialog_choose_apps_description">Odaberite koje od njegovih aplikacija želite zadržati nakon što se izvor učita.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Izvori patcheva trećih strana</string>
-    <string name="sources_dialog_community_notice_message">"Izvorne kodove patcheva zajednice izrađuju i održavaju njihovi vlastiti autori. Morphe ne pregledava niti provjerava patcheve trećih strana te nije odgovoran za njihov sadržaj ili za ono što rade na vašem uređaju.
-
-Sve što dodate s ove web stranice koristite na vlastitu odgovornost."</string>
+    <string name="sources_dialog_community_notice_message">"Izvorne kodove patcheva zajednice izrađuju i održavaju njihovi vlastiti autori. Morphe ne pregledava niti provjerava patcheve trećih strana te nije odgovoran za njihov sadržaj ili za ono što rade na vašem uređaju"</string>
     <string name="sources_update_success">Uspješno ažurirano</string>
     <string name="sources_update_unavailable">Nema dostupnih ažuriranja</string>
     <string name="sources_download_fail">Preuzimanje izvora nije uspjelo: %s</string>
@@ -712,6 +709,7 @@ Deinstaliranje će trajno izbrisati sve podatke aplikacije"</string>
     <string name="patched_app_save_failed_toast">Spremanje patchane aplikacije nije uspjelo</string>
     <string name="plugin_activity_dialog_body">Za nastavak rada s ovim dodatkom potrebna je interakcija korisnika</string>
     <string name="patcher_process_killed_message">Sustav je prekinuo patcher prije nego što je završio, obično kako bi oslobodio memoriju. Zatvorite druge aplikacije i pokušajte ponovno</string>
+    <string name="patcher_process_crashed_message">Patcher jenamentsao prije nego što je završio. Ako se to ponovi, isključite \"Use embedded VM\" u postavkama i prijavite problem uz log</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Programu za patchanje je ponestalo memorije s hrpom od %1$s MB. Ova je aplikacija prevelika za odabrane patcheve. Pokušajte patchanje  s manje izvora patcheva ili odaberite manje patcheva</string>
     <string name="install_app_success">Uspješno instalirano</string>
@@ -1358,7 +1356,6 @@ Detalji: %2$s"</string>
     <string name="expanded">Prošireno</string>
     <string name="collapse">Sažmi</string>
     <string name="collapsed">Sažeto</string>
-    <string name="available">Dostupno</string>
     <string name="continue_">Nastavi</string>
     <string name="version">Verzija</string>
     <!-- Who made a patch source, as a field label -->

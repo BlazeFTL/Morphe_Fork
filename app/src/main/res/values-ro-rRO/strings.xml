@@ -35,6 +35,8 @@
     <!-- Asked when the link names an app of a source that is already added -->
     <string name="deep_link_add_source_app_back">Această sursă este deja adăugată. Dorești să adaugi această aplicație din sursa existentă?</string>
     <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">Aceasta este o versiune nouă a %s. Dorești să o actualizezi?</string>
+    <string name="mpp_import_unreadable">Acest fișier nu poate fi citit</string>
     <!-- Home Screen - Update Notifications -->
     <string name="home_update_available">Actualizare Morphe disponibilă</string>
     <string name="home_update_available_subtitle">Versiune nouă pregătită pentru instalare</string>
@@ -167,8 +169,6 @@
     <string name="sources_filter_all_description">Toate sursele</string>
     <string name="sources_filter_enabled_description">Patch-urile surselor sunt preluate din</string>
     <string name="sources_filter_disabled_description">Surse dezactivate</string>
-    <string name="sources_filter_updates">Actualizări</string>
-    <string name="sources_filter_updates_description">Sursele care au o versiune mai nouă de obținut</string>
     <string name="sources_filter_issues">Necesită atenție</string>
     <string name="sources_filter_issues_description">Sursele care sunt blocate, nu s-au încărcat sau necesită o versiune mai nouă Morphe</string>
     <string name="sources_sort_manual">Comandă manuală</string>
@@ -197,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Activezi patch-urile de pre-lansare?</string>
     <string name="sources_prerelease_warning_message">Versiunile de pre-lansare sunt încă în dezvoltare. Patch-urile pot eșua sau pot strica aplicația, iar funcțiile se pot schimba fără avertisment.</string>
     <string name="expert_mode_prerelease_notice">Această sursă utilizează patch-uri de pre-lansare. Patch-uirea poate eșua sau se poate comporta neașteptat.</string>
+    <string name="expert_mode_experimental_version_notice">Această sursă are doar suport experimental pentru această versiune de aplicație. Patch-urile sale pot fi instabile sau incomplete</string>
     <string name="sources_management_experimental_versions_toggle">Versiuni experimentale ale aplicației</string>
     <string name="sources_management_experimental_versions_toggle_description">Afișează și corectează țintele experimentale ale aplicației</string>
     <string name="sources_management_already_exists">Sursă deja adăugată</string>
@@ -239,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Alegeți pe care dintre aplicațiile sale să le păstrați după ce sursa s-a încărcat.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Surse de patch-uri terțe</string>
-    <string name="sources_dialog_community_notice_message">"Sursele de patch-uri comunitare sunt create și întreținute de propriii autori. Morphe nu verifică sau validează patch-urile terțe și nu este responsabil pentru conținutul lor sau pentru ceea ce fac pe dispozitivul tău.
-
-Orice adaugi de pe acest site este folosit pe propriul risc."</string>
+    <string name="sources_dialog_community_notice_message">"Sursele pentru patch-urile comunității sunt create și întreținute de propriii autori. Morphe nu revizuiește și nu verifică patch-urile terților și nu este responsabilă pentru conținutul acestora sau pentru ceea ce acestea fac pe dispozitivul tău"</string>
     <string name="sources_update_success">Actualizare reușită</string>
     <string name="sources_update_unavailable">Nu există actualizări disponibile</string>
     <string name="sources_download_fail">Eroare la descărcarea surselor: %s</string>
@@ -706,6 +705,7 @@ Dezinstalarea va șterge definitiv toate datele aplicației."</string>
     <string name="patched_app_save_failed_toast">Eroare la salvarea aplicației modificate</string>
     <string name="plugin_activity_dialog_body">Este necesară interacțiunea utilizatorului pentru a continua cu acest plugin</string>
     <string name="patcher_process_killed_message">Sistemul a oprit patcher-ul înainte ca acesta să se încheie, de obicei pentru a elibera memorie. Închideți alte aplicații și încercați din nou</string>
+    <string name="patcher_process_crashed_message">Patcher-ul s-a blocat înainte de a termina. Dacă se întâmplă din nou, dezactivează \"Use embedded VM\" în setări și raportează problema împreună cu log-ul</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Programul de aplicare a modificărilor nu a avut memorie suficientă, cu un heap de %1$s MB. Această aplicație este prea mare pentru patch-urile selectate. Încercați aplicarea modificărilor cu mai puține surse sau selectați mai puține patch-uri</string>
     <string name="install_app_success">Instalat cu succes</string>
@@ -873,6 +873,7 @@ Patches are not affected: enable pre-release patches for each source in the patc
     <string name="settings_advanced_update_interval_daily">Zilnic</string>
     <string name="settings_advanced_update_interval_weekly">Săptămânal</string>
     <string name="settings_advanced_update_interval_monthly">Lunar</string>
+    <string name="settings_advanced_update_interval_battery_warning">Verificările în fundal s-ar putea să nu ruleze fiabil pe dispozitivele care restricționează aplicațiile de fundal, cum ar fi Xiaomi, Huawei, Samsung și OnePlus</string>
     <string name="settings_advanced_external_batch_patch">Permite declanșatori externi</string>
     <string name="settings_advanced_external_batch_patch_description">Permite aplicațiilor automate să înceapă patch-uirea în lot</string>
     <string name="external_batch_patch_title">Începe aplicarea patch-urilor în masă?</string>
@@ -934,6 +935,7 @@ Patches are not affected: enable pre-release patches for each source in the patc
     <string name="settings_advanced_patch_options_custom_branding_app_name_hint">Introduceți numele personalizat</string>
     <string name="settings_advanced_patch_options_path_gone">Acest folder nu mai poate fi citit. Alegeți-l din nou sau goliți-l, altfel aplicarea de patch-uri se va opri și va întreba despre el</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon">Pictograma aplicației</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">Iconița cu care aplicația este patch-uită, utilizată și acolo unde nu mai poate fi schimbată ulterior, cum ar fi Android Auto</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">Pictograma personalizată a aplicației necesită un folder cu imagini pentru pictograme</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon">Pictogramă personalizată</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"Folder cu imagini care să fie utilizate ca pictogramă personalizată.
@@ -1041,6 +1043,7 @@ Dimensiunile imaginilor trebuie să fie următoarele:
     <string name="settings_auto_uninstall_with_shizuku">Dezinstalare automată în caz de conflict</string>
     <string name="settings_auto_uninstall_with_shizuku_description">Dezinstalază aplicația existentă în caz de conflict de semnătură. Acest lucru poate șterge datele aplicației</string>
     <string name="settings_ignore_install_target_rules">Ignorați cerințele țintei de instalare</string>
+    <string name="settings_ignore_install_target_rules_description">Permite dezactivarea patch-urilor solicitate de ținta de instalare și activarea celor excluse de aceasta. Aplicația patch-uită s-ar putea să nu funcționeze</string>
     <string name="settings_auto_uninstall_warning_title">Activează dezinstalarea automată?</string>
     <string name="settings_auto_uninstall_warning_message">Dacă Android raportează un conflict de semnătură în timpul instalării automate Shizuku, Morphe va dezinstala aplicația existentă înainte de a instala fișierul APK modificat.</string>
     <string name="settings_auto_uninstall_warning_risk">Acest lucru poate elimina datele aplicației. Dacă fișierul APK modificat nu se instalează după dezinstalare, este posibil ca aplicația anterioară să nu mai existe.</string>
@@ -1071,6 +1074,7 @@ Detalii: %2$s"</string>
     <string name="settings_system_battery_optimization_description">Menține patcherul în funcțiune când aplicația este minimizată</string>
     <string name="settings_system_process_runtime">Runtime-ul Patcher</string>
     <string name="settings_system_jvm_runtime_enable">Utilizează VM integrat</string>
+    <string name="settings_system_jvm_runtime_description">Patch-uri în VM Java proprie a Morphe, care pot consuma mai multă memorie. Dezactivează pentru a folosi runtime-ul Android</string>
     <string name="settings_system_jvm_runtime_unavailable">Necesită un dispozitiv ARM sau x86 pe 64 de biți</string>
     <string name="settings_system_patcher_completion_sound">Sunet de finalizare</string>
     <string name="settings_system_patcher_completion_sound_description">Redă un ton distinct pentru succes sau eșec la finalizarea aplicării patch-ului</string>
@@ -1348,7 +1352,6 @@ Detalii: %2$s"</string>
     <string name="expanded">Extins</string>
     <string name="collapse">Restrânge</string>
     <string name="collapsed">Comprimat</string>
-    <string name="available">Disponibil</string>
     <string name="continue_">Continuă</string>
     <string name="version">Versiune</string>
     <!-- Who made a patch source, as a field label -->

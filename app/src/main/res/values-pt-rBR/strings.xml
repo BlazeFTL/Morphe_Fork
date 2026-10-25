@@ -35,6 +35,8 @@
     <!-- Asked when the link names an app of a source that is already added -->
     <string name="deep_link_add_source_app_back">Esta fonte já está adicionada. Adicionar este aplicativo da fonte existente?</string>
     <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">Esta é uma nova versão de %s. Você deseja atualizá-la?</string>
+    <string name="mpp_import_unreadable">Este arquivo não pode ser lido</string>
     <!-- Home Screen - Update Notifications -->
     <string name="home_update_available">Atualização do Morphe disponível</string>
     <string name="home_update_available_subtitle">Nova versão pronta para instalação</string>
@@ -167,8 +169,6 @@
     <string name="sources_filter_all_description">Todas as fontes</string>
     <string name="sources_filter_enabled_description">Os patches das fontes são provenientes de</string>
     <string name="sources_filter_disabled_description">Fontes desativadas</string>
-    <string name="sources_filter_updates">Atualizações</string>
-    <string name="sources_filter_updates_description">Fontes com uma versão mais recente para obter</string>
     <string name="sources_filter_issues">Precisam de atenção</string>
     <string name="sources_filter_issues_description">Fontes que estão bloqueadas, falharam ao carregar ou precisam de um Morphe mais novo</string>
     <string name="sources_sort_manual">Ordem manual</string>
@@ -197,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Ativar patches de pré-lançamento?</string>
     <string name="sources_prerelease_warning_message">Compilações de pré-lançamento ainda estão em desenvolvimento. Os patches podem falhar ou corromper o aplicativo, e os recursos podem mudar sem aviso prévio</string>
     <string name="expert_mode_prerelease_notice">Esta fonte está em patches de pré-lançamento. Patchear pode falhar ou ter comportamento inesperado</string>
+    <string name="expert_mode_experimental_version_notice">Esta fonte possui apenas suporte experimental para esta versão do aplicativo. Seus patches podem estar instáveis ou incompletos</string>
     <string name="sources_management_experimental_versions_toggle">Versões experimentais do aplicativo</string>
     <string name="sources_management_experimental_versions_toggle_description">Mostra e corrige alvos de aplicativos experimentais</string>
     <string name="sources_management_already_exists">Esta fonte já foi adicionada</string>
@@ -239,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Escolha quais apps dessa fonte manter depois que ela carregar.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Fontes de patches de terceiros</string>
-    <string name="sources_dialog_community_notice_message">"As fontes de patches da comunidade são criadas e mantidas por seus próprios autores. O Morphe não analisa nem verifica patches de terceiros e não se responsabiliza pelo conteúdo deles ou pelo que fazem em seu dispositivo.
-
-Tudo o que você adicionar a partir deste site é por sua conta e risco"</string>
+    <string name="sources_dialog_community_notice_message">"As fontes de patches da comunidade são criadas e mantidas por seus próprios autores. O Morphe não analisa nem verifica patches de terceiros e não se responsabiliza pelo conteúdo deles ou pelo que fazem em seu dispositivo"</string>
     <string name="sources_update_success">Sucesso na atualização</string>
     <string name="sources_update_unavailable">Não há atualizações disponíveis</string>
     <string name="sources_download_fail">Falha ao baixar as origens: %s</string>
@@ -707,6 +706,7 @@ A desinstalação apagará permanentemente todos os dados do aplicativo"</string
     <string name="patched_app_save_failed_toast">Falha ao salvar o aplicaitvo patcheado</string>
     <string name="plugin_activity_dialog_body">Interação do usuário é necessária para prosseguir com este plugin</string>
     <string name="patcher_process_killed_message">O sistema interrompeu o patcher antes que ele terminasse, geralmente para liberar memória. Feche outros aplicativos e tente novamente</string>
+    <string name="patcher_process_crashed_message">O patcher travou antes de terminar. Se isso acontecer novamente, desative \"Usar VM incorporada\" nas configurações e relate o problema com o log</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">O aplicador de patch ficou sem memória com um heap de %1$s MB. Este aplicativo é grande demais para os patches selecionados. Tente aplicar o patch com menos fontes ou selecione menos patches</string>
     <string name="install_app_success">Instalado com sucesso</string>
@@ -874,6 +874,7 @@ Os patches não são afetados: ative os patches de pré-lançamento para cada fo
     <string name="settings_advanced_update_interval_daily">Diariamente</string>
     <string name="settings_advanced_update_interval_weekly">Semanal</string>
     <string name="settings_advanced_update_interval_monthly">Mensal</string>
+    <string name="settings_advanced_update_interval_battery_warning">As verificações em segundo plano podem não funcionar de forma confiável em dispositivos que restringem aplicativos em segundo plano, como Xiaomi, Huawei, Samsung e OnePlus</string>
     <string name="settings_advanced_external_batch_patch">Permitir gatilhos externos</string>
     <string name="settings_advanced_external_batch_patch_description">Permite que aplicativos de automação iniciem o reparo em lote</string>
     <string name="external_batch_patch_title">Iniciar a aplicação de patches em lote?</string>
@@ -935,6 +936,7 @@ Os patches não são afetados: ative os patches de pré-lançamento para cada fo
     <string name="settings_advanced_patch_options_custom_branding_app_name_hint">Escreva o nome personalizado</string>
     <string name="settings_advanced_patch_options_path_gone">Não é mais possível ler esta pasta. Selecione-a novamente ou remova-a; caso contrário, a aplicação de patches será interrompida e solicitará uma ação a respeito</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon">Ícone do aplicativo</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">O ícone com o qual o aplicativo é patcheado, também usado onde não pode ser alterado posteriormente, como no Android Auto</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">O ícone personalizado do aplicativo requer uma pasta com imagens de ícones</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon">Ícone personalizado</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"Pasta com imagens para usar como um ícone personalizado.
@@ -1042,6 +1044,7 @@ As dimensões das imagens devem ser as seguintes:
     <string name="settings_auto_uninstall_with_shizuku">Desinstalação automática em caso de conflito</string>
     <string name="settings_auto_uninstall_with_shizuku_description">Desinstala o aplicativo existente em caso de conflito de assinatura. Isso pode remover os dados do aplicativo</string>
     <string name="settings_ignore_install_target_rules">Ignorar requisitos de destino de instalação</string>
+    <string name="settings_ignore_install_target_rules_description">Permite desativar patches que o alvo de instalação requer e ativar aqueles que ele descarta. O aplicativo patcheado pode não funcionar</string>
     <string name="settings_auto_uninstall_warning_title">Ativar desinstalação automática?</string>
     <string name="settings_auto_uninstall_warning_message">Se o Android relatar um conflito de assinatura durante a instalação automática do Shizuku, o Morphe desinstalará o app existente antes de instalar o APK corrigido</string>
     <string name="settings_auto_uninstall_warning_risk">Isso pode remover dados do app. Se o APK corrigido falhar ao instalar após a desinstalação, o app anterior pode já ter sido removido</string>
@@ -1072,6 +1075,7 @@ Detalhes: %2$s"</string>
     <string name="settings_system_battery_optimization_description">Mantém o aplicador de patches em execução quando o aplicativo é minimizado</string>
     <string name="settings_system_process_runtime">Tempo de execução do Patcher</string>
     <string name="settings_system_jvm_runtime_enable">Usar VM embutida</string>
+    <string name="settings_system_jvm_runtime_description">Patches na própria VM Java do Morphe, que pode usar mais memória. Desative para usar o runtime do Android</string>
     <string name="settings_system_jvm_runtime_unavailable">Necessita de um dispositivo ARM ou x86 de 64 bits</string>
     <string name="settings_system_patcher_completion_sound">Som de conclusão</string>
     <string name="settings_system_patcher_completion_sound_description">Reproduz um tom distinto para sucesso ou falha quando a aplicação de patch for concluída</string>
@@ -1349,7 +1353,6 @@ Detalhes: %2$s"</string>
     <string name="expanded">Expandido</string>
     <string name="collapse">Recolher</string>
     <string name="collapsed">Recolhido</string>
-    <string name="available">Disponível</string>
     <string name="continue_">Continuar</string>
     <string name="version">Versão</string>
     <!-- Who made a patch source, as a field label -->

@@ -213,9 +213,6 @@
     <string name="sources_dialog_choose_apps_description">Gava çavkanî hat barkirin, hilbijêre ku kîjan sepanên wê biparêzî.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Çavkaniyên patch ên partiya sêyem</string>
-    <string name="sources_dialog_community_notice_message">"Çavkaniyên patch ên civakê ji aliyê nivîskarên xwe ve têne çêkirin û têne parastin. Morphe patchên partiya sêyem nirx nake û verast nake, û ji naveroka wan an ji tiştê ku ew li ser cîhaza we dikin berpirsiyar nabe.
-
-Her tiştê ku hûn ji vê malperê zêde dikin bi xetereya we tê bikaranîn."</string>
     <string name="sources_update_success">Nûvekirin serketî</string>
     <string name="sources_update_unavailable">Nûvekirin peyda nebûye</string>
     <string name="sources_download_fail">Nêzîk davêtin: %s</string>
@@ -1207,7 +1204,6 @@ Detay: %2$s"</string>
     <string name="expanded">Berfireh</string>
     <string name="collapse">Daleqîşîne</string>
     <string name="collapsed">Mirov</string>
-    <string name="available">Hezkir</string>
     <string name="continue_">Domîne</string>
     <string name="version">Versiyon</string>
     <!-- Who made a patch source, as a field label -->

@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">所有來源</string>
     <string name="sources_filter_enabled_description">來源修補程式取自</string>
     <string name="sources_filter_disabled_description">已停用來源</string>
-    <string name="sources_filter_updates">更新</string>
-    <string name="sources_filter_updates_description">要獲取較新版本來源</string>
     <string name="sources_filter_issues">需要關注</string>
     <string name="sources_filter_issues_description">被封鎖、載入失敗或需要更新 Morphe 的來源</string>
     <string name="sources_sort_manual">手動排序</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">啟用預發佈修補程式？</string>
     <string name="sources_prerelease_warning_message">預發佈版本仍在開發中。修補程式可能失敗或導致應用程式損壞，功能也可能在未經警告的情況下變更</string>
     <string name="expert_mode_prerelease_notice">此來源使用預發佈修補程式。修補可能失敗或產生非預期行為</string>
+    <string name="expert_mode_experimental_version_notice">此來源對此應用程式版本僅提供實驗性支援。其補丁可能不穩定或不完整</string>
     <string name="sources_management_experimental_versions_toggle">實驗性應用程式版本</string>
     <string name="sources_management_experimental_versions_toggle_description">顯示和修補實驗性應用程式目標</string>
     <string name="sources_management_already_exists">已新增此來源</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">在來源載入後，選擇要保留其中的哪些應用程式。</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">第三方修補程式來源</string>
-    <string name="sources_dialog_community_notice_message">"社群修補程式來源由其各自的作者製作和維護。Morphe 不會審查或驗證第三方修補程式，亦不對其內容或它們在您裝置上的行為負責。
-
-您從本網站新增的任何內容均由您自行承擔風險"</string>
+    <string name="sources_dialog_community_notice_message">"社群補丁來源由其作者自行製作與維護。Morphe 不審核或驗證第三方補丁，且對其內容或在您的裝置上的操作不承擔任何責任"</string>
     <string name="sources_update_success">更新成功</string>
     <string name="sources_update_unavailable">沒有可用的更新</string>
     <string name="sources_download_fail">無法下載來源: %s</string>
@@ -708,6 +705,7 @@
     <string name="patched_app_save_failed_toast">無法儲存修補後的應用程式</string>
     <string name="plugin_activity_dialog_body">需要使用者互動才能繼續使用此外掛程式</string>
     <string name="patcher_process_killed_message">系統在還未完成修補時就停止了，通常是為了釋放記憶體。請關閉其他應用程式後再試一次。</string>
+    <string name="patcher_process_crashed_message">補丁程式在完成前崩潰了。如果再次發生，請在設定中關閉 \"使用內嵌 VM\" 並附上日誌回報問題</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">偵錯工具記憶體不足，堆疊大小為 %1$s MB。此應用程式相對於選取的修補程式而言過於龐大。請嘗試使用較少的修補來源進行修補，或減少選取的修補程式數量</string>
     <string name="install_app_success">安裝成功</string>
@@ -1352,7 +1350,6 @@ morphe_header_custom_dark.png
     <string name="expanded">已展開</string>
     <string name="collapse">摺疊</string>
     <string name="collapsed">已摺疊</string>
-    <string name="available">可用</string>
     <string name="continue_">繼續</string>
     <string name="version">版本</string>
     <!-- Who made a patch source, as a field label -->

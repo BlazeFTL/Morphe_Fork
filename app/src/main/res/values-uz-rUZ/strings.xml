@@ -164,8 +164,6 @@
     <string name="sources_filter_all_description">Har bir manba</string>
     <string name="sources_filter_enabled_description">Patchlar olinadigan manbalar</string>
     <string name="sources_filter_disabled_description">O\'chirilgan manbalar</string>
-    <string name="sources_filter_updates">Yangilanishlar</string>
-    <string name="sources_filter_updates_description">Olinadigan yangiroq versiyasi bo\'lgan manbalar</string>
     <string name="sources_filter_issues">E\'tibor talab qiladi</string>
     <string name="sources_filter_issues_description">Bloklangan, yuklanishi muvaffaqiyatsiz bo\'lgan yoki yangiroq Morphe talab qiladigan manbalar</string>
     <string name="sources_sort_manual">Pesanan manual</string>
@@ -236,9 +234,6 @@
     <string name="sources_dialog_choose_apps_description">Manba yuklangach, uning qaysi ilovalarini saqlashni tanlang</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Uchinchi tomon yamoq manbalari</string>
-    <string name="sources_dialog_community_notice_message">"Jamiyat yamoq manbalari o'z mualliflari tomonidan yaratiladi va qo'llab-quvvatlanadi. Morphe uchinchi tomon yamoqlarini ko'rib chiqmaydi yoki tasdiqlamaydi va ularning tarkibi yoki sizning qurilmangizda nima qilishlari uchun javobgar emas.
-
-Ushbu veb-saytdan qo'shadigan har qanday narsa o'z xavfingiz ostida qo'llaniladi."</string>
     <string name="sources_update_success">Yangilash muvaffaqiyatli</string>
     <string name="sources_update_unavailable">Yangilash mavjud emas</string>
     <string name="sources_download_fail">Manbalarni yuklab olishda xatolik: %s</string>
@@ -1340,7 +1335,6 @@ Ma’lumotlar: %2$s"</string>
     <string name="expanded">Qisqartirilgan</string>
     <string name="collapse">Qisqartirish</string>
     <string name="collapsed">Mavjud</string>
-    <string name="available">Ochish</string>
     <string name="continue_">Davom etish</string>
     <string name="version">Versiya</string>
     <!-- Who made a patch source, as a field label -->

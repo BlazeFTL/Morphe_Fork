@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Hər mənbə</string>
     <string name="sources_filter_enabled_description">Mənbələrin yamaqları buradan alınır</string>
     <string name="sources_filter_disabled_description">Mənbələr qapadılıb</string>
-    <string name="sources_filter_updates">Yenilənmələr</string>
-    <string name="sources_filter_updates_description">Daha yeni versiyası olan mənbələr</string>
     <string name="sources_filter_issues">Diqqət tələb edir</string>
     <string name="sources_filter_issues_description">Bloklanmış, yüklənməyən və ya daha yeni Morphe tələb edən mənbələr</string>
     <string name="sources_sort_manual">Əl ilə sıralama</string>
@@ -241,9 +239,6 @@
     <string name="sources_dialog_choose_apps_description">Mənbə yükləndikdən sonra hansı tətbiqləri saxlayacağınızı seçin</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Üçüncü tərəf yamaq mənbələri</string>
-    <string name="sources_dialog_community_notice_message">"İcma yamaq mənbələri öz müəllifləri tərəfindən yaradılır və saxlanılır. Morphe üçüncü tərəf yamaqlarını nəzərdən keçirmir, yoxlamır və onların məzmununa və ya cihazınızda etdiklərinə görə məsuliyyət daşımır.
-
-Bu veb saytdan əlavə etdiyiniz hər şey öz riskinizlə istifadə olunur"</string>
     <string name="sources_update_success">Uğurlu yeniləmə</string>
     <string name="sources_update_unavailable">Yenilənmə əlçatan deyil</string>
     <string name="sources_download_fail">Mənbələri yükləmək olmadı: %s</string>
@@ -1224,6 +1219,8 @@ Təfərrüatlar: %2$s"</string>
     <string name="settings_system_apk_download_helper_warning">APK köməkçi tətbiqdən əldə edilir, buna görə də yalnız tanıdığınız tətbiqlərə etibar edin. Morphe yamaqlamadan əvvəl hər bir faylın paketini, versiyasını və imzasını yoxlayır</string>
     <string name="settings_system_apk_download_helper_installed_by">%s tərəfindən quraşdırılıb</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Bilinməyən quraşdırıcı</string>
+    <string name="settings_system_apk_download_helper_open_directly">Köməkçini dərhal aç</string>
+    <string name="settings_system_apk_download_helper_open_directly_description">Yükləmə təlimatlarını ötürür və etibarlı köməkçini açır</string>
     <!-- File Picker -->
     <string name="file_picker_no_files">Burada fayl yoxdur</string>
     <string name="file_picker_read_error">Bu kataloqu oxumaq olmur</string>
@@ -1351,7 +1348,6 @@ Təfərrüatlar: %2$s"</string>
     <string name="expanded">Genişləndirilən</string>
     <string name="collapse">Yığcamlaşdır</string>
     <string name="collapsed">Yığcamlaşdırılan</string>
-    <string name="available">Əlçatan</string>
     <string name="continue_">Davam et</string>
     <string name="version">Versiya</string>
     <!-- Who made a patch source, as a field label -->

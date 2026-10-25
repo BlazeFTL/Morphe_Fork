@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">প্রতিটি উৎস</string>
     <string name="sources_filter_enabled_description">উৎস প্যাচগুলি নেওয়া হয়েছে</string>
     <string name="sources_filter_disabled_description">উৎস বন্ধ করা হয়েছে</string>
-    <string name="sources_filter_updates">আপডেট</string>
-    <string name="sources_filter_updates_description">পাওয়ার জন্য নতুন সংস্করণ সহ সোর্সগুলি</string>
     <string name="sources_filter_issues">মনোযোগের প্রয়োজন</string>
     <string name="sources_filter_issues_description">সোর্সগুলি যা ব্লক করা হয়েছে, লোড করতে ব্যর্থ হয়েছে বা একটি নতুন Morphe-এর প্রয়োজন</string>
     <string name="sources_sort_manual">ম্যানুয়াল অর্ডার</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">প্রি-রিলিজ প্যাচ সক্রিয় করবেন?</string>
     <string name="sources_prerelease_warning_message">প্রি-রিলিজ বিল্ডগুলো এখনও উন্নয়নাধীন। প্যাচ ব্যর্থ হতে পারে বা অ্যাপটি ভেঙে দিতে পারে, এবং বৈশিষ্ট্যগুলি সতর্কতা ছাড়াই পরিবর্তন হতে পারে।</string>
     <string name="expert_mode_prerelease_notice">এই উৎসটি প্রি-রিলিজে রয়েছে। প্যাচিং ব্যর্থ হতে পারে বা অপ্রত্যাশিত আচরণ করতে পারে।</string>
+    <string name="expert_mode_experimental_version_notice">এই সোর্সটির জন্য এই অ্যাপ ভার্সনে শুধুমাত্র পরীক্ষামূলক সমর্থন রয়েছে। এর প্যাচগুলি অস্থিতিশীল বা অসম্পূর্ণ হতে পারে</string>
     <string name="sources_management_experimental_versions_toggle">পরীক্ষামূলক অ্যাপ সংস্করণ</string>
     <string name="sources_management_experimental_versions_toggle_description">পরীক্ষামূলক অ্যাপ টার্গেট দেখায় এবং প্যাচ করে</string>
     <string name="sources_management_already_exists">এই উৎসটি ইতিমধ্যেই যোগ করা হয়েছে</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">সোর্স লোড হয়ে গেলে তার কোন অ্যাপগুলো রাখতে চান তা বেছে নিন।</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">তৃতীয় পক্ষের প্যাচ উৎস</string>
-    <string name="sources_dialog_community_notice_message">"কমিউনিটি প্যাচ সোর্স তাদের নিজ নিজ লেখকগণ দ্বারা তৈরি ও রক্ষণাবেক্ষণ করা হয়। Morphe তৃতীয় পক্ষের প্যাচগুলো পর্যালোচনা বা যাচাই করে না, এবং তাদের বিষয়বস্তু বা আপনার ডিভাইসে যা করে তার জন্য দায়ী নয়।
-
-আপনি এই ওয়েবসাইট থেকে যা কিছু যোগ করেন তা আপনার নিজের ঝুঁকিতে ব্যবহৃত হয়।"</string>
+    <string name="sources_dialog_community_notice_message">"কমিউনিটি প্যাচ সোর্সগুলো তাদের নিজস্ব লেখকদের দ্বারা তৈরি এবং রক্ষণাবেক্ষণ করা হয়। Morphe তৃতীয় পক্ষের প্যাচগুলো পর্যালোচনা বা যাচাই করে না, এবং তাদের বিষয়বস্তু বা আপনার ডিভাইসে তারা যা করে তার জন্য দায়ী নয়"</string>
     <string name="sources_update_success">আপডেট সফল হয়েছে</string>
     <string name="sources_update_unavailable">আপডেট উপলব্ধ নেই</string>
     <string name="sources_download_fail">সোর্স ডাউনলোড ব্যর্থ হয়েছে: %s</string>
@@ -708,6 +705,7 @@
     <string name="patched_app_save_failed_toast">প্যাচ করা অ্যাপ সংরক্ষণ করতে ব্যর্থ</string>
     <string name="plugin_activity_dialog_body">এই প্লাগইন চালিয়ে যেতে জন্য ব্যবহারকারীর ইন্টারেকশন প্রয়োজন</string>
     <string name="patcher_process_killed_message">সিস্টেমটি প্যাচারকে সম্পন্ন করার আগেই বন্ধ করে দিয়েছে, সাধারণত মেমোরি খালি করতে। অন্য অ্যাপগুলো বন্ধ করুন এবং আবার চেষ্টা করুন</string>
+    <string name="patcher_process_crashed_message">প্যাচার শেষ হওয়ার আগেই ক্র্যাশ করেছে। এটি আবার ঘটলে, সেটিংসে গিয়ে \"Use embedded VM\" বন্ধ করুন এবং লগসহ সমস্যাটি রিপোর্ট করুন</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">%1$s MB হিপ মেমোরি ব্যবহার করে প্যাচার রান শেষ হয়ে গেছে। এই অ্যাপটি নির্বাচিত প্যাচগুলির জন্য খুব বড়। কম প্যাচ সোর্স সহ প্যাচিং করার চেষ্টা করুন, অথবা কম প্যাচ নির্বাচন করুন</string>
     <string name="install_app_success">সাফল্য়ের সাথে ইনস্টল করা হয়েছে</string>
@@ -1346,7 +1344,6 @@ morphe_adaptive_monochrome_custom.xml
     <string name="expanded">বিস্তৃত</string>
     <string name="collapse">সংক্ষেপন করুন</string>
     <string name="collapsed">বিস্তৃত নয়</string>
-    <string name="available">উপলব্ধ</string>
     <string name="continue_">এগিয়ে যান</string>
     <string name="version">সংস্করণ</string>
     <!-- Who made a patch source, as a field label -->

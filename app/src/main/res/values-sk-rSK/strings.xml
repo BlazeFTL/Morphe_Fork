@@ -35,6 +35,8 @@
     <!-- Asked when the link names an app of a source that is already added -->
     <string name="deep_link_add_source_app_back">Tento zdroj je už pridaný. Pridať túto aplikáciu z existujúceho zdroja?</string>
     <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">Toto je nová verzia %s. Chcete ju aktualizovať?</string>
+    <string name="mpp_import_unreadable">Tento súbor sa nedá prečítať</string>
     <!-- Home Screen - Update Notifications -->
     <string name="home_update_available">Je dostupná aktualizácia Morphe</string>
     <string name="home_update_available_subtitle">Nová verzia je pripravená na inštaláciu</string>
@@ -167,8 +169,6 @@
     <string name="sources_filter_all_description">Každý zdroj</string>
     <string name="sources_filter_enabled_description">Záplaty zdrojov sú prevzaté z</string>
     <string name="sources_filter_disabled_description">Zdroje vypnuté</string>
-    <string name="sources_filter_updates">Aktualizácie</string>
-    <string name="sources_filter_updates_description">Zdroje s novšou verziou na získanie</string>
     <string name="sources_filter_issues">Vyžadujú pozornosť</string>
     <string name="sources_filter_issues_description">Zdroje, ktoré sú zablokované, zlyhali pri načítaní alebo vyžadujú novšiu Morphe</string>
     <string name="sources_sort_manual">Manuálne zoradenie</string>
@@ -197,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Povoliť predbežné opravy?</string>
     <string name="sources_prerelease_warning_message">Predbežné verzie sú stále vo vývoji. Opravy môžu zlyhať alebo poškodiť aplikáciu a funkcie sa môžu bez upozornenia zmeniť.</string>
     <string name="expert_mode_prerelease_notice">Tento zdroj je na predbežných opravách. Opravovanie môže zlyhať alebo sa správať neočakávane.</string>
+    <string name="expert_mode_experimental_version_notice">Tento zdroj má pre túto verziu aplikácie len experimentálnu podporu. Jeho záplaty môžu byť nestabilné alebo neúplné</string>
     <string name="sources_management_experimental_versions_toggle">Experimentálne verzie aplikácie</string>
     <string name="sources_management_experimental_versions_toggle_description">Zobrazuje a opravuje experimentálne ciele aplikácií</string>
     <string name="sources_management_already_exists">Tento zdroj už bol pridaný</string>
@@ -239,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Vyberte, ktoré z aplikácií tohto zdroja si ponechať po jeho načítaní.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Zdroje záplat tretích strán</string>
-    <string name="sources_dialog_community_notice_message">"Zdroje komunitných záplat sú vytvárané a udržiavané ich vlastnými autormi. Morphe nekontroluje ani neoveruje záplaty tretích strán a nie je zodpovedný za ich obsah ani za to, čo robia na vašom zariadení.
-
-Čokoľvek, čo pridáte z tejto webovej stránky, používate na vlastné riziko."</string>
+    <string name="sources_dialog_community_notice_message">"Zdroje komunitných záplat vytvárajú a udržiavam ich autori. Morphe nepreskúma ani neoveruje záplaty tretích strán a nie je zodpovedný za ich obsah ani za to, čo vykonávajú vo vašom zariadení"</string>
     <string name="sources_update_success">Aktualizácia bola úspešná</string>
     <string name="sources_update_unavailable">Neboli nájdené žiadne aktualizácie</string>
     <string name="sources_download_fail">Nepodarilo sa stiahnuť zdroje: %s</string>
@@ -706,6 +705,7 @@ Odinštalovanie trvalo vymaže všetky údaje aplikácie."</string>
     <string name="patched_app_save_failed_toast">Nepodarilo sa uložiť zaplátanú aplikáciu</string>
     <string name="plugin_activity_dialog_body">Vyžaduje sa interakcia používateľa, aby bolo možné pokračovať s týmto pluginom</string>
     <string name="patcher_process_killed_message">Systém ukončil patcher pred dokončením, zvyčajne kvôli uvoľneniu pamäte. Zatvorte iné aplikácie a skúste to znova</string>
+    <string name="patcher_process_crashed_message">Patcher spadol predtým, než skončil. Ak sa to zopakuje, vypnite možnosť \"Použiť vstavané VM\" v nastaveniach a nahláste problém spolu s logom</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Patcher vyčerpal pamäť so zásobníkom %1$s MB. Táto aplikácia je príliš veľká na vybrané záplaty. Skúste patchovať s menej zdrojmi záplat alebo vyberte menej záplat</string>
     <string name="install_app_success">Úspešne nainštalované</string>
@@ -873,6 +873,7 @@ Záplaty tým nie sú ovplyvnené: povoľte predbežné záplaty pre každý zdr
     <string name="settings_advanced_update_interval_daily">Denne</string>
     <string name="settings_advanced_update_interval_weekly">Týždenne</string>
     <string name="settings_advanced_update_interval_monthly">Mesačne</string>
+    <string name="settings_advanced_update_interval_battery_warning">Kontroly na pozadí nemusia fungovať spoľahlivo na zariadeniach, ktoré obmedzujú aplikácie na pozadí, ako napríklad Xiaomi, Huawei, Samsung a OnePlus</string>
     <string name="settings_advanced_external_batch_patch">Povoliť externé spúšťače</string>
     <string name="settings_advanced_external_batch_patch_description">Povoľuje aplikáciám automatizácie spustiť hromadnú opravu</string>
     <string name="external_batch_patch_title">Začať dávkové záplatovanie?</string>
@@ -934,6 +935,7 @@ Záplaty tým nie sú ovplyvnené: povoľte predbežné záplaty pre každý zdr
     <string name="settings_advanced_patch_options_custom_branding_app_name_hint">Zadajte vlastný názov</string>
     <string name="settings_advanced_patch_options_path_gone">Tento priečinok sa už nedá prečítať. Vyberte ho znova alebo ho vymažte, inak sa záplatovanie zastaví a opýta sa naň.</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon">Ikona aplikácie</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">Ikona, ktorou je aplikácia patched, používa sa aj tam, kde sa neskôr nedá zmeniť, napríklad v Android Auto</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">Vlastná ikona aplikácie potrebuje priečinok s obrázkami ikon.</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon">Vlastná ikona</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"Priečinok s obrázkami, ktoré sa majú použiť ako vlastná ikona.
@@ -1041,6 +1043,7 @@ Rozmery obrázka musia byť nasledovné:
     <string name="settings_auto_uninstall_with_shizuku">Automaticky odinštalovať v prípade konfliktu</string>
     <string name="settings_auto_uninstall_with_shizuku_description">Odinštaluje existujúcu aplikáciu pri konflikte podpisov. Môže to odstrániť údaje aplikácie</string>
     <string name="settings_ignore_install_target_rules">Ignorovať požiadavky cieľa inštalácie</string>
+    <string name="settings_ignore_install_target_rules_description">Umožňuje vypnúť patche, ktoré vyžaduje cieľ inštalácie, a zapnúť tie, ktoré vylučuje. Patched aplikácia nemusí fungovať</string>
     <string name="settings_auto_uninstall_warning_title">Povoliť automatické odinštalovanie?</string>
     <string name="settings_auto_uninstall_warning_message">Ak Android nahlási konflikt podpisu počas automatickej inštalácie pomocou Shizuku, Morphe najprv odinštaluje existujúcu aplikáciu a potom nainštaluje opravený APK</string>
     <string name="settings_auto_uninstall_warning_risk">Týmto sa môžu odstrániť údaje aplikácie. Ak sa opravenému APK nepodarí nainštalovať po odinštalovaní, predchádzajúca aplikácia už nemusí existovať</string>
@@ -1071,6 +1074,7 @@ Podrobnosti: %2$s"</string>
     <string name="settings_system_battery_optimization_description">Udrží pátrač v prevádzke, keď je aplikácia minimalizovaná</string>
     <string name="settings_system_process_runtime">Runtime patchera</string>
     <string name="settings_system_jvm_runtime_enable">Použiť embednutý VM</string>
+    <string name="settings_system_jvm_runtime_description">Patche vo vlastnom Java VM od Morphe, ktoré môžu využívať viac pamäte. Vypnite pre použitie runtime Androidu</string>
     <string name="settings_system_jvm_runtime_unavailable">Vyžaduje zariadenie s ARM alebo 64-bitovým x86</string>
     <string name="settings_system_patcher_completion_sound">Zvuk úspešného dokončenia</string>
     <string name="settings_system_patcher_completion_sound_description">Prehráva odlišný tón pre úspech alebo zlyhanie po dokončení záplatovania</string>
@@ -1348,7 +1352,6 @@ Podrobnosti: %2$s"</string>
     <string name="expanded">Rozbalené</string>
     <string name="collapse">Zbaliť</string>
     <string name="collapsed">Zbalené</string>
-    <string name="available">Dostupné</string>
     <string name="continue_">Pokračovať</string>
     <string name="version">Verzia</string>
     <!-- Who made a patch source, as a field label -->

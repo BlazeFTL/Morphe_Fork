@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Кожне джерело</string>
     <string name="sources_filter_enabled_description">Джерела, з яких беруться патчі</string>
     <string name="sources_filter_disabled_description">Джерела вимкнено</string>
-    <string name="sources_filter_updates">Оновлення</string>
-    <string name="sources_filter_updates_description">Джерела з новішою версією для отримання</string>
     <string name="sources_filter_issues">Потребує уваги</string>
     <string name="sources_filter_issues_description">Джерела, які заблоковано, не вдалося завантажити або які потребують новішої версії Morphe</string>
     <string name="sources_sort_manual">Ручне сортування</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Увімкнути передрелізні патчі?</string>
     <string name="sources_prerelease_warning_message">Передрелізні збірки ще перебувають у розробці. Патчі можуть не спрацювати або пошкодити застосунок, а функції можуть змінюватися без попередження</string>
     <string name="expert_mode_prerelease_notice">Це джерело використовує передрелізні патчі. Патчинг може не спрацювати або поводитися непередбачувано</string>
+    <string name="expert_mode_experimental_version_notice">Це джерело лише експериментально підтримує цю версію застосунку. Його патчі можуть бути нестабільними або неповними</string>
     <string name="sources_management_experimental_versions_toggle">Експериментальні версії застосунків</string>
     <string name="sources_management_experimental_versions_toggle_description">Показує та патчить експериментальні версії застосунків</string>
     <string name="sources_management_already_exists">Це джерело вже додано</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Виберіть, які його застосунки залишити після завантаження джерела</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Сторонні джерела патчів</string>
-    <string name="sources_dialog_community_notice_message">"Джерела патчів спільноти створюються та підтримуються їхніми власними авторами. Morphe не перевіряє та не гарантує сторонні патчі, а також не несе відповідальності за їхній вміст або за те, що вони роблять на вашому пристрої.
-
-Усе, що ви додаєте з цього сайту, використовується на ваш власний ризик"</string>
+    <string name="sources_dialog_community_notice_message">"Джерела патчів спільноти створюються та підтримуються їхніми власними авторами. Morphe не перевіряє та не гарантує сторонні патчі, а також не несе відповідальності за їхній вміст або за те, що вони роблять на вашому пристрої"</string>
     <string name="sources_update_success">Оновлення успішне</string>
     <string name="sources_update_unavailable">Оновлення недоступне</string>
     <string name="sources_download_fail">Не вдалося завантажити джерела: %s</string>
@@ -708,6 +705,7 @@
     <string name="patched_app_save_failed_toast">Не вдалося зберегти патчений застосунок</string>
     <string name="plugin_activity_dialog_body">Для продовження потрібна взаємодія користувача з цим плагіном</string>
     <string name="patcher_process_killed_message">Систему зупинила патчер до завершення роботи, зазвичай щоб звільнити пам\'ять. Закрийте інші застосунки та спробуйте ще раз</string>
+    <string name="patcher_process_crashed_message">Патчер аварійно завершив роботу до закінчення. Якщо це повториться, вимкніть \"Вбудована віртуальна машина\" у налаштуваннях і повідомте про проблему разом із журналом</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Патчеру не вистачило пам\'яті з купою %1$s МБ. Цей застосунок завеликий для вибраних патчів. Спробуйте пропатчити з меншою кількістю джерел патчів або виберіть менше патчів</string>
     <string name="install_app_success">Встановлено успішно</string>
@@ -1354,7 +1352,6 @@ morphe_header_custom_dark.png
     <string name="expanded">Розгорнуто</string>
     <string name="collapse">Згорнути</string>
     <string name="collapsed">Згорнуто</string>
-    <string name="available">Доступно</string>
     <string name="continue_">Продовжити</string>
     <string name="version">Версія</string>
     <!-- Who made a patch source, as a field label -->

@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">所有来源</string>
     <string name="sources_filter_enabled_description">源补丁取自</string>
     <string name="sources_filter_disabled_description">已关闭的源</string>
-    <string name="sources_filter_updates">更新</string>
-    <string name="sources_filter_updates_description">获取有新版本的源</string>
     <string name="sources_filter_issues">需要关注</string>
     <string name="sources_filter_issues_description">被阻止、加载失败或需要更新 Morphe 的源</string>
     <string name="sources_sort_manual">手动排序</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">启用预发布补丁？</string>
     <string name="sources_prerelease_warning_message">预发布版本仍在开发中。补丁可能导致应用崩溃或行为异常，且功能可能随时更改，恕不另行通知。</string>
     <string name="expert_mode_prerelease_notice">此源使用预发布补丁。应用可能崩溃或出现意外行为。</string>
+    <string name="expert_mode_experimental_version_notice">此来源对该应用版本仅提供实验性支持。其补丁可能不稳定或不完整</string>
     <string name="sources_management_experimental_versions_toggle">实验版应用版本</string>
     <string name="sources_management_experimental_versions_toggle_description">显示并修补实验性应用目标</string>
     <string name="sources_management_already_exists">此资源已添加</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">在来源加载后，选择要保留该来源中的哪些应用。</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">第三方补丁来源</string>
-    <string name="sources_dialog_community_notice_message">"社区补丁源由其作者自行制作和维护。Morphe 不审查或验证第三方补丁，也不对其内容或对您设备造成的影响负责。
-
-您从此网站添加的任何内容均由您自行承担风险。"</string>
+    <string name="sources_dialog_community_notice_message">"社区补丁源由其作者创建并维护。Morphe 不审核或验证第三方补丁，也不对其内容或在您的设备上产生的影响负责"</string>
     <string name="sources_update_success">更新成功</string>
     <string name="sources_update_unavailable">无可用更新</string>
     <string name="sources_download_fail">下载补丁失败：%s</string>
@@ -708,6 +705,7 @@
     <string name="patched_app_save_failed_toast">保存修补后的应用失败</string>
     <string name="plugin_activity_dialog_body">需要用户交互才能继续使用此插件</string>
     <string name="patcher_process_killed_message">系统在修补程序完成之前停止，通常是为了释放内存。关闭其他应用并重试</string>
+    <string name="patcher_process_crashed_message">补丁程序在完成前崩溃。如果再次发生，请在设置中关闭 \"使用内置 VM\" 并提交包含日志的问题报告</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">修补器在使用 %1$s MB 堆时内存耗尽。此应用对于所选修补程序来说太大了。尝试使用较少的修补源进行修补，或选择较少的修补程序</string>
     <string name="install_app_success">安装成功</string>
@@ -1354,7 +1352,6 @@ morphe_header_custom_dark.png
     <string name="expanded">已展开</string>
     <string name="collapse">折叠</string>
     <string name="collapsed">已折叠</string>
-    <string name="available">可用</string>
     <string name="continue_">继续</string>
     <string name="version">版本</string>
     <!-- Who made a patch source, as a field label -->

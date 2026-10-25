@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Allar uppsprettur</string>
     <string name="sources_filter_enabled_description">Upplýsingasveitir eru fengnar frá</string>
     <string name="sources_filter_disabled_description">Uppgötvanir óvirkar</string>
-    <string name="sources_filter_updates">Uppfærslur</string>
-    <string name="sources_filter_updates_description">Frálegur útgáfur til að fá</string>
     <string name="sources_filter_issues">Þarfnast athygli</string>
     <string name="sources_filter_issues_description">Frágang sem eru blokkeraðir, mistókst að hlaða niður eða þarfnast nýrri Morphe</string>
     <string name="sources_sort_manual">Handvirkuð pöntun</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Tilkynna vandamál</string>
     <string name="sources_prerelease_warning_message">Virkja forútgáfuplástra?</string>
     <string name="expert_mode_prerelease_notice">Þessi uppspretta er með forútgáfuplástra. Plástrun getur mistekist eða hegðað sér óvænt.</string>
+    <string name="expert_mode_experimental_version_notice">Þessi uppspretta hefur aðeins tilraunastöðu fyrir þessa útgáfu af forritinu. Pötsunir hennar gætu verið óstöðugar eða ófullkomnar</string>
     <string name="sources_management_experimental_versions_toggle">Tilrauna app úgáfur</string>
     <string name="sources_management_experimental_versions_toggle_description">Sýnir og lagar tilraunamarkmið forrita</string>
     <string name="sources_management_already_exists">Þessi heimild hefur þegar verið bætt við</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Veldu hver forrita upprunans sem þú vilt halda þegar hann hefur hlaðist.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Þriðja aðila plástrauppsprettur</string>
-    <string name="sources_dialog_community_notice_message">"Samfélagsplástrauppsprettur eru gerðar og viðhaldnar af eigin höfundum þeirra. Morphe endurskoðar eða staðfestir ekki þriðja aðila plástra, og ber ekki ábyrgð á innihaldi þeirra eða því sem þeir gera á tækinu þínu.
-
-Allt sem þú bætir við frá þessari vefsíðu er notað á eigin ábyrgð."</string>
+    <string name="sources_dialog_community_notice_message">"Uppsprettur fyrir samfélagsbætur eru lagaðar og viðhaldnar af eigin höfundum þeirra. Morphe fer ekki yfir eða staðfestir bætur frá þriðja aðila og ber ekki ábyrgð á efni þeirra eða því hvað þær gera á tækinu þínu"</string>
     <string name="sources_update_success">Uppfærsla vel heppnað</string>
     <string name="sources_update_unavailable">Ekki tókst að uppfæra</string>
     <string name="sources_download_fail">Ekki tókst að sækja heimildir: %s</string>
@@ -707,6 +704,7 @@ Afnaman eyðir varanlega öllum forritsgögnum"</string>
     <string name="patched_app_save_failed_toast">Ekki tókst að vista breytt app</string>
     <string name="plugin_activity_dialog_body">Þú þarft að grípa í gagnvirkt á hugbuginn til að fara áfram</string>
     <string name="patcher_process_killed_message">Kerfið stóð patcharann áður en hann tókst, yfirleitt til að losa um minni. Lokaðu öðrum forritum og reyndu aftur</string>
+    <string name="patcher_process_crashed_message">Patcherinn hroupaði áður en hann var lokið. Ef þetta gerist aftur, slökkvið á \"Nota innbyggða VM\" í stillingum og tilkynnið vandamálið með logga</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Fleipir hlaup út fyrir minni með %1$s MB stakflötum. Þessi forrit er of stórt fyrir valda fleipa. Reyndu að fleipa með færri fleiugrunnum eða veldu færri fleipa</string>
     <string name="install_app_success">Uppsett með góðum árangri</string>
@@ -1350,7 +1348,6 @@ Nánari upplýsingar: %2$s"</string>
     <string name="expanded">Útvíkkað</string>
     <string name="collapse">Fella saman</string>
     <string name="collapsed">Hrundið</string>
-    <string name="available">Í boði</string>
     <string name="continue_">Halda áfram</string>
     <string name="version">Útgáfa</string>
     <!-- Who made a patch source, as a field label -->

@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Gach foinse</string>
     <string name="sources_filter_enabled_description">Foinsí as a dtógtar paistí</string>
     <string name="sources_filter_disabled_description">Foinsí múchta</string>
-    <string name="sources_filter_updates">Nuashonruithe</string>
-    <string name="sources_filter_updates_description">Foinsí le leagan níos nuaí le fáil</string>
     <string name="sources_filter_issues">Teastaíonn aird</string>
     <string name="sources_filter_issues_description">Foinsí atá blocáilte, nár éirigh leo lódáil nó a bhfuil Morphe níos nuaí ag teastáil uathu</string>
     <string name="sources_sort_manual">Ordú láimhe</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Paistí réamh-eisiúna a chumasú?</string>
     <string name="sources_prerelease_warning_message">Tá leaganacha réamh-eisiúna fós á bhforbairt. D’fhéadfadh paistí teip nó an aip a bhriseadh, agus d’fhéadfadh gnéithe athrú gan rabhadh.</string>
     <string name="expert_mode_prerelease_notice">Tá an fhoinse seo ar phaistí réamh-eisiúna. D’fhéadfadh teip nó iompar gan choinne a bheith mar thoradh ar phaistí.</string>
+    <string name="expert_mode_experimental_version_notice">Níl tacaíocht ach thástáilteach ag an tfhoinse seo le leagan seo den app. Seans ólta go mbeidh a phatachí neamshábháilte nó neamhchuir léir</string>
     <string name="sources_management_experimental_versions_toggle">Leaganacha turgnamhacha aipeanna</string>
     <string name="sources_management_experimental_versions_toggle_description">Taispeánann agus paistíonn spriocanna aipeanna turgnamhacha</string>
     <string name="sources_management_already_exists">Tá an fhoinse seo curtha leis cheana féin</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Roghnaigh cé na haipeanna dá cuid a choinneáil a luaithe a bheidh an fhoinse lódáilte.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Foinsí paiste tríú páirtí</string>
-    <string name="sources_dialog_community_notice_message">"Is iad a n-údair féin a dhéanann agus a chothaíonn foinsí paistí pobail. Ní dhéanann Morphe athbhreithniú ná fíorú ar phaistí tríú páirtí, agus níl sé freagrach as a n-ábhar ná as a ndéanann siad ar do ghléas.
-
-Úsáidtear aon rud a chuireann tú leis ón suíomh Gréasáin seo ar do phriacal féin."</string>
+    <string name="sources_dialog_community_notice_message">"Is iad a n-údair féin a dhéanann agus a chothaíonn foinsí paistí pobail. Ní dhéanann Morphe athbhreithniú ná fíorú ar phaistí tríú páirtí, agus níl sé freagrach as a n-ábhar ná as an méid a dhéanann siad ar do ghléas"</string>
     <string name="sources_update_success">Nuashonrú rathúil</string>
     <string name="sources_update_unavailable">Níl aon nuashonrú ar fáil</string>
     <string name="sources_download_fail">Theip ar an pacáiste a íoslódáil: %s</string>
@@ -708,6 +705,7 @@ Scriosfaidh díshuiteáil gach sonraí aip go buan."</string>
     <string name="patched_app_save_failed_toast">Theip ar aip chomhfhiosach a shábháil</string>
     <string name="plugin_activity_dialog_body">Tá idirghníomhaíocht úsáideora ag teastáil chun dul ar aghaidh leis an mbreiseán seo</string>
     <string name="patcher_process_killed_message">Chuir an córas stop leis an gclár paisteála sular chríochnaigh sé, de ghnáth chun cuimhne a shaoradh. Dún aipeanna eile agus bain triail as arís.</string>
+    <string name="patcher_process_crashed_message">Thit an patcher sula chríochnaigh sé. Má tharlaíonn sé arís, múch \"Use embedded VM\" sna socruithe agus tuigir an fhadhb le lóg</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Bhí an paisteálaí as cuimhne le carn %1$s MB. Tá an aip seo ró-mhór do na paistí roghnaithe. Bain triail as paisteáil le níos lú foinsí paiste, nó roghnaigh níos lú paistí</string>
     <string name="install_app_success">Suiteáilte go rathúil</string>
@@ -1352,7 +1350,6 @@ Sonraí: %2$s"</string>
     <string name="expanded">Leathnaithe</string>
     <string name="collapse">Laghdaigh</string>
     <string name="collapsed">Tite</string>
-    <string name="available">Ar fáil</string>
     <string name="continue_">Lean ar aghaidh</string>
     <string name="version">Leagan</string>
     <!-- Who made a patch source, as a field label -->
