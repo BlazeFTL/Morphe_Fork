@@ -831,6 +831,7 @@ class PatchBundleRepository(
         val force: Boolean = false,
         val showMessage: Boolean = false,
         val allowUnsafeNetwork: Boolean = false,
+        val reportUpToDate: Boolean = true,
     ) {
         /**
          * True when running this request already does everything [other] asks for. A request
@@ -841,6 +842,7 @@ class PatchBundleRepository(
             !other.force &&
                     !other.showMessage &&
                     (allowUnsafeNetwork || !other.allowUnsafeNetwork) &&
+                    (reportUpToDate || !other.reportUpToDate) &&
                     target.covers(other.target)
     }
 
@@ -855,6 +857,7 @@ class PatchBundleRepository(
             force = requests.any { it.force },
             showMessage = requests.any { it.showMessage },
             allowUnsafeNetwork = requests.all { it.allowUnsafeNetwork },
+            reportUpToDate = requests.any { it.reportUpToDate },
             target = requests.map { it.target }.reduce(UpdateTarget::plus),
         )
     }
@@ -1713,14 +1716,18 @@ class PatchBundleRepository(
     /**
      * Same as [updateCheck] but suspends until the update job fully completes.
      * Waits for any in-progress update to finish first, then runs its own update directly.
+     *
+     * @param reportUpToDate False for a check whose caller already shows it ran, which then ends
+     *   without a progress result when nothing was new.
      */
-    suspend fun updateCheckAndAwait(allowUnsafeNetwork: Boolean = false) {
+    suspend fun updateCheckAndAwait(allowUnsafeNetwork: Boolean = false, reportUpToDate: Boolean = true) {
         awaitReady()
         awaitCurrentUpdateJob()
         performRemoteUpdateWithResult(
             UpdateRequest(
                 target = UpdateTarget(allEnabled = true),
                 allowUnsafeNetwork = allowUnsafeNetwork,
+                reportUpToDate = reportUpToDate,
             )
         )
     }
@@ -2023,6 +2030,10 @@ class PatchBundleRepository(
 
             if (updated.isEmpty()) {
                 if (showMessage) messages.showIfInForeground(R.string.sources_update_unavailable)
+                if (!request.reportUpToDate) {
+                    bundleUpdateProgressFlow.value = null
+                    return@coroutineScope
+                }
 
                 // No updates available - already up to date
                 val noUpdatesProgress = BundleUpdateProgress(

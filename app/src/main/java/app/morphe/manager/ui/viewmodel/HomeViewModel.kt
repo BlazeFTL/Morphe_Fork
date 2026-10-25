@@ -265,6 +265,10 @@ class HomeViewModel(
     var showBundleUpdateSnackbar by mutableStateOf(false)
     var snackbarStatus by mutableStateOf(BundleUpdateStatus.Updating)
 
+    /** Pull-to-refresh state. */
+    private val _isRefreshing = MutableStateFlow(false)
+    val isRefreshing: StateFlow<Boolean> = _isRefreshing.asStateFlow()
+
     // Latches when an update cycle was skipped due to metered network; cleared on the next
     // successful/no-change update. Independent of the transient bundle update alert so the
     // user still sees a persistent alert after the transient one fades
@@ -361,8 +365,9 @@ class HomeViewModel(
      */
     private fun observeSnackbarState() {
         viewModelScope.launch {
-            patchBundleRepository.bundleUpdateProgress.collect { progress ->
-                if (progress == null) {
+            combine(patchBundleRepository.bundleUpdateProgress, _isRefreshing, ::Pair).collect { (progress, refreshing) ->
+                // A pull spins its own indicator while the check runs, so the alert only tells how it ended
+                if (progress == null || (refreshing && progress.result == PatchBundleRepository.BundleUpdateResult.None)) {
                     showBundleUpdateSnackbar = false
                     return@collect
                 }
@@ -385,21 +390,20 @@ class HomeViewModel(
         }
     }
 
-    /** Pull-to-refresh state. */
-    private val _isRefreshing = MutableStateFlow(false)
-    val isRefreshing: StateFlow<Boolean> = _isRefreshing.asStateFlow()
-
     /**
      * Triggers a manual refresh: updates bundles and checks for manager updates.
      * Guard against double-trigger if user swipes while refresh is in progress.
      */
     fun refresh() {
         if (_isRefreshing.value) return
+        // Reported by its own banner, so offline its timeout does not hold the indicator up
+        triggerUpdateCheck()
         viewModelScope.launch {
             _isRefreshing.value = true
             try {
-                patchBundleRepository.updateCheck()
-                checkForManagerUpdates()
+                // Awaited, so the indicator spins for as long as the check runs and stands in for
+                // its result when nothing was new
+                patchBundleRepository.updateCheckAndAwait(reportUpToDate = false)
                 delay(500.milliseconds)
             } finally {
                 _isRefreshing.value = false

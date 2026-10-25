@@ -332,6 +332,9 @@ fun HomeScreen(
     // Each page's header, which the alerts hang under on whichever page is on screen
     val pageHeaderHeights = remember { mutableStateMapOf<MainPage, Dp>() }
     val alertsTopTarget = pageHeaderHeights[MainPage.entries[pagerState.currentPage]]
+    // How far down the alerts reach under the header, which the lists keep clear of. Read only
+    // where a list is laid out, so the cards easing in and out do not recompose the screen
+    val alertsHeight = remember { mutableStateOf(0.dp) }
 
     MainPagerScaffold(
         pagerState = pagerState,
@@ -358,7 +361,8 @@ fun HomeScreen(
                     modifier = Modifier
                         .widthIn(max = Defaults.ContentMaxWidth)
                         .align(Alignment.TopCenter)
-                        .padding(top = alertsTop)
+                        .padding(top = alertsTop),
+                    onHeightChange = { alertsHeight.value = it }
                 )
             }
         }
@@ -369,6 +373,7 @@ fun HomeScreen(
                 bottomBarHeight = bottomBarHeight,
                 state = sourcesPageState,
                 onboardingState = onboardingState,
+                alertsHeight = { alertsHeight.value },
                 onHeaderHeightChange = { pageHeaderHeights[MainPage.SOURCES] = it }
             )
 
@@ -384,8 +389,8 @@ fun HomeScreen(
                 isRefreshing = isRefreshing,
                 onRefresh = onRefresh,
                 modifier = Modifier.fillMaxSize(),
-                // Drawn out from under the header rather than the status bar, as the list is
-                indicatorTop = pageHeaderHeights[MainPage.APPS] ?: 0.dp
+                // Drawn out from under the header and the alerts rather than the status bar, as the list is
+                indicatorTop = { (pageHeaderHeights[MainPage.APPS] ?: 0.dp) + alertsHeight.value }
             ) {
                 SectionsLayout(
                     apps = HomeAppListUi(
@@ -477,6 +482,7 @@ fun HomeScreen(
                     state = sectionState,
                     bottomBarHeight = bottomBarHeight,
                     alerts = alerts,
+                    alertsHeight = { alertsHeight.value },
                     onboardingState = onboardingState,
                     onHeaderHeightChange = { pageHeaderHeights[MainPage.APPS] = it }
                 )

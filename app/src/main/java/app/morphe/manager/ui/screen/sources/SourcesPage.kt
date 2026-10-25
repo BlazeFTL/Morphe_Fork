@@ -76,6 +76,7 @@ private val SourceShimmerRows = (0 until 4).toList()
  * @param bottomBarHeight Height of the navigation floating over the page, which the list ends clear of.
  * @param state The panels docked under the list, held by the screen, whose navigation gives way to them.
  * @param onboardingState Set while the tour runs, which points into the first source.
+ * @param alertsHeight How far down the alerts reach under the header, which the list starts below.
  * @param onHeaderHeightChange Told the header's height, for the alerts floating over the page below it.
  */
 @Composable
@@ -84,6 +85,7 @@ fun SourcesPage(
     bottomBarHeight: Dp,
     state: SourcesPageState,
     onboardingState: OnboardingState? = null,
+    alertsHeight: () -> Dp = { 0.dp },
     onHeaderHeightChange: (Dp) -> Unit = {}
 ) {
     val scope = rememberCoroutineScope()
@@ -104,6 +106,7 @@ fun SourcesPage(
         bottomBarHeight = bottomBarHeight,
         state = state,
         onboardingState = onboardingState,
+        alertsHeight = alertsHeight,
         onHeaderHeightChange = onHeaderHeightChange,
         onAddSource = { homeViewModel.showAddSourceDialog = true },
         onDelete = { bundles -> scope.launch { repository.remove(*bundles.toTypedArray()) } },
@@ -139,6 +142,7 @@ private fun SourcesPageContent(
     bottomBarHeight: Dp,
     state: SourcesPageState,
     onboardingState: OnboardingState?,
+    alertsHeight: () -> Dp,
     onHeaderHeightChange: (Dp) -> Unit,
     onAddSource: () -> Unit,
     onDelete: (List<PatchBundleSource>) -> Unit,
@@ -428,8 +432,8 @@ private fun SourcesPageContent(
         // Bundle cards, running on under the header and the navigation floating over the page
         val listRowResizing = remember { ListRowResizing() }
         CompositionLocalProvider(LocalListRowResizing provides listRowResizing) {
-            // A row the tour turns to comes out from under the header and the navigation
-            ProvideBringIntoViewInsets(top = insets.top, bottom = listBottom) {
+            // A row the tour turns to comes out from under the header, the alerts and the navigation
+            ProvideBringIntoViewInsets(top = insets.top, bottom = listBottom, extraTop = alertsHeight) {
                 AppPullToRefreshBox(
                     // The cards show which sources are being updated, and the update says how it went
                     isRefreshing = false,
@@ -440,8 +444,8 @@ private fun SourcesPageContent(
                     // Selecting, reordering and the tour each hold the list still
                     enabled = !isLoadingSources && !state.isSelecting && !state.isReordering && !isTourRunning,
                     modifier = Modifier.fillMaxSize(),
-                    // Drawn out from under the header rather than the status bar, as the list is
-                    indicatorTop = insets.top
+                    // Drawn out from under the header and the alerts rather than the status bar, as the list is
+                    indicatorTop = { insets.top + alertsHeight() }
                 ) {
                     LazyColumn(
                         state = listState,
@@ -449,12 +453,14 @@ private fun SourcesPageContent(
                             .fillMaxSize()
                             .verticalScrollFade(listState),
                         verticalArrangement = Arrangement.spacedBy(Defaults.SpaceMedium),
-                        contentPadding = PaddingValues(
-                            start = insets.horizontal,
-                            top = insets.top + Defaults.SpaceMedium,
-                            end = insets.horizontal,
-                            bottom = listBottom + Defaults.SpaceLarge
-                        )
+                        contentPadding = remember(insets, listBottom, alertsHeight) {
+                            ListContentPadding(
+                                horizontal = insets.horizontal,
+                                top = insets.top + Defaults.SpaceMedium,
+                                bottom = listBottom + Defaults.SpaceLarge,
+                                extraTop = alertsHeight
+                            )
+                        }
                     ) {
                         if (isLoadingSources) {
                             items(SourceShimmerRows, key = { index -> "shimmer_$index" }) {

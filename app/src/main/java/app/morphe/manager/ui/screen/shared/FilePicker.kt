@@ -411,6 +411,7 @@ fun DialogHostScope.FilePicker(
         },
         hideFooterWhileTyping = true
     ) {
+        val barInsets = LocalDialogBarInsets.current
         AppPullToRefreshBox(
             // The listing shows its placeholders while it reads the folder again
             isRefreshing = false,
@@ -418,7 +419,7 @@ fun DialogHostScope.FilePicker(
             // The list of storages has nothing to read again
             enabled = currentDir != null,
             // Out from under the header, which floats over the list
-            indicatorTop = LocalDialogBarInsets.current.calculateTopPadding(),
+            indicatorTop = { barInsets.calculateTopPadding() },
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f)

@@ -32,12 +32,14 @@ import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Constraints
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
 import app.morphe.manager.R
@@ -162,12 +164,15 @@ fun rememberHomeAlerts(notifications: HomeNotificationsUi): HomeAlerts {
  *
  * @param showAlerts False on a page the alerts do not lead from, which shows only the progress of
  *   work under way. Their snoozes are kept for when they show again.
+ * @param onHeightChange Told how far down the cards reach as they come, go and unfold, for a page
+ *   that keeps its content clear of them.
  */
 @Composable
 fun NotificationsOverlay(
     alerts: HomeAlerts,
     modifier: Modifier = Modifier,
-    showAlerts: Boolean = true
+    showAlerts: Boolean = true,
+    onHeightChange: (Dp) -> Unit = {}
 ) {
     // Dragged open and shut by the finger, and eased there by the chip, so either way the stack
     // follows one state. Whether it stays open is kept across navigation and rotation
@@ -188,6 +193,9 @@ fun NotificationsOverlay(
 
     val stackCards = remember { StackCards() }
     val cards = stackCards.update(alerts.all, activeKeys)
+    val density = LocalDensity.current
+    // The lists' own gutter, so the cards line up with the rows they hang over
+    val gutter = rememberWindowSize().contentPadding
 
     Layout(
         contents = listOf(
@@ -198,6 +206,7 @@ fun NotificationsOverlay(
                         StackCardSlot(
                             card = card,
                             raised = card.key in activeKeys,
+                            gutter = gutter,
                             onSwiped = { alerts.snooze(card.alert) }
                         )
                     }
@@ -218,6 +227,7 @@ fun NotificationsOverlay(
             {
                 AlertStackControls(
                     stacked = stacked,
+                    gutter = gutter,
                     expanded = unfolding,
                     onToggleExpanded = { foldTo(if (unfolding) StackFold.Folded else StackFold.Unfolded) }
                 )
@@ -236,6 +246,10 @@ fun NotificationsOverlay(
                     animationSpec = Animations.defaultTween()
                 )
             )
+            // Short of the gap the strip keeps under its last card, which an empty strip still has
+            .onSizeChanged { size ->
+                onHeightChange(with(density) { (size.height - AlertSpacing.roundToPx()).coerceAtLeast(0).toDp() })
+            }
     ) { (cardMeasurables, peekMeasurables, controlMeasurables), constraints ->
         val loose = constraints.copy(minHeight = 0)
         val gap = AlertSpacing.roundToPx()
@@ -283,7 +297,7 @@ fun NotificationsOverlay(
         // and those past the last step wait out of sight behind it
         val step = StackPeekStep.toPx()
         val inset = StackPeekInset.toPx()
-        val sidePadding = Defaults.SpaceLarge.toPx()
+        val sidePadding = gutter.toPx()
         val leadBottom = foldedHeight - gap
         val peek = step * (depth - 1f).coerceIn(0f, StackPeekCount.toFloat()) * (1f - unfolded)
         val tops = IntArray(cards.size)
@@ -564,6 +578,7 @@ private fun alert(
 @Composable
 private fun AlertStackControls(
     stacked: Int,
+    gutter: Dp,
     expanded: Boolean,
     onToggleExpanded: () -> Unit,
     modifier: Modifier = Modifier
@@ -573,7 +588,7 @@ private fun AlertStackControls(
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = Defaults.SpaceLarge),
+            .padding(horizontal = gutter),
         horizontalArrangement = Arrangement.End
     ) {
         AnimatedRowPill(visible = stacked > 0, gap = AlertSpacing) {
@@ -747,9 +762,11 @@ private fun BundleUpdateCard(
 /**
  * One card of the stack, easing in while [raised] and out once it is not. While its alert allows,
  * it can be swiped off either side, reporting it through [onSwiped] once it is fully off.
+ *
+ * @param gutter Room each side of the card, which a swipe carries it past to leave the screen.
  */
 @Composable
-private fun StackCardSlot(card: StackCard, raised: Boolean, onSwiped: () -> Unit) {
+private fun StackCardSlot(card: StackCard, raised: Boolean, gutter: Dp, onSwiped: () -> Unit) {
     LaunchedEffect(raised) {
         // One brought back while still on its way out returns from wherever it got to
         if (raised) launch { card.swipe.animateTo(SwipeAnchor.Rest, Animations.defaultTween()) }
@@ -786,6 +803,7 @@ private fun StackCardSlot(card: StackCard, raised: Boolean, onSwiped: () -> Unit
                     animationSpec = Animations.defaultTween()
                 )
             )
+            .padding(horizontal = gutter)
     ) {
         card.alert.card()
     }
@@ -820,9 +838,7 @@ private fun StatusCard(
     Surface(
         onClick = onClick ?: {},
         enabled = onClick != null,
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = Defaults.SpaceLarge),
+        modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(Defaults.CornerLarge),
         color = containerColor,
         border = CardBorder.of(borderColor),

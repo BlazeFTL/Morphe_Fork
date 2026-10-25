@@ -13,10 +13,12 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 
 /**
  * Has a scrolling list that runs on under bars at its ends bring a focused row, such as a search
  * field, out from under them rather than up to the list's own edge, [top] and [bottom] in from it.
+ * [extraTop] adds what eases in under the top bar, such as the alerts, read as a row is brought in.
  *
  * Every scrolling container under it reads the insets, whichever way it scrolls, so one that is not
  * the list's own sets them aside: a dialog's window with [WithoutBringIntoViewInsets], a text field's
@@ -24,11 +26,16 @@ import androidx.compose.ui.unit.Dp
  */
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun ProvideBringIntoViewInsets(top: Dp, bottom: Dp, content: @Composable () -> Unit) {
+fun ProvideBringIntoViewInsets(
+    top: Dp,
+    bottom: Dp,
+    extraTop: () -> Dp = { 0.dp },
+    content: @Composable () -> Unit
+) {
     val density = LocalDensity.current
     val outer = withoutInsets(LocalBringIntoViewSpec.current)
-    val spec = remember(outer, top, bottom, density) {
-        InsetBringIntoViewSpec(outer, with(density) { top.toPx() }, with(density) { bottom.toPx() })
+    val spec = remember(outer, top, extraTop, bottom, density) {
+        InsetBringIntoViewSpec(outer, { with(density) { (top + extraTop()).toPx() } }, with(density) { bottom.toPx() })
     }
     CompositionLocalProvider(LocalBringIntoViewSpec provides spec, content = content)
 }
@@ -57,22 +64,21 @@ fun TextFieldLine(content: @Composable () -> Unit) {
     CompositionLocalProvider(LocalBringIntoViewSpec provides StayPutBringIntoViewSpec, content = content)
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 private object StayPutBringIntoViewSpec : BringIntoViewSpec {
     override fun calculateScrollDistance(offset: Float, size: Float, containerSize: Float): Float = 0f
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 private fun withoutInsets(spec: BringIntoViewSpec): BringIntoViewSpec =
     (spec as? InsetBringIntoViewSpec)?.outer ?: spec
 
 /** The scroll into view [outer] gives, measured within the part of the list the bars leave clear. */
-@OptIn(ExperimentalFoundationApi::class)
 private class InsetBringIntoViewSpec(
     val outer: BringIntoViewSpec,
-    private val top: Float,
+    private val top: () -> Float,
     private val bottom: Float
 ) : BringIntoViewSpec {
-    override fun calculateScrollDistance(offset: Float, size: Float, containerSize: Float): Float =
-        outer.calculateScrollDistance(offset - top, size, (containerSize - top - bottom).coerceAtLeast(size))
+    override fun calculateScrollDistance(offset: Float, size: Float, containerSize: Float): Float {
+        val top = top()
+        return outer.calculateScrollDistance(offset - top, size, (containerSize - top - bottom).coerceAtLeast(size))
+    }
 }
