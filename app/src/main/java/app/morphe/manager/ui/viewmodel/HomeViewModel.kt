@@ -483,7 +483,7 @@ class HomeViewModel(
         scope: SourceScope = SourceScope.Whole
     ) = viewModelScope.launch {
         val added = withContext(NonCancellable) {
-            patchBundleRepository.createRemotes(urls, autoUpdate = true, keptApps = scope.keptApps)
+            patchBundleRepository.createRemotes(urls, keptApps = scope.keptApps)
         }
         onSourcesAdded(added, chooseApps, scope)
     }

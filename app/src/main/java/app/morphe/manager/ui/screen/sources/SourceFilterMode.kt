@@ -19,7 +19,6 @@ enum class SourceFilterMode(
     ALL(R.string.all, R.string.sources_filter_all_description),
     ENABLED(R.string.enabled, R.string.sources_filter_enabled_description),
     DISABLED(R.string.disabled, R.string.sources_filter_disabled_description),
-    UPDATES(R.string.sources_filter_updates, R.string.sources_filter_updates_description),
     ISSUES(R.string.sources_filter_issues, R.string.sources_filter_issues_description);
 
     val isActive: Boolean get() = this != ALL
@@ -27,14 +26,12 @@ enum class SourceFilterMode(
     /**
      * @param blocked Whether the source is blocked, which leaves it unusable however it is set.
      * @param unreachable Whether its details could not be fetched.
-     * @param updatable Whether a newer version of it waits to be fetched.
      */
-    fun matches(source: PatchBundleSource, blocked: Boolean, unreachable: Boolean, updatable: Boolean): Boolean =
+    fun matches(source: PatchBundleSource, blocked: Boolean, unreachable: Boolean): Boolean =
         when (this) {
             ALL -> true
             ENABLED -> source.enabled && !blocked
             DISABLED -> !source.enabled
-            UPDATES -> updatable
             ISSUES -> blocked || unreachable || source.isHeldBack || source.requiresManagerUpdate ||
                     source.state is PatchBundleSource.State.Failed ||
                     source.state is PatchBundleSource.State.Missing

@@ -173,8 +173,6 @@
     <string name="sources_filter_all_description">Every source</string>
     <string name="sources_filter_enabled_description">Sources patches are taken from</string>
     <string name="sources_filter_disabled_description">Sources switched off</string>
-    <string name="sources_filter_updates">Updates</string>
-    <string name="sources_filter_updates_description">Sources with a newer version to get</string>
     <string name="sources_filter_issues">Need attention</string>
     <string name="sources_filter_issues_description">Sources that are blocked, failed to load or need a newer Morphe</string>
     <string name="sources_sort_manual">Manual order</string>
@@ -1442,7 +1440,6 @@ Details: %2$s"</string>
     <string name="expanded">Expanded</string>
     <string name="collapse">Collapse</string>
     <string name="collapsed">Collapsed</string>
-    <string name="available">Available</string>
     <string name="continue_">Continue</string>
     <string name="version">Version</string>
     <!-- Who made a patch source, as a field label -->

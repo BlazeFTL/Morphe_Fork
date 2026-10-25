@@ -119,6 +119,8 @@ data class BundleSnapshot(
     val name: String,
     val displayName: String? = null,
     val source: String,
+    // Every remote source updates on its own, so this is ignored on import. Still written, as
+    // older manager versions require it to read the file
     val autoUpdate: Boolean,
     val enabled: Boolean = true,
     val sortOrder: Int,

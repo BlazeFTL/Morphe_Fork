@@ -157,7 +157,6 @@ private fun SourcesPageContent(
     val bundleState by patchBundleRepository.bundleState.collectAsStateWithLifecycle()
     val isLoadingSources = bundleState is PatchBundleRepository.BundleState.Loading
     val patchCounts by patchBundleRepository.patchCountsFlow.collectAsStateWithLifecycle(emptyMap())
-    val manualUpdateInfo by patchBundleRepository.manualUpdateInfo.collectAsStateWithLifecycle(emptyMap())
     val activeUpdateUids by patchBundleRepository.activeUpdateUidsFlow.collectAsStateWithLifecycle(emptySet())
     val metadataFetchErrors by patchBundleRepository.metadataFetchErrors.collectAsStateWithLifecycle(emptyMap())
     val experimentalVersionsEnabled by prefs.bundleExperimentalVersionsEnabled.getAsState()
@@ -247,13 +246,12 @@ private fun SourcesPageContent(
             }
         }
     }
-    val filteredSources = remember(orderedSources, sourceFilter, blockedSources, metadataFetchErrors, manualUpdateInfo) {
+    val filteredSources = remember(orderedSources, sourceFilter, blockedSources, metadataFetchErrors) {
         orderedSources.filter { source ->
             sourceFilter.matches(
                 source = source,
                 blocked = source.uid in blockedSources,
-                unreachable = source.uid in metadataFetchErrors,
-                updatable = source.uid in manualUpdateInfo
+                unreachable = source.uid in metadataFetchErrors
             )
         }
     }
@@ -507,7 +505,6 @@ private fun SourcesPageContent(
                                         patchCount = patchCounts[bundle.uid] ?: 0,
                                         patchMatchCount = patchMatchCounts[bundle.uid],
                                         appCount = appCounts[bundle.uid] ?: SourceAppCount.NONE,
-                                        updateInfo = manualUpdateInfo[bundle.uid],
                                         isUpdating = bundle.uid in activeUpdateUids,
                                         metadataFetchError = metadataFetchErrors[bundle.uid],
                                         blockedInfo = blockedSources[bundle.uid],
@@ -523,11 +520,7 @@ private fun SourcesPageContent(
                                         },
                                         onOutdatedManagerClick = { bundleRequiringManagerUpdate = bundle },
                                         onOpenInBrowser = {
-                                            openUrl(
-                                                manualUpdateInfo[bundle.uid]?.pageUrl
-                                                    ?: (bundle as? RemotePatchBundle)?.browsePageUrl
-                                                    ?: SOURCE_REPO_URL
-                                            )
+                                            openUrl((bundle as? RemotePatchBundle)?.browsePageUrl ?: SOURCE_REPO_URL)
                                         },
                                         onReportIssue = {
                                             openUrl((bundle as? RemotePatchBundle)?.issuesPageUrl ?: SOURCE_REPO_URL)
@@ -749,7 +742,6 @@ private data class SourceCardInfo(
     /** Patches matching the page's search, or null while nothing is searched. */
     val patchMatchCount: Int?,
     val appCount: SourceAppCount,
-    val updateInfo: PatchBundleRepository.ManualBundleUpdateInfo?,
     val isUpdating: Boolean,
     val metadataFetchError: Throwable?,
     val blockedInfo: BlocklistRepository.BlockedEntry?,
@@ -875,9 +867,7 @@ private fun BundleManagementCard(
         ) {
             ProvideCardAccent(accentColor, cardColor) {
                 // Build content description
-                val updateLabel = stringResource(R.string.update)
-                val availableLabel = stringResource(R.string.available)
-                val contentDesc = remember(bundle.displayTitle, isEnabled, expanded, folds, info.updateInfo) {
+                val contentDesc = remember(bundle.displayTitle, isEnabled, expanded, folds) {
                     buildString {
                         append(bundle.displayTitle)
                         append(", ")
@@ -890,12 +880,6 @@ private fun BundleManagementCard(
                             append(", ")
                             append(if (expanded) expandedState else collapsedState)
                         }
-                        info.updateInfo?.let {
-                            append(", ")
-                            append(updateLabel)
-                            append(" ")
-                            append(availableLabel)
-                        }
                     }
                 }
 
@@ -903,7 +887,6 @@ private fun BundleManagementCard(
                     // Click target only on the header so expanded children stay independently focusable for screen readers
                     BundleCardHeader(
                         bundle = bundle,
-                        updateInfo = info.updateInfo,
                         expanded = expanded,
                         showChevron = !forceExpanded,
                         selected = isSelected.takeIf { isSelectionMode },
@@ -1218,7 +1201,6 @@ private fun BundleManagementCard(
 @Composable
 private fun BundleCardHeader(
     bundle: PatchBundleSource,
-    updateInfo: PatchBundleRepository.ManualBundleUpdateInfo?,
     expanded: Boolean,
     showChevron: Boolean,
     modifier: Modifier = Modifier,
@@ -1370,14 +1352,6 @@ private fun BundleCardHeader(
                     tone = SemanticTone.Neutral,
                     icon = MaterialSymbols.Rounded.Power_settings_new
                 )
-
-                // Update badge
-                if (updateInfo != null) {
-                    StatusBadge(
-                        text = stringResource(R.string.update),
-                        tone = SemanticTone.Warning
-                    )
-                }
             }
         }
 
