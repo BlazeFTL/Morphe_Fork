@@ -905,7 +905,7 @@ Tillägg påverkas inte: aktivera förhandsversioner av tillägg för varje käl
     <string name="settings_advanced_strip_unused_libs_description">Tar bort plattformsspecifika bibliotek och delade APK-moduler som inte används</string>
     <!-- Settings - Advanced Tab - GitHub PAT Settings -->
     <string name="settings_advanced_github_pat_summary">Låser upp möjligheten att använda pull-begäranden som källor och privata lagringsplatser</string>
-    <string name="settings_advanced_github_pat_description">För möjligheten att använda pull-begäranden som källor, privata lagringsplatser och en högre frekvensgräns för GitHub</string>
+    <string name="settings_advanced_github_pat_description">För pull-begäranden som källor, privata lagringsplatser och en högre frekvensgräns för GitHub</string>
     <string name="settings_advanced_github_pat_configured">Token konfigurerades</string>
     <string name="settings_advanced_github_pat_create">Skapa en token på GitHub</string>
     <!-- "%s" is the GitHub scope name, keep it as is -->
