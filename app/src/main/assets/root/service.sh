@@ -175,6 +175,43 @@ find_stock() {
   done
 }
 
+# Every UID but system_server's, so PackageManager keeps seeing the stock APK it verifies, also
+# after a framework restart, which leaves a redirect without a watcher
+nomount_scope="--uid-range all --uid-excluded 1000-1000"
+redirected=0
+
+# Finds the NoMount CLI whose driver is loaded and speaks the protocol of the UID scoped rules.
+# It prints the protocol and build count, such as "22 (605)".
+find_nomount() {
+  nm_bin=""
+  for nm in /data/adb/modules/nomount/bin/nm /data/adb/ksu/bin/nm /data/adb/ap/bin/nm; do
+    [ -x "$nm" ] || continue
+    protocol="$("$nm" version 2>/dev/null)" || continue
+    if [ "${protocol%% *}" -ge 22 ] 2>/dev/null; then
+      nm_bin="$nm"
+      return 0
+    fi
+  done
+  return 1
+}
+
+# Redirects the stock path to the patched APK in the kernel, which no mount table shows and no
+# root manager unmounts from an app. The stock APK post-fs-data may have mounted is lifted first.
+redirect_patched() {
+  find_nomount || return 1
+  unmount_from_zygote_namespaces
+  lift_layers /proc/self/mountinfo umount -l "$stock_path"
+  # A rule is only deleted under the UID scope it was added with, so the unscoped one other root
+  # installs add for the same path goes too
+  "$nm_bin" rule del $nomount_scope "$stock_path" 2>/dev/null
+  "$nm_bin" rule del "$stock_path" 2>/dev/null
+  if ! "$nm_bin" rule add $nomount_scope "$stock_path" "$base_path" 2>> "$log"; then
+    log_msg "NoMount redirect failed, bind mounting instead"
+    return 1
+  fi
+  log_msg "Redirected with NoMount"
+}
+
 mount_patched() {
   log_msg "base_path: $base_path"
   log_msg "stock_path: $stock_path"
@@ -200,9 +237,14 @@ mount_patched() {
     not_mounted "the patched APK is missing"
   fi
 
-  # Set the correct SELinux context and bind-mount the patched APK over the stock one.
+  # Set the correct SELinux context and redirect or bind-mount the patched APK over the stock one.
   if ! chcon u:object_r:apk_data_file:s0 "$base_path" 2>> "$log"; then
     log_msg "Failed to set SELinux context"
+  fi
+  if redirect_patched; then
+    redirected=1
+    set_status "Redirected the patched v$version with NoMount at boot"
+    return
   fi
   unmount_from_zygote_namespaces
   lift_layers /proc/self/mountinfo umount -l "$stock_path"
@@ -279,4 +321,9 @@ awk -v pkg="$package_name" '$2 ~ ("/" pkg "[/-]") && $2 ~ /\.apk$/ { print $2 }'
 
 find_stock
 mount_patched
+
+if [ "$redirected" = 1 ]; then
+  stop_other_watchers
+  exit 0
+fi
 watch_framework_restarts
