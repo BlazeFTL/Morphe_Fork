@@ -111,7 +111,7 @@
     </plurals>
     <plurals name="batch_mount_summary">
         <item quantity="one">Gléasadh %s aip</item>
-        <item quantity="two">Gléasadh %s aip</item>
+        <item quantity="two">Aip %s feistithe</item>
         <item quantity="few">Gléasadh %s aip</item>
         <item quantity="many">Gléasadh %s n-aip</item>
         <item quantity="other">Gléasadh %s aip</item>

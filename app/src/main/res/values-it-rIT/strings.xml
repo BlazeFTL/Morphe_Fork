@@ -8,6 +8,9 @@
     <string name="home_unpatched_badge">Non modificato</string>
     <string name="home_no_patches_available">Nessuna modifica disponibile</string>
     <string name="home_app_hide_title">Nascondere questa app?</string>
+    <string name="home_more_apps_title">Altre applicazioni</string>
+    <string name="home_more_apps_hide_title">Nascondere questa scheda?</string>
+    <string name="home_more_apps_hide_message">Puoi ripristinarlo in qualsiasi momento in Impostazioni &gt; Aspetto &gt; Schermata home</string>
     <string name="home_app_hide_message">Questa app verrà nascosta dalla schermata iniziale. Puoi ripristinarla in seguito dalle app nascoste utilizzando il pulsante in fondo all\'elenco</string>
     <string name="home_app_will_be_hidden">Questa applicazione verrà nascosta</string>
     <string name="home_app_hidden_named">%s nascoste</string>
@@ -31,6 +34,9 @@
     <string name="deep_link_add_source_only_universal">Sono aggiunti solo gli universal patch. Puoi aggiungere app dall\'elenco delle app della fonte</string>
     <!-- Asked when the link names an app of a source that is already added -->
     <string name="deep_link_add_source_app_back">Questa origine è già stata aggiunta. Vuoi aggiungere questa app dall\'origine esistente?</string>
+    <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">Questa è una nuova versione di %s. Vuoi aggiornarla?</string>
+    <string name="mpp_import_unreadable">Questo file non può essere letto</string>
     <!-- Home Screen - Update Notifications -->
     <string name="home_update_available">Aggiornamento di Morphe disponibile</string>
     <string name="home_update_available_subtitle">Nuova versione pronta per l\'installazione</string>
@@ -163,8 +169,6 @@
     <string name="sources_filter_all_description">Ogni origine</string>
     <string name="sources_filter_enabled_description">Le patch delle origini sono prese da</string>
     <string name="sources_filter_disabled_description">Origini disattivate</string>
-    <string name="sources_filter_updates">Aggiorna</string>
-    <string name="sources_filter_updates_description">Fonti con una versione più recente da ottenere</string>
     <string name="sources_filter_issues">Richiedono attenzione</string>
     <string name="sources_filter_issues_description">Fonti bloccate, non riuscito a caricare o che richiedono Morphe più recente</string>
     <string name="sources_sort_manual">Ordine manuale</string>
@@ -193,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Abilitare le patch pre-release?</string>
     <string name="sources_prerelease_warning_message">Le build pre-release sono ancora in sviluppo. Le patch potrebbero fallire o danneggiare l\'app e le funzionalità possono cambiare senza preavviso.</string>
     <string name="expert_mode_prerelease_notice">Questa sorgente è su pre-release. L\'installazione delle patch potrebbe fallire o comportarsi in modo imprevisto.</string>
+    <string name="expert_mode_experimental_version_notice">Questa sorgente ha solo un supporto sperimentale per questa versione dell\'app. Le sue patch potrebbero essere instabili o incomplete</string>
     <string name="sources_management_experimental_versions_toggle">Versioni sperimentali delle app</string>
     <string name="sources_management_experimental_versions_toggle_description">Mostra e applica patch ai target di app sperimentali</string>
     <string name="sources_management_already_exists">Questa fonte è già stata aggiunta</string>
@@ -235,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Scegli quali delle sue app tenere una volta che la fonte è stata caricata.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Sorgenti di patch di terze parti</string>
-    <string name="sources_dialog_community_notice_message">"Le sorgenti di patch della community sono mantenute dai rispettivi autori. Morphe non esamina né verifica le patch di terze parti e non è responsabile del loro contenuto o di ciò che fanno sul tuo dispositivo.
-
-Tutto ciò che aggiungi da questo sito viene utilizzato a tuo rischio."</string>
+    <string name="sources_dialog_community_notice_message">"Le sorgenti delle patch della community sono create e mantenute dai rispettivi autori. Morphe non revisiona né verifica le patch di terze parti e non è responsabile del loro contenuto o di ciò che fanno sul tuo dispositivo"</string>
     <string name="sources_update_success">Aggiornamento riuscito</string>
     <string name="sources_update_unavailable">Nessun aggiornamento disponibile</string>
     <string name="sources_download_fail">Impossibile scaricare le fonti: %s</string>
@@ -702,6 +705,7 @@ La disinstallazione cancellerà definitivamente tutti i dati dell'app."</string>
     <string name="patched_app_save_failed_toast">Impossibile salvare l\'app modificata</string>
     <string name="plugin_activity_dialog_body">È richiesta l\'interazione dell\'utente per procedere con questo plugin</string>
     <string name="patcher_process_killed_message">Il sistema ha interrotto il patcher prima del termine, solitamente per liberare memoria. Chiudi altre app e riprova</string>
+    <string name="patcher_process_crashed_message">Il patcher è crashato prima di aver terminato. Se succede di nuovo, disattiva \"Usa VM integrata\" nelle impostazioni e segnala il problema inviando il log</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Il patcher ha esaurito la memoria con un heap di %1$s MB. Questa app è troppo grande per le patch selezionate. Prova a eseguire la patch con meno origini di patch o seleziona meno patch</string>
     <string name="install_app_success">Installato correttamente</string>
@@ -803,6 +807,8 @@ La disinstallazione cancellerà definitivamente tutti i dati dell'app."</string>
     <string name="settings_appearance_greeting_phrases_subtitle">Mostra un messaggio di saluto</string>
     <string name="settings_appearance_repatch_notice">Avviso di re-patch</string>
     <string name="settings_appearance_repatch_notice_description">Mostra un banner quando le applicazioni modificate possono essere rimodificate</string>
+    <string name="settings_appearance_more_apps_card">Scheda Altre applicazioni</string>
+    <string name="settings_appearance_more_apps_card_description">Mostra una scheda sotto le app che conduce alle patch della community</string>
     <string name="settings_appearance_app_card_colors">Colori delle schede app</string>
     <string name="settings_appearance_app_card_colors_default">Predefinita</string>
     <string name="settings_appearance_app_card_colors_default_description">Assegna a ciascuna app il colore del proprio bundle</string>
@@ -867,7 +873,7 @@ Le patch non sono interessate: abilita le patch pre-release per ciascuna fonte n
     <string name="settings_advanced_update_interval_daily">Quotidiano</string>
     <string name="settings_advanced_update_interval_weekly">Settimanale</string>
     <string name="settings_advanced_update_interval_monthly">Mensile</string>
-    <string name="settings_advanced_update_interval_battery_warning">I controlli in background potrebbero non funzionare in maniera affidabile su alcuni dispositivi. I produttori come Xiaomi, Huawei, Samsung e OnePlus spesso limitano in modo aggressivo i processi in background per risparmiare batteria</string>
+    <string name="settings_advanced_update_interval_battery_warning">I controlli in background potrebbero non funzionare in modo affidabile su dispositivi che limitano le app in background, come Xiaomi, Huawei, Samsung e OnePlus</string>
     <string name="settings_advanced_external_batch_patch">Consenti trigger esterni</string>
     <string name="settings_advanced_external_batch_patch_description">Permette alle app di automazione di avviare il patch in batch</string>
     <string name="external_batch_patch_title">Avvia la modifica in batch?</string>
@@ -929,7 +935,7 @@ Le patch non sono interessate: abilita le patch pre-release per ciascuna fonte n
     <string name="settings_advanced_patch_options_custom_branding_app_name_hint">Inserisci il nome dell\'app personalizzato</string>
     <string name="settings_advanced_patch_options_path_gone">Non è più possibile leggere questa cartella. Selezionala di nuovo o rimuovila; in caso contrario, la procedura di patching si interromperà richiedendo un intervento</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon">Icona dell\'app</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">L\'icona con cui l\'applicazione è stata modificata. Viene anche usata dove l\'applicazione non può cambiarla in seguito, come su Android Auto e sulla lista delle applicazioni nelle impostazioni di sistema</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">L\'icona con cui l\'app viene patchata, utilizzata anche dove non può essere modificata in seguito, come in Android Auto</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">L\'icona personalizzata dell\'app richiede una cartella contenente le immagini dell\'icona</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon">Icona personalizzata</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"Cartella con immagini da utilizzare come icona personalizzata.
@@ -1037,7 +1043,7 @@ Le dimensioni delle immagini devono essere le seguenti:
     <string name="settings_auto_uninstall_with_shizuku">Disinstalla automaticamente in caso di conflitto</string>
     <string name="settings_auto_uninstall_with_shizuku_description">Disinstalla l\'app esistente in caso di conflitto di firme. Questo può rimuovere i dati dell\'app</string>
     <string name="settings_ignore_install_target_rules">Ignora i requisiti del target di installazione</string>
-    <string name="settings_ignore_install_target_rules_description">Consente di disattivare i requisiti del target di installazione richiesti e di attivare quelli che ne sono esclusi. L\'app modificata potrebbe non funzionare</string>
+    <string name="settings_ignore_install_target_rules_description">Consente di disattivare le patch richieste dal target di installazione e di attivare quelle da esso escluse. L\'app patchata potrebbe non funzionare</string>
     <string name="settings_auto_uninstall_warning_title">Abilita la disinstallazione automatica?</string>
     <string name="settings_auto_uninstall_warning_message">Se Android segnala un conflitto di firma durante l\'installazione automatica con Shizuku, Morphe disinstallerà l\'app esistente prima di installare l\'APK modificato.</string>
     <string name="settings_auto_uninstall_warning_risk">Questo può rimuovere i dati dell\'app. Se l\'APK modificato non viene installato dopo la disinstallazione, l\'app precedente potrebbe essere già stata rimossa.</string>
@@ -1068,7 +1074,7 @@ Dettagli: %2$s"</string>
     <string name="settings_system_battery_optimization_description">Mantiene il patcher in esecuzione quando l\'app è minimizzata</string>
     <string name="settings_system_process_runtime">Runtime del patcher</string>
     <string name="settings_system_jvm_runtime_enable">Utilizza VM integrata</string>
-    <string name="settings_system_jvm_runtime_description">Patch in una JVM che Morphe trasporta, che può utilizzare tutta la memoria disponibile dal dispositivo. Disattivare per applicare le patch con il runtime di Android</string>
+    <string name="settings_system_jvm_runtime_description">Patch nella VM Java di Morphe, che può utilizzare più memoria. Disattiva per utilizzare il runtime di Android</string>
     <string name="settings_system_jvm_runtime_unavailable">Richiede un dispositivo con processore ARM oppure un processore x86 a 64 bit.</string>
     <string name="settings_system_patcher_completion_sound">Suono di completamento</string>
     <string name="settings_system_patcher_completion_sound_description">Riproduce un tono specifico per successo o fallimento al termine dell\'applicazione della patch</string>
@@ -1217,6 +1223,8 @@ Dettagli: %2$s"</string>
     <string name="settings_system_apk_download_helper_warning">L\'APK proviene dall\'app helper, quindi fidati solo di app che conosci. Morphe controlla comunque il pacchetto, la versione e la firma di ogni file prima della patch.</string>
     <string name="settings_system_apk_download_helper_installed_by">Installata da %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Installer sconosciuto</string>
+    <string name="settings_system_apk_download_helper_open_directly">Apri subito l\'assistente</string>
+    <string name="settings_system_apk_download_helper_open_directly_description">Salta le istruzioni per il download e apre l\'assistente attendibile</string>
     <!-- File Picker -->
     <string name="file_picker_no_files">Nessun file qui</string>
     <string name="file_picker_read_error">Impossibile leggere questa directory</string>
@@ -1344,7 +1352,6 @@ Dettagli: %2$s"</string>
     <string name="expanded">Ampliato</string>
     <string name="collapse">Riduci</string>
     <string name="collapsed">Ridotto</string>
-    <string name="available">Disponibile</string>
     <string name="continue_">Continua</string>
     <string name="version">Versione</string>
     <!-- Who made a patch source, as a field label -->

@@ -8,6 +8,9 @@
     <string name="home_unpatched_badge">Inte modifierad</string>
     <string name="home_no_patches_available">Inga tillägg är tillgängliga</string>
     <string name="home_app_hide_title">Dölj den här appen?</string>
+    <string name="home_more_apps_title">Fler appar</string>
+    <string name="home_more_apps_hide_title">Dölj det här kortet?</string>
+    <string name="home_more_apps_hide_message">Du kan återställa det när som helst i Inställningar &gt; Utseende &gt; Startskärm</string>
     <string name="home_app_hide_message">Den här appen döljs från startskärmen. Du kan återställa den senare från de dolda apparna med knappen längst ned i listan</string>
     <string name="home_app_will_be_hidden">Den här appen döljs</string>
     <string name="home_app_hidden_named">%s har dolts</string>
@@ -31,6 +34,9 @@
     <string name="deep_link_add_source_only_universal">Endast de universella tilläggen har lagts till. Du kan lägga till appar från källans applista</string>
     <!-- Asked when the link names an app of a source that is already added -->
     <string name="deep_link_add_source_app_back">Den här källan har redan lagts till. Vill du lägga till den här appen från den befintliga källan?</string>
+    <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">Detta är en ny version av %s. Vill du uppdatera den?</string>
+    <string name="mpp_import_unreadable">Den här filen kan inte läsas</string>
     <!-- Home Screen - Update Notifications -->
     <string name="home_update_available">Uppdatering för Morphe är tillgänglig</string>
     <string name="home_update_available_subtitle">Ny version är redo att installeras</string>
@@ -163,8 +169,6 @@
     <string name="sources_filter_all_description">Alla källor</string>
     <string name="sources_filter_enabled_description">Källor som tillägg hämtas från</string>
     <string name="sources_filter_disabled_description">Inaktiverade källor</string>
-    <string name="sources_filter_updates">Uppdateringar</string>
-    <string name="sources_filter_updates_description">Källor med en nyare version som kan hämtas</string>
     <string name="sources_filter_issues">Åtgärd krävs</string>
     <string name="sources_filter_issues_description">Källor som har blockerats, inte gick att läsa in eller behöver en nyare version av Morphe</string>
     <string name="sources_sort_manual">Manuell ordning</string>
@@ -193,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Aktivera förhandsversioner av tillägg?</string>
     <string name="sources_prerelease_warning_message">Förhandsversioner är fortfarande under utveckling. Tilläggen kan misslyckas eller få appen att sluta fungera, och funktioner kan ändras utan förvarning</string>
     <string name="expert_mode_prerelease_notice">Den här källan använder förhandsversioner av tillägg. Modifiering kan misslyckas eller bete sig på oväntade sätt</string>
+    <string name="expert_mode_experimental_version_notice">Den här källan har endast experimentellt stöd för den här appversionen. Dess patchar kan vara instabila eller ofullständiga</string>
     <string name="sources_management_experimental_versions_toggle">Experimentella appversioner</string>
     <string name="sources_management_experimental_versions_toggle_description">Visar och modifierar experimentella appmål</string>
     <string name="sources_management_already_exists">Den här källan har redan lagts till</string>
@@ -235,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Välj vilka av dess appar som du vill behålla när källan har lästs in</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Tilläggskällor från tredje part</string>
-    <string name="sources_dialog_community_notice_message">"Tilläggskällor från communityn skapas och underhålls av sina egna upphovspersoner. Morphe varken granskar eller verifierar tillägg från tredje part och är inte ansvarig för deras innehåll eller vad de gör på din enhet.
-
-Allt du lägger till från den här webbplatsen används på egen risk"</string>
+    <string name="sources_dialog_community_notice_message">"Tilläggskällor från communityn skapas och underhålls av sina egna upphovspersoner. Morphe varken granskar eller verifierar tillägg från tredje part och är inte ansvarig för deras innehåll eller vad de gör på din enhet"</string>
     <string name="sources_update_success">Uppdateringen lyckades</string>
     <string name="sources_update_unavailable">Ingen uppdatering är tillgänglig</string>
     <string name="sources_download_fail">Det gick inte att ladda ned källor: %s</string>
@@ -702,6 +705,7 @@ Om du avinstallerar raderas alla appdata permanent"</string>
     <string name="patched_app_save_failed_toast">Det gick inte att spara den modifierade appen</string>
     <string name="plugin_activity_dialog_body">Användarinteraktion krävs för att fortsätta med den här insticksmodulen</string>
     <string name="patcher_process_killed_message">Systemet stoppade patchern innan den var klar, oftast för att frigöra minne. Stäng andra appar och försök igen</string>
+    <string name="patcher_process_crashed_message">Patchern kraschade innan den var klar. Om det händer igen, stäng av \"Använd inbäddad VM\" i inställningarna och rapportera problemet med loggen</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Patcheren slutade ha minne med en %1$s MB heap. Appen är för stor för de valda patcharna. Försök att patcha med färre patchkällor, eller välj färre patchar</string>
     <string name="install_app_success">Installationen lyckades</string>
@@ -769,7 +773,7 @@ Om du avinstallerar raderas alla appdata permanent"</string>
     <string name="settings_appearance_seasonal_themes">Säsongsteman</string>
     <string name="settings_appearance_seasonal_themes_description">Festliga bakgrunder och hälsningar under högtider</string>
     <!-- %1$s is a holiday background name, such as Halloween. %2$s is a date, such as November 1 -->
-    <string name="settings_appearance_seasonal_background_notice">Bakgrunden %1$s är aktiv fram till %2$s medan säsongsteman är aktiverade</string>
+    <string name="settings_appearance_seasonal_background_notice">Bakgrunden %1$s är aktiverad fram till %2$s medan säsongsteman är aktiverade</string>
     <!-- Settings - Appearance Tab - Theme -->
     <string name="settings_appearance_display">Visning</string>
     <string name="settings_appearance_effects">Effekter</string>
@@ -803,6 +807,8 @@ Om du avinstallerar raderas alla appdata permanent"</string>
     <string name="settings_appearance_greeting_phrases_subtitle">Visar ett hälsningsmeddelande</string>
     <string name="settings_appearance_repatch_notice">Meddelande om att modifiera igen</string>
     <string name="settings_appearance_repatch_notice_description">Visa en banner när modifierade appar kan modifieras igen</string>
+    <string name="settings_appearance_more_apps_card">Kortet Fler appar</string>
+    <string name="settings_appearance_more_apps_card_description">Visar ett kort under apparna som leder till tillägg från communityn</string>
     <string name="settings_appearance_app_card_colors">Färger för appkort</string>
     <string name="settings_appearance_app_card_colors_default">Standard</string>
     <string name="settings_appearance_app_card_colors_default_description">Ge varje app sitt eget pakets färg</string>
@@ -867,7 +873,7 @@ Tillägg påverkas inte: aktivera förhandsversioner av tillägg för varje käl
     <string name="settings_advanced_update_interval_daily">Varje dag</string>
     <string name="settings_advanced_update_interval_weekly">Varje vecka</string>
     <string name="settings_advanced_update_interval_monthly">Varje månad</string>
-    <string name="settings_advanced_update_interval_battery_warning">Kontroller i bakgrunden kanske inte fungerar tillförlitligt på vissa enheter. Tillverkare som Xiaomi, Huawei, Samsung och OnePlus begränsar ofta bakgrundsprocesser aggressivt för att spara batteri</string>
+    <string name="settings_advanced_update_interval_battery_warning">Bakgrundskontroller kanske inte körs tillförlitligt på enheter som begränsar bakgrundsappar, såsom Xiaomi, Huawei, Samsung och OnePlus</string>
     <string name="settings_advanced_external_batch_patch">Tillåt externa utlösare</string>
     <string name="settings_advanced_external_batch_patch_description">Låter automatiseringsappar starta gruppmodifiering</string>
     <string name="external_batch_patch_title">Starta gruppmodifiering?</string>
@@ -899,7 +905,7 @@ Tillägg påverkas inte: aktivera förhandsversioner av tillägg för varje käl
     <string name="settings_advanced_strip_unused_libs_description">Tar bort plattformsspecifika bibliotek och delade APK-moduler som inte används</string>
     <!-- Settings - Advanced Tab - GitHub PAT Settings -->
     <string name="settings_advanced_github_pat_summary">Låser upp möjligheten att använda pull-begäranden som källor och privata lagringsplatser</string>
-    <string name="settings_advanced_github_pat_description">För möjligheten att använda pull-begäranden som källor, privata lagringsplatser och en högre frekvensgräns för GitHub</string>
+    <string name="settings_advanced_github_pat_description">För pull-begäranden som källor, privata lagringsplatser och en högre frekvensgräns för GitHub</string>
     <string name="settings_advanced_github_pat_configured">Token konfigurerades</string>
     <string name="settings_advanced_github_pat_create">Skapa en token på GitHub</string>
     <!-- "%s" is the GitHub scope name, keep it as is -->
@@ -929,7 +935,7 @@ Tillägg påverkas inte: aktivera förhandsversioner av tillägg för varje käl
     <string name="settings_advanced_patch_options_custom_branding_app_name_hint">Ange anpassat namn</string>
     <string name="settings_advanced_patch_options_path_gone">Det går inte längre att läsa den här mappen. Välj den igen eller rensa den, annars avbryts modifieringen för att fråga dig om den</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon">Appikon</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">Ikonen som appen modifieras med. Den används även på ställen där appen inte kan ändra den senare, som i Android Auto och i applistan i systeminställningarna</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">Ikonen som appen patchas med, används även där den inte kan ändras senare, såsom Android Auto</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">Den anpassade appikonen behöver en mapp med ikonbilder</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon">Anpassad ikon</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"Mapp med bilder som ska användas som anpassad ikon.
@@ -1068,7 +1074,7 @@ Information: %2$s"</string>
     <string name="settings_system_battery_optimization_description">Låter modifieringsverktyget fortsätta köras när appen minimeras</string>
     <string name="settings_system_process_runtime">Patcher-tidskörning</string>
     <string name="settings_system_jvm_runtime_enable">Använd inbäddad VM</string>
-    <string name="settings_system_jvm_runtime_description">Patchar i en Java-VM som Morphe kör, vilket kan använda lika mycket minne som enheten har tillgängligt. Stäng av för att patcha med Androids tidskörning</string>
+    <string name="settings_system_jvm_runtime_description">Patchar in Morphes egen Java VM, vilket kan använda mer minne. Inaktivera för att använda Androids runtime</string>
     <string name="settings_system_jvm_runtime_unavailable">Kräver en ARM- eller 64-bitars x86-enhet</string>
     <string name="settings_system_patcher_completion_sound">Ljud för slutförande</string>
     <string name="settings_system_patcher_completion_sound_description">Spelar upp en distinkt ton för att indikera om modifieringen har lyckats eller misslyckats när den är klar</string>
@@ -1217,6 +1223,8 @@ Information: %2$s"</string>
     <string name="settings_system_apk_download_helper_warning">APK-filen kommer från hjälpappen, så lita bara på appar som du känner till. Morphe kontrollerar fortfarande paketet, versionen och signaturen för varje fil före modifieringen</string>
     <string name="settings_system_apk_download_helper_installed_by">Installerad av %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Okänd installerare</string>
+    <string name="settings_system_apk_download_helper_open_directly">Öppna hjälpredskap direkt</string>
+    <string name="settings_system_apk_download_helper_open_directly_description">Hoppar över nedladdningsinstruktionerna och öppnar den betrodda hjälpredigeraren</string>
     <!-- File Picker -->
     <string name="file_picker_no_files">Inga filer här</string>
     <string name="file_picker_read_error">Det går inte att läsa den här katalogen</string>
@@ -1344,7 +1352,6 @@ Information: %2$s"</string>
     <string name="expanded">Expanderad</string>
     <string name="collapse">Komprimera</string>
     <string name="collapsed">Komprimerad</string>
-    <string name="available">Tillgänglig</string>
     <string name="continue_">Fortsätt</string>
     <string name="version">Version</string>
     <!-- Who made a patch source, as a field label -->

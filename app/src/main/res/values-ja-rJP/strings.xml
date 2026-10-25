@@ -8,6 +8,9 @@
     <string name="home_unpatched_badge">未パッチ</string>
     <string name="home_no_patches_available">利用可能なパッチはありません</string>
     <string name="home_app_hide_title">このアプリを非表示にしますか？</string>
+    <string name="home_more_apps_title">その他のアプリ</string>
+    <string name="home_more_apps_hide_title">このカードを非表示にしますか？</string>
+    <string name="home_more_apps_hide_message">[設定] &gt; [外観] &gt; [ホーム画面] からいつでも戻せます</string>
     <string name="home_app_hide_message">このアプリはホーム画面から非表示になります。リスト下部のボタンから再表示できます</string>
     <string name="home_app_will_be_hidden">このアプリは非表示になります</string>
     <string name="home_app_hidden_named">%s 個非表示</string>
@@ -31,6 +34,9 @@
     <string name="deep_link_add_source_only_universal">ユニバーサル パッチのみが追加されます。ソースのアプリ一覧からアプリを追加することができます</string>
     <!-- Asked when the link names an app of a source that is already added -->
     <string name="deep_link_add_source_app_back">このソースは既に追加されています。既存のソースからこのアプリを追加しますか？</string>
+    <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">これは %s の新しいバージョンです。更新しますか？</string>
+    <string name="mpp_import_unreadable">このファイルを読み込めません</string>
     <!-- Home Screen - Update Notifications -->
     <string name="home_update_available">Morphe の更新が利用可能です</string>
     <string name="home_update_available_subtitle">新しいバージョンがインストール可能です</string>
@@ -163,8 +169,6 @@
     <string name="sources_filter_all_description">すべてのソース</string>
     <string name="sources_filter_enabled_description">パッチの取得元となるソース</string>
     <string name="sources_filter_disabled_description">無効にしたソース</string>
-    <string name="sources_filter_updates">アップデート</string>
-    <string name="sources_filter_updates_description">更新版を取得できるソース</string>
     <string name="sources_filter_issues">要確認</string>
     <string name="sources_filter_issues_description">ブロックされている、読み込みに失敗した、または新しいバージョンの Morphe が必要なソース</string>
     <string name="sources_sort_manual">手動</string>
@@ -189,12 +193,13 @@
     <!-- Under the Bring new apps switch in a source's app list, whichever way it is set. "It" is the patch source -->
     <string name="sources_apps_new_apps_description">後で追加されるアプリはホーム画面に表示されます</string>
     <string name="sources_management_prerelease_toggle">プレリリース版のパッチを使用</string>
-    <string name="sources_management_prerelease_toggle_description">実験的なバージョンのパッチを取得します</string>
+    <string name="sources_management_prerelease_toggle_description">試験的なバージョンのパッチを取得します</string>
     <string name="sources_prerelease_warning_title">プレリリース版パッチを有効にしますか？</string>
     <string name="sources_prerelease_warning_message">プレリリース版は現在開発中です。パッチに失敗したり、アプリが正常に動作しなくなったりする可能性があります。また、予告なく機能が変更される場合があります</string>
     <string name="expert_mode_prerelease_notice">このソースはプレリリース版パッチを使用しています。パッチ適用が失敗したり、予期しない動作が発生したりする可能性があります</string>
-    <string name="sources_management_experimental_versions_toggle">実験的なバージョンのアプリを使用</string>
-    <string name="sources_management_experimental_versions_toggle_description">実験的なアプリをパッチ対象として表示します</string>
+    <string name="expert_mode_experimental_version_notice">このアプリのバージョンは、このソースでは試験的にのみサポートされています。パッチが不安定であったり、不完全な場合があります</string>
+    <string name="sources_management_experimental_versions_toggle">試験的なバージョンのアプリを使用</string>
+    <string name="sources_management_experimental_versions_toggle_description">試験的なパッチ対象アプリを表示し、パッチを適用できるようにします</string>
     <string name="sources_management_already_exists">このソースは既に存在します</string>
     <string name="sources_management_invalid_url">無効なソース URL です。アドレスを確認してもう一度お試しください</string>
     <string name="sources_management_blocked">このパッチソースはブロックされており、追加できません</string>
@@ -232,12 +237,10 @@
     <string name="sources_dialog_url_invalid">URL は GitHub または GitLab のリポジトリ、もしくは .json ファイルを指している必要があります</string>
     <string name="sources_dialog_preinstalled">プリインストール</string>
     <string name="sources_dialog_community">コミュニティ パッチ</string>
-    <string name="sources_dialog_choose_apps_description">ソースの読み込み後、パッチ対象にするアプリを選択します</string>
+    <string name="sources_dialog_choose_apps_description">ソースの読み込み後、パッチ対象にするアプリを選択する</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">サードパーティのパッチソース</string>
-    <string name="sources_dialog_community_notice_message">"コミュニティのパッチソースは、それぞれの作者によって作成・管理されています。Morphe は、サードパーティー製のパッチの内容を審査・検証しておらず、その内容や、お使いのデバイスに及ぼす影響について一切の責任を負いません。
-
-このウェブサイトから追加したものは、すべて自己責任で使用してください"</string>
+    <string name="sources_dialog_community_notice_message">"コミュニティのパッチソースは、それぞれの作者によって作成・管理されています。Morphe は、サードパーティー製のパッチを審査・検証しておらず、その内容や、お使いのデバイスに及ぼす影響について一切の責任を負いません"</string>
     <string name="sources_update_success">更新成功</string>
     <string name="sources_update_unavailable">利用可能な更新はありません</string>
     <string name="sources_download_fail">ソースのダウンロードに失敗しました: %s</string>
@@ -361,10 +364,10 @@
 
 このアプリのパッチには、&lt;b&gt;フル APK&lt;/b&gt; を使用することをお勧めします"</string>
     <string name="home_split_apk_warning_pick_another">別の APK を選択してください</string>
-    <string name="home_dialog_unsupported_version_experimental_label">実験的</string>
-    <string name="home_dialog_unsupported_version_experimental_description">このバージョンは実験的な機能を含んでおり、不安定または不完全である可能性があります</string>
+    <string name="home_dialog_unsupported_version_experimental_label">試験的</string>
+    <string name="home_dialog_unsupported_version_experimental_description">このバージョンは試験的な機能を含んでおり、不安定または不完全である可能性があります</string>
     <string name="morphe_experimental_app_version_dialog_title">試してみますか？ 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">このバージョンの &lt;b&gt;%s&lt;/b&gt; は、初期段階の実験的なサポートのみとなっています&lt;br/&gt;&lt;br/&gt;🔧 パッチはまだ最適化中のため、アプリの動作が不安定になったり、予期しない不具合が発生する可能性があります</string>
+    <string name="morphe_experimental_app_version_dialog_message">このバージョンの &lt;b&gt;%s&lt;/b&gt; は、初期段階の試験的なサポートのみとなっています&lt;br/&gt;&lt;br/&gt;🔧 パッチはまだ最適化中のため、アプリの動作が不安定になったり、予期しない不具合が発生する可能性があります</string>
     <string name="home_dialog_unsupported_version_dialog_title">非対応のバージョン</string>
     <string name="home_dialog_unsupported_version_dialog_description">この APK は推奨バージョンではありません。続行すると、アプリが正常に動作しなくなる可能性があります</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -478,10 +481,10 @@
     <string name="batch_patch_no_selection">利用可能なパッチが何も選択されていません</string>
     <string name="batch_patch_policy_install">完了後にインストールする</string>
     <string name="batch_patch_policy_install_description">キューの処理が完了すると、パッチ適用済みアプリをすべて自動でインストールします。オフにすると、APK を保存して後でインストールできます</string>
-    <string name="batch_patch_policy_mount">完了したらマウント</string>
-    <string name="batch_patch_policy_mount_description">キューの処理が完了すると、すべてのパッチ適用済みアプリをマウントします。オフの場合は、後で使用するためにAPKを保持します。</string>
-    <string name="batch_patch_policy_install_mount">完了したらインストールまたはマウント</string>
-    <string name="batch_patch_policy_install_mount_description">キューの処理が完了すると、すべてのパッチ適用済みアプリをインストールまたはマウントします。オフの場合は、後で使用するためにAPKを保持します。</string>
+    <string name="batch_patch_policy_mount">完了時にマウント</string>
+    <string name="batch_patch_policy_mount_description">キュー内のすべてのアプリにパッチを適用し終えると、各アプリをマウントします。オフにすると、後で使えるように APK ファイルを保存します</string>
+    <string name="batch_patch_policy_install_mount">完了時にインストールまたはマウントする</string>
+    <string name="batch_patch_policy_install_mount_description">キュー内のすべてのアプリにパッチを適用し終えると、各アプリをインストールまたはマウントします。オフにすると、後で使えるように APK ファイルを保存します</string>
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="batch_patch_start">開始</string>
     <string name="batch_patch_stop_title">一括パッチを停止しますか？</string>
@@ -702,6 +705,7 @@
     <string name="patched_app_save_failed_toast">パッチ適用済みアプリの保存に失敗しました</string>
     <string name="plugin_activity_dialog_body">このプラグインを続行するには、ユーザーの操作が必要です</string>
     <string name="patcher_process_killed_message">メモリを解放するためなどの理由で、システムがパッチ処理を完了前に停止しました。他のアプリを閉じて、もう一度お試しください</string>
+    <string name="patcher_process_crashed_message">パッチャーが完了前にクラッシュしました。再発する場合は、設定で\"Use embedded VM\"をオフにして、ログと共に問題を報告してください</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">ヒープメモリが %1$s MBの状態でメモリ不足が発生しました。選択したパッチが多すぎます。パッチソースまたは適用するパッチを減らしてください</string>
     <string name="install_app_success">正常にインストールされました</string>
@@ -804,6 +808,8 @@
     <string name="settings_appearance_greeting_phrases_subtitle">挨拶メッセージを表示します</string>
     <string name="settings_appearance_repatch_notice">再パッチ通知</string>
     <string name="settings_appearance_repatch_notice_description">再パッチ可能なアプリがある場合、バナーを表示します</string>
+    <string name="settings_appearance_more_apps_card">その他のアプリカード</string>
+    <string name="settings_appearance_more_apps_card_description">アプリ一覧の下に、コミュニティ製パッチへのリンクカードを表示します</string>
     <string name="settings_appearance_app_card_colors">アプリカードの色</string>
     <string name="settings_appearance_app_card_colors_default">デフォルト</string>
     <string name="settings_appearance_app_card_colors_default_description">ホーム画面のアプリカードに各アプリのバンドルカラーを使用します</string>
@@ -868,7 +874,7 @@
     <string name="settings_advanced_update_interval_daily">毎日</string>
     <string name="settings_advanced_update_interval_weekly">毎週</string>
     <string name="settings_advanced_update_interval_monthly">毎月</string>
-    <string name="settings_advanced_update_interval_battery_warning">一部のデバイスでは、バックグラウンドでの確認が正常に動作しない場合があります。Xiaomi、Huawei、Samsung、OnePlus などのメーカーは、バッテリーを節約するためにバックグラウンド プロセスを厳しく制限することがよくあります。</string>
+    <string name="settings_advanced_update_interval_battery_warning">Xiaomi、Huawei、Samsung、OnePlus など、バックグラウンドでのアプリの動作を制限するデバイスでは、バックグラウンド チェックが正常に実行されない場合があります</string>
     <string name="settings_advanced_external_batch_patch">外部トリガーを許可</string>
     <string name="settings_advanced_external_batch_patch_description">自動化アプリから一括パッチ処理を実行できるようにします</string>
     <string name="external_batch_patch_title">一括パッチを開始しますか？</string>
@@ -930,7 +936,7 @@
     <string name="settings_advanced_patch_options_custom_branding_app_name_hint">カスタム名を入力</string>
     <string name="settings_advanced_patch_options_path_gone">このフォルダを読み取れなくなりました。もう一度選択するか、パスを削除してください。そうしないと、パッチ処理が停止して再選択を求められます</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon">アプリアイコン</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">アプリのパッチ適用時に使用するアプリアイコンです。Android Auto やシステム設定のアプリ一覧など、後からアプリ側で変更できない場所でも使用されます</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">アプリに適用されるパッチアイコンです。Android Auto のように後で変更できない場所でも使用されます</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">カスタムアプリアイコンには、アイコン画像を含むフォルダーが必要です</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon">カスタム アイコン</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"カスタム アイコンとして使用する画像のフォルダーです。
@@ -1038,7 +1044,7 @@ morphe_header_custom_dark.png
     <string name="settings_auto_uninstall_with_shizuku">競合時に自動でアンインストール</string>
     <string name="settings_auto_uninstall_with_shizuku_description">署名競合時に既存のアプリをアンインストールします。これによりアプリデータが削除される場合があります</string>
     <string name="settings_ignore_install_target_rules">インストール対象の必須条件を無視する</string>
-    <string name="settings_ignore_install_target_rules_description">パッチのインストール対象に関する必須条件を無効にし、対象外にする条件を有効にします。パッチ適用後のアプリは正常に動作しない可能性があります</string>
+    <string name="settings_ignore_install_target_rules_description">インストール対象の必須条件を無効にし、対象外となる条件を有効にできるようにします。パッチ適用後のアプリが正常に動作しない場合があります</string>
     <string name="settings_auto_uninstall_warning_title">自動アンインストールを有効にしますか？</string>
     <string name="settings_auto_uninstall_warning_message">Shizuku での自動インストール時に Android から署名の競合が報告された場合、Morphe は既存のアプリを削除してからパッチ適用済み APK をインストールします</string>
     <string name="settings_auto_uninstall_warning_risk">これによりアプリのデータが消去される場合があります。削除後にパッチ適用済み APK のインストールが失敗した場合、元のアプリは復元できません</string>
@@ -1069,7 +1075,7 @@ morphe_header_custom_dark.png
     <string name="settings_system_battery_optimization_description">アプリを閉じていても、パッチャーを実行し続けます</string>
     <string name="settings_system_process_runtime">パッチャーのランタイム</string>
     <string name="settings_system_jvm_runtime_enable">内蔵の実行環境を使用する</string>
-    <string name="settings_system_jvm_runtime_description">Morphe に内蔵された Java 仮想マシンでパッチを適用します。デバイスで使用できる空きメモリを最大限に利用できます。オフにすると、Android 標準の実行環境でパッチを適用します</string>
+    <string name="settings_system_jvm_runtime_description">Morphe 内蔵の Java 仮想マシンでパッチを適用します。より多くのメモリを使用できます。オフにすると、Android 標準の実行環境でパッチを適用します</string>
     <string name="settings_system_jvm_runtime_unavailable">ARM または 64 ビットで動作する x86 デバイスが必要です</string>
     <string name="settings_system_patcher_completion_sound">完了音</string>
     <string name="settings_system_patcher_completion_sound_description">パッチ完了時に、結果を知らせるサウンドを再生します</string>
@@ -1218,6 +1224,8 @@ morphe_header_custom_dark.png
     <string name="settings_system_apk_download_helper_warning">この APK はヘルパーアプリから提供されたものです。Morphe では、パッチ適用前にすべてのファイルのパッケージ名、バージョン、署名を確認していますが、それでも信頼できるアプリのみ使用してください</string>
     <string name="settings_system_apk_download_helper_installed_by">インストール元: %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">不明なインストーラー</string>
+    <string name="settings_system_apk_download_helper_open_directly">すぐにヘルパーを開く</string>
+    <string name="settings_system_apk_download_helper_open_directly_description">ダウンロード手順をスキップして、信頼できるヘルパーを開きます</string>
     <!-- File Picker -->
     <string name="file_picker_no_files">ファイルが見つかりません</string>
     <string name="file_picker_read_error">このディレクトリを読み取ることができません</string>
@@ -1345,7 +1353,6 @@ morphe_header_custom_dark.png
     <string name="expanded">展開中</string>
     <string name="collapse">折りたたむ</string>
     <string name="collapsed">折りたたみ中</string>
-    <string name="available">利用可能</string>
     <string name="continue_">続行</string>
     <string name="version">バージョン</string>
     <!-- Who made a patch source, as a field label -->

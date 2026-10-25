@@ -75,6 +75,7 @@ additionally exports full system logs.
 | --- | --- |
 | Out of memory | Keep **Use embedded VM** on, it gives the patcher the most memory. If it still runs out, the app is too large for the selection: patch with fewer patch sources or fewer patches |
 | "The system stopped the patcher" | Android ended the patcher, usually to free memory. Close other apps and try again |
+| "The patcher crashed" | Try again. If it keeps crashing, turn **Use embedded VM** off and report the issue with the log |
 | Patching stops when you leave the app | Allow Morphe to run without battery restrictions |
 | "Low disk space" warning or a corrupt output | Free storage, patching wants at least 1 GB |
 | Fails right after "Merging split APK" | Split bundles are less reliable than a full APK. Download a full APK if the site offers one |

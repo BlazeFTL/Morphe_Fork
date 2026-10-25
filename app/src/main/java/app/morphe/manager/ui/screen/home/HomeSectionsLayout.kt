@@ -68,7 +68,9 @@ data class HomeAppListUi(
     val categoryViewMode: HomeAppCategoryViewMode,
     val sourceGroups: List<HomeAppSourceGroup>,
     /** Whether a batch queue is waiting to be started, which patching a selection adds to. */
-    val batchQueuePending: Boolean = false
+    val batchQueuePending: Boolean = false,
+    /** Whether the list ends on the card leading to the community patches. */
+    val showMoreAppsCard: Boolean = false
 )
 
 /** Callbacks fired from an app card. */
@@ -100,12 +102,13 @@ class HomeAppActions(
     val onAssignAppsToCategory: (Set<String>, String?) -> Unit
 )
 
-/** Callbacks of what stands around the list: the header, the greeting and the empty state. */
+/** Callbacks of what stands around the apps: the header, the greeting, the empty state and the card closing the list. */
 @Stable
 class HomeChromeActions(
     val onOtherAppsClick: () -> Unit,
     val onOpenSources: () -> Unit,
-    val onRefreshGreeting: (() -> Unit)?
+    val onRefreshGreeting: (() -> Unit)?,
+    val onHideMoreAppsCard: () -> Unit
 )
 
 /**
@@ -116,6 +119,7 @@ class HomeChromeActions(
  *   the docked bars.
  * @param bottomBarHeight Height of the navigation floating over the page, which the list ends clear of.
  * @param alerts The alerts of the main screen, those swiped aside brought back from the header.
+ * @param alertsHeight How far down those alerts reach under the header, which the list starts below.
  * @param onHeaderHeightChange Told the header's height, for the alerts floating over the page below it.
  */
 @Composable
@@ -127,6 +131,7 @@ internal fun SectionsLayout(
     state: HomeAppsSectionState,
     bottomBarHeight: Dp,
     alerts: HomeAlerts,
+    alertsHeight: () -> Dp = { 0.dp },
     onboardingState: OnboardingState? = null,
     onHeaderHeightChange: (Dp) -> Unit = {}
 ) {
@@ -175,6 +180,7 @@ internal fun SectionsLayout(
             state = state,
             search = search,
             onOpenSources = chromeActions.onOpenSources,
+            onHideMoreAppsCard = chromeActions.onHideMoreAppsCard,
             footerBar = footerBar,
             footerBarHeight = insets.bottom,
             bottomBarHeight = bottomBarHeight,
@@ -184,7 +190,8 @@ internal fun SectionsLayout(
             onboardingState = onboardingState,
             showFadeOverlay = !isLandscape(),
             header = greeting,
-            topPadding = insets.top + Defaults.SpaceMedium
+            topPadding = insets.top + Defaults.SpaceMedium,
+            alertsHeight = alertsHeight
         )
     }
 }
@@ -234,6 +241,7 @@ internal fun MainAppsSection(
     state: HomeAppsSectionState,
     search: SearchFieldState,
     onOpenSources: () -> Unit,
+    onHideMoreAppsCard: () -> Unit,
     footerBar: HomeFooterBarHost,
     modifier: Modifier = Modifier,
     // Height of the bar docked over the list's lower edge, such as a selection's
@@ -247,7 +255,9 @@ internal fun MainAppsSection(
     // Opens the list and scrolls away with it, such as the greeting
     header: (@Composable () -> Unit)? = null,
     // Room above the first row, for the page's header the list scrolls on under
-    topPadding: Dp = 0.dp
+    topPadding: Dp = 0.dp,
+    // Further room for the alerts hanging under the header, read as the list is laid out
+    alertsHeight: () -> Dp = { 0.dp }
 ) {
     // Aliases for values used many times in the body
     val homeAppItems = apps.visible
@@ -720,6 +730,8 @@ internal fun MainAppsSection(
     // An active filter takes the empty state, since clearing it is the way out the user needs
     val isFilterEmpty = isListEmpty && isFilterActive
     val isSearchEmpty = isListEmpty && !isFilterActive && searchQuery.isNotBlank()
+    val showMoreAppsCard = apps.showMoreAppsCard && !isFilteringList && !state.isEditing
+    val openCommunityPatches = { state.showCommunityNotice = true }
 
     Box(
         modifier = modifier.fillMaxSize(),
@@ -790,16 +802,16 @@ internal fun MainAppsSection(
                         )
                         // Cached so the LazyColumn doesn't allocate a new PaddingValues on
                         // every recomposition (which can be per-frame under scroll)
-                        val listContentPadding = remember(horizontalPadding, topPadding, footerClearance) {
-                            PaddingValues(
-                                start = horizontalPadding,
+                        val listContentPadding = remember(horizontalPadding, topPadding, alertsHeight, footerClearance) {
+                            ListContentPadding(
+                                horizontal = horizontalPadding,
                                 top = topPadding,
-                                end = horizontalPadding,
-                                bottom = footerClearance
+                                bottom = footerClearance,
+                                extraTop = alertsHeight
                             )
                         }
-                        // A focused row comes out from under the header and the footer bar
-                        ProvideBringIntoViewInsets(top = topPadding, bottom = footerClearance) {
+                        // A focused row comes out from under the header, the alerts and the footer bar
+                        ProvideBringIntoViewInsets(top = topPadding, bottom = footerClearance, extraTop = alertsHeight) {
                             LazyColumn(
                                 state = listState,
                                 modifier = Modifier
@@ -847,6 +859,13 @@ internal fun MainAppsSection(
                                         keyPrefix = "category_"
                                     )
 
+                                    moreAppsCard(
+                                        visible = showMoreAppsCard,
+                                        onOpen = openCommunityPatches,
+                                        onHide = onHideMoreAppsCard,
+                                        keyPrefix = "category_"
+                                    )
+
                                     hiddenSearchAndShowHiddenItems(
                                         hiddenAppItems = hiddenAppItems,
                                         filteredHiddenItems = filteredHiddenItems,
@@ -854,6 +873,7 @@ internal fun MainAppsSection(
                                         isSearchEmpty = isSearchEmpty,
                                         appActions = appActions,
                                         onShowHiddenApps = { state.showHiddenAppsDialog = true },
+                                        onOpenCommunityPatches = openCommunityPatches,
                                         keyPrefix = "category_"
                                     )
                                 } else {
@@ -878,13 +898,20 @@ internal fun MainAppsSection(
                                         onClearFilter = onClearFilter
                                     )
 
+                                    moreAppsCard(
+                                        visible = showMoreAppsCard,
+                                        onOpen = openCommunityPatches,
+                                        onHide = onHideMoreAppsCard
+                                    )
+
                                     hiddenSearchAndShowHiddenItems(
                                         hiddenAppItems = hiddenAppItems,
                                         filteredHiddenItems = filteredHiddenItems,
                                         searchQuery = searchQuery,
                                         isSearchEmpty = isSearchEmpty,
                                         appActions = appActions,
-                                        onShowHiddenApps = { state.showHiddenAppsDialog = true }
+                                        onShowHiddenApps = { state.showHiddenAppsDialog = true },
+                                        onOpenCommunityPatches = openCommunityPatches
                                     )
                                 }
                             }

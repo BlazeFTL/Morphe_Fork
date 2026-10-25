@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,6 +24,8 @@ import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.LayoutDirection
+import androidx.compose.ui.unit.dp
 import app.morphe.manager.R
 import com.composables.icons.materialsymbols.MaterialSymbols
 import com.composables.icons.materialsymbols.rounded.*
@@ -88,6 +91,24 @@ fun PageHeader(
  */
 @Immutable
 data class PageInsets(val top: Dp, val bottom: Dp, val horizontal: Dp)
+
+/**
+ * Padding of a list running on under a page's header, its [top] grown by [extraTop]. That is read
+ * where the list is measured, so what eases in under the header, such as the alerts, only lays the
+ * list out again.
+ */
+@Stable
+class ListContentPadding(
+    private val horizontal: Dp,
+    private val top: Dp,
+    private val bottom: Dp,
+    private val extraTop: () -> Dp = { 0.dp }
+) : PaddingValues {
+    override fun calculateLeftPadding(layoutDirection: LayoutDirection) = horizontal
+    override fun calculateTopPadding() = top + extraTop()
+    override fun calculateRightPadding(layoutDirection: LayoutDirection) = horizontal
+    override fun calculateBottomPadding() = bottom
+}
 
 /**
  * A page whose [header] stays in place while [content] scrolls on under it, blurred on a band the

@@ -36,10 +36,14 @@ class RootInstaller(
     private var lastRootCheck = 0L
     @Volatile
     private var cachedIsMagisk: Boolean? = null
+    @Volatile
+    private var cachedNoMountBin: String? = null
+    @Volatile
+    private var lastNoMountCheck = 0L
 
     private val _mountChanges = MutableSharedFlow<String>(extraBufferCapacity = 8)
 
-    /** Package names whose bind mount was put in place or lifted, which no package broadcast reports. */
+    /** Package names whose mount or redirect was put in place or lifted, which no package broadcast reports. */
     val mountChanges = _mountChanges.asSharedFlow()
 
     private suspend fun getShell() = with(CompletableDeferred<Shell>()) {
@@ -100,10 +104,45 @@ class RootInstaller(
                 execute("magisk -V").isSuccess.also { cachedIsMagisk = it }
     }
 
+    /**
+     * Whether NoMount can redirect the patched APK in the kernel instead of mounting it, which no
+     * mount table shows and no root manager unmounts from an app.
+     */
+    suspend fun isNoMountAvailable() = noMountBin() != null
+
+    /**
+     * The NoMount CLI, when its driver is loaded and speaks the protocol of the UID scoped rules.
+     * Rechecked now and then, as the module can be installed or removed while Morphe runs.
+     */
+    private suspend fun noMountBin(): String? {
+        if (Shell.isAppGrantedRoot() != true || isMagisk()) return null
+        val now = SystemClock.elapsedRealtime()
+        if (lastNoMountCheck != 0L && now - lastNoMountCheck < NO_MOUNT_CHECK_INTERVAL_MS) return cachedNoMountBin
+
+        // The CLI prints the driver's protocol and build count, such as "22 (605)", and fails
+        // without the driver
+        val probe = execute(
+            $$"""
+                for nm in $${NO_MOUNT_BINS.joinToString(" ")}; do
+                    if [ -x "$nm" ] && version=$("$nm" version 2>/dev/null); then echo "$nm $version"; break; fi;
+                done
+            """.trimIndent()
+        ).out.firstOrNull()?.trim().orEmpty()
+        val protocol = probe.substringAfter(' ', "").substringBefore(' ').toIntOrNull() ?: 0
+
+        cachedNoMountBin = probe.substringBefore(' ').takeIf { protocol >= NO_MOUNT_MIN_PROTOCOL }
+        lastNoMountCheck = now
+        return cachedNoMountBin
+    }
+
     suspend fun isAppMounted(packageName: String) = withContext(Dispatchers.IO) {
-        pm.getPackageInfo(packageName)?.applicationInfo?.sourceDir?.let {
-            execute("mount | grep -F ${it.shellQuote()}").isSuccess
-        } ?: false
+        val stockPath = pm.getPackageInfo(packageName)?.applicationInfo?.sourceDir?.shellQuote()
+            ?: return@withContext false
+
+        val redirected = noMountBin()?.let { nm ->
+            execute("${nm.shellQuote()} rule list 2>/dev/null | grep -F $stockPath").isSuccess
+        } == true
+        redirected || execute("mount | grep -F $stockPath").isSuccess
     }
 
     suspend fun mount(packageName: String) {
@@ -113,20 +152,41 @@ class RootInstaller(
             val patchedAPK = resolvePatchedApkPath(packageName)
             val stockPath = stockAPK.shellQuote()
             val patchedPath = patchedAPK.shellQuote()
+            val forceStop = "am force-stop ${packageName.shellQuote()}"
 
-            // Set SELinux context, bind-mount in the root and zygote namespaces, replace any other
-            // APK running processes still hold, and restart the app so its next process inherits
-            // the patched APK view.
-            execute(
-                "chcon u:object_r:apk_data_file:s0 $patchedPath; " +
-                        unmountBindCommands(stockPath) + "; " +
-                        "mount -o bind $patchedPath $stockPath; " +
-                        mountInZygoteNamespacesCommand(patchedPath, stockPath) + "; " +
-                        replaceOtherMountsCommand(patchedAPK, stockPath) + "; " +
-                        frameworkWatcherCommand(packageName, "watch") + "; " +
-                        moduleStatusCommand(packageName, "Mounted the patched APK in Morphe") + "; " +
-                        "am force-stop ${packageName.shellQuote()}"
-            ).assertSuccess("Failed to mount APK")
+            // The redirect leaves system_server on the stock APK, so a framework restart scans that
+            // one and needs no watcher. Whatever a bind mount left behind is lifted first, and only
+            // the rule decides whether the redirect took
+            val redirected = noMountBin()?.shellQuote()?.let { nm ->
+                execute(
+                    "chcon u:object_r:apk_data_file:s0 $patchedPath; " +
+                            unmountBindCommands(stockPath) + "; " +
+                            frameworkWatcherCommand(packageName, "stop") + "; " +
+                            noMountRemoveCommand(nm, stockPath) + "; " +
+                            "$nm rule add $NO_MOUNT_SCOPE $stockPath $patchedPath"
+                ).also { result ->
+                    if (!result.isSuccess) Log.w(TAG, "NoMount redirect failed, bind mounting instead: ${result.failureDetail()}")
+                }.isSuccess
+            } == true
+
+            if (redirected) {
+                execute(moduleStatusCommand(packageName, "Redirected the patched APK in Morphe with NoMount") + "; " + forceStop)
+            } else {
+                // Set SELinux context, bind-mount in the root and zygote namespaces, replace any other
+                // APK running processes still hold, and restart the app so its next process inherits
+                // the patched APK view.
+                execute(
+                    "chcon u:object_r:apk_data_file:s0 $patchedPath; " +
+                            unmountBindCommands(stockPath) + "; " +
+                            "mount -o bind $patchedPath $stockPath; " +
+                            mountInZygoteNamespacesCommand(patchedPath, stockPath) + "; " +
+                            replaceOtherMountsCommand(patchedAPK, stockPath) + "; " +
+                            frameworkWatcherCommand(packageName, "watch") + "; " +
+                            moduleStatusCommand(packageName, "Mounted the patched APK in Morphe") + "; " +
+                            forceStop
+                ).assertSuccess("Failed to mount APK")
+            }
+
             _mountChanges.emit(packageName)
         }
     }
@@ -136,10 +196,12 @@ class RootInstaller(
             val stockAPK = pm.getPackageInfo(packageName)?.applicationInfo?.sourceDir
                 ?: return@withContext
             val stockPath = stockAPK.shellQuote()
+            val removeRedirect = noMountBin()?.let { nm -> noMountRemoveCommand(nm.shellQuote(), stockPath) + "; " }.orEmpty()
 
             // Force-stop the app so it restarts clean without the unmounted patched APK.
             execute(
-                unmountBindCommands(stockPath) + "; " +
+                removeRedirect +
+                        unmountBindCommands(stockPath) + "; " +
                         frameworkWatcherCommand(packageName, "stop") + "; " +
                         moduleStatusCommand(packageName, "Unmounted in Morphe until the next boot") + "; " +
                         "am force-stop ${packageName.shellQuote()}"
@@ -444,6 +506,11 @@ class RootInstaller(
         removed.forEach { Log.i(TAG, "Removed another root install: $it") }
     }
 
+    // A rule is only deleted under the UID scope it was added with, so the unscoped one other root
+    // installs add for the same path goes too
+    private fun noMountRemoveCommand(nm: String, stockPath: String) =
+        "$nm rule del $NO_MOUNT_SCOPE $stockPath 2>/dev/null; $nm rule del $stockPath 2>/dev/null; true"
+
     // A namespace can hold the patched APK twice, once propagated from the root namespace and
     // once mounted into it directly, and a single umount only lifts the top one. Morphe's own
     // namespace was copied from zygote's, so it is cleared too or the APK it reads back for
@@ -503,6 +570,7 @@ class RootInstaller(
         private fun staged(path: String) = "$path.tmp"
 
         private const val ROOT_CHECK_INTERVAL_MS = 1_000L
+        private const val NO_MOUNT_CHECK_INTERVAL_MS = 5_000L
         private val STOCK_INSTALL_SETTLE_TIMEOUT = Duration.ofSeconds(30L)
         private val STOCK_INSTALL_SETTLE_POLL = 1_000.milliseconds
 
@@ -510,6 +578,19 @@ class RootInstaller(
         private val MODULE_SCRIPTS = listOf("service.sh", "post-fs-data.sh")
         private val MODULE_FILES = MODULE_SCRIPTS + "module.prop"
         private const val STOCK_PATHS_FILE = "stock-paths.txt"
+
+        /** Where NoMount puts its CLI, linked next to the root manager's own tools. */
+        private val NO_MOUNT_BINS = listOf(
+            "/data/adb/modules/nomount/bin/nm",
+            "/data/adb/ksu/bin/nm",
+            "/data/adb/ap/bin/nm"
+        )
+
+        /** The driver protocol that brought UID scoped rules. */
+        private const val NO_MOUNT_MIN_PROTOCOL = 22
+
+        // Every UID but system_server's, so PackageManager keeps seeing the stock APK it verifies
+        private const val NO_MOUNT_SCOPE = "--uid-range all --uid-excluded 1000-1000"
     }
 }
 

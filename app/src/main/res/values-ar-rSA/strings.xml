@@ -8,6 +8,9 @@
     <string name="home_unpatched_badge">غير معدل</string>
     <string name="home_no_patches_available">لا يوجد تعديلات متاحة</string>
     <string name="home_app_hide_title">إخفاء هذا التطبيق؟</string>
+    <string name="home_more_apps_title">المزيد من التطبيقات</string>
+    <string name="home_more_apps_hide_title">إخفاء هذه البطاقة؟</string>
+    <string name="home_more_apps_hide_message">يمكنك إعادته في أي وقت من الإعدادات &gt; المظهر &gt; الشاشة الرئيسية</string>
     <string name="home_app_hide_message">سيتم إخفاء هذا التطبيق من الشاشة الرئيسية. يمكنك استعادته لاحقًا من قائمة التطبيقات المخفية باستخدام الزر الموجود أسفل القائمة.</string>
     <string name="home_app_will_be_hidden">سيتم إخفاء هذا التطبيق</string>
     <string name="home_app_hidden_named">%s مخفي</string>
@@ -31,6 +34,9 @@
     <string name="deep_link_add_source_only_universal">تمت إضافة التعديلات الشاملة فقط. يمكنك إضافة التطبيقات من قائمة تطبيقات المصدر</string>
     <!-- Asked when the link names an app of a source that is already added -->
     <string name="deep_link_add_source_app_back">تمت إضافة هذا المصدر بالفعل. هل تريد إضافة هذا التطبيق من المصدر الموجود؟</string>
+    <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">هذا إصدار جديد من %s. هل تريد تحديثه؟</string>
+    <string name="mpp_import_unreadable">لا يمكن قراءة هذا الملف</string>
     <!-- Home Screen - Update Notifications -->
     <string name="home_update_available">تحديث Morphe متاح</string>
     <string name="home_update_available_subtitle">إصدار جديد جاهز للتثبيت</string>
@@ -163,8 +169,6 @@
     <string name="sources_filter_all_description">كل المصدر</string>
     <string name="sources_filter_enabled_description">يتم أخذ تعديلات المصادر من</string>
     <string name="sources_filter_disabled_description">تم إيقاف المصادر</string>
-    <string name="sources_filter_updates">التحديثات</string>
-    <string name="sources_filter_updates_description">للحصول على مصادر تحتوي على إصدار أحدث</string>
     <string name="sources_filter_issues">يتطلّب إجراءًا</string>
     <string name="sources_filter_issues_description">المصادر التي تم حظرها، فشلت في التحميل أو تحتاج إلى نسخة أحدث من Morphe</string>
     <string name="sources_sort_manual">ترتيب يدوي</string>
@@ -193,6 +197,7 @@
     <string name="sources_prerelease_warning_title">تمكين إصدارات تعديلات ما قبل الإطلاق؟</string>
     <string name="sources_prerelease_warning_message">إصدارات ما قبل الإطلاق لا تزال قيد التطوير. قد تفشل التعديلات أو تتسبب في تعطل التطبيق، ويمكن أن تتغير الميزات دون إشعار مسبق</string>
     <string name="expert_mode_prerelease_notice">هذا المصدر مخصص لتعديلات ما قبل الإطلاق. قد تفشل عملية التعديل أو تتصرف بشكل غير متوقع</string>
+    <string name="expert_mode_experimental_version_notice">هذا المصدر يوفر دعمًا تجريبيًا فقط لهذا الإصدار من التطبيق. وقد تكون التعديلات الخاصة به غير مستقرة أو غير مكتملة</string>
     <string name="sources_management_experimental_versions_toggle">إصدارات تجريبية للتطبيقات</string>
     <string name="sources_management_experimental_versions_toggle_description">عرض وتعديل التطبيقات المستهدفة التجريبية</string>
     <string name="sources_management_already_exists">تمت إضافة هذا المصدر بالفعل</string>
@@ -235,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">اختر أي من تطبيقاته ترغب في الاحتفاظ بها بمجرد تحميل المصدر</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">مصادر التعديل من طرف ثالث</string>
-    <string name="sources_dialog_community_notice_message">"يتم إنشاء وصيانة مصادر تعديلات المجتمع بواسطة مؤلفيها أنفسهم. لا يقوم Morphe بمراجعة أو التحقق من التعديلات التي يقدمها طرف ثالث، ولا يتحمل أي مسؤولية عن محتواها أو عن تأثيرها على جهازك.
-
-أي شيء تُضيفه من هذا الموقع يتم استخدامه على مسؤوليتك الشخصية"</string>
+    <string name="sources_dialog_community_notice_message">"مصادر تعديلات المجتمع يتم إنشاؤها وصيانتها من قبل مؤلفيها. لا يقوم Morphe بمراجعة أو التحقق من تعديلات الجهات الخارجية، وهو غير مسؤول عن محتواها أو عما تقوم به على جهازك"</string>
     <string name="sources_update_success">تم التحديث بنجاح</string>
     <string name="sources_update_unavailable">لا يوجد تحديث متاح</string>
     <string name="sources_download_fail">فشل تنزيل مصادر التعديل: %s.</string>
@@ -703,6 +706,7 @@
     <string name="patched_app_save_failed_toast">فشل حفظ التطبيق المعدل</string>
     <string name="plugin_activity_dialog_body">يلزم تفاعل المستخدم للمتابعة باستخدام هذا المكون الإضافي</string>
     <string name="patcher_process_killed_message">أوقف النظام أداة التعديل قبل إتمام عملها، وعادةً ما يحدث ذلك لتوفير مساحة في الذاكرة. أغلق التطبيقات الأخرى وحاول مجددًا</string>
+    <string name="patcher_process_crashed_message">تعطلت أداة التعديل قبل أن تنتهي. إذا تكرر ذلك، قم بإيقاف تشغيل \"استخدام VM المدمج\" في الإعدادات وأبلغ عن المشكلة مع إرفاق السجل</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">نفدت ذاكرة أداة التعديل، حيث بلغ حجم الكومة %1$s ميجابايت. هذا التطبيق كبير جدًا بالنسبة للتعديلات المحددة. حاول التعديل باستخدام عدد أقل من مصادر التعديل، أو حدد عددًا أقل من التعديلات
 
@@ -806,6 +810,8 @@
     <string name="settings_appearance_greeting_phrases_subtitle">يعرض رسالة ترحيب</string>
     <string name="settings_appearance_repatch_notice">إشعار إعادة التعديل</string>
     <string name="settings_appearance_repatch_notice_description">يعرض شريطًا إعلاميًا عندما يمكن إعادة تعديل التطبيقات المعدلة</string>
+    <string name="settings_appearance_more_apps_card">بطاقة المزيد من التطبيقات</string>
+    <string name="settings_appearance_more_apps_card_description">يعرض بطاقة أسفل التطبيقات تؤدي إلى تعديلات المجتمع</string>
     <string name="settings_appearance_app_card_colors">ألوان بطاقة التطبيق</string>
     <string name="settings_appearance_app_card_colors_default">الافتراضية</string>
     <string name="settings_appearance_app_card_colors_default_description">امنح كل تطبيق لون حزمته الخاصة</string>
@@ -870,7 +876,7 @@
     <string name="settings_advanced_update_interval_daily">يوميًا</string>
     <string name="settings_advanced_update_interval_weekly">أسبوعيًا</string>
     <string name="settings_advanced_update_interval_monthly">شهريًا</string>
-    <string name="settings_advanced_update_interval_battery_warning">قد لا يعمل التحقق في الخلفية بشكل موثوق على بعض الأجهزة. غالبًا ماتقيّد الشركات المصنعة مثل Xiaomi، Huawei، Samsung، و OnePlus عمليات الخلفية بشدة لتوفير البطارية</string>
+    <string name="settings_advanced_update_interval_battery_warning">قد لا تعمل عمليات التحقق في الخلفية بشكل موثوق على الأجهزة التي تقيد تطبيقات الخلفية، مثل Xiaomi, Huawei, Samsung و OnePlus</string>
     <string name="settings_advanced_external_batch_patch">السماح بالمشغلات الخارجية</string>
     <string name="settings_advanced_external_batch_patch_description">يسمح لتطبيقات الأتمتة ببدء تعديل عدة تطبيقات</string>
     <string name="external_batch_patch_title">بدء تعديل التطبيقات على دفعات؟</string>
@@ -932,7 +938,7 @@
     <string name="settings_advanced_patch_options_custom_branding_app_name_hint">أدخل اسمًا مخصصًا</string>
     <string name="settings_advanced_patch_options_path_gone">لم يعد بالإمكان قراءة هذا المجلد. اختره مرة أخرى أو امسحه، وإلا فسيتوقف التعديل ويسألك عنه</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon">أيقونة التطبيق</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">الأيقونة التي يُعدل بها التطبيق. وتُستخدم أيضًا في الأماكن التي لا يمكن للتطبيق فيها تغييرها لاحقًا، مثل Android Auto وقائمة التطبيقات في إعدادات النظام</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">الأيقونة التي يتم تعديل التطبيق بها، وتُستخدم أيضًا في الحالات التي لا يمكن تغييرها لاحقًا، مثل Android Auto</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">تحتاج أيقونة التطبيق المخصصة إلى مجلد يحتوي على صور الأيقونة</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon">أيقونة مخصصة</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"مجلد يحتوي على صور لاستخدامها كأيقونة مخصصة.
@@ -1072,7 +1078,7 @@ morphe_adaptive_monochrome_custom.xml
     <string name="settings_system_battery_optimization_description">يحافظ على تشغيل أداة التعديل عند تصغير التطبيق</string>
     <string name="settings_system_process_runtime">وقت تشغيل أداة التعديل</string>
     <string name="settings_system_jvm_runtime_enable">استخدام VM المدمج</string>
-    <string name="settings_system_jvm_runtime_description">التعديلات في Java VM التي يحملها Morphe، والتي يمكنها استخدام أكبر قدر من الذاكرة يوفرها الجهاز. قم بإيقاف التشغيل للتعديل بوقت تشغيل نظام Android</string>
+    <string name="settings_system_jvm_runtime_description">التعديلات في Java VM الخاصة بـ Morphe، والتي يمكنها استخدام ذاكرة أكبر. قم بإيقاف التشغيل لاستخدام وقت التشغيل الخاص بـ Android</string>
     <string name="settings_system_jvm_runtime_unavailable">يتطلب جهازًا بمعالج ARM أو x86-64 بت</string>
     <string name="settings_system_patcher_completion_sound">صوت الإكمال</string>
     <string name="settings_system_patcher_completion_sound_description">تشغيل نغمة مميزة للنجاح أو الفشل عند انتهاء التعديل</string>
@@ -1221,6 +1227,8 @@ morphe_adaptive_monochrome_custom.xml
     <string name="settings_system_apk_download_helper_warning">يأتي ملف APK من تطبيق المساعدة، لذا ثق فقط بالتطبيقات التي تعرفها. لا يزال Morphe يتحقق من الحزمة والإصدار والتوقيع لكل ملف قبل التعديل.</string>
     <string name="settings_system_apk_download_helper_installed_by">مثبّت بواسطة %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">أداة التثبيت غير معروفة</string>
+    <string name="settings_system_apk_download_helper_open_directly">فتح المساعد فورًا</string>
+    <string name="settings_system_apk_download_helper_open_directly_description">يتخطى تعليمات التنزيل ويفتح المساعد الموثوق</string>
     <!-- File Picker -->
     <string name="file_picker_no_files">لا توجد ملفات هنا</string>
     <string name="file_picker_read_error">لا يمكن قراءة هذا المجلد</string>
@@ -1348,7 +1356,6 @@ morphe_adaptive_monochrome_custom.xml
     <string name="expanded">توسيع</string>
     <string name="collapse">طي</string>
     <string name="collapsed">طي</string>
-    <string name="available">متاح</string>
     <string name="continue_">متابعة</string>
     <string name="version">الإصدار</string>
     <!-- Who made a patch source, as a field label -->
