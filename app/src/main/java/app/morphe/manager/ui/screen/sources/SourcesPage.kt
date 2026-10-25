@@ -432,157 +432,171 @@ private fun SourcesPageContent(
         CompositionLocalProvider(LocalListRowResizing provides listRowResizing) {
             // A row the tour turns to comes out from under the header and the navigation
             ProvideBringIntoViewInsets(top = insets.top, bottom = listBottom) {
-                LazyColumn(
-                    state = listState,
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .verticalScrollFade(listState),
-                    verticalArrangement = Arrangement.spacedBy(Defaults.SpaceMedium),
-                    contentPadding = PaddingValues(
-                        start = insets.horizontal,
-                        top = insets.top + Defaults.SpaceMedium,
-                        end = insets.horizontal,
-                        bottom = listBottom + Defaults.SpaceLarge
-                    )
+                AppPullToRefreshBox(
+                    // The cards show which sources are being updated, and the update says how it went
+                    isRefreshing = false,
+                    // Every source an update reaches, the same as selecting them all and updating
+                    onRefresh = {
+                        onUpdate(sources.filter { it is RemotePatchBundle && it.uid !in blockedSources })
+                    },
+                    // Selecting, reordering and the tour each hold the list still
+                    enabled = !isLoadingSources && !state.isSelecting && !state.isReordering && !isTourRunning,
+                    modifier = Modifier.fillMaxSize(),
+                    // Drawn out from under the header rather than the status bar, as the list is
+                    indicatorTop = insets.top
                 ) {
-                    if (isLoadingSources) {
-                        items(SourceShimmerRows, key = { index -> "shimmer_$index" }) {
-                            ShimmerBundleRow()
-                        }
-                    }
-
-                    if ((search.isFiltering || sourceFilter.isActive) && visibleSources.isEmpty()) {
-                        item(key = "search_empty") {
-                            EmptyState(
-                                message = stringResource(R.string.search_no_results),
-                                icon = MaterialSymbols.Rounded.Search_off
-                            )
-                        }
-                    }
-
-                    items(visibleSources, key = { bundle -> bundle.uid }) { bundle ->
-                        val hasExperimentalVersions = remember(bundle.uid, bundleInfo) {
-                            bundleInfo[bundle.uid]?.patches?.any { patch ->
-                                patch.compatiblePackages?.any { pkg ->
-                                    pkg.experimentalVersions?.isNotEmpty() == true
-                                } == true
-                            } == true
-                        }
-                        val useExperimentalVersions = bundle.uid.toString() in experimentalVersionsEnabled
-
-                        val isFirstCard = bundle.uid == visibleSources.firstOrNull()?.uid
-                        val toggleSelected = { state.selection.toggle(bundle.uid) }
-                        val toggleExpanded = {
-                            expandedBundleUids = if (bundle.uid in expandedBundleUids) {
-                                expandedBundleUids - bundle.uid
-                            } else {
-                                expandedBundleUids + bundle.uid
+                    LazyColumn(
+                        state = listState,
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .verticalScrollFade(listState),
+                        verticalArrangement = Arrangement.spacedBy(Defaults.SpaceMedium),
+                        contentPadding = PaddingValues(
+                            start = insets.horizontal,
+                            top = insets.top + Defaults.SpaceMedium,
+                            end = insets.horizontal,
+                            bottom = listBottom + Defaults.SpaceLarge
+                        )
+                    ) {
+                        if (isLoadingSources) {
+                            items(SourceShimmerRows, key = { index -> "shimmer_$index" }) {
+                                ShimmerBundleRow()
                             }
                         }
-                        val selectOnLongPress = {
-                            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                            if (state.isSelecting) toggleSelected() else state.startSelection(bundle.uid)
-                        }
-                        ReorderableItem(
-                            reorderableState,
-                            key = bundle.uid,
-                            animateItemModifier = Modifier.animatedListItem(this)
-                        ) { itemIsDragging ->
-                            BundleManagementCard(
-                                bundle = bundle,
-                                info = SourceCardInfo(
-                                    patchCount = patchCounts[bundle.uid] ?: 0,
-                                    patchMatchCount = patchMatchCounts[bundle.uid],
-                                    appCount = appCounts[bundle.uid] ?: SourceAppCount.NONE,
-                                    updateInfo = manualUpdateInfo[bundle.uid],
-                                    isUpdating = bundle.uid in activeUpdateUids,
-                                    metadataFetchError = metadataFetchErrors[bundle.uid],
-                                    blockedInfo = blockedSources[bundle.uid],
-                                    useExperimentalVersions = useExperimentalVersions
-                                ),
-                                actions = SourceCardActions(
-                                    onPatchesClick = { bundleToShowPatches.value = bundle },
-                                    onAppsClick = { bundleToShowApps.value = bundle },
-                                    onVersionClick = {
-                                        if (bundle is RemotePatchBundle) {
-                                            bundleToShowChangelogUid = bundle.uid
-                                        }
-                                    },
-                                    onOutdatedManagerClick = { bundleRequiringManagerUpdate = bundle },
-                                    onOpenInBrowser = {
-                                        openUrl(
-                                            manualUpdateInfo[bundle.uid]?.pageUrl
-                                                ?: (bundle as? RemotePatchBundle)?.browsePageUrl
-                                                ?: SOURCE_REPO_URL
-                                        )
-                                    },
-                                    onReportIssue = {
-                                        openUrl((bundle as? RemotePatchBundle)?.issuesPageUrl ?: SOURCE_REPO_URL)
-                                    },
-                                    onShare = (bundle as? RemotePatchBundle)?.addSourceLink?.let { link ->
-                                        { shareText(link) }
-                                    },
-                                    onPrereleasesToggle = when {
-                                        bundle is JsonPatchBundle && bundle.supportsPrerelease ||
-                                                bundle is APIPatchBundle -> { usePrerelease ->
-                                            if (usePrerelease) {
-                                                // Explain what pre-release means before flipping it on
-                                                bundleToConfirmPrerelease.value = bundle
-                                            } else {
-                                                applyPrerelease(bundle, false)
-                                            }
-                                        }
 
-                                        else -> null
-                                    },
-                                    onExperimentalVersionsToggle = if (hasExperimentalVersions) {
-                                        { useExperimental ->
-                                            scope.launch {
-                                                patchBundleRepository.setUseExperimentalVersions(
-                                                    bundle.uid,
-                                                    useExperimental
-                                                )
+                        if ((search.isFiltering || sourceFilter.isActive) && visibleSources.isEmpty()) {
+                            item(key = "search_empty") {
+                                EmptyState(
+                                    message = stringResource(R.string.search_no_results),
+                                    icon = MaterialSymbols.Rounded.Search_off
+                                )
+                            }
+                        }
+
+                        items(visibleSources, key = { bundle -> bundle.uid }) { bundle ->
+                            val hasExperimentalVersions = remember(bundle.uid, bundleInfo) {
+                                bundleInfo[bundle.uid]?.patches?.any { patch ->
+                                    patch.compatiblePackages?.any { pkg ->
+                                        pkg.experimentalVersions?.isNotEmpty() == true
+                                    } == true
+                                } == true
+                            }
+                            val useExperimentalVersions = bundle.uid.toString() in experimentalVersionsEnabled
+
+                            val isFirstCard = bundle.uid == visibleSources.firstOrNull()?.uid
+                            val toggleSelected = { state.selection.toggle(bundle.uid) }
+                            val toggleExpanded = {
+                                expandedBundleUids = if (bundle.uid in expandedBundleUids) {
+                                    expandedBundleUids - bundle.uid
+                                } else {
+                                    expandedBundleUids + bundle.uid
+                                }
+                            }
+                            val selectOnLongPress = {
+                                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                                if (state.isSelecting) toggleSelected() else state.startSelection(bundle.uid)
+                            }
+                            ReorderableItem(
+                                reorderableState,
+                                key = bundle.uid,
+                                animateItemModifier = Modifier.animatedListItem(this)
+                            ) { itemIsDragging ->
+                                BundleManagementCard(
+                                    bundle = bundle,
+                                    info = SourceCardInfo(
+                                        patchCount = patchCounts[bundle.uid] ?: 0,
+                                        patchMatchCount = patchMatchCounts[bundle.uid],
+                                        appCount = appCounts[bundle.uid] ?: SourceAppCount.NONE,
+                                        updateInfo = manualUpdateInfo[bundle.uid],
+                                        isUpdating = bundle.uid in activeUpdateUids,
+                                        metadataFetchError = metadataFetchErrors[bundle.uid],
+                                        blockedInfo = blockedSources[bundle.uid],
+                                        useExperimentalVersions = useExperimentalVersions
+                                    ),
+                                    actions = SourceCardActions(
+                                        onPatchesClick = { bundleToShowPatches.value = bundle },
+                                        onAppsClick = { bundleToShowApps.value = bundle },
+                                        onVersionClick = {
+                                            if (bundle is RemotePatchBundle) {
+                                                bundleToShowChangelogUid = bundle.uid
                                             }
-                                        }
-                                    } else null,
-                                    onDisable = { onToggleEnabled(listOf(bundle)) },
-                                    onUpdate = { onUpdate(listOf(bundle)) },
-                                    onRename = { onRename(bundle) },
-                                    onDelete = { bundlesToDelete.value = listOf(bundle) }
-                                ),
-                                // Folded while reordering, so a card is dragged by its header alone
-                                expanded = !state.isReordering && (isSingleDefaultBundle ||
-                                    bundle.uid in expandedBundleUids || (isTourRunning && isFirstCard)),
-                                onHeaderClick = when {
-                                    state.isReordering -> null
-                                    state.isSelecting -> toggleSelected
-                                    isSingleDefaultBundle -> null
-                                    else -> toggleExpanded
-                                },
-                                // The tour holds the first card open for its own steps, and a lone
-                                // source has its own card for everything a selection would offer
-                                onLongClick = selectOnLongPress.takeUnless {
-                                    isTourRunning || state.isReordering || isSingleDefaultBundle
-                                },
-                                isSelectionMode = state.isSelecting,
-                                isSelected = state.selection.contains(bundle.uid),
-                                forceExpanded = isSingleDefaultBundle,
-                                isDragging = itemIsDragging,
-                                dragHandleModifier = if (state.isReordering) {
-                                    Modifier.draggableHandle(
-                                        onDragStarted = {
-                                            isDragging = true
-                                            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                                         },
-                                        onDragStopped = { isDragging = false }
-                                    )
-                                } else null,
-                                onMove = if (state.isReordering) {
-                                    { by -> moveSource(bundle.uid, by) }
-                                } else null,
-                                tour = onboardingState?.takeIf { isFirstCard },
-                                modifier = Modifier.zIndex(if (itemIsDragging) 1f else 0f)
-                            )
+                                        onOutdatedManagerClick = { bundleRequiringManagerUpdate = bundle },
+                                        onOpenInBrowser = {
+                                            openUrl(
+                                                manualUpdateInfo[bundle.uid]?.pageUrl
+                                                    ?: (bundle as? RemotePatchBundle)?.browsePageUrl
+                                                    ?: SOURCE_REPO_URL
+                                            )
+                                        },
+                                        onReportIssue = {
+                                            openUrl((bundle as? RemotePatchBundle)?.issuesPageUrl ?: SOURCE_REPO_URL)
+                                        },
+                                        onShare = (bundle as? RemotePatchBundle)?.addSourceLink?.let { link ->
+                                            { shareText(link) }
+                                        },
+                                        onPrereleasesToggle = when {
+                                            bundle is JsonPatchBundle && bundle.supportsPrerelease ||
+                                                    bundle is APIPatchBundle -> { usePrerelease ->
+                                                if (usePrerelease) {
+                                                    // Explain what pre-release means before flipping it on
+                                                    bundleToConfirmPrerelease.value = bundle
+                                                } else {
+                                                    applyPrerelease(bundle, false)
+                                                }
+                                            }
+
+                                            else -> null
+                                        },
+                                        onExperimentalVersionsToggle = if (hasExperimentalVersions) {
+                                            { useExperimental ->
+                                                scope.launch {
+                                                    patchBundleRepository.setUseExperimentalVersions(
+                                                        bundle.uid,
+                                                        useExperimental
+                                                    )
+                                                }
+                                            }
+                                        } else null,
+                                        onDisable = { onToggleEnabled(listOf(bundle)) },
+                                        onUpdate = { onUpdate(listOf(bundle)) },
+                                        onRename = { onRename(bundle) },
+                                        onDelete = { bundlesToDelete.value = listOf(bundle) }
+                                    ),
+                                    // Folded while reordering, so a card is dragged by its header alone
+                                    expanded = !state.isReordering && (isSingleDefaultBundle ||
+                                        bundle.uid in expandedBundleUids || (isTourRunning && isFirstCard)),
+                                    onHeaderClick = when {
+                                        state.isReordering -> null
+                                        state.isSelecting -> toggleSelected
+                                        isSingleDefaultBundle -> null
+                                        else -> toggleExpanded
+                                    },
+                                    // The tour holds the first card open for its own steps, and a lone
+                                    // source has its own card for everything a selection would offer
+                                    onLongClick = selectOnLongPress.takeUnless {
+                                        isTourRunning || state.isReordering || isSingleDefaultBundle
+                                    },
+                                    isSelectionMode = state.isSelecting,
+                                    isSelected = state.selection.contains(bundle.uid),
+                                    forceExpanded = isSingleDefaultBundle,
+                                    isDragging = itemIsDragging,
+                                    dragHandleModifier = if (state.isReordering) {
+                                        Modifier.draggableHandle(
+                                            onDragStarted = {
+                                                isDragging = true
+                                                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                                            },
+                                            onDragStopped = { isDragging = false }
+                                        )
+                                    } else null,
+                                    onMove = if (state.isReordering) {
+                                        { by -> moveSource(bundle.uid, by) }
+                                    } else null,
+                                    tour = onboardingState?.takeIf { isFirstCard },
+                                    modifier = Modifier.zIndex(if (itemIsDragging) 1f else 0f)
+                                )
+                            }
                         }
                     }
                 }
