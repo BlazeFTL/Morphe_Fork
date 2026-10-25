@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-24T17:50:50",
-  "description": "# [2.2.0-dev.2](https://github.com/MorpheApp/morphe-manager/compare/v2.2.0-dev.1...v2.2.0-dev.2) (2026-10-24)\n\n\n### Bug Fixes\n\n* Fail patching that runs out of memory instead of hanging ([76b5477](https://github.com/MorpheApp/morphe-manager/commit/76b5477eca7a97b393a95cc5880d90d1ab47354a))\n\n\n### Features\n\n* Option to open the APK download helper right away ([901ecc0](https://github.com/MorpheApp/morphe-manager/commit/901ecc04bf9b6575d58fd64a630578f4d7e150e6))\n* Update a local source from an opened .mpp file ([eb9cd44](https://github.com/MorpheApp/morphe-manager/commit/eb9cd44e3eed29a63fb24e0a1427ef7a7ab27b46))",
-  "download_url": "https://github.com/BlazeFTL/Morphe_Fork/releases/download/v2.2.0-dev.2/MorpheFork-V2.2.0-dev.2.apk",
+  "created_at": "2026-10-25T02:56:47",
+  "description": "# [2.2.0-dev.3](https://github.com/MorpheApp/morphe-manager/compare/v2.2.0-dev.2...v2.2.0-dev.3) (2026-10-24)\n\n\n### Bug Fixes\n\n* Judge app versions by the source they are picked from ([caed35a](https://github.com/MorpheApp/morphe-manager/commit/caed35a27a37fad17f7ac327ff3a39da8ce932e9))\n\n\n### Features\n\n* Open an app's patch notes from its info dialog ([55b625e](https://github.com/MorpheApp/morphe-manager/commit/55b625e659e57878ad978b5ddcbf254a92d44f7c))",
+  "download_url": "https://github.com/BlazeFTL/Morphe_Fork/releases/download/v2.2.0-dev.3/MorpheFork-V2.2.0-dev.3.apk",
   "signature_download_url": "",
-  "version": "2.2.0-dev.2"
+  "version": "2.2.0-dev.3"
 }
