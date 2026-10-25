@@ -1783,18 +1783,30 @@ def bundles_app_first(src):
     if re.search(r"\bbundle\.incompatible\.isNotEmpty\(\)", region):
         return src
     hits = list(re.finditer(
-        r"compareByDescending<[^\n]*>\s*\{\s*\(bundle,\s*_\)\s*->\s*bundle\.targetsVersion\s*\}", region))
+        r"(?:compareByDescending<[^\n]*>|\.thenByDescending)\s*\{\s*\(bundle,\s*_\)\s*->\s*bundle\.targetsVersion\s*\}", region))
     if len(hits) != 1:
         return None
     a, b = lo + hits[0].start(), lo + hits[0].end()
     ind = indent_of(src, a)
     old = src[a:b]
+    cond = "bundle.compatible.isNotEmpty() || bundle.incompatible.isNotEmpty()"
+    if old.startswith("compareByDescending"):
+        new = (
+            "// A bundle with a patch of its own for the app, not only universal ones, comes ahead of the rest\n"
+            + ind + old.replace("bundle.targetsVersion", cond) + "\n"
+            + ind + "    .thenByDescending { (bundle, _) -> bundle.targetsVersion }"
+        )
+        return src[:a] + new + src[b:]
+    lead = src.rfind("\n", 0, a) + 1
+    pre = src[lead:a]
+    if pre.strip():
+        return None
     new = (
-        "// A bundle with a patch of its own for the app, not only universal ones, comes ahead of the rest\n"
-        + ind + old.replace("bundle.targetsVersion", "bundle.compatible.isNotEmpty() || bundle.incompatible.isNotEmpty()") + "\n"
-        + ind + "    .thenByDescending { (bundle, _) -> bundle.targetsVersion }"
+        pre + "// A bundle with a patch of its own for the app, not only universal ones, comes ahead of the rest\n"
+        + pre + ".thenByDescending { (bundle, _) -> " + cond + " }\n"
+        + pre + ".thenByDescending { (bundle, _) -> bundle.targetsVersion }"
     )
-    return src[:a] + new + src[b:]
+    return src[:lead] + new + src[b:]
 
 
 def host_quiet_universal(src):
