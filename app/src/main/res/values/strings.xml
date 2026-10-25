@@ -245,9 +245,7 @@
     <string name="sources_dialog_choose_apps_description">Pick which of its apps to keep once the source has loaded</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Third-party patch sources</string>
-    <string name="sources_dialog_community_notice_message">"Community patch sources are made and maintained by their own authors. Morphe does not review or verify third-party patches, and is not responsible for their content or for what they do on your device.
-
-Anything you add from this website is used at your own risk"</string>
+    <string name="sources_dialog_community_notice_message">"Community patch sources are made and maintained by their own authors. Morphe does not review or verify third-party patches, and is not responsible for their content or for what they do on your device"</string>
     <string name="sources_update_success">Update successful</string>
     <string name="sources_update_unavailable">No update available</string>
     <string name="sources_download_fail">Failed to download sources: %s</string>
