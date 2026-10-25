@@ -15,8 +15,16 @@ import kotlin.math.max
 /** The heap limit of the calling VM, in mebibytes. */
 fun heapLimitMebibytes() = bytesToMebibytes(Runtime.getRuntime().maxMemory()).toInt()
 
-/** Whether the heap ran out, which a patch may have wrapped in an error of its own. */
-fun Throwable.isOutOfMemory() = generateSequence(this) { it.cause }.any { it is OutOfMemoryError }
+/**
+ * Whether the heap ran out, which a patch may have wrapped in an error of its own. Native memory
+ * running out throws the same error, but no heap would have avoided it.
+ */
+fun Throwable.isHeapExhausted() = generateSequence(this) { it.cause }.any { error ->
+    error is OutOfMemoryError && HEAP_EXHAUSTED_MESSAGES.any { error.message?.startsWith(it) == true }
+}
+
+// What HotSpot and ART say once the heap is full, as opposed to memory outside of it
+private val HEAP_EXHAUSTED_MESSAGES = listOf("Java heap space", "GC overhead limit exceeded", "Failed to allocate a ")
 
 /**
  * Polls the resources the patcher run consumes and reports them through the logger, which is the

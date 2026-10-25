@@ -51,8 +51,21 @@ class HostEventTest {
 
     @Test
     fun `a failure knows when the heap ran out underneath another error`() {
-        assertTrue(HostEvent.Failure(RuntimeException(OutOfMemoryError())).outOfMemory)
+        assertTrue(HostEvent.Failure(RuntimeException(OutOfMemoryError("Java heap space"))).outOfMemory)
         assertFalse(HostEvent.Failure(IllegalStateException()).outOfMemory)
+    }
+
+    @Test
+    fun `a failure tells the heap running out on either VM from native memory running out`() {
+        assertTrue(HostEvent.Failure(OutOfMemoryError("GC overhead limit exceeded")).outOfMemory)
+        assertTrue(
+            HostEvent.Failure(
+                OutOfMemoryError("Failed to allocate a 24 byte allocation with 8 free bytes and 8B until OOM")
+            ).outOfMemory
+        )
+        // zlib and other native code throw it without a message
+        assertFalse(HostEvent.Failure(OutOfMemoryError()).outOfMemory)
+        assertFalse(HostEvent.Failure(OutOfMemoryError("unable to create native thread")).outOfMemory)
     }
 
     @Test

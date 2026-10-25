@@ -262,7 +262,8 @@ private class HostEvents(stream: OutputStream) : AutoCloseable {
                     "Collecting garbage took ${(share * 100).toInt()}% of the last " +
                             "${window.milliseconds.inWholeSeconds}s, heap=${heapUsedMebibytes()}MB/${heapLimitMebibytes()}MB"
                 )
-                send(HostEvent.Finished(HostEvent.Failure(error)))
+                val failure = HostEvent.Failure(error.stackTraceToString(), outOfMemory = true)
+                send(HostEvent.Finished(failure))
                 exitProcess(0)
             }
         }
