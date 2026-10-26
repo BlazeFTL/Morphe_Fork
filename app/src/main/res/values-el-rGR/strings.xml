@@ -98,8 +98,8 @@
     <string name="home_category_name">Όνομα κατηγορίας</string>
     <string name="home_category_move_to">Μετακίνηση στην κατηγορία</string>
     <string name="home_category_move_selected_title">Μετακίνηση επιλεγμένων εφαρμογών</string>
-    <string name="home_category_delete_confirm_title">Διαγραφή κατηγορίας</string>
-    <string name="home_category_delete_confirm_message">Διαγραφή κατηγορίας &lt;b&gt;%1$s&lt;/b&gt;? Οι εφαρμογές που περιέχει θα μετακινηθούν πίσω στην &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Δεν είναι διαθέσιμες ενέργειες για αυτήν την κατηγορία</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Ποια εφαρμογή θέλετε να τροποποιήσετε;</string>
@@ -230,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">Δεν βρέθηκαν σύνδεσμοι στο πρόχειρο.</string>
     <string name="sources_dialog_local">Τοπική</string>
     <string name="sources_dialog_local_files">Επιλέξτε αρχεία πηγής ενημερώσεων.</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Προσθήκη περισσότερων αρχείων</string>
-    <string name="sources_dialog_local_file_tap_hint">Πατήστε για να περιηγηθείτε στην αποθήκευση</string>
     <string name="sources_dialog_local_invalid_extension">Το αρχείο πρέπει να έχει επέκταση .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Ενημερώσεις %s</string>
@@ -240,6 +237,7 @@
     <string name="sources_dialog_url_invalid">Η διεύθυνση URL πρέπει να δείχνει σε ένα αποθετήριο GitHub/GitLab ή σε ένα αρχείο .json</string>
     <string name="sources_dialog_preinstalled">Προεγκατεστημένες</string>
     <string name="sources_dialog_community">Κοινοτικά patches</string>
+    <string name="sources_dialog_choose_apps">Επιλογή εφαρμογών</string>
     <string name="sources_dialog_choose_apps_description">Επιλέξτε ποιες από τις εφαρμογές της θα κρατήσετε μόλις φορτωθεί η πηγή.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Πηγές patches τρίτων</string>
@@ -259,15 +257,12 @@
     <string name="sources_patch_expert_badge">Ειδικός</string>
     <string name="sources_patch_expert_badge_tooltip">Ενεργοποιήστε τη λειτουργία Ειδικού στις Ρυθμίσεις για να συμπεριλάβετε αυτήν την ενημέρωση χειροκίνητα</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Χρειάζεστε βοήθεια για να βρείτε ένα πρωτότυπο μη τροποποιημένο APK;</string>
     <string name="home_apk_availability_dialog_simple">Για την τροποποίηση του &lt;b&gt;%s&lt;/b&gt;, χρειάζεστε τη μη τροποποιημένη έκδοση του APK:</string>
     <string name="home_apk_availability_dialog_expert">Για την τροποποίηση του &lt;b&gt;%s&lt;/b&gt;, χρειάζεστε τις μη τροποποιημένες εκδόσεις του APK:</string>
     <string name="home_apk_availability_recommended_label">Συνιστάται</string>
     <string name="home_apk_availability_unpatched_label">Μη τροποποιημένο</string>
     <string name="home_apk_availability_incompatible_label">Ασύμβατο</string>
     <string name="home_apk_availability_installed_version">Εγκατεστημένο σε αυτή τη συσκευή: %s</string>
-    <string name="home_apk_availability_yes">Ναι, βοήθησέ με να βρω ένα APK</string>
-    <string name="home_apk_availability_no">Όχι, ήδη έχω ένα APK</string>
     <string name="home_apk_helper_download">Χρησιμοποιήστε μια βοηθητική εφαρμογή</string>
     <string name="home_apk_helper_untrusted">Έχει εγκατασταθεί μια βοηθητική εφαρμογή αλλά δεν έχει επικυρωθεί ακόμη, οπότε δεν προσφέρεται εδώ</string>
     <string name="home_apk_helper_untrusted_action">Επανεξέταση βοηθητικών</string>
@@ -283,8 +278,7 @@
     <string name="home_apk_helper_wrong_package">Η βοηθητική εφαρμογή επέστρεψε μια διαφορετική εφαρμογή από αυτή που τροποποιείται</string>
     <string name="home_apk_helper_installed_unavailable">Ο Morphe δεν μπόρεσε να χρησιμοποιήσει την εγκατεστημένη εφαρμογή</string>
     <string name="home_apk_helper_installed_incompatible">Η εγκατεστημένη έκδοση δεν μπορεί να τροποποιηθεί</string>
-    <string name="home_apk_use_saved">Χρήση αποθηκευμένου APK</string>
-    <string name="home_apk_use_installed">Χρήση εγκατεστημένου APK</string>
+    <string name="home_apk_use_installed_app">Χρήση εγκατεστημένης εφαρμογής</string>
     <string name="home_apk_use_saved_unsupported">Τα patches δεν υποστηρίζουν αυτό το αποθηκευμένο αντίγραφο. Η εφαρμογή του patch θα ζητήσει επιβεβαίωση ή επιλέξτε άλλο APK.</string>
     <string name="home_apk_use_installed_unverified">Δεν μπόρεσα να επαληθεύσω την υπογραφή της εγκατεστημένης εφαρμογής, επομένως ενδέχεται να έχει ήδη τροποποιηθεί</string>
     <string name="home_unverified">Μη επαληθευμένο</string>
@@ -320,14 +314,14 @@
     <string name="home_download_instructions_copy_link">Αντιγραφή συνδέσμου</string>
     <string name="home_download_instructions_link_copied">Ο σύνδεσμος αντιγράφηκε</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Επιλογή ληφθέντος APK</string>
-    <string name="home_file_picker_prompt_description">Επιλέξτε το &lt;b&gt;%s&lt;/b&gt; APK που μόλις ελήφθη</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Άνοιγμα αρχείου APK</string>
     <string name="home_recommended_version">Προτεινόμενη έκδοση</string>
     <string name="home_selected_version">Επιλεγμένη έκδοση</string>
     <string name="home_select_apk_title">Επιλογή APK</string>
-    <string name="home_select_any_apk_description">Επιλέξτε ένα αρχείο APK οποιασδήποτε εφαρμογής ή επιλέξτε μια εφαρμογή που είναι ήδη εγκατεστημένη σε αυτήν τη συσκευή</string>
     <string name="home_use_installed_app">Χρήση εγκατεστημένης εφαρμογής</string>
+    <string name="home_use_installed_app_description">Επιλέξτε μια εφαρμογή που βρίσκεται ήδη σε αυτή τη συσκευή</string>
+    <string name="home_open_apk_file_description">Επιλέξτε ένα αρχείο APK, APKM, APKS ή XAPK από την αποθήκη</string>
     <string name="home_installed_app_picker_title">Εγκατεστημένες εφαρμογές</string>
     <string name="home_installed_app_picker_empty">Δεν βρέθηκαν εφαρμογές</string>
     <string name="home_installed_app_picker_filter_user">Μόνο εφαρμογές χρήστη</string>
@@ -361,9 +355,6 @@
     <string name="expert_mode_patch_required_by_installer">Απαραίτητο για τον επιλεγμένο στόχο εγκατάστασης</string>
     <string name="expert_mode_patch_unavailable_for_installer">Δεν είναι διαθέσιμο για τον επιλεγμένο στόχο εγκατάστασης</string>
     <string name="expert_mode_multiple_sources_warning_title">Επιλέχτηκαν πολλαπλές πηγές τροποποιήσεων</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Έχετε επιλέξει τροποποιήσεις από πολλαπλές πηγές. Αυτό μπορεί να προκαλέσει προβλήματα συμβατότητας ή άγνωστη συμπεριφορά.
-
-Είστε σίγουροι ότι θέλετε να προχωρήσετε;"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Μη επαληθευμένο APK</string>
     <string name="home_invalid_signature_message">Το APK που επιλέξατε για το &lt;b&gt;%s&lt;/b&gt; δεν ταιριάζει με το αναμενόμενο πιστοποιητικό υπογραφής. Μπορεί να έχει τροποποιηθεί ή να προέρχεται από μη αξιόπιστη πηγή</string>
@@ -377,7 +368,9 @@
     <string name="home_dialog_unsupported_version_experimental_label">Πειραματική </string>
     <string name="home_dialog_unsupported_version_experimental_description">Αυτή η έκδοση έχει πειραματική υποστήριξη και μπορεί να είναι ασταθής ή ελλιπής</string>
     <string name="morphe_experimental_app_version_dialog_title">Θέλετε να πειραματιστείτε; 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">Αυτή η έκδοση του &lt;b&gt;%s&lt;/b&gt; έχει πρώιμη πειραματική υποστήριξη&lt;br/&gt;&lt;br/&gt;🔧 Αναμένετε ιδιόρρυθμη συμπεριφορά της εφαρμογής ή μη προσδιορισμένα σφάλματα καθώς οι τροποποιήσεις βελτιώνονται για αυτήν την έκδοση της εφαρμογής</string>
+    <string name="morphe_experimental_app_version_dialog_message">"Αυτή η έκδοση του &lt;b&gt;%s&lt;/b&gt; έχει πρώιμη πειραματική υποστήριξη.
+
+🔧 Αναμένετε ιδιόρρυθμη συμπεριφορά της εφαρμογής ή μη προσδιορισμένα σφάλματα καθώς οι τροποποιήσεις βελτιώνονται για αυτήν την έκδοση της εφαρμογής"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Μη υποστηριγμένη έκδοση</string>
     <string name="home_dialog_unsupported_version_dialog_description">Αυτό το APK δεν είναι μια συνιστώμενη έκδοση εφαρμογής. Η συνέχεια μπορεί να οδηγήσει σε μη λειτουργική εφαρμογή</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -514,7 +507,6 @@
     <string name="shortcut_check_updates_long">Έλεγχος για ενημερώσεις διορθώσεων</string>
     <string name="shortcut_patch_app">Διόρθωση %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Είστε βέβαιοι ότι θέλετε να απεγκαταστήσετε αυτή την εφαρμογή;</string>
     <string name="batch_uninstall_confirm_body">Οι επιλεγμένες εφαρμογές θα διαγραφούν οριστικά από τη συσκευή σας</string>
     <string name="home_app_info_remove_app_warning">Αυτό θα διαγράψει οριστικά:</string>
     <string name="home_app_info_delete_item_database">Την καταχωρημένη βάση δεδομένων</string>
@@ -676,8 +668,7 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Τροποποίηση σε εξέλιξη…</string>
     <string name="patcher_notification_text">Πατήστε για να επιστρέψετε στο πρόγραμμα τροποποίησης</string>
-    <string name="patcher_stop_confirm_title">Διακοπή τροποποιητή</string>
-    <string name="patcher_stop_confirm_description">Είστε βέβαιοι ότι θέλετε να διακόψετε τη διαδικασία τροποποίησης;</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Μεταμορφώνοντας την εφαρμογή σας σε κάτι καταπληκτικό… 🏆</string>
     <string name="patcher_message_2">Διδάσκοντας νέες συνήθειες σε παλιές εφαρμογές… 🎩</string>
@@ -819,21 +810,21 @@
     <string name="settings_appearance_repatch_notice_description">Εμφανίζει banner όταν οι διορθωμένες εφαρμογές μπορούν να επαναδιορθωθούν</string>
     <string name="settings_appearance_more_apps_card">Κάρτα περισσότερων εφαρμογών</string>
     <string name="settings_appearance_more_apps_card_description">Εμφανίζει μια κάρτα κάτω από τις εφαρμογές που οδηγεί σε κοινοτικά διορθώματα</string>
-    <string name="settings_appearance_app_card_colors">Χρώματα καρτών εφαρμογών</string>
+    <string name="settings_appearance_app_card_colors">Χρώματα καρτών</string>
     <string name="settings_appearance_app_card_colors_default">Προεπιλογή</string>
-    <string name="settings_appearance_app_card_colors_default_description">Δώστε σε κάθε εφαρμογή το χρώμα του δικού της πακέτου</string>
+    <string name="settings_appearance_app_card_colors_default_description">Δώστε σε κάθε εφαρμογή και πηγή το δικό της χρώμα</string>
     <string name="settings_appearance_app_card_colors_accent">Απόχρωση</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Χρησιμοποιήστε την απόχρωση της εφαρμογής για τις κάρτες της αρχικής οθόνης</string>
+    <string name="settings_appearance_app_card_colors_accent_description">Χρήση του χρώματος έμφασης της εφαρμογής για τις κάρτες εφαρμογών και πηγών</string>
     <string name="settings_appearance_app_card_colors_gradient">Διαβάθμιση</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Χρησιμοποιήστε μία προσαρμοσμένη διαβάθμιση για τις κάρτες της αρχικής οθόνης</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">Χρήση ενός προσαρμοσμένου κλίματος χρωμάτων για τις κάρτες εφαρμογών, με συγχώνευση σε ένα χρώμα για τις κάρτες πηγών</string>
     <string name="settings_appearance_app_card_colors_solid">Μονόχρωμο</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Χρησιμοποιήστε ένα προσαρμοσμένο χρώμα για τις κάρτες της αρχικής οθόνης</string>
+    <string name="settings_appearance_app_card_colors_solid_description">Χρήση ενός προσαρμοσμένου χρώματος για τις κάρτες εφαρμογών και πηγών</string>
     <string name="settings_appearance_app_card_colors_start">Αρχικό χρώμα</string>
     <string name="settings_appearance_app_card_colors_middle">Μεσαίο χρώμα</string>
     <string name="settings_appearance_app_card_colors_end">Τελικό χρώμα</string>
     <string name="settings_appearance_app_card_colors_solid_color">Μονόχρωμο χρώμα</string>
     <string name="settings_appearance_app_card_colors_bundle">Χρώματα θέματος εφαρμογής</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Χρησιμοποιήστε το δικό σας χρώμα για κάθε εφαρμογή εδώ, με αυτόματη απόχρωση ώστε να ταιριάζει</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">Χρήση του χρώματος της κάθε εφαρμογής ή πηγής εδώ, με αυτόματη σκίαση για προσαρμογή</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Εικονίδιο εφαρμογής</string>
     <string name="settings_appearance_app_icon_selector_description">Πώς φαίνεται το Morphe στην αρχική οθόνη και στο συρτάρι εφαρμογών</string>
@@ -859,7 +850,7 @@
     <string name="settings_appearance_app_icon_mark_white">Λευκό</string>
     <string name="settings_appearance_app_icon_mark_black">Μαύρο</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Αλλαγή εικονιδίου της εφαρμογής;</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Αλλαγή σε &lt;b&gt;%s&lt;/b&gt; και επανεκκίνηση;</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Αλλαγή εικονιδίου</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1046,6 +1037,8 @@ morphe_header_custom_dark.png
     <string name="installer_play_store_warning_continue">Κατανοώ, συνέχισε</string>
     <string name="installer_play_store_mode">Εγκατάσταση ως Play Store</string>
     <string name="installer_play_store_mode_description">Σημαιοφορεί το Google Play Store ως πηγή εγκατάστασης</string>
+    <string name="settings_nomount_only">Μόνο NoMount</string>
+    <string name="settings_nomount_only_description">Εγκαθιστά εφαρμογές μόνο με NoMount και δεν επιστρέφει ποτέ σε bind mount, ώστε να παραμένουν μη εγκατεστημένες χωρίς αυτό</string>
     <string name="settings_prompt_installer_on_install">Εμφάνιση προτροπής επιλογής εγκαταστάτη</string>
     <string name="settings_prompt_installer_on_install_description">Ερωτά πώς να εγκατασταθεί κάθε εφαρμογή: με δικαιώματα root πριν τη διαρρύθμιση, διαφορετικά μετά από αυτήν</string>
     <string name="settings_auto_install_with_shizuku">Αυτόματη εγκατάσταση μετά την επιδιόρθωση</string>

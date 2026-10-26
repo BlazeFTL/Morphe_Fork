@@ -76,8 +76,8 @@
     <string name="home_category_name">Назва катэгорыі</string>
     <string name="home_category_move_to">Перайсці ў катэгорыю</string>
     <string name="home_category_move_selected_title">Перамясціць выбраныя праграмы</string>
-    <string name="home_category_delete_confirm_title">Выдаліць катэгорыю</string>
-    <string name="home_category_delete_confirm_message">Выдаліць катэгорыю &lt;b&gt;%1$s&lt;/b&gt;? Праграмы з яе перамясцяцца назад у &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Дзеянні недаступны для гэтай катэгорыі</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Якую праграму вы хочаце абнавіць?</string>
@@ -169,8 +169,6 @@
     <string name="sources_dialog_remote">Знешні</string>
     <string name="sources_dialog_remote_url">URL крыніцы</string>
     <string name="sources_dialog_local">Лакальны</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_file_tap_hint">Націсніце, каб прагледзець сховішча</string>
     <string name="sources_dialog_local_invalid_extension">Файл павінен мець пашырэнне .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_url_valid">Дзейны рэпазіторый або JSON URL</string>
@@ -185,14 +183,11 @@
     <string name="sources_patch_expert_badge">Эксперт</string>
     <string name="sources_patch_expert_badge_tooltip">Уключыце рэжым эксперта ў наладах, каб уручную дадаць гэты патч</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Патрэбна дапамога з пошукам арыгінальнага APK?</string>
     <string name="home_apk_availability_dialog_simple">Каб прапатчыць &lt;b&gt;%s&lt;/b&gt;, вам спатрэбіцца арыгінальны APK наступнай версіі:</string>
     <string name="home_apk_availability_dialog_expert">Каб прапатчыць &lt;b&gt;%s&lt;/b&gt;, вам спатрэбіцца арыгінальны APK наступных версій:</string>
     <string name="home_apk_availability_recommended_label">Рэкамендаваны</string>
     <string name="home_apk_availability_unpatched_label">Без патчаў</string>
     <string name="home_apk_availability_incompatible_label">Несумяшчальны</string>
-    <string name="home_apk_availability_yes">Так, дапамажы мне знайсці APK</string>
-    <string name="home_apk_availability_no">Не, у мяне ўжо ёсць APK</string>
     <string name="home_apk_helper_download">Выкарыстоўваць дапаможную праграму</string>
     <string name="home_apk_helper_title">Спампаваць з дапаможнай праграмай</string>
     <string name="home_apk_helper_description">Morphe папросіць дапаможную праграму ніжэй спампаваць арыгінальны APK і вярнуць файл</string>
@@ -205,8 +200,6 @@
     <string name="home_apk_helper_wrong_package">Дапаможная праграма вярнула іншую праграму, чым тую, якую патчыла</string>
     <string name="home_apk_helper_installed_unavailable">Morphe не змог выкарыстоўваць усталяваную праграму</string>
     <string name="home_apk_helper_installed_incompatible">Усталяваную версію немагчыма прапатчыць</string>
-    <string name="home_apk_use_saved">Выкарыстоўваць захаваны APK</string>
-    <string name="home_apk_use_installed">Выкарыстоўваць усталяваны APK</string>
     <string name="home_apk_use_installed_unverified">Не ўдалося праверыць подпіс усталяванай праграмы, таму яна, магчыма, ужо прапатчана</string>
     <string name="home_app_info_no_saved_apk">APK не захаваны. Для абнаўлення спатрэбіцца зноў выбраць файл APK</string>
     <string name="home_version_requires_android">Патрабуецца Android %s+</string>
@@ -227,8 +220,7 @@
     <string name="home_download_instructions_step4">Пасля завяршэння спампоўкі вярніцеся да Morphe</string>
     <string name="home_download_instructions_step4_mount">Пасля ўсталявання арыгінальнага APK, вярніцеся да Morphe</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Выберыце спампаваны APK</string>
-    <string name="home_file_picker_prompt_description">Выберыце &lt;b&gt;%s&lt;/b&gt; файл APK, які вы толькі што спампавалі</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Адкрыць APK-файл</string>
     <string name="home_installed_app_picker_title">Усталяваныя праграмы</string>
     <string name="home_installed_app_picker_empty">Праграмы не знойдзены</string>
@@ -269,6 +261,7 @@
     <!-- Patcher Screen - Patcher Steps -->
     <!-- Battery optimization pre-flight dialog -->
     <!-- Patcher Screen - Patcher Worker -->
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <!-- Morphe patches fix YouTube bugs that Google still has not fixed. -->
     <!-- "bytecode" can be translated from "the app code" -->
@@ -334,7 +327,6 @@
     <string name="settings_appearance_repatch_notice">Паведамленне аб перапатчынгу</string>
     <string name="settings_appearance_repatch_notice_description">Паказвае банер, калі прапатчаныя праграмы можна перапатчыць</string>
     <string name="settings_appearance_more_apps_card">Больш картак праграм</string>
-    <string name="settings_appearance_app_card_colors">Колеры карткі праграмы</string>
     <string name="settings_appearance_app_card_colors_default">Звычайны</string>
     <string name="settings_appearance_app_card_colors_accent">Акцэнт</string>
     <string name="settings_appearance_app_card_colors_gradient">Градыент</string>
@@ -362,6 +354,7 @@
     <string name="settings_appearance_app_icon_mark_white">Белы</string>
     <string name="settings_appearance_app_icon_mark_black">Чорны</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Змяніць колер іконкі?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <!-- Settings - Advanced Tab - Updates Section -->
     <!-- "Morphe" here is the app itself, not the patches. Do not translate this as pre-release patches -->

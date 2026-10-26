@@ -98,8 +98,8 @@
     <string name="home_category_name">বিভাগের নাম</string>
     <string name="home_category_move_to">বিভাগে সরান</string>
     <string name="home_category_move_selected_title">নির্বাচিত অ্যাপগুলি সরান</string>
-    <string name="home_category_delete_confirm_title">বিভাগটি মুছে ফেলুন</string>
-    <string name="home_category_delete_confirm_message">বিভাগ &lt;b&gt;%1$s&lt;/b&gt; মুছে ফেলুন? এর অন্তর্গত অ্যাপগুলি &lt;b&gt;%2$s&lt;/b&gt;-এ ফিরে যাবে।</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">এই বিভাগের জন্য কোনো পদক্ষেপ উপলব্ধ নেই</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">আপনি কোন অ্যাপ প্যাচ করতে চান?</string>
@@ -230,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">ক্লিপবোর্ডে কোনো লিংক পাওয়া যায়নি</string>
     <string name="sources_dialog_local">লোকাল</string>
     <string name="sources_dialog_local_files">প্যাচ সোর্স ফাইল নির্বাচন করুন</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">আরও ফাইল যোগ করুন</string>
-    <string name="sources_dialog_local_file_tap_hint">স্টোরেজ ব্রাউজ করতে ট্যাপ করুন</string>
     <string name="sources_dialog_local_invalid_extension">ফাইলের এক্সটেনশন .mpp হতে হবে।</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">আপডেট %s</string>
@@ -240,6 +237,7 @@
     <string name="sources_dialog_url_invalid">URL টি অবশ্যই একটি GitHub/GitLab রেপো অথবা .json ফাইল নির্দেশ করতে হবে।</string>
     <string name="sources_dialog_preinstalled">প্র-ইনস্টল করা হয়েছে</string>
     <string name="sources_dialog_community">কমিউনিটি প্যাচ</string>
+    <string name="sources_dialog_choose_apps">অ্যাপস নির্বাচন করুন</string>
     <string name="sources_dialog_choose_apps_description">সোর্স লোড হয়ে গেলে তার কোন অ্যাপগুলো রাখতে চান তা বেছে নিন।</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">তৃতীয় পক্ষের প্যাচ উৎস</string>
@@ -259,15 +257,12 @@
     <string name="sources_patch_expert_badge">বিশেষজ্ঞ</string>
     <string name="sources_patch_expert_badge_tooltip">এই প্যাচটি ম্যানুয়ালি অন্তর্ভুক্ত করতে সেটিংস-এ বিশেষজ্ঞ মোড সক্রিয় করুন</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">অপেক্ষা করছেন কোথায় একটি মূল অপছন্দিত APK?</string>
     <string name="home_apk_availability_dialog_simple">প্যাচ করতে &lt;b&gt;%s&lt;/b&gt; এর জন্য, অ-প্যাচড এপিকি (APK) সংস্করণ দরকার:</string>
     <string name="home_apk_availability_dialog_expert">প্যাচ করতে &lt;b&gt;%s&lt;/b&gt; এর জন্য, অ-প্যাচড এপিকি (APK) সংস্করণ দরকার:</string>
     <string name="home_apk_availability_recommended_label">প্রশংসিত</string>
     <string name="home_apk_availability_unpatched_label">অনুশিষ্টিত</string>
     <string name="home_apk_availability_incompatible_label">অসঙ্গতিপূর্ণ</string>
     <string name="home_apk_availability_installed_version">এই ডিভাইসে ইনস্টল করা হয়েছে: %s</string>
-    <string name="home_apk_availability_yes">হ্যাঁ, আমাকে একটি APK খুঁজতে সাহায্য করুন</string>
-    <string name="home_apk_availability_no">না, আমি ইতিমধ্যে একটি APK পেয়েছি</string>
     <string name="home_apk_helper_download">একটি সহায়ক অ্যাপ ব্যবহার করুন</string>
     <string name="home_apk_helper_untrusted">একটি সহায়ক অ্যাপ ইনস্টল করা হয়েছে কিন্তু এখনও নির্ভরযোগ্য নয়, তাই এটি এখানে প্রদান করা হয়নি</string>
     <string name="home_apk_helper_untrusted_action">সহায়ক অ্যাপ পর্যালোচনা করুন</string>
@@ -283,8 +278,6 @@
     <string name="home_apk_helper_wrong_package">সাহায্যকারী অ্যাপটি প্যাচ করা অ্যাপের চেয়ে ভিন্ন একটি অ্যাপ ফিরিয়ে দিয়েছে</string>
     <string name="home_apk_helper_installed_unavailable">Morphe ইনস্টল করা অ্যাপটি ব্যবহার করতে পারেনি</string>
     <string name="home_apk_helper_installed_incompatible">ইনস্টল করা সংস্করণটি প্যাচ করা যায় না</string>
-    <string name="home_apk_use_saved">সেভ করে রাখা APK-টি ব্যবহার করুন</string>
-    <string name="home_apk_use_installed">ফোনে ইনস্টল থাকা APK-টি ব্যবহার করুন</string>
     <string name="home_apk_use_saved_unsupported">প্যাচগুলো এই সংরক্ষিত কপি সমর্থন করে না। এটি প্যাচ করতে গেলে আপনাকে নিশ্চিত করতে বলা হবে, অথবা অন্য একটি APK বেছে নিন</string>
     <string name="home_apk_use_installed_unverified">ইনস্টল করা অ্যাপের স্বাক্ষর যাচাই করা যায়নি, তাই এটি ইতোমধ্যেই প্যাচ করা থাকতে পারে</string>
     <string name="home_unverified">অপ্রমাণিত</string>
@@ -320,14 +313,14 @@
     <string name="home_download_instructions_copy_link">লিংক কপি করুন</string>
     <string name="home_download_instructions_link_copied">লিঙ্ক কপি করা হয়েছে</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">নির্বাচিত ডাউনলোডকৃত এপিকে</string>
-    <string name="home_file_picker_prompt_description">নির্বাচন করুন যুয়ুশি &lt;b&gt;%s&lt;/b&gt; APK ফাইল, যা তুমি জুয়ুশি ডাউনলোড করেছো</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">APK ফাইল খুলুন</string>
     <string name="home_recommended_version">社学牛​</string>
     <string name="home_selected_version">নির্বাচিত সংস্করণ</string>
     <string name="home_select_apk_title">APK নির্বাচন করুন</string>
-    <string name="home_select_any_apk_description">যেকোনো অ্যাপের একটি APK ফাইল নির্বাচন করুন, অথবা এই ডিভাইসে আগে থেকে ইনস্টল করা কোনো অ্যাপ বেছে নিন</string>
     <string name="home_use_installed_app">ইনস্টল করা অ্যাপ ব্যবহার করুন</string>
+    <string name="home_use_installed_app_description">এই ডিভাইসে ইতিমধ্যে থাকা একটি অ্যাপ বেছে নিন</string>
+    <string name="home_open_apk_file_description">স্টোরেজ থেকে একটি APK, APKM, APKS বা XAPK ফাইল বেছে নিন</string>
     <string name="home_installed_app_picker_title">ইনস্টল করা অ্যাপ</string>
     <string name="home_installed_app_picker_empty">কোনো অ্যাপস খুঁজে পাওয়া যায়নি</string>
     <string name="home_installed_app_picker_filter_user">শুধুমাত্র ব্যবহারকারীর অ্যাপস</string>
@@ -361,9 +354,6 @@
     <string name="expert_mode_patch_required_by_installer">নির্বাচিত ইনস্টল টার্গেটের জন্য এটি প্রয়োজনীয়</string>
     <string name="expert_mode_patch_unavailable_for_installer">নির্বাচিত ইনস্টল টার্গেটের জন্য এটি পাওয়া যাচ্ছে না</string>
     <string name="expert_mode_multiple_sources_warning_title">বহু প্যাচ সোর্স নির্বাচিত</string>
-    <string name="expert_mode_multiple_sources_warning_message">"আপনি একাধিক প্যাচ উৎস থেকে প্যাচ নির্বাচন করেছেন। এটি সামঞ্জस्यতা সমস্যা বা অপ্রত্যাশিত আচরণের কারণ হতে পারে।
-
-আপনি এগিয়ে যেতে চান কি?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title"> যাচাই করা হয়নি APK</string>
     <string name="home_invalid_signature_message">আপনি যে APK নির্বাচন করেছেন &lt;b&gt;%s&lt;/b&gt; তা প্রত্যাশিত সাইনিং সার্টিফিকেট-এর সাথে মেলে না। এটি পরিবর্তিত হতে পারে অথবা একটি अविश्वसनीय উৎস থেকে আসা হতে পারে</string>
@@ -377,7 +367,9 @@
     <string name="home_dialog_unsupported_version_experimental_label">পরীক্ষামূলক</string>
     <string name="home_dialog_unsupported_version_experimental_description">এই সংস্করণে পরীক্ষামূলক সমর্থন রয়েছে এবং এটি अस्थिर বা অসম্পূর্ণ হতে পারে</string>
     <string name="morphe_experimental_app_version_dialog_title">আপনি কি পরীক্ষা করতে চান? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">&lt;b&gt;%s&lt;/b&gt; এর এই সংস্করণে প্রাথমিক পরীক্ষামূলক সমর্থন রয়েছে&lt;br/&gt;&lt;br/&gt;🔧 এই অ্যাপ সংস্করণের জন্য প্যাচগুলি পরিমার্জন করা হচ্ছে বলেquirky অ্যাপ আচরণ বা অজ্ঞাত বাগ আশা করুন</string>
+    <string name="morphe_experimental_app_version_dialog_message">"&lt;b&gt;%s&lt;/b&gt;-এর এই ভার্সনটিতে প্রাথমিক পরীক্ষামূলক সাপোর্ট রয়েছে।
+
+🔧 এই অ্যাপ ভার্সনের জন্য প্যাচগুলো আরও উন্নত করার প্রক্রিয়ায় থাকায় অ্যাপের আচরণ অদ্ভুত হতে পারে অথবা অজ্ঞাত বাগ থাকতে পারে"</string>
     <string name="home_dialog_unsupported_version_dialog_title">এই এপিকটি একটি সুপারিশিত অ্যাপ সংস্করণ নয়। এগো চললে একটি অকার্যকার অ্যাপ হয়তে পারে।</string>
     <string name="home_dialog_unsupported_version_dialog_description">এই APK রেকমেন্ডেড অ্যাপ ভার্সনের নয়। চলুন এতে ফলাফল হবার সম্ভাবনা আছে</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -514,7 +506,6 @@
     <string name="shortcut_check_updates_long">প্যাচ আপডেটের জন্য দেখুন</string>
     <string name="shortcut_patch_app">%s প্যাচ করুন</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">আপন কি এই অ্যাপটি মুছে ফেলতে চানেন? </string>
     <string name="batch_uninstall_confirm_body">আপনার ডিভাইস থেকে নির্বাচিত অ্যাপগুলি স্থায়ীভাবে মুছে ফেলা হবে।</string>
     <string name="home_app_info_remove_app_warning">এইচইলি:</string>
     <string name="home_app_info_delete_item_database">ডাটাবেস এন্ট্রি</string>
@@ -676,8 +667,7 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">প্যাচিং চলছে…</string>
     <string name="patcher_notification_text">প্যাচার-এ ফিরে যেতে ট্যাপ করুন</string>
-    <string name="patcher_stop_confirm_title">প্যাচার বন্ধ করুন</string>
-    <string name="patcher_stop_confirm_description">আপনি কি প্যাচিং প্রক্রিয়া বন্ধ করতে চান?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">আপনার অ্যাপটিকে দুর্দান্ত কিছুতে পরিবর্তন করা হচ্ছে… 🏆</string>
     <string name="patcher_message_2">পুরানো অ্যাপগুলিতে নতুন কৌশল শেখানো হচ্ছে… 🎩</string>
@@ -819,21 +809,21 @@
     <string name="settings_appearance_repatch_notice_description">যখন প্যাচড অ্যাপগুলিকে পুনরায় প্যাচ করা যায় তখন একটি ব্যানার দেখায়</string>
     <string name="settings_appearance_more_apps_card">আরও অ্যাপ কার্ড</string>
     <string name="settings_appearance_more_apps_card_description">অ্যাপগুলির নিচে একটি কার্ড দেখায় যা কমিউনিটি প্যাচগুলোর দিকে নিয়ে যায়</string>
-    <string name="settings_appearance_app_card_colors">অ্যাপ কার্ডের রং</string>
+    <string name="settings_appearance_app_card_colors">কার্ডের রঙ</string>
     <string name="settings_appearance_app_card_colors_default">ডিফল্ট</string>
-    <string name="settings_appearance_app_card_colors_default_description">প্রতিটি অ্যাপকে তার নিজস্ব বান্ডেলের রং দিন</string>
+    <string name="settings_appearance_app_card_colors_default_description">প্রতিটি অ্যাপ এবং সোর্সকে নিজস্ব রঙ দিন</string>
     <string name="settings_appearance_app_card_colors_accent">accent</string>
-    <string name="settings_appearance_app_card_colors_accent_description">হোম অ্যাপ কার্ডের জন্য অ্যাপ অ্যাকসেন্ট রং ব্যবহার করুন</string>
+    <string name="settings_appearance_app_card_colors_accent_description">অ্যাপ এবং সোর্স কার্ডের জন্য অ্যাপের অ্যাকসেন্ট রঙ ব্যবহার করুন</string>
     <string name="settings_appearance_app_card_colors_gradient">gradient</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">হোম অ্যাপ কার্ডের জন্য একটি কাস্টম গ্রেডিয়েন্ট ব্যবহার করুন</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">অ্যাপ কার্ডের জন্য একটি কাস্টম গ্রেডিয়েন্ট ব্যবহার করুন, যা সোর্স কার্ডের জন্য একটি রঙে মিশে যাবে</string>
     <string name="settings_appearance_app_card_colors_solid">solid</string>
-    <string name="settings_appearance_app_card_colors_solid_description">হোম অ্যাপ কার্ডের জন্য একটি কাস্টম রং ব্যবহার করুন</string>
+    <string name="settings_appearance_app_card_colors_solid_description">অ্যাপ এবং সোর্স কার্ডের জন্য একটি কাস্টম রঙ ব্যবহার করুন</string>
     <string name="settings_appearance_app_card_colors_start">শুরু রং</string>
     <string name="settings_appearance_app_card_colors_middle">middle color</string>
     <string name="settings_appearance_app_card_colors_end">end color</string>
     <string name="settings_appearance_app_card_colors_solid_color">solid color</string>
     <string name="settings_appearance_app_card_colors_bundle">অ্যাপ বান্ডেল রং</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">এখানে প্রতিটি অ্যাপের নিজস্ব রঙ ব্যবহার করুন, যা স্বয়ংক্রিয়ভাবে মানানসই করার জন্য শেড করা হবে</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">এখানে প্রতিটি অ্যাপ বা সোর্সের নিজস্ব রঙ ব্যবহার করুন, যা স্বয়ংক্রিয়ভাবে মানানসই শেডে পরিবর্তিত হবে</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">অ্যাপ আইকন</string>
     <string name="settings_appearance_app_icon_selector_description">Morphe আপনার হোম স্ক্রিনে এবং অ্যাপ ড্রয়ারে কেমন দেখায়</string>
@@ -859,7 +849,7 @@
     <string name="settings_appearance_app_icon_mark_white">সাদা</string>
     <string name="settings_appearance_app_icon_mark_black">কালো</string>
     <string name="settings_appearance_app_icon_change_dialog_title">অ্যাপ আইকন পরিবর্তন? </string>
-    <string name="settings_appearance_app_icon_change_dialog_message">&lt;b&gt;%s&lt;/b&gt;-এ পরিবর্তন করুন এবং পুনরায় চালু করুন?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">আইকন পরিবর্তন করুন</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1036,6 +1026,8 @@ morphe_adaptive_monochrome_custom.xml
     <string name="installer_play_store_warning_continue">আমি বুঝতে পেরেছি, চালিয়ে যান</string>
     <string name="installer_play_store_mode">Play Store হিসাবে ইনস্টল করুন</string>
     <string name="installer_play_store_mode_description">Google Play Store-কে ইনস্টলেশনের উৎস হিসেবে চিহ্নিত করে</string>
+    <string name="settings_nomount_only">শুধুমাত্র NoMount</string>
+    <string name="settings_nomount_only_description">অ্যাপগুলোকে শুধুমাত্র NoMount দিয়ে মাউন্ট করে এবং কখনোই বাইন্ড মাউন্টে ফিরে যায় না, ফলে NoMount ছাড়া সেগুলো আনমাউন্টেড থাকে</string>
     <string name="settings_prompt_installer_on_install">ইনস্টলার নির্বাচন প্রম্পট।</string>
     <string name="settings_prompt_installer_on_install_description">প্রতিটি অ্যাপ ইনস্টল করার পদ্ধতি জিজ্ঞাসা করে: রুট ব্যবহার করে প্যাচিংয়ের আগে, অন্যথায় এর পরে</string>
     <string name="settings_auto_install_with_shizuku">প্যাচিং করার পরে স্বয়ংক্রিয়ভাবে ইনস্টল করুন</string>

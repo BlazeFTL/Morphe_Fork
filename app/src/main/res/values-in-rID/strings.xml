@@ -98,8 +98,8 @@
     <string name="home_category_name">Nama kategori</string>
     <string name="home_category_move_to">Pindahkan ke kategori</string>
     <string name="home_category_move_selected_title">Pindahkan aplikasi terpilih</string>
-    <string name="home_category_delete_confirm_title">Hapus kategori</string>
-    <string name="home_category_delete_confirm_message">Hapus kategori &lt;b&gt;%1$s&lt;/b&gt;? Aplikasi di dalamnya akan dikembalikan ke &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Tindakan tidak tersedia untuk kategori ini</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Aplikasi apa yang ingin Anda tambal?</string>
@@ -230,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">Tidak ada tautan yang ditemukan di papan klip.</string>
     <string name="sources_dialog_local">Lokal</string>
     <string name="sources_dialog_local_files">Pilih file sumber patch.</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Tambahkan file lainnya.</string>
-    <string name="sources_dialog_local_file_tap_hint">Ketuk untuk menelusuri penyimpanan</string>
     <string name="sources_dialog_local_invalid_extension">Berkas harus memiliki ekstensi .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Memperbarui %s</string>
@@ -240,6 +237,7 @@
     <string name="sources_dialog_url_invalid">URL harus mengarah ke repositori GitHub/GitLab atau berkas .json</string>
     <string name="sources_dialog_preinstalled">Sudah dipasang sebelumnya</string>
     <string name="sources_dialog_community">Tambalan komunitas</string>
+    <string name="sources_dialog_choose_apps">Pilih aplikasi</string>
     <string name="sources_dialog_choose_apps_description">Pilih aplikasi mana yang ingin dipertahankan setelah sumber dimuat.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Sumber tambalan pihak ketiga</string>
@@ -259,15 +257,12 @@
     <string name="sources_patch_expert_badge">Ahli</string>
     <string name="sources_patch_expert_badge_tooltip">Aktifkan mode Ahli di Setelan untuk menambahkan tambalan ini secara manual</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Butuh bantuan mencari APK asli yang belum ditambal?</string>
     <string name="home_apk_availability_dialog_simple">Untuk menambal &lt;b&gt;%s&lt;/b&gt;, Anda membutuhkan versi APK yang belum ditambal:</string>
     <string name="home_apk_availability_dialog_expert">Untuk menambal &lt;b&gt;%s&lt;/b&gt;, Anda membutuhkan APK yang belum ditambal dengan versi:</string>
     <string name="home_apk_availability_recommended_label">Direkomendasikan</string>
     <string name="home_apk_availability_unpatched_label">Tidak ditambal</string>
     <string name="home_apk_availability_incompatible_label">Tidak kompatibel</string>
     <string name="home_apk_availability_installed_version">Terpasang di perangkat ini: %s</string>
-    <string name="home_apk_availability_yes">Ya, bantu saya mencari APK</string>
-    <string name="home_apk_availability_no">Tidak, saya sudah memiliki APK</string>
     <string name="home_apk_helper_download">Gunakan aplikasi pembantu</string>
     <string name="home_apk_helper_untrusted">Sebuah aplikasi pendamping terinstal namun belum dipercaya, sehingga tidak ditampilkan di sini</string>
     <string name="home_apk_helper_untrusted_action">Tinjau aplikasi pendamping</string>
@@ -283,8 +278,6 @@
     <string name="home_apk_helper_wrong_package">Aplikasi pembantu mengembalikan aplikasi yang berbeda dari aplikasi yang sedang diperbarui</string>
     <string name="home_apk_helper_installed_unavailable">Morphe tidak dapat menggunakan aplikasi yang telah dipasang</string>
     <string name="home_apk_helper_installed_incompatible">Versi yang sudah terpasang tidak dapat ditambal</string>
-    <string name="home_apk_use_saved">Gunakan APK yang tersimpan</string>
-    <string name="home_apk_use_installed">Gunakan APK yang terpasang</string>
     <string name="home_apk_use_saved_unsupported">Tambalan tidak mendukung salinan tersimpan ini. Menambalnya akan meminta konfirmasi Anda, atau pilih APK lain</string>
     <string name="home_apk_use_installed_unverified">Tanda tangan aplikasi yang terpasang tidak dapat diverifikasi, jadi kemungkinan aplikasi tersebut sudah ditambal</string>
     <string name="home_unverified">Tidak Terverifikasi</string>
@@ -320,14 +313,14 @@
     <string name="home_download_instructions_copy_link">Salin tautan</string>
     <string name="home_download_instructions_link_copied">Tautan disalin</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Pilih APK yang telah diunduh</string>
-    <string name="home_file_picker_prompt_description">Pilih berkas APK &lt;b&gt;%s&lt;/b&gt; yang baru saja Anda unduh</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Buka berkas APK</string>
     <string name="home_recommended_version">Rekomendasi versi</string>
     <string name="home_selected_version">Versi yang terpilih</string>
     <string name="home_select_apk_title">Pilih APK</string>
-    <string name="home_select_any_apk_description">Pilih berkas APK dari aplikasi apa pun, atau pilih aplikasi yang sudah terpasang di perangkat ini</string>
     <string name="home_use_installed_app">Gunakan aplikasi yang terpasang</string>
+    <string name="home_use_installed_app_description">Pilih aplikasi yang sudah ada di perangkat ini</string>
+    <string name="home_open_apk_file_description">Pilih file APK, APKM, APKS, atau XAPK dari penyimpanan</string>
     <string name="home_installed_app_picker_title">Aplikasi terpasang</string>
     <string name="home_installed_app_picker_empty">Tidak ditemukan aplikasi</string>
     <string name="home_installed_app_picker_filter_user">Hanya aplikasi pengguna</string>
@@ -361,9 +354,6 @@
     <string name="expert_mode_patch_required_by_installer">Diperlukan untuk target pemasangan yang dipilih</string>
     <string name="expert_mode_patch_unavailable_for_installer">Tidak tersedia untuk target pemasangan yang dipilih</string>
     <string name="expert_mode_multiple_sources_warning_title">Beberapa sumber tambalan telah dipilih</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Anda telah memilih tambalan dari berbagai sumber. Hal ini dapat menyebabkan masalah kompatibilitas atau masalah yang tidak terduga.
-
-Apakah Anda yakin ingin melanjutkan?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK Tidak Terverifikasi</string>
     <string name="home_invalid_signature_message">APK yang Anda pilih untuk &lt;b&gt;%s&lt;/b&gt; tidak sesuai dengan sertifikat yang diharapkan. Ini mungkin telah dimodifikasi atau berasal dari sumber yang tidak terpercaya</string>
@@ -377,8 +367,9 @@ Untuk hasil terbaik, aplikasi ini merekomendasikan untuk menambal &lt;b&gt;APK l
     <string name="home_dialog_unsupported_version_experimental_label">Eksperimental</string>
     <string name="home_dialog_unsupported_version_experimental_description">Versi ini memiliki dukungan eksperimental dan mungkin tidak stabil atau tidak lengkap</string>
     <string name="morphe_experimental_app_version_dialog_title">Apakah Anda ingin bereksperimen? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">Versi &lt;b&gt;%s&lt;/b&gt; ini memiliki dukungan eksperimental dini&lt;br/&gt;&lt;br/&gt;🔧
-Bersiap untuk perilaku aplikasi yang tidak biasa atau bug yang belum teridentifikasi karena tambalan untuk versi aplikasi ini masih dalam tahap penyempurnaan</string>
+    <string name="morphe_experimental_app_version_dialog_message">"Versi &lt;b&gt;%s&lt;/b&gt; ini memiliki dukungan eksperimental dini.
+
+🔧 Bersiap untuk perilaku aplikasi yang tidak biasa atau bug yang belum teridentifikasi karena tambalan untuk versi aplikasi ini masih dalam tahap penyempurnaan"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Versi tidak didukung</string>
     <string name="home_dialog_unsupported_version_dialog_description">APK ini bukan versi aplikasi yang direkomendasikan. Jika dilanjutkan mungkin akan membuat aplikasi menjadi tidak berfungsi</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -515,7 +506,6 @@ Bersiap untuk perilaku aplikasi yang tidak biasa atau bug yang belum teridentifi
     <string name="shortcut_check_updates_long">Periksa pembaruan tambalan</string>
     <string name="shortcut_patch_app">Tambal %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Apakah Anda yakin ingin mencopot aplikasi ini?</string>
     <string name="batch_uninstall_confirm_body">Aplikasi yang dipilih akan dihapus secara permanen dari perangkat Anda</string>
     <string name="home_app_info_remove_app_warning">Ini akan menghapus secara permanen:</string>
     <string name="home_app_info_delete_item_database">Entri basis data</string>
@@ -677,8 +667,7 @@ Mencopot akan menghapus semua data aplikasi secara permanen"</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Penyematan sedang berlangsung…</string>
     <string name="patcher_notification_text">Ketuk untuk kembali ke penambal</string>
-    <string name="patcher_stop_confirm_title">Hentikan penambal</string>
-    <string name="patcher_stop_confirm_description">Apakah Anda yakin ingin menghentikan proses penyematan?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Menyulap aplikasi Anda menjadi sesuatu yang luar biasa… 🏆</string>
     <string name="patcher_message_2">Mengajarkan trik baru pada aplikasi lama… 🎩</string>
@@ -820,21 +809,15 @@ Mencopot akan menghapus semua data aplikasi secara permanen"</string>
     <string name="settings_appearance_repatch_notice_description">Menampilkan spanduk ketika aplikasi yang telah ditambal dapat ditambal ulang</string>
     <string name="settings_appearance_more_apps_card">Kartu lebih banyak aplikasi</string>
     <string name="settings_appearance_more_apps_card_description">Menampilkan kartu di bawah aplikasi yang mengarah ke patch komunitas</string>
-    <string name="settings_appearance_app_card_colors">Warna kartu aplikasi</string>
     <string name="settings_appearance_app_card_colors_default">Bawaan</string>
-    <string name="settings_appearance_app_card_colors_default_description">Beri setiap aplikasi warna dari paketnya sendiri</string>
     <string name="settings_appearance_app_card_colors_accent">Aksen</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Gunakan warna aksen aplikasi untuk kartu aplikasi beranda</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradien</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Gunakan satu gradien kustom untuk kartu aplikasi beranda</string>
     <string name="settings_appearance_app_card_colors_solid">Solid</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Gunakan satu warna kustom untuk kartu aplikasi beranda</string>
     <string name="settings_appearance_app_card_colors_start">Warna awal</string>
     <string name="settings_appearance_app_card_colors_middle">Warna tengah</string>
     <string name="settings_appearance_app_card_colors_end">Warna akhir</string>
     <string name="settings_appearance_app_card_colors_solid_color">Warna solid</string>
     <string name="settings_appearance_app_card_colors_bundle">Warna paket aplikasi</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Gunakan warna asli tiap aplikasi, yang disesuaikan secara otomatis agar serasi</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Ikon aplikasi</string>
     <string name="settings_appearance_app_icon_selector_description">Seperti apa tampilan Morphe di layar utama dan di laci aplikasi</string>
@@ -860,7 +843,7 @@ Mencopot akan menghapus semua data aplikasi secara permanen"</string>
     <string name="settings_appearance_app_icon_mark_white">Putih</string>
     <string name="settings_appearance_app_icon_mark_black">Hitam</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Ubah ikon aplikasi?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Ubah ke &lt;b&gt;%s&lt;/b&gt; dan mulai ulang?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Ubah ikon</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1047,6 +1030,8 @@ Dimensi gambar harus sebagai berikut:
     <string name="installer_play_store_warning_continue">Saya mengerti, lanjutkan</string>
     <string name="installer_play_store_mode">Pasang sebagai Play Store</string>
     <string name="installer_play_store_mode_description">Menandai Google Play Store sebagai sumber instalasi</string>
+    <string name="settings_nomount_only">Hanya NoMount</string>
+    <string name="settings_nomount_only_description">Hanya memasang aplikasi dengan NoMount dan tidak pernah kembali ke bind mount, sehingga aplikasi tetap tidak terpasang tanpanya</string>
     <string name="settings_prompt_installer_on_install">Konfirmasi pilihan pemasang</string>
     <string name="settings_prompt_installer_on_install_description">Meminta cara menginstal setiap aplikasi: dengan root sebelum pematch-an, selainnya setelah pematch-an</string>
     <string name="settings_auto_install_with_shizuku">Pasang otomatis setelah penambalan</string>

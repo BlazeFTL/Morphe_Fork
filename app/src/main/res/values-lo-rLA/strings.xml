@@ -57,8 +57,8 @@
     <string name="home_category_name">ຊື່ໝວດໝູ່</string>
     <string name="home_category_move_to">ຍ້າຍໄປໝວດໝູ່</string>
     <string name="home_category_move_selected_title">ຍ້າຍແອັບທີ່ເລືອກ</string>
-    <string name="home_category_delete_confirm_title">ລຶບໝວດໝູ່</string>
-    <string name="home_category_delete_confirm_message">ລຶບໝວດໝູ່ &lt;b&gt;%1$s&lt;/b&gt; ບໍ? ແອັບພາຍໃນຈະຍ້າຍກັບໄປທີ່ &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">ບໍ່ສາມາດໃຊ້ການກະທຳສຳລັບໝວດໝູ່ນີ້</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">ທ່ານຕ້ອງການແພດແອັບໃດ?</string>
@@ -145,8 +145,6 @@
     <string name="sources_dialog_remote">ຣີໂມດ</string>
     <string name="sources_dialog_remote_url">URL ແຫຼ່ງຂໍ້ມູນ</string>
     <string name="sources_dialog_local">ທ້ອງຖິ່ນ</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_file_tap_hint">ແຕະເພື່ອຄົ້ນຫາທີ່ເກັບຂໍ້ມູນ</string>
     <string name="sources_dialog_local_invalid_extension">ໄຟລ໌ຕ້ອງມີນາມສະກຸນ .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_url_valid">ຣີໂພຊິໂທຣີ ຫຼື URL JSON ທີ່ຖືກຕ້ອງ</string>
@@ -161,17 +159,12 @@
     <string name="sources_patch_expert_badge">ຜູ້ຊ່ຽວຊານ</string>
     <string name="sources_patch_expert_badge_tooltip">ເປີດໂໝດຜູ້ຊ່ຽວຊານໃນການຕັ້ງຄ່າເພື່ອລວມຊຸດແພດນີ້ດ້ວຍຕົນເອງ</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">ຕ້ອງການຄວາມຊ່ວຍເຫຼືອຊອກຫາ APK ຕົ້ນສະບັບທີ່ຍັງບໍ່ໄດ້ແພດບໍ?</string>
     <string name="home_apk_availability_dialog_simple">ເພື່ອແພດ &lt;b&gt;%s&lt;/b&gt;, ທ່ານຕ້ອງການເວີຊັນ APK ທີ່ຍັງບໍ່ໄດ້ແພດ:</string>
     <string name="home_apk_availability_dialog_expert">ເພື່ອແພດ &lt;b&gt;%s&lt;/b&gt;, ທ່ານຕ້ອງການ APK ທີ່ຍັງບໍ່ໄດ້ແພດໃນເວີຊັນ:</string>
     <string name="home_apk_availability_recommended_label">ແນະນຳ</string>
     <string name="home_apk_availability_unpatched_label">ຍັງບໍ່ໄດ້ແພດ</string>
     <string name="home_apk_availability_incompatible_label">ບໍ່ເຂົ້າກັນໄດ້</string>
-    <string name="home_apk_availability_yes">ແມ່ນແລ້ວ, ຊ່ວຍຂ້ອຍຊອກຫາ APK</string>
-    <string name="home_apk_availability_no">ບໍ່, ຂ້ອຍມີ APK ຢູ່ແລ້ວ</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="home_apk_use_saved">ໃຊ້ APK ທີ່ບັນທຶກໄວ້</string>
-    <string name="home_apk_use_installed">ໃຊ້ APK ທີ່ຕິດຕັ້ງໄວ້</string>
     <string name="home_app_info_no_saved_apk">ບໍ່ມີ APK ທີ່ບັນທຶກໄວ້. ການແພດຈະຕ້ອງເລືອກໄຟລ໌ APK ອີກຄັ້ງ</string>
     <string name="home_version_requires_android">ຕ້ອງການ Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">ບໍ່ຮອງຮັບໃນອຸປະກອນນີ້</string>
@@ -190,13 +183,11 @@
     <string name="home_download_instructions_step4">ຫຼັງຈາກດາວໂຫຼດສຳເລັດ, ກັບມາທີ່ Morphe</string>
     <string name="home_download_instructions_step4_mount">ຫຼັງຈາກຕິດຕັ້ງ APK ຕົ້ນສະບັບ, ກັບມາທີ່ Morphe</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">ເລືອກ APK ທີ່ດາວໂຫຼດມາ</string>
-    <string name="home_file_picker_prompt_description">ເລືອກໄຟລ໌ APK &lt;b&gt;%s&lt;/b&gt; ທີ່ທ່ານຫາກໍດາວໂຫຼດມາ</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">ເປີດໄຟລ໌ APK</string>
     <string name="home_recommended_version">ເວີຊັນທີ່ແນະນຳ</string>
     <string name="home_selected_version">ເວີຊັນທີ່ເລືອກ</string>
     <string name="home_select_apk_title">ເລືອກ APK</string>
-    <string name="home_select_any_apk_description">ເລືອກໄຟລ໌ APK ຂອງແອັບໃດກໍໄດ້, ຫຼືເລືອກແອັບທີ່ຕິດຕັ້ງຢູ່ໃນອຸປະກອນນີ້ແລ້ວ</string>
     <string name="home_use_installed_app">ໃຊ້ແອັບທີ່ຕິດຕັ້ງໄວ້</string>
     <string name="home_installed_app_picker_empty">ບໍ່ພົບແອັບ</string>
     <string name="home_installed_app_picker_filter_user">ພຽງແຕ່ແອັບຜູ້ໃຊ້</string>
@@ -219,9 +210,6 @@
     <string name="expert_mode_universal_patches">ຊຸດແພດສາກົນ</string>
     <string name="expert_mode_new_patches">ໃໝ່</string>
     <string name="expert_mode_multiple_sources_warning_title">ເລືອກຫຼາຍແຫຼ່ງຊຸດແພດ</string>
-    <string name="expert_mode_multiple_sources_warning_message">"ທ່ານໄດ້ເລືອກຊຸດແພດຈາກຫຼາຍແຫຼ່ງຊຸດແພດ. ອັນນີ້ອາດເຮັດໃຫ້ເກີດບັນຫາຄວາມເຂົ້າກັນໄດ້ ຫຼືພຶດຕິກຳທີ່ບໍ່ຄາດຄິດ.
-
-ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການດຳເນີນການຕໍ່ໄປ?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK ທີ່ບໍ່ໄດ້ຢືນຢັນ</string>
     <string name="home_invalid_signature_message">APK ທີ່ທ່ານເລືອກສຳລັບ &lt;b&gt;%s&lt;/b&gt; ບໍ່ກົງກັບໃບຮັບຮອງການເຊັນທີ່ຄາດຫວັງ. ມັນອາດຖືກດັດແປງ ຫຼືມາຈາກແຫຼ່ງທີ່ບໍ່ໜ້າເຊື່ອຖື</string>
@@ -235,7 +223,6 @@
     <string name="home_dialog_unsupported_version_experimental_label">ທົດລອງ</string>
     <string name="home_dialog_unsupported_version_experimental_description">ເວີຊັນນີ້ມີການຮອງຮັບແບບທົດລອງ ແລະອາດບໍ່ຄົງທີ່ ຫຼືບໍ່ສົມບູນ</string>
     <string name="morphe_experimental_app_version_dialog_title">ທ່ານຕ້ອງການທົດລອງບໍ? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">ເວີຊັນນີ້ຂອງ &lt;b&gt;%s&lt;/b&gt; ມີການຮອງຮັບແບບທົດລອງເບື້ອງຕົ້ນ&lt;br/&gt;&lt;br/&gt;🔧 ຄາດຫວັງພຶດຕິກຳແປກໆ ຫຼືບັກທີ່ບໍ່ຮູ້ຈັກໃນຂະນະທີ່ຊຸດແພດກຳລັງຖືກປັບປຸງສຳລັບເວີຊັນແອັບນີ້</string>
     <string name="home_dialog_unsupported_version_dialog_title">ເວີຊັນບໍ່ຮອງຮັບ</string>
     <string name="home_dialog_unsupported_version_dialog_description">APK ນີ້ບໍ່ແມ່ນເວີຊັນແອັບທີ່ແນະນຳ. ການດຳເນີນການຕໍ່ໄປອາດເຮັດໃຫ້ແອັບໃຊ້ບໍ່ໄດ້</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -301,7 +288,6 @@
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->
     <!-- Label of a footer button beside "Done". Keep it short, a longer one moves the buttons onto two rows -->
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການຖອນການຕິດຕັ້ງແອັບນີ້?</string>
     <string name="home_app_info_remove_app_warning">ອັນນີ້ຈະລຶບຖາວອນ:</string>
     <string name="home_app_info_delete_item_database">ລາຍການໃນຖານຂໍ້ມູນ</string>
     <string name="home_app_info_delete_item_patched_apk">ໄຟລ໌ APK ທີ່ແພດແລ້ວ</string>
@@ -390,8 +376,7 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">ກຳລັງແພດ…</string>
     <string name="patcher_notification_text">ແຕະເພື່ອກັບໄປທີ່ຕົວແພດ</string>
-    <string name="patcher_stop_confirm_title">ຢຸດຕົວແພດ</string>
-    <string name="patcher_stop_confirm_description">ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການຢຸດຂະບວນການແພດ?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">ກຳລັງປ່ຽນແອັບຂອງທ່ານໃຫ້ເປັນສິ່ງທີ່ຍອດຢ້ຽມ… 🏆</string>
     <string name="patcher_message_2">ກຳລັງສອນແອັບເກົ່າໃຫ້ເຮັດທ່າໃໝ່… 🎩</string>
@@ -493,7 +478,7 @@
     <string name="settings_appearance_app_icon_light_3">ຕາເວັນຕົກ</string>
     <string name="settings_appearance_app_icon_dark_2">ສູນຍາກາດ</string>
     <string name="settings_appearance_app_icon_change_dialog_title">ປ່ຽນໄອຄອນແອັບບໍ?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">ປ່ຽນເປັນ &lt;b&gt;%s&lt;/b&gt; ແລ້ວເລີ່ມໃໝ່ບໍ?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">ປ່ຽນໄອຄອນ</string>
     <!-- Settings - Advanced Tab - Updates Section -->

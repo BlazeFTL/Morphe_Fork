@@ -81,8 +81,8 @@
     <string name="home_category_name">श्रेणीचे नाव</string>
     <string name="home_category_move_to">श्रेणीत हलवा</string>
     <string name="home_category_move_selected_title">निवडलेले ॲप्स हलवा</string>
-    <string name="home_category_delete_confirm_title">श्रेणी हटवा</string>
-    <string name="home_category_delete_confirm_message">&lt;b&gt;%1$s&lt;/b&gt; श्रेणी हटवा? त्यातील ॲप्स &lt;b&gt;%2$s&lt;/b&gt; मध्ये परत हलतील</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">या श्रेणीसाठी क्रिया उपलब्ध नाहीत</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">तुम्हाला कोणत्या ॲपमध्ये सुधारणा करायची आहे?</string>
@@ -199,9 +199,6 @@
     <string name="sources_dialog_paste_no_links">क्लिपबोर्डवर कोणत्याही लिंक आढळल्या नाहीत</string>
     <string name="sources_dialog_local">याच फोनमधील</string>
     <string name="sources_dialog_local_files">पॅच स्रोत फाइल्स निवडा</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">अधिक फाइल्स जोडा</string>
-    <string name="sources_dialog_local_file_tap_hint">फाईल ब्राउझ करण्यासाठी टॅप करा</string>
     <string name="sources_dialog_local_invalid_extension">फाईलमध्ये .mpp एक्स्टेंशन असणे आवश्यक आहे</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">%s अपडेट करते</string>
@@ -220,15 +217,12 @@
     <string name="sources_patch_expert_badge">तज्ञ</string>
     <string name="sources_patch_expert_badge_tooltip">हा पॅच मॅन्युअली समाविष्ट करण्यासाठी सेटिंग्जमध्ये तज्ञ मोड सक्षम करा</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">मूळ APK शोधण्यासाठी मदत हवी आहे का?</string>
     <string name="home_apk_availability_dialog_simple"> &lt;b&gt;%s&lt;/b&gt;, मध्ये बदल करण्यासाठी, तुमच्याकडे  बदल न केलेले APK आवृत्ती असणे आवश्यक आहे:</string>
     <string name="home_apk_availability_dialog_expert"> &lt;b&gt;%s&lt;/b&gt;, मध्ये बदल करण्यासाठी, तुमच्याकडे  बदल न केलेले APK आवृत्ती असणे आवश्यक आहे:</string>
     <string name="home_apk_availability_recommended_label">सुचवलेले</string>
     <string name="home_apk_availability_unpatched_label"> बदल न केलेले</string>
     <string name="home_apk_availability_incompatible_label">असंगत</string>
     <string name="home_apk_availability_installed_version">या डिव्हाइसवर स्थापित: %s</string>
-    <string name="home_apk_availability_yes">हो, मला APK शोधण्यात मदत करा.</string>
-    <string name="home_apk_availability_no">नाही, माझ्याकडे आधीपासूनच APK आहे.</string>
     <string name="home_apk_helper_download">एका हेल्पर ॲपचा वापर करा</string>
     <string name="home_apk_helper_title">हेल्पर ॲप वापरून डाउनलोड करा</string>
     <string name="home_apk_helper_description">मॉर्फे खालील हेल्पर ॲपला मूळ APK डाउनलोड करण्यास आणि फाइल परत देण्यास सांगेल</string>
@@ -242,8 +236,6 @@
     <string name="home_apk_helper_wrong_package">सहायक अॅपने पॅच केला जात असलेल्या अॅपपेक्षा वेगळा अॅप परत केला</string>
     <string name="home_apk_helper_installed_unavailable">Morphe स्थापित अॅप वापरू शकला नाही</string>
     <string name="home_apk_helper_installed_incompatible">स्थापित आवृत्ती पॅच केली जाऊ शकत नाही</string>
-    <string name="home_apk_use_saved">आधीच साठवलेली APK वापरा</string>
-    <string name="home_apk_use_installed">इंस्टॉल केलेली APK वापरा</string>
     <string name="home_apk_use_saved_unsupported">हे पॅचेस या साठवलेल्या प्रतीला समर्थन देत नाहीत. ते पॅच केल्यास पुष्टी विचारली जाईल, किंवा दुसरी APK निवडा.</string>
     <string name="home_apk_use_installed_unverified">इंस्टॉल केलेल्या ॲपची सही तपासता आली नाही, त्यामुळे ते आधीच बदललेले असू शकते</string>
     <string name="home_unverified">असत्यापित</string>
@@ -279,13 +271,11 @@
     <string name="home_download_instructions_copy_link">लिंक कॉपी करा</string>
     <string name="home_download_instructions_link_copied">लिंक कॉपी केली</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">डाउनलोड केलेली APK निवडा</string>
-    <string name="home_file_picker_prompt_description">तुम्ही आत्ताच डाउनलोड केलेली &lt;b&gt;%s&lt;/b&gt; APK फाईल निवडा</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">APK फाईल उघडा</string>
     <string name="home_recommended_version">सुचवलेली आवृत्ती</string>
     <string name="home_selected_version">निवडलेली आवृत्ती</string>
     <string name="home_select_apk_title">APK निवडा</string>
-    <string name="home_select_any_apk_description">एखाद्या ॲपची APK फाइल निवडा, किंवा या डिव्हाइसवर आधीपासून इंस्टॉल केलेले ॲप निवडा</string>
     <string name="home_use_installed_app">इंस्टॉल केलेले ॲप वापरा</string>
     <string name="home_installed_app_picker_title">स्थापित ॲप्स</string>
     <string name="home_installed_app_picker_empty">ॲप्स आढळले नाहीत</string>
@@ -320,9 +310,6 @@
     <string name="expert_mode_patch_required_by_installer">निवडलेल्या इन्स्टॉल टार्गेटसाठी आवश्यक</string>
     <string name="expert_mode_patch_unavailable_for_installer">निवडलेल्या इन्स्टॉल टार्गेटसाठी उपलब्ध नाही</string>
     <string name="expert_mode_multiple_sources_warning_title">एकाधिक पॅच स्रोत निवडलेले</string>
-    <string name="expert_mode_multiple_sources_warning_message">"तुम्ही अनेक पॅच स्रोतांमधून पॅचेस निवडले आहेत. यामुळे compatibility समस्या किंवा अनपेक्षित वर्तन होऊ शकते.
-
-तुम्हाला नक्की पुढे जायचे आहे का?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">अवैध APK</string>
     <string name="home_invalid_signature_message">&lt;b&gt;%s&lt;/b&gt; साठी तुम्ही निवडलेला APK अपेक्षित स्वाक्षरी प्रमाणपत्राशी जुळत नाही. ते सुधारित केलेले किंवा अविश्वसनीय स्त्रोताकडून असू शकते</string>
@@ -335,7 +322,6 @@
     <string name="home_dialog_unsupported_version_experimental_label">प्रायोगिक</string>
     <string name="home_dialog_unsupported_version_experimental_description">या आवृत्तीमध्ये प्रायोगिक समर्थन आहे आणि ती अस्थिर किंवा अपूर्ण असू शकते</string>
     <string name="morphe_experimental_app_version_dialog_title">तुम्ही प्रयोग करू इच्छिता? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">&lt;b&gt;%s&lt;/b&gt; च्या या आवृत्तीमध्ये प्रारंभिक प्रायोगिक समर्थन आहे&lt;br/&gt;&lt;br/&gt;🔧 ॲपच्या या आवृत्तीसाठी पॅच परिष्कृत केले जात असल्याने विचित्र ॲप वर्तन किंवा ओळख नसलेल्या बगची अपेक्षा करा</string>
     <string name="home_dialog_unsupported_version_dialog_title">समर्थित नसलेली आवृत्ती</string>
     <string name="home_dialog_unsupported_version_dialog_description">ही APK शिफारस केलेली app version नाही. पुढे गेल्यास app काम न करण्याची शक्यता आहे</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -447,7 +433,6 @@
     <string name="shortcut_check_updates_long">पॅच अपडेटसाठी तपासा</string>
     <string name="shortcut_patch_app">%s पॅच करा</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">तुम्ही हे ॲप अनइंस्टॉल करू इच्छिता आहात का?</string>
     <string name="batch_uninstall_confirm_body">निवडलेले ॲप्स तुमच्या डिव्हाइसमधून कायमचे काढले जातील.</string>
     <string name="home_app_info_remove_app_warning">हे कायमचे हटवेल:</string>
     <string name="home_app_info_delete_item_database">डेटाबेस एंट्री</string>
@@ -600,8 +585,7 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">पॅचिंग सुरू आहे…</string>
     <string name="patcher_notification_text">पॅचरवर परत जाण्यासाठी टॅप करा</string>
-    <string name="patcher_stop_confirm_title">पॅचर थांबवा</string>
-    <string name="patcher_stop_confirm_description">तुम्ही पॅचिंग प्रक्रिया थांबवू इच्छिता आहात का?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">तुमचा ॲप अप्रतिम बनवत आहे… 🏆</string>
     <string name="patcher_message_2">जुन्या ॲप्सना नवीन युक्त्या शिकवत आहे… 🎩</string>
@@ -729,21 +713,15 @@
     <string name="settings_appearance_home_screen">मुख्य स्क्रीन</string>
     <string name="settings_appearance_greeting_phrases">शुभेच्छा संदेश</string>
     <string name="settings_appearance_repatch_notice">री-पॅच सूचना</string>
-    <string name="settings_appearance_app_card_colors">ॲप कार्ड रंग</string>
     <string name="settings_appearance_app_card_colors_default">डीफॉल्ट</string>
-    <string name="settings_appearance_app_card_colors_default_description">प्रत्येक ॲपला स्वतःच्या बंडलचा रंग द्या</string>
     <string name="settings_appearance_app_card_colors_accent">ॲक्सेंट</string>
-    <string name="settings_appearance_app_card_colors_accent_description">होम ॲप कार्डसाठी ॲप ॲक्सेंट रंग वापरा</string>
     <string name="settings_appearance_app_card_colors_gradient">ग्रेडियंट</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">होम ॲप कार्डसाठी एक कस्टम ग्रेडियंट वापरा</string>
     <string name="settings_appearance_app_card_colors_solid">सॉलिड</string>
-    <string name="settings_appearance_app_card_colors_solid_description">होम ॲप कार्डसाठी एक कस्टम रंग वापरा</string>
     <string name="settings_appearance_app_card_colors_start">सुरुवात रंग</string>
     <string name="settings_appearance_app_card_colors_middle">मध्य रंग</string>
     <string name="settings_appearance_app_card_colors_end">अंतिम रंग</string>
     <string name="settings_appearance_app_card_colors_solid_color">सॉलिड रंग</string>
     <string name="settings_appearance_app_card_colors_bundle">ॲप बंडल रंग</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">येथे प्रत्येक ॲपचा स्वतःचा रंग वापरा, जो आपोआप फिट होण्यासाठी शेड केलेला असेल</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">ॲप आयकॉन</string>
     <string name="settings_appearance_app_icon_selector_description">तुमच्या होम स्क्रीनवर आणि अॅप ड्रॉवरमध्ये Morphe कसे दिसते</string>
@@ -769,7 +747,7 @@
     <string name="settings_appearance_app_icon_mark_white">पांढरा</string>
     <string name="settings_appearance_app_icon_mark_black">काळा</string>
     <string name="settings_appearance_app_icon_change_dialog_title">ॲप आयकॉन बदला?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">&lt;b&gt;%s&lt;/b&gt; वर बदला आणि रीस्टार्ट करा?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">आयकॉन बदला</string>
     <!-- Settings - Advanced Tab - Updates Section -->

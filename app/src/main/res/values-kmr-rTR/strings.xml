@@ -82,8 +82,8 @@
     <string name="home_category_name">Navê kategoriyê</string>
     <string name="home_category_move_to">Biguhezîne kategoriyê</string>
     <string name="home_category_move_selected_title">Biguhezîne sepanên hilbijartî</string>
-    <string name="home_category_delete_confirm_title">Kategoriya terikîne</string>
-    <string name="home_category_delete_confirm_message">Kategoriya &lt;b&gt;%1$s&lt;/b&gt; terikîne? Sepan di nav de vegerin &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Çalakiyên ji bo vê kategoriyê nayên destêrkirin</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Kudu ezîtekora kodê ji xwerêzê we yê çawa îdeal bike?</string>
@@ -200,9 +200,6 @@
     <string name="sources_dialog_paste_no_links">Di klîpbordê de tu girêdan nehat dîtin.</string>
     <string name="sources_dialog_local">Nêzîk</string>
     <string name="sources_dialog_local_files">Pelên çavkaniya patchê hilbijêre.</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Zêdetir pelan lê zêde bike.</string>
-    <string name="sources_dialog_local_file_tap_hint">Bikîne da ku hilanînê bikola</string>
     <string name="sources_dialog_local_invalid_extension">Pel divê pêveka .mpp hebe</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">%s nûve dike</string>
@@ -221,15 +218,12 @@
     <string name="sources_patch_expert_badge">Ekspert</string>
     <string name="sources_patch_expert_badge_tooltip">Ji bo kuşandina vê patch\'ê bi destê, moda Ekspertê di Nastîran de çêbike</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Alîkarê dîtina APK-ya orîjînal, nebixwe ji nû ve?</string>
     <string name="home_apk_availability_dialog_simple">Ji bo dirûtîna &lt;b&gt;%s&lt;/b&gt;, hûn pêdiviya APK-ya nebixwe hebin:</string>
     <string name="home_apk_availability_dialog_expert">Ji bo dirûtîna &lt;b&gt;%s&lt;/b&gt;, hûn pêdiviya APK-yên nebixwe hebin:</string>
     <string name="home_apk_availability_recommended_label">Pisporîn</string>
     <string name="home_apk_availability_unpatched_label">Neçapandî</string>
     <string name="home_apk_availability_incompatible_label">Nakamkirê</string>
     <string name="home_apk_availability_installed_version">Li ser vê cîhazê sazkirî: %s</string>
-    <string name="home_apk_availability_yes">Ew, min alîkarê dîtina APK-yê bikîn</string>
-    <string name="home_apk_availability_no">Na, ez APK-yek heznikim</string>
     <string name="home_apk_helper_download">Serlêdanê arîkar bikar bînin</string>
     <string name="home_apk_helper_title">Bi serlêdanek arîkar dakêşin</string>
     <string name="home_apk_helper_description">Morphe ji serlêdanê arîkarê jêrîn wê bigire ku APK-ya orjînal dakêşîne û pelê paş de bide</string>
@@ -243,8 +237,6 @@
     <string name="home_apk_helper_wrong_package">Appa alîkar appek cuda vegerand ji ya ku tê patchkirin</string>
     <string name="home_apk_helper_installed_unavailable">Morphe nekarî appa sazkirî bikar bîne</string>
     <string name="home_apk_helper_installed_incompatible">Guhertoya sazkirî nayê patchkirin</string>
-    <string name="home_apk_use_saved">APK ya saved bikar bîne</string>
-    <string name="home_apk_use_installed">APK ya sazkirî bikar bîne</string>
     <string name="home_apk_use_saved_unsupported">Patchên vê kopiya tomarkirî piştgirî nakin. Patchkirina wê dê ji te bipirse ku piştrast bikî, an APK-ya din hilbijêre.</string>
     <string name="home_apk_use_installed_unverified">Nezêrbû ku îmzaya sepanê yê ku hatî saz kirin bê xeml kirin, lew re dibe ku jî berê hatî guhertin</string>
     <string name="home_unverified">Neverastkirî</string>
@@ -280,13 +272,11 @@
     <string name="home_download_instructions_copy_link">Girêdanê kopî bike</string>
     <string name="home_download_instructions_link_copied">Girêdan hate kopîkirin</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">APKê daxistî hilbijêre</string>
-    <string name="home_file_picker_prompt_description">Pelê APK ya &lt;b&gt;%s&lt;/b&gt; ya hûn niha dakêşandî hilbijêrin.</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Dosya APK veqêşin</string>
     <string name="home_recommended_version">Versyona ku tê pêşniyar kirin</string>
     <string name="home_selected_version">Versiyona hilbijartî</string>
     <string name="home_select_apk_title">APK safînak</string>
-    <string name="home_select_any_apk_description">Hilbijartina dosyeyekê APK yê ji her programê, yan jî programa ku berê li ser vê cîhazê hatiye saz kirin hilbijartin</string>
     <string name="home_use_installed_app">Programa saz kirî bikar bîne</string>
     <string name="home_installed_app_picker_title">Sepanên sazkirî</string>
     <string name="home_installed_app_picker_empty">Çêbî app nayê dîtin</string>
@@ -321,7 +311,6 @@
     <string name="expert_mode_patch_required_by_installer">Ji bo hedefê ku hatî hilbijartîn hewce ye</string>
     <string name="expert_mode_patch_unavailable_for_installer">Ji bo hedefê ku hatî hilbijartîn peyda nabe</string>
     <string name="expert_mode_multiple_sources_warning_title">Berî çend seyarên bejna tê</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Hûn bejna seyarê berî çendan bejna kirin. Gûma serdebaza pêşçuna bêgîri azre be."</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK-ya pêşbîn nekirî</string>
     <string name="home_invalid_signature_message">APK-ya ku hîşyarîdê bo &lt;b&gt;%s&lt;/b&gt; hilbijart, bi gîrêdanî ya ceribandinê ya pêwist nayê. Ew dikare guherîye an ji çavê nedastî be</string>
@@ -335,7 +324,6 @@ Ji bo mezgînî, ev sepan pêşniyar dike ku paketek &lt;b&gt;full APK&lt;/b&gt;
     <string name="home_dialog_unsupported_version_experimental_label">Sernişan</string>
     <string name="home_dialog_unsupported_version_experimental_description">Ev guhertin piştgirîa ceribandiyê heye û dikare neyêbawer an jî bikêmam be</string>
     <string name="morphe_experimental_app_version_dialog_title">Ma tu dixwazî ku eksperîmentî bikî? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">Ev guhertina &lt;b&gt;%s&lt;/b&gt; piştgirîa serdest ceribandiyê heye&lt;br/&gt;&lt;br/&gt;🔧 Tiştekî neyênbawer an kêmasî derdikeve, di nav de kêmasî ji bo vê guhertina sepanê têne serastkirin.</string>
     <string name="home_dialog_unsupported_version_dialog_title">Versiyona nedastî</string>
     <string name="home_dialog_unsupported_version_dialog_description">Ev APK nu jibo versîyona serpiraftî ne. Diriftîn dikare bi bandora kêmtir a seranser a sepanê bibe</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -447,7 +435,6 @@ Ji bo mezgînî, ev sepan pêşniyar dike ku paketek &lt;b&gt;full APK&lt;/b&gt;
     <string name="shortcut_check_updates_long">Li nûvekirinên patchê kontrol bike</string>
     <string name="shortcut_patch_app">%s patch bike</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Ma hûn pê ewaz in ku ev sepan paqij bikin?</string>
     <string name="batch_uninstall_confirm_body">Serîlêdanên ku hatine hilbijartîn êdî ji cîhazê we yê nehere dê bên neqewirandin.</string>
     <string name="home_app_info_remove_app_warning">Ev dê bi dawîbûna domdar:</string>
     <string name="home_app_info_delete_item_database">Qeyda databazeyê</string>
@@ -600,8 +587,7 @@ Neqişandin dê hemî daneyên serîlêdanê bi awayê daîmî tune bike"</strin
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patch kirin di pêşbaziyê de ye…</string>
     <string name="patcher_notification_text">Hêla bimeşin ser patcher</string>
-    <string name="patcher_stop_confirm_title">Patcher rawêstinê</string>
-    <string name="patcher_stop_confirm_description">Ma hûn pê ewle bûne ku hûn pêvajoya patch kirinê rawêstîn?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Sepîka we çêtir dike... 🏆</string>
     <string name="patcher_message_2">Xurekî kevnên sepanê veşartin... 🎩</string>
@@ -730,21 +716,15 @@ Neqişandin dê hemî daneyên serîlêdanê bi awayê daîmî tune bike"</strin
     <string name="settings_appearance_home_screen">Mîna malê</string>
     <string name="settings_appearance_greeting_phrases">Frazey şahê</string>
     <string name="settings_appearance_repatch_notice">Agahdariya ji nû ve patchkirinê</string>
-    <string name="settings_appearance_app_card_colors">Rengên karta sepanê</string>
     <string name="settings_appearance_app_card_colors_default">Bixweber</string>
-    <string name="settings_appearance_app_card_colors_default_description">Bi her sepanê rengê paketa wê bidin</string>
     <string name="settings_appearance_app_card_colors_accent">Accent</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Rengê dinamiya sepanê ji bo kartên sepanê yên malê bikar bîne</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradient</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Ji bo kartên sepanê yên malê yek gradientê xwerû bikar bîne</string>
     <string name="settings_appearance_app_card_colors_solid">Solid</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Ji bo kartên sepanê yên malê yek rengê xwerû bikar bîne</string>
     <string name="settings_appearance_app_card_colors_start">Rengê destpêkê</string>
     <string name="settings_appearance_app_card_colors_middle">Rengê navîn</string>
     <string name="settings_appearance_app_card_colors_end">Rengê dawî</string>
     <string name="settings_appearance_app_card_colors_solid_color">Rengê yekreng</string>
     <string name="settings_appearance_app_card_colors_bundle">Rengê pakêtê app</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Li vir, rengê her serlêdanê bi xwe bikar bîne, ku bi otomatîkî ji bo ku li ser çêbibe, tijîkirinê bike.</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Îkonê sepanê</string>
     <string name="settings_appearance_app_icon_selector_description">Morphe li ser ekrana te ya malê û di dolaba sepanan de çawa xuya dike.</string>
@@ -770,7 +750,7 @@ Neqişandin dê hemî daneyên serîlêdanê bi awayê daîmî tune bike"</strin
     <string name="settings_appearance_app_icon_mark_white">Spî</string>
     <string name="settings_appearance_app_icon_mark_black">Reş</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Ma hûn dixwast îkona sepanê biguhêrin?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Li &lt;b&gt;%s&lt;/b&gt; biguherin û dest pê bike?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Guhêrîna îkonê</string>
     <!-- Settings - Advanced Tab - Updates Section -->

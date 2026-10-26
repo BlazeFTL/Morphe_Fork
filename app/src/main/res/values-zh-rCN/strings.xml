@@ -98,8 +98,8 @@
     <string name="home_category_name">分类名称</string>
     <string name="home_category_move_to">移动到分类</string>
     <string name="home_category_move_selected_title">移动选定的应用</string>
-    <string name="home_category_delete_confirm_title">删除分类</string>
-    <string name="home_category_delete_confirm_message">删除分类&lt;b&gt;%1$s&lt;/b&gt;？其中的应用将会移回&lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">此分类不可用操作</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">您想要修补哪个应用程序？</string>
@@ -230,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">剪贴板中未找到链接</string>
     <string name="sources_dialog_local">本地</string>
     <string name="sources_dialog_local_files">选择补丁源文件</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">添加更多文件</string>
-    <string name="sources_dialog_local_file_tap_hint">点击浏览存储空间</string>
     <string name="sources_dialog_local_invalid_extension">文件必须为.mpp扩展名</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">更新 %s</string>
@@ -240,6 +237,7 @@
     <string name="sources_dialog_url_invalid">URL 必须指向 GitHub/GitLab 仓库或 .json 文件</string>
     <string name="sources_dialog_preinstalled">预安装</string>
     <string name="sources_dialog_community">社区补丁</string>
+    <string name="sources_dialog_choose_apps">选择应用</string>
     <string name="sources_dialog_choose_apps_description">在来源加载后，选择要保留该来源中的哪些应用。</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">第三方补丁来源</string>
@@ -259,15 +257,12 @@
     <string name="sources_patch_expert_badge">专家</string>
     <string name="sources_patch_expert_badge_tooltip">在设置中启用专家模式以手动包含此补丁</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">需要帮助找到原始未打补丁的APK吗？</string>
     <string name="home_apk_availability_dialog_simple">要修补&lt;b&gt;%s&lt;/b&gt;，需要未修补的 APK 版本：</string>
     <string name="home_apk_availability_dialog_expert">补丁&lt;b&gt;%s&lt;/b&gt;需要未补丁的APK版本</string>
     <string name="home_apk_availability_recommended_label">推荐</string>
     <string name="home_apk_availability_unpatched_label">未修补</string>
     <string name="home_apk_availability_incompatible_label">不兼容</string>
     <string name="home_apk_availability_installed_version">此设备上已安装：%s</string>
-    <string name="home_apk_availability_yes">是的，帮我找个 APK</string>
-    <string name="home_apk_availability_no">不，我已经有APK了</string>
     <string name="home_apk_helper_download">使用辅助应用程序</string>
     <string name="home_apk_helper_untrusted">已安装辅助应用但尚未获得信任，因此此处未提供</string>
     <string name="home_apk_helper_untrusted_action">审查助手</string>
@@ -283,8 +278,6 @@
     <string name="home_apk_helper_wrong_package">辅助应用返回的应用与正在修补的应用不同</string>
     <string name="home_apk_helper_installed_unavailable">Morphe 无法使用已安装的应用</string>
     <string name="home_apk_helper_installed_incompatible">已安装的版本无法修补</string>
-    <string name="home_apk_use_saved">使用保存的 APK</string>
-    <string name="home_apk_use_installed">使用已安装的 APK</string>
     <string name="home_apk_use_saved_unsupported">补丁不支持此保存的副本。打补丁将要求您确认，或选择另一个APK。</string>
     <string name="home_apk_use_installed_unverified">无法验证已安装应用的签名，因此该应用可能已被修补</string>
     <string name="home_unverified">未验证</string>
@@ -320,14 +313,14 @@
     <string name="home_download_instructions_copy_link">复制链接</string>
     <string name="home_download_instructions_link_copied">链接已复制</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">选择下载的 APK</string>
-    <string name="home_file_picker_prompt_description">选择您刚刚下载的&lt;b&gt;%s&lt;/b&gt; APK 文件</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">打开APK文件</string>
     <string name="home_recommended_version">推荐版本</string>
     <string name="home_selected_version">已选版本</string>
     <string name="home_select_apk_title">选择APK</string>
-    <string name="home_select_any_apk_description">选择任何应用程序的 APK 文件，或选择已安装在此设备上的应用程序</string>
     <string name="home_use_installed_app">使用已安装的应用程序</string>
+    <string name="home_use_installed_app_description">选择本设备上已安装的应用</string>
+    <string name="home_open_apk_file_description">从存储空间选择 APK、APKM、APKS 或 XAPK 文件</string>
     <string name="home_installed_app_picker_title">已安装的应用</string>
     <string name="home_installed_app_picker_empty">未找到应用</string>
     <string name="home_installed_app_picker_filter_user">仅用户应用</string>
@@ -361,9 +354,6 @@
     <string name="expert_mode_patch_required_by_installer">所选安装目标需要</string>
     <string name="expert_mode_patch_unavailable_for_installer">不适用于所选安装目标</string>
     <string name="expert_mode_multiple_sources_warning_title">已选择多个补丁源</string>
-    <string name="expert_mode_multiple_sources_warning_message">"您已选择来自多个补丁源的补丁。这可能会导致兼容性问题或意想不到的行为。
-
-您确定要继续吗？"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">未经验证的 APK</string>
     <string name="home_invalid_signature_message">您选择的 APK，对于 &lt;b&gt;%s&lt;/b&gt;，签名证书不匹配。它可能已被修改或来自不受信任的来源</string>
@@ -377,7 +367,9 @@
     <string name="home_dialog_unsupported_version_experimental_label">实验性</string>
     <string name="home_dialog_unsupported_version_experimental_description">此版本具有实验性支持，可能不稳定或不完整</string>
     <string name="morphe_experimental_app_version_dialog_title">您想进行实验吗？ 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">这个版本的 &lt;b&gt;%s&lt;/b&gt; 补丁目前处于实验性支持中&lt;br/&gt;&lt;br/&gt; 在补丁完善期间, 应用可能会出现非预期行为或出现未识别的错误. </string>
+    <string name="morphe_experimental_app_version_dialog_message">"这个版本的 &lt;b&gt;%s&lt;/b&gt; 具有早期实验性支持。
+
+🔧 在补丁针对此应用版本进行优化期间，可能会出现异常的应用行为或未识别的错误"</string>
     <string name="home_dialog_unsupported_version_dialog_title">其他支持的版本</string>
     <string name="home_dialog_unsupported_version_dialog_description">此 APK 不是推荐的应用版本。继续可能会导致应用无法使用</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -514,7 +506,6 @@
     <string name="shortcut_check_updates_long">检查补丁更新</string>
     <string name="shortcut_patch_app">修补 %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">是否要卸载此应用？</string>
     <string name="batch_uninstall_confirm_body">选定的应用将永久从您的设备中移除</string>
     <string name="home_app_info_remove_app_warning">这将永久删除：</string>
     <string name="home_app_info_delete_item_database">数据库条目</string>
@@ -676,8 +667,7 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">正在修补…</string>
     <string name="patcher_notification_text">点击返回修补程序</string>
-    <string name="patcher_stop_confirm_title">停止修补程序</string>
-    <string name="patcher_stop_confirm_description">您确定要停止修补过程吗？</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">正在将您的应用塑造成令人赞叹的样子… 🏆</string>
     <string name="patcher_message_2">教旧应用新技巧… 🎩</string>
@@ -819,21 +809,21 @@
     <string name="settings_appearance_repatch_notice_description">当已修补的应用可重新修补时显示横幅通知</string>
     <string name="settings_appearance_more_apps_card">更多应用卡片</string>
     <string name="settings_appearance_more_apps_card_description">在应用下方显示一个指向社区补丁的卡片</string>
-    <string name="settings_appearance_app_card_colors">应用卡片颜色</string>
+    <string name="settings_appearance_app_card_colors">卡片颜色</string>
     <string name="settings_appearance_app_card_colors_default">默认</string>
-    <string name="settings_appearance_app_card_colors_default_description">为每个应用赋予其自身包的颜色</string>
+    <string name="settings_appearance_app_card_colors_default_description">为每个应用和来源赋予专属颜色</string>
     <string name="settings_appearance_app_card_colors_accent">强调色</string>
-    <string name="settings_appearance_app_card_colors_accent_description">将应用强调色用于首页应用卡片</string>
+    <string name="settings_appearance_app_card_colors_accent_description">为应用和来源卡片使用应用的强调色</string>
     <string name="settings_appearance_app_card_colors_gradient">渐变色</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">为首页应用卡片使用一个自定义渐变色</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">为应用卡片使用一个自定义渐变色，为来源卡片混合为单一颜色</string>
     <string name="settings_appearance_app_card_colors_solid">纯色</string>
-    <string name="settings_appearance_app_card_colors_solid_description">为首页应用卡片使用一个自定义颜色</string>
+    <string name="settings_appearance_app_card_colors_solid_description">为应用和来源卡片使用同一个自定义颜色</string>
     <string name="settings_appearance_app_card_colors_start">起始颜色</string>
     <string name="settings_appearance_app_card_colors_middle">中间颜色</string>
     <string name="settings_appearance_app_card_colors_end">结束颜色</string>
     <string name="settings_appearance_app_card_colors_solid_color">纯色</string>
     <string name="settings_appearance_app_card_colors_bundle">应用包颜色</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">在此处使用每个应用自己的颜色，并自动调整阴影以适应</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">此处使用每个应用或来源自身的颜色，并自动调整阴影以适应</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">应用图标</string>
     <string name="settings_appearance_app_icon_selector_description">Morphe 在主屏幕和应用抽屉中的外观</string>
@@ -859,7 +849,7 @@
     <string name="settings_appearance_app_icon_mark_white">白色</string>
     <string name="settings_appearance_app_icon_mark_black">黑色</string>
     <string name="settings_appearance_app_icon_change_dialog_title">更改应用图标？</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">更改为&lt;b&gt;%s&lt;/b&gt;并重启？</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">更改图标</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1046,6 +1036,8 @@ morphe_header_custom_dark.png
     <string name="installer_play_store_warning_continue">我知道了，继续</string>
     <string name="installer_play_store_mode">作为 Play 商店安装</string>
     <string name="installer_play_store_mode_description">将 Google Play 商店标记为安装来源</string>
+    <string name="settings_nomount_only">仅限 NoMount</string>
+    <string name="settings_nomount_only_description">仅使用 NoMount 挂载应用，且绝不回退到绑定挂载，因此在没有 NoMount 的情况下它们将保持未挂载状态</string>
     <string name="settings_prompt_installer_on_install">安装程序选择提示</string>
     <string name="settings_prompt_installer_on_install_description">询问如何安装每个应用：在修补前使用 root 安装，否则在修补后安装</string>
     <string name="settings_auto_install_with_shizuku">补丁应用后自动安装</string>

@@ -26,6 +26,8 @@
     <string name="home_update_success">સ્ત્રોતો અધ્યતન કરવાનું પૂર્ણ થયું</string>
     <string name="home_update_success_subtitle">તમારા સ્ત્રોતો અધ્યતન જ છે</string>
     <string name="home_app_grouping_none">કોઈપણ નહિ </string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">તમે કઈ એપ્લિકેશનને પેચ કરવા માંગો છો?</string>
     <!-- Humorous hype message with light nostalgia -->
@@ -73,7 +75,6 @@
     <string name="sources_dialog_remote">દૂરસ્થ</string>
     <string name="sources_dialog_remote_url">સ્રોત URL</string>
     <string name="sources_dialog_local">સ્થાનિક</string>
-    <!-- Button under the files already picked, which opens the picker again -->
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -86,6 +87,7 @@
     <string name="home_download_instructions_step3">ડાઉનલોડ પૂર્ણ થાય ત્યાં સુધી રાહ જુઓ, અને APK &lt;b&gt;ઇન્સ્ટોલ કરશો નહીં&lt;b&gt;</string>
     <string name="home_download_instructions_step3_mount">ડાઉનલોડની રાહ જુઓ ડાઉનલોડ પૂર્ણ થાય ત્યાં સુધી રાહ જુઓ, પછી &lt;b&gt;APK ઇન્સ્ટોલ કરો&lt;b&gt;</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_recommended_version">ભલામણ કરેલ સંસ્કરણ</string>
     <string name="home_selected_version">પસંદ કરેલ સંસ્કરણ</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
@@ -143,6 +145,7 @@
     <!-- Patcher Screen - Patcher Steps -->
     <!-- Battery optimization pre-flight dialog -->
     <!-- Patcher Screen - Patcher Worker -->
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">તમારી એપ્લિકેશનને કંઈક અદ્ભુત ઢાળ આપી રહ્યા છીએ… 🏆</string>
     <string name="patcher_message_2">જૂની એપને નવી યુક્તિઓ શીખવીએ છીએ… 🎩</string>
@@ -194,6 +197,7 @@
     <string name="settings_appearance_app_icon_light_2">આકાશ</string>
     <string name="settings_appearance_app_icon_light_3">સૂર્યાસ્ત</string>
     <string name="settings_appearance_app_icon_dark_2">ખાલીપણું</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <!-- Settings - Advanced Tab - Updates Section -->
     <!-- "Morphe" here is the app itself, not the patches. Do not translate this as pre-release patches -->

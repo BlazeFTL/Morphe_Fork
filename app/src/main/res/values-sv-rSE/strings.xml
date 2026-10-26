@@ -98,8 +98,8 @@
     <string name="home_category_name">Kategorinamn</string>
     <string name="home_category_move_to">Flytta till kategori</string>
     <string name="home_category_move_selected_title">Flytta markerade appar</string>
-    <string name="home_category_delete_confirm_title">Radera kategori</string>
-    <string name="home_category_delete_confirm_message">Radera kategorin &lt;b&gt;%1$s&lt;/b&gt;? Appar i den flyttas tillbaka till &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Åtgärder är inte tillgängliga för den här kategorin</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Vilken app vill du modifiera?</string>
@@ -230,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">Inga länkar hittades i urklipp</string>
     <string name="sources_dialog_local">Lokal</string>
     <string name="sources_dialog_local_files">Välj källfiler för tillägg</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Lägg till fler filer</string>
-    <string name="sources_dialog_local_file_tap_hint">Tryck för att bläddra i lagringen</string>
     <string name="sources_dialog_local_invalid_extension">Filen måste ha filändelsen .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Uppdaterar %s</string>
@@ -259,15 +256,12 @@
     <string name="sources_patch_expert_badge">Expert</string>
     <string name="sources_patch_expert_badge_tooltip">Aktivera Expertläge i inställningarna för att inkludera det här tillägget manuellt</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Behöver du hjälp att hitta en ursprunglig omodifierad APK-fil?</string>
     <string name="home_apk_availability_dialog_simple">Om du vill modifiera &lt;b&gt;%s&lt;/b&gt; behöver du en omodifierad APK-fil med följande version:</string>
     <string name="home_apk_availability_dialog_expert">Om du vill modifiera &lt;b&gt;%s&lt;/b&gt; behöver du en omodifierad APK-fil med en av följande versioner:</string>
     <string name="home_apk_availability_recommended_label">Rekommenderas</string>
     <string name="home_apk_availability_unpatched_label">Omodifierad</string>
     <string name="home_apk_availability_incompatible_label">Inkompatibel</string>
     <string name="home_apk_availability_installed_version">Installerad på den här enheten: %s</string>
-    <string name="home_apk_availability_yes">Ja, hjälp mig att hitta en APK-fil</string>
-    <string name="home_apk_availability_no">Nej, jag har redan en APK-fil</string>
     <string name="home_apk_helper_download">Använd en hjälpapp</string>
     <string name="home_apk_helper_untrusted">En hjälpapp har installerats men är ännu inte betrodd, så den erbjuds inte här</string>
     <string name="home_apk_helper_untrusted_action">Granska hjälpappar</string>
@@ -283,8 +277,7 @@
     <string name="home_apk_helper_wrong_package">Hjälpappen returnerade en annan app än den som modifieras</string>
     <string name="home_apk_helper_installed_unavailable">Morphe kunde inte använda den installerade appen</string>
     <string name="home_apk_helper_installed_incompatible">Det går inte att modifiera den installerade versionen</string>
-    <string name="home_apk_use_saved">Använd den sparade APK-filen</string>
-    <string name="home_apk_use_installed">Använd den installerade APK-filen</string>
+    <string name="home_apk_use_installed_app">Använd en installerad app</string>
     <string name="home_apk_use_saved_unsupported">Tilläggen stöder inte den här sparade kopian. Om du modifierar den blir du ombedd att bekräfta den, eller så väljer du en annan APK-fil</string>
     <string name="home_apk_use_installed_unverified">Det gick inte att verifiera signaturen för den installerade appen, så den kan redan ha modifierats</string>
     <string name="home_unverified">Overifierad</string>
@@ -320,14 +313,14 @@
     <string name="home_download_instructions_copy_link">Kopiera länk</string>
     <string name="home_download_instructions_link_copied">Länken har kopierats</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Välj den nedladdade APK-filen</string>
-    <string name="home_file_picker_prompt_description">Välj den &lt;b&gt;%s&lt;/b&gt;-APK-fil som du just laddade ned</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Öppna APK-fil</string>
     <string name="home_recommended_version">Rekommenderad version</string>
     <string name="home_selected_version">Vald version</string>
     <string name="home_select_apk_title">Välj APK-fil</string>
-    <string name="home_select_any_apk_description">Välj en APK-fil för valfri app, eller välj en app som redan är installerad på enheten</string>
     <string name="home_use_installed_app">Använd en installerad app</string>
+    <string name="home_use_installed_app_description">Välj en app som redan finns på den här enheten</string>
+    <string name="home_open_apk_file_description">Välj en APK-, APKM-, APKS- eller XAPK-fil från lagringen</string>
     <string name="home_installed_app_picker_title">Installerade appar</string>
     <string name="home_installed_app_picker_empty">Inga appar hittades</string>
     <string name="home_installed_app_picker_filter_user">Endast användarappar</string>
@@ -361,9 +354,6 @@
     <string name="expert_mode_patch_required_by_installer">Krävs för det valda installationsmålet</string>
     <string name="expert_mode_patch_unavailable_for_installer">Inte tillgängligt för det valda installationsmålet</string>
     <string name="expert_mode_multiple_sources_warning_title">Flera tilläggskällor har valts</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Du har valt tillägg från flera tilläggskällor. Det kan orsaka kompatibilitetsproblem eller oväntat beteende. 
-
-Är du säker på att du vill fortsätta?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Overifierad APK-fil</string>
     <string name="home_invalid_signature_message">Den APK-fil du har valt för &lt;b&gt;%s&lt;/b&gt; matchar inte det förväntade signeringscertifikatet. Den kan ha modifierats eller vara från en opålitlig källa.</string>
@@ -377,7 +367,9 @@ För bästa resultat rekommenderar den här appen att du modifierar en &lt;b&gt;
     <string name="home_dialog_unsupported_version_experimental_label">Experimentell</string>
     <string name="home_dialog_unsupported_version_experimental_description">Den här versionen har experimentellt stöd och kan vara instabil eller ofullständig</string>
     <string name="morphe_experimental_app_version_dialog_title">Vill du experimentera? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">Den här versionen av &lt;b&gt;%s&lt;/b&gt; har tidigt experimentellt stöd&lt;br/&gt;&lt;br/&gt;🔧 Räkna med underligt appbeteende eller okända fel medan tilläggen finjusteras för den här appversionen</string>
+    <string name="morphe_experimental_app_version_dialog_message">"Den här versionen av &lt;b&gt;%s&lt;/b&gt; har tidigt experimentellt stöd.
+
+🔧 Räkna med underligt appbeteende eller okända fel medan patcharna finjusteras för den här appversionen"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Version som inte stöds</string>
     <string name="home_dialog_unsupported_version_dialog_description">Den här APK-filen är inte en rekommenderad appversion. Om du fortsätter kan det leda till att appen inte fungerar</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -514,7 +506,6 @@ För bästa resultat rekommenderar den här appen att du modifierar en &lt;b&gt;
     <string name="shortcut_check_updates_long">Sök efter tilläggsuppdateringar</string>
     <string name="shortcut_patch_app">Modifiera %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Är du säker på att du vill avinstallera den här appen?</string>
     <string name="batch_uninstall_confirm_body">De markerade apparna tas bort från enheten permanent</string>
     <string name="home_app_info_remove_app_warning">Detta raderar följande permanent:</string>
     <string name="home_app_info_delete_item_database">Databaspost</string>
@@ -676,8 +667,7 @@ Om du avinstallerar raderas alla appdata permanent"</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Modifiering pågår …</string>
     <string name="patcher_notification_text">Tryck för att återgå till modifieringen</string>
-    <string name="patcher_stop_confirm_title">Stoppa modifiering</string>
-    <string name="patcher_stop_confirm_description">Är du säker på att du vill stoppa modifieringsprocessen?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Omvandlar appen till något fantastiskt … 🏆</string>
     <string name="patcher_message_2">Lär gamla appar att sitta … 🎩</string>
@@ -819,21 +809,15 @@ Om du avinstallerar raderas alla appdata permanent"</string>
     <string name="settings_appearance_repatch_notice_description">Visa en banner när modifierade appar kan modifieras igen</string>
     <string name="settings_appearance_more_apps_card">Kortet Fler appar</string>
     <string name="settings_appearance_more_apps_card_description">Visar ett kort under apparna som leder till tillägg från communityn</string>
-    <string name="settings_appearance_app_card_colors">Färger för appkort</string>
     <string name="settings_appearance_app_card_colors_default">Standard</string>
-    <string name="settings_appearance_app_card_colors_default_description">Ge varje app sitt eget pakets färg</string>
     <string name="settings_appearance_app_card_colors_accent">Accentfärg</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Använd appens accentfärg för appkort på startskärmen</string>
     <string name="settings_appearance_app_card_colors_gradient">Övertoning</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Använd en anpassad övertoning för appkort på startskärmen</string>
     <string name="settings_appearance_app_card_colors_solid">En färg</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Använd en egen färg för appkort på startskärmen</string>
     <string name="settings_appearance_app_card_colors_start">Startfärg</string>
     <string name="settings_appearance_app_card_colors_middle">Mittfärg</string>
     <string name="settings_appearance_app_card_colors_end">Slutfärg</string>
     <string name="settings_appearance_app_card_colors_solid_color">Färg</string>
     <string name="settings_appearance_app_card_colors_bundle">Färg från appaket</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Använd varje apps egen färg här. Toningen anpassas automatiskt</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Appikon</string>
     <string name="settings_appearance_app_icon_selector_description">Hur Morphe ser ut på din startskärm och i panelen med appar</string>
@@ -859,7 +843,7 @@ Om du avinstallerar raderas alla appdata permanent"</string>
     <string name="settings_appearance_app_icon_mark_white">Vit</string>
     <string name="settings_appearance_app_icon_mark_black">Svart</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Ändra appikon?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Ändra till &lt;b&gt;%s&lt;/b&gt; och starta om?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Ändra ikon</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1046,6 +1030,8 @@ Bildernas mått ska vara följande:
     <string name="installer_play_store_warning_continue">Jag förstår, fortsätt</string>
     <string name="installer_play_store_mode">Installera som Play Butik</string>
     <string name="installer_play_store_mode_description">Markerar Google Play Butik som installationskälla</string>
+    <string name="settings_nomount_only">Endast NoMount</string>
+    <string name="settings_nomount_only_description">Monterar endast appar med NoMount och återgår aldrig till en bind-mount, så att de förblir omonterade utan det</string>
     <string name="settings_prompt_installer_on_install">Uppmaning om val av installerare</string>
     <string name="settings_prompt_installer_on_install_description">Frågar hur varje app ska installeras: med rotbehörigheter före modifieringen, annars därefter</string>
     <string name="settings_auto_install_with_shizuku">Installera automatiskt efter modifiering</string>

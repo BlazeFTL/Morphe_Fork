@@ -35,6 +35,8 @@
     <string name="home_all_apps_hidden_subtitle">ನೀವು ಹೋಮ್ ಸ್ಕ್ರೀನ್‌ನಿಂದ ಎಲ್ಲಾ ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ಮರೆಮಾಡಿದ್ದೀರಿ</string>
     <string name="home_category_all_apps">ಎಲ್ಲಾ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು</string>
     <string name="home_category_custom">Custom</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">ನೀವು ಯಾವ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಪ್ಯಾಚ್ ಮಾಡಲು ಬಯಸುತ್ತೀರಿ?</string>
     <!-- Humorous hype message with light nostalgia -->
@@ -96,13 +98,14 @@
     <string name="sources_dialog_remote">ರಿಮೋಟ್</string>
     <string name="sources_dialog_remote_url">ಮೂಲ URL</string>
     <string name="sources_dialog_local">ಸ್ಥಳೀಯ</string>
-    <!-- Button under the files already picked, which opens the picker again -->
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <!-- Home Screen - Dialog 1: APK Availability -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="home_apk_use_installed_app">ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಿದ ಅಪ್ಲಿಕೇಶನ್ ಬಳಸಿ</string>
     <!-- Home Screen - Dialog 2: Download Instructions -->
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_use_installed_app">ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಿದ ಅಪ್ಲಿಕೇಶನ್ ಬಳಸಿ</string>
     <string name="home_installed_app_picker_empty">ಆ್ಯಪ್‌ಗಳು ಕಂಡುಬರಲಿಲ್ಲ</string>
     <string name="home_installed_app_picker_filter_user">రಪರಸಲ್ి్ಕಾರ್సేరు಻స్వ్సై</string>
@@ -150,6 +153,7 @@
     <!-- Patcher Screen - Patcher Steps -->
     <!-- Battery optimization pre-flight dialog -->
     <!-- Patcher Screen - Patcher Worker -->
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <!-- Morphe patches fix YouTube bugs that Google still has not fixed. -->
     <!-- "bytecode" can be translated from "the app code" -->
@@ -168,6 +172,7 @@
     <!-- Settings - Appearance Tab - Interface Scale -->
     <!-- Settings - Appearance Tab - Home Screen Section -->
     <!-- Settings - Appearance Tab - App Icon Selector -->
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <!-- Settings - Advanced Tab - Updates Section -->
     <!-- "Morphe" here is the app itself, not the patches. Do not translate this as pre-release patches -->

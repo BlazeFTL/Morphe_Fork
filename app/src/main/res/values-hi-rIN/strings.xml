@@ -98,8 +98,8 @@
     <string name="home_category_name">श्रेणी का नाम</string>
     <string name="home_category_move_to">श्रेणी में ले जाएं</string>
     <string name="home_category_move_selected_title">चयनित ऐप्स को ले जाएं</string>
-    <string name="home_category_delete_confirm_title">श्रेणी हटाएं</string>
-    <string name="home_category_delete_confirm_message">श्रेणी &lt;b&gt;%1$s&lt;/b&gt; हटाएं? इसमें ऐप्स &lt;b&gt;%2$s&lt;/b&gt; में वापस चले जाएंगे</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">इस श्रेणी के लिए क्रियाएँ उपलब्ध नहीं हैं</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">आप किस ऐप को पैच करना चाहते हैं?</string>
@@ -230,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">क्लिपबोर्ड पर कोई लिंक नहीं मिला</string>
     <string name="sources_dialog_local">स्थानीय</string>
     <string name="sources_dialog_local_files">पैच सोर्स फ़ाइलें चुनें</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">और फ़ाइलें जोड़ें</string>
-    <string name="sources_dialog_local_file_tap_hint">भंडारण ब्राउज़ करने के लिए टैप करें</string>
     <string name="sources_dialog_local_invalid_extension">फ़ाइल में .mpp एक्सटेंशन होना चाहिए</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">%s को अपडेट करता है</string>
@@ -240,6 +237,7 @@
     <string name="sources_dialog_url_invalid">URL GitHub/GitLab रिपो या .json फ़ाइल की ओर इंगित करना चाहिए</string>
     <string name="sources_dialog_preinstalled">प्रिंस्टॉल किया गया</string>
     <string name="sources_dialog_community">समुदाय पैच</string>
+    <string name="sources_dialog_choose_apps">ऐप्स चुनें</string>
     <string name="sources_dialog_choose_apps_description">जब स्रोत लोड हो जाए, तो चुनें कि इसके कौन से ऐप रखने हैं।</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">तृतीय-पक्ष पैच स्रोत</string>
@@ -259,15 +257,12 @@
     <string name="sources_patch_expert_badge">विशेषज्ञ</string>
     <string name="sources_patch_expert_badge_tooltip">इस पैच को मैन्युअल रूप से शामिल करने के लिए सेटिंग्स में विशेषज्ञ मोड सक्षम करें</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">अपनी सहायता के लिए मूल अप्रतिबंधित एपीएक्सी के लिए खोजें?</string>
     <string name="home_apk_availability_dialog_simple">पैच करने के लिए &lt;b&gt;%s&lt;/b&gt;, अपैच्ड एपीएक्सी संस्करण की आवश्यकता है:</string>
     <string name="home_apk_availability_dialog_expert">पैच करने के लिए &lt;b&gt;%s&lt;/b&gt;, अपatched एपीके की आवश्यकता है:</string>
     <string name="home_apk_availability_recommended_label">सुझाया गया</string>
     <string name="home_apk_availability_unpatched_label">अपडेट किए बिना</string>
     <string name="home_apk_availability_incompatible_label">असंगत</string>
     <string name="home_apk_availability_installed_version">इस डिवाइस पर स्थापित: %s</string>
-    <string name="home_apk_availability_yes">हाँ, मुझे APK ढूंढने में मदद करें</string>
-    <string name="home_apk_availability_no">नहीं, मेरे पास पहले से ही एक एपीके है</string>
     <string name="home_apk_helper_download">एक सहायक ऐप का उपयोग करें</string>
     <string name="home_apk_helper_untrusted">एक सहायक एप्लिकेशन इंस्टॉल किया गया है लेकिन अभी तक विश्वसनीय नहीं है, इसलिए इसे यहां पेश नहीं किया जा रहा है</string>
     <string name="home_apk_helper_untrusted_action">सहायक एप्लिकations की समीक्षा करें</string>
@@ -283,8 +278,6 @@
     <string name="home_apk_helper_wrong_package">हेल्पर ऐप ने पैच किए जा रहे ऐप के अलावा कोई दूसरा ऐप लौटाया</string>
     <string name="home_apk_helper_installed_unavailable">Morphe इंस्टॉल किए गए ऐप का उपयोग नहीं कर सका</string>
     <string name="home_apk_helper_installed_incompatible">इंस्टॉल किया गया संस्करण पैच नहीं किया जा सकता</string>
-    <string name="home_apk_use_saved">सहेजी गई APK का उपयोग करें</string>
-    <string name="home_apk_use_installed">स्थापित APK का उपयोग करें</string>
     <string name="home_apk_use_saved_unsupported">ये पैच इस सहेजी गई प्रति का समर्थन नहीं करते। इसे पैच करने पर आपसे पुष्टि मांगी जाएगी, या दूसरा APK चुनें।</string>
     <string name="home_apk_use_installed_unverified">इंस्टॉल किए गए ऐप के हस्ताक्षर को सत्यापित नहीं किया जा सका, इसलिए यह पहले से ही पैच किया जा सकता है</string>
     <string name="home_unverified">असत्यापित</string>
@@ -320,14 +313,14 @@
     <string name="home_download_instructions_copy_link">लिंक कॉपी करें</string>
     <string name="home_download_instructions_link_copied">लिंक कॉपी हो गया</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">चयनित डाउनलोड एपीके</string>
-    <string name="home_file_picker_prompt_description">अपना डाउनलोड की गई &lt;b&gt;b>%s&lt;b&gt;/b> APK फ़ाइल चुनें</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">APK फ़ाइल खोलें</string>
     <string name="home_recommended_version">सुझाई गई संस्करण</string>
     <string name="home_selected_version">चयन किया गया संस्करण</string>
     <string name="home_select_apk_title">APK चुनें</string>
-    <string name="home_select_any_apk_description">किसी भी ऐप की APK फ़ाइल चुनें, या इस डिवाइस पर पहले से इंस्टॉल किए गए ऐप को चुनें</string>
     <string name="home_use_installed_app">इंस्टॉल किए गए ऐप का उपयोग करें</string>
+    <string name="home_use_installed_app_description">इस डिवाइस पर पहले से मौजूद किसी ऐप को चुनें</string>
+    <string name="home_open_apk_file_description">स्टोरेज से APK, APKM, APKS या XAPK फ़ाइल चुनें</string>
     <string name="home_installed_app_picker_title">इंस्टॉल किए गए ऐप्स</string>
     <string name="home_installed_app_picker_empty">कोई ऐप नहीं मिला</string>
     <string name="home_installed_app_picker_filter_user">केवल उपयोगकर्ता ऐप</string>
@@ -361,9 +354,6 @@
     <string name="expert_mode_patch_required_by_installer">चयनित इंस्टॉलेशन लक्ष्य के लिए आवश्यक</string>
     <string name="expert_mode_patch_unavailable_for_installer">चयनित इंस्टॉलेशन लक्ष्य के लिए उपलब्ध नहीं है</string>
     <string name="expert_mode_multiple_sources_warning_title">अनुमतियों के कई स्रोत चुने गए हैं</string>
-    <string name="expert_mode_multiple_sources_warning_message">"आपने विभिन्न पचड़ियों के स्रोतों से पचड़ियाँ चुनी हैं। यह संगतता की समस्याएं या अपेक्षित व्यवहार का कारण हो सकता है।
-
-क्या आप वास्तव में आगे बढ़ना चाहते हैं?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">अपरिचित APK</string>
     <string name="home_invalid_signature_message">आपके द्वारा चयनित APK &lt;b&gt;%s&lt;/b&gt; प्रमाण पत्र से मेल नहीं खाता। यह संशोधित किया गया हो सकता है या किसी अविश्वसनीय स्रोत से हो सकता है</string>
@@ -377,7 +367,9 @@
     <string name="home_dialog_unsupported_version_experimental_label">प्रायोगिक</string>
     <string name="home_dialog_unsupported_version_experimental_description">इस संस्करण का प्रायोगिक समर्थन है और अस्थिर या अधूरा हो सकता है</string>
     <string name="morphe_experimental_app_version_dialog_title">क्या आप प्रयोग करना चाहेंगे? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">&lt;b&gt;%s&lt;/b&gt; के इस संस्करण का शुरुआती प्रायोगिक समर्थन है&lt;br/&gt;&lt;br/&gt;🔧 इस ऐप संस्करण के लिए पैच को परिष्कृत किए जाने के कारण ऐप व्यवहार या अज्ञात बग असामान्य हो सकते हैं</string>
+    <string name="morphe_experimental_app_version_dialog_message">"&lt;b&gt;%s&lt;/b&gt; के इस वर्ज़न में शुरुआती प्रायोगिक सपोर्ट है।
+
+🔧 ऐप के व्यवहार में अजीबोगरीब बदलाव या अज्ञात बग्स की उम्मीद रखें क्योंकि इस ऐप वर्ज़न के लिए पैच को रिफ़ाइन किया जा रहा है"</string>
     <string name="home_dialog_unsupported_version_dialog_title">यह एपीएम अनुशासित संस्करण नहीं है। आगे बढ़ने से अनुशासित एप्प्लिकेशन संस्करण हो सकता है।</string>
     <string name="home_dialog_unsupported_version_dialog_description">यह APK अनुशंसित एप्लिकेशन संस्करण नहीं है। जारी रखना परिणामस्वरूप एक कार्यक्षम एप्लिकेशन नहीं हो सकता है।</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -514,7 +506,6 @@
     <string name="shortcut_check_updates_long">पैच अपडेट के लिए जांचें</string>
     <string name="shortcut_patch_app">%s को पैच करें</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">क्या आप वाकई तौर पर इस ऐप को अनइंस्टॉल करना चाहते हैं?</string>
     <string name="batch_uninstall_confirm_body">चुने गए ऐप आपके डिवाइस से स्थायी रूप से हटा दिए जाएंगे</string>
     <string name="home_app_info_remove_app_warning">यह स्थायी रूप से मिटाएगा:</string>
     <string name="home_app_info_delete_item_database">डेटाबेस एंट्री</string>
@@ -676,8 +667,7 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patching in progress…</string>
     <string name="patcher_notification_text">Tap to return to the patcher</string>
-    <string name="patcher_stop_confirm_title">Stop patcher</string>
-    <string name="patcher_stop_confirm_description">Are you sure you want to stop the patching process?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Yes, I have it</string>
     <string name="patcher_message_2">No, help me find it</string>
@@ -819,21 +809,21 @@
     <string name="settings_appearance_repatch_notice_description">पैच्ड ऐप्स को फिर से पैच किया जा सकता है जब बैनर दिखाता है</string>
     <string name="settings_appearance_more_apps_card">और ऐप्स कार्ड</string>
     <string name="settings_appearance_more_apps_card_description">ऐप्स के नीचे एक कार्ड दिखाता है जो कम्युनिटी पैच की ओर ले जाता है</string>
-    <string name="settings_appearance_app_card_colors">ऐप कार्ड रंग</string>
+    <string name="settings_appearance_app_card_colors">कार्ड रंग</string>
     <string name="settings_appearance_app_card_colors_default">डिफ़ॉल्ट</string>
-    <string name="settings_appearance_app_card_colors_default_description">प्रत्येक ऐप को अपने बंडल का रंग दें</string>
+    <string name="settings_appearance_app_card_colors_default_description">प्रत्येक ऐप और स्रोत को अपना अलग रंग दें</string>
     <string name="settings_appearance_app_card_colors_accent">एक्सेंट</string>
-    <string name="settings_appearance_app_card_colors_accent_description">होम ऐप कार्ड के लिए ऐप एक्सेंट रंग का उपयोग करें</string>
+    <string name="settings_appearance_app_card_colors_accent_description">ऐप और स्रोत कार्ड के लिए ऐप एक्सेंट रंग का उपयोग करें</string>
     <string name="settings_appearance_app_card_colors_gradient">ग्रेडिएंट</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">होम ऐप कार्ड के लिए एक कस्टम ग्रेडिएंट का उपयोग करें</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">ऐप कार्ड के लिए एक कस्टम ग्रेडिएंट का उपयोग करें, जो स्रोत कार्ड के लिए एक रंग में मिश्रित हो</string>
     <string name="settings_appearance_app_card_colors_solid">ठोस</string>
-    <string name="settings_appearance_app_card_colors_solid_description">होम ऐप कार्ड के लिए एक कस्टम रंग का उपयोग करें</string>
+    <string name="settings_appearance_app_card_colors_solid_description">ऐप और स्रोत कार्ड के लिए एक कस्टम रंग का उपयोग करें</string>
     <string name="settings_appearance_app_card_colors_start">शुरूआती रंग</string>
     <string name="settings_appearance_app_card_colors_middle">मध्य रंग</string>
     <string name="settings_appearance_app_card_colors_end">अंतिम रंग</string>
     <string name="settings_appearance_app_card_colors_solid_color">ठोस रंग</string>
     <string name="settings_appearance_app_card_colors_bundle">ऐप बंडल रंग</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">यहां प्रत्येक ऐप के अपने रंग का उपयोग करें, जो स्वचालित रूप से फिट होने के लिए शेड किया गया है</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">यहाँ प्रत्येक ऐप या स्रोत के अपने रंग का उपयोग करें, जिसे फिट होने के लिए स्वचालित रूप से शेड किया गया है</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">एप्लिकेशन आइकॉन</string>
     <string name="settings_appearance_app_icon_selector_description">Morphe आपकी होम स्क्रीन और ऐप ड्रॉअर में कैसा दिखता है</string>
@@ -859,7 +849,7 @@
     <string name="settings_appearance_app_icon_mark_white">सफ़ेद</string>
     <string name="settings_appearance_app_icon_mark_black">काला</string>
     <string name="settings_appearance_app_icon_change_dialog_title">एप्लिकेशन आइकॉन बदलें? फिर से स्टार्ट करना होगा।</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">&lt;b&gt;%s&lt;/b&gt; में बदलें और पुनरारंभ करें?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">आइकॉन बदलें</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1046,6 +1036,8 @@ morphe_header_custom_dark.png
     <string name="installer_play_store_warning_continue">मुझे समझ आ गया, जारी रखें</string>
     <string name="installer_play_store_mode">Play Store के रूप में इंस्टॉल करें</string>
     <string name="installer_play_store_mode_description">Google Play स्टोर को इंस्टॉल स्रोत के रूप में चिह्नित करता है</string>
+    <string name="settings_nomount_only">केवल NoMount</string>
+    <string name="settings_nomount_only_description">ऐप्स को केवल NoMount के साथ माउंट करता है और कभी भी बाइंड माउंट पर वापस नहीं जाता है, इसलिए इसके बिना वे अनमाउंटेड रहते हैं</string>
     <string name="settings_prompt_installer_on_install">इंस्टॉलर चयन संकेत</string>
     <string name="settings_prompt_installer_on_install_description">हर ऐप को कैसे इंस्टॉल करना है, यह पूछता है: पेटचिंग से पहले रूट के साथ, अन्यथा उसके बाद</string>
     <string name="settings_auto_install_with_shizuku">पैचिंग के बाद स्वतः इंस्टॉल करें</string>

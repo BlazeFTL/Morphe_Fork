@@ -8,17 +8,17 @@
     <string name="home_unpatched_badge">پچ‌نشده</string>
     <string name="home_no_patches_available">هیچ پچی در دسترس نیست</string>
     <string name="home_app_hide_title">این برنامه پنهان شود؟ </string>
-    <string name="home_more_apps_title">برنامه‌های بیشتر</string>
-    <string name="home_more_apps_hide_title">این کارت پنهان شود؟</string>
-    <string name="home_more_apps_hide_message">هر زمان که بخواهید می‌توانید آن را از مسیر تنظیمات &gt; ظاهر &gt; صفحه اصلی بازگردانید</string>
+    <string name="home_more_apps_title">More apps</string>
+    <string name="home_more_apps_hide_title">Hide this card?</string>
+    <string name="home_more_apps_hide_message">You can bring it back anytime in Settings &gt; Appearance &gt; Home screen</string>
     <string name="home_app_hide_message">این برنامه از صفحهٔ اصلی پنهان خواهد شد. بعداً می‌توانید آن را با دکمهٔ انتهای فهرست، از بخش برنامه‌های پنهان بازیابی کنید.</string>
     <string name="home_app_will_be_hidden">این برنامه پنهان خواهد شد</string>
-    <string name="home_app_hidden_named">%s پنهان</string>
-    <string name="home_app_shown_named">%s نمایش داده شد</string>
+    <string name="home_app_hidden_named">%s hidden</string>
+    <string name="home_app_shown_named">%s shown</string>
     <string name="home_app_no_hidden">هیچ برنامهٔ پنهانی وجود ندارد</string>
     <string name="home_app_hidden_apps_title">برنامه‌های پنهان</string>
     <string name="home_app_hidden_apps_hint">برای آشکارسازی ضربه بزنید</string>
-    <string name="home_apps_unhide_message">اپلیکیشن‌های پنهان‌شده به صفحه اصلی باز می‌گردند</string>
+    <string name="home_apps_unhide_message">Unhidden apps return to the home screen</string>
     <string name="home_app_patch_sources_description">منابعی که تیک نخورده بمانند هنگام پچ کردن این برنامه‌ها ارائه نمی‌شوند و پچ‌های آن‌ها هرگز خودبه‌خود به انتخاب اضافه نمی‌شوند. هر منبع برای سایر برنامه‌ها فعال می‌ماند.</string>
     <string name="home_app_patch_sources_mixed">ارائه‌شده برای %1$s از %2$s</string>
     <string name="home_app_patch_sources_covers">دارای پچ برای %1$s از %2$s</string>
@@ -98,8 +98,8 @@
     <string name="home_category_name">نام دسته</string>
     <string name="home_category_move_to">انتقال به دسته</string>
     <string name="home_category_move_selected_title">انتقال برنامه‌های انتخاب‌شده</string>
-    <string name="home_category_delete_confirm_title">حذف دسته</string>
-    <string name="home_category_delete_confirm_message">دسته‌بندی &lt;b&gt;%1$s&lt;/b&gt; حذف شود؟ برنامه‌های داخل آن به &lt;b&gt;%2$s&lt;/b&gt; بازمی‌گردند</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">عملیات برای این دسته در دسترس نیست</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">می‌خواهید کدام برنامه را پچ کنید؟</string>
@@ -230,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">هیچ پیوندی در کلیپ‌بورد یافت نشد</string>
     <string name="sources_dialog_local">محلی</string>
     <string name="sources_dialog_local_files">انتخاب فایل‌های منبع پچ</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">افزودن فایل‌های بیشتر</string>
-    <string name="sources_dialog_local_file_tap_hint">برای مرور حافظه، ضربه بزنید</string>
     <string name="sources_dialog_local_invalid_extension">فایل باید پسوند .mpp داشته باشد</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">به‌روزرسانی %s</string>
@@ -240,6 +237,7 @@
     <string name="sources_dialog_url_invalid">نشانی اینترنتی باید به یک مخزن GitHub/GitLab یا فایل .json اشاره کند</string>
     <string name="sources_dialog_preinstalled">پیش نصب شده</string>
     <string name="sources_dialog_community">پچ‌های جامعه</string>
+    <string name="sources_dialog_choose_apps">انتخاب اپلیکیشن‌ها</string>
     <string name="sources_dialog_choose_apps_description">انتخاب کنید کدام‌یک از برنامه‌هایش پس از بارگذاری منبع نگه داشته شوند</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">منابع پچ شخص ثالث</string>
@@ -259,15 +257,12 @@
     <string name="sources_patch_expert_badge">حرفه‌ای</string>
     <string name="sources_patch_expert_badge_tooltip">برای افزودن دستی این پچ، حالت حرفه‌ای را در تنظیمات فعال کنید</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">نیاز به کمک برای پیدا کردن یک APK اصلی و بدون پچ دارید؟</string>
     <string name="home_apk_availability_dialog_simple">برای پچ &lt;b&gt;%s&lt;/b&gt;، به نسخه APK بدون پچ نیاز دارید:</string>
     <string name="home_apk_availability_dialog_expert">برای پچ کردن &lt;b&gt;%s&lt;/b&gt;;، به یک APK بدون پچ از نسخه ها نیاز دارید:</string>
     <string name="home_apk_availability_recommended_label">توصیه شده </string>
     <string name="home_apk_availability_unpatched_label">پچ نشده</string>
     <string name="home_apk_availability_incompatible_label">ناسازگار</string>
     <string name="home_apk_availability_installed_version">نصب شده روی این دستگاه: %s</string>
-    <string name="home_apk_availability_yes">بله، کمکم کن یک APK پیدا کنم</string>
-    <string name="home_apk_availability_no">نه، من قبلا یک APK دارم</string>
     <string name="home_apk_helper_download">استفاده از برنامهٔ کمکی</string>
     <string name="home_apk_helper_untrusted">یک برنامه کمکی نصب شده است اما هنوز قابل اعتماد نیست، بنابراین اینجا پیشنهاد نمی‌شود</string>
     <string name="home_apk_helper_untrusted_action">بررسی کمک‌ها</string>
@@ -283,8 +278,7 @@
     <string name="home_apk_helper_wrong_package">برنامهٔ کمکی برنامه‌ای متفاوت از برنامهٔ در حال پچ را برگرداند</string>
     <string name="home_apk_helper_installed_unavailable">Morphe نتوانست از برنامهٔ نصب‌شده استفاده کند</string>
     <string name="home_apk_helper_installed_incompatible">نسخهٔ نصب‌شده قابل پچ نیست</string>
-    <string name="home_apk_use_saved">استفاده از APK ذخیره‌شده</string>
-    <string name="home_apk_use_installed">استفاده از APK نصب‌شده</string>
+    <string name="home_apk_use_installed_app">استفاده از برنامهٔ نصب‌شده</string>
     <string name="home_apk_use_saved_unsupported">پچ‌ها از این نسخهٔ ذخیره‌شده پشتیبانی نمی‌کنند. پچ‌کردن آن از شما تأیید می‌خواهد؛ یا APK دیگری انتخاب کنید</string>
     <string name="home_apk_use_installed_unverified">امضای برنامهٔ نصب‌شده تأیید نشد؛ بنابراین ممکن است از قبل پچ شده باشد</string>
     <string name="home_unverified">تأییدنشده</string>
@@ -320,14 +314,14 @@
     <string name="home_download_instructions_copy_link">کپی پیوند</string>
     <string name="home_download_instructions_link_copied">پیوند کپی شد</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">انتخاب APK دانلود شده</string>
-    <string name="home_file_picker_prompt_description">فایل APK &lt;b&gt;%s&lt;/b&gt; را که همین حالا دانلود کرده‌اید انتخاب کنید</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">فایل APK را باز کنید</string>
     <string name="home_recommended_version">نسخه پیشنهادی</string>
     <string name="home_selected_version">نسخه منتخب</string>
     <string name="home_select_apk_title">انتخاب APK</string>
-    <string name="home_select_any_apk_description">یک فایل APK از هر برنامه‌ای انتخاب کنید، یا برنامه‌ای را که از قبل روی این دستگاه نصب است انتخاب کنید</string>
     <string name="home_use_installed_app">استفاده از برنامهٔ نصب‌شده</string>
+    <string name="home_use_installed_app_description">یک برنامه که از قبل روی این دستگاه است را انتخاب کنید</string>
+    <string name="home_open_apk_file_description">یک فایل APK، APKM، APKS یا XAPK را از حافظه انتخاب کنید</string>
     <string name="home_installed_app_picker_title">برنامه‌های نصب‌شده</string>
     <string name="home_installed_app_picker_empty">برنامه‌ای پیدا نشد</string>
     <string name="home_installed_app_picker_filter_user">فقط برنامه‌های کاربر</string>
@@ -361,9 +355,6 @@
     <string name="expert_mode_patch_required_by_installer">برای هدف نصب انتخاب‌شده لازم است</string>
     <string name="expert_mode_patch_unavailable_for_installer">برای هدف نصب انتخاب‌شده در دسترس نیست</string>
     <string name="expert_mode_multiple_sources_warning_title">چند منبع پچ انتخاب شده‌اند</string>
-    <string name="expert_mode_multiple_sources_warning_message">"شما پچ‌هایی را از چند منبع پچ انتخاب کرده‌اید. این ممکن است باعث مشکلات سازگاری یا رفتار غیرمنتظره شود.
-
-آیا مطمئن هستید که می‌خواهید ادامه دهید؟"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">تأییدنشده APK</string>
     <string name="home_invalid_signature_message">فایل APK که برای &lt;b&gt;%s&lt;/b&gt; انتخاب کرده‌اید، با گواهی امضای موردانتظار مطابقت ندارد. ممکن است این فایل APK نسخهٔ اصلی نباشد.</string>
@@ -377,7 +368,9 @@
     <string name="home_dialog_unsupported_version_experimental_label">آزمایشی</string>
     <string name="home_dialog_unsupported_version_experimental_description">این نسخه از پشتیبانی آزمایشی برخوردار است و ممکن است ناپایدار یا ناقص باشد</string>
     <string name="morphe_experimental_app_version_dialog_title">می‌خواهید آزمایش کنید؟ 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">این نسخه از &lt;b&gt;%s&lt;/b&gt; دارای پشتیبانی آزمایشی اولیه است&lt;br/&gt;&lt;br/&gt;🔧 از آنجایی که پچ‌ها برای این نسخه در حال بهینه‌سازی هستند، احتمال بروز عملکردهای غیرمعمول یا باگ‌های ناشناخته در برنامه وجود دارد.</string>
+    <string name="morphe_experimental_app_version_dialog_message">"این نسخه از &lt;b&gt;%s&lt;/b&gt; دارای پشتیبانی آزمایشی اولیه است
+
+🔧 از آنجایی که پچ‌ها برای این نسخه از برنامه در حال بهینه‌سازی هستند، احتمال بروز عملکردهای غیرمعمول یا باگ‌های ناشناخته در برنامه وجود دارد"</string>
     <string name="home_dialog_unsupported_version_dialog_title">نسخه پشتیبانی نشده</string>
     <string name="home_dialog_unsupported_version_dialog_description">این APK نسخه پیشنهادی برنامه نیست. ادامه ممکن است باعث شود برنامه به درستی کار نکند</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -514,7 +507,6 @@
     <string name="shortcut_check_updates_long">بررسی به‌روزرسانی پچ‌ها</string>
     <string name="shortcut_patch_app">پچ‌کردن %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">آیا مطمئنید می‌خواهید این برنامه را حذف کنید؟</string>
     <string name="batch_uninstall_confirm_body">برنامه‌های انتخاب‌شده برای همیشه از دستگاه شما حذف می‌شوند</string>
     <string name="home_app_info_remove_app_warning">این موارد برای همیشه حذف می‌شوند:</string>
     <string name="home_app_info_delete_item_database">رکورد پایگاه داده</string>
@@ -676,8 +668,7 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">پچ‌کردن در حال انجام است…</string>
     <string name="patcher_notification_text">برای بازگشت به پچر ضربه بزنید</string>
-    <string name="patcher_stop_confirm_title">پچر متوقف شود؟</string>
-    <string name="patcher_stop_confirm_description">آیا مطمئنید می‌خواهید فرایند پچ‌کردن را متوقف کنید؟</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">در حال تبدیل برنامه‌تان به چیزی فوق‌العاده… 🏆</string>
     <string name="patcher_message_2">در حال یاد دادن ترفندهای جدید به برنامه‌های قدیمی… 🎩</string>
@@ -819,21 +810,15 @@
     <string name="settings_appearance_repatch_notice_description">نمایش بنر هنگامی که برنامه‌های پچ‌شده را می‌توان دوباره پچ کرد</string>
     <string name="settings_appearance_more_apps_card">کارت برنامه‌های بیشتر</string>
     <string name="settings_appearance_more_apps_card_description">یک کارت را زیر برنامه‌ها نمایش می‌دهد که به وصله‌های جامعه منجر می‌شود</string>
-    <string name="settings_appearance_app_card_colors">رنگ کارت برنامه‌ها</string>
     <string name="settings_appearance_app_card_colors_default">پیش‌فرض</string>
-    <string name="settings_appearance_app_card_colors_default_description">به هر برنامه رنگ بستهٔ خودش را می‌دهد</string>
     <string name="settings_appearance_app_card_colors_accent">تأکیدی</string>
-    <string name="settings_appearance_app_card_colors_accent_description">از رنگ تأکیدی برنامه برای کارت‌های برنامه در صفحهٔ اصلی استفاده می‌کند</string>
     <string name="settings_appearance_app_card_colors_gradient">گرادیان</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">از یک گرادیان سفارشی برای کارت‌های برنامه در صفحهٔ اصلی استفاده می‌کند</string>
     <string name="settings_appearance_app_card_colors_solid">یک‌دست</string>
-    <string name="settings_appearance_app_card_colors_solid_description">از یک رنگ سفارشی برای کارت‌های برنامه در صفحهٔ اصلی استفاده می‌کند</string>
     <string name="settings_appearance_app_card_colors_start">رنگ آغازین</string>
     <string name="settings_appearance_app_card_colors_middle">رنگ میانی</string>
     <string name="settings_appearance_app_card_colors_end">رنگ پایانی</string>
     <string name="settings_appearance_app_card_colors_solid_color">رنگ یک‌دست</string>
     <string name="settings_appearance_app_card_colors_bundle">رنگ بستهٔ برنامه</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">رنگ ویژهٔ هر برنامه را اینجا استفاده می‌کند و برای هماهنگی، به‌طور خودکار سایه می‌دهد</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">آیکون برنامه</string>
     <string name="settings_appearance_app_icon_selector_description">ظاهر Morphe در صفحه‌ی اصلی و کشوی برنامه‌ها</string>
@@ -859,7 +844,7 @@
     <string name="settings_appearance_app_icon_mark_white">سفید</string>
     <string name="settings_appearance_app_icon_mark_black">سیاه</string>
     <string name="settings_appearance_app_icon_change_dialog_title">آیکون برنامه تغییر کند؟</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">به &lt;b&gt;%s&lt;/b&gt; تغییر کند و دوباره راه‌اندازی شود؟</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">تغییر آیکون</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1046,6 +1031,8 @@ morphe_header_custom_dark.png
     <string name="installer_play_store_warning_continue">متوجه شدم، ادامه بده</string>
     <string name="installer_play_store_mode">نصب به‌عنوان Play Store</string>
     <string name="installer_play_store_mode_description">علامت‌گذاری Google Play Store به عنوان منبع نصب</string>
+    <string name="settings_nomount_only">فقط NoMount</string>
+    <string name="settings_nomount_only_description">برنامه‌ها را فقط با NoMount مونت می‌کند و هرگز به bind mount باز نمی‌گردد، بنابراین بدون آن بدون مونت باقی می‌مانند</string>
     <string name="settings_prompt_installer_on_install">درخواست انتخاب نصب‌کننده</string>
     <string name="settings_prompt_installer_on_install_description">پرسش درباره نحوه نصب هر برنامه: با روت قبل از پچ‌گذاری، در غیر این صورت بعد از آن</string>
     <string name="settings_auto_install_with_shizuku">نصب خودکار پس از پچ‌کردن</string>

@@ -98,8 +98,8 @@
     <string name="home_category_name">የምድብ ስም</string>
     <string name="home_category_move_to">ወደ ምድብ አዛውር</string>
     <string name="home_category_move_selected_title">የተመረጡትን መተግበሪያዎች አዛውር</string>
-    <string name="home_category_delete_confirm_title">ምድቡን ሰርዝ</string>
-    <string name="home_category_delete_confirm_message">ምድቡን &lt;b&gt;%1$s&lt;/b&gt; ይሰረዝ? በውስጡ ያሉ መተግበሪያዎች ወደ &lt;b&gt;%2$s&lt;/b&gt; ይመለሳሉ</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">ለዚህ ምድብ ተግባራት አይገኙም</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">የትኛውን መተግበሪያ ነው ማስተካከል የሚፈልጉት?</string>
@@ -230,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">በክሊፕቦርድ ላይ ምንም ሊንኮች አልተገኙም</string>
     <string name="sources_dialog_local">የአካባቢ</string>
     <string name="sources_dialog_local_files">የፓች ምንጭ ፋይሎችን ይምረጡ</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">ተጨማሪ ፋይሎችን ያክሉ</string>
-    <string name="sources_dialog_local_file_tap_hint">ስቶሬጅን ለመቃኘት ይጫኑ</string>
     <string name="sources_dialog_local_invalid_extension">ፋይሉ .mpp ኤክስቴንሽን ሊኖረው ይገባል</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">%s ያዘምናል</string>
@@ -240,6 +237,7 @@
     <string name="sources_dialog_url_invalid">URL ወደ GitHub/GitLab repo ወይም .json ፋይል የሚያመለክት መሆን አለበት</string>
     <string name="sources_dialog_preinstalled">ቀድሞ የተጫነ</string>
     <string name="sources_dialog_community">የማህበረሰብ ፓቾች</string>
+    <string name="sources_dialog_choose_apps">መተግበሪያዎችን ይምረጡ</string>
     <string name="sources_dialog_choose_apps_description">ምንጩ ከተጫነ በኋላ የትኞቹን መተግበሪያዎች ማቆየት እንደሚፈልጉ ይምረጡ</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">የሶስተኛ ወገን የፓች ምንጮች</string>
@@ -259,15 +257,12 @@
     <string name="sources_patch_expert_badge">ባለሙያ</string>
     <string name="sources_patch_expert_badge_tooltip">ይህንን ፓች በእጅ ለማካተት በቅንብሮች ውስጥ የባለሙያ ሁነታን ያብሩ</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">ኦሪጅናል ያልተፓች APK ለማግኘት እርዳታ ይፈልጋሉ?</string>
     <string name="home_apk_availability_dialog_simple">&lt;b&gt;%s&lt;/b&gt;ን ፓች ለማድረግ፣ ያልተፓች APK ስሪት ያስፈልግዎታል፦</string>
     <string name="home_apk_availability_dialog_expert">&lt;b&gt;%s&lt;/b&gt;-ን ለመጠገን፣ ያልተጠገነ የነዚህ ስሪቶች APK ያስፈልግዎታል፦</string>
     <string name="home_apk_availability_recommended_label">የሚመከር</string>
     <string name="home_apk_availability_unpatched_label">ያልተስተካከለ</string>
     <string name="home_apk_availability_incompatible_label">ተኳሃኝ ያልሆነ</string>
     <string name="home_apk_availability_installed_version">በዚህ መሣሪያ ላይ የተጫነው፡ %s</string>
-    <string name="home_apk_availability_yes">አዎ፣ APK እንድፈልግ እርዱኝ</string>
-    <string name="home_apk_availability_no">አይ፣ ቀድሞውኑ APK አለኝ</string>
     <string name="home_apk_helper_download">ረዳት መተግበሪያን ይጠቀሙ</string>
     <string name="home_apk_helper_untrusted">ረዳት መተግበሪያ ተጭኗል ነገር ግን ገና አልተመነ፣ ስለዚህ እዚህ አልቀረበም</string>
     <string name="home_apk_helper_untrusted_action">ረዳቶችን ይገምግሙ</string>
@@ -283,8 +278,6 @@
     <string name="home_apk_helper_wrong_package">ረዳት መተግበሪያው እየተስተካከለ ካለው መተግበሪያ የተለየ መተግበሪያ መልሷል</string>
     <string name="home_apk_helper_installed_unavailable">Morphe የተጫነውን መተግበሪያ መጠቀም አልቻለም</string>
     <string name="home_apk_helper_installed_incompatible">የተጫነው ስሪት ፓች ሊደረግ አይችልም</string>
-    <string name="home_apk_use_saved">የተቀመጠውን APK ይጠቀሙ</string>
-    <string name="home_apk_use_installed">የተጫነውን APK ይጠቀሙ</string>
     <string name="home_apk_use_saved_unsupported">ፓቾቹ ይህንን የተቀመጠ ቅጂ አይደግፉም። ፓች ለማድረግ እንዲያረጋግጡ ይጠየቃሉ፣ ወይም ሌላ APK ይምረጡ</string>
     <string name="home_apk_use_installed_unverified">የተጫነው መተግበሪያ ፊርማ ማረጋገጥ አልተቻለም፣ ስለዚህ አስቀድሞ ተስተካክሎ ሊሆን ይችላል</string>
     <string name="home_unverified">ያልተረጋገጠ</string>
@@ -320,14 +313,14 @@
     <string name="home_download_instructions_copy_link">ሊንኩን ኮፒ አድርግ</string>
     <string name="home_download_instructions_link_copied">ሊንኩ ተቀድሷል</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">የተጫነውን APK ይምረጡ</string>
-    <string name="home_file_picker_prompt_description">አሁን ያወረዱትን &lt;b&gt;%s&lt;/b&gt; APK ፋይል ይምረጡ</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">የAPK ፋይል ክፈት</string>
     <string name="home_recommended_version">የሚመከር ስሪት</string>
     <string name="home_selected_version">የተመረጠው ስሪት</string>
     <string name="home_select_apk_title">APK ይምረጡ</string>
-    <string name="home_select_any_apk_description">የማንኛውንም መተግበሪያ APK ፋይል ይምረጡ፣ ወይም በዚህ መሳሪያ ላይ ቀድሞ የተጫነ መተግበሪያን ይምረጡ</string>
     <string name="home_use_installed_app">የተጫነ መተግበሪያን ይጠቀሙ</string>
+    <string name="home_use_installed_app_description">በዚህ መሳሪያ ላይ ያለን መተግበሪያ ይምረጡ</string>
+    <string name="home_open_apk_file_description">ከማከማቻው ውስጥ የ APK፣ APKM፣ APKS ወይም XAPK ፋይል ይምረጡ</string>
     <string name="home_installed_app_picker_title">የተጫኑ መተግበሪያዎች</string>
     <string name="home_installed_app_picker_empty">ምንም መተግበሪያዎች አልተገኙም</string>
     <string name="home_installed_app_picker_filter_user">የተጠቃሚ መተግበሪያዎች ብቻ</string>
@@ -361,9 +354,6 @@
     <string name="expert_mode_patch_required_by_installer">ለተመረጠው የጫን target አስፈላጊ ነው</string>
     <string name="expert_mode_patch_unavailable_for_installer">ለተመረጠው የጫን target አይдоступም</string>
     <string name="expert_mode_multiple_sources_warning_title">በርካታ የፓች ምንጮች ተመርጠዋል</string>
-    <string name="expert_mode_multiple_sources_warning_message">"ከበርካታ የፓች ምንጮች ፓቾችን መርጠዋል። ይህ የተኳኳይነት ችግሮችን ወይም ያልተጠበቀ ባህሪን ሊያስከትል ይችላል።
-
-ለመቀጠል እርግጠኛ ነዎት?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">ያልተረጋገጠ APK</string>
     <string name="home_invalid_signature_message">ለ&lt;b&gt;%s&lt;/b&gt; የመረጡት APK ከሚጠበቀው የፊርማ ሰርቲፊኬት ጋር አይዛመድም። ተሻሽሎ ሊሆን ይችላል ወይም ካልተረጋገጠ ምንጭ የተገኘ ሊሆን ይችላል</string>
@@ -377,7 +367,9 @@
     <string name="home_dialog_unsupported_version_experimental_label">ሙከራ</string>
     <string name="home_dialog_unsupported_version_experimental_description">ይህ ስሪት የሙከራ ድጋፍ ያለው ሲሆን ያልተረጋጋ ወይም ያልተሟላ ሊሆን ይችላል</string>
     <string name="morphe_experimental_app_version_dialog_title">መሞከር ይፈልጋሉ? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">የ&lt;b&gt;%s&lt;/b&gt; ይህ ስሪት ቀደምት የሙከራ ድጋፍ አለው&lt;br/&gt;&lt;br/&gt;🔧 ለዚህ የአፕሊኬሽን ስሪት ማስተካከያዎች እየተደረጉ ስለሆነ ያልተለመደ የአፕሊኬሽን ባህሪ ወይም ያልተለዩ ስህተቶች ሊያጋጥሙ ይችላሉ</string>
+    <string name="morphe_experimental_app_version_dialog_message">"ይህ የ&lt;b&gt;%s&lt;/b&gt; ስሪት ቀድሞ የተጀመረ የሙከራ ድጋፍ አለው።
+
+🔧 ፓቾቹ ለዚህ የመተግበሪያ ስሪት እየተስተካከሉ ስለሆነ ያልተለመደ የመተግበሪያ ባህሪ ወይም ያልተለዩ ስህተቶችን ይጠብቁ"</string>
     <string name="home_dialog_unsupported_version_dialog_title">የማይደገፍ ስሪት</string>
     <string name="home_dialog_unsupported_version_dialog_description">ይህ APK የሚመከር የሥራ приложение ስሪት አይደለም። መቀጠሉ መተግበሪያው እንዳይሠራ ሊያደርግ ይችላል</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -514,7 +506,6 @@
     <string name="shortcut_check_updates_long">የፓች ማሻሻያዎችን ያረጋግጡ</string>
     <string name="shortcut_patch_app">%sን ፓች ያድርጉ</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">ይህንን መተግበሪያ ለማን società ማጥፋት እንደሚፈልጉ እርግጠኛ ነዎት?</string>
     <string name="batch_uninstall_confirm_body">የተመረጡት አፖች ከመሣሪያዎ ላይ በቋሚነት ይወገዳሉ</string>
     <string name="home_app_info_remove_app_warning">ይህ የሚከተሉትን በቋሚነት ያጠፋል፦</string>
     <string name="home_app_info_delete_item_database">የዳታቤዝ መዝገብ</string>
@@ -676,8 +667,7 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">ማስተካከያ በመከናወን ላይ ነው…</string>
     <string name="patcher_notification_text">ወደ ማስተካከያው ለመመለስ ይጫኑ</string>
-    <string name="patcher_stop_confirm_title">ፓቸርን አቁም</string>
-    <string name="patcher_stop_confirm_description">የፓቺንግ ሂደቱን ማቆም እንደሚፈልጉ እርግጠኛ ነዎት?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">መተግበሪያዎን ወደ አስደናቂ ነገር እየቀየርነው ነው… 🏆</string>
     <string name="patcher_message_2">ለአሮጌ መተግበሪያዎች አዳዲስ ዘዴዎችን እያስተማርን ነው… 🎩</string>
@@ -819,21 +809,21 @@
     <string name="settings_appearance_repatch_notice_description">የተስተካከሉ መተግበሪያዎች በድጋሚ ሊስተካከሉ የሚችሉበት ጊዜ ባነር ያሳያል</string>
     <string name="settings_appearance_more_apps_card">የተጨማሪ መተግበሪያዎች ካርድ</string>
     <string name="settings_appearance_more_apps_card_description">ወደ ማህበረሰብ ጥገናዎች የሚመራ ካርድ በመተግበሪያዎች ስር ያሳያል</string>
-    <string name="settings_appearance_app_card_colors">የመተግበሪያ ካርድ ቀለሞች</string>
+    <string name="settings_appearance_app_card_colors">የካርድ ቀለሞች</string>
     <string name="settings_appearance_app_card_colors_default">መደበኛ</string>
-    <string name="settings_appearance_app_card_colors_default_description">ለእያንዳንዱ መተግበሪያ የራሱን የባንድል ቀለም ስጠው</string>
+    <string name="settings_appearance_app_card_colors_default_description">ለእያንዳንዱ መተግበሪያ እና ምንጭ የራሱ የሆነ ቀለም ይስጡ</string>
     <string name="settings_appearance_app_card_colors_accent">አክሰንት</string>
-    <string name="settings_appearance_app_card_colors_accent_description">ለቤት መተግበሪያ ካርዶች የመተግበሪያውን አክሰንት ቀለም ተጠቀም</string>
+    <string name="settings_appearance_app_card_colors_accent_description">ለመተግበሪያ እና ለምንጭ ካርዶች የመተግበሪያውን የጥበብ ቀለም ይጠቀሙ</string>
     <string name="settings_appearance_app_card_colors_gradient">ግራዲየንት</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">ለቤት መተግበሪያ ካርዶች አንድ የራስዎን ግራዲየንት ይጠቀሙ</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">ለመተግበሪያ ካርዶች አንድ የራስዎን የግራዲየንት ቀለም ይጠቀሙ፣ ለምንጭ ካርዶች ደግሞ ወደ አንድ ቀለም የተቀላቀለ ይጠቀሙ</string>
     <string name="settings_appearance_app_card_colors_solid">ሶሊድ</string>
-    <string name="settings_appearance_app_card_colors_solid_description">ለቤት መተግበሪያ ካርዶች አንድ የራስዎን ቀለም ይጠቀሙ</string>
+    <string name="settings_appearance_app_card_colors_solid_description">ለመተግበሪያ እና ለምንጭ ካርዶች አንድ የራስዎን ቀለም ይጠቀሙ</string>
     <string name="settings_appearance_app_card_colors_start">የመጀመሪያ ቀለም</string>
     <string name="settings_appearance_app_card_colors_middle">የመካከለኛ ቀለም</string>
     <string name="settings_appearance_app_card_colors_end">የመጨረሻ ቀለም</string>
     <string name="settings_appearance_app_card_colors_solid_color">ሶሊድ ቀለም</string>
     <string name="settings_appearance_app_card_colors_bundle">የመተግበሪያ ጥቅል ቀለም</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">እዚህ የእያንዳንዱን መተግበሪያ የራሱን ቀለም ይጠቀሙ፣ ይህም በራስ-ሰር ተስማሚ በሆነ ጥላ ይቀየርዎታል</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">እዚህ ላይ የእያንዳንዱን መተግበሪያ ወይም ምንጭ የራሱን ቀለም ይጠቀሙ፣ ይህም በራስ-ሰር እንዲስማማ ተደርጎ ይቀለማል</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">የመተግበሪያ አዶ</string>
     <string name="settings_appearance_app_icon_selector_description">Morphe በቤት ስክሪንዎ እና በመተግበሪያ መሳቢያው ላይ እንዴት እንደሚታይ</string>
@@ -859,7 +849,7 @@
     <string name="settings_appearance_app_icon_mark_white">ነጭ</string>
     <string name="settings_appearance_app_icon_mark_black">ጥቁር</string>
     <string name="settings_appearance_app_icon_change_dialog_title">የመተግበሪያ አዶውን ይቀይሩ?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">ወደ &lt;b&gt;%s&lt;/b&gt; ይቀይሩ እና እንደገና ይጀምሩ?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">አዶውን ቀይር</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1046,6 +1036,8 @@ morphe_header_custom_dark.png
     <string name="installer_play_store_warning_continue">ተረድቻለሁ፣ ቀጥል</string>
     <string name="installer_play_store_mode">እንደ Play Store ይጫን</string>
     <string name="installer_play_store_mode_description">የመጫኛ ምንጩን እንደ Google Play Store ያደርገዋል</string>
+    <string name="settings_nomount_only">NoMount ብቻ</string>
+    <string name="settings_nomount_only_description">መተግበሪያዎችን በ NoMount ብቻ ይጫናል እና በፍጹም ወደ bind mount አይመለስም፣ ስለዚህ ያለ እሱ ሳይጫኑ ይቀራሉ</string>
     <string name="settings_prompt_installer_on_install">የመጫኛ መረጫ ጥያቄ</string>
     <string name="settings_prompt_installer_on_install_description">እያንዳንዱን መተግበሪያ እንዴት እንደሚጫን ይጠይቃል፦ ከፓቺንግ በፊት በ root፣ ካልሆነ ግን በኋላ</string>
     <string name="settings_auto_install_with_shizuku">ከፓቺንግ በኋላ በራስ-ሰር ይጫኑ</string>

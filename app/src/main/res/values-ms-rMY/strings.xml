@@ -82,8 +82,8 @@
     <string name="home_category_name">Nama kategori</string>
     <string name="home_category_move_to">Pindah ke kategori</string>
     <string name="home_category_move_selected_title">Pindahkan aplikasi yang dipilih</string>
-    <string name="home_category_delete_confirm_title">Padam kategori</string>
-    <string name="home_category_delete_confirm_message">Padam kategori &lt;b&gt;%1$s&lt;/b&gt;? Aplikasi di dalamnya akan berpindah semula ke &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Tindakan tidak tersedia untuk kategori ini</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Aplikasi apa yang hendak kamu tampal? </string>
@@ -201,9 +201,6 @@
     <string name="sources_dialog_paste_no_links">Tiada pautan ditemui pada papan keratan</string>
     <string name="sources_dialog_local">Tempatan</string>
     <string name="sources_dialog_local_files">Pilih fail sumber tampalan</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Tambah lebih banyak fail</string>
-    <string name="sources_dialog_local_file_tap_hint">Ketik untuk menyemak imbas storan</string>
     <string name="sources_dialog_local_invalid_extension">Fail mestilah mempunyai lanjutan .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Mengemas kini %s</string>
@@ -222,15 +219,12 @@
     <string name="sources_patch_expert_badge">Pakar</string>
     <string name="sources_patch_expert_badge_tooltip">Dayakan mod pakar di Tetapan untuk memasukkan tampalan ini secara manual</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Perlukan bantuan untuk mencari APK asal yang belum ditampal?</string>
     <string name="home_apk_availability_dialog_simple">Untuk menampal &lt;b&gt;%s&lt;/b&gt;, anda memerlukan versi APK yang belum ditampal:</string>
     <string name="home_apk_availability_dialog_expert">Untuk menampal &lt;b&gt;%s&lt;/b&gt;, anda memerlukan versi APK yang belum ditampal:</string>
     <string name="home_apk_availability_recommended_label">Disyorkan</string>
     <string name="home_apk_availability_unpatched_label">Tidak ditampal</string>
     <string name="home_apk_availability_incompatible_label">Tidak serasi</string>
     <string name="home_apk_availability_installed_version">Dipasang pada peranti ini: %s</string>
-    <string name="home_apk_availability_yes">Ya, bantu saya mencari APK</string>
-    <string name="home_apk_availability_no">Tidak, saya ada APK</string>
     <string name="home_apk_helper_download">Gunakan aplikasi pembantu</string>
     <string name="home_apk_helper_title">Muat turun dengan aplikasi pembantu</string>
     <string name="home_apk_helper_description">Morphe akan meminta aplikasi pembantu di bawah memuat turun APK asal dan memulangkan fail itu</string>
@@ -244,8 +238,7 @@
     <string name="home_apk_helper_wrong_package">Aplikasi pembantu mengembalikan aplikasi yang berbeza daripada aplikasi yang sedang ditampal</string>
     <string name="home_apk_helper_installed_unavailable">Morphe tidak dapat menggunakan aplikasi yang dipasang</string>
     <string name="home_apk_helper_installed_incompatible">Versi yang dipasang tidak boleh ditampal</string>
-    <string name="home_apk_use_saved">Guna APK tersimpan</string>
-    <string name="home_apk_use_installed">Guna APK terpasang</string>
+    <string name="home_apk_use_installed_app">Gunakan aplikasi terpasang</string>
     <string name="home_apk_use_saved_unsupported">Tampalan tidak menyokong salinan yang disimpan ini. Menampalnya akan meminta anda mengesahkan, atau pilih APK lain</string>
     <string name="home_apk_use_installed_unverified">Tidak dapat mengesahkan tandatangan aplikasi yang dipasang, jadi ia mungkin sudah ditampal</string>
     <string name="home_unverified">Tidak disahkan</string>
@@ -281,13 +274,11 @@
     <string name="home_download_instructions_copy_link">Salin pautan</string>
     <string name="home_download_instructions_link_copied">Pautan disalin</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Pilih APK yang telah dimuat turun</string>
-    <string name="home_file_picker_prompt_description">Pilih fail APK &lt;b&gt;%s&lt;/b&gt; yang baru anda muat turun</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Buka fail APK</string>
     <string name="home_recommended_version">Versi yang disyorkan</string>
     <string name="home_selected_version">Versi terpilih</string>
     <string name="home_select_apk_title">Pilih APK</string>
-    <string name="home_select_any_apk_description">Memilih mana-mana fail APK atau aplikasi yang telah dipasang pada peranti ini</string>
     <string name="home_use_installed_app">Gunakan aplikasi terpasang</string>
     <string name="home_installed_app_picker_title">Aplikasi dipasang</string>
     <string name="home_installed_app_picker_empty">Tiada aplikasi dijumpai</string>
@@ -322,9 +313,6 @@
     <string name="expert_mode_patch_required_by_installer">Diperlukan untuk sasaran pemasangan yang dipilih</string>
     <string name="expert_mode_patch_unavailable_for_installer">Tidak tersedia untuk sasaran pemasangan yang dipilih</string>
     <string name="expert_mode_multiple_sources_warning_title">Pelbagai sumber tampalan dipilih</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Anda telah memilih tampalan dari berbagai sumber tampalan. Ini mungkin boleh menyebabkan masalah kesesuaian atau tingkah laku yang tidak dijangka.
-
-Anda pasti untuk meneruskannya?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK tidak terverifikasi</string>
     <string name="home_invalid_signature_message">APK yang anda pilih untuk &lt;b&gt;%s&lt;/b&gt; mempunyai tanda tangan yang tidak sama dengan sertifikasi tanda tangan. Ia berkemungkinan telah di ubah suai atau dari sumber tidak boleh dipercayai</string>
@@ -338,7 +326,6 @@ Untuk hasil yang terbaik, aplikasi ini merekomenkan tampalan &lt;b&gt; APK penuh
     <string name="home_dialog_unsupported_version_experimental_label">Uji kaji</string>
     <string name="home_dialog_unsupported_version_experimental_description">Versi ini ada sokongan uji kaji dan berkemungkinan tidak stabil atau selesai</string>
     <string name="morphe_experimental_app_version_dialog_title">Anda mahu bereksperimen?  🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">&lt;b&gt;%s&lt;/b&gt; versi ini mempunyai sokongan akses awal uji kaji &lt;br/&gt;&lt;br/&gt;🔧 Jangkakan aplikasi tidak sempurna atau ralat sementara tampalan di tambah baik untuk aplikasi versi ini</string>
     <string name="home_dialog_unsupported_version_dialog_title">Versi tidak disokong</string>
     <string name="home_dialog_unsupported_version_dialog_description">APK ini bukan versi aplikasi yang disyorkan.
 Teruskannya mungkin boleh menyebabkan aplikasi tidak dapat berfungsi</string>
@@ -451,7 +438,6 @@ Teruskannya mungkin boleh menyebabkan aplikasi tidak dapat berfungsi</string>
     <string name="shortcut_check_updates_long">Semak kemas kini tampalan</string>
     <string name="shortcut_patch_app">Tampal %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Adakah anda pasti mahu menyahpasang aplikasi ini?</string>
     <string name="batch_uninstall_confirm_body">Aplikasi yang dipilih akan dialih keluar secara kekal daripada peranti anda</string>
     <string name="home_app_info_remove_app_warning">Ini akan dipadam secara kekal:</string>
     <string name="home_app_info_delete_item_database">Pendaftaran pangkalan data</string>
@@ -604,8 +590,7 @@ Nyahpasang akan memadam semua data aplikasi secara kekal"</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Tampalan sedang berjalan… </string>
     <string name="patcher_notification_text">Tekan untuk kembali ke penampal</string>
-    <string name="patcher_stop_confirm_title">Berhenti menampal</string>
-    <string name="patcher_stop_confirm_description">Anda pasti untuk memberhentikan proses tampalan?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Mengubah aplikasi kamu kepada sesuatu yang menakjubkan… 🏆</string>
     <string name="patcher_message_2">Mengajar aplikasi lama helah baharu… 🎩</string>
@@ -734,21 +719,15 @@ Nyahpasang akan memadam semua data aplikasi secara kekal"</string>
     <string name="settings_appearance_home_screen">Skrin utama</string>
     <string name="settings_appearance_greeting_phrases">Frasa ucapan</string>
     <string name="settings_appearance_repatch_notice">Notis tampalan semula</string>
-    <string name="settings_appearance_app_card_colors">Warna kad aplikasi</string>
     <string name="settings_appearance_app_card_colors_default">Lalai</string>
-    <string name="settings_appearance_app_card_colors_default_description">Beri setiap aplikasi warna bundlenya sendiri</string>
     <string name="settings_appearance_app_card_colors_accent">Aksen</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Gunakan warna aksen aplikasi untuk kad aplikasi skrin utama</string>
     <string name="settings_appearance_app_card_colors_gradient">Kecerunan</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Gunakan satu kecerunan tersuai untuk kad aplikasi skrin utama</string>
     <string name="settings_appearance_app_card_colors_solid">Pepejal</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Gunakan satu warna tersuai untuk kad aplikasi skrin utama</string>
     <string name="settings_appearance_app_card_colors_start">Warna mula</string>
     <string name="settings_appearance_app_card_colors_middle">Warna tengah</string>
     <string name="settings_appearance_app_card_colors_end">Warna akhir</string>
     <string name="settings_appearance_app_card_colors_solid_color">Warna pepejal</string>
     <string name="settings_appearance_app_card_colors_bundle">Warna bundle aplikasi</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Gunakan warna sendiri setiap aplikasi di sini, dilorek secara automatik agar sesuai</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Ikon aplikasi</string>
     <string name="settings_appearance_app_icon_selector_description">Rupa Morphe pada skrin utama anda dan dalam laci aplikasi</string>
@@ -774,7 +753,7 @@ Nyahpasang akan memadam semua data aplikasi secara kekal"</string>
     <string name="settings_appearance_app_icon_mark_white">White</string>
     <string name="settings_appearance_app_icon_mark_black">Hitam</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Tukar ikon aplikasi?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Tukar kepada &lt;b&gt;%s&lt;/b&gt; dan mulakan semula?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Tukar ikon</string>
     <!-- Settings - Advanced Tab - Updates Section -->

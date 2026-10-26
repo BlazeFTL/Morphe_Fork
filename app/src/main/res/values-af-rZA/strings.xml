@@ -98,8 +98,8 @@
     <string name="home_category_name">Kategorienaam</string>
     <string name="home_category_move_to">Verskuif na kategorie</string>
     <string name="home_category_move_selected_title">Verskuif gekose toepassings</string>
-    <string name="home_category_delete_confirm_title">Verwyder kategorie</string>
-    <string name="home_category_delete_confirm_message">Verwyder kategorie &lt;b&gt;%1$s&lt;/b&gt;? Toepassings daarin sal terugskuif na &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Aksies nie beskikbaar vir hierdie kategorie nie</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Watter program wil jy verander?</string>
@@ -230,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">Geen skakels op die knipbord gevind nie</string>
     <string name="sources_dialog_local">Plaaslike</string>
     <string name="sources_dialog_local_files">Kies patch-bronlêers</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Voeg meer lêers by</string>
-    <string name="sources_dialog_local_file_tap_hint">Tik om berging te blaai</string>
     <string name="sources_dialog_local_invalid_extension">Die lêer moet \".mpp\" hê</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Dateer %s op</string>
@@ -240,6 +237,7 @@
     <string name="sources_dialog_url_invalid">URL moet na \'n GitHub/GitLab repo of \'n .json-lêer wys</string>
     <string name="sources_dialog_preinstalled">Voor geïnstalleer</string>
     <string name="sources_dialog_community">Gemeenskapspleisters</string>
+    <string name="sources_dialog_choose_apps">Kies programme</string>
     <string name="sources_dialog_choose_apps_description">Kies watter van sy toepassings om te hou sodra die bron gelaai is.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Derdeparty-pleisterbronne</string>
@@ -259,15 +257,12 @@
     <string name="sources_patch_expert_badge">Kundige</string>
     <string name="sources_patch_expert_badge_tooltip">Aktiveer Ekspermodus in Instellings om hierdie pleister handmatig by te voeg</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Hulp nodig om \'n oorspronklike, onveranderde APK te vind?</string>
     <string name="home_apk_availability_dialog_simple">Om &lt;b&gt;%s&lt;/b&gt; te verander, benodig jy die onveranderde APK-weergawe:</string>
     <string name="home_apk_availability_dialog_expert">Om &lt;b&gt;%s&lt;/b&gt; te verander, benodig jy \'n onveranderde APK van weergawes:</string>
     <string name="home_apk_availability_recommended_label">Aanbeveel</string>
     <string name="home_apk_availability_unpatched_label">Onveranderd</string>
     <string name="home_apk_availability_incompatible_label">Onversoenbaar</string>
     <string name="home_apk_availability_installed_version">Geïnstalleer op hierdie toestel: %s</string>
-    <string name="home_apk_availability_yes">Ja, help my om \'n APK te vind</string>
-    <string name="home_apk_availability_no">Nee, ek het reeds \'n APK</string>
     <string name="home_apk_helper_download">Gebruik \'n hulp-app</string>
     <string name="home_apk_helper_untrusted">\'n Hulpapp is geïnstalleer maar nog nie vertrou nie, dus word dit hier nie aangebied nie</string>
     <string name="home_apk_helper_untrusted_action">Hulpbronne hersien</string>
@@ -283,8 +278,6 @@
     <string name="home_apk_helper_wrong_package">Die hulptoepassing het \'n ander toepassing teruggegee as die een wat gepatch word</string>
     <string name="home_apk_helper_installed_unavailable">Morphe kon nie die geïnstalleerde toepassing gebruik nie</string>
     <string name="home_apk_helper_installed_incompatible">Die geïnstalleerde weergawe kan nie gepatch word nie</string>
-    <string name="home_apk_use_saved">Gebruik gestoorde APK</string>
-    <string name="home_apk_use_installed">Gebruik geïnstalleerde APK</string>
     <string name="home_apk_use_saved_unsupported">Die kolle ondersteun nie hierdie gestoorde kopie nie. Om dit te kol, sal jou vra om te bevestig, of kies \'n ander APK</string>
     <string name="home_apk_use_installed_unverified">Kon nie die handtekening van die geïnstalleerde app verifieer nie, dus is dit moontlik reeds gemodifiseer</string>
     <string name="home_unverified">Ongeverifieer</string>
@@ -320,14 +313,14 @@
     <string name="home_download_instructions_copy_link">Kopieer skakel</string>
     <string name="home_download_instructions_link_copied">Skakel gekopieer</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Kies afgelaaide APK</string>
-    <string name="home_file_picker_prompt_description">Kies die &lt;b&gt;%s&lt;/b&gt; APK-vyl wat jy pas afgelaai het</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Open APK vyl</string>
     <string name="home_recommended_version">Aanbevole weergawe</string>
     <string name="home_selected_version">Geen opdatering beskikbaar</string>
     <string name="home_select_apk_title">Kies APK</string>
-    <string name="home_select_any_apk_description">Kies \'n APK-lêer van enige toepassing, of kies \'n toepassing wat reeds op hierdie toestel geïnstalleer is</string>
     <string name="home_use_installed_app">Gebruik geïnstalleerde toepassing</string>
+    <string name="home_use_installed_app_description">Kies \'n toepassing wat reeds op hierdie toestel is</string>
+    <string name="home_open_apk_file_description">Kies \'n APK, APKM, APKS of XAPK-lêer vanaf berging</string>
     <string name="home_installed_app_picker_title">Geïnstalleerde apps</string>
     <string name="home_installed_app_picker_empty">Geen toepings gevind</string>
     <string name="home_installed_app_picker_filter_user">Slegs gebruikerstoepings</string>
@@ -361,9 +354,6 @@
     <string name="expert_mode_patch_required_by_installer">Vereis vir die gekose installasie-teiken</string>
     <string name="expert_mode_patch_unavailable_for_installer">Nie beskikbaar vir die gekose installasie-teiken nie</string>
     <string name="expert_mode_multiple_sources_warning_title">Meerdere patch brons gekies</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Jy het patches van verskeie patch bronne gekies. Dit kan verenigbaarheidsprobleme of onverwags gedrag veroorsaak.
-
-Is jy seker dat jy wil voortgaan?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Ongemerkte APK</string>
     <string name="home_invalid_signature_message">Die APK wat jy vir &lt;b&gt;%s&lt;/b&gt; gekies het, stem nie ooreen met die verwagte handtekeningsertifikaat nie. Dit is moontlik dat dit verander is of van \'n onbetroubare bron af kom</string>
@@ -377,7 +367,9 @@ Vir die beste resultate beveel hierdie app aan om 'n &lt;b&gt;volle APK&lt;/b&gt
     <string name="home_dialog_unsupported_version_experimental_label">Eksperimenteel</string>
     <string name="home_dialog_unsupported_version_experimental_description">Hierdie weergawe het eksperimentele ondersteuning en kan onstabiel of onvolledig wees</string>
     <string name="morphe_experimental_app_version_dialog_title">Wil jy eksperimenteer? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">Hierdie weergawe van &lt;b&gt;%s&lt;/b&gt; het vroeë eksperimentele ondersteuning&lt;br/&gt;&lt;br/&gt;🔧 Verwag snaakse appgedrag of onbekende foute terwyl die pleisters vir hierdie app-weergawe verfyn word</string>
+    <string name="morphe_experimental_app_version_dialog_message">"Hierdie weergawe van &lt;b&gt;%s&lt;/b&gt; het vroeë eksperimentele ondersteuning.
+
+🔧 Verwag snaakse toepassinggedrag of onidentifiseerbare foute terwyl die kolke vir hierdie toepassingweergawe verfynd word"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Nie-ondersteunde weergawe</string>
     <string name="home_dialog_unsupported_version_dialog_description">Hierdie APK is nie \'n aanbevole aansoek weergawe nie. Voortgaan kan lei tot \'n nie-funksionele aansoek</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -514,7 +506,6 @@ Vir die beste resultate beveel hierdie app aan om 'n &lt;b&gt;volle APK&lt;/b&gt
     <string name="shortcut_check_updates_long">Kyk vir pleister opgraderings</string>
     <string name="shortcut_patch_app">Pleister %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Is jy seker jy wil hierdie app deïnstalleer?</string>
     <string name="batch_uninstall_confirm_body">Die geselekteerde toepassings sal permanent van jou toestel verwyder word</string>
     <string name="home_app_info_remove_app_warning">Dit sal permanent uitvee:</string>
     <string name="home_app_info_delete_item_database">Database inskrywing</string>
@@ -676,8 +667,7 @@ Deïnstallering sal alle toepassingsdata permanent uitwis."</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patching aan die gang…</string>
     <string name="patcher_notification_text">Tik om terug te keer na die patcher</string>
-    <string name="patcher_stop_confirm_title">Stop patcher</string>
-    <string name="patcher_stop_confirm_description">Is jy seker jy wil die patching proses stop?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Verander jou app in iets wonderbaarliks… 🏆</string>
     <string name="patcher_message_2">Leer ou apps nuwe truuks… 🎩</string>
@@ -819,21 +809,21 @@ Deïnstallering sal alle toepassingsdata permanent uitwis."</string>
     <string name="settings_appearance_repatch_notice_description">Wys \'n banier wanneer gemodifieerde opnuut gepatch kan word</string>
     <string name="settings_appearance_more_apps_card">Meer programme-kaart</string>
     <string name="settings_appearance_more_apps_card_description">Wys \'n kaart onder die toepassings wat lei na gemeenskap-regstellings</string>
-    <string name="settings_appearance_app_card_colors">App-kaartkleure</string>
+    <string name="settings_appearance_app_card_colors">Kaartkleure</string>
     <string name="settings_appearance_app_card_colors_default">Verstek</string>
-    <string name="settings_appearance_app_card_colors_default_description">Gee elke app die kleur van sy eie bundel</string>
+    <string name="settings_appearance_app_card_colors_default_description">Gee elke toepassing en bron sy eie kleur</string>
     <string name="settings_appearance_app_card_colors_accent">Akcent</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Gebruik die program se aksentkleur vir tuis-appkaarte</string>
+    <string name="settings_appearance_app_card_colors_accent_description">Gebruik die toepassing se aksentkleur vir toepassing- en bronkaarte</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradering</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Gebruik een pasgemaakte gradering vir tuis-appkaarte</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">Gebruik een pasgemaakte gradiënt vir toepassingkaarte, vermeng in een kleur vir bronkaarte</string>
     <string name="settings_appearance_app_card_colors_solid">Solied</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Gebruik een pasgemaakte kleur vir tuis-appkaarte</string>
+    <string name="settings_appearance_app_card_colors_solid_description">Gebruik een pasgemaakte kleur vir toepassing- en bronkaarte</string>
     <string name="settings_appearance_app_card_colors_start">Beginkleur</string>
     <string name="settings_appearance_app_card_colors_middle">Middelkleur</string>
     <string name="settings_appearance_app_card_colors_end">Eindkleur</string>
     <string name="settings_appearance_app_card_colors_solid_color">Soliede kleur</string>
     <string name="settings_appearance_app_card_colors_bundle">App-bundel kleur</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Gebruik elke app se eie kleur hier, wat outomaties getint is om te pas</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">Gebruik elke toepassing of bron se eie kleur hier, outomaties geskadu om te pas</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">App ikoon</string>
     <string name="settings_appearance_app_icon_selector_description">Hoe Morphe op jou tuisskerm en in die toepassingslaai lyk</string>
@@ -859,7 +849,7 @@ Deïnstallering sal alle toepassingsdata permanent uitwis."</string>
     <string name="settings_appearance_app_icon_mark_white">Wit</string>
     <string name="settings_appearance_app_icon_mark_black">Swart</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Verander app ikoon?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Verander na &lt;b&gt;%s&lt;/b&gt; en herbegin?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Verander ikoon</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1046,6 +1036,8 @@ Die beeld afmetings moet soos volg wees:
     <string name="installer_play_store_warning_continue">Ek verstaan, gaan voort</string>
     <string name="installer_play_store_mode">Installeer as Play Winkel</string>
     <string name="installer_play_store_mode_description">Merk Google Play-winkel as die installeerbron</string>
+    <string name="settings_nomount_only">Slegs NoMount</string>
+    <string name="settings_nomount_only_description">Monteer toepassings slegs met NoMount en val nooit terug na \'n bind-montering nie, sodat hulle ongemonteer bly sonder dit</string>
     <string name="settings_prompt_installer_on_install">Installeerder seleksie prompt</string>
     <string name="settings_prompt_installer_on_install_description">Vraag hoe om elke app te installeer: met root voor flikkering, andersins daarna</string>
     <string name="settings_auto_install_with_shizuku">Outomatiese installering na patstelling</string>

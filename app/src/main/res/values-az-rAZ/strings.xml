@@ -98,8 +98,8 @@
     <string name="home_category_name">Kateqoriya adı</string>
     <string name="home_category_move_to">Kateqoriyaya köçür</string>
     <string name="home_category_move_selected_title">Seçilmiş tətbiqləri köçür</string>
-    <string name="home_category_delete_confirm_title">Kateqoriyanı sil</string>
-    <string name="home_category_delete_confirm_message">&lt;b&gt;%1$s&lt;/b&gt; kateqoriyası silinsin? İçindəki tətbiqlər &lt;b&gt;%2$s&lt;/b&gt; bölməsinə geri köçürüləcək</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Bu kateqoriya üçün əlçatmaz fəaliyyətlər</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Hansı tətbiqi yamaqlamaq istəyirsiniz?</string>
@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Bu mənbə %1$s yamaqlayıcısı üçün qurulmuşdur, lakin Morphe %2$s versiyası %3$s yamaqlayıcısını ehtiva edir. İstifadə etmək üçün Morphe-ni yenilə</string>
     <string name="sources_management_held_back_badge">Çökdü</string>
     <string name="sources_management_held_back_hint">Bu mənbə yüklənərkən Morphe-nin çökməsinə səbəb oldu, buna görə də ötürülür. Təkrar cəhd etmək üçün onu yenilə və ya təkrar idxal et</string>
+    <string name="sources_management_signed_by">İmzalayan</string>
+    <string name="sources_management_signing_key_changed_badge">Açar dəyişdirildi</string>
+    <string name="sources_management_signing_key_changed_hint">Son buraxılış bu mənbənin əvvəlki açarı ilə imzalanmayıb, buna görə də quraşdırılmadı. Nəzərdən keçirmək üçün toxun</string>
     <string name="sources_management_source_enabled">Mənbə işləkdir</string>
     <string name="sources_management_source_disabled">Mənbə qapalıdır</string>
     <string name="sources_management_source_updating">Mənbə yenilənir</string>
@@ -227,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">Buferdə heç bir keçid tapılmadı</string>
     <string name="sources_dialog_local">Yerli</string>
     <string name="sources_dialog_local_files">Yamaq mənbəsi fayllarını seç</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Daha çox fayl əlavə et</string>
-    <string name="sources_dialog_local_file_tap_hint">Saxlancı araşdırmaq üçün toxun</string>
     <string name="sources_dialog_local_invalid_extension">Faylın .mpp əlavəsi olmalıdır</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Yeniləmələr %s</string>
@@ -237,6 +237,7 @@
     <string name="sources_dialog_url_invalid">URL GitHub/GitLab depo və ya .json faylın göstərməlidir</string>
     <string name="sources_dialog_preinstalled">İlkin quraşdırılan</string>
     <string name="sources_dialog_community">İcma yamaqları</string>
+    <string name="sources_dialog_choose_apps">Tətbiqləri seç</string>
     <string name="sources_dialog_choose_apps_description">Mənbə yükləndikdən sonra hansı tətbiqləri saxlayacağınızı seçin</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Üçüncü tərəf yamaq mənbələri</string>
@@ -246,18 +247,22 @@
     <string name="sources_download_fail">Mənbələri yükləmək olmadı: %s</string>
     <string name="sources_download_fail_named">\'%s\' yenilənə bilmədi. İnternet bağlantınızı yoxlayın və təkrar cəhd edin</string>
     <string name="sources_download_endpoint_not_found">\'%s\': yamaq üst məlumatı tapılmadı</string>
+    <string name="sources_signing_key_changed_named">\'%s\' yenilənmədi, çünki onun son buraxılışı əvvəllər istifadə edilən açarla imzalanmadı</string>
+    <string name="sources_signing_key_changed_local">Fayl bu mənbənin əvvəlki açarı ilə imzalanmayıb. Ona etibar etmək üçün mənbəni sil və faylı təkrar əlavə et</string>
+    <string name="sources_signing_key_trust_title">Yeni açara etibar edilsin?</string>
+    <string name="sources_signing_key_trust_message">Ən son buraxılış başqa açarla imzalanıb. Ya tərtibatçı açarını dəyişib, ya da bu buraxılışı başqası dərc edib. Yalnız tərtibatçı yeni açar elan edibsə, ona etibar edin</string>
+    <string name="sources_signing_key_trust_message_unsigned">Ən son buraxılış imzalanmayıb. Ya tərtibatçı buraxılışları imzalamağı dayandırıb, ya da bu buraxılışı başqası dərc edib. Yalnız tərtibatçı bunu elan edibsə, ona etibar edin</string>
+    <string name="sources_signing_key_trusted">Etibarlı açar</string>
+    <string name="sources_signing_key_new">Yeni açar</string>
     <string name="sources_patch_expert_badge">Mütəxəssis</string>
     <string name="sources_patch_expert_badge_tooltip">Bu yamağı əl ilə yerləşdirmək üçün Tənzimləmələrdə Mütəxəssis rejimin aktivləşdir</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Əsil yamaqlanmayan APK-nı tapmağa kömək lazımdır?</string>
     <string name="home_apk_availability_dialog_simple">&lt;b&gt;%s&lt;/b&gt;, yamaqlamaq üçün yamaqlanmayan APK versiyasına ehtiyacınız var:</string>
     <string name="home_apk_availability_dialog_expert">&lt;b&gt;%s&lt;/b&gt; yamaqlamaq üçün versiyaların yamaqlanmayan APK-sına ehtiyacınız var:</string>
     <string name="home_apk_availability_recommended_label">Tövsiyə olunan</string>
     <string name="home_apk_availability_unpatched_label">Yamaqlanmayan</string>
     <string name="home_apk_availability_incompatible_label">Uyuşmaz</string>
     <string name="home_apk_availability_installed_version">Bu cihazda quraşdırılıb: %s</string>
-    <string name="home_apk_availability_yes">Bəli, APK tapmağa mənə kömək et</string>
-    <string name="home_apk_availability_no">Xeyr, Mənim artıq APK-m var</string>
     <string name="home_apk_helper_download">Köməkçi tətbiq istifadə et</string>
     <string name="home_apk_helper_untrusted">Köməkçi tətbiq quraşdırılıb, lakin hələ etibarlı deyil, buna görə də burada təklif olunmur</string>
     <string name="home_apk_helper_untrusted_action">Köməkçiləri nəzərdən keçir</string>
@@ -273,8 +278,7 @@
     <string name="home_apk_helper_wrong_package">Köməkçi tətbiq yamaqlanan tətbiqdən fərqli tətbiq qaytardı</string>
     <string name="home_apk_helper_installed_unavailable">Morphe quraşdırılmış tətbiqi istifadə edə bilmədi</string>
     <string name="home_apk_helper_installed_incompatible">Quraşdırılmış versiya yamaqlana bilməz</string>
-    <string name="home_apk_use_saved">Saxlanılan APK-nı istifadə et</string>
-    <string name="home_apk_use_installed">Quraşdırılan APK-nı istifadə et</string>
+    <string name="home_apk_use_installed_app">Quraşdırılan tətbiqi istifadə et</string>
     <string name="home_apk_use_saved_unsupported">Yamaqlar bu saxlanılan nüsxəni dəstəkləmir. Yamaqlama sizdən təsdiq istəyəcək və ya başqa APK seçməyi təklif edəcək</string>
     <string name="home_apk_use_installed_unverified">Quraşdırılmış tətbiqin imzasını təsdiqləmək olmadı, mümkündür ki, artıq yamaqlanmış ola bilər</string>
     <string name="home_unverified">Təsdiqlənməmiş</string>
@@ -310,14 +314,14 @@
     <string name="home_download_instructions_copy_link">Linki köçür</string>
     <string name="home_download_instructions_link_copied">Link köçürüldü</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Yüklənilmiş APK-nı seç</string>
-    <string name="home_file_picker_prompt_description">İndicə yüklədiyiniz &lt;b&gt;%s&lt;/b&gt; APK faylını seçin</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">APK faylını aç</string>
     <string name="home_recommended_version">Tövsiyə olunan versiya</string>
     <string name="home_selected_version">Seçilən versiya</string>
     <string name="home_select_apk_title">APK Seçin</string>
-    <string name="home_select_any_apk_description">İstənilən tətbiqin APK faylını yaxud bu cihazda artıq quraşdırılan tətbiqi seç</string>
     <string name="home_use_installed_app">Quraşdırılan tətbiqi istifadə et</string>
+    <string name="home_use_installed_app_description">Bu cihazda artıq olan tətbiqi seç</string>
+    <string name="home_open_apk_file_description">Yaddaşdan APK, APKM, APKS və ya XAPK faylı seç</string>
     <string name="home_installed_app_picker_title">Quraşdırılmış tətbiqlər</string>
     <string name="home_installed_app_picker_empty">Tətbiq tapılmadı</string>
     <string name="home_installed_app_picker_filter_user">Ancaq istifadəçi tətbiqləri</string>
@@ -351,9 +355,6 @@
     <string name="expert_mode_patch_required_by_installer">Seçilmiş quraşdırma hədəfi üçün tələb olunur</string>
     <string name="expert_mode_patch_unavailable_for_installer">Seçilmiş quraşdırma hədəfi üçün əlçatan deyil</string>
     <string name="expert_mode_multiple_sources_warning_title">Çoxlu yamaq mənbəyi seçilib</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Çoxlu yamaq mənbəyindən yamaqlar seçmisiniz. Bu, uyuşma problemlərinə və ya gözlənilməz fəaliyyətə səbəb ola bilər.
-
-Davam etmək istədiyinizə əminsiniz?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Təsdiqlənməyən APK</string>
     <string name="home_invalid_signature_message"> &lt;b&gt;%s&lt;/b&gt; üçün seçdiyiniz APK gözlənilən imza sertifikatına uyuşmur. O, dəyişdirilən və ya etibarsız mənbədən ola bilər.</string>
@@ -367,7 +368,9 @@ Davam etmək istədiyinizə əminsiniz?"</string>
     <string name="home_dialog_unsupported_version_experimental_label">Təcrübi</string>
     <string name="home_dialog_unsupported_version_experimental_description">Bu versiya təcrübi dəstəyə sahibdir və dəyişkən yaxud qüsurlu ola bilər</string>
     <string name="morphe_experimental_app_version_dialog_title">Təcrübə üçün istəyirsiniz? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">&lt;b&gt;%s&lt;/b&gt; tətbiqinin bu versiyası erkən təcrübi dəstəyə sahibdir&lt;br/&gt;&lt;br/&gt; 🔧Yamaqlar bu tətbiq versiyası üçün təkmilləşdirildikcə qəribə tətbiq davranışı və ya bilinməyən səhvlər gözləyin</string>
+    <string name="morphe_experimental_app_version_dialog_message">"&lt;b&gt;%s&lt;/b&gt; tətbiqinin bu versiyası erkən təcrübi dəstəyə sahibdir.
+
+🔧Yamaqlar bu tətbiq versiyası üçün təkmilləşdirildikcə qəribə tətbiq davranışı və ya bilinməyən səhvlər gözləyin"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Dəstəklənməyən Versiya</string>
     <string name="home_dialog_unsupported_version_dialog_description">Bu APK tövsiyə olunan tətbiq versiyası deyil. Fəaliyyətdə qalmaq, tətbiqin işləməməsi ilə nəticələnə bilər</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -504,7 +507,6 @@ Davam etmək istədiyinizə əminsiniz?"</string>
     <string name="shortcut_check_updates_long">Yamaq yeniləmələrini yoxla</string>
     <string name="shortcut_patch_app">%s tətbiqini yamaqla</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Bu tətbiqi silmək istədiyinizə əminsiniz?</string>
     <string name="batch_uninstall_confirm_body">Seçilmiş tətbiqlər cihazınızdan həmişəlik silinəcək</string>
     <string name="home_app_info_remove_app_warning">Bu, həmişəlik silinəcək:</string>
     <string name="home_app_info_delete_item_database">Məlumat saxlanma girişi</string>
@@ -666,8 +668,7 @@ Quraşdırma ləğvi bütün tətbiq məlumatını qalıcı siləcək"</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Yamaqlanma irəliləyişdədir...</string>
     <string name="patcher_notification_text">Yamaqlayıcıya qayıtmaq üçün toxun</string>
-    <string name="patcher_stop_confirm_title">Yamaqlayıcını dayandır</string>
-    <string name="patcher_stop_confirm_description">Yamaqlanma emalın dayandırmaq istədiyinizə əminsiniz?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Tətbiqiniz mükəmməl bir şeyə döndərilir... 🏆</string>
     <string name="patcher_message_2">Köhnə tətbiqlərə yeni fokuslar öyrədirik… 🎩</string>
@@ -809,21 +810,21 @@ Quraşdırma ləğvi bütün tətbiq məlumatını qalıcı siləcək"</string>
     <string name="settings_appearance_repatch_notice_description">Yamaqlanmış tətbiqlər yenidən yamaqlana bildikdə etiket göstərir</string>
     <string name="settings_appearance_more_apps_card">Daha çox tətbiq kartı</string>
     <string name="settings_appearance_more_apps_card_description">Tətbiqlərin altında icma yamaqlarına yönləndirən kart göstərir</string>
-    <string name="settings_appearance_app_card_colors">Tətbiq kartı rəngləri</string>
+    <string name="settings_appearance_app_card_colors">Kart rəngləri</string>
     <string name="settings_appearance_app_card_colors_default">İlkin</string>
-    <string name="settings_appearance_app_card_colors_default_description">Hər tətbiqə öz paketinin rəngini ver</string>
+    <string name="settings_appearance_app_card_colors_default_description">Hər tətbiqə və mənbəyə özünəməxsus rəng ver</string>
     <string name="settings_appearance_app_card_colors_accent">Cila</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Ev tətbiq kartları üçün tətbiq cila rəngin istifadə et</string>
+    <string name="settings_appearance_app_card_colors_accent_description">Tətbiq və mənbə kartları üçün tətbiq cila rəngin istifadə et</string>
     <string name="settings_appearance_app_card_colors_gradient">Axarlı</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Əsas ekran tətbiq kartları üçün fərdi rəng axarı işlət</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">Tətbiq kartları üçün fərdi axar istifadə et, mənbə kartları üçün isə rənglərdən birinə qarışdır</string>
     <string name="settings_appearance_app_card_colors_solid">Bütöv</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Əsas ekran tətbiq kartları üçün fərdi rəng işlət</string>
+    <string name="settings_appearance_app_card_colors_solid_description">Tətbiq və mənbə kartları üçün fərdi rəng istifadə et</string>
     <string name="settings_appearance_app_card_colors_start">Başlanğıc rəngi</string>
     <string name="settings_appearance_app_card_colors_middle">Aralıq rəngi</string>
     <string name="settings_appearance_app_card_colors_end">Son rəng</string>
     <string name="settings_appearance_app_card_colors_solid_color">Bütöv rəng</string>
     <string name="settings_appearance_app_card_colors_bundle">Tətbiq paketinin rəngi</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Bura hər tətbiqin öz rəngini istifadə et, uyğunlaşdırmaq üçün avtomatik kölgələndir</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">Bura hər tətbiqin və ya mənbənin öz rəngini istifadə et, uyğunlaşdırmaq üçün avtomatik kölgələndir</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Tətbiq simvolu</string>
     <string name="settings_appearance_app_icon_selector_description">Morphe-nin əsas ekranınızda və tətbiq bölməsində necə göründüyü</string>
@@ -849,7 +850,7 @@ Quraşdırma ləğvi bütün tətbiq məlumatını qalıcı siləcək"</string>
     <string name="settings_appearance_app_icon_mark_white">Ağ</string>
     <string name="settings_appearance_app_icon_mark_black">Qara</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Tətbiq simvolu dəyişdirilsin?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">&lt;b&gt;%s&lt;/b&gt; olaraq dəyişdirilib yenidən başladılsın?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Simvolu dəyişdir</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1035,6 +1036,8 @@ morphe_header_custom_light.png morphe_header_custom_dark.png
     <string name="installer_play_store_warning_continue">Başa düşdüm, davam et</string>
     <string name="installer_play_store_mode">Play Store mənbəli quraşdır</string>
     <string name="installer_play_store_mode_description">Google Play Store-u quraşdırma mənbəyi kimi qeyd edir</string>
+    <string name="settings_nomount_only">Yalnız NoMount</string>
+    <string name="settings_nomount_only_description">Tətbiqləri yalnız NoMount ilə montajlayır və heç vaxt bind mount rejiminə keçmir, beləliklə onlar bunsuz montajlanmamış qalır</string>
     <string name="settings_prompt_installer_on_install">Quraşdırıcı seçimi müraciəti</string>
     <string name="settings_prompt_installer_on_install_description">Hər tətbiqi necə quraşdıracağını soruşur: Root olduqda yamaqlamadan əvvəl, əks halda bundan sonra</string>
     <string name="settings_auto_install_with_shizuku">Yamaqlamadan sonra birbaşa quraşdır</string>

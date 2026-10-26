@@ -37,6 +37,8 @@
     <string name="home_all_apps_hidden_title">Сите апликации се скриени</string>
     <string name="home_all_apps_hidden_subtitle">Ги скривте сите апликации од почетниот екран</string>
     <string name="home_category_custom">По нарачка</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Која апликација сакате да ја закрпите?</string>
     <!-- Humorous hype message with light nostalgia -->
@@ -105,8 +107,6 @@
     <string name="sources_dialog_remote">На далечина</string>
     <string name="sources_dialog_remote_url">URL адреса на извор</string>
     <string name="sources_dialog_local">Локално</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_file_tap_hint">Допрете за да пребарувате складиште</string>
     <string name="sources_dialog_local_invalid_extension">Датотеката мора да има екстензија .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_url_valid">Валидна репозиторија или URL адреса во JSON формат</string>
@@ -121,14 +121,11 @@
     <string name="sources_patch_expert_badge">Експерт</string>
     <string name="sources_patch_expert_badge_tooltip">Овозможете експертски режим во Поставки за рачно да ја вклучите оваа закрпа</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Треба помош за наоѓање оригинални не закрпени APK?</string>
     <string name="home_apk_availability_dialog_simple">За закрпување &lt;b&gt;%s&lt;/b&gt;, ви треба не закрпена верзија на APK:</string>
     <string name="home_apk_availability_dialog_expert">За закрпување &lt;b&gt;%s&lt;/b&gt;, ви требаат не закрпени APK од верзии:</string>
     <string name="home_apk_availability_recommended_label">Препорачано</string>
     <string name="home_apk_availability_unpatched_label">Без закрпување</string>
     <string name="home_apk_availability_incompatible_label">Некомпатибилен</string>
-    <string name="home_apk_availability_yes">Да, помогнете ми да најдам APK</string>
-    <string name="home_apk_availability_no">Не, веќе имам APK</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="home_app_info_no_saved_apk">Не се зачувани APK-а. За да закрпите ќе треба повторно да изберете APK датотека</string>
     <string name="home_version_requires_android">Бара Android %s+</string>
@@ -146,13 +143,11 @@
     <string name="home_download_instructions_step4">Откако ќе заврши преземањето, вратете се во Morphe</string>
     <string name="home_download_instructions_step4_mount">Откако ќе ја инсталирате оригиналната APK, вратете се во Morphe</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Избери APK</string>
-    <string name="home_file_picker_prompt_description">Изберете ја APK-то датотеката што току што ја преземавте &lt;b&gt;%s&lt;/b&gt;.</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Отвори APK датотека</string>
     <string name="home_recommended_version">Препорачана верзија</string>
     <string name="home_selected_version">Избрана верзија</string>
     <string name="home_select_apk_title">Избери APK</string>
-    <string name="home_select_any_apk_description">Изберете APK датотека на било која апликација или изберете апликација веќе инсталирана на оваа уредба</string>
     <string name="home_use_installed_app">Користете инсталирана апликација</string>
     <string name="home_installed_app_picker_empty">Не се пронајдени апликации</string>
     <string name="home_installed_app_picker_filter_user">Само кориснички апликации</string>
@@ -175,8 +170,6 @@
     <string name="expert_mode_universal_patches">Универзални закрпи</string>
     <string name="expert_mode_new_patches">Ново</string>
     <string name="expert_mode_multiple_sources_warning_title">Избрани повеќе извори за закрпување</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Избрале закрпи од повеќе извори за закрпување. Ова може да предизвика проблеми со компатибилноста или неочекувано однесување.
-Дали сте сигурни дека сакате да продолжите?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Непотврден APK</string>
     <string name="home_invalid_signature_message">APK-то што го одбра за &lt;b&gt;%s&lt;/b&gt; не одговара на очекуваниот потписен сертификат. Можеби е модифицирано или е од недоверлив извор</string>
@@ -189,7 +182,6 @@
     <string name="home_dialog_unsupported_version_experimental_label">Експериментален</string>
     <string name="home_dialog_unsupported_version_experimental_description">Оваа верзија има експериментална поддршка и можеби е нестабилна или нецелосна</string>
     <string name="morphe_experimental_app_version_dialog_title">Дали сакате да експериментирате? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">Оваа верзија на &lt;b&gt;%s&lt;/b&gt; има рана експериментална поддршка&lt;br/&gt;&lt;br/&gt;🔧 Очекувајте чудно однесување на апликацијата или идентификувани грешки додека закрпите се усовршуваат за оваа верзија на апликацијата</string>
     <string name="home_dialog_unsupported_version_dialog_title">Неподдржана верзија</string>
     <string name="home_dialog_unsupported_version_dialog_description">Оваа верзија на APK не е препорачана верзија на апликацијата. Постапувањето може да резултира со непрофункционална апликација</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -257,7 +249,6 @@
     <!-- Label of a footer button beside "Done". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="shortcut_check_updates_short">Проверете ажурирања</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Дали сте сигурни дека сакате да ја деинсталирате оваа апликација?</string>
     <string name="home_app_info_remove_app_warning">Ова ќе се избрише трајно:</string>
     <string name="home_app_info_delete_item_database">Запис во базата на податоци</string>
     <string name="home_app_info_delete_item_patched_apk">Исправена APK-дататека</string>
@@ -334,8 +325,7 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Поправување во тек…</string>
     <string name="patcher_notification_text">Допрете за да се вратите на поправувачот</string>
-    <string name="patcher_stop_confirm_title">Запрете го поправувачот</string>
-    <string name="patcher_stop_confirm_description">Дали сте сигурни дека сакате да го запрете процесот на поправување?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Вашата апликација се менува во нешто одлично… 🏆</string>
     <string name="patcher_message_2">Поучување на старите апликации нови трикови… 🎩</string>
@@ -439,7 +429,7 @@
     <string name="settings_appearance_app_icon_dark_2">Воид</string>
     <string name="settings_appearance_app_icon_mark_color">Боја</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Да ја промените иконата на апликацијата?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Промени во &lt;b&gt;%s&lt;/b&gt; и рестартирајте?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Потврди го промените</string>
     <!-- Settings - Advanced Tab - Updates Section -->

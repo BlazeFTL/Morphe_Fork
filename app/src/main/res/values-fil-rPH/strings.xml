@@ -98,8 +98,8 @@
     <string name="home_category_name">Pangalan ng kategorya</string>
     <string name="home_category_move_to">Ilipat sa kategorya</string>
     <string name="home_category_move_selected_title">Ilipat ang mga napiling app</string>
-    <string name="home_category_delete_confirm_title">Burahin ang kategorya</string>
-    <string name="home_category_delete_confirm_message">Burahin ang kategorya &lt;b&gt;%1$s&lt;/b&gt;? Ang mga app dito ay ibabalik sa &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Hindi magagamit ang mga aksyon para sa kategoryang ito</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Anong app ang gusto mong i-patch?</string>
@@ -230,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">Walang nakitang link sa clipboard</string>
     <string name="sources_dialog_local">Lokal</string>
     <string name="sources_dialog_local_files">Pumili ng mga patch source file</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Magdagdag pa ng mga file</string>
-    <string name="sources_dialog_local_file_tap_hint">I-tap para mag-browse ng storage</string>
     <string name="sources_dialog_local_invalid_extension">Dapat may extension na .mpp ang file</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Ina-update ang %s</string>
@@ -240,6 +237,7 @@
     <string name="sources_dialog_url_invalid">Dapat tumuro ang URL sa isang GitHub/GitLab repo o .json file</string>
     <string name="sources_dialog_preinstalled">Naka-install</string>
     <string name="sources_dialog_community">Mga patch ng komunidad</string>
+    <string name="sources_dialog_choose_apps">Pumili ng mga app</string>
     <string name="sources_dialog_choose_apps_description">Piliin kung alin sa mga app nito ang pananatilihin kapag na-load na ang source.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Mga pinagmulan ng third-party patch</string>
@@ -259,15 +257,12 @@
     <string name="sources_patch_expert_badge">Eksperto</string>
     <string name="sources_patch_expert_badge_tooltip">I-enable ang Expert mode sa Settings upang isama ang patch na ito nang manu-mano</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Kailangan mo ba ng tulong sa paghahanap sa orihinal na hindi pa na-patch na APK?</string>
     <string name="home_apk_availability_dialog_simple">Upang ma-patch ang &lt;b&gt;%s&lt;/b&gt;, kailangan mo ng hindi pa napa-patch na APK na may bersyong:</string>
     <string name="home_apk_availability_dialog_expert">Upang ma-patch ang &lt;b&gt;%s&lt;/b&gt;, kailangan mo ng hindi pa napa-patch na APK na may mga bersyong:</string>
     <string name="home_apk_availability_recommended_label">Inirerekomenda</string>
     <string name="home_apk_availability_unpatched_label">Hindi na-patch</string>
     <string name="home_apk_availability_incompatible_label">Hindi tugma</string>
     <string name="home_apk_availability_installed_version">Naka-install sa device na ito: %s</string>
-    <string name="home_apk_availability_yes">Oo, tulungan mo akong hanapin ang APK</string>
-    <string name="home_apk_availability_no">Hindi, mayroon na akong APK</string>
     <string name="home_apk_helper_download">Gumamit ng helper app</string>
     <string name="home_apk_helper_untrusted">May nakainstall na helper app ngunit hindi pa itinuturing, kaya hindi ito inaalok dito</string>
     <string name="home_apk_helper_untrusted_action">Tingnan ang mga helper</string>
@@ -283,8 +278,6 @@
     <string name="home_apk_helper_wrong_package">Ang helper app ay nagbalik ng ibang app kaysa sa pinapa-patch</string>
     <string name="home_apk_helper_installed_unavailable">Hindi magamit ni Morphe ang naka-install na app</string>
     <string name="home_apk_helper_installed_incompatible">Ang naka-install na bersyon ay hindi maaaring i-patch</string>
-    <string name="home_apk_use_saved">Gamitin ang nakaimbak na APK</string>
-    <string name="home_apk_use_installed">Gamitin ang naka-install na APK</string>
     <string name="home_apk_use_saved_unsupported">Ang mga patch ay hindi sumusuporta sa naka-save na kopyang ito. Ang pag-patch dito ay hihingi sa iyo ng kumpirmasyon, o pumili ng ibang APK.</string>
     <string name="home_apk_use_installed_unverified">Hindi mapatunayan ang lagda ng naka-install na app, kaya maaaring na-patch na ito</string>
     <string name="home_unverified">Hindi na-verify</string>
@@ -320,14 +313,14 @@
     <string name="home_download_instructions_copy_link">Kopyahin ang link</string>
     <string name="home_download_instructions_link_copied">Nakopya ang link</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Piliin ang na-download na APK</string>
-    <string name="home_file_picker_prompt_description">Piliin ang &lt;b&gt;%s&lt;/b&gt; APK file na kakadownload mo lang</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Buksan ang APK file</string>
     <string name="home_recommended_version">Inirerekomendang bersyon</string>
     <string name="home_selected_version">Piniling bersyon</string>
     <string name="home_select_apk_title">Piliin ang APK</string>
-    <string name="home_select_any_apk_description">Pumili ng APK file ng anumang app, o pumili ng app na naka-install na sa device na ito.</string>
     <string name="home_use_installed_app">Gamitin ang naka-install na app</string>
+    <string name="home_use_installed_app_description">Pumili ng app na nasa device na ito na</string>
+    <string name="home_open_apk_file_description">Pumili ng APK, APKM, APKS o XAPK file mula sa storage</string>
     <string name="home_installed_app_picker_title">Mga naka-install na app</string>
     <string name="home_installed_app_picker_empty">Walang aplikasyon na natagpuan</string>
     <string name="home_installed_app_picker_filter_user">Mga aplikasyon ng gumagamit lamang</string>
@@ -361,9 +354,6 @@
     <string name="expert_mode_patch_required_by_installer">Kinakailangan para sa napiling target ng pag-install</string>
     <string name="expert_mode_patch_unavailable_for_installer">Hindi magagamit para sa napiling target ng pag-install</string>
     <string name="expert_mode_multiple_sources_warning_title">Maramihang mga mapagkukunang patch ang napili</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Pinili mo ang mga patch mula sa maramihang mapagkukunang patch. Maaari itong magdulot ng isyu sa kompatibilidad o hindi inaasahang kilos.
-
-Nais mo bang magpatuloy?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Hindi beripikadong APK</string>
     <string name="home_invalid_signature_message">Ang APK na pinili mo para sa &lt;b&gt;%s&lt;/b&gt; ay hindi tumutugma sa inaasahang certificate ng paglagda. Maaaring ito ay binago o mula sa hindi pinagkakatiwalaang pinagmulan</string>
@@ -377,7 +367,9 @@ Para sa pinakamahusay na resulta, nirerekomenda ng app na ito na i-patch ang isa
     <string name="home_dialog_unsupported_version_experimental_label">Pang-eksperimentong</string>
     <string name="home_dialog_unsupported_version_experimental_description">Ang bersyong ito ay may pang-eksperimentong suporta at maaaring hindi matatag o hindi kumpleto</string>
     <string name="morphe_experimental_app_version_dialog_title">Gusto mo bang mag-eksperimento? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">Ang bersyong ito ng &lt;b&gt;%s&lt;/b&gt; ay may maagang pang-eksperimentong suporta&lt;br/&gt;&lt;br/&gt;🔧 Asahan ang mga kakaibang pag-uugali ng app o hindi natukoy na mga bug habang ang mga patch ay pinino para sa bersyong ito ng app</string>
+    <string name="morphe_experimental_app_version_dialog_message">"Ang bersyong ito ng &lt;b&gt;%s&lt;/b&gt; ay may maagang experimental support.
+
+🔧 Asahan ang kakaibang behavior ng app o mga hindi natukoy na bug habang pinapahusay ang mga patch para sa bersyong ito ng app"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Hindi suportadong bersyon</string>
     <string name="home_dialog_unsupported_version_dialog_description">Hindi inirerekomenda ang bersyon ng APK na ito. Maaaring maging resulta sa hindi gumaganang aplikasyon kung magpatuloy.</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -514,7 +506,6 @@ Para sa pinakamahusay na resulta, nirerekomenda ng app na ito na i-patch ang isa
     <string name="shortcut_check_updates_long">Suriin para sa mga patch update</string>
     <string name="shortcut_patch_app">I-patch ang %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Nais mo bang burahin ang aplikasyong ito? </string>
     <string name="batch_uninstall_confirm_body">Ang mga piling app ay permanenteng tatanggalin sa iyong device</string>
     <string name="home_app_info_remove_app_warning">Permanenteng buburahin ang:</string>
     <string name="home_app_info_delete_item_database">Database entry</string>
@@ -676,8 +667,7 @@ Ang pag-uninstall ay permanenteng bubura sa lahat ng data ng app."</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Pinoproseso ang pagpa-patch…</string>
     <string name="patcher_notification_text">Pindutin upang bumalik sa patcher</string>
-    <string name="patcher_stop_confirm_title">Ihinto ang patcher</string>
-    <string name="patcher_stop_confirm_description">Nais mo bang ihinto ang proseso sa pagpapa-patch?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Minomorph ang iyong aplikasyon sa isang kahanga-hangang bagay… 🏆</string>
     <string name="patcher_message_2">Tinuturuan ang mga lumang aplikasyon ng mga bagong salamangka… 🎩</string>
@@ -819,21 +809,21 @@ Ang pag-uninstall ay permanenteng bubura sa lahat ng data ng app."</string>
     <string name="settings_appearance_repatch_notice_description">Nagpapakita ng banner kapag maaaring i-patch muli ang mga patched apps</string>
     <string name="settings_appearance_more_apps_card">Card ng higit pang mga aplikasyon</string>
     <string name="settings_appearance_more_apps_card_description">Nagpapakita ng card sa ilalim ng mga app na humahantong sa mga community patch</string>
-    <string name="settings_appearance_app_card_colors">Mga kulay ng card ng app</string>
+    <string name="settings_appearance_app_card_colors">Mga kulay ng card</string>
     <string name="settings_appearance_app_card_colors_default">Panimula</string>
-    <string name="settings_appearance_app_card_colors_default_description">Bigyan ang bawat app ng kulay ng sarili nitong bundle</string>
+    <string name="settings_appearance_app_card_colors_default_description">Bigyan ang bawat app at source ng sarili nitong kulay</string>
     <string name="settings_appearance_app_card_colors_accent">Accent</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Gamitin ang accent color ng app para sa mga home app card</string>
+    <string name="settings_appearance_app_card_colors_accent_description">Gamitin ang app accent color para sa mga app at source card</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradient</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Gumamit ng isang custom na gradient para sa mga home app card</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">Gumamit ng isang custom gradient para sa mga app card, na hinalo sa isang kulay para sa mga source card</string>
     <string name="settings_appearance_app_card_colors_solid">Solid</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Gumamit ng isang custom na kulay para sa mga home app card</string>
+    <string name="settings_appearance_app_card_colors_solid_description">Gumamit ng isang custom color para sa mga app at source card</string>
     <string name="settings_appearance_app_card_colors_start">Panimulang kulay</string>
     <string name="settings_appearance_app_card_colors_middle">Gitnang kulay</string>
     <string name="settings_appearance_app_card_colors_end">Pangwakas na kulay</string>
     <string name="settings_appearance_app_card_colors_solid_color">Solid na kulay</string>
     <string name="settings_appearance_app_card_colors_bundle">Kulay ng bundle ng app</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Gamitin ang sariling kulay ng bawat app dito, na may lilim na awtomatikong akma</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">Gamitin dito ang sariling kulay ng bawat app o source, na awtomatikong binabago ang shade para bumagay</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Icon ng aplikasyon</string>
     <string name="settings_appearance_app_icon_selector_description">Paano ang hitsura ng Morphe sa iyong home screen at sa app drawer</string>
@@ -859,7 +849,7 @@ Ang pag-uninstall ay permanenteng bubura sa lahat ng data ng app."</string>
     <string name="settings_appearance_app_icon_mark_white">Puti</string>
     <string name="settings_appearance_app_icon_mark_black">Itim</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Baguhin ang icon ng aplikasyon?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Baguhin sa &lt;b&gt;%s&lt;/b&gt; at i-restart?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Baguhin ang icon</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1046,6 +1036,8 @@ Dapat ang mga sumusunod na sukat ng larawan ay:
     <string name="installer_play_store_warning_continue">Naiintindihan ko, magpatuloy</string>
     <string name="installer_play_store_mode">I-install bilang Play Store</string>
     <string name="installer_play_store_mode_description">Tinutukoy ang Google Play Store bilang pinagmulan ng pag-install</string>
+    <string name="settings_nomount_only">NoMount lang</string>
+    <string name="settings_nomount_only_description">I-mount ang mga app gamit lamang ang NoMount at hindi kailanman babalik sa isang bind mount, kaya mananatili silang unmounted kung wala ito</string>
     <string name="settings_prompt_installer_on_install">Prompt ng pagpili ng installer</string>
     <string name="settings_prompt_installer_on_install_description">Tinatanong kung paano i-install ang bawat app: may root bago mag-patch, sa iba pang mga kaso pagkatapos nito</string>
     <string name="settings_auto_install_with_shizuku">Awtomatikong i-install pagkatapos ng pag-patch</string>
