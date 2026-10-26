@@ -1,3 +1,16 @@
+# [2.3.0-dev.2](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.1...v2.3.0-dev.2) (2026-10-26)
+
+
+### Features
+
+* Add NoMount only mode for root mounts ([#1281](https://github.com/MorpheApp/morphe-manager/issues/1281)) ([2da2642](https://github.com/MorpheApp/morphe-manager/commit/2da26423e15d3090765c2156c078261d3444520e))
+* Restyle source cards to match the home app cards ([a8c7570](https://github.com/MorpheApp/morphe-manager/commit/a8c75708d7c81661f55328bf9013a00e94ad60c2))
+
+
+### Performance Improvements
+
+* Reduce the app size ([a6bd84a](https://github.com/MorpheApp/morphe-manager/commit/a6bd84a6053dbf13eebf83aceb193914589c4838))
+
 # [2.3.0-dev.1](https://github.com/MorpheApp/morphe-manager/compare/v2.2.0...v2.3.0-dev.1) (2026-10-26)
 
 
