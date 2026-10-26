@@ -55,7 +55,6 @@ internal data class HomeFooterBarContent(
     val orderedItems: List<HomeAppItem>,
     val itemsByPackage: Map<String, HomeAppItem>,
     val groupedSelectionGroup: HomeCategoryGroup?,
-    val groupedSelectionPackages: Set<String>?,
     val sourceGroups: List<HomeCategoryGroup>,
     val isCustomCategoryView: Boolean,
     val isSourceCategoryView: Boolean,
@@ -78,7 +77,6 @@ internal fun HomeFooterBarDock(host: HomeFooterBarHost, modifier: Modifier = Mod
         orderedItems = content.orderedItems,
         itemsByPackage = content.itemsByPackage,
         groupedSelectionGroup = content.groupedSelectionGroup,
-        groupedSelectionPackages = content.groupedSelectionPackages,
         sourceGroups = content.sourceGroups,
         isCustomCategoryView = content.isCustomCategoryView,
         isSourceCategoryView = content.isSourceCategoryView,
@@ -105,7 +103,6 @@ private fun HomeAppsFooterBars(
     orderedItems: List<HomeAppItem>,
     itemsByPackage: Map<String, HomeAppItem>,
     groupedSelectionGroup: HomeCategoryGroup?,
-    groupedSelectionPackages: Set<String>?,
     sourceGroups: List<HomeCategoryGroup>,
     isCustomCategoryView: Boolean,
     isSourceCategoryView: Boolean,
@@ -117,23 +114,12 @@ private fun HomeAppsFooterBars(
     val homeAppItems = apps.visible
     val selectedPackages = state.selectedPackages
 
-    // What "select all" covers: the scope being reordered, the group being selected in, or
+    // What "select all" covers: the scope being reordered, the group holding the selection, or
     // whatever the search and filter left on screen when neither narrows it
-    val activeAppScopePackages = state.reorderScopePackages ?: groupedSelectionPackages
-    // Memoized - otherwise selection toggles refilter listedItems each pass
-    val activeAppScopeItems = remember(
-        activeAppScopePackages,
-        groupedSelectionGroup,
-        listedItems,
-        reorderItems,
-        state.isReorderMode
-    ) {
-        when {
-            state.isReorderMode -> reorderItems
-            groupedSelectionGroup != null -> groupedSelectionGroup.items
-            activeAppScopePackages != null -> listedItems.filter { it.id in activeAppScopePackages }
-            else -> listedItems
-        }
+    val activeAppScopeItems = when {
+        state.isReorderMode -> reorderItems
+        groupedSelectionGroup != null -> groupedSelectionGroup.items
+        else -> listedItems
     }
     val selectedAppItems = remember(selectedPackages.keys.toList(), homeAppItems) {
         val selected = selectedPackages.keys.toSet()
@@ -168,10 +154,8 @@ private fun HomeAppsFooterBars(
     val hiddenMessage = appsHiddenMessage(selectedPackages.keys.mapNotNull(itemsByPackage::get))
 
     val enterReorder: () -> Unit = {
-        groupedSelectionPackages?.let { pkgs ->
-            selectedPackages.retain { it in pkgs }
-        }
-        state.reorderScopePackages = groupedSelectionPackages
+        val scopePackages = groupedSelectionGroup?.items?.mapTo(linkedSetOf()) { it.id }
+        state.reorderScopePackages = scopePackages
         state.reorderScopeSourceUid = groupedSelectionGroup?.sourceUid
         val sourceOrder = groupedSelectionGroup
             ?.takeIf { it.sourceUid != null }
@@ -182,12 +166,12 @@ private fun HomeAppsFooterBars(
         // Grouped pre-scrolls below (before flipping mode) so the LazyColumn doesn't hold a
         // stale offset when items swap to the scoped list; flat defers to the LaunchedEffect
         // after flipping
-        state.reorderFocusPackages = if (groupedSelectionPackages == null) focusTargets else emptySet()
+        state.reorderFocusPackages = if (scopePackages == null) focusTargets else emptySet()
         // A lone card is not a group, so keeping it highlighted only dims everything else for nothing
         if (selectedPackages.size == 1) selectedPackages.clear()
         state.isMultiSelectMode = false
         search.collapse()
-        groupedSelectionPackages?.let { scopePackages ->
+        if (scopePackages != null) {
             val scopedItems = sourceOrder
                 ?.mapNotNull { itemsByPackage[it] }
                 ?: orderedItems.filter { it.id in scopePackages }
@@ -196,7 +180,7 @@ private fun HomeAppsFooterBars(
                 listState.scrollToItem(focusIndex.coerceAtLeast(0) + leadingItemCount)
                 state.isReorderMode = true
             }
-        } ?: run {
+        } else {
             state.isReorderMode = true
         }
     }
@@ -232,13 +216,16 @@ private fun HomeAppsFooterBars(
                 )
             )
         }
-        add(
-            SelectionAction(
-                icon = MaterialSymbols.Rounded.Reorder,
-                label = reorderListLabel,
-                onClick = enterReorder
+        // A grouped view orders each group on its own, so a selection spread over several has no order to edit
+        if (groupedSelectionGroup != null || !(isCustomCategoryView || isSourceCategoryView)) {
+            add(
+                SelectionAction(
+                    icon = MaterialSymbols.Rounded.Reorder,
+                    label = reorderListLabel,
+                    onClick = enterReorder
+                )
             )
-        )
+        }
         when {
             contextActionIsReinstall -> add(
                 SelectionAction(
@@ -282,10 +269,7 @@ private fun HomeAppsFooterBars(
         onSelectAll = {
             selectedPackages.setAll(activeAppScopeItems.map { it.id })
         },
-        onDeselectAll = {
-            selectedPackages.clear()
-            state.selectedGroupKey = null
-        },
+        onDeselectAll = selectedPackages::clear,
         actions = actions,
         onCancel = { state.exitMultiSelect() },
         reorder = MultiSelectReorder(
