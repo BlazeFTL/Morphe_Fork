@@ -195,10 +195,18 @@ find_nomount() {
   return 1
 }
 
+# Set in Morphe, where NoMount only never falls back to a bind mount
+nomount_only() {
+  [ "$(cat "$module_dir/nomount-only" 2>/dev/null)" = 1 ]
+}
+
 # Redirects the stock path to the patched APK in the kernel, which no mount table shows and no
 # root manager unmounts from an app. The stock APK post-fs-data may have mounted is lifted first.
 redirect_patched() {
-  find_nomount || return 1
+  if ! find_nomount; then
+    nomount_only && not_mounted "NoMount is unavailable and bind mounts are off"
+    return 1
+  fi
   unmount_from_zygote_namespaces
   lift_layers /proc/self/mountinfo umount -l "$stock_path"
   # A rule is only deleted under the UID scope it was added with, so the unscoped one other root
@@ -206,6 +214,7 @@ redirect_patched() {
   "$nm_bin" rule del $nomount_scope "$stock_path" 2>/dev/null
   "$nm_bin" rule del "$stock_path" 2>/dev/null
   if ! "$nm_bin" rule add $nomount_scope "$stock_path" "$base_path" 2>> "$log"; then
+    nomount_only && not_mounted "NoMount redirect failed and bind mounts are off, see log.txt"
     log_msg "NoMount redirect failed, bind mounting instead"
     return 1
   fi

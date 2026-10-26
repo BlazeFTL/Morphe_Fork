@@ -234,6 +234,10 @@ class SettingsViewModel(
         if (enabled) prefs.promptInstallerOnInstall.update(false)
     }
 
+    fun setNoMountOnly(enabled: Boolean) = viewModelScope.launch {
+        prefs.noMountOnly.update(enabled)
+    }
+
     fun setAutoUninstallWithShizuku(enabled: Boolean) = viewModelScope.launch {
         prefs.autoUninstallWithShizuku.update(enabled)
     }
@@ -244,6 +248,8 @@ class SettingsViewModel(
 
     /** Whether the device has root, which the patch mode and the rules tied to it depend on. */
     fun isDeviceRooted() = rootInstaller.isDeviceRooted()
+
+    suspend fun isMagisk() = rootInstaller.isMagisk()
 
     fun setUseCustomFilePicker(enabled: Boolean) = viewModelScope.launch {
         prefs.useCustomFilePicker.update(enabled)

@@ -130,6 +130,7 @@ class PreferencesManager(
 
     // System tab
     val installerPrimary = stringPreference("installer_primary", InstallerPreferenceTokens.INTERNAL)
+    val noMountOnly = booleanPreference("nomount_only", false)
     val promptInstallerOnInstall = booleanPreference("prompt_installer_on_install", false)
     /** Lets an expert run on a rooted device pick patches regardless of what its install target requires or rules out. */
     val ignoreInstallTargetRules = booleanPreference("ignore_install_target_rules", false)
@@ -289,6 +290,7 @@ class PreferencesManager(
         val useJvmRuntime: Boolean? = null,
         val allowMeteredUpdates: Boolean? = null,
         val installerPrimary: String? = null,
+        val noMountOnly: Boolean? = null,
         val installerCustomComponents: Set<String>? = null,
         val installerHiddenComponents: Set<String>? = null,
         val keystoreAlias: String? = null,
@@ -359,6 +361,7 @@ class PreferencesManager(
                 useJvmRuntime = useJvmRuntime.takeIf { patching },
                 allowMeteredUpdates = allowMeteredUpdates.takeIf { updates },
                 installerPrimary = installerPrimary.takeIf { patching },
+                noMountOnly = noMountOnly.takeIf { patching },
                 installerCustomComponents = installerCustomComponents.takeIf { patching },
                 installerHiddenComponents = installerHiddenComponents.takeIf { patching },
                 keystoreAlias = keystoreAlias.takeIf { patching },
@@ -419,6 +422,7 @@ class PreferencesManager(
         useJvmRuntime = useJvmRuntime.get(),
         allowMeteredUpdates = allowMeteredUpdates.get(),
         installerPrimary = installerPrimary.get(),
+        noMountOnly = noMountOnly.get(),
         installerCustomComponents = installerCustomComponents.get(),
         installerHiddenComponents = installerHiddenComponents.get(),
         firstLaunch = firstLaunch.get(),
@@ -476,6 +480,7 @@ class PreferencesManager(
         snapshot.useJvmRuntime?.let { useJvmRuntime.value = it }
         snapshot.allowMeteredUpdates?.let { allowMeteredUpdates.value = it }
         snapshot.installerPrimary?.let { installerPrimary.value = it }
+        snapshot.noMountOnly?.let { noMountOnly.value = it }
         snapshot.installerCustomComponents?.let { installerCustomComponents.value = it }
         snapshot.installerHiddenComponents?.let { installerHiddenComponents.value = it }
         snapshot.keystoreAlias?.let { keystoreAlias.value = it }

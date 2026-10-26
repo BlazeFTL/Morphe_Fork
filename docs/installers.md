@@ -166,6 +166,11 @@ with a **Mount** chip and offers **Remount** and **Unmount**, an unmounted one o
   Morphe redirects the app to the patched APK in the kernel instead of mounting it, which
   module unmounting does not affect and the mount table does not show. Keep the app off
   NoMount's own exclusion list, or it sees the stock APK.
+  To keep the mount table clean, turn on **NoMount only** in **Settings → Installation**. A
+  preinstalled app's system copy is then redirected to the stock APK with NoMount as well, and
+  when NoMount is missing or its redirect fails the app stays unmounted instead of being bind
+  mounted. The setting applies to an app the next time it is mounted or installed, and a stock
+  APK mounted over the system copy before stays there until the next reboot.
 - The **Root mount** entry in the installer list only handles apps that were patched in
   root mount mode. Standard patched APKs still go through whichever other installer you
   selected.
