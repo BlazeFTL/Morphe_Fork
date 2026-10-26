@@ -325,16 +325,15 @@ private fun DialogHostScope.PatchFlowDialog(
         // Dialog 3: File picker prompt
         HomeDialog.FilePickerPrompt -> {
             session ?: return
-            val isOtherApps = session.packageName == null
 
             FilePickerPromptDialog(
                 appName = session.appName,
                 packageName = session.packageName,
-                isOtherApps = isOtherApps,
                 isLoadingInstalledApps = flow.loadingInstalledApps,
                 onDismiss = flow::backFromApkSource,
                 onOpenFilePicker = storagePickerLauncher,
-                onUseInstalledApp = if (isOtherApps) flow::loadInstalledAppsForPicker else null
+                // Only universal patches, with no package of their own, can take any installed app
+                onUseInstalledApp = if (session.packageName == null) flow::loadInstalledAppsForPicker else null
             )
         }
 

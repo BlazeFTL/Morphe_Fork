@@ -10,6 +10,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -298,63 +299,80 @@ internal fun DialogHostScope.ApkAvailabilityDialog(
 
 /**
  * Dialog 3: File picker prompt dialog.
+ *
+ * With [onUseInstalledApp] it picks the APK of any app, from a file or one already on the device,
+ * and lays the two sources out as cards. Without it there is just the file the user downloaded.
  */
 @Composable
 internal fun DialogHostScope.FilePickerPromptDialog(
     appName: String,
     packageName: String?,
-    isOtherApps: Boolean,
     isLoadingInstalledApps: Boolean,
     onDismiss: () -> Unit,
     onOpenFilePicker: () -> Unit,
     onUseInstalledApp: (() -> Unit)?
 ) {
+    if (onUseInstalledApp == null) {
+        AppDialog(
+            onDismissRequest = onDismiss,
+            accentColor = rememberAppColor(packageName),
+            title = stringResource(R.string.home_file_picker_prompt_title),
+            description = htmlAnnotatedString(
+                stringResource(R.string.home_file_picker_prompt_description, appName)
+            ),
+            footer = {
+                AppDialogButtonRow(
+                    primaryText = stringResource(R.string.home_file_picker_prompt_open_apk),
+                    onPrimaryClick = onOpenFilePicker,
+                    primaryIcon = MaterialSymbols.Rounded.Folder_open,
+                    secondaryText = stringResource(android.R.string.cancel),
+                    onSecondaryClick = onDismiss,
+                    layout = DialogButtonLayout.Vertical
+                )
+            }
+        )
+        return
+    }
+
     AppDialog(
         onDismissRequest = onDismiss,
         accentColor = rememberAppColor(packageName),
-        title = stringResource(
-            if (isOtherApps) {
-                R.string.home_select_apk_title
-            } else {
-                R.string.home_file_picker_prompt_title
-            }
-        ),
-        description = if (isOtherApps) {
-            stringResource(R.string.home_select_any_apk_description)
-        } else {
-            htmlAnnotatedString(stringResource(R.string.home_file_picker_prompt_description, appName))
-        },
+        title = stringResource(R.string.home_select_apk_title),
+        description = stringResource(R.string.home_select_apk_description),
         footer = {
-            AppDialogActions(
-                actions = buildList {
-                    if (isOtherApps && onUseInstalledApp != null) {
-                        add(
-                            DialogAction(
-                                text = stringResource(R.string.home_use_installed_app),
-                                onClick = onUseInstalledApp,
-                                icon = MaterialSymbols.Rounded.Phone_android,
-                                enabled = !isLoadingInstalledApps
-                            )
-                        )
-                    }
-                    add(
-                        DialogAction(
-                            text = stringResource(R.string.home_file_picker_prompt_open_apk),
-                            onClick = onOpenFilePicker,
-                            icon = MaterialSymbols.Rounded.Folder_open
-                        )
-                    )
-                    add(
-                        DialogAction(
-                            text = stringResource(android.R.string.cancel),
-                            onClick = onDismiss
-                        )
-                    )
-                },
-                layout = DialogButtonLayout.Vertical
+            // The cards are the choice, so the way out is kept outlined
+            AppDialogOutlinedButton(
+                text = stringResource(android.R.string.cancel),
+                onClick = onDismiss,
+                modifier = Modifier.fillMaxWidth()
             )
         }
-    )
+    ) {
+        SettingsGroup {
+            SettingsItem(
+                onClick = onUseInstalledApp,
+                title = stringResource(R.string.home_use_installed_app),
+                subtitle = stringResource(R.string.home_use_installed_app_description),
+                icon = MaterialSymbols.Rounded.Phone_android,
+                enabled = !isLoadingInstalledApps,
+                // The list is read before the picker opens, which takes a moment on a full device
+                statusContent = if (isLoadingInstalledApps) {
+                    {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(24.dp),
+                            strokeWidth = 2.dp
+                        )
+                    }
+                } else null
+            )
+            SettingsItem(
+                onClick = onOpenFilePicker,
+                title = stringResource(R.string.home_file_picker_prompt_open_apk),
+                subtitle = stringResource(R.string.home_open_apk_file_description),
+                icon = MaterialSymbols.Rounded.Folder_open
+            )
+        }
+    }
 }
 
 /**

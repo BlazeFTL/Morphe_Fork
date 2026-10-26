@@ -331,7 +331,6 @@ fun BatchPatcherScreen(
                     FilePickerPromptDialog(
                         appName = item.appName,
                         packageName = item.packageName,
-                        isOtherApps = false,
                         isLoadingInstalledApps = false,
                         onDismiss = viewModel::dismissAttachPrompt,
                         onOpenFilePicker = {

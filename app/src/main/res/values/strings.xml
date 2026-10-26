@@ -334,8 +334,12 @@
     <string name="home_recommended_version">Recommended version</string>
     <string name="home_selected_version">Selected version</string>
     <string name="home_select_apk_title">Select APK</string>
-    <string name="home_select_any_apk_description">Select an APK file of any app, or pick an app already installed on this device</string>
+    <string name="home_select_apk_description">"Universal patches work with any app.
+
+Choose where to take its APK from"</string>
     <string name="home_use_installed_app">Use installed app</string>
+    <string name="home_use_installed_app_description">Pick an app already on this device</string>
+    <string name="home_open_apk_file_description">Choose an APK, APKM, APKS or XAPK file from storage</string>
     <string name="home_installed_app_picker_title">Installed apps</string>
     <string name="home_installed_app_picker_empty">No apps found</string>
     <string name="home_installed_app_picker_filter_user">User apps only</string>
@@ -387,7 +391,9 @@ For the best results, this app recommends patching a &lt;b&gt;full APK&lt;/b&gt;
     <string name="home_dialog_unsupported_version_experimental_label">Experimental</string>
     <string name="home_dialog_unsupported_version_experimental_description">This version has experimental support and may be unstable or incomplete</string>
     <string name="morphe_experimental_app_version_dialog_title">Do you want to experiment? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">This version of &lt;b>%s&lt;/b> has early experimental support&lt;br/>&lt;br/>🔧 Expect quirky app behavior or unidentified bugs as the patches are refined for this app version</string>
+    <string name="morphe_experimental_app_version_dialog_message">"This version of &lt;b>%s&lt;/b> has early experimental support.
+
+🔧 Expect quirky app behavior or unidentified bugs as the patches are refined for this app version"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Unsupported Version</string>
     <string name="home_dialog_unsupported_version_dialog_description">This APK is not a recommended app version. Proceeding may result in a non-functional app</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->

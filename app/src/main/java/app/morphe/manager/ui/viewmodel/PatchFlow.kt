@@ -691,6 +691,13 @@ class PatchFlow(
                 when (result) {
                     is ApkLoadResult.Success -> {
                         pickedApk = result
+                        // A run for any app is named by the section it started from until the file
+                        // says which app it is, as the installed app picker names it by its label
+                        session = session?.let { current ->
+                            if (current.packageName == null) {
+                                current.copy(appName = appNameFor(result.app.packageName))
+                            } else current
+                        }
                         // Picked in place of the one held for a warning, which it takes the run over from
                         heldApp?.discard()
                         heldApp = null
