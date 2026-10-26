@@ -15,6 +15,7 @@ import android.util.Log
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import app.morphe.manager.BuildConfig
+import app.morphe.manager.domain.batch.BatchInstallPolicy
 import app.morphe.manager.domain.manager.base.BasePreferencesManager
 import app.morphe.manager.domain.repository.PatchBundleRepository.Companion.DEFAULT_SOURCE_UID
 import app.morphe.manager.ui.screen.shared.BackgroundType
@@ -206,6 +207,9 @@ class PreferencesManager(
 
     /** Batch queue prepared but not started yet (JSON), empty when there is none. */
     val batchQueue = stringPreference("batch_queue", "")
+
+    /** What the last batch queue did with its patched APKs, which the next queue starts from. */
+    val batchInstallPolicy = enumPreference("batch_install_policy", BatchInstallPolicy.SAVE_ONLY)
 
     /** Tracks whether the user has explicitly toggled the custom file picker preference. */
     val customFilePickerUserConfigured = booleanPreference("custom_file_picker_user_configured", false)

@@ -136,7 +136,7 @@ class BatchPatchCoordinator(
                     val saved = if (hasPlanned) null else decodeQueue(prefs.batchQueue.get())
                     planFresh(
                         targets = (saved?.targets.orEmpty() + targets).distinctBy { it.id },
-                        policy = saved?.policy ?: BatchInstallPolicy.SAVE_ONLY,
+                        policy = saved?.policy ?: prefs.batchInstallPolicy.get(),
                         excludedIds = saved?.excluded.orEmpty()
                     )
                 }
@@ -317,8 +317,10 @@ class BatchPatchCoordinator(
         reresolveItem(itemId, resolve = ::replan)
     }
 
+    /** Sets what this queue does once patched, remembered as the starting point of the next one. */
     fun setPolicy(policy: BatchInstallPolicy) {
         _state.update { it.copy(policy = policy) }
+        scope.launch { prefs.batchInstallPolicy.update(policy) }
     }
 
     fun markAutoInstallStarted() {
