@@ -235,9 +235,6 @@
     <string name="sources_dialog_paste_no_links">No links found on the clipboard</string>
     <string name="sources_dialog_local">Local</string>
     <string name="sources_dialog_local_files">Select patch source files</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Add more files</string>
-    <string name="sources_dialog_local_file_tap_hint">Tap to browse storage</string>
     <string name="sources_dialog_local_invalid_extension">File must have a .mpp extension</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Updates %s</string>
@@ -245,6 +242,7 @@
     <string name="sources_dialog_url_invalid">URL must point to a GitHub/GitLab repo or .json file</string>
     <string name="sources_dialog_preinstalled">Pre-installed</string>
     <string name="sources_dialog_community">Community patches</string>
+    <string name="sources_dialog_choose_apps">Choose apps</string>
     <string name="sources_dialog_choose_apps_description">Pick which of its apps to keep once the source has loaded</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Third-party patch sources</string>
@@ -334,7 +332,7 @@
     <string name="home_recommended_version">Recommended version</string>
     <string name="home_selected_version">Selected version</string>
     <string name="home_select_apk_title">Select APK</string>
-    <string name="home_select_apk_description">"Universal patches work with any app.
+    <string name="home_select_apk_description">"Universal patches work with any app
 
 Choose where to take its APK from"</string>
     <string name="home_use_installed_app">Use installed app</string>

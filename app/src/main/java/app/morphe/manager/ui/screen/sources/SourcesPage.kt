@@ -80,6 +80,7 @@ private val SourceShimmerRows = (0 until 4).toList()
  * @param onboardingState Set while the tour runs, which points into the first source.
  * @param alertsHeight How far down the alerts reach under the header, which the list starts below.
  * @param onHeaderHeightChange Told the header's height, for the alerts floating over the page below it.
+ * @param onSourceAdded Called once sources are submitted from the add source panel.
  */
 @Composable
 fun SourcesPage(
@@ -88,7 +89,8 @@ fun SourcesPage(
     state: SourcesPageState,
     onboardingState: OnboardingState? = null,
     alertsHeight: () -> Dp = { 0.dp },
-    onHeaderHeightChange: (Dp) -> Unit = {}
+    onHeaderHeightChange: (Dp) -> Unit = {},
+    onSourceAdded: () -> Unit = {}
 ) {
     val scope = rememberCoroutineScope()
     val repository = homeViewModel.patchBundleRepository
@@ -104,13 +106,38 @@ fun SourcesPage(
         }
     )
 
+    val openBundlePicker = rememberAdaptiveMultiFilePicker(
+        mimeTypes = MPP_FILE_MIME_TYPES,
+        onResult = homeViewModel::pickBundles
+    )
+
+    // The files picked are held outside for the picker's round trip, so they go once the panel does
+    LaunchedEffect(state.isAddingSource) {
+        if (!state.isAddingSource) homeViewModel.clearPickedBundles()
+    }
+
     SourcesPageContent(
         bottomBarHeight = bottomBarHeight,
         state = state,
         onboardingState = onboardingState,
         alertsHeight = alertsHeight,
         onHeaderHeightChange = onHeaderHeightChange,
-        onAddSource = { homeViewModel.showAddSourceDialog = true },
+        addSourcePanel = {
+            AddSourcePanel(
+                visible = state.isAddingSource,
+                onClose = state::closeAddSource,
+                onSubmit = { urls, chooseApps ->
+                    homeViewModel.addSources(urls, chooseApps)
+                    state.closeAddSource()
+                    onSourceAdded()
+                },
+                onPickFiles = { openBundlePicker() },
+                onRemoveFile = homeViewModel::unpickBundle,
+                localFiles = homeViewModel.pickedBundleImports,
+                onCheckUrl = repository::checkRemoteUrl,
+                modifier = Modifier.fillMaxWidth()
+            )
+        },
         onDelete = { bundles -> scope.launch { repository.remove(*bundles.toTypedArray()) } },
         onToggleEnabled = { bundles -> scope.launch { repository.disable(*bundles.toTypedArray()) } },
         onUpdate = { bundles ->
@@ -146,7 +173,7 @@ private fun SourcesPageContent(
     onboardingState: OnboardingState?,
     alertsHeight: () -> Dp,
     onHeaderHeightChange: (Dp) -> Unit,
-    onAddSource: () -> Unit,
+    addSourcePanel: @Composable () -> Unit,
     onDelete: (List<PatchBundleSource>) -> Unit,
     // Flips each source, on or off
     onToggleEnabled: (List<PatchBundleSource>) -> Unit,
@@ -393,14 +420,17 @@ private fun SourcesPageContent(
                 TitleAction(
                     icon = MaterialSymbols.RoundedFilled.Add,
                     contentDescription = stringResource(R.string.add),
-                    onClick = onAddSource,
+                    onClick = state::openAddSource,
                     style = TitleActionStyle.Accent,
+                    // Opened over a reorder, the order being dragged would be left unsaved under it
+                    enabled = !state.isReordering,
                     modifier = Modifier.tourTarget(TourTarget.ADD_SOURCE, onboardingState)
                 )
             }
         },
         scrollState = listState,
         bottomBar = {
+            addSourcePanel()
             ListOptionsPanel(
                 visible = state.isListOptionsOpen,
                 sections = listOptions,

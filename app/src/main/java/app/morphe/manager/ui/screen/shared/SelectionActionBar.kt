@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.layout
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
@@ -37,9 +38,10 @@ import com.composables.icons.materialsymbols.MaterialSymbols
 import com.composables.icons.materialsymbols.rounded.*
 
 /**
- * Slide-up surface docked over the bottom of a list: a selection panel, a reorder bar, or the
- * options the list is arranged by. It sits on the bottom edge of the screen like a sheet, its
- * content clear of the navigation bar. Unlike a sheet it leaves the list above it live.
+ * Slide-up surface docked over the bottom of a list: a selection panel, a reorder bar, the options
+ * the list is arranged by, or a form such as the one sources are added from. It sits on the bottom
+ * edge of the screen like a sheet, its content clear of the navigation bar and of the keyboard.
+ * Unlike a sheet it leaves the list above it live.
  *
  * Meant for the home screen's footer dock and the [ListDialog] bottom bar, so the surface, blur and
  * enter/exit animations stay the same everywhere one is docked.
@@ -78,6 +80,7 @@ fun DockedPanel(
         Surface(
             modifier = Modifier
                 .fillMaxWidth()
+                .belowStatusBar()
                 .predictiveBackSlide(backProgress)
                 .graphicsLayer { translationY = dragOffset.floatValue }
                 // A surface of its own with an edge of its own, blurring what scrolls under it
@@ -90,13 +93,31 @@ fun DockedPanel(
             Column(
                 modifier = Modifier
                     .drawnDownBy(dragOffset, onDismiss = onBack)
-                    .navigationBarsPadding()
+                    .windowInsetsPadding(WindowInsets.navigationBars.union(WindowInsets.ime))
                     .padding(bottom = Defaults.SpaceExtraSmall)
             ) {
                 PanelHandle()
                 content()
             }
         }
+    }
+}
+
+/**
+ * Holds a panel under the status bar, however much it holds and however far the keyboard lifts it,
+ * so a panel taller than the room left scrolls its content rather than running up under the bar.
+ */
+@Composable
+private fun Modifier.belowStatusBar(): Modifier {
+    val statusBar = WindowInsets.statusBars
+    return layout { measurable, constraints ->
+        val placeable = measurable.measure(
+            if (constraints.hasBoundedHeight) {
+                val room = (constraints.maxHeight - statusBar.getTop(this)).coerceAtLeast(constraints.minHeight)
+                constraints.copy(maxHeight = room)
+            } else constraints
+        )
+        layout(placeable.width, placeable.height) { placeable.place(0, 0) }
     }
 }
 

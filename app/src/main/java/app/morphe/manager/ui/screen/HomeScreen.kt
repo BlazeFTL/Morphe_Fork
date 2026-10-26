@@ -180,11 +180,6 @@ fun HomeScreen(
         onResult = homeViewModel.patchFlow::handleApkSelection
     )
 
-    val openBundlePicker = rememberAdaptiveMultiFilePicker(
-        mimeTypes = MPP_FILE_MIME_TYPES,
-        onResult = homeViewModel::pickBundles
-    )
-
     val installAppsPermissionLauncher = rememberLauncherForActivityResult(
         contract = RequestInstallAppsContract
     ) { homeViewModel.showAndroid11Dialog = false }
@@ -291,10 +286,7 @@ fun HomeScreen(
     HomeDialogs(
         homeViewModel = homeViewModel,
         storagePickerLauncher = { openApkPicker() },
-        openBundlePicker = { openBundlePicker() },
         patchesItem = patchesSheetItem,
-        // The new source's apps come up on the list, so that is where adding one ends
-        onSourceAdded = { openPage(MainPage.APPS) },
         settingsNavigation = settingsNavigation
     )
 
@@ -376,7 +368,9 @@ fun HomeScreen(
                 state = sourcesPageState,
                 onboardingState = onboardingState,
                 alertsHeight = { alertsHeight.value },
-                onHeaderHeightChange = { pageHeaderHeights[MainPage.SOURCES] = it }
+                onHeaderHeightChange = { pageHeaderHeights[MainPage.SOURCES] = it },
+                // The new source's apps come up on the list, so that is where adding one ends
+                onSourceAdded = { openPage(MainPage.APPS) }
             )
 
             MainPage.SETTINGS -> SettingsPage(
