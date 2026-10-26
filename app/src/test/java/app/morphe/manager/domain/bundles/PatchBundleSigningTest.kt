@@ -37,7 +37,21 @@ class PatchBundleSigningTest {
         privateKey?.let { PatchBundleSignature.sign(this, it) }
     }
 
-    private fun install(bundle: File) = runBlocking { bundle.inputStream().use { source().replace(it) } }
+    private fun install(bundle: File) = runBlocking {
+        // Windows cannot rename over an existing file the way Android does, so the installed one is
+        // set aside first and put back if the install fails
+        val installed = source().patchesJarFile
+        val kept = installed.resolveSibling("kept.jar")
+        if (installed.exists()) installed.renameTo(kept)
+        try {
+            bundle.inputStream().use { source().replace(it) }
+        } catch (e: Exception) {
+            kept.renameTo(installed)
+            throw e
+        }
+        kept.setWritable(true)
+        kept.delete()
+    }
 
     @Test
     fun `unsigned bundles are taken while no key is trusted`() {
