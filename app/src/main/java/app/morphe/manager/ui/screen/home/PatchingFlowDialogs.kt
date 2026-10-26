@@ -124,7 +124,7 @@ internal fun DialogHostScope.ApkAvailabilityDialog(
     AppDialog(
         onDismissRequest = onDismiss,
         accentColor = rememberAppColor(packageName),
-        title = stringResource(R.string.home_apk_availability_dialog_title),
+        title = stringResource(R.string.home_apk_availability_title),
         footer = {
             Column(
                 modifier = Modifier.fillMaxWidth(),
@@ -132,10 +132,10 @@ internal fun DialogHostScope.ApkAvailabilityDialog(
             ) {
                 // Main action buttons
                 AppDialogButtonRow(
-                    primaryText = stringResource(R.string.home_apk_availability_yes),
+                    primaryText = stringResource(R.string.home_apk_availability_find),
                     onPrimaryClick = onNeedApk,
                     primaryIcon = MaterialSymbols.Rounded.Download,
-                    secondaryText = stringResource(R.string.home_apk_availability_no),
+                    secondaryText = stringResource(R.string.home_apk_availability_have),
                     onSecondaryClick = onHaveApk,
                     secondaryIcon = MaterialSymbols.Rounded.Check,
                     layout = DialogButtonLayout.Vertical
@@ -144,7 +144,7 @@ internal fun DialogHostScope.ApkAvailabilityDialog(
                 // Saved APK button - always shown when a saved APK exists
                 if (savedApkInfo != null) {
                     AppDialogOutlinedButton(
-                        text = stringResource(R.string.home_apk_use_saved),
+                        text = stringResource(R.string.home_apk_use_saved_copy),
                         textSuffix = if (savedApkBuildRefused) {
                             buildVersionSuffix(savedApkInfo.version, savedApkInfo.versionCode)
                         } else {
@@ -159,7 +159,7 @@ internal fun DialogHostScope.ApkAvailabilityDialog(
                 // Installed APK button - hidden when saved mono-APK covers the same split version
                 if (installedApkInfo != null && !preferSavedOverInstalled) {
                     AppDialogOutlinedButton(
-                        text = stringResource(R.string.home_apk_use_installed),
+                        text = stringResource(R.string.home_apk_use_installed_app),
                         // Never the wrong build: an installed APK the patches do not target is
                         // dropped before it reaches this dialog
                         textSuffix = "v${installedApkInfo.version}",
@@ -316,10 +316,9 @@ internal fun DialogHostScope.FilePickerPromptDialog(
         AppDialog(
             onDismissRequest = onDismiss,
             accentColor = rememberAppColor(packageName),
-            title = stringResource(R.string.home_file_picker_prompt_title),
-            description = htmlAnnotatedString(
-                stringResource(R.string.home_file_picker_prompt_description, appName)
-            ),
+            title = stringResource(R.string.home_file_picker_prompt_app_title, appName),
+            // The title already says what to pick, so this says where it is likely to be
+            description = stringResource(R.string.home_file_picker_prompt_where),
             footer = {
                 AppDialogButtonRow(
                     primaryText = stringResource(R.string.home_file_picker_prompt_open_apk),

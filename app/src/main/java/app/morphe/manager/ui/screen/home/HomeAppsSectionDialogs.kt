@@ -64,11 +64,10 @@ internal fun HomeAppsSectionDialogs(
     }
     DialogHost(target = pendingDeleteCategory) { category ->
         ConfirmDialog(
-            title = stringResource(R.string.home_category_delete_confirm_title),
+            title = stringResource(R.string.home_category_delete_title, category.name),
             message = htmlAnnotatedString(
                 stringResource(
-                    R.string.home_category_delete_confirm_message,
-                    category.name,
+                    R.string.home_category_delete_moves_apps,
                     stringResource(R.string.home_category_uncategorized)
                 )
             ),

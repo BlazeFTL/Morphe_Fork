@@ -100,8 +100,10 @@
     <string name="home_category_name">Category name</string>
     <string name="home_category_move_to">Move to category</string>
     <string name="home_category_move_selected_title">Move selected apps</string>
-    <string name="home_category_delete_confirm_title">Delete category</string>
-    <string name="home_category_delete_confirm_message">Delete category &lt;b&gt;%1$s&lt;/b&gt;? Apps in it will move back to &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">Delete %s?</string>
+    <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">Its apps move back to &lt;b&gt;%s&lt;/b&gt;</string>
     <string name="home_category_actions_unavailable">Actions unavailable for this category</string>
 
     <!-- Home Screen - Home Greetings -->
@@ -263,15 +265,15 @@
     <string name="sources_patch_expert_badge_tooltip">Enable Expert mode in Settings to include this patch manually</string>
 
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Need help finding an original unpatched APK?</string>
+    <string name="home_apk_availability_title">Need help finding the APK?</string>
     <string name="home_apk_availability_dialog_simple">To patch &lt;b&gt;%s&lt;/b&gt;, you need the unpatched APK version:</string>
     <string name="home_apk_availability_dialog_expert">To patch &lt;b&gt;%s&lt;/b&gt;, you need an unpatched APK of versions:</string>
     <string name="home_apk_availability_recommended_label">Recommended</string>
     <string name="home_apk_availability_unpatched_label">Unpatched</string>
     <string name="home_apk_availability_incompatible_label">Incompatible</string>
     <string name="home_apk_availability_installed_version">Installed on this device: %s</string>
-    <string name="home_apk_availability_yes">Yes, help me find an APK</string>
-    <string name="home_apk_availability_no">No, I already have an APK</string>
+    <string name="home_apk_availability_find">Yes, help me find it</string>
+    <string name="home_apk_availability_have">No, I already have it</string>
     <string name="home_apk_helper_download">Use a helper app</string>
     <string name="home_apk_helper_untrusted">A helper app is installed but not trusted yet, so it is not offered here</string>
     <string name="home_apk_helper_untrusted_action">Review helpers</string>
@@ -287,8 +289,8 @@
     <string name="home_apk_helper_wrong_package">The helper app returned a different app than the one being patched</string>
     <string name="home_apk_helper_installed_unavailable">Morphe could not use the installed app</string>
     <string name="home_apk_helper_installed_incompatible">The installed version cannot be patched</string>
-    <string name="home_apk_use_saved">Use saved APK</string>
-    <string name="home_apk_use_installed">Use installed APK</string>
+    <string name="home_apk_use_saved_copy">Use saved copy</string>
+    <string name="home_apk_use_installed_app">Use installed app</string>
     <string name="home_apk_use_saved_unsupported">The patches do not support this saved copy. Patching it will ask you to confirm, or pick another APK</string>
     <string name="home_apk_use_installed_unverified">Could not verify the signature of the installed app, so it may already be patched</string>
     <string name="home_unverified">Unverified</string>
@@ -326,8 +328,9 @@
     <string name="home_download_instructions_link_copied">Link copied</string>
 
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Select downloaded APK</string>
-    <string name="home_file_picker_prompt_description">Select the &lt;b&gt;%s&lt;/b&gt; APK file you just downloaded</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">Select the %s APK</string>
+    <string name="home_file_picker_prompt_where">Browsers usually save it to the Download folder</string>
     <string name="home_file_picker_prompt_open_apk">Open APK file</string>
     <string name="home_recommended_version">Recommended version</string>
     <string name="home_selected_version">Selected version</string>
@@ -372,9 +375,7 @@ Choose where to take its APK from"</string>
     <string name="expert_mode_patch_required_by_installer">Required for the selected install target</string>
     <string name="expert_mode_patch_unavailable_for_installer">Not available for the selected install target</string>
     <string name="expert_mode_multiple_sources_warning_title">Multiple patch sources selected</string>
-    <string name="expert_mode_multiple_sources_warning_message">"You have selected patches from multiple patch sources. This may cause compatibility issues or unexpected behavior.
-
-Are you sure you want to proceed?"</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">Patches from different sources are not made to work together and may conflict or break the app</string>
 
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Unverified APK</string>
@@ -534,7 +535,8 @@ For the best results, this app recommends patching a &lt;b&gt;full APK&lt;/b&gt;
     <string name="shortcut_patch_app">Patch %s</string>
 
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Are you sure you want to uninstall this app?</string>
+    <string name="home_app_info_uninstall_title">Uninstall this app?</string>
+    <string name="home_app_info_uninstall_removes_data">The app and its data are removed from this device</string>
     <string name="batch_uninstall_confirm_body">The selected apps will be permanently removed from your device</string>
     <string name="home_app_info_remove_app_warning">This will permanently delete:</string>
     <string name="home_app_info_delete_item_database">Database entry</string>
@@ -704,8 +706,10 @@ Uninstalling will permanently erase all app data"</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patching in progress…</string>
     <string name="patcher_notification_text">Tap to return to the patcher</string>
-    <string name="patcher_stop_confirm_title">Stop patcher</string>
-    <string name="patcher_stop_confirm_description">Are you sure you want to stop the patching process?</string>
+    <string name="patcher_stop_title">Stop patching?</string>
+    <string name="patcher_stop_discards">The progress so far is discarded and nothing is installed</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Keep patching</string>
 
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Morphing your app into something awesome… 🏆</string>
@@ -921,7 +925,8 @@ Uninstalling will permanently erase all app data"</string>
     <string name="settings_appearance_app_icon_mark_black">Black</string>
     <string name="settings_appearance_app_icon_combined" translatable="false">%1$s · %2$s</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Change app icon?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Change to &lt;b&gt;%s&lt;/b&gt; and restart?</string>
+    <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe restarts to switch to &lt;b&gt;%s&lt;/b&gt;</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Change icon</string>
 
@@ -1490,6 +1495,7 @@ Details: %2$s"</string>
     <string name="show_all">Show all</string>
     <string name="ignore">Ignore</string>
     <string name="stop_ignoring">Stop ignoring</string>
+    <string name="stop">Stop</string>
     <string name="logs">Logs</string>
     <string name="sources">Sources</string>
     <string name="installing_ellipsis">Installing…</string>

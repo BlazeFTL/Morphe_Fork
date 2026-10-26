@@ -201,8 +201,9 @@ fun BatchPatcherScreen(
         ConfirmDialog(
             title = stringResource(R.string.batch_patch_stop_title),
             message = stringResource(R.string.batch_patch_stop_description),
-            primaryText = stringResource(R.string.yes),
-            secondaryText = stringResource(R.string.no),
+            primaryText = stringResource(R.string.stop),
+            // Cancel would read as cancelling the queue itself
+            secondaryText = stringResource(R.string.patcher_keep_patching),
             onConfirm = {
                 showCancelDialog = false
                 // A stopped queue must not wait for the round
@@ -217,8 +218,7 @@ fun BatchPatcherScreen(
         ConfirmDialog(
             title = stringResource(R.string.batch_queue_clear_title),
             message = stringResource(R.string.batch_queue_clear_description),
-            primaryText = stringResource(R.string.yes),
-            secondaryText = stringResource(R.string.no),
+            primaryText = stringResource(R.string.clear),
             onConfirm = {
                 showClearDialog = false
                 viewModel.clear()
