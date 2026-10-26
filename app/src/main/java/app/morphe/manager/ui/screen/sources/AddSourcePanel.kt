@@ -68,6 +68,7 @@ fun AddSourcePanel(
     modifier: Modifier = Modifier
 ) {
     var showCommunityNotice by rememberSaveable { mutableStateOf(false) }
+    val openCommunityPatches = rememberOpenCommunityPatches(onNoticeNeeded = { showCommunityNotice = true })
 
     DialogHost(visible = showCommunityNotice) {
         CommunityPatchesNoticeDialog(onDismiss = { showCommunityNotice = false })
@@ -89,7 +90,7 @@ fun AddSourcePanel(
                 TitleAction(
                     icon = MaterialSymbols.Rounded.Groups,
                     contentDescription = stringResource(R.string.sources_dialog_community),
-                    onClick = { showCommunityNotice = true },
+                    onClick = openCommunityPatches,
                     style = TitleActionStyle.Neutral
                 )
                 TitleAction(

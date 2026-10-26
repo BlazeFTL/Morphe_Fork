@@ -124,6 +124,9 @@ class PreferencesManager(
     /** Tracks whether the battery optimization exclusion dialog has been shown at least once. */
     val batteryOptimizationRequested = booleanPreference("battery_optimization_requested", false)
 
+    /** Set once the user has agreed to the third-party notice, after which the community website opens at once. */
+    val communityNoticeAcknowledged = booleanPreference("community_notice_acknowledged", false)
+
     val useExpertMode = booleanPreference("use_expert_mode", false)
 
     val stripUnusedNativeLibs = booleanPreference("strip_unused_native_libs", false)

@@ -715,7 +715,7 @@ internal fun MainAppsSection(
     val isFilterEmpty = isListEmpty && isFilterActive
     val isSearchEmpty = isListEmpty && !isFilterActive && searchQuery.isNotBlank()
     val showMoreAppsCard = apps.showMoreAppsCard && !isFilteringList && !state.isEditing
-    val openCommunityPatches = { state.showCommunityNotice = true }
+    val openCommunityPatches = rememberOpenCommunityPatches(onNoticeNeeded = { state.showCommunityNotice = true })
 
     Box(
         modifier = modifier.fillMaxSize(),
