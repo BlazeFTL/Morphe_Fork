@@ -662,26 +662,15 @@ private fun SourcesPageContent(
 
     // New signing key confirmation dialog
     DialogHost(target = bundleToTrustKey) { bundle ->
-        val fingerprint = (metadataFetchErrors[bundle.uid] as? PatchBundleSignerChangedException)?.signerFingerprint
-        ConfirmDialog(
-            title = stringResource(R.string.sources_signing_key_trust_title),
-            message = if (fingerprint != null) {
-                stringResource(R.string.sources_signing_key_trust_message, fingerprint)
-            } else {
-                stringResource(R.string.sources_signing_key_trust_message_unsigned)
-            },
-            primaryText = stringResource(R.string.sources_signing_key_trust),
-            subject = {
-                ConfirmSubject(name = bundle.displayTitle) { modifier ->
-                    BundleIcon(bundle = bundle, modifier = modifier)
-                }
-            },
-            accentColor = rememberSourceHeaderColor(bundle),
-            onDismiss = { bundleToTrustKey = null },
-            onConfirm = {
+        SigningKeyTrustDialog(
+            bundle = bundle,
+            trustedKey = bundle.signingKeyFingerprint,
+            newKey = (metadataFetchErrors[bundle.uid] as? PatchBundleSignerChangedException)?.signerFingerprint,
+            onTrust = {
                 bundleToTrustKey = null
                 scope.launch { patchBundleRepository.trustNewSigningKey(bundle) }
-            }
+            },
+            onDismiss = { bundleToTrustKey = null }
         )
     }
 
@@ -844,6 +833,8 @@ private fun BundleManagementCard(
     val openInBrowser = stringResource(R.string.sources_management_open_in_browser)
     val reportIssue = stringResource(R.string.sources_management_report_issue)
     val share = stringResource(R.string.share)
+    val copy = stringResource(R.string.copy)
+    val copyToClipboard = rememberCopyToClipboard()
     val patchesLabel = stringResource(R.string.patches)
     val selectLabel = stringResource(R.string.accessibility_select_source)
     val moveUpLabel = stringResource(R.string.accessibility_move_up)
@@ -1067,7 +1058,17 @@ private fun BundleManagementCard(
                                     InfoRow(
                                         icon = MaterialSymbols.Rounded.Verified,
                                         label = stringResource(R.string.sources_management_signed_by),
-                                        value = fingerprint
+                                        value = fingerprint,
+                                        // The whole key, which is what a developer publishes to compare against
+                                        onClick = { bundle.signingKey?.let(copyToClipboard) },
+                                        trailing = {
+                                            Icon(
+                                                imageVector = MaterialSymbols.Rounded.Content_copy,
+                                                contentDescription = copy,
+                                                modifier = Modifier.size(Defaults.IconSizeSmall),
+                                                tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+                                            )
+                                        }
                                     )
                                 }
 
