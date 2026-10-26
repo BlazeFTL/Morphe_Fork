@@ -119,6 +119,7 @@ class HomeChromeActions(
  *   the docked bars.
  * @param bottomBarHeight Height of the navigation floating over the page, which the list ends clear of.
  * @param alerts The alerts of the main screen, those swiped aside brought back from the header.
+ * @param alertsHeight How far down those alerts reach under the header, which the list starts below.
  * @param onHeaderHeightChange Told the header's height, for the alerts floating over the page below it.
  */
 @Composable
@@ -130,6 +131,7 @@ internal fun SectionsLayout(
     state: HomeAppsSectionState,
     bottomBarHeight: Dp,
     alerts: HomeAlerts,
+    alertsHeight: () -> Dp = { 0.dp },
     onboardingState: OnboardingState? = null,
     onHeaderHeightChange: (Dp) -> Unit = {}
 ) {
@@ -188,7 +190,8 @@ internal fun SectionsLayout(
             onboardingState = onboardingState,
             showFadeOverlay = !isLandscape(),
             header = greeting,
-            topPadding = insets.top + Defaults.SpaceMedium
+            topPadding = insets.top + Defaults.SpaceMedium,
+            alertsHeight = alertsHeight
         )
     }
 }
@@ -252,7 +255,9 @@ internal fun MainAppsSection(
     // Opens the list and scrolls away with it, such as the greeting
     header: (@Composable () -> Unit)? = null,
     // Room above the first row, for the page's header the list scrolls on under
-    topPadding: Dp = 0.dp
+    topPadding: Dp = 0.dp,
+    // Further room for the alerts hanging under the header, read as the list is laid out
+    alertsHeight: () -> Dp = { 0.dp }
 ) {
     // Aliases for values used many times in the body
     val homeAppItems = apps.visible
@@ -797,16 +802,16 @@ internal fun MainAppsSection(
                         )
                         // Cached so the LazyColumn doesn't allocate a new PaddingValues on
                         // every recomposition (which can be per-frame under scroll)
-                        val listContentPadding = remember(horizontalPadding, topPadding, footerClearance) {
-                            PaddingValues(
-                                start = horizontalPadding,
+                        val listContentPadding = remember(horizontalPadding, topPadding, alertsHeight, footerClearance) {
+                            ListContentPadding(
+                                horizontal = horizontalPadding,
                                 top = topPadding,
-                                end = horizontalPadding,
-                                bottom = footerClearance
+                                bottom = footerClearance,
+                                extraTop = alertsHeight
                             )
                         }
-                        // A focused row comes out from under the header and the footer bar
-                        ProvideBringIntoViewInsets(top = topPadding, bottom = footerClearance) {
+                        // A focused row comes out from under the header, the alerts and the footer bar
+                        ProvideBringIntoViewInsets(top = topPadding, bottom = footerClearance, extraTop = alertsHeight) {
                             LazyColumn(
                                 state = listState,
                                 modifier = Modifier

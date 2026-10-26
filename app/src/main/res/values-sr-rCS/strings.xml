@@ -35,6 +35,8 @@
     <!-- Asked when the link names an app of a source that is already added -->
     <string name="deep_link_add_source_app_back">Ovaj izvor je već dodat. Da dodate ovu aplikaciju iz postojećeg izvora?</string>
     <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">Ovo je nova verzija %s. Da li želite da je ažurirate?</string>
+    <string name="mpp_import_unreadable">Ovaj fajl ne može biti pročitan</string>
     <!-- Home Screen - Update Notifications -->
     <string name="home_update_available">Dostupno ažuriranje za Morphe</string>
     <string name="home_update_available_subtitle">Novu verziju možete instalirati</string>
@@ -167,8 +169,6 @@
     <string name="sources_filter_all_description">Svaki izvor</string>
     <string name="sources_filter_enabled_description">Zakrpe za izvore su preuzete sa</string>
     <string name="sources_filter_disabled_description">Izviisci isključeni</string>
-    <string name="sources_filter_updates">Ažuriranja</string>
-    <string name="sources_filter_updates_description">Izvori sa novijom verzijom za preuzimanje</string>
     <string name="sources_filter_issues">Potrebna pažnja</string>
     <string name="sources_filter_issues_description">Izvori koji su blokirani, nisu se učitavali ili zahtevaju noviju verziju Morphe-a</string>
     <string name="sources_sort_manual">Ručna postavka</string>
@@ -197,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Omogući zakrpe za predizdanje?</string>
     <string name="sources_prerelease_warning_message">Predizdanja su još u razvoju. Zakrpe mogu da ne uspeju ili da pokvare aplikaciju, a funkcije se mogu promeniti bez upozorenja.</string>
     <string name="expert_mode_prerelease_notice">Ovaj izvor je na zakrpama za predizdanje. Zakrpljivanje može da ne uspe ili da se ponaša neočekivano.</string>
+    <string name="expert_mode_experimental_version_notice">Ovaj izvor ima samo eksperimentalnu podršku za ovu verziju aplikacije. Njegovi zakrpe mogu biti nestabilne ili nepotpune</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentalne verzije aplikacije</string>
     <string name="sources_management_experimental_versions_toggle_description">Prikazuje i zakrpava eksperimentalne ciljne aplikacije</string>
     <string name="sources_management_already_exists">Ovaj izvor je već dodat</string>
@@ -239,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Izaberite koje od njegovih aplikacija da zadržite nakon što se izvor učita.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Izvori zakrpa trećih strana</string>
-    <string name="sources_dialog_community_notice_message">"Izvore zakrpa zajednice kreiraju i održavaju njihovi autori. Morphe ne pregleda niti verifikuje zakrpe trećih strana i nije odgovoran za njihov sadržaj ili za ono što rade na vašem uređaju.
-
-Sve što dodate sa ove veb stranice koristite na sopstvenu odgovornost."</string>
+    <string name="sources_dialog_community_notice_message">"Izvore zajedničkih zakrpa kreiraju i održavaju njihovi autori. Morphe ne pregleda niti proverava zakrpe trećih strana i nije odgovoran za njihov sadržaj niti za ono što one rade na vašem uređaju"</string>
     <string name="sources_update_success">Uspešno ažurirano</string>
     <string name="sources_update_unavailable">Nema dostupnih ažuriranja</string>
     <string name="sources_download_fail">Neuspešno preuzimanje izvora: %s</string>
@@ -706,6 +705,7 @@ Deinstalacija će trajno obrisati sve podatke aplikacije"</string>
     <string name="patched_app_save_failed_toast">Došlo je do greške pri čuvanju zakrpljene aplikacije</string>
     <string name="plugin_activity_dialog_body">Potrebna je interakcija korisnika da bi se nastavilo sa ovim dodatkom</string>
     <string name="patcher_process_killed_message">Sistem je prekinuo patcher pre nego što je završio, obično da oslobodi memoriju. Zatvorite druge aplikacije i pokušajte ponovo</string>
+    <string name="patcher_process_crashed_message">Patcher je zapucao pre nego što je završio. Ako se to ponovi, isključite \"Use embedded VM\" u podešavanjima i prijavite problem uz log</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Patcher je potrošio memoriju sa %1$s MB heap-a. Ova aplikacija je prevelika za odabrane patch-eve. Pokušajte da patch-ujete sa manjim brojem patch izvora ili odaberite manje patch-eva</string>
     <string name="install_app_success">Uspešno instalirano</string>
@@ -873,6 +873,7 @@ Zakrpe nisu pogođene: omogućite prerelease zakrpe za svaki izvor na listi izvo
     <string name="settings_advanced_update_interval_daily">Dnevno</string>
     <string name="settings_advanced_update_interval_weekly">Sedmično</string>
     <string name="settings_advanced_update_interval_monthly">Mesečno</string>
+    <string name="settings_advanced_update_interval_battery_warning">Provere u pozadini možda neće raditi pouzdano na uređajima koji ograničavaju aplikacije u pozadini, kao što su Xiaomi, Huawei, Samsung i OnePlus</string>
     <string name="settings_advanced_external_batch_patch">Dozvoli eksterne okidače</string>
     <string name="settings_advanced_external_batch_patch_description">Omogućava automatizovanim aplikacijama da pokreću grupno zakompliciranje</string>
     <string name="external_batch_patch_title">Pokreni masovno zakrpljivanje?</string>
@@ -934,6 +935,7 @@ Zakrpe nisu pogođene: omogućite prerelease zakrpe za svaki izvor na listi izvo
     <string name="settings_advanced_patch_options_custom_branding_app_name_hint">Unesi ime</string>
     <string name="settings_advanced_patch_options_path_gone">Ova fascikla više ne može da se čita. Izaberi je ponovo ili je ukloni, inače će se zakrpljivanje zaustaviti i pitati o njoj.</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon">Ikonica aplikacije</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">Ikona kojom je aplikacija zakrpljena, takođe se koristi tamo gde kasnije ne može biti promenjena, kao što je Android Auto</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">Prilagođena ikona aplikacije zahteva fasciklu sa slikama ikona.</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon">Promeni ikonu</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"Mapa sa slikama koje će se koristiti kao prilagođena ikona.
@@ -1025,6 +1027,7 @@ Opciono, putanja sadrži ikonu obaveštenja u jednom od sledećih formata:
     <string name="settings_auto_uninstall_with_shizuku">Automatska deinstalacija u slučaju konflikta</string>
     <string name="settings_auto_uninstall_with_shizuku_description">Deinstalira postojeću aplikaciju kod konflikta potpisa. Ovo može ukloniti podatke aplikacije</string>
     <string name="settings_ignore_install_target_rules">Ignoriši zahteve cilja instalacije</string>
+    <string name="settings_ignore_install_target_rules_description">Omogućava isključivanje zakrpa koje cilj instalacije zahteva i uključivanje onih koje isključuje. Zakrpljena aplikacija možda neće raditi</string>
     <string name="settings_auto_uninstall_warning_title">Omogući automatsku deinstalaciju?</string>
     <string name="settings_auto_uninstall_warning_message">Ako Android prijavljuje konflikt potpisa tokom Shizuku auto-instalacije, Morphe će deinstalirati postojeću aplikaciju pre instaliranja popravljenog APK-a</string>
     <string name="settings_auto_uninstall_warning_risk">Ovo može ukloniti podatke aplikacije. Ako popravljeni APK ne uspe da se instalira nakon deinstalacije, prethodna aplikacija je možda već uklonjena</string>
@@ -1055,6 +1058,7 @@ Detalji: %2$s"</string>
     <string name="settings_system_battery_optimization_description">Drži patcher pokrenutim kada je aplikacija minimizovana</string>
     <string name="settings_system_process_runtime">Vremensko izvođenje patchera</string>
     <string name="settings_system_jvm_runtime_enable">Koristi ugrađeni VM</string>
+    <string name="settings_system_jvm_runtime_description">Zakrpe u Morphe-ovoj sopstvenoj Java VM, koja može koristiti više memorije. Isključite da biste koristili Android runtime</string>
     <string name="settings_system_jvm_runtime_unavailable">Potreban je ARM ili 64-bitni x86 uređaj</string>
     <string name="settings_system_patcher_completion_sound">Zvuk završetka</string>
     <string name="settings_system_patcher_completion_sound_description">Reprodukuje poseban ton za uspeh ili neuspeh kada se patchovanje završi</string>
@@ -1332,7 +1336,6 @@ Detalji: %2$s"</string>
     <string name="expanded">Proširen</string>
     <string name="collapse">Smanji</string>
     <string name="collapsed">Sklopljen</string>
-    <string name="available">Dostupno</string>
     <string name="continue_">Nastavi</string>
     <string name="version">Verzija</string>
     <!-- Who made a patch source, as a field label -->

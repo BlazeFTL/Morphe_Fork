@@ -214,9 +214,6 @@
     <string name="sources_dialog_choose_apps_description">Pilih aplikasi yang mana untuk disimpan sebaik sahaja sumber dimuatkan</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Sumber tampalan pihak ketiga</string>
-    <string name="sources_dialog_community_notice_message">"Sumber tampalan komuniti dibuat dan diselenggara oleh pengarangnya sendiri. Morphe tidak menyemak atau mengesahkan tampalan pihak ketiga, dan tidak bertanggungjawab terhadap kandungannya atau apa yang dilakukannya pada peranti anda.
-
-Apa sahaja yang anda tambah daripada laman web ini digunakan atas risiko anda sendiri"</string>
     <string name="sources_update_success">Kemas kini berjaya</string>
     <string name="sources_update_unavailable">Tiada kemas kini tersedia</string>
     <string name="sources_download_fail">Gagal untuk memuat turun sumber: %s</string>
@@ -1215,7 +1212,6 @@ Butiran: %2$s"</string>
     <string name="expanded">Diperluaskan</string>
     <string name="collapse">Lipat</string>
     <string name="collapsed">Dikompreskan</string>
-    <string name="available">Tersedia</string>
     <string name="continue_">Teruskan</string>
     <string name="version">Versi</string>
     <!-- Who made a patch source, as a field label -->

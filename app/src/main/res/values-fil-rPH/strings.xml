@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Lahat ng pinagmulan</string>
     <string name="sources_filter_enabled_description">Ang mga patch sa pinagmulan ay kinuha mula sa</string>
     <string name="sources_filter_disabled_description">Pinagmulang nakapag-off</string>
-    <string name="sources_filter_updates">Mga update</string>
-    <string name="sources_filter_updates_description">Mga source na may mas bagong bersyon na maaaring makuha</string>
     <string name="sources_filter_issues">Kailangan ng atensyon</string>
     <string name="sources_filter_issues_description">Mga source na naka-block, nabigong mag-load, o nangangailangan ng mas bagong Morphe</string>
     <string name="sources_sort_manual">Manu-manong pagkakasunud-sunod</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Paganahin ang mga pre-release na patch?</string>
     <string name="sources_prerelease_warning_message">Ang mga pre-release na build ay nasa development pa. Maaaring mabigo o makasira ng app ang mga patch, at maaaring magbago ang mga feature nang walang babala.</string>
     <string name="expert_mode_prerelease_notice">Ang source na ito ay nasa pre-release na mga patch. Maaaring mabigo o kumilos nang hindi inaasahan ang pag-patch.</string>
+    <string name="expert_mode_experimental_version_notice">Ang source na ito ay may experimental support lamang para sa bersyong ito ng app. Maaaring hindi stable o hindi kumpleto ang mga patch nito</string>
     <string name="sources_management_experimental_versions_toggle">Mga bersyon ng app na pang-eksperimento</string>
     <string name="sources_management_experimental_versions_toggle_description">Nagpapakita at nag-aayos ng mga eksperimentong target ng app</string>
     <string name="sources_management_already_exists">Ang pinagmulang ito ay naidagdag na.</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Piliin kung alin sa mga app nito ang pananatilihin kapag na-load na ang source.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Mga pinagmulan ng third-party patch</string>
-    <string name="sources_dialog_community_notice_message">"Ang mga pinagmulan ng community patch ay ginawa at pinapanatili ng kanilang mga sariling may-akda. Hindi nire-review o bine-verify ng Morphe ang mga third-party patches, at hindi ito responsable sa kanilang nilalaman o sa mga ginagawa nito sa iyong device.
-
-Anumang idagdag mo mula sa website na ito ay gagamitin sa iyong sariling panganib."</string>
+    <string name="sources_dialog_community_notice_message">"Ang mga community patch source ay ginawa at pinapanatili ng kani-kanilang mga awtor. Hindi sinusuri o bineberipika ng Morphe ang mga third-party patch, at hindi ito responsable sa nilalaman ng mga ito o sa kung ano ang ginagawa ng mga ito sa iyong device"</string>
     <string name="sources_update_success">Matagumpay ang pag-update</string>
     <string name="sources_update_unavailable">Walang update na magagamit</string>
     <string name="sources_download_fail">Nabigong mag-download ang mga mapagkukunan: %s</string>
@@ -708,6 +705,7 @@ Ang pag-uninstall ay permanenteng bubura sa lahat ng data ng app."</string>
     <string name="patched_app_save_failed_toast">Nabigong ma-save ang na-patch na aplikasyon</string>
     <string name="plugin_activity_dialog_body">Kinakailangan ng pakikipag-ugnayan sa tagagamit upang magpatuloy sa plugin na ito</string>
     <string name="patcher_process_killed_message">Itinigil ng system ang patcher bago ito matapos, upang magkaroon ng sapat na memory. Isara ang ibang apps at subukan ulit</string>
+    <string name="patcher_process_crashed_message">Nag-crash ang patcher bago ito natapos. Kung mangyari itong muli, i-off ang \"Use embedded VM\" sa settings at i-report ang isyu kasama ang log</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Ang patcher ay wala nang memorya sa %1$s MB heap. Ang app na ito ay masyadong malaki para sa mga piniling patches. Subukang mag-patch gamit ang mas kaunting patch sources, o piliin ang mas kaunting patches</string>
     <string name="install_app_success">Matagumpay na na-install</string>
@@ -1354,7 +1352,6 @@ Mga Detalye: %2$s"</string>
     <string name="expanded">Pinalawak</string>
     <string name="collapse">Itiklop</string>
     <string name="collapsed">Tiniklop</string>
-    <string name="available">Magagamit</string>
     <string name="continue_">Magpatuloy</string>
     <string name="version">Bersyon</string>
     <!-- Who made a patch source, as a field label -->

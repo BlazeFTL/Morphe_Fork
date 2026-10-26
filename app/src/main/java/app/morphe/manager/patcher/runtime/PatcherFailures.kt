@@ -31,5 +31,6 @@ class HeapExhaustedException(val heapLimitMb: Int, val originalStackTrace: Strin
  * system reclaiming its memory.
  *
  * @param reason What the system recorded about the end of the process, in words for the log.
+ * @param crashed Whether the system recorded a crash rather than a kill.
  */
-class PatcherKilledException(val reason: String) : Exception("Patcher process ended: $reason")
+class PatcherKilledException(val reason: String, val crashed: Boolean) : Exception("Patcher process ended: $reason")

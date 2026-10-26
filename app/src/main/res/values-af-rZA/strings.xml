@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Enige bron</string>
     <string name="sources_filter_enabled_description">Bronkolle word geneem van</string>
     <string name="sources_filter_disabled_description">Brone afgeskakel</string>
-    <string name="sources_filter_updates">Opdaterings</string>
-    <string name="sources_filter_updates_description">Bronne met \'n nuwer weergawe om te kry</string>
     <string name="sources_filter_issues">Behoeftige aandag</string>
     <string name="sources_filter_issues_description">Bronne wat geblokkeer is, kon nie laai nie of benodig \'n nuwer Morphe nie</string>
     <string name="sources_sort_manual">Handmatige volgorde</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Aktiveer pre-release patches?</string>
     <string name="sources_prerelease_warning_message">Pre-release weergawes is nog in ontwikkeling. Patches kan misluk of die app breek, en kenmerke kan sonder waarskuwing verander.</string>
     <string name="expert_mode_prerelease_notice">Hierdie bron is op pre-release patches. Patching kan misluk of onverwags optree.</string>
+    <string name="expert_mode_experimental_version_notice">Hierdie bron het slegs eksperimentele ondersteuning vir hierdie app-weergawe. Die kolke daarvan mag onstabil of onvolledig wees</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentele program-weergawes</string>
     <string name="sources_management_experimental_versions_toggle_description">Wys en patch eksperimentele app-teikens</string>
     <string name="sources_management_already_exists">Hierdie oorsprong is reeds bygevoeg</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Kies watter van sy toepassings om te hou sodra die bron gelaai is.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Derdeparty-pleisterbronne</string>
-    <string name="sources_dialog_community_notice_message">"Gemeenskapspleisterbronne word gemaak en onderhou deur hul eie outeurs. Morphe beoordeel of verifieer nie derdeparty-pleisters nie, en is nie verantwoordelik vir hul inhoud of vir wat hulle op jou toestel doen nie.
-
-Enigiets wat jy van hierdie webwerf byvoeg, word op jou eie risiko gebruik."</string>
+    <string name="sources_dialog_community_notice_message">"Gemeenskap-kolkwyfbronne word gemaak en onderhou deur hul eie outeurs. Morphe hersien of verifieer nie derdeparty-kolkwyfe nie, en is nie verantwoordelik vir hul inhoud of vir wat hulle op jou toestel doen nie"</string>
     <string name="sources_update_success">Opdatering suksesvol</string>
     <string name="sources_update_unavailable">Geen opdatering beskikbaar</string>
     <string name="sources_download_fail">Kon nie oorspronge aflaai nie: %s</string>
@@ -708,6 +705,7 @@ Deïnstallering sal alle toepassingsdata permanent uitwis."</string>
     <string name="patched_app_save_failed_toast">Kon nie gepatchte app stoor nie</string>
     <string name="plugin_activity_dialog_body">Gebruikers interaksie is vereis om met hierdie inprop voort te gaan</string>
     <string name="patcher_process_killed_message">Die stelsel het die patcher gestop voordat dit voltooi is, gewoonlik om geheue vry te stel. Maak ander programme toe en probeer weer</string>
+    <string name="patcher_process_crashed_message">Die patcher het gecrash voordat dit klaar was. As dit weer gebeur, skakel \"Gebruik ingebedde VM\" in instellings af en rapporteer die probleem met die log</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Die patsjering het uit geheue geloop met \'n %1$s MB-heap. Hierdie toepassing is te groot vir die geselekteerde patsjies. Probeer om met minder patsjibronne te werk, of selekteer minder patsjies</string>
     <string name="install_app_success">Suksesvol geïnstalleer</string>
@@ -1354,7 +1352,6 @@ Besonderhede: %2$s"</string>
     <string name="expanded">Uitgebrei</string>
     <string name="collapse">Invee</string>
     <string name="collapsed">Ingepak</string>
-    <string name="available">Beskikbaar</string>
     <string name="continue_">Gaan voort</string>
     <string name="version">Weergawe</string>
     <!-- Who made a patch source, as a field label -->

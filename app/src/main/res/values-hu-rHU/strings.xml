@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Minden forrás</string>
     <string name="sources_filter_enabled_description">Források javításai innen származnak</string>
     <string name="sources_filter_disabled_description">Források letiltva</string>
-    <string name="sources_filter_updates">Frissítések</string>
-    <string name="sources_filter_updates_description">A frissítéshez szükséges újabb verziójú források</string>
     <string name="sources_filter_issues">Figyelmet igényel</string>
     <string name="sources_filter_issues_description">A letiltott, sikertelen betöltésű vagy újabb Morphe-verziót igénylő források</string>
     <string name="sources_sort_manual">Kézi sorrend</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Előzetes javítások engedélyezése?</string>
     <string name="sources_prerelease_warning_message">Az előzetes verziók még fejlesztés alatt állnak. A javítások meghiúsulhatnak vagy megtörhetik az alkalmazást, és a funkciók figyelmeztetés nélkül változhatnak.</string>
     <string name="expert_mode_prerelease_notice">Ez a forrás előzetes verzió. A javítás meghiúsulhat vagy váratlanul viselkedhet.</string>
+    <string name="expert_mode_experimental_version_notice">Ez a forrás csak kísérleti támogatást biztosít a hozzájuk tartozó alkalmazásverzióhoz. A javítások instabilak vagy hiányosak lehetnek</string>
     <string name="sources_management_experimental_versions_toggle">Kísérleti alkalmazásverziók</string>
     <string name="sources_management_experimental_versions_toggle_description">Megmutatja és javítja a kísérleti alkalmazás célpontjait. MaxLength: null. Applied translations: none.</string>
     <string name="sources_management_already_exists">Ez a forrás már hozzá lett adva</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Válassza ki, hogy a forrás betöltése után mely alkalmazásait tartsa meg.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Harmadik féltől származó javításforrások</string>
-    <string name="sources_dialog_community_notice_message">"A közösségi javításforrásokat saját szerzőik készítik és tartják karban. A Morphe nem vizsgálja felül és nem ellenőrzi a harmadik féltől származó javításokat, és nem felelős azok tartalmáért vagy azért, amit az eszközén tesznek.
-
-Bármit is ad hozzá erről a weboldalról, azt saját felelősségére teszi."</string>
+    <string name="sources_dialog_community_notice_message">"A közösségi patch forrásokat azok saját szerzői készítik és karbantartják. A Morphe nem vizsgáli és nem hitelesíti a harmadik féltől származó patcheket, és nem vállal felelősséget azok tartalmáért vagy azért, hogy mit tesznek az eszközödön"</string>
     <string name="sources_update_success">A frissítés sikeres</string>
     <string name="sources_update_unavailable">Nincs elérhető frissítés</string>
     <string name="sources_download_fail">Nem sikerült letölteni a forrásokat: %s</string>
@@ -708,6 +705,7 @@ Az eltávolítás véglegesen törli az alkalmazás összes adatát."</string>
     <string name="patched_app_save_failed_toast">A módosított alkalmazás mentése sikertelen</string>
     <string name="plugin_activity_dialog_body">A bővítmény használatához felhasználói beavatkozásra van szükség</string>
     <string name="patcher_process_killed_message">A rendszer leállította a javítót mielőtt befejezte, általában a memória felszabadítása érdekében. Zárja be a többi alkalmazást, és próbálja újra</string>
+    <string name="patcher_process_crashed_message">A patcher összeomlott a befejezés előtt. Ha ez ismét előfordul, kapcsolja ki a \"Beágyazott VM használata\" opciót a beállításokban, és jelezze a hibát a naplónak</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">A javítóprogram %1$s MB-os vermemmel futott ki. Az alkalmazás túl nagy a kiválasztott javításokhoz. Próbáljon meg kevesebb javítási forrással vagy kevesebb javítással alkalmazni a javítást</string>
     <string name="install_app_success">Sikeresen telepítve</string>
@@ -1354,7 +1352,6 @@ Részletek: %2$s"</string>
     <string name="expanded">Kibontva</string>
     <string name="collapse">Összecsukás</string>
     <string name="collapsed">Összecsukva</string>
-    <string name="available">Elérhető</string>
     <string name="continue_">Folytatás</string>
     <string name="version">Verzió</string>
     <!-- Who made a patch source, as a field label -->

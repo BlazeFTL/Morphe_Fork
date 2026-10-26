@@ -35,6 +35,8 @@
     <!-- Asked when the link names an app of a source that is already added -->
     <string name="deep_link_add_source_app_back">Šis šaltinis jau pridėtas. Pridėti šią programą iš esamo šaltinio?</string>
     <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">Tai %s nauja versija. Ar norite ją atnaujinti?</string>
+    <string name="mpp_import_unreadable">Šio failo nepavyko perskaityti</string>
     <!-- Home Screen - Update Notifications -->
     <string name="home_update_available">Morphe atnaujinimas prieinamas</string>
     <string name="home_update_available_subtitle">Nauja versija paruošta įdiegti</string>
@@ -167,8 +169,6 @@
     <string name="sources_filter_all_description">Visi šaltiniai</string>
     <string name="sources_filter_enabled_description">Šaltinių patch\'ai imami iš</string>
     <string name="sources_filter_disabled_description">Šaltiniai išjungti</string>
-    <string name="sources_filter_updates">Atnaujinimai</string>
-    <string name="sources_filter_updates_description">Šaltiniai, kuriems reikia naujesnės versijos</string>
     <string name="sources_filter_issues">Reikalauja dėmesio</string>
     <string name="sources_filter_issues_description">Užblokuoti šaltiniai, kurie nepavyko įkelti arba reikalauja naujesnės „Morphe“</string>
     <string name="sources_sort_manual">Rankinis rikiavimas</string>
@@ -197,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Įjungti išankstines pataisas?</string>
     <string name="sources_prerelease_warning_message">Išankstiniai leidimai vis dar kuriami. Pataisos gali nepavykti arba sugadinti programą, o funkcijos gali keistis be įspėjimo</string>
     <string name="expert_mode_prerelease_notice">Šis šaltinis naudoja išankstines pataisas. Pataisymas gali nepavykti arba elgtis netikėtai</string>
+    <string name="expert_mode_experimental_version_notice">Šis šaltinis šiai programėlės versijai turi tik eksperimentinį palaikymą. Jo pataisai gali būti nestabilios arba nepilnos</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentinės programos versijos</string>
     <string name="sources_management_experimental_versions_toggle_description">Rodo ir pataiso eksperimentines programų versijas</string>
     <string name="sources_management_already_exists">Šis šaltinis jau pridėtas</string>
@@ -239,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Pasirinkite, kurias jo programas išlaikyti, kai šaltinis bus įkeltas</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Trečiųjų šalių pataisų šaltiniai</string>
-    <string name="sources_dialog_community_notice_message">"Bendruomenės pataisų šaltinius kuria ir prižiūri jų autoriai. „Morphe“ neperžiūri ir neverifikuoja trečiųjų šalių pataisų ir neatsako už jų turinį ar už tai, ką jos daro jūsų įrenginyje.
-
-Viskas, ką pridėsite iš šios svetainės, naudojama jūsų pačių rizika"</string>
+    <string name="sources_dialog_community_notice_message">"Bendruomenės pataisymų šaltinius kuria ir prižiūri jų autoriai. „Morphe“ neperžiūri ir nepatvirtina trečiųjų šalių pataisymų bei neatsako už jų turinį arba už tai, ką jie atlieka jūsų įrenginyje"</string>
     <string name="sources_update_success">Sėkmingas atnaujinimas</string>
     <string name="sources_update_unavailable">Atnaujinimo nėra</string>
     <string name="sources_download_fail">Nepavyko atsisiųsti šaltinio: %s</string>
@@ -706,6 +705,7 @@ Pašalinus bus visam laikui ištrinti visi programos duomenys."</string>
     <string name="patched_app_save_failed_toast">Nepavyko išsaugoti pataisytos programos</string>
     <string name="plugin_activity_dialog_body">Reikia vartotojo sąveikos, kad tęsti su šiuo įskiepiu</string>
     <string name="patcher_process_killed_message">Sistema sustabdė švirkštuvą, kol dar nebaigė veikti, paprastai dėl atminties išlaisvinimo. Uždarykite kitas programas ir bandykite dar kartą</string>
+    <string name="patcher_process_crashed_message">Atnaujinimo programa lūžo prieš pabaigą. Jei tai pasikartos, nustatymuose išjunkite \"Use embedded VM\" ir praneškite apie problemą kartu su žurnalu</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Patcherio atminties baigėsi su %1$s MB krūva. Ši programėlė per didelė pasirinktiems patamsims. Bandykite keisti mažesnių šaltinių, arba pasirinkti mažiau patamsų</string>
     <string name="install_app_success">Sėkmingai įdiegta</string>
@@ -873,6 +873,7 @@ Pataisoms tai įtakos neturi: įjunkite išankstines pataisas kiekvienam šaltin
     <string name="settings_advanced_update_interval_daily">Kasdien</string>
     <string name="settings_advanced_update_interval_weekly">Savaitė</string>
     <string name="settings_advanced_update_interval_monthly">Mėnuo</string>
+    <string name="settings_advanced_update_interval_battery_warning">Fono patikros gali neveikti patikimai įrenginiuose, kurie riboja fono programėles, pavyzdžiui, „Xiaomi“, „Huawei“, „Samsung“ ir „OnePlus“</string>
     <string name="settings_advanced_external_batch_patch">Leisti išorinius paleidimus</string>
     <string name="settings_advanced_external_batch_patch_description">Leidžia automatizavimo programėlėms pradėti grupinį patvarkymą</string>
     <string name="external_batch_patch_title">Pradėti paketinį pataisymą?</string>
@@ -934,6 +935,7 @@ Pataisoms tai įtakos neturi: įjunkite išankstines pataisas kiekvienam šaltin
     <string name="settings_advanced_patch_options_custom_branding_app_name_hint">Įvesti pavadinimą</string>
     <string name="settings_advanced_patch_options_path_gone">Šio aplanko nebegalima perskaityti. Pasirinkite jį iš naujo arba išvalykite, kitaip pataisymas sustos ir paklaus apie jį</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon">Programėlės piktograma</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">Piktograma, kuria yra pataisoma programėlė; taip pat naudojama ten, kur jos vėliau negalima pakeisti, pavyzdžiui, „Android Auto“</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">Pasirinktinei programos piktogramai reikia aplanko su piktogramų vaizdais</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon">Individualizuota piktograma</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"Aplankas su nuotraukomis, kurios bus naudojamos kaip piktograma.
@@ -1041,6 +1043,7 @@ Vaizdų matmenys turi būti tokie:
     <string name="settings_auto_uninstall_with_shizuku">Automatiškai pašalinti konflikto atveju</string>
     <string name="settings_auto_uninstall_with_shizuku_description">Pašalina esamą programėlę, jeigu yra parašo konflikto. Tai gali pašalinti programėlės duomenis</string>
     <string name="settings_ignore_install_target_rules">Ignoruoti diegimo tikslo reikalavimus</string>
+    <string name="settings_ignore_install_target_rules_description">Leidžia išjungti pataisymus, kurių reikalauja diegimo tikslas, ir įjungti intuos, kurių jis neleidžia. Pataisoma programėlė gali neveikti</string>
     <string name="settings_auto_uninstall_warning_title">Įjungti automatinį pašalinimą?</string>
     <string name="settings_auto_uninstall_warning_message">Jei „Android“ praneša apie parašo konfliktą automatinio diegimo per „Shizuku“ metu, „Morphe“ pašalins esamą programą prieš įdiegdamas pataisytą APK</string>
     <string name="settings_auto_uninstall_warning_risk">Tai gali pašalinti programos duomenis. Jei po pašalinimo pataisytas APK neįdiegiamas, ankstesnės programos gali jau nebebūti</string>
@@ -1071,6 +1074,7 @@ Išsami informacija: %2$s"</string>
     <string name="settings_system_battery_optimization_description">Palieka pataisymo procesą veikiantį, kai programa sumažinama</string>
     <string name="settings_system_process_runtime">Patcherio veikimo laikas</string>
     <string name="settings_system_jvm_runtime_enable">Naudoti integruotą VM</string>
+    <string name="settings_system_jvm_runtime_description">Pataisymai naudojant nuosavą „Morphe“ Java VM, kuri gali naudoti daugiau atminties. Išjunkite, jei norite naudoti „Android“ runtime</string>
     <string name="settings_system_jvm_runtime_unavailable">Reikalingas ARM arba 64 bitų x86 įrenginys</string>
     <string name="settings_system_patcher_completion_sound">Užbaigimo garsas</string>
     <string name="settings_system_patcher_completion_sound_description">Kai pataisymas baigiasi, groja skirtingą toną sėkmės arba nesėkmės atveju</string>
@@ -1348,7 +1352,6 @@ Išsami informacija: %2$s"</string>
     <string name="expanded">Išskleista</string>
     <string name="collapse">Suskleisti</string>
     <string name="collapsed">Suskleista</string>
-    <string name="available">Prieinama</string>
     <string name="continue_">Tęsti</string>
     <string name="version">Versija</string>
     <!-- Who made a patch source, as a field label -->

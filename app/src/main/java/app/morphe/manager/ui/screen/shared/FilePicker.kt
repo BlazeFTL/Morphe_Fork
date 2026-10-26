@@ -268,6 +268,17 @@ fun DialogHostScope.FilePicker(
         }
     }
 
+    // Picks up what changed on disk while the picker was open, such as a file just downloaded or
+    // access just granted. Counts, icons and APK details are read once per path, so they go too,
+    // for a file replaced at the same path to show its new one
+    val refresh: () -> Unit = {
+        folderItemCountCache.evictAll()
+        apkPackageInfoCache.evictAll()
+        imageThumbnailCache.evictAll()
+        splitIconCache.evictAll()
+        refreshKey++
+    }
+
     val navigateBack = {
         val atStorageRoot = roots.any { (_, root) -> root == currentDir }
         currentDir = if (atStorageRoot) null else currentDir?.parentFile
@@ -385,18 +396,12 @@ fun DialogHostScope.FilePicker(
                                 coroutineScope.launch { prefs.filePickerShowHiddenFiles.update(next) }
                             }
                         )
-                        // Picks up what changed on disk while the picker was open, such as a file
-                        // just downloaded or access just granted
+                        // Pulling the list down does the same, but a gesture is out of reach on a
+                        // D-pad and for screen readers
                         AppDropdownMenuItem(
                             text = stringResource(R.string.refresh),
                             onClick = {
-                                // Counts, icons and APK details are read once per path, so they go
-                                // too, for a file replaced at the same path to show its new one
-                                folderItemCountCache.evictAll()
-                                apkPackageInfoCache.evictAll()
-                                imageThumbnailCache.evictAll()
-                                splitIconCache.evictAll()
-                                refreshKey++
+                                refresh()
                                 showViewMenu = false
                             }
                         )
@@ -406,48 +411,60 @@ fun DialogHostScope.FilePicker(
         },
         hideFooterWhileTyping = true
     ) {
-        // A folder slides in from the side it lies on, deeper ones from the end and the ones
-        // above from the start, so moving about the tree reads as moving along it
-        AnimatedContent(
-            targetState = currentDir,
-            transitionSpec = {
-                val from = initialState
-                val deeper = from == null ||
-                    targetState?.absolutePath?.startsWith(from.absolutePath + File.separator) == true
-                val direction = if (deeper) 1 else -1
-                (slideInHorizontally(tween(Defaults.ANIMATION_DURATION)) { it / 4 * direction } +
-                    fadeIn(tween(Defaults.ANIMATION_DURATION))) togetherWith
-                    (slideOutHorizontally(tween(Defaults.ANIMATION_DURATION)) { -it / 4 * direction } +
-                        fadeOut(tween(Defaults.ANIMATION_DURATION_SHORT)))
-            },
+        val barInsets = LocalDialogBarInsets.current
+        AppPullToRefreshBox(
+            // The listing shows its placeholders while it reads the folder again
+            isRefreshing = false,
+            onRefresh = refresh,
+            // The list of storages has nothing to read again
+            enabled = currentDir != null,
+            // Out from under the header, which floats over the list
+            indicatorTop = { barInsets.calculateTopPadding() },
             modifier = Modifier
                 .fillMaxWidth()
-                .weight(1f),
-            label = "filePickerFolder"
-        ) { dir ->
-            FolderListing(
-                dir = dir,
-                roots = roots,
-                allowedExtensions = allowedExtensions,
-                sortMode = sortMode,
-                showHiddenFiles = showHiddenFiles,
-                // Only the folder on screen answers the search and the refresh
-                query = if (dir == currentDir) search.query else "",
-                refreshKey = refreshKey,
-                pm = pm,
-                mppIcon = mppIcon,
-                modDateFormat = modDateFormat,
-                checkedFiles = if (multiple) checkedFiles else null,
-                onOpen = { currentDir = it },
-                onFilePicked = { file ->
-                    when {
-                        allowFolderSelection -> Unit
-                        multiple -> if (!checkedFiles.remove(file)) checkedFiles += file
-                        else -> onPicked(listOf(file))
-                    }
+                .weight(1f)
+        ) {
+            // A folder slides in from the side it lies on, deeper ones from the end and the ones
+            // above from the start, so moving about the tree reads as moving along it
+            AnimatedContent(
+                targetState = currentDir,
+                transitionSpec = {
+                    val from = initialState
+                    val deeper = from == null ||
+                        targetState?.absolutePath?.startsWith(from.absolutePath + File.separator) == true
+                    val direction = if (deeper) 1 else -1
+                    (slideInHorizontally(tween(Defaults.ANIMATION_DURATION)) { it / 4 * direction } +
+                        fadeIn(tween(Defaults.ANIMATION_DURATION))) togetherWith
+                        (slideOutHorizontally(tween(Defaults.ANIMATION_DURATION)) { -it / 4 * direction } +
+                            fadeOut(tween(Defaults.ANIMATION_DURATION_SHORT)))
                 },
-                onRetry = { refreshKey++ }
-            )
+                modifier = Modifier.fillMaxSize(),
+                label = "filePickerFolder"
+            ) { dir ->
+                FolderListing(
+                    dir = dir,
+                    roots = roots,
+                    allowedExtensions = allowedExtensions,
+                    sortMode = sortMode,
+                    showHiddenFiles = showHiddenFiles,
+                    // Only the folder on screen answers the search and the refresh
+                    query = if (dir == currentDir) search.query else "",
+                    refreshKey = refreshKey,
+                    pm = pm,
+                    mppIcon = mppIcon,
+                    modDateFormat = modDateFormat,
+                    checkedFiles = if (multiple) checkedFiles else null,
+                    onOpen = { currentDir = it },
+                    onFilePicked = { file ->
+                        when {
+                            allowFolderSelection -> Unit
+                            multiple -> if (!checkedFiles.remove(file)) checkedFiles += file
+                            else -> onPicked(listOf(file))
+                        }
+                    },
+                    onRetry = refresh
+                )
+            }
         }
     }
 }

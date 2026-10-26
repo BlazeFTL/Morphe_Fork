@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Každý zdroj</string>
     <string name="sources_filter_enabled_description">Záplaty zdrojů jsou převzaty z</string>
     <string name="sources_filter_disabled_description">Zdroje vypnuty</string>
-    <string name="sources_filter_updates">Aktualizace</string>
-    <string name="sources_filter_updates_description">Zdroje s novější verzí k získání</string>
     <string name="sources_filter_issues">Vyžadují pozornost</string>
     <string name="sources_filter_issues_description">Zdroje, které jsou blokovány, selhaly při načítání nebo potřebují novější Morphe</string>
     <string name="sources_sort_manual">Ruční řazení</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Povolit předběžné záplaty?</string>
     <string name="sources_prerelease_warning_message">Předběžná sestavení jsou stále ve vývoji. Záplaty mohou selhat nebo poškodit aplikaci a funkce se mohou změnit bez upozornění.</string>
     <string name="expert_mode_prerelease_notice">Tento zdroj používá předběžné záplaty. Patchování může selhat nebo se chovat neočekávaně.</string>
+    <string name="expert_mode_experimental_version_notice">Tento zdroj má pro tuto verzi aplikace pouze experimentální podporu. Jeho záplaty mohou být nestabilní nebo neúplné</string>
     <string name="sources_management_experimental_versions_toggle">Experimentální verze aplikací</string>
     <string name="sources_management_experimental_versions_toggle_description">Zobrazuje a opravuje experimentální cíle aplikací</string>
     <string name="sources_management_already_exists">Tento zdroj byl již přidán</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Vyberte, které z jeho aplikací si chcete ponechat, až se zdroj načte.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Zdroje oprav třetích stran</string>
-    <string name="sources_dialog_community_notice_message">"Zdroje komunitních oprav jsou vytvářeny a spravovány jejich vlastními autory. Morphe nekontroluje ani neověřuje opravy třetích stran a nenese odpovědnost za jejich obsah ani za to, co s vaším zařízením dělají.
-
-Cokoli, co z této webové stránky přidáte, používáte na vlastní riziko."</string>
+    <string name="sources_dialog_community_notice_message">"Zdroje komunitních oprav jsou vytvářeny a udržovány jejich vlastními autory. Morphe neprovádí revizi ani ověřování oprav třetích stran a není zodpovědný za jejich obsah ani za to, co způsobí ve vašem zařízení"</string>
     <string name="sources_update_success">Aktualizace úspěšná</string>
     <string name="sources_update_unavailable">Nejsou dostupné žádné aktualizace</string>
     <string name="sources_download_fail">Selhalo stahování zdrojů: %s</string>
@@ -708,6 +705,7 @@ Odinstalace trvale smaže všechna data aplikace"</string>
     <string name="patched_app_save_failed_toast">Chyba při ukládání zastaralé aplikace</string>
     <string name="plugin_activity_dialog_body">Provedení je vyžadováno pro pokračování v tomto rozšíření</string>
     <string name="patcher_process_killed_message">Systém ukončil patcher před dokončením, obvykle kvůli uvolnění paměti. Zavřete jiné aplikace a zkuste to znovu</string>
+    <string name="patcher_process_crashed_message">Patcher spadl předtím, než dokončil svou práci. Pokud se to opakuje, vypněte v nastavení možnost \"Use embedded VM\" a nahlaste problém společně s logem</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Patcher došel paměť s %1$s MB heapem. Tato aplikace je příliš velká pro vybrané patche. Zkuste patchovat s méně zdrojů patchů nebo vyberte méně patchů</string>
     <string name="install_app_success">Úspěšně nainstalováno</string>
@@ -1354,7 +1352,6 @@ Podrobnosti: %2$s"</string>
     <string name="expanded">Rozbaleno</string>
     <string name="collapse">Sbalit</string>
     <string name="collapsed">Sbaleno</string>
-    <string name="available">Dostupné</string>
     <string name="continue_">Pokračovat</string>
     <string name="version">Verze</string>
     <!-- Who made a patch source, as a field label -->

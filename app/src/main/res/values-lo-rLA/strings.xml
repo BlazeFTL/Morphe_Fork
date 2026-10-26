@@ -814,7 +814,6 @@ morphe_header_custom_dark.png
     <string name="expanded">ຂະຫຍາຍແລ້ວ</string>
     <string name="collapse">ຍຸບ</string>
     <string name="collapsed">ຍຸບແລ້ວ</string>
-    <string name="available">ມີໃຫ້</string>
     <string name="continue_">ສືບຕໍ່</string>
     <string name="version">ເວີຊັນ</string>
     <!-- Who made a patch source, as a field label -->

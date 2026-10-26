@@ -29,6 +29,7 @@ import java.util.concurrent.FutureTask
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 import kotlin.time.Duration.Companion.milliseconds
+import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.nanoseconds
 import kotlin.time.Duration.Companion.seconds
 import kotlin.time.TimeSource
@@ -262,7 +263,8 @@ private class HostEvents(stream: OutputStream) : AutoCloseable {
                     "Collecting garbage took ${(share * 100).toInt()}% of the last " +
                             "${window.milliseconds.inWholeSeconds}s, heap=${heapUsedMebibytes()}MB/${heapLimitMebibytes()}MB"
                 )
-                send(HostEvent.Finished(HostEvent.Failure(error)))
+                val failure = HostEvent.Failure(error.stackTraceToString(), outOfMemory = true)
+                send(HostEvent.Finished(failure))
                 exitProcess(0)
             }
         }
@@ -298,7 +300,8 @@ private class HostEvents(stream: OutputStream) : AutoCloseable {
     override fun close() = writer.close()
 
     private companion object {
-        val STALL_TIMEOUT = 60.seconds
+        // Writing TikTok reports no progress for nearly 3 minutes on a slow 32-bit phone
+        val STALL_TIMEOUT = 5.minutes
         val STALL_POLL = 5.seconds
         const val STALL_DUMPS = 5
 

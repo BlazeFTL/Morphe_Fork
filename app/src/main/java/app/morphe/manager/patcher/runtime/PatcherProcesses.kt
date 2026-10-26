@@ -322,13 +322,13 @@ class PatcherProcesses(
             val finished = relay(logger, listener)
             ended = true
             if (finished == null) {
-                val reason = exitReason()
+                val killed = killedException()
                 val errorFile = errorFile(started.pid)
                 if (errorFile.exists()) {
                     logger.error("Patcher JVM error report:\n${errorFile.readText()}")
                     errorFile.delete()
                 }
-                throw PatcherKilledException(reason)
+                throw killed
             }
 
             val failure = finished.failure ?: return
@@ -368,12 +368,11 @@ class PatcherProcesses(
         }
 
         /**
-         * What the system recorded about the end of the process, in words for the log. Asked a few
-         * times, as the record is only written once the system has dealt with the death, which can
-         * lag behind the pipe closing.
+         * The end of the process as the system recorded it. Asked a few times, as the record is only
+         * written once the system has dealt with the death, which can lag behind the pipe closing.
          */
-        private suspend fun exitReason(): String {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return NO_EXIT_RECORD
+        private suspend fun killedException(): PatcherKilledException {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return PatcherKilledException(NO_EXIT_RECORD, crashed = false)
 
             val activityManager = app.getSystemService(ActivityManager::class.java)
             return withTimeoutOrNull(EXIT_RECORD_TIMEOUT) {
@@ -382,8 +381,10 @@ class PatcherProcesses(
                     info = activityManager.getHistoricalProcessExitReasons(app.packageName, started.pid, 1).firstOrNull()
                     if (info == null) delay(EXIT_RECORD_POLL)
                 } while (info == null)
-                info.describe()
-            } ?: NO_EXIT_RECORD
+                val crashed = info.reason == ApplicationExitInfo.REASON_CRASH_NATIVE ||
+                        info.reason == ApplicationExitInfo.REASON_CRASH
+                PatcherKilledException(info.describe(), crashed)
+            } ?: PatcherKilledException(NO_EXIT_RECORD, crashed = false)
         }
 
         // The run is over or was given up on, and nothing but the end of its process stops a JVM

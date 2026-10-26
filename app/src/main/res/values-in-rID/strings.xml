@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Semua sumber</string>
     <string name="sources_filter_enabled_description">Patch sumber diambil dari</string>
     <string name="sources_filter_disabled_description">Sumber dimatikan</string>
-    <string name="sources_filter_updates">Pembaruan</string>
-    <string name="sources_filter_updates_description">Sumber dengan versi terbaru untuk mendapatkan</string>
     <string name="sources_filter_issues">Perlu perhatian</string>
     <string name="sources_filter_issues_description">Sumber yang diblokir, gagal dimuat, atau memerlukan Morphe yang lebih baru</string>
     <string name="sources_sort_manual">Urutan manual</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Aktifkan tambalan pra-rilis?</string>
     <string name="sources_prerelease_warning_message">Build pra-rilis masih tahap pengembangan. Tambalan mungkin gagal atau merusak aplikasi, dan fitur dapat berubah tanpa pemberitahuan</string>
     <string name="expert_mode_prerelease_notice">Sumber ini menggunakan tambalan pra-rilis. Proses penambalan mungkin gagal atau berjalan tidak sesuai harapan</string>
+    <string name="expert_mode_experimental_version_notice">Sumber ini hanya memiliki dukungan eksperimental untuk versi aplikasi ini. Patch-nya mungkin tidak stabil atau tidak lengkap</string>
     <string name="sources_management_experimental_versions_toggle">Versi aplikasi eksperimental</string>
     <string name="sources_management_experimental_versions_toggle_description">Menampilkan dan menambal target aplikasi eksperimental</string>
     <string name="sources_management_already_exists">Sumber ini sudah ditambahkan</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Pilih aplikasi mana yang ingin dipertahankan setelah sumber dimuat.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Sumber tambalan pihak ketiga</string>
-    <string name="sources_dialog_community_notice_message">"Sumber tambalan komunitas dibuat dan dikelola oleh pembuatnya masing-masing. Morphe tidak meninjau atau memverifikasi tambalan pihak ketiga, serta tidak bertanggung jawab atas konten maupun dampaknya terhadap perangkat Anda.
-
-Segala sesuatu yang Anda tambahkan dari situs web ini digunakan atas risiko Anda sendiri"</string>
+    <string name="sources_dialog_community_notice_message">"Sumber tambalan komunitas dibuat dan dikelola oleh pembuatnya masing-masing. Morphe tidak meninjau atau memverifikasi tambalan pihak ketiga, serta tidak bertanggung jawab atas konten maupun dampaknya terhadap perangkat Anda"</string>
     <string name="sources_update_success">Pembaruan berhasil</string>
     <string name="sources_update_unavailable">Tidak ada pembaruan tersedia</string>
     <string name="sources_download_fail">Gagal mengunduh sumber: %s</string>
@@ -709,6 +706,7 @@ Mencopot akan menghapus semua data aplikasi secara permanen"</string>
     <string name="patched_app_save_failed_toast">Gagal menyimpan aplikasi yang ditambal</string>
     <string name="plugin_activity_dialog_body">Interaksi pengguna diperlukan untuk melanjutkan plugin ini</string>
     <string name="patcher_process_killed_message">Sistem menghentikan patcher sebelum selesai, biasanya untuk membebaskan memori. Tutup aplikasi lain dan coba lagi</string>
+    <string name="patcher_process_crashed_message">Patcher terhenti secara tiba-tiba sebelum selesai. Jika ini terjadi lagi, nonaktifkan \"Use embedded VM\" di pengaturan dan laporkan masalah ini beserta log-nya</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Penambal kehabisan memori dengan heap %1$s MB. Aplikasi ini terlalu besar untuk tambalan yang dipilih. Coba menambal dengan lebih sedikit sumber tambalan, atau pilih lebih sedikit tambalan</string>
     <string name="install_app_success">Berhasil dipasang</string>
@@ -1355,7 +1353,6 @@ Rincian: %2$s"</string>
     <string name="expanded">Diperluas</string>
     <string name="collapse">Kecilkan</string>
     <string name="collapsed">Diciutkan</string>
-    <string name="available">Tersedia</string>
     <string name="continue_">Lanjutkan</string>
     <string name="version">Versi</string>
     <!-- Who made a patch source, as a field label -->

@@ -62,7 +62,6 @@ dependencies {
 
     // Morphe
     implementation(project(":patcher-core"))
-    implementation(libs.arsclib)
     implementation(libs.morphe.patcher)
     patcherHost(project(":patcher-core", "hostJar"))
     // Unpacks the embedded JVM, which ships compressed with xz

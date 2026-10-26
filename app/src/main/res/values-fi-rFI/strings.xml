@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Jokainen lähde</string>
     <string name="sources_filter_enabled_description">Lähtekohdat poistetaan lähdekoodista</string>
     <string name="sources_filter_disabled_description">Lähteet pois päältä</string>
-    <string name="sources_filter_updates">Päivitykset</string>
-    <string name="sources_filter_updates_description">Hanki uudempi versio lähteistä</string>
     <string name="sources_filter_issues">Huomioitavaa</string>
     <string name="sources_filter_issues_description">Lähteet, jotka on estetty, joita ei voitu ladata tai jotka vaativat uudemman Morphen</string>
     <string name="sources_sort_manual">Manuaalinen järjestys</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Ota käyttöön esijulkaisupatchit?</string>
     <string name="sources_prerelease_warning_message">Esijulkaisuversiot ovat vielä kehitysvaiheessa. Patchit voivat epäonnistua tai rikkoa sovelluksen, ja ominaisuudet voivat muuttua ilman varoitusta</string>
     <string name="expert_mode_prerelease_notice">Tämä lähde on esijulkaisussa. Patchaaminen voi epäonnistua tai toimia odottamattomasti</string>
+    <string name="expert_mode_experimental_version_notice">Tällä lähteellä on vain kokeellinen tuki tälle sovellusversiolle. Sen päivitykset voivat olla epävakaita tai puutteellisia</string>
     <string name="sources_management_experimental_versions_toggle">Kokeelliset sovellusversiot</string>
     <string name="sources_management_experimental_versions_toggle_description">Näyttää ja korjaa kokeellisia sovelluksen kohteita</string>
     <string name="sources_management_already_exists">Tämä lähde on jo lisätty</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Valitse, mitkä sen sovelluksista pidät, kun lähde on latautunut.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Kolmannen osapuolen korjauslähteet</string>
-    <string name="sources_dialog_community_notice_message">"Yhteisön korjauslähteet ovat omien tekijöidensä luomia ja ylläpitämiä. Morphe ei tarkasta tai vahvista kolmannen osapuolen korjauksia, eikä ole vastuussa niiden sisällöstä tai siitä, mitä ne tekevät laitteellasi.
-
-Kaikki mitä lisäät tältä verkkosivustolta, on oma riskisi."</string>
+    <string name="sources_dialog_community_notice_message">"Yhteisön paikkalähteet ovat niiden omien tekijöiden luomia ja ylläpitämiä. Morphe ei tarkista tai vahvista kolmansien osapuolten paikkoja, eikä se ole vastuussa niiden sisällöstä tai siitä, mitä ne tekevät laitteellesi"</string>
     <string name="sources_update_success">Päivitys onnistui</string>
     <string name="sources_update_unavailable">Päivityksiä ei ole saatavilla</string>
     <string name="sources_download_fail">Lähteiden lataaminen epäonnistui: %s</string>
@@ -709,6 +706,7 @@ Poistaminen poistaa pysyvästi kaikki sovelluksen tiedot."</string>
     <string name="patched_app_save_failed_toast">Muokatun sovelluksen tallennus epäonnistui</string>
     <string name="plugin_activity_dialog_body">Tämän liitännäisen käyttöönoton jatkamiseksi tarvitaan käyttäjän toimia.</string>
     <string name="patcher_process_killed_message">Järjestelmä pysäytti paikkurin ennen sen valmistumista, yleensä muistin vapauttamiseksi. Sulje muut sovellukset ja yritä uudelleen</string>
+    <string name="patcher_process_crashed_message">Päivitysohjelma kaatui ennen valmistumista. Jos tämä toistuu, poista käytöstä \"Käytä upotettua VM:ää\" asetuksista ja raportoi ongelma lokitiedoston kanssa</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Paikantaja loppui muistin puutteesta %1$s MT:n pinolla. Tämä sovellus on liian suuri valituille paikoille. Kokeile paikantamista vähemmällä paikantalähteellä tai valitse vähemmän paikkoja</string>
     <string name="install_app_success">Asennus onnistui</string>
@@ -1353,7 +1351,6 @@ Yksityiskohdat: %2$s"</string>
     <string name="expanded">Laajennettu</string>
     <string name="collapse">Tiivistä</string>
     <string name="collapsed">Tiivistetty</string>
-    <string name="available">Saatavilla</string>
     <string name="continue_">Jatka</string>
     <string name="version">Versio</string>
     <!-- Who made a patch source, as a field label -->

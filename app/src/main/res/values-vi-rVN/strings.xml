@@ -35,6 +35,8 @@
     <!-- Asked when the link names an app of a source that is already added -->
     <string name="deep_link_add_source_app_back">Nguồn này đã được thêm. Thêm ứng dụng này từ nguồn hiện có không?</string>
     <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">Đây là phiên bản mới của %s. Bạn có muốn cập nhật không?</string>
+    <string name="mpp_import_unreadable">Không thể đọc tệp này</string>
     <!-- Home Screen - Update Notifications -->
     <string name="home_update_available">Đã có bản cập nhật Morphe mới</string>
     <string name="home_update_available_subtitle">Phiên bản mới đã sẵn sàng để được cài đặt</string>
@@ -167,8 +169,6 @@
     <string name="sources_filter_all_description">Mọi nguồn</string>
     <string name="sources_filter_enabled_description">Nguồn patch được lấy từ</string>
     <string name="sources_filter_disabled_description">Nguồn đã tắt</string>
-    <string name="sources_filter_updates">Cập nhật</string>
-    <string name="sources_filter_updates_description">Nguồn có phiên bản mới hơn để tải</string>
     <string name="sources_filter_issues">Cần xử lý</string>
     <string name="sources_filter_issues_description">Các nguồn bị chặn, không thể tải hoặc cần Morphe mới hơn</string>
     <string name="sources_sort_manual">Sắp xếp thủ công</string>
@@ -197,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Bật các bản vá trước khi phát hành?</string>
     <string name="sources_prerelease_warning_message">Các bản dựng trước khi phát hành vẫn đang trong quá trình phát triển. Các bản vá có thể thất bại hoặc làm hỏng ứng dụng, và các tính năng có thể thay đổi mà không có cảnh báo</string>
     <string name="expert_mode_prerelease_notice">Nguồn này đang sử dụng các bản vá trước khi phát hành. Việc vá có thể thất bại hoặc hoạt động không như mong đợi</string>
+    <string name="expert_mode_experimental_version_notice">Nguồn này chỉ có hỗ trợ thử nghiệm cho phiên bản ứng dụng này. Các bản vá của nó có thể không ổn định hoặc không đầy đủ</string>
     <string name="sources_management_experimental_versions_toggle">Phiên bản ứng dụng thử nghiệm</string>
     <string name="sources_management_experimental_versions_toggle_description">Hiển thị và vá các mục tiêu ứng dụng thử nghiệm</string>
     <string name="sources_management_already_exists">Nguồn này đã được thêm vào rồi</string>
@@ -239,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Chọn ứng dụng nào của nguồn này để giữ lại sau khi nguồn đã được tải.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Nguồn vá bên thứ ba</string>
-    <string name="sources_dialog_community_notice_message">"Các nguồn vá cộng đồng được tạo và duy trì bởi chính các tác giả của họ. Morphe không xem xét hoặc xác minh các bản vá của bên thứ ba, và không chịu trách nhiệm về nội dung của chúng hoặc về những gì chúng thực hiện trên thiết bị của bạn.
-
-Bất cứ thứ gì bạn thêm từ trang web này đều được sử dụng với rủi ro của riêng bạn"</string>
+    <string name="sources_dialog_community_notice_message">"Các nguồn bản vá cộng đồng được tạo và duy trì bởi chính tác giả của họ. Morphe không xem xét hoặc xác minh các bản vá từ bên thứ ba và không chịu trách nhiệm về nội dung của chúng hoặc những gì chúng thực hiện trên thiết bị của bạn"</string>
     <string name="sources_update_success">Cập nhật thành công</string>
     <string name="sources_update_unavailable">Hiện không có bản cập nhật nào</string>
     <string name="sources_download_fail">Không thể tải nguồn vá: %s</string>
@@ -706,6 +705,7 @@ Gỡ cài đặt sẽ xóa vĩnh viễn toàn bộ dữ liệu ứng dụng"</st
     <string name="patched_app_save_failed_toast">Không thể lưu ứng dụng đã vá</string>
     <string name="plugin_activity_dialog_body">Bạn vẫn cần tự thao tác để tải ứng dụng</string>
     <string name="patcher_process_killed_message">Hệ thống đã dừng trình vá trước khi hoàn tất, thường là để giải phóng bộ nhớ. Đóng các ứng dụng khác và thử lại</string>
+    <string name="patcher_process_crashed_message">Trình vá lỗi đã bị treo trước khi hoàn tất. Nếu tình trạng này tiếp tục xảy ra, hãy tắt \"Sử dụng VM nhúng\" trong cài đặt và báo cáo sự cố kèm theo bản ghi log</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Trình vá đã hết bộ nhớ với heap %1$s MB. Ứng dụng này quá lớn so với các bản vá đã chọn. Hãy thử vá với ít nguồn vá hơn hoặc chọn ít bản vá hơn</string>
     <string name="install_app_success">Đã cài đặt thành công</string>
@@ -873,6 +873,7 @@ Các bản vá không bị ảnh hưởng: bật các bản vá trước khi ph�
     <string name="settings_advanced_update_interval_daily">Hàng ngày</string>
     <string name="settings_advanced_update_interval_weekly">Hàng tuần</string>
     <string name="settings_advanced_update_interval_monthly">Hàng tháng</string>
+    <string name="settings_advanced_update_interval_battery_warning">Kiểm tra nền có thể không hoạt động ổn định trên các thiết bị hạn chế ứng dụng chạy nền, chẳng hạn như Xiaomi, Huawei, Samsung và OnePlus</string>
     <string name="settings_advanced_external_batch_patch">Cho phép kích hoạt từ bên ngoài</string>
     <string name="settings_advanced_external_batch_patch_description">Cho phép các ứng dụng tự động hóa bắt đầu vá hàng loạt</string>
     <string name="external_batch_patch_title">Bắt đầu vá hàng loạt?</string>
@@ -934,6 +935,7 @@ Các bản vá không bị ảnh hưởng: bật các bản vá trước khi ph�
     <string name="settings_advanced_patch_options_custom_branding_app_name_hint">Nhập tên tùy chỉnh</string>
     <string name="settings_advanced_patch_options_path_gone">Biểu tượng ứng dụng tùy chỉnh cần một thư mục chứa hình ảnh biểu tượng.</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon">Biểu tượng</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">Biểu tượng mà ứng dụng được vá, cũng được sử dụng ở những nơi không thể thay đổi sau này, chẳng hạn như Android Auto</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">Biểu tượng ứng dụng tùy chỉnh cần một thư mục chứa hình ảnh biểu tượng.</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon">Biểu tượng tùy chỉnh</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"Thư mục chứa ảnh dùng làm biểu tượng tuỳ chỉnh.
@@ -1044,6 +1046,7 @@ Kết quả thực tế có thể khác nhau tùy theo phiên bản Android, ROM
     <string name="settings_auto_uninstall_with_shizuku">Tự động gỡ cài đặt khi có xung đột</string>
     <string name="settings_auto_uninstall_with_shizuku_description">Gỡ cài đặt ứng dụng hiện tại khi xung đột chữ ký. Điều này có thể xóa dữ liệu ứng dụng</string>
     <string name="settings_ignore_install_target_rules">Bỏ qua yêu cầu về đích cài đặt</string>
+    <string name="settings_ignore_install_target_rules_description">Cho phép tắt các bản vá mà mục tiêu cài đặt yêu cầu và bật những bản vá bị loại bỏ. Ứng dụng được vá có thể không hoạt động</string>
     <string name="settings_auto_uninstall_warning_title">Bật tính năng gỡ cài đặt tự động?</string>
     <string name="settings_auto_uninstall_warning_message">Nếu Android phát hiện xung đột chữ ký trong quá trình tự động cài đặt bằng Shizuku, Morphe sẽ gỡ ứng dụng đang có trước khi cài đặt APK đã vá</string>
     <string name="settings_auto_uninstall_warning_risk">Việc này có thể làm mất dữ liệu ứng dụng. Nếu APK đã vá không cài đặt được sau khi gỡ ứng dụng, ứng dụng trước đó có thể đã bị xóa và không thể khôi phục được</string>
@@ -1074,6 +1077,7 @@ Chi tiết: %2$s"</string>
     <string name="settings_system_battery_optimization_description">Duy trì trình vá tiếp tục chạy kể cả khi ứng dụng bị thu nhỏ</string>
     <string name="settings_system_process_runtime">Thời gian chạy Patcher</string>
     <string name="settings_system_jvm_runtime_enable">Sử dụng VM nhúng</string>
+    <string name="settings_system_jvm_runtime_description">Vá trong Java VM riêng của Morphe, có thể sử dụng nhiều bộ nhớ hơn. Tắt để sử dụng runtime của Android</string>
     <string name="settings_system_jvm_runtime_unavailable">Yêu cầu thiết bị ARM hoặc x86 64-bit</string>
     <string name="settings_system_patcher_completion_sound">Âm báo hoàn tất</string>
     <string name="settings_system_patcher_completion_sound_description">Phát ra âm thanh để báo hiệu kết quả vá thành công hoặc thất bại</string>
@@ -1351,7 +1355,6 @@ Chi tiết: %2$s"</string>
     <string name="expanded">Đã mở rộng</string>
     <string name="collapse">Thu gọn</string>
     <string name="collapsed">Đã thu gọn</string>
-    <string name="available">Khả dụng</string>
     <string name="continue_">Tiếp</string>
     <string name="version">Phiên bản</string>
     <!-- Who made a patch source, as a field label -->

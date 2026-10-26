@@ -212,9 +212,6 @@
     <string name="sources_dialog_choose_apps_description">स्रोत लोड झाल्यावर त्यातील कोणते अॅप्स ठेवायचे ते निवडा</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">तृतीय-पक्ष पॅच स्रोत</string>
-    <string name="sources_dialog_community_notice_message">"समुदाय पॅच स्रोत त्यांच्या स्वतःच्या लेखकांद्वारे बनविले जातात आणि देखरेख केले जातात. Morphe तृतीय-पक्ष पॅचेसचे पुनरावलोकन किंवा सत्यापन करत नाही, आणि त्यांच्या सामग्रीसाठी किंवा ते आपल्या डिव्हाइसवर काय करतात यासाठी जबाबदार नाही.
-
-आपण या वेबसाइटवरून जोडलेली कोणतीही गोष्ट आपल्या स्वतःच्या जोखमीवर वापरली जाते."</string>
     <string name="sources_update_success">अपडेट यशस्वी</string>
     <string name="sources_update_unavailable">कोणतेही अपडेट उपलब्ध नाही</string>
     <string name="sources_download_fail"> मुळ डाउनलोड होऊ शकली नाहीत: %s</string>
@@ -1206,7 +1203,6 @@ morphe_header_custom_dark.png
     <string name="expanded">विस्तारित</string>
     <string name="collapse">कोलमडून</string>
     <string name="collapsed">कोलमडलेले</string>
-    <string name="available">उपलब्ध</string>
     <string name="continue_">सुरू ठेवा</string>
     <string name="version">व्हर्जन</string>
     <!-- Who made a patch source, as a field label -->

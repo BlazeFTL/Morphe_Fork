@@ -696,7 +696,6 @@ morphe_header_custom_dark.png
     <string name="expanded">Проширено</string>
     <string name="collapse">Склопи</string>
     <string name="collapsed">Свиткано</string>
-    <string name="available">Достапно</string>
     <string name="continue_">Продолжи</string>
     <string name="version">Верзија</string>
     <!-- Who made a patch source, as a field label -->

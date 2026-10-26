@@ -169,8 +169,6 @@
     <string name="sources_filter_all_description">Alle kilder</string>
     <string name="sources_filter_enabled_description">Kildefejlsøgninger er hentet fra</string>
     <string name="sources_filter_disabled_description">Kilder slukket</string>
-    <string name="sources_filter_updates">Opdateringer</string>
-    <string name="sources_filter_updates_description">Kilder med en nyere version, der skal hentes</string>
     <string name="sources_filter_issues">Brug for opmærksomhed</string>
     <string name="sources_filter_issues_description">Kilder, der er blokeret, fejlede at indlæse eller kræver en nyere Morphe</string>
     <string name="sources_sort_manual">Manuel rækkefølge</string>
@@ -199,6 +197,7 @@
     <string name="sources_prerelease_warning_title">Aktivér præ-release-patcher?</string>
     <string name="sources_prerelease_warning_message">Præ-release-versioner er stadig under udvikling. Patcher kan mislykkes eller ødelægge appen, og funktioner kan ændres uden advarsel</string>
     <string name="expert_mode_prerelease_notice">Denne kilde er på præ-release-patcher. Patchning kan mislykkes eller opføre sig uventet</string>
+    <string name="expert_mode_experimental_version_notice">Denne kilde har kun eksperimentel understøttelse for denne app-version. Dens patches kan være ustabile eller ufuldstændige</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentelle app-versioner</string>
     <string name="sources_management_experimental_versions_toggle_description">Viser og retter eksperimentelle app-mål</string>
     <string name="sources_management_already_exists">Denne kilde er allerede tilføjet</string>
@@ -241,9 +240,7 @@
     <string name="sources_dialog_choose_apps_description">Vælg, hvilke af dens apps der skal beholdes, når kilden er indlæst.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Tredjeparts patch-kilder</string>
-    <string name="sources_dialog_community_notice_message">"Fællesskabets patch-kilder er lavet og vedligeholdt af deres egne forfattere. Morphe gennemgår eller verificerer ikke tredjeparts patches og er ikke ansvarlig for deres indhold eller for hvad de gør på din enhed.
-
-Alt, hvad du tilføjer fra denne hjemmeside, bruges på egen risiko."</string>
+    <string name="sources_dialog_community_notice_message">"Kilder til community-patches er lavet og vedligeholdes af deres egne forfattere. Morphe gennemser eller verificerer ikke tredjeparts-patches og er ikke ansvarlig for deres indhold eller for, hvad de gør på din enhed"</string>
     <string name="sources_update_success">Opdatering vellykket</string>
     <string name="sources_update_unavailable">Ingen opdatering tilgængelig</string>
     <string name="sources_download_fail">Kunne ikke hente patchkilder: %s</string>
@@ -708,6 +705,7 @@ Afinstallation sletter permanent alle appdata."</string>
     <string name="patched_app_save_failed_toast">Kunne ikke gemme patchet app</string>
     <string name="plugin_activity_dialog_body">Brugerinteraktion er nødvendig for at fortsætte med dette plugin</string>
     <string name="patcher_process_killed_message">Systemet stoppede patcheren, før den var færdig, typisk for at frigøre hukommelse. Luk andre apps, og prøv igen</string>
+    <string name="patcher_process_crashed_message">Patcheren crashede før den blev færdig. Hvis det sker igen, skal du slå \"Brug indlejret VM\" fra i indstillingerne og rapportere problemet med loggen</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Patcheren løb tør for hukommelse med en %1$s MB stor heap. Denne app er for stor til de valgte patches. Prøv at patche med færre patch-kilder, eller vælg færre patches</string>
     <string name="install_app_success">Installeret</string>
@@ -1354,7 +1352,6 @@ Detaljer: %2$s"</string>
     <string name="expanded">Udvidet</string>
     <string name="collapse">Minimer</string>
     <string name="collapsed">Minimeret</string>
-    <string name="available">Tilgængelig</string>
     <string name="continue_">Fortsæt</string>
     <string name="version">Version</string>
     <!-- Who made a patch source, as a field label -->
