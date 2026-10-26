@@ -22,7 +22,6 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
 import app.morphe.manager.ui.theme.ThemeTraitsDefaults
@@ -290,15 +289,16 @@ private fun HeaderTitleText(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(DialogHeaderDefaults.TextSpacing)
     ) {
-        // Two lines, so a list named in a phrase rather than a name keeps it whole beside
-        // the header's actions
+        // One line, so every header stands as tall beside its actions. A list named in a phrase
+        // too long for it scrolls through twice and settles back at its start
         Text(
             text = title,
             style = DialogHeaderDefaults.titleStyle,
             color = dialogTextColor(),
-            maxLines = 2,
-            overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.headerTitleEntrance(entrance)
+            maxLines = 1,
+            modifier = Modifier
+                .headerTitleEntrance(entrance)
+                .marquee()
         )
         val subtitleStyle = DialogHeaderDefaults.subtitleStyle
         // Eases from the shimmer into the text and from one text to the next as the list it

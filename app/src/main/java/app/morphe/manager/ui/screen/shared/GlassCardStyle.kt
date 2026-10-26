@@ -83,9 +83,12 @@ internal data class GlassCardStyle(
         val fill = color ?: cardColor
         if (fill.requiresLightContent()) return this
 
+        // The shadows lift white text off the glass, and only smudge dark text on a light fill
         return copy(
             titleColor = Color.Black,
             subtitleColor = Color.Black.copy(alpha = subtitleColor.alpha),
+            titleStyle = titleStyle.copy(shadow = null),
+            subtitleStyle = subtitleStyle.copy(shadow = null),
             chipContainerColor = Color.Black.copy(alpha = chipContainerColor.alpha),
             chipContentColor = Color.Black,
             markContainerColor = Color.Black.copy(alpha = markContainerColor.alpha)

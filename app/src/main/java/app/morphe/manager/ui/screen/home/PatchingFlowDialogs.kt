@@ -7,7 +7,6 @@ package app.morphe.manager.ui.screen.home
 
 import android.os.Build
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -938,7 +937,7 @@ private fun VersionRow(
                     maxLines = 1,
                     modifier = Modifier
                         .weight(1f)
-                        .basicMarquee(iterations = Int.MAX_VALUE)
+                        .marquee()
                 )
                 if (badgeTags.size == 1) VersionTagBadge(badgeTags.single())
             }

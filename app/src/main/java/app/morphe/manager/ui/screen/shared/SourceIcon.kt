@@ -64,7 +64,7 @@ fun BundleTypeBadge(
 /** Icon a source's origin goes by, shared by the dialog adding a source and the card listing it. */
 val BundleSourceType.icon: ImageVector
     get() = when (this) {
-        BundleSourceType.PreInstalled -> MaterialSymbols.Rounded.Verified_user
+        BundleSourceType.PreInstalled -> MaterialSymbols.Rounded.Verified
         BundleSourceType.Remote -> MaterialSymbols.Rounded.Language
         BundleSourceType.Local -> MaterialSymbols.Rounded.Draft.autoMirrored
     }
@@ -85,13 +85,14 @@ fun BundleIcon(
     val hasBundleError = bundle.state is PatchBundleSource.State.Failed
     val isMissing = bundle.state is PatchBundleSource.State.Missing
 
+    // Kept apart from the card under it, which a source's problem fills with the same container
     val animatedColor by animateColorAsState(
         targetValue = when {
             bundle.isDefault -> Color.White
-            hasBundleError -> MaterialTheme.colorScheme.errorContainer
+            hasBundleError -> MaterialTheme.colorScheme.errorContainer.distinctFromCard()
             // Matches the icon below, which a missing source wears as well
-            hasMetadataError || isMissing -> SemanticTone.Warning.container
-            enabled -> MaterialTheme.colorScheme.primaryContainer
+            hasMetadataError || isMissing -> SemanticTone.Warning.container.distinctFromCard()
+            enabled -> MaterialTheme.colorScheme.primaryContainer.distinctFromCard()
             else -> MaterialTheme.colorScheme.surfaceVariant.distinctFromCard()
         },
         label = "bundle_icon_color"

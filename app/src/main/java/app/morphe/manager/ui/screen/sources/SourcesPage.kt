@@ -6,6 +6,8 @@
 package app.morphe.manager.ui.screen.sources
 
 import android.content.Intent
+import androidx.annotation.StringRes
+import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Spring
@@ -854,18 +856,21 @@ private fun BundleManagementCard(
     val isUnavailable = info.metadataFetchError != null || bundle.state is PatchBundleSource.State.Missing
     val signingKeyChanged = info.metadataFetchError is PatchBundleSignerChangedException
 
+    val problem = sourceProblem(bundle, isBlocked, signingKeyChanged, isUnavailable)
+
     // A glass card like an app's on the home screen, in one color rather than a gradient: the
     // source's own while it works, after the card colors the appearance settings pick, the
-    // problem's while it does not, and none once switched off
-    val accentColor = usableAppAccent(rememberBundleAccent(bundle).takeIf { isEnabled && !isUnavailable })
+    // problem's while it does not, and none once switched off. A problem fills the card with its
+    // tone's container, the shade the theme pairs with surfaces rather than with text
+    val accentColor = usableAppAccent(rememberBundleAccent(bundle).takeIf { isEnabled && problem == null })
     val baseStyle = glassCardStyle()
-    val tint = when {
-        isBlocked -> MaterialTheme.colorScheme.error
-        isUnavailable -> SemanticTone.Warning.accent
-        else -> accentColor?.let { baseStyle.flatColor(it.darken(SOURCE_CARD_COLOR_DEPTH)) }
-    }
+    val problemFill = problem?.tone?.container
+    val tint = problemFill
+        ?: accentColor?.let { baseStyle.flatColor(it.darken(SOURCE_CARD_COLOR_DEPTH)) }
     val cardStyle = baseStyle.onFill(tint)
-    val cardColor = cardStyle.flatFill(tint)
+    // A container is already the shade meant to lie under content, and see-through it washes out
+    // on a light background, so a problem's is laid down whole rather than as glass
+    val cardColor = problemFill?.takeUnless { cardStyle.monochrome } ?: cardStyle.flatFill(tint)
     val animatedColor by animateColorAsState(cardColor, label = "bundle_card_color")
     // The color stays on the header, laid down opaque as it shows over the page, and the card
     // under it is plain, where the panels and controls opening in it were drawn to stand out. The
@@ -928,63 +933,66 @@ private fun BundleManagementCard(
 
                 Column {
                     // Click target only on the header so expanded children stay independently focusable for screen readers
-                    BundleCardHeader(
-                        bundle = bundle,
-                        cardStyle = cardStyle,
-                        expanded = expanded,
-                        showChevron = !forceExpanded,
-                        selected = isSelected.takeIf { isSelectionMode },
-                        dragHandleModifier = dragHandleModifier,
-                        enabled = isEnabled,
-                        metadataFetchError = info.metadataFetchError,
-                        unavailable = isUnavailable,
-                        blockedInfo = info.blockedInfo,
-                        patchMatchCount = info.patchMatchCount,
-                        onShowPatchMatches = actions.onPatchesClick,
-                        modifier = Modifier
-                            .background(headerColor)
-                            .padding(horizontal = cardStyle.contentPadding)
-                            .then(
-                                if (onHeaderClick != null || onLongClick != null) {
-                                    Modifier.combinedClickable(
-                                        // The card answers a tap by folding
-                                        indication = shapedIndication(
-                                            RoundedCornerShape(Defaults.CornerMedium),
-                                            press = false
-                                        ),
-                                        interactionSource = headerInteraction,
-                                        onClick = { onHeaderClick?.invoke() },
-                                        onLongClick = onLongClick
-                                    )
-                                } else {
-                                    Modifier
-                                }
-                            )
-                            .semantics(mergeDescendants = true) {
-                                if (isSelectionMode) {
-                                    selected = isSelected
-                                } else if (folds) {
-                                    role = Role.Button
-                                    stateDescription = if (expanded) expandedState else collapsedState
-                                }
-                                this.contentDescription = contentDesc
-                                customActions = buildList {
-                                    // The match badge is a tap target the merged node swallows otherwise
-                                    if (info.patchMatchCount != null) {
-                                        add(CustomAccessibilityAction(patchesLabel) { actions.onPatchesClick(); true })
+                    // What the header holds keeps apart from the header's own fill rather than the body's
+                    CompositionLocalProvider(LocalCardBackground provides headerColor) {
+                        BundleCardHeader(
+                            bundle = bundle,
+                            cardStyle = cardStyle,
+                            expanded = expanded,
+                            showChevron = !forceExpanded,
+                            selected = isSelected.takeIf { isSelectionMode },
+                            dragHandleModifier = dragHandleModifier,
+                            enabled = isEnabled,
+                            metadataFetchError = info.metadataFetchError,
+                            problem = problem,
+                            blockedInfo = info.blockedInfo,
+                            patchMatchCount = info.patchMatchCount,
+                            onShowPatchMatches = actions.onPatchesClick,
+                            modifier = Modifier
+                                .background(headerColor)
+                                .padding(horizontal = cardStyle.contentPadding)
+                                .then(
+                                    if (onHeaderClick != null || onLongClick != null) {
+                                        Modifier.combinedClickable(
+                                            // The card answers a tap by folding
+                                            indication = shapedIndication(
+                                                RoundedCornerShape(Defaults.CornerMedium),
+                                                press = false
+                                            ),
+                                            interactionSource = headerInteraction,
+                                            onClick = { onHeaderClick?.invoke() },
+                                            onLongClick = onLongClick
+                                        )
+                                    } else {
+                                        Modifier
                                     }
-                                    // A long press is the only way into a selection, which a
-                                    // screen reader cannot announce on its own
-                                    if (onLongClick != null && !isSelectionMode) {
-                                        add(CustomAccessibilityAction(selectLabel) { onLongClick(); true })
+                                )
+                                .semantics(mergeDescendants = true) {
+                                    if (isSelectionMode) {
+                                        selected = isSelected
+                                    } else if (folds) {
+                                        role = Role.Button
+                                        stateDescription = if (expanded) expandedState else collapsedState
                                     }
-                                    if (onMove != null) {
-                                        add(CustomAccessibilityAction(moveUpLabel) { onMove(-1); true })
-                                        add(CustomAccessibilityAction(moveDownLabel) { onMove(1); true })
+                                    this.contentDescription = contentDesc
+                                    customActions = buildList {
+                                        // The match badge is a tap target the merged node swallows otherwise
+                                        if (info.patchMatchCount != null) {
+                                            add(CustomAccessibilityAction(patchesLabel) { actions.onPatchesClick(); true })
+                                        }
+                                        // A long press is the only way into a selection, which a
+                                        // screen reader cannot announce on its own
+                                        if (onLongClick != null && !isSelectionMode) {
+                                            add(CustomAccessibilityAction(selectLabel) { onLongClick(); true })
+                                        }
+                                        if (onMove != null) {
+                                            add(CustomAccessibilityAction(moveUpLabel) { onMove(-1); true })
+                                            add(CustomAccessibilityAction(moveDownLabel) { onMove(1); true })
+                                        }
                                     }
                                 }
-                            }
-                    )
+                        )
+                    }
 
                     // Expanded content
                     ListRowFold(visible = expanded) {
@@ -1002,7 +1010,7 @@ private fun BundleManagementCard(
                                 CardNotice(
                                     visible = info.blockedInfo != null,
                                     text = if (blockedReason != null) "$blockedLabel: $blockedReason" else blockedLabel,
-                                    icon = SourceStateIcons.Blocked
+                                    icon = SourceProblem.Blocked.icon
                                 )
 
                                 // Metadata unavailable hint (shown when patches-bundle.json / remote fetch failed)
@@ -1013,14 +1021,14 @@ private fun BundleManagementCard(
                                     } else {
                                         stringResource(R.string.sources_management_metadata_unavailable_hint)
                                     },
-                                    icon = SourceStateIcons.Unavailable
+                                    icon = SourceProblem.Unavailable.icon
                                 )
 
                                 // Signing key hint (shown when an update was refused for its signer)
                                 CardNotice(
                                     visible = signingKeyChanged,
                                     text = stringResource(R.string.sources_management_signing_key_changed_hint),
-                                    icon = SourceStateIcons.SigningKeyChanged,
+                                    icon = SourceProblem.SigningKeyChanged.icon,
                                     onClick = actions.onReviewSigningKey
                                 )
 
@@ -1028,7 +1036,7 @@ private fun BundleManagementCard(
                                 CardNotice(
                                     visible = bundle.isHeldBack,
                                     text = stringResource(R.string.sources_management_held_back_hint),
-                                    icon = SourceStateIcons.HeldBack
+                                    icon = SourceProblem.HeldBack.icon
                                 )
 
                                 // Outdated manager hint
@@ -1040,7 +1048,7 @@ private fun BundleManagementCard(
                                         BuildConfig.VERSION_NAME,
                                         BuildConfig.PATCHER_VERSION
                                     ),
-                                    icon = SourceStateIcons.OutdatedManager,
+                                    icon = SourceProblem.OutdatedManager.icon,
                                     onClick = actions.onOutdatedManagerClick
                                 )
                             }
@@ -1283,8 +1291,8 @@ private fun BundleCardHeader(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     metadataFetchError: Throwable? = null,
-    /** Whether the source's metadata could not be read, or its file is gone. */
-    unavailable: Boolean = false,
+    /** The most pressing problem with the source, named while the card is folded. */
+    problem: SourceProblem? = null,
     blockedInfo: BlocklistRepository.BlockedEntry? = null,
     patchMatchCount: Int? = null,
     onShowPatchMatches: (() -> Unit)? = null,
@@ -1309,11 +1317,16 @@ private fun BundleCardHeader(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(cardStyle.contentSpacing)
     ) {
-        // Where the source comes from stays on the end corner, and a source switched off takes the
-        // other one, so the card says both without a badge for either
+        // The corner says where the source comes from, or that it is switched off while its card is
+        // folded and faded back. Opened, the switch says that, so the corner goes back to the origin.
+        // A lone source, whose card stays open, has no other to be told apart from, so it goes bare
+        val switchedOff = !enabled && !expanded && blockedInfo == null
         MarkedIcon(
-            mark = bundle.sourceType.icon,
-            startMark = MaterialSymbols.Rounded.Power_settings_new.takeIf { !enabled && blockedInfo == null },
+            mark = when {
+                switchedOff -> MaterialSymbols.Rounded.Power_settings_new
+                showChevron -> bundle.sourceType.icon
+                else -> null
+            },
             markColor = cardStyle.markContainerColor,
             markSize = cardStyle.markSize,
             markContentColor = cardStyle.chipContentColor,
@@ -1335,33 +1348,62 @@ private fun BundleCardHeader(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(cardStyle.textSpacing)
         ) {
+            // A name or version too long for the card scrolls through once the card is opened, so
+            // it can be read in full there, and stays cut short in the list
             Text(
                 text = bundle.displayTitle,
                 style = cardStyle.titleStyle,
                 color = cardStyle.titleColor,
                 maxLines = 1,
-                overflow = TextOverflow.Ellipsis
+                overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.marquee(enabled = expanded)
             )
 
-            // Version, with the source's state badges pinned to the card edge like on an app card
+            // Opened, the card tells each problem in a notice of its own, so the badge leaves it to them
+            val shownProblem = problem.takeUnless { expanded }
+
+            // Badge height is reserved whether a badge is showing, so the name above stays put
             Row(
-                // Badge height is reserved whether a badge is showing, so the name above stays put
-                modifier = Modifier.height(statusBadgeHeight),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(statusBadgeHeight),
                 horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
+                // A folded card naming a problem gives it the version's place, faded through where
+                // the version was rather than grown over it. The version and date are back in the
+                // header and the body once the card is opened
+                AnimatedContent(
+                    targetState = shownProblem,
                     modifier = Modifier.weight(1f),
-                    text = subtitle,
-                    style = cardStyle.subtitleStyle,
-                    color = cardStyle.subtitleColor,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
+                    transitionSpec = Animations.fadeThrough(),
+                    contentAlignment = Alignment.CenterStart,
+                    label = "bundle_subtitle_problem"
+                ) { shown ->
+                    if (shown == null) {
+                        Text(
+                            text = subtitle,
+                            style = cardStyle.subtitleStyle,
+                            color = cardStyle.subtitleColor,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                            modifier = Modifier.marquee(enabled = expanded)
+                        )
+                    } else {
+                        // As wide as its label, rather than the whole place it stands in
+                        StatusBadge(
+                            text = stringResource(shown.label),
+                            modifier = Modifier.wrapContentWidth(Alignment.Start),
+                            icon = shown.icon,
+                            containerColor = cardStyle.chipContainerColor,
+                            contentColor = cardStyle.chipContentColor
+                        )
+                    }
+                }
 
-                // What the search found inside the source leads, being the reason the card is on
-                // screen at all. It swaps in without an animation of its own, since the list
-                // behind it is already re-ordering on every keystroke
+                // What the search found inside the source, pinned to the card edge like on an app
+                // card. It swaps in without an animation of its own, since the list behind it is
+                // already re-ordering on every keystroke
                 if (patchMatchCount != null) {
                     StatusBadge(
                         text = pluralStringResource(
@@ -1375,38 +1417,6 @@ private fun BundleCardHeader(
                         onClick = onShowPatchMatches
                     )
                 }
-
-                val signingKeyChanged = metadataFetchError is PatchBundleSignerChangedException
-                SourceStateBadge(
-                    visible = unavailable && !signingKeyChanged,
-                    text = stringResource(R.string.sources_management_metadata_unavailable),
-                    icon = SourceStateIcons.Unavailable,
-                    cardStyle = cardStyle
-                )
-                SourceStateBadge(
-                    visible = signingKeyChanged,
-                    text = stringResource(R.string.sources_management_signing_key_changed_badge),
-                    icon = SourceStateIcons.SigningKeyChanged,
-                    cardStyle = cardStyle
-                )
-                SourceStateBadge(
-                    visible = bundle.requiresManagerUpdate,
-                    text = stringResource(R.string.sources_management_outdated_manager_badge),
-                    icon = SourceStateIcons.OutdatedManager,
-                    cardStyle = cardStyle
-                )
-                SourceStateBadge(
-                    visible = bundle.isHeldBack,
-                    text = stringResource(R.string.sources_management_held_back_badge),
-                    icon = SourceStateIcons.HeldBack,
-                    cardStyle = cardStyle
-                )
-                SourceStateBadge(
-                    visible = blockedInfo != null,
-                    text = stringResource(R.string.sources_management_source_blocked_badge),
-                    icon = SourceStateIcons.Blocked,
-                    cardStyle = cardStyle
-                )
             }
         }
 
@@ -1426,40 +1436,52 @@ private fun BundleCardHeader(
 }
 
 /**
- * Icons a source's problems go by, shared by the badges on its card and the notices inside it, so
- * a problem is told by the same picture in both.
+ * Problems a source card names in its header and takes the tone of, one at a time, most pressing
+ * first: those that stop the source for good before those a user or an update settles. Its icon is
+ * shared by the badge on the card and the notice inside it, so a problem is told by the same
+ * picture in both.
  */
-private object SourceStateIcons {
-    val Blocked: ImageVector get() = MaterialSymbols.Rounded.Block
-    val Unavailable: ImageVector get() = MaterialSymbols.Rounded.Cloud_off
-    val SigningKeyChanged: ImageVector get() = MaterialSymbols.Rounded.Gpp_bad
-    val HeldBack: ImageVector get() = MaterialSymbols.Rounded.Error
-    val OutdatedManager: ImageVector get() = MaterialSymbols.Rounded.System_update
+private enum class SourceProblem(@StringRes val label: Int, val tone: SemanticTone, val icon: ImageVector) {
+    Blocked(
+        R.string.sources_management_source_blocked_badge,
+        SemanticTone.Error,
+        MaterialSymbols.Rounded.Block
+    ),
+    HeldBack(
+        R.string.sources_management_held_back_badge,
+        SemanticTone.Error,
+        MaterialSymbols.Rounded.Error
+    ),
+    SigningKeyChanged(
+        R.string.sources_management_signing_key_changed_badge,
+        SemanticTone.Warning,
+        MaterialSymbols.Rounded.Gpp_bad
+    ),
+    Unavailable(
+        R.string.sources_management_metadata_unavailable,
+        SemanticTone.Warning,
+        MaterialSymbols.Rounded.Cloud_off
+    ),
+    OutdatedManager(
+        R.string.sources_management_outdated_manager_badge,
+        SemanticTone.Warning,
+        MaterialSymbols.Rounded.System_update
+    )
 }
 
-/**
- * Header badge for a state a source can enter and leave while the page is open, easing in and out
- * beside the badges that stay.
- */
-@Composable
-private fun RowScope.SourceStateBadge(
-    visible: Boolean,
-    text: String,
-    icon: ImageVector,
-    cardStyle: GlassCardStyle
-) {
-    AnimatedVisibility(
-        visible = visible,
-        enter = Animations.expandHorizFadeIn,
-        exit = Animations.shrinkHorizFadeOut
-    ) {
-        StatusBadge(
-            text = text,
-            icon = icon,
-            containerColor = cardStyle.chipContainerColor,
-            contentColor = cardStyle.chipContentColor
-        )
-    }
+/** The most pressing [SourceProblem] with [bundle], or null while it has none. */
+private fun sourceProblem(
+    bundle: PatchBundleSource,
+    blocked: Boolean,
+    signingKeyChanged: Boolean,
+    unavailable: Boolean
+): SourceProblem? = when {
+    blocked -> SourceProblem.Blocked
+    bundle.isHeldBack -> SourceProblem.HeldBack
+    signingKeyChanged -> SourceProblem.SigningKeyChanged
+    unavailable -> SourceProblem.Unavailable
+    bundle.requiresManagerUpdate -> SourceProblem.OutdatedManager
+    else -> null
 }
 
 /** Card banner for a problem with a source, folding in and out as the problem comes and goes. */
