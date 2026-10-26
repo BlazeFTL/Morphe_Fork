@@ -66,6 +66,7 @@ sealed class RemotePatchBundle(
 ) : PatchBundleSource(name, uid, displayName, createdAt, updatedAt, error, directory, enabled) {
     protected val http = services.http
     protected val api = services.api
+    private val refusedReleaseFile = directory.resolve("refused-release")
 
     protected abstract suspend fun getLatestInfo(): MorpheAsset
     abstract override fun copy(
@@ -121,8 +122,30 @@ sealed class RemotePatchBundle(
                 && (remoteCreatedAt == null || remoteCreatedAt == createdAt)
             ) return@withContext null
 
-            download(info, onProgress)
+            downloadUnlessRefused(info, onProgress)
         }
+
+    /**
+     * [download], unless an earlier download refused the same release for its signer while the
+     * source trusted the same key as now, which would only download it to refuse it again.
+     */
+    private suspend fun downloadUnlessRefused(
+        info: MorpheAsset,
+        onProgress: PatchBundleDownloadProgress?
+    ): PatchBundleDownloadResult {
+        val release = listOf(info.version, info.createdAt, readSigningKey().orEmpty()).joinToString("|")
+        val refused = refusedReleaseFile.takeIf { it.exists() }?.readLines()
+        if (refused?.firstOrNull() == release) {
+            throw PatchBundleSignerChangedException(refused.getOrNull(1)?.takeIf { it.isNotEmpty() })
+        }
+
+        return try {
+            download(info, onProgress).also { refusedReleaseFile.delete() }
+        } catch (e: PatchBundleSignerChangedException) {
+            refusedReleaseFile.writeText(listOf(release, e.signer.orEmpty()).joinToString("\n"))
+            throw e
+        }
+    }
 
     suspend fun fetchLatestReleaseInfo(): MorpheAsset {
         val key = "$uid|$endpoint"

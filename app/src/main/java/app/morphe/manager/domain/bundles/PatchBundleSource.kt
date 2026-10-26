@@ -166,7 +166,8 @@ sealed class PatchBundleSource(
         if (signer != null && signer != readSigningKey()) signingKeyFile.writeText(signer)
     }
 
-    private fun readSigningKey() =
+    /** [signingKey] as it is now, which a key trusted since this source was loaded changes. */
+    protected fun readSigningKey() =
         signingKeyFile.takeIf { it.exists() }?.readText()?.trim()?.takeIf { it.isNotEmpty() }
 
     /**
