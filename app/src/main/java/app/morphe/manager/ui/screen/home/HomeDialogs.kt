@@ -226,12 +226,14 @@ fun HomeDialogs(
                 homeViewModel.getBundleDisplayName(uid) ?: uid.toString()
             }
         }
+        val launchPackage = remember(item) { homeViewModel.launchablePackage(item) }
         AppPatchesDialog(
             item = item,
             patchesByBundle = patchesByBundle.orEmpty(),
             bundleNames = bundleNames,
             isLoading = patchesByBundle == null,
-            onDismiss = { patchesItem.value = null }
+            onDismiss = { patchesItem.value = null },
+            onOpenApp = launchPackage?.let { { homeViewModel.openApp(it) } }
         )
     }
 }

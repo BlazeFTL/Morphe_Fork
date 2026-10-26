@@ -700,6 +700,16 @@ class HomeViewModel(
     fun getBundleDisplayName(uid: Int): String? =
         allBundlesInfoState.value[uid]?.name
 
+    /**
+     * The package [item] opens as on the device, patched or not, or null when it is not there or
+     * has nothing to open. Lets the user see what the app already does before patching it.
+     */
+    fun launchablePackage(item: HomeAppItem): String? =
+        (item.installedApp?.currentPackageName ?: item.packageName)
+            .takeIf { item.isInstalledOnDevice && pm.canLaunch(it) }
+
+    fun openApp(packageName: String) = pm.launch(packageName)
+
     suspend fun persistReinstalledApp(
         app: InstalledApp,
         packageName: String,
