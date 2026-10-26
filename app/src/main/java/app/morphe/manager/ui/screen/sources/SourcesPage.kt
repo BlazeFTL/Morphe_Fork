@@ -303,6 +303,7 @@ private fun SourcesPageContent(
     val bundleToShowPatches = remember { mutableStateOf<PatchBundleSource?>(null) }
     val bundleToShowApps = remember { mutableStateOf<PatchBundleSource?>(null) }
     var bundleRequiringManagerUpdate by remember { mutableStateOf<PatchBundleSource?>(null) }
+    var bundleToTrustKey by remember { mutableStateOf<RemotePatchBundle?>(null) }
     var bundleToShowChangelogUid by remember { mutableStateOf<Int?>(null) }
 
     // Switching branches invalidates whatever the changelog dialog is holding, so the cache goes
@@ -525,6 +526,7 @@ private fun SourcesPageContent(
                                             }
                                         },
                                         onOutdatedManagerClick = { bundleRequiringManagerUpdate = bundle },
+                                        onReviewSigningKey = { (bundle as? RemotePatchBundle)?.let { bundleToTrustKey = it } },
                                         onOpenInBrowser = {
                                             openUrl((bundle as? RemotePatchBundle)?.browsePageUrl ?: SOURCE_REPO_URL)
                                         },
@@ -658,6 +660,31 @@ private fun SourcesPageContent(
         )
     }
 
+    // New signing key confirmation dialog
+    DialogHost(target = bundleToTrustKey) { bundle ->
+        val fingerprint = (metadataFetchErrors[bundle.uid] as? PatchBundleSignerChangedException)?.signerFingerprint
+        ConfirmDialog(
+            title = stringResource(R.string.sources_signing_key_trust_title),
+            message = if (fingerprint != null) {
+                stringResource(R.string.sources_signing_key_trust_message, fingerprint)
+            } else {
+                stringResource(R.string.sources_signing_key_trust_message_unsigned)
+            },
+            primaryText = stringResource(R.string.sources_signing_key_trust),
+            subject = {
+                ConfirmSubject(name = bundle.displayTitle) { modifier ->
+                    BundleIcon(bundle = bundle, modifier = modifier)
+                }
+            },
+            accentColor = rememberSourceHeaderColor(bundle),
+            onDismiss = { bundleToTrustKey = null },
+            onConfirm = {
+                bundleToTrustKey = null
+                scope.launch { patchBundleRepository.trustNewSigningKey(bundle) }
+            }
+        )
+    }
+
     // Patches dialog
     DialogHost(target = bundleToShowPatches.value) { src ->
         BundlePatchesDialog(
@@ -760,6 +787,7 @@ private class SourceCardActions(
     val onAppsClick: () -> Unit,
     val onVersionClick: () -> Unit,
     val onOutdatedManagerClick: () -> Unit,
+    val onReviewSigningKey: () -> Unit,
     val onOpenInBrowser: () -> Unit,
     val onReportIssue: () -> Unit,
     val onShare: (() -> Unit)?,
@@ -824,6 +852,7 @@ private fun BundleManagementCard(
     val isBlocked = info.blockedInfo != null
     val isEnabled = bundle.enabled && !isBlocked
     val isUnavailable = info.metadataFetchError != null || bundle.state is PatchBundleSource.State.Missing
+    val signingKeyChanged = info.metadataFetchError is PatchBundleSignerChangedException
 
     // Neutral fill for all, so the page reads as one list; a working source keeps its color on the edge
     // and controls, a disabled one drops it rather than turn red, which stays for an unusable source
@@ -965,13 +994,21 @@ private fun BundleManagementCard(
 
                                 // Metadata unavailable hint (shown when patches-bundle.json / remote fetch failed)
                                 CardNotice(
-                                    visible = isUnavailable,
+                                    visible = isUnavailable && !signingKeyChanged,
                                     text = if (bundle.state is PatchBundleSource.State.Missing) {
                                         stringResource(R.string.sources_management_metadata_unavailable_hint_missing)
                                     } else {
                                         stringResource(R.string.sources_management_metadata_unavailable_hint)
                                     },
                                     icon = MaterialSymbols.Rounded.Cloud_off
+                                )
+
+                                // Signing key hint (shown when an update was refused for its signer)
+                                CardNotice(
+                                    visible = signingKeyChanged,
+                                    text = stringResource(R.string.sources_management_signing_key_changed_hint),
+                                    icon = MaterialSymbols.Rounded.Gpp_bad,
+                                    onClick = actions.onReviewSigningKey
                                 )
 
                                 // Held back hint (shown when reading the source killed the process)
@@ -1023,6 +1060,16 @@ private fun BundleManagementCard(
                                     onClick = actions.onVersionClick,
                                     enabled = !info.isUpdating
                                 )
+
+                                bundle.signingKeyFingerprint?.let { fingerprint ->
+                                    SettingsDivider()
+
+                                    InfoRow(
+                                        icon = MaterialSymbols.Rounded.Verified,
+                                        label = stringResource(R.string.sources_management_signed_by),
+                                        value = fingerprint
+                                    )
+                                }
 
                                 // Apps, for any source naming some. It is also the one way back from an
                                 // app kept from the source that does not depend on which mode the user
@@ -1335,9 +1382,14 @@ private fun BundleCardHeader(
                     modifier = Modifier.graphicsLayer { alpha = detailsAlpha }
                 )
 
+                val signingKeyChanged = metadataFetchError is PatchBundleSignerChangedException
                 SourceStateBadge(
-                    visible = unavailable,
+                    visible = unavailable && !signingKeyChanged,
                     text = stringResource(R.string.sources_management_metadata_unavailable)
+                )
+                SourceStateBadge(
+                    visible = signingKeyChanged,
+                    text = stringResource(R.string.sources_management_signing_key_changed_badge)
                 )
                 SourceStateBadge(
                     visible = bundle.requiresManagerUpdate,

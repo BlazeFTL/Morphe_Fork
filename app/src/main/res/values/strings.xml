@@ -215,6 +215,9 @@
     <string name="sources_management_outdated_manager_hint">This source is built for patcher %1$s, but Morphe %2$s includes patcher %3$s. Update Morphe to use it</string>
     <string name="sources_management_held_back_badge">Crashed</string>
     <string name="sources_management_held_back_hint">This source crashed Morphe while loading, so it is being skipped. Update or re-import it to try again</string>
+    <string name="sources_management_signed_by">Signed by</string>
+    <string name="sources_management_signing_key_changed_badge">Key changed</string>
+    <string name="sources_management_signing_key_changed_hint">The latest release is not signed by the key this source used before, so it was not installed. Tap to review it</string>
     <string name="sources_management_source_enabled">Source enabled</string>
     <string name="sources_management_source_disabled">Source disabled</string>
     <string name="sources_management_source_updating">Updating source</string>
@@ -251,6 +254,13 @@
     <string name="sources_download_fail">Failed to download sources: %s</string>
     <string name="sources_download_fail_named">\'%s\' could not be updated. Check your internet connection and try again</string>
     <string name="sources_download_endpoint_not_found">\'%s\': patch metadata not found</string>
+    <string name="sources_signing_key_changed_named">\'%s\' was not updated because its latest release is not signed by the key it used before</string>
+    <string name="sources_signing_key_changed_local">The file is not signed by the key this source used before. To trust it, delete the source and add the file again</string>
+    <string name="sources_signing_key_trust_title">Trust the new key?</string>
+    <!-- %s is the fingerprint of the new key, such as "3931 c916 5ee4 266a" -->
+    <string name="sources_signing_key_trust_message">The latest release is signed by the key %s. Either the developer replaced their key, or someone else published this release. Only trust it if the developer announced a new key</string>
+    <string name="sources_signing_key_trust_message_unsigned">The latest release is not signed. Either the developer stopped signing releases, or someone else published this release. Only trust it if the developer announced it</string>
+    <string name="sources_signing_key_trust">Trust</string>
     <string name="sources_patch_expert_badge">Expert</string>
     <string name="sources_patch_expert_badge_tooltip">Enable Expert mode in Settings to include this patch manually</string>
 

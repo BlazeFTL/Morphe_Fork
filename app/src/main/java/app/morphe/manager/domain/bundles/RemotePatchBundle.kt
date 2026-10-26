@@ -79,7 +79,7 @@ sealed class RemotePatchBundle(
 
     protected open suspend fun download(info: MorpheAsset, onProgress: PatchBundleDownloadProgress? = null) =
         withContext(Dispatchers.IO) {
-            installPatchBundle("Downloading patch bundle") { staging ->
+            installPatchBundle("Downloading patch bundle", publishedKey = info.publicKey) { staging ->
                 services.assetDownloader.downloadToFile(
                     downloadUrl = info.downloadUrl,
                     saveLocation = staging,
