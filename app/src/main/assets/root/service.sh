@@ -221,6 +221,22 @@ redirect_patched() {
   log_msg "Redirected with NoMount"
 }
 
+# Play Store would replace the stock APK under the mount with an update. zygisk-detach keeps its
+# list across reboots, so this only matters when it was installed after Morphe mounted the app.
+# The marker tells Morphe to reattach the app once the module is gone, unless the user detached it.
+detach_from_play_store() {
+  detach_bin=/data/adb/modules/zygisk-detach/detach
+  [ -x "$detach_bin" ] || return 0
+  out="$("$detach_bin" detach "$package_name" 2>/dev/null)" || return 0
+  case "$out" in
+    *"already detached"*) ;;
+    *)
+      touch "$module_dir/detached"
+      log_msg "Detached from Play Store with zygisk-detach"
+      ;;
+  esac
+}
+
 mount_patched() {
   log_msg "base_path: $base_path"
   log_msg "stock_path: $stock_path"
@@ -252,6 +268,7 @@ mount_patched() {
   fi
   if redirect_patched; then
     redirected=1
+    detach_from_play_store
     set_status "Redirected the patched v$version with NoMount at boot"
     return
   fi
@@ -264,6 +281,7 @@ mount_patched() {
   fi
   mount_in_zygote_namespaces
   replace_other_mounts
+  detach_from_play_store
   set_status "Mounted the patched v$version at boot"
 }
 
