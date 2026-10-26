@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Tá an foinse seo tógtha don phaisteoir %1$s, ach tá an paisteoir %3$s san áireamh i Morphe %2$s. Nuashonraigh Morphe chun é a úsáid.</string>
     <string name="sources_management_held_back_badge">Tuairteála</string>
     <string name="sources_management_held_back_hint">Bhuail an fhoinse seo le Morphe agus é á luchtú, mar sin tá sé á scipeáil. Nuashonraigh nó athiompórtáil é chun triail eile a bhaint as</string>
+    <string name="sources_management_signed_by">Sínithe ag</string>
+    <string name="sources_management_signing_key_changed_badge">Athraithe an eochair</string>
+    <string name="sources_management_signing_key_changed_hint">Ní sínithe an teasach is déanaí ag an eochair a d\'úsáid an t-éiteach seo roimhe seo, mar sin ní cuireadh isteach é. Tapáil chun é a bhreithniú</string>
     <string name="sources_management_source_enabled">Foinse cumasaithe</string>
     <string name="sources_management_source_disabled">Foinse díchumasaithe</string>
     <string name="sources_management_source_updating">Foinse á nuashonrú</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Theip ar an pacáiste a íoslódáil: %s</string>
     <string name="sources_download_fail_named">Níorbh fhéidir \'%s\' a nuashonrú. Seiceáil do nasc idirlín agus déan iarracht eile.</string>
     <string name="sources_download_endpoint_not_found">\'%s\': meiteashonraí paiste gan aimsiú</string>
+    <string name="sources_signing_key_changed_named">Níor updating\'aí \'%s\' mar nach sínithe an teasach is déanaí aige ag an eochair a d\'úsáid sé roimhe seo</string>
+    <string name="sources_signing_key_changed_local">Níl an comhad sínithe ag an eochair a d\'úsáid an torthaiste seo roimhe seo. Chun muinín a bheith agat as, scrios an torthaiste agus cuir an comhad leis arís</string>
+    <string name="sources_signing_key_trust_title">An bhfuil muinín agat san eochair nua?</string>
+    <string name="sources_signing_key_trust_message">Tá an teilidhmhéad is déanaí sínithe ag eochair dhifidheach. Nár athraigh an forbaire a eochair, nó gur fhoilsigh duine eile an teilidhmhéad seo. Ná bí muiníneach as ach má fhoirghabháil an forbaire eochair nua</string>
+    <string name="sources_signing_key_trust_message_unsigned">Níl an teilidhmhéad is déanaí sínithe. Nár stop an forbaire ag sínireacht teilidhmhéada, nó gur fhoilsigh duine eile an teilidhmhéad seo. Ná bí muiníneach as ach má d\'fhoirghabháil an forbaire é</string>
+    <string name="sources_signing_key_trusted">Eochair iontaofa</string>
+    <string name="sources_signing_key_new">Eochair nua</string>
     <string name="sources_patch_expert_badge">Saineolaí</string>
     <string name="sources_patch_expert_badge_tooltip">Cumasaigh mód saineolaithe sna Socruithe chun an paiste seo a chur san áireamh de láimh</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1217,7 +1227,6 @@ Sonraí: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Iontaofa: %1$d as %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Is féidir le haipeanna cabhracha APKanna bunaidh a íoslódáil duit. Ní thairgtear sna treoracha íoslódála ach na cinn a bhfuil muinín agat astu anseo.</string>
     <string name="settings_system_apk_download_helper_trust_title">Muinín a bheith agat as an gcúntóir seo?</string>
-    <string name="settings_system_apk_download_helper_trust">Muinín</string>
     <string name="settings_system_apk_download_helper_warning">Tagann an APK ón aip chabhrach, mar sin ná cuir muinín ach in aipeanna a bhfuil aithne agat orthu. Seiceálann Morphe fós an pacáiste, an leagan agus an síniú de gach comhad roimh phaisteáil.</string>
     <string name="settings_system_apk_download_helper_installed_by">Suiteáilte ag %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Suiteálaí anaithnid</string>
@@ -1312,6 +1321,7 @@ Sonraí: %2$s"</string>
     <string name="include">Cuir san áireamh</string>
     <string name="disable">Díchumasaigh</string>
     <string name="enable">Os comhad</string>
+    <string name="trust">Muinín</string>
     <string name="loading">Ag lódáil…</string>
     <string name="creating">Ag cruthú…</string>
     <string name="processing_apk">APK á phróiseáil…</string>

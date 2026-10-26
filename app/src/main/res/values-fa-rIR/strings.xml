@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">این منبع برای پچر %1$s ساخته شده است، اما Morphe %2$s شامل پچر %3$s است. برای استفاده از آن، Morphe را به‌روز کنید</string>
     <string name="sources_management_held_back_badge">از کار افتاد</string>
     <string name="sources_management_held_back_hint">این منبع هنگام بارگذاری باعث از کار افتادن Morphe شد، بنابراین نادیده گرفته می‌شود. برای تلاش دوباره، آن را به‌روزرسانی یا مجدداً وارد کنید</string>
+    <string name="sources_management_signed_by">امضا شده توسط</string>
+    <string name="sources_management_signing_key_changed_badge">کلید تغییر کرده است</string>
+    <string name="sources_management_signing_key_changed_hint">آخرین نسخه توسط کلیدی که این منبع قبلاً استفاده می‌کرد امضا نشده است، بنابراین نصب نشد. برای بررسی آن ضربه بزنید</string>
     <string name="sources_management_source_enabled">منبع فعال شد</string>
     <string name="sources_management_source_disabled">منبع غیرفعال شد</string>
     <string name="sources_management_source_updating">در حال به‌روزرسانی منبع</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">دانلود منابع شکست خورد: %s</string>
     <string name="sources_download_fail_named">به‌روزرسانی «%s» ممکن نشد. اتصال اینترنت را بررسی و دوباره تلاش کنید</string>
     <string name="sources_download_endpoint_not_found">«%s»: فرادادهٔ پچ پیدا نشد</string>
+    <string name="sources_signing_key_changed_named">\'%s\' به‌روزرسانی نشد زیرا آخرین نسخه آن توسط کلیدی که قبلاً استفاده می‌کرد امضا نشده است</string>
+    <string name="sources_signing_key_changed_local">این فایل با کلیدی که این منبع قبلاً استفاده می‌کرد، امضا نشده است. برای اعتماد به آن، منبع را حذف کرده و فایل را دوباره اضافه کنید</string>
+    <string name="sources_signing_key_trust_title">به کلید جدید اعتماد کنید؟</string>
+    <string name="sources_signing_key_trust_message">آخرین نسخه با کلید متفاوتی امضا شده است. یا توسعه‌دهنده کلید خود را جایگزین کرده است، یا شخص دیگری این نسخه را منتشر کرده است. تنها در صورتی به آن اعتماد کنید که توسعه‌دهنده کلید جدیدی را اعلام کرده باشد</string>
+    <string name="sources_signing_key_trust_message_unsigned">آخرین نسخه امضا نشده است. یا توسعه‌دهنده امضای نسخه‌ها را متوقف کرده است، یا شخص دیگری این نسخه را منتشر کرده است. تنها در صورتی به آن اعتماد کنید که توسعه‌دهنده آن را اعلام کرده باشد</string>
+    <string name="sources_signing_key_trusted">کلید مورد اعتماد</string>
+    <string name="sources_signing_key_new">کلید جدید</string>
     <string name="sources_patch_expert_badge">حرفه‌ای</string>
     <string name="sources_patch_expert_badge_tooltip">برای افزودن دستی این پچ، حالت حرفه‌ای را در تنظیمات فعال کنید</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ morphe_header_custom_dark.png
     <string name="settings_system_apk_download_helper_trusted_count">مورد اعتماد: %1$d از %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">برنامه‌های کمکی می‌توانند APKهای اصلی را برای شما دانلود کنند. فقط آن‌هایی که در اینجا به آن‌ها اعتماد دارید در دستورالعمل‌های دانلود ارائه می‌شوند</string>
     <string name="settings_system_apk_download_helper_trust_title">به این کمکی اعتماد دارید؟</string>
-    <string name="settings_system_apk_download_helper_trust">اعتماد</string>
     <string name="settings_system_apk_download_helper_warning">APK از برنامهٔ کمکی دریافت می‌شود، پس فقط به برنامه‌هایی اعتماد کنید که می‌شناسید. Morphe همچنان بسته، نسخه و امضای هر فایل را پیش از پچ کردن بررسی می‌کند</string>
     <string name="settings_system_apk_download_helper_installed_by">نصب‌شده توسط %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">نصب‌کننده ناشناس</string>
@@ -1314,6 +1323,7 @@ morphe_header_custom_dark.png
     <string name="include">گنجاندن</string>
     <string name="disable">غیرفعال‌کردن</string>
     <string name="enable">فعال‌کردن</string>
+    <string name="trust">اعتماد</string>
     <string name="loading">در حال بارگذاری…</string>
     <string name="creating">در حال ساخت…</string>
     <string name="processing_apk">در حال پردازش APK…</string>

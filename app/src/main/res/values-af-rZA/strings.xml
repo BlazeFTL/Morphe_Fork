@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Hierdie bron is gebou vir pleister %1$s, maar Morphe %2$s sluit pleister %3$s in. Opdateer Morphe om dit te gebruik</string>
     <string name="sources_management_held_back_badge">Vasgeloop</string>
     <string name="sources_management_held_back_hint">Hierdie bron het Morphe laat vasloop terwyl dit gelaai word, dus word dit oorgeslaan. Dateer dit op of voer dit weer in om weer te probeer.</string>
+    <string name="sources_management_signed_by">Geteken deur</string>
+    <string name="sources_management_signing_key_changed_badge">Sleutel verander</string>
+    <string name="sources_management_signing_key_changed_hint">Die nuutste vrystelling is nie geteken deur die sleutel wat hierdie bron voorheen gebruik het nie, dus is dit nie geïnstalleer nie. Tik om dit te hersien</string>
     <string name="sources_management_source_enabled">Bron geaktiveer</string>
     <string name="sources_management_source_disabled">Bron gedeaktiveer</string>
     <string name="sources_management_source_updating">Bron besig om op te dateer</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Kon nie oorspronge aflaai nie: %s</string>
     <string name="sources_download_fail_named">\'%s\' kon nie opgedateer word nie. Gaan jou internetverbinding na en probeer weer</string>
     <string name="sources_download_endpoint_not_found">\'%s\': geen vlekmetadata gevind nie</string>
+    <string name="sources_signing_key_changed_named">\'%s\' is nie opgedateer nie omdat die nuutste vrystelling nie geteken is deur die sleutel wat dit voorheen gebruik het nie</string>
+    <string name="sources_signing_key_changed_local">Die lêer is nie onderteken deur die sleutel wat hierdie bron voorheen gebruik het nie. Om dit te vertrou, skrap die bron en voeg die lêer weer by</string>
+    <string name="sources_signing_key_trust_title">Vertrou die nuwe sleutel?</string>
+    <string name="sources_signing_key_trust_message">Die nuutste vrystelling is deur \'n ander sleutel onderteken. Of die ontwikkelaar het hul sleutel vervang, of iemand anders het hierdie vrystelling gepubliseer. Vertrou dit slegs as die ontwikkelaar \'n nuwe sleutel aangekondig het</string>
+    <string name="sources_signing_key_trust_message_unsigned">Die nuutste vrystelling is nie onderteken nie. Of die ontwikkelaar het opgehou om vrystellings te teken, of iemand anders het hierdie vrystelling gepubliseer. Vertrou dit slegs as die ontwikkelaar dit aangekondig het</string>
+    <string name="sources_signing_key_trusted">Vertroude sleutel</string>
+    <string name="sources_signing_key_new">Nuwe sleutel</string>
     <string name="sources_patch_expert_badge">Kundige</string>
     <string name="sources_patch_expert_badge_tooltip">Aktiveer Ekspermodus in Instellings om hierdie pleister handmatig by te voeg</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ Besonderhede: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Vertroude: %1$d van %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Helperprogramme kan oorspronklike APK\'s vir jou aflaai. Slegs diegene wat jy hier vertrou, word in die aflaai-instruksies aangebied.</string>
     <string name="settings_system_apk_download_helper_trust_title">Vertrou hierdie helper?</string>
-    <string name="settings_system_apk_download_helper_trust">Vertrou</string>
     <string name="settings_system_apk_download_helper_warning">Die APK kom van die helperprogram af, so vertrou net programme wat jy ken. Morphe kontroleer steeds die pakket, weergawe en handtekening van elke lêer voordat dit gepatch word.</string>
     <string name="settings_system_apk_download_helper_installed_by">Geïnstalleer deur %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Installeerder onbekend</string>
@@ -1314,6 +1323,7 @@ Besonderhede: %2$s"</string>
     <string name="include">Insluit</string>
     <string name="disable">Deaktiveer</string>
     <string name="enable">Aktiveer</string>
+    <string name="trust">Vertrou</string>
     <string name="loading">Laai…</string>
     <string name="creating">Word geskep…</string>
     <string name="processing_apk">APK word verwerk…</string>

@@ -212,6 +212,9 @@ Diese App aus der vorhandenen Quelle hinzufügen?</string>
     <string name="sources_management_outdated_manager_hint">Diese Quelle ist für die Patcher-Version %1$s erstellt, aber Morphe %2$s enthält die Version %3$s. Aktualisieren Sie Morphe, um diese zu verwenden.</string>
     <string name="sources_management_held_back_badge">Abgestürzt</string>
     <string name="sources_management_held_back_hint">Diese Quelle hat Morphe beim Laden zum Absturz gebracht und wird daher übersprungen. Aktualisiere sie oder importiere sie erneut, um es noch einmal zu versuchen.</string>
+    <string name="sources_management_signed_by">Unterzeichnet von</string>
+    <string name="sources_management_signing_key_changed_badge">Schlüssel geändert</string>
+    <string name="sources_management_signing_key_changed_hint">Die neueste Version wurde nicht mit dem Schlüssel unterzeichnet, den diese Quelle zuvor verwendet hat, und konnte daher nicht installiert werden. Zum Überprüfen tippen</string>
     <string name="sources_management_source_enabled">Quelle aktiviert</string>
     <string name="sources_management_source_disabled">Quelle deaktiviert</string>
     <string name="sources_management_source_updating">Quellen werden aktualisiert</string>
@@ -247,6 +250,13 @@ Diese App aus der vorhandenen Quelle hinzufügen?</string>
     <string name="sources_download_fail">Fehler beim Herunterladen der Quellen: %s</string>
     <string name="sources_download_fail_named">\'%s\' konnte nicht aktualisiert werden. Überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut</string>
     <string name="sources_download_endpoint_not_found">\'%s\': Patch-Metadaten nicht gefunden</string>
+    <string name="sources_signing_key_changed_named">\'%s\' wurde nicht aktualisiert, da die neueste Version nicht mit dem zuvor verwendeten Schlüssel unterzeichnet wurde</string>
+    <string name="sources_signing_key_changed_local">Die Datei ist nicht mit dem Schlüssel signiert, den diese Quelle zuvor verwendet hat. Um ihr zu vertrauen, löschen Sie die Quelle und fügen Sie die Datei erneut hinzu</string>
+    <string name="sources_signing_key_trust_title">Dem neuen Schlüssel vertrauen?</string>
+    <string name="sources_signing_key_trust_message">Das neueste Release ist mit einem anderen Schlüssel signiert. Entweder hat der Entwickler seinen Schlüssel ersetzt oder jemand anderes hat dieses Release veröffentlicht. Vertrauen Sie ihm nur, wenn der Entwickler einen neuen Schlüssel angekündigt hat</string>
+    <string name="sources_signing_key_trust_message_unsigned">Das neueste Release ist nicht signiert. Entweder hat der Entwickler aufgehört, Releases zu signieren, oder jemand anderes hat dieses Release veröffentlicht. Vertrauen Sie ihm nur, wenn der Entwickler dies angekündigt hat</string>
+    <string name="sources_signing_key_trusted">Vertrauenswürdiger Schlüssel</string>
+    <string name="sources_signing_key_new">Neuer Schlüssel</string>
     <string name="sources_patch_expert_badge">Experte</string>
     <string name="sources_patch_expert_badge_tooltip">Expertenmodus in den Einstellungen aktivieren, um diesen Patch manuell einzuschließen</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1221,7 +1231,6 @@ Details: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Vertraut: %1$d von %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Hilfs-Apps können Original-APKs für dich herunterladen. Nur die, denen du hier vertraust, werden in den Download-Anleitungen angeboten.</string>
     <string name="settings_system_apk_download_helper_trust_title">Diesem Assistenten vertrauen?</string>
-    <string name="settings_system_apk_download_helper_trust">Vertrauen</string>
     <string name="settings_system_apk_download_helper_warning">Die APK stammt von der Hilfs-App, also vertraue nur Apps, die du kennst. Morphe prüft weiterhin das Paket, die Version und die Signatur jeder Datei, bevor sie gepatcht wird.</string>
     <string name="settings_system_apk_download_helper_installed_by">Installiert von %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Unbekannter Installateur</string>
@@ -1316,6 +1325,7 @@ Details: %2$s"</string>
     <string name="include">Einschließen</string>
     <string name="disable">Deaktivieren</string>
     <string name="enable">Aktivieren</string>
+    <string name="trust">Vertrauen</string>
     <string name="loading">Lädt…</string>
     <string name="creating">Erstelle…</string>
     <string name="processing_apk">APK wird verarbeitet…</string>

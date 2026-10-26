@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Esta fuente está creada para el parcheador %1$s, pero Morphe %2$s incluye el parcheador %3$s. Actualiza Morphe para usarlo</string>
     <string name="sources_management_held_back_badge">Falló</string>
     <string name="sources_management_held_back_hint">Esta fuente hizo que Morphe fallara al cargarse, por lo que se omite. Actualízala o vuelve a importarla para intentarlo de nuevo</string>
+    <string name="sources_management_signed_by">Firmado por</string>
+    <string name="sources_management_signing_key_changed_badge">Clave cambiada</string>
+    <string name="sources_management_signing_key_changed_hint">La última versión no está firmada con la clave que esta fuente utilizaba anteriormente, por lo que no se instaló. Toca para revisarla</string>
     <string name="sources_management_source_enabled">Fuente activada</string>
     <string name="sources_management_source_disabled">Fuente desactivada</string>
     <string name="sources_management_source_updating">Actualizando fuente</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Error al descargar las fuentes: %s</string>
     <string name="sources_download_fail_named">\"%s\" no se pudo actualizar. Comprueba tu conexión a internet e inténtalo de nuevo</string>
     <string name="sources_download_endpoint_not_found">\"%s\": no se encontraron los metadatos del parche</string>
+    <string name="sources_signing_key_changed_named">\'%s\' no se actualizó porque su última versión no está firmada con la clave que utilizaba anteriormente</string>
+    <string name="sources_signing_key_changed_local">El archivo no está firmado con la clave que esta fuente utilizaba anteriormente. Para confiar en él, elimina la fuente y añade el archivo de nuevo</string>
+    <string name="sources_signing_key_trust_title">¿Confiar en la nueva clave?</string>
+    <string name="sources_signing_key_trust_message">La última versión está firmada con una clave diferente. Es posible que el desarrollador haya reemplazado su clave o que alguien más haya publicado esta versión. Confía solo si el desarrollador ha anunciado una nueva clave</string>
+    <string name="sources_signing_key_trust_message_unsigned">La última versión no está firmada. Es posible que el desarrollador haya dejado de firmar las versiones o que alguien más haya publicado esta versión. Confía solo si el desarrollador lo ha anunciado</string>
+    <string name="sources_signing_key_trusted">Clave de confianza</string>
+    <string name="sources_signing_key_new">Clave nueva</string>
     <string name="sources_patch_expert_badge">Experto</string>
     <string name="sources_patch_expert_badge_tooltip">Activa el modo Experto en la configuración para incluir este parche manualmente</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ Detalles: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">De confianza: %1$d de %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Las aplicaciones auxiliares pueden descargar APKs originales por ti. En las instrucciones de descarga solo se ofrecen aquellas en las que confíes aquí</string>
     <string name="settings_system_apk_download_helper_trust_title">¿Confiar en este asistente?</string>
-    <string name="settings_system_apk_download_helper_trust">Confiar</string>
     <string name="settings_system_apk_download_helper_warning">El APK proviene de la aplicación auxiliar, así que confía solo en aplicaciones que conozcas. Morphe sigue comprobando el paquete, la versión y la firma de cada archivo antes de parchear</string>
     <string name="settings_system_apk_download_helper_installed_by">Instalada por %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Instalador desconocido</string>
@@ -1314,6 +1323,7 @@ Detalles: %2$s"</string>
     <string name="include">Incluir</string>
     <string name="disable">Desactivar</string>
     <string name="enable">Activar</string>
+    <string name="trust">Confiar</string>
     <string name="loading">Cargando…</string>
     <string name="creating">Creando…</string>
     <string name="processing_apk">Procesando APK…</string>

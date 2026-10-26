@@ -197,7 +197,7 @@
     <string name="sources_prerelease_warning_title">Aktivera förhandsversioner av tillägg?</string>
     <string name="sources_prerelease_warning_message">Förhandsversioner är fortfarande under utveckling. Tilläggen kan misslyckas eller få appen att sluta fungera, och funktioner kan ändras utan förvarning</string>
     <string name="expert_mode_prerelease_notice">Den här källan använder förhandsversioner av tillägg. Modifiering kan misslyckas eller bete sig på oväntade sätt</string>
-    <string name="expert_mode_experimental_version_notice">Den här källan har endast experimentellt stöd för den här appversionen. Dess patchar kan vara instabila eller ofullständiga</string>
+    <string name="expert_mode_experimental_version_notice">Den här källan har endast experimentellt stöd för den här appversionen. Dess tillägg kan vara instabila eller ofullständiga</string>
     <string name="sources_management_experimental_versions_toggle">Experimentella appversioner</string>
     <string name="sources_management_experimental_versions_toggle_description">Visar och modifierar experimentella appmål</string>
     <string name="sources_management_already_exists">Den här källan har redan lagts till</string>
@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Den här källan är avsedd för modifieringsverktyg %1$s, men i Morphe %2$s ingår modifieringsverktyg %3$s. Uppdatera Morphe om du vill använda den</string>
     <string name="sources_management_held_back_badge">Kraschade</string>
     <string name="sources_management_held_back_hint">Den här källan fick Morphe att krascha när den lästes in, så den hoppas över. Uppdatera eller importera den igen för att försöka igen</string>
+    <string name="sources_management_signed_by">Signerad av</string>
+    <string name="sources_management_signing_key_changed_badge">Nyckel ändrad</string>
+    <string name="sources_management_signing_key_changed_hint">Den senaste versionen är inte signerad med den nyckel som den här källan använde tidigare, så den installerades inte. Tryck för att granska den</string>
     <string name="sources_management_source_enabled">Källan har aktiverats</string>
     <string name="sources_management_source_disabled">Källan har inaktiverats</string>
     <string name="sources_management_source_updating">Uppdaterar källan</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Det gick inte att ladda ned källor: %s</string>
     <string name="sources_download_fail_named">Det gick inte att uppdatera %s. Kontrollera internetanslutningen och försök igen</string>
     <string name="sources_download_endpoint_not_found">%s: metadata för tillägg hittades inte</string>
+    <string name="sources_signing_key_changed_named">\'%s\' uppdaterades inte eftersom dess senaste version inte är signerad med den nyckel som användes tidigare</string>
+    <string name="sources_signing_key_changed_local">Filen är inte signerad med den nyckel som den här källan använde tidigare. För att lita på den, ta bort källan och lägg till filen igen</string>
+    <string name="sources_signing_key_trust_title">Lita på den nya nyckeln?</string>
+    <string name="sources_signing_key_trust_message">Den senaste versionen är signerad med en annan nyckel. Antingen har utvecklaren bytt ut sin nyckel, eller så har någon annan publicerat den här versionen. Lita bara på den om utvecklaren har meddelat en ny nyckel</string>
+    <string name="sources_signing_key_trust_message_unsigned">Den senaste versionen är inte signerad. Antingen har utvecklaren slutat signera versioner, eller så har någon annan publicerat den här versionen. Lita bara på den om utvecklaren har meddelat det</string>
+    <string name="sources_signing_key_trusted">Betrodd nyckel</string>
+    <string name="sources_signing_key_new">Ny nyckel</string>
     <string name="sources_patch_expert_badge">Expert</string>
     <string name="sources_patch_expert_badge_tooltip">Aktivera Expertläge i inställningarna för att inkludera det här tillägget manuellt</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -473,18 +483,18 @@ För bästa resultat rekommenderar den här appen att du modifierar en &lt;b&gt;
     <string name="batch_patch_force_version">Modifiera ändå</string>
     <string name="batch_patch_force_version_done">Köades ändå, appen kan sluta fungera</string>
     <string name="batch_patch_accept_signature_done">Köades ändå, APK-filen har inte verifierats</string>
-    <string name="batch_patch_apk_selected">APK vald</string>
+    <string name="batch_patch_apk_selected">APK-fil har valts</string>
     <string name="batch_patch_edit_patches">Välj tillägg</string>
     <string name="batch_patch_state_no_apk">Ingen APK-fil</string>
     <string name="batch_patch_state_no_patches">Inga tillägg</string>
-    <string name="batch_patch_state_no_selection">Ingen vald</string>
-    <string name="batch_patch_no_selection">Ingen av de tillgängliga patcharna är vald</string>
+    <string name="batch_patch_state_no_selection">Inget har valts</string>
+    <string name="batch_patch_no_selection">Inget av de tillgängliga tilläggen har valts</string>
     <string name="batch_patch_policy_install">Installera när modifieringen är klar</string>
     <string name="batch_patch_policy_install_description">Installerar alla modifierade appar direkt efter att kön är klar. Om det här alternativet är inaktiverat sparas APK-filerna till senare.</string>
     <string name="batch_patch_policy_mount">Montera när det är klart</string>
-    <string name="batch_patch_policy_mount_description">Monterar varje patchad app när kön är klar. Av innebär att APK-filerna behålls för senare.</string>
+    <string name="batch_patch_policy_mount_description">Monterar alla modifierade appar när kön är klar. Om det här alternativet är inaktiverat sparas APK-filerna till senare</string>
     <string name="batch_patch_policy_install_mount">Installera eller montera när det är klart</string>
-    <string name="batch_patch_policy_install_mount_description">Installerar eller monterar varje patchad app när kön är klar. Av innebär att APK-filerna behålls för senare.</string>
+    <string name="batch_patch_policy_install_mount_description">Installerar eller monterar alla modifierade appar när kön är klar. Om det här alternativet är inaktiverat sparas APK-filerna till senare</string>
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="batch_patch_start">Starta</string>
     <string name="batch_patch_stop_title">Stoppa gruppmodifiering?</string>
@@ -704,10 +714,10 @@ Om du avinstallerar raderas alla appdata permanent"</string>
     <string name="failed_to_execute_patch">Det gick inte att tillämpa %s</string>
     <string name="patched_app_save_failed_toast">Det gick inte att spara den modifierade appen</string>
     <string name="plugin_activity_dialog_body">Användarinteraktion krävs för att fortsätta med den här insticksmodulen</string>
-    <string name="patcher_process_killed_message">Systemet stoppade patchern innan den var klar, oftast för att frigöra minne. Stäng andra appar och försök igen</string>
-    <string name="patcher_process_crashed_message">Patchern kraschade innan den var klar. Om det händer igen, stäng av \"Använd inbäddad VM\" i inställningarna och rapportera problemet med loggen</string>
+    <string name="patcher_process_killed_message">Systemet stoppade modifieringsverktyget innan det var klart, oftast för att frigöra minne. Stäng andra appar och försök igen</string>
+    <string name="patcher_process_crashed_message">Modifieringsverktyget kraschade innan det var klart. Om det händer igen inaktiverar du \"Använd inbäddad VM\" i inställningarna och rapporterar problemet med loggen</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
-    <string name="patcher_out_of_memory_message">Patcheren slutade ha minne med en %1$s MB heap. Appen är för stor för de valda patcharna. Försök att patcha med färre patchkällor, eller välj färre patchar</string>
+    <string name="patcher_out_of_memory_message">Modifieringsverktygets minne tog slut med en heap på %1$s MB. Den här appen är för stor för de valda tilläggen. Försök att modifiera med färre tilläggskällor eller välj färre tillägg</string>
     <string name="install_app_success">Installationen lyckades</string>
     <string name="install_app_fail">Det gick inte att installera appen: %s</string>
     <string name="install_ignore_signature">Installera ändå</string>
@@ -935,7 +945,7 @@ Tillägg påverkas inte: aktivera förhandsversioner av tillägg för varje käl
     <string name="settings_advanced_patch_options_custom_branding_app_name_hint">Ange anpassat namn</string>
     <string name="settings_advanced_patch_options_path_gone">Det går inte längre att läsa den här mappen. Välj den igen eller rensa den, annars avbryts modifieringen för att fråga dig om den</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon">Appikon</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">Ikonen som appen patchas med, används även där den inte kan ändras senare, såsom Android Auto</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">Ikonen som appen modifieras med, och används även där den inte kan ändras senare, som i Android Auto</string>
     <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">Den anpassade appikonen behöver en mapp med ikonbilder</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon">Anpassad ikon</string>
     <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"Mapp med bilder som ska användas som anpassad ikon.
@@ -1072,10 +1082,10 @@ Information: %2$s"</string>
     <!-- Settings - System Tab - Performance Section -->
     <string name="settings_system_battery_optimization">Batterioptimering</string>
     <string name="settings_system_battery_optimization_description">Låter modifieringsverktyget fortsätta köras när appen minimeras</string>
-    <string name="settings_system_process_runtime">Patcher-tidskörning</string>
+    <string name="settings_system_process_runtime">Körning av modifieringsverktyg</string>
     <string name="settings_system_jvm_runtime_enable">Använd inbäddad VM</string>
-    <string name="settings_system_jvm_runtime_description">Patchar in Morphes egen Java VM, vilket kan använda mer minne. Inaktivera för att använda Androids runtime</string>
-    <string name="settings_system_jvm_runtime_unavailable">Kräver en ARM- eller 64-bitars x86-enhet</string>
+    <string name="settings_system_jvm_runtime_description">Modifierar i Morphes egen Java-VM, vilket kan använda mer minne. Inaktivera för att köra i Android</string>
+    <string name="settings_system_jvm_runtime_unavailable">Kräver en ARM-enhet eller en 64-bitars x86-enhet</string>
     <string name="settings_system_patcher_completion_sound">Ljud för slutförande</string>
     <string name="settings_system_patcher_completion_sound_description">Spelar upp en distinkt ton för att indikera om modifieringen har lyckats eller misslyckats när den är klar</string>
     <!-- Settings - System Tab - Notifications Section -->
@@ -1166,7 +1176,7 @@ Information: %2$s"</string>
     <string name="settings_system_storage_clear_all_description">Frigör allt återtagbart cacheutrymme på en gång</string>
     <string name="settings_system_storage_clear_all_confirm">Detta rensar cachelagrade nätverkssvar, tillfälligt lagrade installerarkopior och tillfälliga filer. Ursprungliga och modifierade APK-filer behålls</string>
     <string name="settings_system_storage_cleared">Frigjorde %s</string>
-    <string name="settings_system_storage_patch_running_warning">En patch körs och använder dessa filer. Om du rensar dem nu kommer det att misslyckas</string>
+    <string name="settings_system_storage_patch_running_warning">Ett tillägg körs och använder dessa filer. Om du rensar dem nu så slutar det att fungera</string>
     <string name="settings_system_storage_clear_anyway">Rensa ändå</string>
     <string name="settings_system_storage_nothing_to_clear">Inget att rensa</string>
     <string name="settings_system_storage_open_app_info_title">Öppna Android-appens lagring</string>
@@ -1219,7 +1229,6 @@ Information: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Betrodda: %1$d av %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Hjälpappar kan ladda ned ursprungliga APK-filer åt dig. Endast de som du litar på här erbjuds i nedladdningsinstruktionerna</string>
     <string name="settings_system_apk_download_helper_trust_title">Lita på den här hjälpappen?</string>
-    <string name="settings_system_apk_download_helper_trust">Lita på</string>
     <string name="settings_system_apk_download_helper_warning">APK-filen kommer från hjälpappen, så lita bara på appar som du känner till. Morphe kontrollerar fortfarande paketet, versionen och signaturen för varje fil före modifieringen</string>
     <string name="settings_system_apk_download_helper_installed_by">Installerad av %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Okänd installerare</string>
@@ -1314,6 +1323,7 @@ Information: %2$s"</string>
     <string name="include">Inkludera</string>
     <string name="disable">Inaktivera</string>
     <string name="enable">Aktivera</string>
+    <string name="trust">Lita på</string>
     <string name="loading">Läser in …</string>
     <string name="creating">Skapar …</string>
     <string name="processing_apk">Bearbetar APK-fil …</string>
@@ -1449,15 +1459,15 @@ Vill du fortsätta ändå?"</string>
     <!-- %1$s = current step number, %2$s = total number of steps (e.g. "3 of 13") -->
     <string name="onboarding_step_of">%1$s av %2$s</string>
     <string name="onboarding_sources_desc">Hantera dina tilläggskällor. Varje källa tillhandahåller tillägg som kan tillämpas i dina appar</string>
-    <string name="onboarding_other_apps_desc">Uppdatera en app som inte finns på listan, från en APK-fil eller en app som är installerad på din enhet</string>
-    <string name="onboarding_add_source_desc">Lägg till en patch-källa från en länk eller en patch-bundelfil</string>
-    <string name="onboarding_signing_key_desc">Säkerhetskopiera nyckeln som signerar dina uppdaterade appar. Utan den kan de endast uppdateras efter att du avinstallerat dem</string>
+    <string name="onboarding_other_apps_desc">Modifiera en app som inte finns i listan, från en APK-fil eller en app som är installerad på din enhet</string>
+    <string name="onboarding_add_source_desc">Lägg till en tilläggskälla från en länk eller en tilläggspaketfil</string>
+    <string name="onboarding_signing_key_desc">Säkerhetskopiera nyckeln som signerar dina modifierade appar. Utan den kan de endast uppdateras efter att du har avinstallerat dem</string>
     <string name="onboarding_swipe_title">Svepgester</string>
     <string name="onboarding_swipe_desc">Svep åt höger på ett appkort om du vill visa dess tillgängliga tillägg. Svep åt vänster om du vill dölja kortet från startskärmen</string>
     <string name="onboarding_settings_desc">Anpassa Morphe: utseende, avancerade alternativ och systemverktyg</string>
     <string name="onboarding_sources_patches_desc">Tryck om du vill visa alla tillägg som är tillgängliga från den här källan</string>
     <string name="onboarding_sources_version_desc">Tryck på versionen om du vill visa den fullständiga ändringsloggen för den här källan</string>
-    <string name="onboarding_sources_apps_desc">Tryck för att se vilka appar denna källa patchar och välja vilka av dem den erbjuder patchar för</string>
+    <string name="onboarding_sources_apps_desc">Tryck om du vill se vilka appar den här källan modifierar och välja vilka av dem den erbjuder tillägg åt</string>
     <string name="onboarding_sources_prerelease_desc">Aktivera det här alternativet om du vill få förhandsversioner av tillägg från den här källan</string>
     <string name="onboarding_appearance_tab_desc">Anpassa appens utseende: tema, accentfärg och bakgrund</string>
     <string name="onboarding_expert_mode_desc">Aktivera expertläget om du vill välja bland tillägg, få tillgång till anpassade alternativ och andra avancerade funktioner</string>

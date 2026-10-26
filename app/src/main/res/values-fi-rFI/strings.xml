@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Tämä lähde on rakennettu päivitysohjelmalle %1$s, mutta Morphe %2$s sisältää päivitysohjelman %3$s. Päivitä Morphe käyttämään sitä.</string>
     <string name="sources_management_held_back_badge">Kaatui</string>
     <string name="sources_management_held_back_hint">Tämä lähde kaatoi Morphen latauksen aikana, joten se ohitetaan. Päivitä tai tuo se uudelleen, niin voit yrittää uudelleen.</string>
+    <string name="sources_management_signed_by">Allekirjoittanut</string>
+    <string name="sources_management_signing_key_changed_badge">Avain muuttunut</string>
+    <string name="sources_management_signing_key_changed_hint">Uusin julkaisu ei ole allekirjoitettu avaimella, jota tämä lähde käytti aiemmin, joten sitä ei asennettu. Napauta tarkistaaksesi sen</string>
     <string name="sources_management_source_enabled">Lähde käytössä</string>
     <string name="sources_management_source_disabled">Lähde poistettu käytöstä</string>
     <string name="sources_management_source_updating">Päivitetään lähdettä</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Lähteiden lataaminen epäonnistui: %s</string>
     <string name="sources_download_fail_named">Lähdettä \"%s\" ei voitu päivittää. Tarkista internetyhteys ja yritä uudelleen</string>
     <string name="sources_download_endpoint_not_found">\"%s\": lisäosien metatietoja ei löytynyt</string>
+    <string name="sources_signing_key_changed_named">\'%s\'-sovellusta ei päivitetty, koska sen uusin julkaisu ei ole allekirjoitettu avaimella, jota se käytti aiemmin</string>
+    <string name="sources_signing_key_changed_local">Tiedostoa ei ole allekirjoitettu avaimella, jota tämä lähde käytti aiemmin. Luottaaksesi siihen, poista lähde ja lisää tiedosto uudelleen</string>
+    <string name="sources_signing_key_trust_title">Luotatko uuteen avaimeen?</string>
+    <string name="sources_signing_key_trust_message">Uusin julkaisu on allekirjoitettu eri avaimella. Joko kehittäjä on vaihtanut avaimensa tai joku muu on julkaissut tämän version. Luota siihen vain, jos kehittäjä on ilmoittanut uudesta avaimesta</string>
+    <string name="sources_signing_key_trust_message_unsigned">Uusin julkaisu ei ole allekirjoitettu. Joko kehittäjä on lopettanut julkaisujen allekirjoittamisen tai joku muu on julkaissut tämän version. Luota siihen vain, jos kehittäjä on ilmoittanut siitä</string>
+    <string name="sources_signing_key_trusted">Luotettu avain</string>
+    <string name="sources_signing_key_new">Uusi avain</string>
     <string name="sources_patch_expert_badge">Asiantuntija</string>
     <string name="sources_patch_expert_badge_tooltip">Ota Asiantuntijatila käyttöön asetuksista, jotta voit sisällyttää tämän lisäosan manuaalisesti</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1218,7 +1228,6 @@ Yksityiskohdat: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Luotettu: %1$d / %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Apusovellukset voivat ladata alkuperäisiä APK-tiedostoja puolestasi. Vain ne sovellukset, joihin luotat täällä, tarjotaan latausohjeissa.</string>
     <string name="settings_system_apk_download_helper_trust_title">Luotetaanko tähän apuhahmoon?</string>
-    <string name="settings_system_apk_download_helper_trust">Luotta</string>
     <string name="settings_system_apk_download_helper_warning">APK tulee apusovelluksesta, joten luota vain tuntemiisi sovelluksiin. Morphe tarkistaa silti jokaisen tiedoston paketin, version ja allekirjoituksen ennen korjausta.</string>
     <string name="settings_system_apk_download_helper_installed_by">Asentanut %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Asentajaa ei tunneta</string>
@@ -1313,6 +1322,7 @@ Yksityiskohdat: %2$s"</string>
     <string name="include">Sisällytä</string>
     <string name="disable">Poista käytöstä</string>
     <string name="enable">Ota käyttöön</string>
+    <string name="trust">Luota</string>
     <string name="loading">Ladataan…</string>
     <string name="creating">Luodaan…</string>
     <string name="processing_apk">Käsitellään APK-tiedostoa…</string>

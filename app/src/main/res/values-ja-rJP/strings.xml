@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">このソースはパッチャー %1$s 用に作成されていますが、Morphe %2$s にはパッチャー %3$s が含まれています。Morphe を更新して使用してください</string>
     <string name="sources_management_held_back_badge">クラッシュしました</string>
     <string name="sources_management_held_back_hint">このソースの読み込み中に Morphe がクラッシュしたため、スキップします。もう一度試すには、ソースを更新または再インポートしてください</string>
+    <string name="sources_management_signed_by">署名者</string>
+    <string name="sources_management_signing_key_changed_badge">鍵が変更されました</string>
+    <string name="sources_management_signing_key_changed_hint">最新のリリースは、このソースで以前使用されていた署名キーで署名されていないため、インストールされませんでした。タップして確認してください</string>
     <string name="sources_management_source_enabled">有効にしました</string>
     <string name="sources_management_source_disabled">無効にしました</string>
     <string name="sources_management_source_updating">ソースを更新中</string>
@@ -236,16 +239,23 @@
     <string name="sources_dialog_url_valid">有効なリポジトリまたは JSON URL</string>
     <string name="sources_dialog_url_invalid">URL は GitHub または GitLab のリポジトリ、もしくは .json ファイルを指している必要があります</string>
     <string name="sources_dialog_preinstalled">プリインストール</string>
-    <string name="sources_dialog_community">コミュニティ パッチ</string>
+    <string name="sources_dialog_community">コミュニティ製パッチ</string>
     <string name="sources_dialog_choose_apps_description">ソースの読み込み後、パッチ対象にするアプリを選択する</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">サードパーティのパッチソース</string>
-    <string name="sources_dialog_community_notice_message">"コミュニティのパッチソースは、それぞれの作者によって作成・管理されています。Morphe は、サードパーティー製のパッチを審査・検証しておらず、その内容や、お使いのデバイスに及ぼす影響について一切の責任を負いません"</string>
+    <string name="sources_dialog_community_notice_message">"コミュニティ製のパッチソースは、それぞれの作者によって作成・管理されています。Morphe は、サードパーティー製のパッチを審査・検証しておらず、その内容や、お使いのデバイスに及ぼす影響について一切の責任を負いません"</string>
     <string name="sources_update_success">更新成功</string>
     <string name="sources_update_unavailable">利用可能な更新はありません</string>
     <string name="sources_download_fail">ソースのダウンロードに失敗しました: %s</string>
     <string name="sources_download_fail_named">「%s」を更新できませんでした。インターネット接続を確認して、もう一度お試しください</string>
     <string name="sources_download_endpoint_not_found">\'%s\': パッチメタデータが見つかりませんでした。</string>
+    <string name="sources_signing_key_changed_named">「%s」の最新リリースは、以前に使用されていた署名キーで署名されていないため、更新されませんでした</string>
+    <string name="sources_signing_key_changed_local">このファイルは、このソースで以前使用されていた署名キーで署名されていません。信頼するには、ソースを削除してからファイルを再度追加してください</string>
+    <string name="sources_signing_key_trust_title">新しい署名キーを信頼しますか？</string>
+    <string name="sources_signing_key_trust_message">最新のリリースは以前とは異なる署名キーで署名されています。開発者が署名キーを変更したか、第三者がこのリリースを公開した可能性があります。開発者が新しい署名キーへの変更を告知している場合に限り、信頼してください</string>
+    <string name="sources_signing_key_trust_message_unsigned">最新のリリースには署名がありません。開発者がリリースへの署名をやめたか、第三者がこのリリースを公開した可能性があります。開発者が公開を告知している場合に限り、信頼してください</string>
+    <string name="sources_signing_key_trusted">信頼済みの署名キー</string>
+    <string name="sources_signing_key_new">新しい署名キー</string>
     <string name="sources_patch_expert_badge">エキスパート</string>
     <string name="sources_patch_expert_badge_tooltip">このパッチを手動で追加するには、設定でエキスパート モードを有効にしてください</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -705,7 +715,7 @@
     <string name="patched_app_save_failed_toast">パッチ適用済みアプリの保存に失敗しました</string>
     <string name="plugin_activity_dialog_body">このプラグインを続行するには、ユーザーの操作が必要です</string>
     <string name="patcher_process_killed_message">メモリを解放するためなどの理由で、システムがパッチ処理を完了前に停止しました。他のアプリを閉じて、もう一度お試しください</string>
-    <string name="patcher_process_crashed_message">パッチャーが完了前にクラッシュしました。再発する場合は、設定で\"Use embedded VM\"をオフにして、ログと共に問題を報告してください</string>
+    <string name="patcher_process_crashed_message">パッチ処理が完了する前にクラッシュしました。再発する場合は、設定で「内蔵の実行環境を使用する」をオフにし、ログを添付して問題を報告してください</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">ヒープメモリが %1$s MBの状態でメモリ不足が発生しました。選択したパッチが多すぎます。パッチソースまたは適用するパッチを減らしてください</string>
     <string name="install_app_success">正常にインストールされました</string>
@@ -814,7 +824,7 @@
     <string name="settings_appearance_app_card_colors_default">デフォルト</string>
     <string name="settings_appearance_app_card_colors_default_description">ホーム画面のアプリカードに各アプリのバンドルカラーを使用します</string>
     <string name="settings_appearance_app_card_colors_accent">アクセント</string>
-    <string name="settings_appearance_app_card_colors_accent_description">ホーム画面のアプリカードにアプリのアクセント カラーを使用します</string>
+    <string name="settings_appearance_app_card_colors_accent_description">ホーム画面のアプリカードに各アプリのアクセントカラーを使用します</string>
     <string name="settings_appearance_app_card_colors_gradient">グラデーション</string>
     <string name="settings_appearance_app_card_colors_gradient_description">ホーム画面のアプリカードにグラデーションを使用します</string>
     <string name="settings_appearance_app_card_colors_solid">単色</string>
@@ -1093,7 +1103,7 @@ morphe_header_custom_dark.png
     <!-- Settings - System Tab - Import and Export Section -->
     <string name="settings_system_signing_key">署名キー</string>
     <string name="settings_system_signing_key_description">パッチ適用済みアプリの署名に使うキーをバックアップ・復元します</string>
-    <string name="settings_system_signing_key_dialog_description">Morphe でパッチを適用したアプリは、すべてこのキーで署名されています。必ずバックアップしてください。このキーがないと、パッチ適用済みのアプリを更新する際にアンインストールする必要があります</string>
+    <string name="settings_system_signing_key_dialog_description">Morphe でパッチを適用したアプリは、すべてこのキーで署名されます。キーを失うと、アプリを更新する際に一度アンインストールする必要があるため、必ずバックアップを保管してください</string>
     <string name="settings_system_signing_key_missing">最初のパッチ適用時に Morphe が作成します</string>
     <string name="settings_system_signing_key_created">作成日: %s</string>
     <string name="settings_system_signing_key_fingerprint">SHA-256 フィンガープリント</string>
@@ -1220,7 +1230,6 @@ morphe_header_custom_dark.png
     <string name="settings_system_apk_download_helper_trusted_count">信頼済み: %1$d / %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">ヘルパーアプリを使ってオリジナルの APK をダウンロードできます。ここで信頼済みにしたアプリのみ、ダウンロード手順に表示されます</string>
     <string name="settings_system_apk_download_helper_trust_title">このヘルパーを信頼しますか？</string>
-    <string name="settings_system_apk_download_helper_trust">信頼</string>
     <string name="settings_system_apk_download_helper_warning">この APK はヘルパーアプリから提供されたものです。Morphe では、パッチ適用前にすべてのファイルのパッケージ名、バージョン、署名を確認していますが、それでも信頼できるアプリのみ使用してください</string>
     <string name="settings_system_apk_download_helper_installed_by">インストール元: %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">不明なインストーラー</string>
@@ -1242,7 +1251,7 @@ morphe_header_custom_dark.png
     <string name="file_picker_show_hidden_files">非表示のファイルを表示する</string>
     <!-- Settings - System Tab - About Section -->
     <string name="settings_system_about">Morphe について</string>
-    <string name="settings_system_manager_description">人気の Android アプリにモダンで効率的にパッチを適用するためのオープンソースプロジェクトです。コミュニティからのフィードバックや貢献によって発展しています</string>
+    <string name="settings_system_manager_description">人気の Android アプリにモダンで効率的にパッチを適用するためのオープンソース プロジェクトです。コミュニティからのフィードバックや貢献によって発展しています</string>
     <string name="credits">クレジット</string>
     <string name="credits_description">Morphe の開発メンバー</string>
     <string name="settings_about_section_project">プロジェクト</string>
@@ -1315,6 +1324,7 @@ morphe_header_custom_dark.png
     <string name="include">含める</string>
     <string name="disable">無効化</string>
     <string name="enable">有効化</string>
+    <string name="trust">信頼</string>
     <string name="loading">読み込み中…</string>
     <string name="creating">作成中…</string>
     <string name="processing_apk">APK を処理中…</string>

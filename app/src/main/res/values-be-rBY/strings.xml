@@ -366,6 +366,7 @@
     <!-- Settings - Advanced Tab - Updates Section -->
     <!-- "Morphe" here is the app itself, not the patches. Do not translate this as pre-release patches -->
     <!-- Shown before pre-release updates are turned on for the app itself. Patches have their own toggle in each patch source -->
+    <string name="settings_advanced_update_interval_daily">Штодзённа</string>
     <!-- Notification content -->
     <string name="notification_channel_mounted_apps">Замацаваныя праграмы</string>
     <!-- Settings - Advanced Tab - Expert settings Section -->
@@ -376,11 +377,13 @@
     <!-- "PAT" is a GitHub Personal Access Token, keep it in English because GitHub has no localized UI -->
     <!-- Settings - Advanced Tab - Patch Options Section -->
     <!-- Settings - Advanced Tab - Patch Options Section: Custom Branding -->
+    <string name="settings_advanced_patch_options_custom_branding_app_icon">Іконка праграмы</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Custom Header -->
     <!-- Settings - Advanced Tab - Patch Options Section: Hide Shorts -->
     <!-- Settings - System Tab - Installer Section -->
     <!-- Settings - System Tab - Performance Section -->
     <!-- Settings - System Tab - Notifications Section -->
+    <string name="settings_system_notifications_sound_default">Звычайны</string>
     <!-- Settings - System Tab - Import and Export Section -->
     <!-- Settings - System Tab - Files & Storage Section -->
     <!-- Settings - System Tab - Storage Management screen -->
@@ -396,6 +399,7 @@
     <!-- Easter egg offered after seven taps on the version in the About dialog -->
     <!-- Shared strings -->
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="apps">Праграмы</string>
     <!-- Sections the settings page lists, each opening a page of its own. A summary names what the section holds -->
     <!-- Who made a patch source, as a field label -->
     <!-- A file a patch source is added from, as a field label -->
@@ -403,6 +407,7 @@
     <string name="sources">Крыніцы</string>
     <!-- Label of a footer button beside "Translate". Keep it short, a longer one moves the buttons onto two rows -->
     <!-- Label of a footer button beside other buttons, which reads "Translate" until pressed. Keep it as short as "Translate", a longer one moves the buttons onto two rows -->
+    <string name="changelog_section_new">Новыя</string>
     <!-- Marks the version of a patch source downloaded to the manager, which patches with it rather than the one an installed app was patched with -->
     <!-- "%s" is the number of changes in the section -->
     <!-- Shown while downloading when the server does not report the total size. "%1$s" is the megabytes so far. -->

@@ -212,6 +212,9 @@
     <string name="sources_management_outdated_manager_hint">Cette source est conçue pour le patcheur %1$s, mais Morphe %2$s inclut le patcheur %3$s. Mettez Morphe à jour pour l\'utiliser</string>
     <string name="sources_management_held_back_badge">A plantée</string>
     <string name="sources_management_held_back_hint">Cette source a fait planter Morphe lors du chargement, elle est donc ignorée. Mettez-la à jour ou réimportez-la pour réessayer.</string>
+    <string name="sources_management_signed_by">Signé par</string>
+    <string name="sources_management_signing_key_changed_badge">Clé modifiée</string>
+    <string name="sources_management_signing_key_changed_hint">La dernière version n\'est pas signée par la clé utilisée précédemment par cette source, elle n\'a donc pas été installée. Appuyez pour l\'examiner</string>
     <string name="sources_management_source_enabled">Source activée</string>
     <string name="sources_management_source_disabled">Source désactivée</string>
     <string name="sources_management_source_updating">Mise à jour de la source</string>
@@ -247,6 +250,13 @@
     <string name="sources_download_fail">Échec du téléchargement des sources : %s</string>
     <string name="sources_download_fail_named">\'%s\' n\'a pas pu être mis à jour. Vérifiez votre connexion internet et réessayez</string>
     <string name="sources_download_endpoint_not_found">\'%s\' : métadonnées de patchs introuvables</string>
+    <string name="sources_signing_key_changed_named">\'%s\' n\'a pas été mis à jour car sa dernière version n\'est pas signée par la clé utilisée précédemment</string>
+    <string name="sources_signing_key_changed_local">Le fichier n\'est pas signé par la clé utilisée précédemment par cette source. Pour lui faire confiance, supprimez la source et ajoutez à nouveau le fichier</string>
+    <string name="sources_signing_key_trust_title">Faire confiance à la nouvelle clé ?</string>
+    <string name="sources_signing_key_trust_message">La dernière version est signée par une clé différente. Soit le développeur a remplacé sa clé, soit quelqu\'un d\'autre a publié cette version. Ne lui faites confiance que si le développeur a annoncé une nouvelle clé</string>
+    <string name="sources_signing_key_trust_message_unsigned">La dernière version n\'est pas signée. Soit le développeur a cessé de signer les versions, soit quelqu\'un d\'autre a publié cette version. Ne lui faites confiance que si le développeur l\'a annoncé</string>
+    <string name="sources_signing_key_trusted">Clé fiable</string>
+    <string name="sources_signing_key_new">Nouvelle clé</string>
     <string name="sources_patch_expert_badge">Expert</string>
     <string name="sources_patch_expert_badge_tooltip">Activer le mode Expert dans les Paramètres pour inclure ce patch manuellement
 </string>
@@ -1226,7 +1236,6 @@ Détails : %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Fiables : %1$d sur %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Les applications d\'assistance peuvent télécharger les APK d\'origine pour vous. Seules les applications auxquelles vous faites confiance ici sont proposées dans les instructions de téléchargement</string>
     <string name="settings_system_apk_download_helper_trust_title">Faire confiance à cet assistant ?</string>
-    <string name="settings_system_apk_download_helper_trust">Faire confiance</string>
     <string name="settings_system_apk_download_helper_warning">L\'APK provient de l\'application d\'assistance : ne faites donc confiance qu\'aux applications que vous connaissez. Morphe vérifie tout de même le paquet, la version et la signature de chaque fichier avant le patching</string>
     <string name="settings_system_apk_download_helper_installed_by">Installé par %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Installateur inconnu</string>
@@ -1321,6 +1330,7 @@ Détails : %2$s"</string>
     <string name="include">Inclure</string>
     <string name="disable">Désactiver</string>
     <string name="enable">Activer</string>
+    <string name="trust">Faire confiance</string>
     <string name="loading">Chargement…</string>
     <string name="creating">Création…</string>
     <string name="processing_apk">Traitement de l\'APK…</string>

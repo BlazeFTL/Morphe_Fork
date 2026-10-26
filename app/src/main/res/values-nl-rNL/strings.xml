@@ -46,7 +46,7 @@
     <string name="home_metadata_errors_subtitle">Tik om bronnen te bekijken</string>
     <string name="home_outdated_manager_title">Morphe is verouderd</string>
     <string name="home_outdated_manager_subtitle">Sommige patchbronnen vereisen een nieuwere versie</string>
-    <string name="home_held_back_title">Een patchbron heeft Morphe laten crashen.}</string>
+    <string name="home_held_back_title">Een patchbron heeft Morphe laten crashen.</string>
     <string name="home_held_back_subtitle">Empty</string>
     <string name="home_metered_skipped_title">Updates gepauzeerd op mobiele data</string>
     <string name="home_metered_skipped_subtitle">Tik om updates via mobiele data toe te staan</string>
@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Deze bron is gebouwd voor patcher %1$s, maar Morphe %2$s bevat patcher %3$s. Update Morphe om deze te gebruiken</string>
     <string name="sources_management_held_back_badge">Gecrasht</string>
     <string name="sources_management_held_back_hint">Deze bron heeft Morphe laten crashen tijdens het laden en wordt daarom overgeslagen. Werk deze bij of importeer deze opnieuw om het opnieuw te proberen.</string>
+    <string name="sources_management_signed_by">Ondertekend door</string>
+    <string name="sources_management_signing_key_changed_badge">Sleutel gewijzigd</string>
+    <string name="sources_management_signing_key_changed_hint">De laatste release is niet ondertekend met de sleutel die deze bron eerder gebruikte, waardoor deze niet is geïnstalleerd. Tik om deze te beoordelen</string>
     <string name="sources_management_source_enabled">Bron ingeschakeld</string>
     <string name="sources_management_source_disabled">Bron uitgeschakeld</string>
     <string name="sources_management_source_updating">Bron bijwerken</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Kan bronnen niet downloaden: %s</string>
     <string name="sources_download_fail_named">\'%s\' kon niet worden bijgewerkt. Controleer je internetverbinding en probeer het opnieuw</string>
     <string name="sources_download_endpoint_not_found">\'%s\': patch metadata niet gevonden</string>
+    <string name="sources_signing_key_changed_named">\'%s\' is niet geüpdatet omdat de nieuwste release niet ondertekend is met de laatst gebruikte sleutel</string>
+    <string name="sources_signing_key_changed_local">Dit bestand is niet ondertekend met de sleutel die de vorige bron gebruikte. Om dit te vertrouwen, verwijder de bron en voeg het bestand opnieuw toe</string>
+    <string name="sources_signing_key_trust_title">De nieuwe sleutel vertrouwen?</string>
+    <string name="sources_signing_key_trust_message">De laatste release is met een andere sleutel ondertekend. Ofwel de ontwikkelaar heeft diens sleutel vervangen, of iemand anders heeft deze uitgave gepubliceerd. Vertrouw dit alleen als de ontwikkelaar een nieuwe sleutel heeft aangekondigd</string>
+    <string name="sources_signing_key_trust_message_unsigned">De nieuwste uitgave is niet ondertekend. Ofwel de ontwikkelaar is gestopt met uitgaven ondertekenen, of iemand anders heeft deze uitgave vrijgegeven. Vertrouw dit alleen als de ontwikkelaar dit heeft aangekondigd.</string>
+    <string name="sources_signing_key_trusted">Vertrouwde sleutel</string>
+    <string name="sources_signing_key_new">Nieuwe sleutel</string>
     <string name="sources_patch_expert_badge">Expert</string>
     <string name="sources_patch_expert_badge_tooltip">Schakel Expertmodus in Instellingen in om deze patch handmatig toe te voegen</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -793,7 +803,7 @@ Deïnstalleren wist alle app-gegevens permanent."</string>
     <string name="settings_appearance_outlines">Contouren</string>
     <string name="settings_appearance_outlines_description">Tekent een dunne rand rond kaarten, panelen en knoppen</string>
     <string name="settings_appearance_blur">Vervaging</string>
-    <string name="settings_appearance_blur_description">Vaggt wat onder kopteksten, balken en panelen scrollt</string>
+    <string name="settings_appearance_blur_description">Vervaagt wat onder kopteksten, balken en panelen verschuift</string>
     <!-- Settings - Appearance Tab - Language Selector -->
     <string name="settings_appearance_app_language">App-taal</string>
     <string name="settings_appearance_app_language_current">Huidige taal</string>
@@ -1151,7 +1161,7 @@ Details: %2$s"</string>
     <string name="settings_system_storage_free">%1$s vrij</string>
     <string name="settings_system_storage_saved_apks">Opgeslagen APK\'s</string>
     <string name="settings_system_storage_caches">Caches</string>
-    <string name="settings_system_storage_keystore_title">Ondertekeningssleutelopslag</string>
+    <string name="settings_system_storage_keystore_title">Keystore ondertekenen</string>
     <string name="settings_system_storage_app_data_title">App-gegevens</string>
     <string name="settings_system_storage_patch_bundles_title">Patch-bundels</string>
     <string name="settings_system_storage_http_cache_title">Netwerkcache</string>
@@ -1219,7 +1229,6 @@ Details: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Vertrouwd: %1$d van %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Helper-apps kunnen originele APK\'s voor je downloaden. Alleen de apps die je hier vertrouwt, worden aangeboden in de downloadinstructies.</string>
     <string name="settings_system_apk_download_helper_trust_title">Deze helper vertrouwen?</string>
-    <string name="settings_system_apk_download_helper_trust">Vertrouwd</string>
     <string name="settings_system_apk_download_helper_warning">De APK komt van de helper-app, dus vertrouw alleen apps die je kent. Morphe controleert nog steeds het pakket, de versie en de handtekening van elk bestand voordat er gepatcht wordt.</string>
     <string name="settings_system_apk_download_helper_installed_by">Geïnstalleerd door %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Installatieprogramma onbekend</string>
@@ -1314,6 +1323,7 @@ Details: %2$s"</string>
     <string name="include">Opnemen</string>
     <string name="disable">Uitschakelen</string>
     <string name="enable">Inschakelen</string>
+    <string name="trust">Vertrouwen</string>
     <string name="loading">Bezig met laden…</string>
     <string name="creating">Bezig met maken…</string>
     <string name="processing_apk">APK verwerken…</string>

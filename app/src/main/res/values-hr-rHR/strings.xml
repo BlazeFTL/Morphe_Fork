@@ -212,6 +212,9 @@ Ovaj izvor se nalazi na predizdanjima patcheva. Patchanje može propasti ili se 
     <string name="sources_management_outdated_manager_hint">Ovaj izvorni kod je napravljen za patcher %1$s, ali Morphe %2$s uključuje patcher %3$s. Ažurirajte Morphe da biste ga koristili.</string>
     <string name="sources_management_held_back_badge">Preskočeno je kako bi se aplikacija mogla pokrenuti. Dodirnite za pregled.</string>
     <string name="sources_management_held_back_hint">Ovaj je izvor srušio Morphe tijekom učitavanja, pa se preskače. Ažurirajte ga ili ga ponovno uvezite da biste pokušali ponovno</string>
+    <string name="sources_management_signed_by">Potpisao</string>
+    <string name="sources_management_signing_key_changed_badge">Promijenjen ključ</string>
+    <string name="sources_management_signing_key_changed_hint">Najnovije izdanje nije potpisano ključem koji je ovaj izvor ranije koristio, stoga nije instalirano. Dodirnite za pregled</string>
     <string name="sources_management_source_enabled">Izvor omogućen</string>
     <string name="sources_management_source_disabled">Izvor onemogućen</string>
     <string name="sources_management_source_updating">Ažuriranje izvora</string>
@@ -247,6 +250,13 @@ Ovaj izvor se nalazi na predizdanjima patcheva. Patchanje može propasti ili se 
     <string name="sources_download_fail">Preuzimanje izvora nije uspjelo: %s</string>
     <string name="sources_download_fail_named">\"%s\" se nije mogao ažurirati. Provjerite internetsku vezu i pokušajte ponovno</string>
     <string name="sources_download_endpoint_not_found">\'%s\': metapodaci patcha nisu pronađeni</string>
+    <string name="sources_signing_key_changed_named">\'%s\' nije ažuriran jer njegovo najnovije izdanje nije potpisano ključem koji je ranije koristio</string>
+    <string name="sources_signing_key_changed_local">Datoteka nije potpisana ključem koji je ovaj izvor prethodno koristio. Da biste joj vjerovali, izbrišite izvor i ponovno dodajte datoteku</string>
+    <string name="sources_signing_key_trust_title">Vjerujete li novom ključu?</string>
+    <string name="sources_signing_key_trust_message">Najnovije izdanje je potpisano drugim ključem. Ili je programer zamijenio svoj ključ, ili je ovo izdanje objavio netko drugi. Vjerujte mu samo ako je programer najavio novi ključ</string>
+    <string name="sources_signing_key_trust_message_unsigned">Najnovije izdanje nije potpisano. Ili je programer prestao potpisivati izdanja, ili je ovo izdanje objavio netko drugi. Vjerujte mu samo ako je programer to najavio</string>
+    <string name="sources_signing_key_trusted">Povjerljiv ključ</string>
+    <string name="sources_signing_key_new">Novi ključ</string>
     <string name="sources_patch_expert_badge">Ekspert</string>
     <string name="sources_patch_expert_badge_tooltip">Omogućite Ekspert način rada u Postavkama da biste ručno uključili ovaj patch</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1223,7 +1233,6 @@ Detalji: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Pouzdane: %1$d od %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Pomoćne aplikacije mogu umjesto vas preuzeti originalne APK-ove. U uputama za preuzimanje ponuđene su samo one kojima ovdje vjerujete.</string>
     <string name="settings_system_apk_download_helper_trust_title">Trebate li ovom asistentu vjerovati?</string>
-    <string name="settings_system_apk_download_helper_trust">Vjerovanje</string>
     <string name="settings_system_apk_download_helper_warning">APK dolazi iz pomoćne aplikacije, zato vjerujte samo aplikacijama koje poznajete. Morphe i dalje provjerava paket, verziju i potpis svake datoteke prije patchanja</string>
     <string name="settings_system_apk_download_helper_installed_by">Instalirao/la %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Instalater nepoznat</string>
@@ -1318,6 +1327,7 @@ Detalji: %2$s"</string>
     <string name="include">Uključi</string>
     <string name="disable">Onemogući</string>
     <string name="enable">Omogući</string>
+    <string name="trust">Vjeruj</string>
     <string name="loading">Samo trenutak…</string>
     <string name="creating">Izrada…</string>
     <string name="processing_apk">Obrada APK…</string>

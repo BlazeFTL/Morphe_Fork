@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Ovaj izvor je napravljen za patcher %1$s, ali Morphe %2$s uključuje patcher %3$s. Ažuriraj Morphe da bi ga koristio</string>
     <string name="sources_management_held_back_badge">Srušio se</string>
     <string name="sources_management_held_back_hint">Ovaj izvor je srušio Morphe tokom učitavanja, pa se preskače. Ažurirajte ga ili ponovo uvezite da biste pokušali ponovo.</string>
+    <string name="sources_management_signed_by">Potpisao</string>
+    <string name="sources_management_signing_key_changed_badge">Ključ je promenjen</string>
+    <string name="sources_management_signing_key_changed_hint">Najnovije izdanje nije potpisano ključem koji je ovaj izvor ranije koristio, pa nije instalirano. Dodirnite da ga pregledate</string>
     <string name="sources_management_source_enabled">Izvor je uključen</string>
     <string name="sources_management_source_disabled">Izvor je isključen</string>
     <string name="sources_management_source_updating">Ažuriranje izvora</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Neuspešno preuzimanje izvora: %s</string>
     <string name="sources_download_fail_named">\'%s\' nije mogao da se ažurira. Proverite vašu internet konekciju i pokušajte ponovo</string>
     <string name="sources_download_endpoint_not_found">\'%s\': metad podaci o zakrpi nisu pronađeni</string>
+    <string name="sources_signing_key_changed_named">\'%s\' nije ažuriran jer njegovo najnovije izdanje nije potpisano ključem koji je ranije koristio</string>
+    <string name="sources_signing_key_changed_local">Datoteka nije potpisana ključem koji je ovaj izvor ranije koristio. Da biste joj verovali, obrišite izvor i ponovo dodajte datoteku</string>
+    <string name="sources_signing_key_trust_title">Verujete li novom ključu?</string>
+    <string name="sources_signing_key_trust_message">Najnovije izdanje je potpisano drugačijim ključem. Ili je programer zamenio svoj ključ, ili je neko drugi objavio ovo izdanje. Verujte mu samo ako je programer najavio novi ključ</string>
+    <string name="sources_signing_key_trust_message_unsigned">Najnovije izdanje nije potpisano. Ili je programer prestao da potpisuje izdanja, ili je neko drugi objavio ovo izdanje. Verujte mu samo ako je programer to najavio</string>
+    <string name="sources_signing_key_trusted">Poverljiv ključ</string>
+    <string name="sources_signing_key_new">Novi ključ</string>
     <string name="sources_patch_expert_badge">Експерт</string>
     <string name="sources_patch_expert_badge_tooltip">Омогућите Експерт режим у Подешавањима да бисте ручно укључили овај патч</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1203,7 +1213,6 @@ Detalji: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Pouzdano: %1$d od %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Pomoćne aplikacije mogu da preuzimaju originalne APK-ove umesto vas. U uputstvima za preuzimanje nude se samo one kojima ovde verujete.</string>
     <string name="settings_system_apk_download_helper_trust_title">Verovati ovom pomagaču?</string>
-    <string name="settings_system_apk_download_helper_trust">Veruj</string>
     <string name="settings_system_apk_download_helper_warning">APK dolazi od pomoćne aplikacije, zato verujte samo aplikacijama koje poznajete. Morphe i dalje proverava paket, verziju i potpis svake datoteke pre zakrpljivanja.</string>
     <string name="settings_system_apk_download_helper_installed_by">Instalirao: %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Instalater nepoznat</string>
@@ -1298,6 +1307,7 @@ Detalji: %2$s"</string>
     <string name="include">Uključi</string>
     <string name="disable">Onemogući</string>
     <string name="enable">Omogući</string>
+    <string name="trust">Veruj</string>
     <string name="loading">Učitavanje…</string>
     <string name="creating">Kreiranje…</string>
     <string name="processing_apk">Obrada APK-a…</string>

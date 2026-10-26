@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Ta vir je izdelan za popravek %1$s, vendar Morphe %2$s vključuje popravek %3$s. Posodobite Morphe za uporabo</string>
     <string name="sources_management_held_back_badge">Zrušen</string>
     <string name="sources_management_held_back_hint">Ta vir je med nalaganjem zrušil aplikacijo Morphe, zato je preskočen. Posodobite ga ali ga znova uvozite, da poskusite znova</string>
+    <string name="sources_management_signed_by">Podpisal</string>
+    <string name="sources_management_signing_key_changed_badge">Ključ spremenjen</string>
+    <string name="sources_management_signing_key_changed_hint">Najnovejša različica ni podpisana s ključem, ki ga je ta vir uporabljal prej, zato zato ni bila nameščena. Zapletite za pregled</string>
     <string name="sources_management_source_enabled">Vir omogočen</string>
     <string name="sources_management_source_disabled">Vir onemogočen</string>
     <string name="sources_management_source_updating">Posodabljanje vira</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Napaka pri prenosu virov: %s</string>
     <string name="sources_download_fail_named">\"%s\" ni bilo mogoče posodobiti. Preverite internetno povezavo in poskusite znova</string>
     <string name="sources_download_endpoint_not_found">\"%s\": metapodatki popravka niso bili najdeni</string>
+    <string name="sources_signing_key_changed_named">\'%s\' ni bilo posodobljeno, ker najnovejša različica ni podpisana s ključem, ki ga je uporabljal prej</string>
+    <string name="sources_signing_key_changed_local">Datoteka ni podpisana s ključem, ki ga je ta vir uporabljal prej. Če ji zaupate, izbrišite vir in datoteko dodajte ponovno</string>
+    <string name="sources_signing_key_trust_title">Zaupati novemu ključu?</string>
+    <string name="sources_signing_key_trust_message">Najnovejša različica je podpisana z drugim ključem. Razvijalec je zamenjal svoj ključ ali pa je to različico objavil nekdo drug. Ji zaupajte le, če je razvijalec napovedal nov ključ</string>
+    <string name="sources_signing_key_trust_message_unsigned">Najnovejša različica ni podpisana. Razvijalec je prenehal podpisovati različice ali pa je to različico objavil nekdo drug. Ji zaupajte le, če je to razvijalec napovedal</string>
+    <string name="sources_signing_key_trusted">Zaupan ključ</string>
+    <string name="sources_signing_key_new">Novi ključ</string>
     <string name="sources_patch_expert_badge">Poznavalec</string>
     <string name="sources_patch_expert_badge_tooltip">Omogočite način poznavalca v nastavitvah, da ročno vključite ta popravek</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ Podrobnosti: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Zaupanja vredno: %1$d od %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Pomožne aplikacije lahko namesto vas prenesejo originalne datoteke APK. V navodilih za prenos so na voljo samo tiste, ki jim tukaj zaupate.</string>
     <string name="settings_system_apk_download_helper_trust_title">Zaupate temu pripomočku?</string>
-    <string name="settings_system_apk_download_helper_trust">Zaupanje</string>
     <string name="settings_system_apk_download_helper_warning">APK prihaja iz pomožne aplikacije, zato zaupajte samo aplikacijam, ki jih poznate. Morphe pred popravljanjem še vedno preveri paket, različico in podpis vsake datoteke.</string>
     <string name="settings_system_apk_download_helper_installed_by">Nameščeno s strani %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Nameščevalec ni znan</string>
@@ -1314,6 +1323,7 @@ Podrobnosti: %2$s"</string>
     <string name="include">Vključi</string>
     <string name="disable">Onemogoči</string>
     <string name="enable">Omogoči</string>
+    <string name="trust">Zaupanje</string>
     <string name="loading">Nalaganje…</string>
     <string name="creating">Ustvarjam…</string>
     <string name="processing_apk">Obdelujem datoteko APK…</string>

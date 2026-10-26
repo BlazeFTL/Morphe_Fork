@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">यह स्रोत पैचर %1$s के लिए बनाया गया है, लेकिन Morphe %2$s में पैचर %3$s शामिल है। इसका उपयोग करने के लिए Morphe को अपडेट करें</string>
     <string name="sources_management_held_back_badge">क्रैश हो गया</string>
     <string name="sources_management_held_back_hint">यह स्रोत लोड करते समय Morphe को क्रैश कर दिया, इसलिए इसे छोड़ा जा रहा है। पुनः प्रयास करने के लिए इसे अपडेट करें या फिर से आयात करें</string>
+    <string name="sources_management_signed_by">द्वारा हस्ताक्षरित</string>
+    <string name="sources_management_signing_key_changed_badge">की बदल गई</string>
+    <string name="sources_management_signing_key_changed_hint">नवीनतम रिलीज़ उस की द्वारा हस्ताक्षरित नहीं है जिसका उपयोग इस स्रोत ने पहले किया था, इसलिए इसे इंस्टॉल नहीं किया गया। इसकी समीक्षा करने के लिए टैप करें</string>
     <string name="sources_management_source_enabled">स्रोत सक्षम किया गया</string>
     <string name="sources_management_source_disabled">स्रोत अक्षम किया गया</string>
     <string name="sources_management_source_updating">स्रोत अपडेट किया जा रहा है</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">स्रोत डाउनलोड करने में विफल हो गया: %s</string>
     <string name="sources_download_fail_named">\'%s\' को अपडेट नहीं किया जा सका। अपना इंटरनेट कनेक्शन जांचें और फिर से कोशिश करें।</string>
     <string name="sources_download_endpoint_not_found">\'%s\': पैच मेटाडेटा नहीं मिला।</string>
+    <string name="sources_signing_key_changed_named">\'%s\' को अपडेट नहीं किया गया क्योंकि इसकी नवीनतम रिलीज़ उस की द्वारा हस्ताक्षरित नहीं है जिसका उपयोग इसने पहले किया था</string>
+    <string name="sources_signing_key_changed_local">फ़ाइल उस कुंजी द्वारा हस्ताक्षरित नहीं है जिसे इस स्रोत ने पहले उपयोग किया था। इस पर भरोसा करने के लिए, स्रोत को हटा दें और फ़ाइल को फिर से जोड़ें</string>
+    <string name="sources_signing_key_trust_title">क्या आप नई कुंजी पर भरोसा करते हैं?</string>
+    <string name="sources_signing_key_trust_message">नवीनतम रिलीज़ एक अलग कुंजी द्वारा हस्ताक्षरित है। या तो डेवलपर ने अपनी कुंजी बदल दी है, या किसी और ने इस रिलीज़ को प्रकाशित किया है। इस पर तभी भरोसा करें जब डेवलपर ने नई कुंजी की घोषणा की हो</string>
+    <string name="sources_signing_key_trust_message_unsigned">नवीनतम रिलीज़ हस्ताक्षरित नहीं है। या तो डेवलपर ने रिलीज़ को हस्ताक्षरित करना बंद कर दिया है, या किसी और ने इस रिलीज़ को प्रकाशित किया है। इस पर तभी भरोसा करें जब डेवलपर ने इसकी घोषणा की हो</string>
+    <string name="sources_signing_key_trusted">भरोसेमंद कुंजी</string>
+    <string name="sources_signing_key_new">नई कुंजी</string>
     <string name="sources_patch_expert_badge">विशेषज्ञ</string>
     <string name="sources_patch_expert_badge_tooltip">इस पैच को मैन्युअल रूप से शामिल करने के लिए सेटिंग्स में विशेषज्ञ मोड सक्षम करें</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ morphe_header_custom_dark.png
     <string name="settings_system_apk_download_helper_trusted_count">विश्वसनीय: %1$d में से %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">सहायक ऐप आपके लिए मूल APK डाउनलोड कर सकते हैं। डाउनलोड निर्देशों में केवल वही ऐप दिए जाते हैं जिन पर आप यहाँ भरोसा करते हैं।</string>
     <string name="settings_system_apk_download_helper_trust_title">इस सहायक पर भरोसा करें?</string>
-    <string name="settings_system_apk_download_helper_trust">भरोसा</string>
     <string name="settings_system_apk_download_helper_warning">APK सहायक ऐप से आता है, इसलिए केवल उन्हीं ऐप पर भरोसा करें जिन्हें आप जानते हैं। Morphe फिर भी पैच करने से पहले हर फ़ाइल के पैकेज, संस्करण और हस्ताक्षर की जाँच करता है।</string>
     <string name="settings_system_apk_download_helper_installed_by">%s द्वारा इंस्टॉल किया गया</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">इंस्टॉलर अज्ञात</string>
@@ -1314,6 +1323,7 @@ morphe_header_custom_dark.png
     <string name="include">शामिल करें</string>
     <string name="disable">Disable</string>
     <string name="enable">Enable</string>
+    <string name="trust">भरोसा करें</string>
     <string name="loading">Loading…</string>
     <string name="creating">बनाया जा रहा है…</string>
     <string name="processing_apk">APK संसाधित किया जा रहा है…</string>

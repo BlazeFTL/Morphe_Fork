@@ -705,7 +705,7 @@
     <string name="patched_app_save_failed_toast">ไม่สามารถบันทึกแอปที่แพตช์แล้วได้</string>
     <string name="plugin_activity_dialog_body">ต้องมีการติดต่อผู้ใช้เพื่อดำเนินการต่อไปนี้</string>
     <string name="patcher_process_killed_message">ระบบหยุดการทำงานของตัวแพตช์ก่อนที่จะเสร็จสิ้น โดยปกติแล้วเพื่อเพิ่มพื้นที่ว่างในหน่วยความจำ โปรดปิดแอปอื่นๆ แล้วลองใหม่อีกครั้ง</string>
-    <string name="patcher_process_crashed_message">ตัวแพตเชอร์หยุดทำงานก่อนที่จะเสร็จสิ้น หากเกิดขึ้นอีก ให้ปิด \"Use embedded VM\" ในการตั้งค่าและรายงานปัญหาพร้อมกับส่งล็อก</string>
+    <string name="patcher_process_crashed_message">ตัวแพตช์หยุดทำงานก่อนที่จะเสร็จสิ้น หากเกิดขึ้นอีก ให้ปิด \"ใช้ VM ในตัว\" ในการตั้งค่า และรายงานปัญหาพร้อมบันทึก</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">ตัวแพตช์ทำงานล้มเหลวเนื่องจากหน่วยความจำหมดโดยมีฮีปขนาด %1$s MB แอปนี้มีขนาดใหญ่เกินไปสำหรับแพตช์ที่เลือก ลองแพตช์โดยใช้แหล่งแพตช์น้อยลง หรือเลือกแพตช์ให้น้อยลง</string>
     <string name="install_app_success">ติดตั้งสำเร็จแล้ว</string>
@@ -1219,7 +1219,6 @@ morphe_header_custom_dark.png
     <string name="settings_system_apk_download_helper_trusted_count">ไว้วางใจแล้ว: %1$d จาก %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">แอปตัวช่วยสามารถดาวน์โหลด APK ต้นฉบับให้คุณได้ เฉพาะแอปที่คุณไว้วางใจที่นี่เท่านั้นที่จะแสดงในคำแนะนำการดาวน์โหลด</string>
     <string name="settings_system_apk_download_helper_trust_title">ไว้วางใจผู้ช่วยตัวนี้?</string>
-    <string name="settings_system_apk_download_helper_trust">ไว้วางใจ</string>
     <string name="settings_system_apk_download_helper_warning">APK มาจากแอปตัวช่วย ดังนั้นให้ไว้วางใจเฉพาะแอปที่คุณรู้จักเท่านั้น Morphe ยังคงตรวจสอบแพ็กเกจ เวอร์ชัน และลายเซ็นของทุกไฟล์ก่อนแพตช์</string>
     <string name="settings_system_apk_download_helper_installed_by">ติดตั้งโดย %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">ไม่ทราบผู้ติดตั้ง</string>

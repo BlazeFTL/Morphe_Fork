@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Tento zdroj je vytvorený pre patcher %1$s, ale Morphe %2$s obsahuje patcher %3$s. Aktualizujte Morphe, aby ste ho mohli použiť</string>
     <string name="sources_management_held_back_badge">Zlyhal</string>
     <string name="sources_management_held_back_hint">Tento zdroj spôsobil pád Morphe počas načítania, takže sa preskakuje. Aktualizujte ho alebo ho znova importujte a skúste to znova.</string>
+    <string name="sources_management_signed_by">Podpísané</string>
+    <string name="sources_management_signing_key_changed_badge">Kľúč zmenený</string>
+    <string name="sources_management_signing_key_changed_hint">Najnovšia verzia nie je podpísaná kľúčom, ktorý tento zdroj používal predtým, takže nebola nainštalovaná. Pre kontrolu klepnite</string>
     <string name="sources_management_source_enabled">Zdroj povolený</string>
     <string name="sources_management_source_disabled">Zdroj zakázaný</string>
     <string name="sources_management_source_updating">Aktualizácia zdroja</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Nepodarilo sa stiahnuť zdroje: %s</string>
     <string name="sources_download_fail_named">\'%s\' sa nepodarilo aktualizovať. Skontrolujte pripojenie na internet a skúste to znova</string>
     <string name="sources_download_endpoint_not_found">\'%s\': metadata záplaty sa nenašli</string>
+    <string name="sources_signing_key_changed_named">\'%s\' nebolo aktualizované, pretože jeho najnovšia verzia nie je podpísaná kľúčom, ktorý používal predtým</string>
+    <string name="sources_signing_key_changed_local">Súbor nie je podpísaný kľúčom, ktorý tento zdroj používal predtým. Ak mu chcete dôverovať, odstráňte zdroj a pridajte súbor znova</string>
+    <string name="sources_signing_key_trust_title">Dôverovať novému kľúču?</string>
+    <string name="sources_signing_key_trust_message">Najnovšia verzia je podpísaná iným kľúčom. Buď vývojár vymenil svoj kľúč, alebo túto verziu zverejnil niekto iný. Dôverujte jej len v prípade, ak vývojár oznámil nový kľúč</string>
+    <string name="sources_signing_key_trust_message_unsigned">Najnovšia verzia nie je podpísaná. Buď vývojár prestal verzie podpisovať, alebo túto verziu zverejnil niekto iný. Dôverujte jej len v prípade, ak to vývojár oznámil</string>
+    <string name="sources_signing_key_trusted">Dôveryhodný kľúč</string>
+    <string name="sources_signing_key_new">Nový kľúč</string>
     <string name="sources_patch_expert_badge">Expert</string>
     <string name="sources_patch_expert_badge_tooltip">Povoľte režim experta v Nastaveniach, aby ste mohli manuálne zahrnúť túto záplatu</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ Podrobnosti: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Dôveryhodné: %1$d z %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Pomocné aplikácie môžu za vás sťahovať originálne APK. V pokynoch na stiahnutie sa ponúkajú iba tie, ktorým tu dôverujete.</string>
     <string name="settings_system_apk_download_helper_trust_title">Dôverujete tomuto pomocníkovi?</string>
-    <string name="settings_system_apk_download_helper_trust">Dôvera</string>
     <string name="settings_system_apk_download_helper_warning">APK pochádza z pomocnej aplikácie, preto dôverujte iba aplikáciám, ktoré poznáte. Morphe pred patchovaním stále kontroluje balík, verziu a podpis každého súboru.</string>
     <string name="settings_system_apk_download_helper_installed_by">Nainštalované cez %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Neznámy inštalátor</string>
@@ -1314,6 +1323,7 @@ Podrobnosti: %2$s"</string>
     <string name="include">Zahrnúť</string>
     <string name="disable">Zakázať</string>
     <string name="enable">Povoliť</string>
+    <string name="trust">Dôvera</string>
     <string name="loading">Načítava sa…</string>
     <string name="creating">Vytváram…</string>
     <string name="processing_apk">Spracovávam APK…</string>

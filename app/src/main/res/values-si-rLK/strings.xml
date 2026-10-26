@@ -7,8 +7,11 @@
     <string name="home_unpatched_badge">පැච් කරලා නෑ</string>
     <string name="home_no_patches_available">පැච් නොමැත</string>
     <string name="home_app_hide_title">මේ ඇප් එක හංගන්නද?</string>
+    <string name="home_more_apps_title">තව ඇප්ස්</string>
+    <string name="home_more_apps_hide_title">කාර්ඩ් එක හංගන්න?</string>
     <string name="home_app_hide_message">මේ ඇප් එක හෝම් ස්ක්‍රීන් එකෙන් හැංගෙනවා. ඔයාට ඕනිනම් ලිස්ට් එක යට තියන බොත්තම ඔබලා හංගපු ඇප් යථාතත්වයට පත්කරගන්න පුලුවන්</string>
     <string name="home_app_will_be_hidden">මේ ඇප් එක හැංගෙන්න නියමිතයි</string>
+    <string name="home_app_hidden_named">%s හංගපු</string>
     <string name="home_app_no_hidden">හංගපු ඇප් නෑ</string>
     <string name="home_app_hidden_apps_title">හංගපු ඇප්</string>
     <string name="home_app_hidden_apps_hint">ගැංගීමට ඔබන්න</string>
@@ -18,6 +21,11 @@
     <!-- Asked when the link names an app of a source that is already added -->
     <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
     <!-- Home Screen - Update Notifications -->
+    <string name="home_update_skipped_metered">යාවත්කාලීන කිරීම මඟ හැරුණි</string>
+    <string name="home_search_apps">යෙදුම් සෙවීම</string>
+    <string name="list_options_title">වර්ගීකරණය සහ පෙරීම </string>
+    <string name="home_app_filter_clones">ක්ලොන්ස්</string>
+    <string name="home_app_grouping_none">කිසිවක් නැත</string>
     <!-- Home Screen - Home Greetings -->
     <!-- Humorous hype message with light nostalgia -->
     <!-- "Buckle up" referring to fastening your vehicle seat belt. A light-hearted joke to build excitement -->

@@ -212,6 +212,9 @@
     <string name="sources_management_outdated_manager_hint">Този източник е създаден за пачър %1$s, но Morphe %2$s включва пачър %3$s. Актуализирайте Morphe, за да го използвате.</string>
     <string name="sources_management_held_back_badge">Срив</string>
     <string name="sources_management_held_back_hint">Този източник предизвика срив на Morphe по време на зареждане, затова той се пропуска. Обновете го или го импортирайте отново, за да опитате отново.</string>
+    <string name="sources_management_signed_by">Подписано от</string>
+    <string name="sources_management_signing_key_changed_badge">Ключът е променен</string>
+    <string name="sources_management_signing_key_changed_hint">Последната версия не е подписана с ключа, който този източник е използвал преди, затова не беше инсталирана. Докоснете, за да я прегледате</string>
     <string name="sources_management_source_enabled">Източникът е активиран</string>
     <string name="sources_management_source_disabled">Източникът е деактивиран</string>
     <string name="sources_management_source_updating">Актуализиране на източник</string>
@@ -247,6 +250,13 @@
     <string name="sources_download_fail">Неуспешно сваляне на източника: %s</string>
     <string name="sources_download_fail_named">\'%s\' не може да бъде актуализиран. Проверете връзката си с интернет и опитайте отново</string>
     <string name="sources_download_endpoint_not_found">\'%s\': метаданни за пакета не са намерени</string>
+    <string name="sources_signing_key_changed_named">\'%s\' не беше актуализиран, защото последната му версия не е подписана с ключа, който е използван преди</string>
+    <string name="sources_signing_key_changed_local">Файлът не е подписан с ключа, който този източник е използвал преди. За да му се доверите, изтрийте източника и добавете файла отново</string>
+    <string name="sources_signing_key_trust_title">Да се доверите ли на новия ключ?</string>
+    <string name="sources_signing_key_trust_message">Последната версия е подписана с различен ключ. Или разработчикът е заменил ключа си, или някой друг е публикувал тази версия. Доверете се на нея само ако разработчикът е обявил нов ключ</string>
+    <string name="sources_signing_key_trust_message_unsigned">Последната версия не е подписана. Или разработчикът е спрял да подписва версиите, или някой друг е публикувал тази версия. Доверете се на нея само ако разработчикът е обявил това</string>
+    <string name="sources_signing_key_trusted">Доверен ключ</string>
+    <string name="sources_signing_key_new">Нов ключ</string>
     <string name="sources_patch_expert_badge">Експерт</string>
     <string name="sources_patch_expert_badge_tooltip">Активиране на Експертен режим в Настройки, за да включите ръчно тази поправка.</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1220,7 +1230,6 @@ morphe_header_custom_dark.png
     <string name="settings_system_apk_download_helper_trusted_count">Доверени: %1$d от %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Помощните приложения могат да изтеглят оригинални APK вместо вас. В инструкциите за изтегляне се предлагат само тези, на които се доверявате тук.</string>
     <string name="settings_system_apk_download_helper_trust_title">Да доверите ли на този помощник?</string>
-    <string name="settings_system_apk_download_helper_trust">Довери</string>
     <string name="settings_system_apk_download_helper_warning">APK файлът идва от помощното приложение, затова се доверявайте само на приложения, които познавате. Morphe все пак проверява пакета, версията и подписа на всеки файл преди кръпване.</string>
     <string name="settings_system_apk_download_helper_installed_by">Инсталирано от %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Неизвестен инсталатор</string>
@@ -1315,6 +1324,7 @@ morphe_header_custom_dark.png
     <string name="include">Включване</string>
     <string name="disable">Деактивирай</string>
     <string name="enable">Активирай</string>
+    <string name="trust">Доверям се</string>
     <string name="loading">Зареждане…</string>
     <string name="creating">Създаване…</string>
     <string name="processing_apk">Обработване на APK…</string>

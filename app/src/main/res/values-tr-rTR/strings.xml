@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Bu kaynak, %1$s yama programı için oluşturulmuş, ancak Morphe %2$s, %3$s yama programını içeriyor. Bunu kullanmak için Morphe\'yi güncelleyin</string>
     <string name="sources_management_held_back_badge">Çöktü</string>
     <string name="sources_management_held_back_hint">Bu kaynak, yüklenirken Morphe\'nin çökmesine neden oldu; bu yüzden atlanıyor. Tekrar denemek için kaynağı güncelleyin veya yeniden içe aktarın.</string>
+    <string name="sources_management_signed_by">İmzalayan</string>
+    <string name="sources_management_signing_key_changed_badge">Anahtar değişti</string>
+    <string name="sources_management_signing_key_changed_hint">Son sürüm, bu kaynağın önceden kullandığı anahtar ile imzalanmamış; bu yüzden yüklenmedi. İncelemek için dokunun</string>
     <string name="sources_management_source_enabled">Kaynak etkin</string>
     <string name="sources_management_source_disabled">Kaynak devre dışı</string>
     <string name="sources_management_source_updating">Kaynak güncelleniyor</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Kaynaklar indirilemedi: %s</string>
     <string name="sources_download_fail_named">\'%s\' güncellenemedi. İnternet bağlantınızı kontrol edin ve tekrar deneyin</string>
     <string name="sources_download_endpoint_not_found">\'%s\': yama metadatası bulunamadı</string>
+    <string name="sources_signing_key_changed_named">\'%s\' güncellenmedi, çünkü son sürümü önceden kullandığı anahtar ile imzalanmamış</string>
+    <string name="sources_signing_key_changed_local">Bu dosya, bu kaynağın önceden kullandığı anahtar ile imzalanmamış. Güvenmek için, kaynağı silin ve dosyayı yeniden ekleyin</string>
+    <string name="sources_signing_key_trust_title">Yeni anahtara güvenilsin mi?</string>
+    <string name="sources_signing_key_trust_message">Son sürüm farklı bir anahtar ile imzalı. Ya geliştirici anahtarını değiştirdi ya da bu sürümü başka birisi yayınladı. Yalnızca geliştirici yeni bir anahtar duyurduysa güvenin</string>
+    <string name="sources_signing_key_trust_message_unsigned">Son sürüm imzalı değil. Ya geliştirici sürümleri imzalamayı bıraktı ya da bu sürümü başka birisi yayınladı. Yalnızca geliştirici bunu duyurduysa güvenin</string>
+    <string name="sources_signing_key_trusted">Güvenilen anahtar</string>
+    <string name="sources_signing_key_new">Yeni anahtar</string>
     <string name="sources_patch_expert_badge">Uzman</string>
     <string name="sources_patch_expert_badge_tooltip">Bu yamayı manuel olarak eklemek için Ayarlar\'da Uzman modunu etkinleştirin</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ Ayrıntılar: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Güvenilen: %1$d / %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Yardımcı uygulamalar sizin için orijinal APK\'lar indirebilir. İndirme talimatlarında yalnızca burada güvendiğiniz uygulamalar sunulur.</string>
     <string name="settings_system_apk_download_helper_trust_title">Bu yardımcıya güveniliyor mu?</string>
-    <string name="settings_system_apk_download_helper_trust">Güven</string>
     <string name="settings_system_apk_download_helper_warning">APK, yardımcı uygulamadan gelir, bu yüzden yalnızca tanıdığınız uygulamalara güvenin. Morphe, yamalamadan önce her dosyanın paketini, sürümünü ve imzasını yine de kontrol eder.</string>
     <string name="settings_system_apk_download_helper_installed_by">%s tarafından yüklendi</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Yükleyen bilinmiyor</string>
@@ -1314,6 +1323,7 @@ Ayrıntılar: %2$s"</string>
     <string name="include">Dahil Et</string>
     <string name="disable">Devre dışı bırak</string>
     <string name="enable">Etkinleştir</string>
+    <string name="trust">Güven</string>
     <string name="loading">Yükleniyor…</string>
     <string name="creating">Oluşturuluyor…</string>
     <string name="processing_apk">APK işleniyor…</string>

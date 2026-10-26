@@ -2,7 +2,7 @@
 <resources>
     <!-- Home Screen -->
     <string name="home_other_apps">Các ứng dụng khác</string>
-    <string name="home_other_apps_action">Select other apps</string>
+    <string name="home_other_apps_action">Chọn ứng dụng khác</string>
     <string name="home_not_patched_yet">Chưa vá</string>
     <string name="home_unpatched_version_installed">Đã cài đặt phiên bản chưa vá</string>
     <string name="home_unpatched_badge">Chưa vá</string>
@@ -1222,7 +1222,6 @@ Chi tiết: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Đã tin cậy: %1$d trên %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Các ứng dụng trợ giúp có thể tải APK gốc cho bạn. Chỉ những ứng dụng bạn tin cậy ở đây mới được đề xuất trong hướng dẫn tải xuống.</string>
     <string name="settings_system_apk_download_helper_trust_title">Có tin cậy trợ lý này không?</string>
-    <string name="settings_system_apk_download_helper_trust">Tin cậy</string>
     <string name="settings_system_apk_download_helper_warning">APK đến từ ứng dụng trợ giúp, vì vậy chỉ tin cậy những ứng dụng bạn biết. Morphe vẫn kiểm tra gói, phiên bản và chữ ký của mọi tệp trước khi vá.</string>
     <string name="settings_system_apk_download_helper_installed_by">Được cài đặt bởi %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Không rõ trình cài đặt</string>

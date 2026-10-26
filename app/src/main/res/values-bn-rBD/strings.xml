@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">এই উৎসটি প্যাচার %1$s এর জন্য তৈরি করা হয়েছে, কিন্তু মর্ফে %2$s এ প্যাচার %3$s অন্তর্ভুক্ত রয়েছে। এটি ব্যবহার করার জন্য মর্ফে আপডেট করুন</string>
     <string name="sources_management_held_back_badge">ক্র্যাশ হয়েছে</string>
     <string name="sources_management_held_back_hint">এই সোর্সটি লোড হওয়ার সময় Morphe-কে ক্র্যাশ করেছে, তাই এটি বাদ দেওয়া হচ্ছে। আবার চেষ্টা করতে এটি আপডেট করুন বা পুনরায় ইম্পোর্ট করুন</string>
+    <string name="sources_management_signed_by">স্বাক্ষরিত হয়েছে</string>
+    <string name="sources_management_signing_key_changed_badge">কী পরিবর্তিত হয়েছে</string>
+    <string name="sources_management_signing_key_changed_hint">সর্বশেষ রিলিজটি এই সোর্স আগে যে কী ব্যবহার করেছিল তা দ্বারা স্বাক্ষরিত নয়, তাই এটি ইনস্টল করা হয়নি। এটি পর্যালোচনা করতে ট্যাপ করুন</string>
     <string name="sources_management_source_enabled">সোর্স সক্রিয় করা হয়েছে</string>
     <string name="sources_management_source_disabled">সোর্স নিষ্ক্রিয় করা হয়েছে</string>
     <string name="sources_management_source_updating">সোর্স আপডেট করা হচ্ছে</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">সোর্স ডাউনলোড ব্যর্থ হয়েছে: %s</string>
     <string name="sources_download_fail_named">\'%s\' আপডেট করা যায়নি। আপনার ইন্টারনেট সংযোগ পরীক্ষা করুন এবং পুনরায় চেষ্টা করুন</string>
     <string name="sources_download_endpoint_not_found">\'%s\': প্যাচ মেটাডেটা পাওয়া যায়নি</string>
+    <string name="sources_signing_key_changed_named">\'%s\' আপডেট করা হয়নি কারণ এর সর্বশেষ রিলিজটি আগে ব্যবহৃত কী দ্বারা স্বাক্ষরিত নয়</string>
+    <string name="sources_signing_key_changed_local">ফাইলটি এই সোর্স আগে যে কী ব্যবহার করেছিল তা দিয়ে সাইন করা হয়নি। এটিকে বিশ্বাস করতে, সোর্সটি মুছে ফেলুন এবং ফাইলটি আবার যোগ করুন</string>
+    <string name="sources_signing_key_trust_title">নতুন কী-টি কি বিশ্বাস করবেন?</string>
+    <string name="sources_signing_key_trust_message">সর্বশেষ রিলিজটি একটি ভিন্ন কী দ্বারা সাইন করা হয়েছে। হয়তো ডেভেলপার তাদের কী পরিবর্তন করেছেন, অথবা অন্য কেউ এই রিলিজটি প্রকাশ করেছেন। ডেভেলপার একটি নতুন কী ঘোষণা করলে তবেই এটিকে বিশ্বাস করুন</string>
+    <string name="sources_signing_key_trust_message_unsigned">সর্বশেষ রিলিজটি সাইন করা নেই। হয়তো ডেভেলপার রিলিজ সাইন করা বন্ধ করে দিয়েছেন, অথবা অন্য কেউ এই রিলিজটি প্রকাশ করেছেন। ডেভেলপার এটি ঘোষণা করলে তবেই এটিকে বিশ্বাস করুন</string>
+    <string name="sources_signing_key_trusted">বিশ্বস্ত কী</string>
+    <string name="sources_signing_key_new">নতুন কী</string>
     <string name="sources_patch_expert_badge">বিশেষজ্ঞ</string>
     <string name="sources_patch_expert_badge_tooltip">এই প্যাচটি ম্যানুয়ালি অন্তর্ভুক্ত করতে সেটিংস-এ বিশেষজ্ঞ মোড সক্রিয় করুন</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1211,7 +1221,6 @@ morphe_adaptive_monochrome_custom.xml
     <string name="settings_system_apk_download_helper_trusted_count">বিশ্বস্ত: %2$d-এর মধ্যে %1$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">সহায়ক অ্যাপগুলো আপনার জন্য মূল APK ডাউনলোড করতে পারে। ডাউনলোডের নির্দেশাবলীতে কেবলমাত্র এখানে যাদের আপনি বিশ্বাস করেন সেগুলোই দেওয়া হয়।</string>
     <string name="settings_system_apk_download_helper_trust_title">এই হেল্পারকে বিশ্বাস করবেন?</string>
-    <string name="settings_system_apk_download_helper_trust">বিশ্বাস</string>
     <string name="settings_system_apk_download_helper_warning">APK সহায়ক অ্যাপ থেকে আসে, তাই শুধুমাত্র আপনার জানা অ্যাপগুলোকেই বিশ্বাস করুন। Morphe এখনও প্যাচ করার আগে প্রতিটি ফাইলের প্যাকেজ, সংস্করণ এবং স্বাক্ষর যাচাই করে।</string>
     <string name="settings_system_apk_download_helper_installed_by">%s দ্বারা ইনস্টল করা হয়েছে</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">ইনস্টলকারী অজানা</string>
@@ -1306,6 +1315,7 @@ morphe_adaptive_monochrome_custom.xml
     <string name="include">অন্তর্ভুক্ত করুন</string>
     <string name="disable">নিষ্ক্রিয় করুন</string>
     <string name="enable">有効にする</string>
+    <string name="trust">বিশ্বাস করুন</string>
     <string name="loading">লোড হচ্ছে…</string>
     <string name="creating">তৈরি করা হচ্ছে…</string>
     <string name="processing_apk">APK প্রক্রিয়া করা হচ্ছে…</string>

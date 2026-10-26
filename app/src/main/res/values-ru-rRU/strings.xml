@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Этот источник собран для патчера %1$s, но Morphe %2$s включает патчер %3$s. Обновите Morphe, чтобы использовать его</string>
     <string name="sources_management_held_back_badge">Сбой</string>
     <string name="sources_management_held_back_hint">Этот источник вызвал сбой Morphe во время загрузки, поэтому он пропускается. Обновите его или импортируйте заново, чтобы повторить попытку</string>
+    <string name="sources_management_signed_by">Подписано</string>
+    <string name="sources_management_signing_key_changed_badge">Ключ изменен</string>
+    <string name="sources_management_signing_key_changed_hint">Последний релиз подписан не тем ключом, который этот источник использовал ранее, поэтому он не был установлен. Нажмите, чтобы проверить его</string>
     <string name="sources_management_source_enabled">Источник включен</string>
     <string name="sources_management_source_disabled">Источник отключен</string>
     <string name="sources_management_source_updating">Обновление источника</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Не удалось загрузить источники: %s</string>
     <string name="sources_download_fail_named">\'Не удалось обновить \"%s\". Проверьте подключение к Интернету и повторите попытку\',</string>
     <string name="sources_download_endpoint_not_found">В \"%s\" не найдены метаданные патча</string>
+    <string name="sources_signing_key_changed_named">\'%s\' не был обновлен, так как его последний релиз подписан не тем ключом, который использовался ранее</string>
+    <string name="sources_signing_key_changed_local">Файл подписан не тем ключом, который использовался этим источником ранее. Чтобы довериться ему, удалите источник и добавьте файл снова</string>
+    <string name="sources_signing_key_trust_title">Доверять новому ключу?</string>
+    <string name="sources_signing_key_trust_message">Последний релиз подписан другим ключом. Либо разработчик заменил свой ключ, либо этот релиз был опубликован кем-то другим. Доверяйте ему только в том случае, если разработчик сообщил о новом ключе</string>
+    <string name="sources_signing_key_trust_message_unsigned">Последний релиз не подписан. Либо разработчик перестал подписывать релизы, либо этот релиз был опубликован кем-то другим. Доверяйте ему только в том случае, если разработчик сообщил об этом</string>
+    <string name="sources_signing_key_trusted">Доверенный ключ</string>
+    <string name="sources_signing_key_new">Новый ключ</string>
     <string name="sources_patch_expert_badge">Эксперт</string>
     <string name="sources_patch_expert_badge_tooltip">Включите режим Эксперта в Настройках для добавления этого патча вручную</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ morphe_header_custom_dark.png
     <string name="settings_system_apk_download_helper_trusted_count">Доверено: %1$d из %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Вспомогательные приложения могут загружать оригинальные APK-файлы за вас. В инструкциях по загрузке предлагаются только те, которым вы доверяете.</string>
     <string name="settings_system_apk_download_helper_trust_title">Доверять этому помощнику?</string>
-    <string name="settings_system_apk_download_helper_trust">Доверять</string>
     <string name="settings_system_apk_download_helper_warning">APK поступает из вспомогательного приложения, поэтому доверяйте только тем приложениям, которые вы знаете. Morphe по-прежнему проверяет пакет, версию и подпись каждого файла перед наложением патча.</string>
     <string name="settings_system_apk_download_helper_installed_by">Установлено: %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Установщик неизвестен</string>
@@ -1243,7 +1252,7 @@ morphe_header_custom_dark.png
     <string name="settings_system_about">О приложении</string>
     <string name="settings_system_manager_description">Проект с открытым исходным кодом для современного, упрощенного патчинга популярных Android-приложений, развиваемый на основе отзывов и вкладов сообщества</string>
     <string name="credits">Благодарности</string>
-    <string name="credits_description">Люди за Morphe</string>
+    <string name="credits_description">Людям, стоящим за Morphe</string>
     <string name="settings_about_section_project">Проект</string>
     <string name="settings_about_section_help">Помощь</string>
     <string name="credits_current_development">Текущая разработка</string>
@@ -1314,6 +1323,7 @@ morphe_header_custom_dark.png
     <string name="include">Включить</string>
     <string name="disable">Отключить</string>
     <string name="enable">Включить</string>
+    <string name="trust">Доверять</string>
     <string name="loading">Загрузка…</string>
     <string name="creating">Создается…</string>
     <string name="processing_apk">Обработка APK…</string>

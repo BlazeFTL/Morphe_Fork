@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">تم إنشاء هذا المصدر لأداة التعديل %1$s، لكن Morphe %2$s يتضمن أداة التعديل %3$s. قم بتحديث Morphe لاستخدامها</string>
     <string name="sources_management_held_back_badge">تعطّل</string>
     <string name="sources_management_held_back_hint">تسبب هذا المصدر في تعطّل Morphe أثناء التحميل، لذا يتم تخطيه. يرجى تحديثه أو إعادة استيراده للمحاولة مرة أخرى</string>
+    <string name="sources_management_signed_by">موقّع من قبل</string>
+    <string name="sources_management_signing_key_changed_badge">تم تغيير المفتاح</string>
+    <string name="sources_management_signing_key_changed_hint">الإصدار الأخير غير موقّع بالمفتاح الذي استخدمه هذا المصدر سابقاً، لذا لم يتم تثبيته. انقر للمراجعة</string>
     <string name="sources_management_source_enabled">تم تمكين المصدر</string>
     <string name="sources_management_source_disabled">تم تعطيل المصدر</string>
     <string name="sources_management_source_updating">جارٍ تحديث المصدر</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">فشل تنزيل مصادر التعديل: %s.</string>
     <string name="sources_download_fail_named">\"%s\" تعذر تحديثه. تحقق من اتصالك بالإنترنت وحاول مرة أخرى</string>
     <string name="sources_download_endpoint_not_found">\"%s\": لم يتم العثور على بيانات تعريف التعديل</string>
+    <string name="sources_signing_key_changed_named">لم يتم تحديث \'%s\' لأن إصداره الأخير غير موقّع بالمفتاح الذي استخدمه سابقًا</string>
+    <string name="sources_signing_key_changed_local">الملف غير موقّع بواسطة المفتاح الذي استخدمه هذا المصدر من قبل. للثقة به، احذف المصدر وأضف الملف مرة أخرى</string>
+    <string name="sources_signing_key_trust_title">هل تثق بالمفتاح الجديد؟</string>
+    <string name="sources_signing_key_trust_message">الإصدار الأخير موقّع بمفتاح مختلف. إما أن المطور استبدل مفتاحه، أو أن شخصًا آخر نشر هذا الإصدار. لا تثق به إلا إذا أعلن المطور عن مفتاح جديد.</string>
+    <string name="sources_signing_key_trust_message_unsigned">الإصدار الأخير غير موقّع. إما أن المطور توقف عن توقيع الإصدارات، أو أن شخصًا آخر نشر هذا الإصدار. لا تثق به إلا إذا أعلن عنه المطور</string>
+    <string name="sources_signing_key_trusted">المفتاح الموثوق</string>
+    <string name="sources_signing_key_new">مفتاح جديد</string>
     <string name="sources_patch_expert_badge">وضع الخبير</string>
     <string name="sources_patch_expert_badge_tooltip">تمكين وضع الخبير في الإعدادات لتضمين هذا التعديل يدويًا</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1223,7 +1233,6 @@ morphe_adaptive_monochrome_custom.xml
     <string name="settings_system_apk_download_helper_trusted_count">موثوق: %1$d من %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">يمكن للتطبيقات المساعدة تنزيل ملفات APK الأصلية لك. في تعليمات التنزيل، تظهر فقط التطبيقات التي تثق بها هنا.</string>
     <string name="settings_system_apk_download_helper_trust_title">هل تثق في هذا المساعد؟</string>
-    <string name="settings_system_apk_download_helper_trust">موثوق</string>
     <string name="settings_system_apk_download_helper_warning">يأتي ملف APK من تطبيق المساعدة، لذا ثق فقط بالتطبيقات التي تعرفها. لا يزال Morphe يتحقق من الحزمة والإصدار والتوقيع لكل ملف قبل التعديل.</string>
     <string name="settings_system_apk_download_helper_installed_by">مثبّت بواسطة %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">أداة التثبيت غير معروفة</string>
@@ -1318,6 +1327,7 @@ morphe_adaptive_monochrome_custom.xml
     <string name="include">إدراج</string>
     <string name="disable">تعطيل</string>
     <string name="enable">تمكين</string>
+    <string name="trust">موثوق</string>
     <string name="loading">جارٍ التحميل…</string>
     <string name="creating">جارٍ الإنشاء…</string>
     <string name="processing_apk">جارٍ معالجة ملف APK…</string>

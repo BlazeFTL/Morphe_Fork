@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Questa sorgente è stata creata per patcher %1$s, ma Morphe %2$s include patcher %3$s. Aggiorna Morphe per utilizzarlo</string>
     <string name="sources_management_held_back_badge">Arresto anomalo</string>
     <string name="sources_management_held_back_hint">Questa sorgente ha causato l\'arresto anomalo di Morphe durante il caricamento, quindi viene saltata. Aggiornala o reimportala per riprovare.</string>
+    <string name="sources_management_signed_by">Firmato da</string>
+    <string name="sources_management_signing_key_changed_badge">Chiave modificata</string>
+    <string name="sources_management_signing_key_changed_hint">L\'ultima release non è firmata con la chiave utilizzata in precedenza da questa sorgente, quindi non è stata installata. Tocca per rivederla</string>
     <string name="sources_management_source_enabled">Sorgente abilitata</string>
     <string name="sources_management_source_disabled">Sorgente disabilitata</string>
     <string name="sources_management_source_updating">Aggiornamento sorgente</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Impossibile scaricare le fonti: %s</string>
     <string name="sources_download_fail_named">\"%s\" non è stato possibile aggiornarlo. Controlla la tua connessione internet e riprova</string>
     <string name="sources_download_endpoint_not_found">\"%s\": metadati modifiche non trovati</string>
+    <string name="sources_signing_key_changed_named">\'%s\' non è stato aggiornato perché l\'ultima release non è firmata con la chiave utilizzata in precedenza</string>
+    <string name="sources_signing_key_changed_local">Il file non è firmato con la chiave utilizzata in precedenza da questa sorgente. Per attendere il file, elimina la sorgente e aggiungilo nuovamente</string>
+    <string name="sources_signing_key_trust_title">Attendere la nuova chiave?</string>
+    <string name="sources_signing_key_trust_message">L\'ultima release è firmata con una chiave diversa. Lo sviluppatore potrebbe aver sostituito la propria chiave, oppure qualcun altro ha pubblicato questa release. Attendila solo se lo sviluppatore ha annunciato una nuova chiave</string>
+    <string name="sources_signing_key_trust_message_unsigned">L\'ultima release non è firmata. Il sviluppatore potrebbe aver smesso di firmare le release, oppure qualcun altro ha pubblicato questa release. Attendila solo se lo sviluppatore l\'ha annunciato</string>
+    <string name="sources_signing_key_trusted">Chiave attendibile</string>
+    <string name="sources_signing_key_new">Nuova chiave</string>
     <string name="sources_patch_expert_badge">Esperto</string>
     <string name="sources_patch_expert_badge_tooltip">Abilita la modalità Esperto in Impostazioni per includere questa patch manualmente</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ Dettagli: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Approvate: %1$d di %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Le app helper possono scaricare APK originali per te. Solo quelle di cui ti fidi qui vengono offerte nelle istruzioni di download.</string>
     <string name="settings_system_apk_download_helper_trust_title">Fidarsi di questo assistente?</string>
-    <string name="settings_system_apk_download_helper_trust">Fidarsi</string>
     <string name="settings_system_apk_download_helper_warning">L\'APK proviene dall\'app helper, quindi fidati solo di app che conosci. Morphe controlla comunque il pacchetto, la versione e la firma di ogni file prima della patch.</string>
     <string name="settings_system_apk_download_helper_installed_by">Installata da %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Installer sconosciuto</string>
@@ -1314,6 +1323,7 @@ Dettagli: %2$s"</string>
     <string name="include">Includi</string>
     <string name="disable">Disabilita</string>
     <string name="enable">Attiva</string>
+    <string name="trust">Attendi</string>
     <string name="loading">Caricamento in corso…</string>
     <string name="creating">Creazione…</string>
     <string name="processing_apk">Elaborazione APK…</string>

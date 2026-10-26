@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">此补丁源需要修补器版本 %1$s，而 Morphe %2$s 内置修补器版本为 %3$s 。需要更新 Morphe 才能应用该补丁</string>
     <string name="sources_management_held_back_badge">已崩溃</string>
     <string name="sources_management_held_back_hint">此来源在加载时导致 Morphe 崩溃，因此已将其跳过。更新或重新导入该来源以重试</string>
+    <string name="sources_management_signed_by">签名者</string>
+    <string name="sources_management_signing_key_changed_badge">密钥已更改</string>
+    <string name="sources_management_signing_key_changed_hint">最新版本未由该来源之前使用的密钥签名，因此未安装。点击以查看</string>
     <string name="sources_management_source_enabled">源已启用</string>
     <string name="sources_management_source_disabled">源已禁用</string>
     <string name="sources_management_source_updating">正在更新源</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">下载补丁失败：%s</string>
     <string name="sources_download_fail_named">无法更新“%s”。请检查您的互联网连接并重试。</string>
     <string name="sources_download_endpoint_not_found">找不到“%s”的补丁元数据。</string>
+    <string name="sources_signing_key_changed_named">\'%s\' 未更新，因为其最新版本未由之前使用的密钥签名</string>
+    <string name="sources_signing_key_changed_local">该文件未由该源之前使用的密钥签名。要信任它，请删除该源并重新添加文件</string>
+    <string name="sources_signing_key_trust_title">信任新密钥？</string>
+    <string name="sources_signing_key_trust_message">最新版本由不同的密钥签名。可能是开发人员更换了密钥，或者由他人发布了此版本。仅在开发人员宣布新密钥的情况下才信任它</string>
+    <string name="sources_signing_key_trust_message_unsigned">最新版本未签名。可能是开发人员停止了版本签名，或者由他人发布了此版本。仅在开发人员宣布的情况下才信任它</string>
+    <string name="sources_signing_key_trusted">受信任的密钥</string>
+    <string name="sources_signing_key_new">新密钥</string>
     <string name="sources_patch_expert_badge">专家</string>
     <string name="sources_patch_expert_badge_tooltip">在设置中启用专家模式以手动包含此补丁</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ morphe_header_custom_dark.png
     <string name="settings_system_apk_download_helper_trusted_count">受信任：%1$d / %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">辅助应用可以为你下载原始 APK。只有你在此处信任的应用才会在下载说明中提供。</string>
     <string name="settings_system_apk_download_helper_trust_title">信任此辅助工具吗？</string>
-    <string name="settings_system_apk_download_helper_trust">信任</string>
     <string name="settings_system_apk_download_helper_warning">APK 来自辅助应用，因此只信任你了解的应用。Morphe 在修补前仍会检查每个文件的软件包、版本和签名。</string>
     <string name="settings_system_apk_download_helper_installed_by">由 %s 安装</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">安装来源未知</string>
@@ -1314,6 +1323,7 @@ morphe_header_custom_dark.png
     <string name="include">包括</string>
     <string name="disable">禁用</string>
     <string name="enable">启用</string>
+    <string name="trust">信任</string>
     <string name="loading">正在加载…</string>
     <string name="creating">创建中…</string>
     <string name="processing_apk">正在处理 APK…</string>

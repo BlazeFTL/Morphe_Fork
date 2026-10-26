@@ -1219,7 +1219,6 @@ morphe_header_custom_dark.png
     <string name="settings_system_apk_download_helper_trusted_count">Довірено: %1$d з %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Допоміжні застосунки можуть завантажувати оригінальні APK для вас. У інструкціях із завантаження пропонуються лише ті, яким ви тут довіряєте</string>
     <string name="settings_system_apk_download_helper_trust_title">Довіряти цьому допоміжному застосунку?</string>
-    <string name="settings_system_apk_download_helper_trust">Довіряти</string>
     <string name="settings_system_apk_download_helper_warning">APK надходить від допоміжного застосунку, тому довіряйте лише знайомим застосункам. Morphe все одно перевіряє пакет, версію та підпис кожного файлу перед патчингом</string>
     <string name="settings_system_apk_download_helper_installed_by">Встановлено %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Інсталятор невідомий</string>
@@ -1314,6 +1313,7 @@ morphe_header_custom_dark.png
     <string name="include">Включити</string>
     <string name="disable">Вимкнути</string>
     <string name="enable">Увімкнути</string>
+    <string name="trust">Довіряти</string>
     <string name="loading">Завантаження…</string>
     <string name="creating">Створення…</string>
     <string name="processing_apk">Обробка APK…</string>

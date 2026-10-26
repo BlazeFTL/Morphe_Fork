@@ -50,7 +50,7 @@
         <item quantity="other">%s 個のアプリをインストールしました</item>
     </plurals>
     <plurals name="batch_mount_summary">
-        <item quantity="other">マウント済みアプリ %s 個</item>
+        <item quantity="other">%s 個のアプリをマウントしました</item>
     </plurals>
     <plurals name="batch_reinstall_summary">
         <item quantity="other">%s 個のアプリを再インストールしました</item>

@@ -212,6 +212,9 @@
     <string name="sources_management_outdated_manager_hint">מקור זה נבנה עבור patcher %1$s, אך Morphe %2$s כוללת את patcher %3$s. עדכן את Morphe כדי להשתמש בו</string>
     <string name="sources_management_held_back_badge">קרס</string>
     <string name="sources_management_held_back_hint">המקור הזה גרם ל-Morphe לקרוס בזמן הטעינה, ולכן מדלגים עליו. עדכן או ייבא אותו מחדש כדי לנסות שוב</string>
+    <string name="sources_management_signed_by">נחתם על ידי</string>
+    <string name="sources_management_signing_key_changed_badge">המפתח שונה</string>
+    <string name="sources_management_signing_key_changed_hint">הגרסה האחרונה לא נחתמה באמצעות המפתח שהמקור הזה השתמש בו בעבר, ולכן היא לא הותקנה. הקש כדי לבחון אותה</string>
     <string name="sources_management_source_enabled">מקור מופעל</string>
     <string name="sources_management_source_disabled">מקור מושבת</string>
     <string name="sources_management_source_updating">עדכון מקור</string>
@@ -247,6 +250,13 @@
     <string name="sources_download_fail">שגגה להוריד תצוגים: %s</string>
     <string name="sources_download_fail_named">\'\"%s\"\' לא ניתן לעדכון. בדוק את חיבור האינטרנט שלך ונסה שוב</string>
     <string name="sources_download_endpoint_not_found">\'\"%s\"\': מטא-נתוני תיקון לא נמצאו</string>
+    <string name="sources_signing_key_changed_named">\'%s\' לא עודכן מכיוון שהגרסה האחרונה שלו לא נחתמה באמצעות המפתח שבו הוא השתמש בעבר</string>
+    <string name="sources_signing_key_changed_local">הקובץ אינו חתום על ידי המפתח שבו השתמש מקור זה בעבר. כדי לסמוך עליו, מחק את המקור והוסף את הקובץ שוב</string>
+    <string name="sources_signing_key_trust_title">סמוך על המפתח החדש?</string>
+    <string name="sources_signing_key_trust_message">הגרסה האחרונה חתומה על ידי מפתח שונה. ייתכן שהמפתח החליף את המפתח שלו, או שמישהו אחר פרסם את הגרסה הזו. סמוך עליה רק אם המפתח הודיע על מפתח חדש</string>
+    <string name="sources_signing_key_trust_message_unsigned">הגרסה האחרונה אינה חתומה. ייתכן שהמפתח הפסיק לחתום על גרסאות, או שמישהו אחר פרסם את הגרסה הזו. סמוך עליה רק אם המפתח הודיע על כך</string>
+    <string name="sources_signing_key_trusted">מפתח מהימן</string>
+    <string name="sources_signing_key_new">מפתח חדש</string>
     <string name="sources_patch_expert_badge">מומחה</string>
     <string name="sources_patch_expert_badge_tooltip">הפעל מצב מומחה בהגדרות כדי לכלול תיקון זה באופן ידני</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1230,7 +1240,6 @@ drawable-xxhdpi: 387x144 פיקסלים
     <string name="settings_system_apk_download_helper_trusted_count">מהימנות: %1$d מתוך %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">אפליקציות עזר יכולות להוריד עבורך קובצי APK מקוריים. רק אלה שאתה בוטח בהן כאן מוצעות בהוראות ההורדה</string>
     <string name="settings_system_apk_download_helper_trust_title">לסמוך על העוזר הזה?</string>
-    <string name="settings_system_apk_download_helper_trust">סמך</string>
     <string name="settings_system_apk_download_helper_warning">קובץ ה-APK מגיע מאפליקציית העזר, לכן סמוך רק על אפליקציות שאתה מכיר. Morphe עדיין בודק את החבילה, הגרסה והחתימה של כל קובץ לפני תיקון.</string>
     <string name="settings_system_apk_download_helper_installed_by">הותקן על ידי %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">המתקין לא ידוע</string>
@@ -1325,6 +1334,7 @@ drawable-xxhdpi: 387x144 פיקסלים
     <string name="include">כלול</string>
     <string name="disable">השבת</string>
     <string name="enable">הפעל</string>
+    <string name="trust">סמוך</string>
     <string name="loading">טוען…</string>
     <string name="creating">יוצר…</string>
     <string name="processing_apk">מעבד APK…</string>

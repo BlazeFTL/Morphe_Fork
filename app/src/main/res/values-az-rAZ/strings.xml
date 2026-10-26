@@ -1218,7 +1218,6 @@ Təfərrüatlar: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Etibarlı: %2$d-dən %1$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Köməkçi tətbiqlər sizin üçün orijinal APK-ları yükləyə bilər. Yükləmə təlimatlarında yalnız burada etibar etdiyin tətbiqlər təklif olunur</string>
     <string name="settings_system_apk_download_helper_trust_title">Bu köməkçiyə etibar edilsin?</string>
-    <string name="settings_system_apk_download_helper_trust">Etibar et</string>
     <string name="settings_system_apk_download_helper_warning">APK köməkçi tətbiqdən əldə edilir, buna görə də yalnız tanıdığınız tətbiqlərə etibar edin. Morphe yamaqlamadan əvvəl hər bir faylın paketini, versiyasını və imzasını yoxlayır</string>
     <string name="settings_system_apk_download_helper_installed_by">%s tərəfindən quraşdırılıb</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Bilinməyən quraşdırıcı</string>
@@ -1313,6 +1312,7 @@ Təfərrüatlar: %2$s"</string>
     <string name="include">Daxil et</string>
     <string name="disable">Qapadın</string>
     <string name="enable">Aktivləşdir</string>
+    <string name="trust">Etibar et</string>
     <string name="loading">Yüklənilir…</string>
     <string name="creating">Yaradılır…</string>
     <string name="processing_apk">APK emal olunur…</string>

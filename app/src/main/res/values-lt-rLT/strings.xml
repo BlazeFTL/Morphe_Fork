@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Šis šaltinis sukurtas pataisymo įrankiui %1$s, o „Morphe“ %2$s apima pataisymo įrankį %3$s. Atnaujinkite „Morphe“, kad galėtumėte jį naudoti</string>
     <string name="sources_management_held_back_badge">Sugriuvo</string>
     <string name="sources_management_held_back_hint">Šis šaltinis sukėlė „Morphe“ gedimą įkėlimo metu, todėl jis praleidžiamas. Atnaujinkite arba iš naujo importuokite jį, kad bandytumėte dar kartą</string>
+    <string name="sources_management_signed_by">Pasirašyta</string>
+    <string name="sources_management_signing_key_changed_badge">Raktas pakeistas</string>
+    <string name="sources_management_signing_key_changed_hint">Naujausia versija nėra pasirašyta raktu, kurio šis šaltinis naudojo anksčiau, todėl ji nebuvo įdiegta. Bakstelėkite, kad peržiūrėtumėte</string>
     <string name="sources_management_source_enabled">Šaltinis įjungtas</string>
     <string name="sources_management_source_disabled">Šaltinis išjungtas</string>
     <string name="sources_management_source_updating">Atnaujinamas šaltinis</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Nepavyko atsisiųsti šaltinio: %s</string>
     <string name="sources_download_fail_named">\'%s\' neįmanoma atnaujinti. Patikrinkite savo interneto ryšį ir bandykite dar kartą</string>
     <string name="sources_download_endpoint_not_found">\'%s\': trūkst meta duomenų apie pataisą</string>
+    <string name="sources_signing_key_changed_named">\"%s\" nebuvo atnaujinta, nes naujausia versija nėra pasirašyta raktu, kurio ji naudojo anksčiau</string>
+    <string name="sources_signing_key_changed_local">Failas nėra pasirašytas raktu, kurio šis šaltinis naudojo anksčiau. Norėdami jį patikėti, ištrinkite šaltinį ir pridėkite failą iš naujo</string>
+    <string name="sources_signing_key_trust_title">Pasitikėti nauju raktu?</string>
+    <string name="sources_signing_key_trust_message">Naujausia versija pasirašyta kitu raktu. Galbūt kūrėjas pakeitė savo raktą arba šią versiją paskelbė kažkas kitas. Pasitikėkite ja tik tada, jei kūrėjas pranešė apie naują raktą</string>
+    <string name="sources_signing_key_trust_message_unsigned">Naujausia versija nėra pasirašyta. Galbūt kūrėjas nustojo pasirašyti versijas arba šią versiją paskelbė kažkas kitas. Pasitikėkite ja tik tada, jei kūrėjas tai pranešė</string>
+    <string name="sources_signing_key_trusted">Pasitikėtas raktas</string>
+    <string name="sources_signing_key_new">Naujas raktas</string>
     <string name="sources_patch_expert_badge">Ekspertas</string>
     <string name="sources_patch_expert_badge_tooltip">Įjunkite Ekspertų režimą Parametruose, kad galėtumėte rankiniu būdu įtraukti šį pataisą</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ Išsami informacija: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Patikima: %1$d iš %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Pagalbinės programos gali už jus atsisiųsti originalius APK. Atsisiuntimo instrukcijose siūlomos tik tos, kuriomis čia pasitikite</string>
     <string name="settings_system_apk_download_helper_trust_title">Ar pasitikite šiuo pagalbininku?</string>
-    <string name="settings_system_apk_download_helper_trust">Pasitikėti</string>
     <string name="settings_system_apk_download_helper_warning">APK gaunamas iš pagalbinės programos, todėl pasitikėkite tik jums žinomomis programomis. „Morphe“ vis tiek prieš pataisymą patikrina kiekvieno failo paketą, versiją ir parašą</string>
     <string name="settings_system_apk_download_helper_installed_by">Įdiegė %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Diegimo įrankis nežinomas</string>
@@ -1314,6 +1323,7 @@ Išsami informacija: %2$s"</string>
     <string name="include">Įtraukti</string>
     <string name="disable">Išjungti</string>
     <string name="enable">Įjungti</string>
+    <string name="trust">Pasitikėti</string>
     <string name="loading">Įkeliama…</string>
     <string name="creating">Kuriama…</string>
     <string name="processing_apk">Apdorojamas APK…</string>

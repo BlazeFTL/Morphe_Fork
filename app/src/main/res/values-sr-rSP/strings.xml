@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Овај извор је направљен за закрпљивач %1$s, али Морфе %2$s укључује закрпљивач %3$s. Ажурирај Морфе да би га користио</string>
     <string name="sources_management_held_back_badge">Пао</string>
     <string name="sources_management_held_back_hint">Овај извор је срушио Morphe током учитавања, па се прескаче. Ажурирајте га или поново увезите да бисте покушали поново</string>
+    <string name="sources_management_signed_by">Потписано од</string>
+    <string name="sources_management_signing_key_changed_badge">Кључ је измењен</string>
+    <string name="sources_management_signing_key_changed_hint">Најновије издање није потписано кључем који је овај извор раније користио, па није инсталирано. Додирните да га прегледате</string>
     <string name="sources_management_source_enabled">Извор омогућен</string>
     <string name="sources_management_source_disabled">Извор онемогућен</string>
     <string name="sources_management_source_updating">Ажурирање извора</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Неуспешно преузимање извора: %s</string>
     <string name="sources_download_fail_named">\"%s\" није могло да се ажурира. Проверите интернет везу и покушајте поново</string>
     <string name="sources_download_endpoint_not_found">\"%s\": метаподаци за закрпу нису пронађени</string>
+    <string name="sources_signing_key_changed_named">\'%s\' није ажуриран јер његово најновије издање није потписано кључем који је раније користио</string>
+    <string name="sources_signing_key_changed_local">Датотека није потписана кључем који је овај извор претходно користио. Да бисте јој присудили, обришите извор и поново додајте датотеку</string>
+    <string name="sources_signing_key_trust_title">Присудити новом кључу?</string>
+    <string name="sources_signing_key_trust_message">Најновије издање је потписано другим кључем. Или је udvikivač заменио свој кључ, или је неко други објавио ово издање. Присудите му само ако је udvikivač најавио нови кључ</string>
+    <string name="sources_signing_key_trust_message_unsigned">Најновије издање није потписано. Или је udvikivač престао да потписује издања, или је неко други објавио ово издање. Присудите му само ако је udvikivač то најавио</string>
+    <string name="sources_signing_key_trusted">Поверељиви кључ</string>
+    <string name="sources_signing_key_new">Нови кључ</string>
     <string name="sources_patch_expert_badge">Експерт</string>
     <string name="sources_patch_expert_badge_tooltip">Омогућите Експерт режим у Подешавањима да бисте ручно укључили ову исправку</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ morphe_header_custom_dark.png
     <string name="settings_system_apk_download_helper_trusted_count">Поуздано: %1$d од %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Помоћне апликације могу да преузму оригиналне APK датотеке уместо вас. У упутствима за преузимање нуде се само оне којима овде верујете.</string>
     <string name="settings_system_apk_download_helper_trust_title">Доверљиви помагач?</string>
-    <string name="settings_system_apk_download_helper_trust">Довери</string>
     <string name="settings_system_apk_download_helper_warning">APK датотека долази из помоћне апликације, па верујте само апликацијама које знате. Morphe и даље проверава пакет, верзију и потпис сваке датотеке пре него што примени закрпу.</string>
     <string name="settings_system_apk_download_helper_installed_by">Инсталирао %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Непознати инсталер</string>
@@ -1314,6 +1323,7 @@ morphe_header_custom_dark.png
     <string name="include">Укључи</string>
     <string name="disable">Онемогући</string>
     <string name="enable">Укључи</string>
+    <string name="trust">Присуди</string>
     <string name="loading">Учитавање…</string>
     <string name="creating">Креирање…</string>
     <string name="processing_apk">Обрада APK-а…</string>

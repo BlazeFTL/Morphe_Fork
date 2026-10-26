@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Această sursă este construită pentru patcherul %1$s, însă Morphe %2$s include patcherul %3$s. Actualizează Morphe pentru a-l folosi</string>
     <string name="sources_management_held_back_badge">A cauzat prăbușirea</string>
     <string name="sources_management_held_back_hint">Această sursă a cauzat prăbușirea Morphe în timpul încărcării. Actualizați-o sau reimportați-o pentru a încerca din nou.</string>
+    <string name="sources_management_signed_by">Semnat de</string>
+    <string name="sources_management_signing_key_changed_badge">Cheia a fost schimbată</string>
+    <string name="sources_management_signing_key_changed_hint">Cea mai recentă versiune nu este semnată cu cheia pe care această sursă a folosit-o anterior, deci nu a fost instalată. Apasă pentru a o revizui</string>
     <string name="sources_management_source_enabled">Sursă activată</string>
     <string name="sources_management_source_disabled">Sursă dezactivată</string>
     <string name="sources_management_source_updating">Se actualizează sursa</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Eroare la descărcarea surselor: %s</string>
     <string name="sources_download_fail_named">\"%s\" nu a putut fi actualizat. Verificați conexiunea la internet și încercați din nou</string>
     <string name="sources_download_endpoint_not_found">\"%s\": metadatele patch-ului nu au fost găsite</string>
+    <string name="sources_signing_key_changed_named">\"%s\" nu a fost actualizat deoarece cea mai recentă versiune nu este semnată cu cheia folosită anterior</string>
+    <string name="sources_signing_key_changed_local">Fișierul nu este semnat cu cheia pe care această sursă a folosit-o anterior. Pentru a avea încredere în el, ștergeți sursa și adăugați fișierul din nou</string>
+    <string name="sources_signing_key_trust_title">Aveți încredere în noua cheie?</string>
+    <string name="sources_signing_key_trust_message">Ultima versiune este semnată cu o cheie diferită. Fie dezvoltatorul și-a înlocuit cheia, fie altcineva a publicat această versiune. Aveți încredere în ea doar dacă dezvoltatorul a anunțat o cheie nouă</string>
+    <string name="sources_signing_key_trust_message_unsigned">Ultima versiune nu este semnată. Fie dezvoltatorul a încetat să semneze versiunile, fie altcineva a publicat această versiune. Aveți încredere în ea doar dacă dezvoltatorul a anunțat acest lucru</string>
+    <string name="sources_signing_key_trusted">Cheie de încredere</string>
+    <string name="sources_signing_key_new">Cheie nouă</string>
     <string name="sources_patch_expert_badge">Expert</string>
     <string name="sources_patch_expert_badge_tooltip">Activează modul Expert în Setări pentru a include manual acest patch</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ Detalii: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">De încredere: %1$d din %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Aplicațiile de ajutor pot descărca APK-uri originale pentru tine. Doar cele în care ai încredere aici sunt oferite în instrucțiunile de descărcare</string>
     <string name="settings_system_apk_download_helper_trust_title">Încredere în acest asistent?</string>
-    <string name="settings_system_apk_download_helper_trust">Încredere</string>
     <string name="settings_system_apk_download_helper_warning">APK-ul provine de la aplicația de ajutor, așa că ai încredere doar în aplicațiile pe care le cunoști. Morphe verifică în continuare pachetul, versiunea și semnătura fiecărui fișier înainte de a aplica patch-ul</string>
     <string name="settings_system_apk_download_helper_installed_by">Instalat de %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Instalator necunoscut</string>
@@ -1314,6 +1323,7 @@ Detalii: %2$s"</string>
     <string name="include">Include</string>
     <string name="disable">Dezactivează</string>
     <string name="enable">Activează</string>
+    <string name="trust">Încredere</string>
     <string name="loading">Se încarcă…</string>
     <string name="creating">Se creează…</string>
     <string name="processing_apk">Se procesează APK…</string>

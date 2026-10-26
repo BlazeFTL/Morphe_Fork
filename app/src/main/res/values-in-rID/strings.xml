@@ -197,7 +197,7 @@
     <string name="sources_prerelease_warning_title">Aktifkan tambalan pra-rilis?</string>
     <string name="sources_prerelease_warning_message">Build pra-rilis masih tahap pengembangan. Tambalan mungkin gagal atau merusak aplikasi, dan fitur dapat berubah tanpa pemberitahuan</string>
     <string name="expert_mode_prerelease_notice">Sumber ini menggunakan tambalan pra-rilis. Proses penambalan mungkin gagal atau berjalan tidak sesuai harapan</string>
-    <string name="expert_mode_experimental_version_notice">Sumber ini hanya memiliki dukungan eksperimental untuk versi aplikasi ini. Patch-nya mungkin tidak stabil atau tidak lengkap</string>
+    <string name="expert_mode_experimental_version_notice">Sumber ini hanya memiliki dukungan eksperimental untuk versi aplikasi ini. Tambalannya mungkin tidak stabil atau tidak lengkap</string>
     <string name="sources_management_experimental_versions_toggle">Versi aplikasi eksperimental</string>
     <string name="sources_management_experimental_versions_toggle_description">Menampilkan dan menambal target aplikasi eksperimental</string>
     <string name="sources_management_already_exists">Sumber ini sudah ditambahkan</string>
@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Sumber ini dibuat untuk penambal %1$s, tetapi Morphe %2$s menyertakan penambal %3$s. Perbarui Morphe untuk menggunakannya</string>
     <string name="sources_management_held_back_badge">Crash</string>
     <string name="sources_management_held_back_hint">Sumber ini menyebabkan Morphe crash saat sedang dimuat, sehingga dilewati. Perbarui atau impor ulang sumber ini untuk mencoba lagi</string>
+    <string name="sources_management_signed_by">Ditandatangani oleh</string>
+    <string name="sources_management_signing_key_changed_badge">Kunci berubah</string>
+    <string name="sources_management_signing_key_changed_hint">Rilis terbaru tidak ditandatangani oleh kunci yang digunakan sumber ini sebelumnya, sehingga tidak diinstal. Ketuk untuk meninjaunya</string>
     <string name="sources_management_source_enabled">Sumber diaktifkan</string>
     <string name="sources_management_source_disabled">Sumber dinonaktifkan</string>
     <string name="sources_management_source_updating">Memperbarui sumber</string>
@@ -240,12 +243,19 @@
     <string name="sources_dialog_choose_apps_description">Pilih aplikasi mana yang ingin dipertahankan setelah sumber dimuat.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Sumber tambalan pihak ketiga</string>
-    <string name="sources_dialog_community_notice_message">"Sumber tambalan komunitas dibuat dan dikelola oleh pembuatnya masing-masing. Morphe tidak meninjau atau memverifikasi tambalan pihak ketiga, serta tidak bertanggung jawab atas konten maupun dampaknya terhadap perangkat Anda"</string>
+    <string name="sources_dialog_community_notice_message">"Sumber tambalan komunitas dibuat dan dikelola oleh pembuatnya masing-masing. Morphe tidak meninjau atau memverifikasi tambalan pihak ketiga, serta tidak bertanggung jawab atas konten ataupun atas apa yang dilakukannya pada perangkat Anda"</string>
     <string name="sources_update_success">Pembaruan berhasil</string>
     <string name="sources_update_unavailable">Tidak ada pembaruan tersedia</string>
     <string name="sources_download_fail">Gagal mengunduh sumber: %s</string>
     <string name="sources_download_fail_named">\'%s\' tidak dapat diperbarui. Periksa internet Anda dan coba lagi</string>
     <string name="sources_download_endpoint_not_found">\'%s\': metadata tidak ditemukan</string>
+    <string name="sources_signing_key_changed_named">\'%s\' tidak diperbarui karena rilis terbarunya tidak ditandatangani oleh kunci yang digunakan sebelumnya</string>
+    <string name="sources_signing_key_changed_local">Berkas tidak ditandatangani oleh kunci yang digunakan sumber ini sebelumnya. Untuk mempercayainya, hapus sumber dan tambahkan berkas kembali</string>
+    <string name="sources_signing_key_trust_title">Percayai kunci baru?</string>
+    <string name="sources_signing_key_trust_message">Rilis terbaru ditandatangani oleh kunci yang berbeda. Pengembang mungkin telah mengganti kunci mereka, atau orang lain yang menerbitkan rilis ini. Hanya percayai jika pengembang telah mengumumkan kunci baru</string>
+    <string name="sources_signing_key_trust_message_unsigned">Rilis terbaru tidak ditandatangani. Pengembang mungkin telah berhenti menandatangani rilis, atau orang lain yang menerbitkan rilis ini. Hanya percayai jika pengembang telah mengumumkannya</string>
+    <string name="sources_signing_key_trusted">Kunci terpercaya</string>
+    <string name="sources_signing_key_new">Kunci baru</string>
     <string name="sources_patch_expert_badge">Ahli</string>
     <string name="sources_patch_expert_badge_tooltip">Aktifkan mode Ahli di Setelan untuk menambahkan tambalan ini secara manual</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -706,7 +716,7 @@ Mencopot akan menghapus semua data aplikasi secara permanen"</string>
     <string name="patched_app_save_failed_toast">Gagal menyimpan aplikasi yang ditambal</string>
     <string name="plugin_activity_dialog_body">Interaksi pengguna diperlukan untuk melanjutkan plugin ini</string>
     <string name="patcher_process_killed_message">Sistem menghentikan patcher sebelum selesai, biasanya untuk membebaskan memori. Tutup aplikasi lain dan coba lagi</string>
-    <string name="patcher_process_crashed_message">Patcher terhenti secara tiba-tiba sebelum selesai. Jika ini terjadi lagi, nonaktifkan \"Use embedded VM\" di pengaturan dan laporkan masalah ini beserta log-nya</string>
+    <string name="patcher_process_crashed_message">Penambal mengalami kerusakan sebelum selesai. Jika hal ini terjadi lagi, nonaktifkan \"Gunakan VM tertanam\" di setelan dan laporkan masalah ini beserta log-nya</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">Penambal kehabisan memori dengan heap %1$s MB. Aplikasi ini terlalu besar untuk tambalan yang dipilih. Coba menambal dengan lebih sedikit sumber tambalan, atau pilih lebih sedikit tambalan</string>
     <string name="install_app_success">Berhasil dipasang</string>
@@ -1074,7 +1084,7 @@ Rincian: %2$s"</string>
     <string name="settings_system_battery_optimization">Optimisasi baterai</string>
     <string name="settings_system_battery_optimization_description">Menjaga penambal tetap berjalan saat aplikasi diminimalkan</string>
     <string name="settings_system_process_runtime">Runtime patcher</string>
-    <string name="settings_system_jvm_runtime_enable">Gunakan VM bawaan</string>
+    <string name="settings_system_jvm_runtime_enable">Gunakan VM tertanam</string>
     <string name="settings_system_jvm_runtime_description">Menambal di Java VM milik Morphe sendiri, yang dapat menggunakan lebih banyak memori. Nonaktifkan untuk menggunakan runtime Android</string>
     <string name="settings_system_jvm_runtime_unavailable">Membutuhkan perangkat ARM atau 64-bit x86</string>
     <string name="settings_system_patcher_completion_sound">Suara penyelesaian</string>
@@ -1220,7 +1230,6 @@ Rincian: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Dipercaya: %1$d dari %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Aplikasi pembantu dapat mengunduh APK asli untuk Anda. Hanya aplikasi yang Anda percayai di sini yang ditawarkan dalam petunjuk pengunduhan.</string>
     <string name="settings_system_apk_download_helper_trust_title">Percayakah Anda terhadap asisten ini?</string>
-    <string name="settings_system_apk_download_helper_trust">Percaya</string>
     <string name="settings_system_apk_download_helper_warning">APK berasal dari aplikasi pembantu, jadi hanya percayai aplikasi yang Anda kenal. Morphe tetap memeriksa paket, versi, dan tanda tangan setiap file sebelum menambal.</string>
     <string name="settings_system_apk_download_helper_installed_by">Diinstal oleh %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Penginstal tidak diketahui</string>
@@ -1315,6 +1324,7 @@ Rincian: %2$s"</string>
     <string name="include">Termasuk</string>
     <string name="disable">Nonaktifkan</string>
     <string name="enable">Aktifkan</string>
+    <string name="trust">Percayai</string>
     <string name="loading">Memuat…</string>
     <string name="creating">Membuat…</string>
     <string name="processing_apk">Memproses APK…</string>

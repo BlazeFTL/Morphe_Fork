@@ -212,6 +212,9 @@
 </string>
     <string name="sources_management_held_back_badge">Awaria</string>
     <string name="sources_management_held_back_hint">To źródło spowodowało awarię Morphe podczas wczytywania, dlatego jest pomijane. Zaktualizuj lub zaimportuj je ponownie, aby spróbować jeszcze raz</string>
+    <string name="sources_management_signed_by">Podpisano przez</string>
+    <string name="sources_management_signing_key_changed_badge">Zmieniono klucz</string>
+    <string name="sources_management_signing_key_changed_hint">Najnowsza wersja nie została podpisana kluczem, którego to źródło używało wcześniej, więc nie została zainstalowana. Dotknij, aby ją przejrzeć</string>
     <string name="sources_management_source_enabled">Źródło włączone</string>
     <string name="sources_management_source_disabled">Źródło wyłączone</string>
     <string name="sources_management_source_updating">Aktualizowanie źródła</string>
@@ -247,6 +250,13 @@
     <string name="sources_download_fail">Nie udało się pobrać źródeł: %s</string>
     <string name="sources_download_fail_named">Nie udało się zaktualizować \"%s\". Sprawdź połączenie z internetem i spróbuj ponownie</string>
     <string name="sources_download_endpoint_not_found">\"%s\": nie znaleziono metadanych modyfikacji</string>
+    <string name="sources_signing_key_changed_named">\'%s\' nie zostało zaktualizowane, ponieważ jego najnowsza wersja nie została podpisana kluczem, którego używało wcześniej</string>
+    <string name="sources_signing_key_changed_local">Plik nie jest podpisany kluczem, którego to źródło używało wcześniej. Aby mu zaufać, usuń źródło i dodaj plik ponownie</string>
+    <string name="sources_signing_key_trust_title">Zaufać nowemu kluczowi?</string>
+    <string name="sources_signing_key_trust_message">Ostatnia wersja jest podpisana innym kluczem. Albo programista zmienił klucz, albo ktoś inny opublikował tę wersję. Zaufaj jej tylko wtedy, gdy programista ogłosił nowy klucz</string>
+    <string name="sources_signing_key_trust_message_unsigned">Ostatnia wersja nie jest podpisana. Albo programista przestał podpisywać wersje, albo ktoś inny opublikował tę wersję. Zaufaj jej tylko wtedy, gdy programista to ogłosił</string>
+    <string name="sources_signing_key_trusted">Zaufany klucz</string>
+    <string name="sources_signing_key_new">Nowy klucz</string>
     <string name="sources_patch_expert_badge">Ekspert</string>
     <string name="sources_patch_expert_badge_tooltip">Włącz tryb ekspercki w Ustawieniach, aby ręcznie dodać tę modyfikację</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1220,7 +1230,6 @@ Wymagane są następujące wymiary obrazów:
     <string name="settings_system_apk_download_helper_trusted_count">Zaufane: %1$d z %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Asystenci mogą pobierać dla Ciebie oryginalne pliki APK. W instrukcjach pobierania proponowane są tylko te aplikacje, które oznaczysz tutaj jako zaufane</string>
     <string name="settings_system_apk_download_helper_trust_title">Zaufać temu asystentowi?</string>
-    <string name="settings_system_apk_download_helper_trust">Zaufaj</string>
     <string name="settings_system_apk_download_helper_warning">Plik APK pochodzi z asystenta, dlatego ufaj tylko aplikacjom, które znasz. Morphe nadal sprawdza pakiet, wersję i podpis każdego pliku przed modyfikowaniem</string>
     <string name="settings_system_apk_download_helper_installed_by">Zainstalowane przez %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Nieznany instalator</string>
@@ -1315,6 +1324,7 @@ Wymagane są następujące wymiary obrazów:
     <string name="include">Uwzględnij</string>
     <string name="disable">Wyłącz</string>
     <string name="enable">Włącz</string>
+    <string name="trust">Zaufaj</string>
     <string name="loading">Wczytywanie…</string>
     <string name="creating">Tworzenie…</string>
     <string name="processing_apk">Przetwarzanie pliku APK…</string>

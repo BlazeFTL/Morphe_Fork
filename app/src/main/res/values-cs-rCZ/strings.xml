@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Tento zdroj je vytvořen pro patcher %1$s, ale Morphe %2$s obsahuje patcher %3$s. Aktualizujte Morphe pro jeho použití</string>
     <string name="sources_management_held_back_badge">Pád</string>
     <string name="sources_management_held_back_hint">Tento zdroj při načítání způsobil pád Morphe, proto je přeskočen. Aktualizujte jej nebo jej znovu importujte a zkuste to znovu</string>
+    <string name="sources_management_signed_by">Podepsáno</string>
+    <string name="sources_management_signing_key_changed_badge">Klíč byl změněn</string>
+    <string name="sources_management_signing_key_changed_hint">Nejnovější verze není podepsána klíčem, který tento zdroj používal dříve, a proto nebyla instalována. Klepnutím ji zkontrolujte</string>
     <string name="sources_management_source_enabled">Zdroj aktivován</string>
     <string name="sources_management_source_disabled">Zdroj deaktivován</string>
     <string name="sources_management_source_updating">Aktualizace zdroje</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Selhalo stahování zdrojů: %s</string>
     <string name="sources_download_fail_named">\'%s\' nelze aktualizovat. Zkontrolujte připojení k internetu a zkuste to znovu</string>
     <string name="sources_download_endpoint_not_found">\'%s\': nebyla nalezena metadata opravy</string>
+    <string name="sources_signing_key_changed_named">\'%s\' nebyla aktualizována, protože její nejnovější verze není podepsána klíčem, který byl použit dříve</string>
+    <string name="sources_signing_key_changed_local">Soubor není podepsán klíčem, který tento zdroj používal dříve. Chcete-li mu důvěřovat, smažte zdroj a znovu přidejte soubor</string>
+    <string name="sources_signing_key_trust_title">Důvěřovat novému klíči?</string>
+    <string name="sources_signing_key_trust_message">Poslední verze je podepsána jiným klíčem. Buď vývojář svůj klíč nahradil, nebo tuto verzi publikoval někdo jiný. Důvěřujte jí pouze v případě, že vývojář oznámil nový klíč</string>
+    <string name="sources_signing_key_trust_message_unsigned">Poslední verze není podepsána. Buď vývojář přestal verze podepisovat, nebo tuto verzi publikoval někdo jiný. Důvěřujte jí pouze v případě, že to vývojář oznámil</string>
+    <string name="sources_signing_key_trusted">Důvěryhodný klíč</string>
+    <string name="sources_signing_key_new">Nový klíč</string>
     <string name="sources_patch_expert_badge">Expert</string>
     <string name="sources_patch_expert_badge_tooltip">Povolte Expert režim v Nastavení, abyste mohli tuto záplatu ručně přidat</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ Podrobnosti: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Důvěryhodné: %1$d z %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Pomocné aplikace za vás mohou stahovat originální APK. V pokynech ke stažení se nabízejí pouze ty, kterým zde důvěřujete.</string>
     <string name="settings_system_apk_download_helper_trust_title">Důvěřovat tomuto pomocníkovi?</string>
-    <string name="settings_system_apk_download_helper_trust">Důvěřovat</string>
     <string name="settings_system_apk_download_helper_warning">APK pochází z pomocné aplikace, proto důvěřujte pouze aplikacím, které znáte. Morphe před patchováním stále kontroluje balíček, verzi a podpis každého souboru.</string>
     <string name="settings_system_apk_download_helper_installed_by">Nainstalováno aplikací %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Neznámý instalátor</string>
@@ -1314,6 +1323,7 @@ Podrobnosti: %2$s"</string>
     <string name="include">Zahrnout</string>
     <string name="disable">Zakázat</string>
     <string name="enable">Povolit</string>
+    <string name="trust">Důvěřovat</string>
     <string name="loading">Načítání…</string>
     <string name="creating">Vytvářím…</string>
     <string name="processing_apk">Zpracovávám APK…</string>

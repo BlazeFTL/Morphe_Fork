@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Ðetta uppspretta er á byggð fyrir flík %1$s, en Morphe %2$s inniheldur flík %3$s. Uppféra Morphe til að nota éð.</string>
     <string name="sources_management_held_back_badge">Hrundi</string>
     <string name="sources_management_held_back_hint">Þessi uppspretta olli því að Morphe hrundi við hleðslu, og er henni því sleppt. Uppfærðu hana eða flyttu hana aftur inn til að reyna aftur</string>
+    <string name="sources_management_signed_by">Undirritað af</string>
+    <string name="sources_management_signing_key_changed_badge">Lykill breytt</string>
+    <string name="sources_management_signing_key_changed_hint">Nýjasta útgáfan er ekki undirrituð með lykilnum sem þessi uppspretta notaði áður, svo hún var ekki sett upp. Ýttu til að skoða hana</string>
     <string name="sources_management_source_enabled">Heimild virkjuð</string>
     <string name="sources_management_source_disabled">Heimild óvirkjuð</string>
     <string name="sources_management_source_updating">Uppfæra heimild</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Ekki tókst að sækja heimildir: %s</string>
     <string name="sources_download_fail_named">\"%s\" gat ekki verið uppfært. Athyglið nettenginguna og reyndu aftur</string>
     <string name="sources_download_endpoint_not_found">\"%s\": breytingar metadata fundust ekki</string>
+    <string name="sources_signing_key_changed_named">\'%s\' var ekki uppfært því nýjasta útgáfan er ekki undirrituð með lykilnum sem hún notaði áður</string>
+    <string name="sources_signing_key_changed_local">Skráin er ekki undirrituð með lyklnum sem þessi uppspretta notaði áður. Til að treysta henni, eyðu uppsprettunni og bættu skránni aftur</string>
+    <string name="sources_signing_key_trust_title">Treysta nýjum lykli?</string>
+    <string name="sources_signing_key_trust_message">Nýjasta útgáfan er undirrituð með öðrum lykli. Antan hafi þróunarmaðurinn skipt lykilanum út, eða einhver annar gefið út þessa útgáfu. Treysta henni aðeins ef þróunarmaðurinn tilkynnti nýjan lykil</string>
+    <string name="sources_signing_key_trust_message_unsigned">Nýjasta útgáfan er ekki undirrituð. Antan vera þróunarmaðurinn hættur við að undirrita útgáfur, eða einhver annar gaf út þessa útgáfu. Treysta henni aðeins ef þróunarmaðurinn tilkynnti það</string>
+    <string name="sources_signing_key_trusted">Treystur lykill</string>
+    <string name="sources_signing_key_new">Nýr lykill</string>
     <string name="sources_patch_expert_badge">Sérfærni</string>
     <string name="sources_patch_expert_badge_tooltip">Virkja sérfærni stillingu til að bæta við þessari breytingu handvirkt</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1215,7 +1225,6 @@ Nánari upplýsingar: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Treyst: %1$d af %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Hjálparforrit geta sótt upprunalegar APK-skrár fyrir þig. Aðeins þau sem þú treystir hér eru boðin í niðurhalsleiðbeiningunum.</string>
     <string name="settings_system_apk_download_helper_trust_title">Treysta þessum aðstoðara?</string>
-    <string name="settings_system_apk_download_helper_trust">Treysta</string>
     <string name="settings_system_apk_download_helper_warning">APK-skráin kemur frá hjálparaforritinu, svo treystu aðeins forritum sem þú þekkir. Morphe athugar samt pakkann, útgáfuna og undirskrift hverrar skráar áður en það plástrar.</string>
     <string name="settings_system_apk_download_helper_installed_by">Sett upp af %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Óþekktur uppsetningaraðili</string>
@@ -1310,6 +1319,7 @@ Nánari upplýsingar: %2$s"</string>
     <string name="include">Taka með</string>
     <string name="disable">Gerðu óvirkt</string>
     <string name="enable">Gerðu virkt</string>
+    <string name="trust">Treysta</string>
     <string name="loading">Hlaða…</string>
     <string name="creating">Búa til…</string>
     <string name="processing_apk">Vinnsla við APK…</string>

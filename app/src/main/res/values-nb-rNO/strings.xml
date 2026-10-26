@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Denne kilden er bygget for patcher %1$s, men Morphe %2$s inkluderer patcher %3$s. Oppdater Morphe for å bruke den</string>
     <string name="sources_management_held_back_badge">Krasjet</string>
     <string name="sources_management_held_back_hint">Denne kilden fikk Morphe til å krasje under innlasting, så den blir hoppet over. Oppdater eller importer den på nytt for å prøve igjen</string>
+    <string name="sources_management_signed_by">Signert av</string>
+    <string name="sources_management_signing_key_changed_badge">Nøkkel endret</string>
+    <string name="sources_management_signing_key_changed_hint">Den nyeste utgivelsen er ikke signert med nøkkelen denne kilden brukte tidligere, så den ble ikke installert. Trykk for å se over den</string>
     <string name="sources_management_source_enabled">Kilde aktivert</string>
     <string name="sources_management_source_disabled">Kilde deaktivert</string>
     <string name="sources_management_source_updating">Oppdaterer kilde</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Kunne ikke laste ned kilder: %s</string>
     <string name="sources_download_fail_named">\'%s\' kunne ikke oppdateres. Sjekk internettforbindelsen og prøv igjen</string>
     <string name="sources_download_endpoint_not_found">\'%s\': patch-metadata ikke funnet</string>
+    <string name="sources_signing_key_changed_named">\'%s\' ble ikke oppdatert fordi den nyeste utgivelsen ikke er signert med nøkkelen den brukte tidligere</string>
+    <string name="sources_signing_key_changed_local">Filen er ikke signert med nøkkelen denne kilden brukte tidligere. For å stole på den, slett kilden og legg til filen på nytt</string>
+    <string name="sources_signing_key_trust_title">Stole på den nye nøkkelen?</string>
+    <string name="sources_signing_key_trust_message">Den nyeste utgivelsen er signert med en annen nøkkel. Enten har utvikleren byttet ut nøkkelen sin, eller så har noen andre publisert denne utgivelsen. Stol kun på den hvis utvikleren har kunngjort en ny nøkkel</string>
+    <string name="sources_signing_key_trust_message_unsigned">Den nyeste utgivelsen er ikke signert. Enten har utvikleren sluttet å signere utgivelser, eller så har noen andre publisert denne utgivelsen. Stol kun på den hvis utvikleren har kunngjort det</string>
+    <string name="sources_signing_key_trusted">Godkjent nøkkel</string>
+    <string name="sources_signing_key_new">Ny nøkkel</string>
     <string name="sources_patch_expert_badge">Ekspert</string>
     <string name="sources_patch_expert_badge_tooltip">Aktiver Ekspertmodus i Innstillinger for å inkludere denne patchen manuelt</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ Detaljer: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Betrodde: %1$d av %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Hjelpeapper kan laste ned originale APK-er for deg. Bare de du stoler på her, tilbys i nedlastingsinstruksjonene.</string>
     <string name="settings_system_apk_download_helper_trust_title">Stol på denne hjelperen?</string>
-    <string name="settings_system_apk_download_helper_trust">Stoler</string>
     <string name="settings_system_apk_download_helper_warning">APK-en kommer fra hjelpeappen, så stol bare på apper du kjenner. Morphe sjekker fortsatt pakken, versjonen og signaturen til hver fil før patching.</string>
     <string name="settings_system_apk_download_helper_installed_by">Installert av %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Installasjonskilde ukjent</string>
@@ -1314,6 +1323,7 @@ Detaljer: %2$s"</string>
     <string name="include">Inkluder</string>
     <string name="disable">Deaktiver</string>
     <string name="enable">Aktiver</string>
+    <string name="trust">Stol på</string>
     <string name="loading">Laster…</string>
     <string name="creating">Opprettes…</string>
     <string name="processing_apk">Behandler APK…</string>

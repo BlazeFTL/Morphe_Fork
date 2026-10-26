@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Ang mapagkukunang ito ay binuo para sa patcher %1$s, ngunit ang Morphe %2$s ay may kasamang patcher %3$s. I-update ang Morphe para gamitin ito</string>
     <string name="sources_management_held_back_badge">Nag-crash</string>
     <string name="sources_management_held_back_hint">Habang nilo-load ang source na ito, nag-crash ang Morphe, kaya nilalaktawan ito. I-update o i-import ito muli upang subukan muli</string>
+    <string name="sources_management_signed_by">Nilagdaan ni</string>
+    <string name="sources_management_signing_key_changed_badge">Nabago ang key</string>
+    <string name="sources_management_signing_key_changed_hint">Ang pinakabagong release ay hindi nilagdaan ng key na ginamit ng source na ito noon, kaya hindi ito na-install. I-tap upang suriin ito</string>
     <string name="sources_management_source_enabled">Pinagana ang pagkuha</string>
     <string name="sources_management_source_disabled">Hindi pinagana ang pagkuha</string>
     <string name="sources_management_source_updating">Inu-update ang pagkuha</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Nabigong mag-download ang mga mapagkukunan: %s</string>
     <string name="sources_download_fail_named">\"%s\" ay hindi na-update. Suriin ang iyong koneksyon sa internet at subukan muli</string>
     <string name="sources_download_endpoint_not_found">\"%s\": hindi natagpuan ang metadata ng patch</string>
+    <string name="sources_signing_key_changed_named">Hindi na-update ang \'%s\' dahil ang pinakabagong release nito ay hindi nilagdaan ng key na ginamit nito noon</string>
+    <string name="sources_signing_key_changed_local">Ang file ay hindi nilagdaan ng key na ginamit ng source na ito noon. Para pagkatiwalaan ito, burahin ang source at idagdag muli ang file</string>
+    <string name="sources_signing_key_trust_title">Pagkakatiwalaan ang bagong key?</string>
+    <string name="sources_signing_key_trust_message">Ang pinakabagong release ay nilagdaan ng ibang key. Maaaring pinalitan ng developer ang kanilang key, o may ibang nag-publish ng release na ito. Pagkatiwalaan lamang ito kung nag-anunsyo ang developer ng bagong key</string>
+    <string name="sources_signing_key_trust_message_unsigned">Ang pinakabagong release ay hindi nilagdaan. Maaaring itinigil ng developer ang paglagda sa mga release, o may ibang nag-publish ng release na ito. Pagkatiwalaan lamang ito kung inanunsyo ito ng developer</string>
+    <string name="sources_signing_key_trusted">Pinagkatiwalaang key</string>
+    <string name="sources_signing_key_new">Bagong key</string>
     <string name="sources_patch_expert_badge">Eksperto</string>
     <string name="sources_patch_expert_badge_tooltip">I-enable ang Expert mode sa Settings upang isama ang patch na ito nang manu-mano</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ Mga Detalye: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Pinagkakatiwalaan: %1$d sa %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Maaaring i-download ng mga helper app ang mga orihinal na APK para sa iyo. Tanging ang mga pinagkakatiwalaan mo dito ang inaalok sa mga tagubilin sa pag-download.</string>
     <string name="settings_system_apk_download_helper_trust_title">Mapagkakatiwakan ka ba ang helper na ito?</string>
-    <string name="settings_system_apk_download_helper_trust">Maniwala</string>
     <string name="settings_system_apk_download_helper_warning">Ang APK ay nagmumula sa helper app, kaya magtiwala ka lamang sa mga app na kilala mo. Sinusuri pa rin ng Morphe ang package, bersyon, at lagda ng bawat file bago i-patch.</string>
     <string name="settings_system_apk_download_helper_installed_by">In-install ng %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Hindi kilala ang installer</string>
@@ -1314,6 +1323,7 @@ Mga Detalye: %2$s"</string>
     <string name="include">Isama</string>
     <string name="disable">Patayin</string>
     <string name="enable">Paganahin</string>
+    <string name="trust">Magtiwala</string>
     <string name="loading">Naglo-load…</string>
     <string name="creating">Ginagawa…</string>
     <string name="processing_apk">Pinoproseso ang APK…</string>

@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Ez a forrás a %1$s javítóprogramhoz készült, de a Morphe %2$s a %3$s javítóprogramot tartalmazza. Frissítse a Morphe-t a használatához.</string>
     <string name="sources_management_held_back_badge">Összeomlott</string>
     <string name="sources_management_held_back_hint">Ez a forrás a betöltése közben okozott összeomlást a Morphe alkalmazásban, ezért kihagyásra kerül. Frissítse vagy importálja újra, hogy újra megpróbálhassa</string>
+    <string name="sources_management_signed_by">Aláírta</string>
+    <string name="sources_management_signing_key_changed_badge">Kulcs változott</string>
+    <string name="sources_management_signing_key_changed_hint">A legújabb kiadás nem azzal a kulccsal van aláírva, amelyet ez a forrás korábban használt, ezért nem lett telepítve. Koppints az áttekintéshez</string>
     <string name="sources_management_source_enabled">Forrás engedélyezve</string>
     <string name="sources_management_source_disabled">Forrás letiltva</string>
     <string name="sources_management_source_updating">Forrás frissítése</string>
@@ -246,6 +249,13 @@
     <string name="sources_download_fail">Nem sikerült letölteni a forrásokat: %s</string>
     <string name="sources_download_fail_named">A(z) \'%s\' nem frissíthető. Ellenőrizd az internetkapcsolatot, és próbáld újra.</string>
     <string name="sources_download_endpoint_not_found">A(z) \'%s\' nem található meg a patch metaadata.</string>
+    <string name="sources_signing_key_changed_named">\'%s\' nem frissült, mert a legújabb kiadása nem azzal a kulccsal van aláírva, amelyet korábban használt</string>
+    <string name="sources_signing_key_changed_local">A fájlt nem olyan kulccsal sıgnotálták, mint amilyet ez a forrás korábban használt. A bizalom alapjául törölje a forrást, majd adja hozzá újra a fájlt</string>
+    <string name="sources_signing_key_trust_title">Bízni szeretne az új kulcsban?</string>
+    <string name="sources_signing_key_trust_message">A legújabb kiadás egy másik kulccsal van aláírva. Vagy a fejlesztő lecserélte a kulcsát, vagy valaki más publikálta ezt a kiadást. Csak akkor bízzon benne, ha a fejlesztő bejelentett egy új kulcsot</string>
+    <string name="sources_signing_key_trust_message_unsigned">A legújabb kiadás nincs aláírva. Vagy a fejlesztőnök stopped a kiadások aláírását, vagy valaki más publikálta ezt a kiadást. Csak akkor bízzon benne, ha a fejlesztő bejelentette</string>
+    <string name="sources_signing_key_trusted">Megbízható kulcs</string>
+    <string name="sources_signing_key_new">Új kulcs</string>
     <string name="sources_patch_expert_badge">Szakértő</string>
     <string name="sources_patch_expert_badge_tooltip">A módosítás manuális hozzáadásához engedélyezd a szakértői módot a beállításokban.</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -1219,7 +1229,6 @@ Részletek: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Megbízható: %1$d / %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">A segédalkalmazások letölthetik Ön helyett az eredeti APK-kat. A letöltési utasításokban csak az itt megbízhatónak jelöltek jelennek meg.</string>
     <string name="settings_system_apk_download_helper_trust_title">Bízna ebben a segédprogramban?</string>
-    <string name="settings_system_apk_download_helper_trust">Megbízható</string>
     <string name="settings_system_apk_download_helper_warning">Az APK a segédalkalmazásból származik, ezért csak olyan alkalmazásokban bízzon meg, amelyeket ismer. A Morphe a módosítás előtt továbbra is ellenőrzi minden fájl csomagját, verzióját és aláírását.</string>
     <string name="settings_system_apk_download_helper_installed_by">Telepítő: %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Ismeretlen telepítő</string>
@@ -1314,6 +1323,7 @@ Részletek: %2$s"</string>
     <string name="include">Bevés</string>
     <string name="disable">Letiltás</string>
     <string name="enable">Engedélyezés</string>
+    <string name="trust">Bízás</string>
     <string name="loading">Betöltés…</string>
     <string name="creating">Létrehozás…</string>
     <string name="processing_apk">APK feldolgozása…</string>
