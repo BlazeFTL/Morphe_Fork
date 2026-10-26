@@ -1,3 +1,27 @@
+# [2.3.0-dev.1](https://github.com/MorpheApp/morphe-manager/compare/v2.2.0...v2.3.0-dev.1) (2026-10-26)
+
+
+### Bug Fixes
+
+* Keep a remote source on the branch it was added from ([3775bdb](https://github.com/MorpheApp/morphe-manager/commit/3775bdb7b9313910022f7ae322fd96cb0719e1c1))
+* Restore the stock app of a mount from the split archive's own modules ([#1283](https://github.com/MorpheApp/morphe-manager/issues/1283)) ([a85dce6](https://github.com/MorpheApp/morphe-manager/commit/a85dce6074eb083b7ac04cc10fdbdda88a8095dd))
+* Select apps across groups in the grouped home view ([f0953d6](https://github.com/MorpheApp/morphe-manager/commit/f0953d6c35b2011e76e31e165eef7001e1abe820))
+
+
+### Features
+
+* Animate panel actions as they come and go ([06bc2ce](https://github.com/MorpheApp/morphe-manager/commit/06bc2ce1606b8bb6cdedf6d6aed183c34b059ff2))
+* Bring back the community patches button in the add source dialog ([e5505ad](https://github.com/MorpheApp/morphe-manager/commit/e5505aded8852da449299ad906d06cbfbc717822))
+* Compare signing keys side by side and copy the key on tap ([ed81054](https://github.com/MorpheApp/morphe-manager/commit/ed810546cb5f5f66e88e589c003f352b14f34d73))
+* Open the installed app from its patches dialog ([75dd12e](https://github.com/MorpheApp/morphe-manager/commit/75dd12e223d1d533eccfd19c148e2dee672478de))
+* Remember the batch install policy between queues ([055e011](https://github.com/MorpheApp/morphe-manager/commit/055e01181ec31b3cf7e157e78e6fc11e6ee0a60a))
+* Verify patch bundle signatures and pin the signing key ([eaceab3](https://github.com/MorpheApp/morphe-manager/commit/eaceab3f987c0ff4155cc720e975961eca0934a8))
+
+
+### Performance Improvements
+
+* Skip downloading a release already refused for its signer ([19709a3](https://github.com/MorpheApp/morphe-manager/commit/19709a33a86c717004f84f1f98b2a8593375ad93))
+
 # [2.2.0](https://github.com/MorpheApp/morphe-manager/compare/v2.1.0...v2.2.0) (2026-10-25)
 
 
