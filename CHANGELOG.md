@@ -1,3 +1,20 @@
+# [2.3.0-dev.3](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.2...v2.3.0-dev.3) (2026-10-26)
+
+
+### Bug Fixes
+
+* Drop repeated wording from dialogs ([1371e0e](https://github.com/MorpheApp/morphe-manager/commit/1371e0e72e15fa80807f9555e2e1f0643e4e8583))
+* Smooth out the alerts room on page switches ([005d858](https://github.com/MorpheApp/morphe-manager/commit/005d8589b7a4e012cee2a0e6b30a5ab170afacb7))
+
+
+### Features
+
+* Add patch sources from a docked panel ([7c89419](https://github.com/MorpheApp/morphe-manager/commit/7c89419c1c3d6e8c2e5295c6e30ccec3b3ba6d37))
+* Detach mounted apps from Play Store with zygisk-detach ([#1292](https://github.com/MorpheApp/morphe-manager/issues/1292)) ([c1f7b47](https://github.com/MorpheApp/morphe-manager/commit/c1f7b471138107dc1a30372b46c88f482b928b8a))
+* Refine source card states and scroll long lines ([7df5e83](https://github.com/MorpheApp/morphe-manager/commit/7df5e835470b84db38c50b43a525118cf474173f))
+* Show APK sources as cards in the Select APK dialog ([5756944](https://github.com/MorpheApp/morphe-manager/commit/5756944f059fb7a6c0b3332215c4f4d6d6e0fa65))
+* Show the community notice until it is agreed to ([9f88bcd](https://github.com/MorpheApp/morphe-manager/commit/9f88bcddab847d7c83a994541b242e4e7c4d2f98))
+
 # [2.3.0-dev.2](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.1...v2.3.0-dev.2) (2026-10-26)
 
 
