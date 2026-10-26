@@ -44,6 +44,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.morphe.manager.R
 import app.morphe.manager.domain.bundles.APIPatchBundle
+import app.morphe.manager.domain.bundles.BundleSourceType
 import app.morphe.manager.domain.bundles.PatchBundleSource
 import app.morphe.manager.domain.bundles.PatchBundleSource.Extensions.usesPrerelease
 import app.morphe.manager.domain.bundles.RemotePatchBundle
@@ -148,11 +149,11 @@ fun DialogHostScope.AddSourceDialog(
             options = listOf(
                 SegmentedTab(
                     label = stringResource(R.string.sources_dialog_remote),
-                    icon = MaterialSymbols.Rounded.Language
+                    icon = BundleSourceType.Remote.icon
                 ),
                 SegmentedTab(
                     label = stringResource(R.string.sources_dialog_local),
-                    icon = MaterialSymbols.Rounded.Draft.autoMirrored
+                    icon = BundleSourceType.Local.icon
                 )
             ),
             selectedIndex = selectedTab,

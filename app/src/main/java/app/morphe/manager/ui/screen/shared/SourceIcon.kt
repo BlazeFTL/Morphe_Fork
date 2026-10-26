@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.graphics.Paint
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import app.morphe.manager.R
 import app.morphe.manager.domain.bundles.BundleSourceType
@@ -37,7 +38,7 @@ import com.composables.icons.materialsymbols.rounded.*
 /** Share of a source's disc its fallback glyph takes, the 24dp a 44dp disc has always given it. */
 private const val BUNDLE_GLYPH_FRACTION = 0.55f
 
-/** How far a switched off source's icon and the lines under its name fade back. */
+/** How far a switched off source's icon fades back. */
 internal const val DISABLED_SOURCE_ALPHA = 0.7f
 
 /**
@@ -59,6 +60,14 @@ fun BundleTypeBadge(
     }
     AppAccentBadge(text = text, modifier = modifier, accentColor = accentColor)
 }
+
+/** Icon a source's origin goes by, shared by the dialog adding a source and the card listing it. */
+val BundleSourceType.icon: ImageVector
+    get() = when (this) {
+        BundleSourceType.PreInstalled -> MaterialSymbols.Rounded.Verified_user
+        BundleSourceType.Remote -> MaterialSymbols.Rounded.Language
+        BundleSourceType.Local -> MaterialSymbols.Rounded.Draft.autoMirrored
+    }
 
 /**
  * A source's disc: its avatar, or a glyph for what is wrong with it, faded and drained of color

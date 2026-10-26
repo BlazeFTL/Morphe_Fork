@@ -875,21 +875,21 @@ Uninstalling will permanently erase all app data"</string>
     <string name="settings_appearance_repatch_notice_description">Shows a banner when patched apps can be re-patched</string>
     <string name="settings_appearance_more_apps_card">More apps card</string>
     <string name="settings_appearance_more_apps_card_description">Shows a card under the apps leading to community patches</string>
-    <string name="settings_appearance_app_card_colors">App card colors</string>
+    <string name="settings_appearance_app_card_colors">Card colors</string>
     <string name="settings_appearance_app_card_colors_default">Default</string>
-    <string name="settings_appearance_app_card_colors_default_description">Give each app the color of its own bundle</string>
+    <string name="settings_appearance_app_card_colors_default_description">Give each app and source a color of its own</string>
     <string name="settings_appearance_app_card_colors_accent">Accent</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Use the app accent color for home app cards</string>
+    <string name="settings_appearance_app_card_colors_accent_description">Use the app accent color for app and source cards</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradient</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Use one custom gradient for home app cards</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">Use one custom gradient for app cards, blended into one color for source cards</string>
     <string name="settings_appearance_app_card_colors_solid">Solid</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Use one custom color for home app cards</string>
+    <string name="settings_appearance_app_card_colors_solid_description">Use one custom color for app and source cards</string>
     <string name="settings_appearance_app_card_colors_start">Start color</string>
     <string name="settings_appearance_app_card_colors_middle">Middle color</string>
     <string name="settings_appearance_app_card_colors_end">End color</string>
     <string name="settings_appearance_app_card_colors_solid_color">Solid color</string>
     <string name="settings_appearance_app_card_colors_bundle">App bundle color</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Use each app\'s own color here, shaded automatically to fit</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">Use each app\'s or source\'s own color here, shaded automatically to fit</string>
 
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">App icon</string>

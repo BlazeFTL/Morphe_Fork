@@ -11,6 +11,7 @@ import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
+import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
@@ -32,7 +33,6 @@ import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.*
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -796,6 +796,15 @@ private val SourceTourTargets = setOf(
     TourTarget.SOURCE_PRERELEASE
 )
 
+/** How far a folded card of a source switched off fades back from the ones that are on. */
+private const val DISABLED_CARD_ALPHA = 0.5f
+
+/**
+ * How far a source's color is taken down for its card. It comes off the source's icon at full
+ * strength, where an app's is picked for a card to begin with.
+ */
+private const val SOURCE_CARD_COLOR_DEPTH = 0.35f
+
 /**
  * Card for individual bundle management.
  *
@@ -845,24 +854,33 @@ private fun BundleManagementCard(
     val isUnavailable = info.metadataFetchError != null || bundle.state is PatchBundleSource.State.Missing
     val signingKeyChanged = info.metadataFetchError is PatchBundleSignerChangedException
 
-    // Neutral fill for all, so the page reads as one list; a working source keeps its color on the edge
-    // and controls, a disabled one drops it rather than turn red, which stays for an unusable source
+    // A glass card like an app's on the home screen, in one color rather than a gradient: the
+    // source's own while it works, after the card colors the appearance settings pick, the
+    // problem's while it does not, and none once switched off
     val accentColor = usableAppAccent(rememberBundleAccent(bundle).takeIf { isEnabled && !isUnavailable })
-    val cardColor = when {
-        isBlocked -> MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.15f)
-        isUnavailable -> SemanticTone.Warning.container.copy(alpha = 0.15f)
-        else -> cardFill()
+    val baseStyle = glassCardStyle()
+    val tint = when {
+        isBlocked -> MaterialTheme.colorScheme.error
+        isUnavailable -> SemanticTone.Warning.accent
+        else -> accentColor?.let { baseStyle.flatColor(it.darken(SOURCE_CARD_COLOR_DEPTH)) }
     }
+    val cardStyle = baseStyle.onFill(tint)
+    val cardColor = cardStyle.flatFill(tint)
     val animatedColor by animateColorAsState(cardColor, label = "bundle_card_color")
+    // The color stays on the header, laid down opaque as it shows over the page, and the card
+    // under it is plain, where the panels and controls opening in it were drawn to stand out. The
+    // plain fill is the card's own rather than the opening body's, which fades in while the card
+    // is already growing and would let the color through until it had
+    val headerColor = animatedColor.compositeOpaqueOver(MaterialTheme.colorScheme.background)
+    val bodyColor = cardFill()
+    // The edge as it shows along the header, so it runs on past the body in the same color
+    val edgeColor = cardStyle.flatEdgeColor.compositeOpaqueOver(headerColor)
 
-    val animatedBorderColor by animateColorAsState(
-        targetValue = when {
-            isBlocked -> MaterialTheme.colorScheme.error.copy(alpha = 0.5f)
-            isUnavailable -> SemanticTone.Warning.accent.copy(alpha = 0.5f)
-            accentColor != null -> appAccentBorder(accentColor)
-            else -> MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
-        },
-        label = "bundle_card_border_color"
+    // A source switched off steps back from the list, and comes forward again while opened to be
+    // worked on, which its switch back on is part of
+    val cardAlpha by animateFloatAsState(
+        targetValue = if (!bundle.enabled && !expanded) DISABLED_CARD_ALPHA else 1f,
+        label = "bundle_card_alpha"
     )
 
     // Whether a tap on the header folds the card, rather than picks it or does nothing mid-reorder
@@ -883,15 +901,14 @@ private fun BundleManagementCard(
         Surface(
             modifier = Modifier
                 .fillMaxWidth()
-                .graphicsLayer { scaleX = scale; scaleY = scale },
-            shape = RoundedCornerShape(Defaults.CornerLarge),
-            tonalElevation = if (isDragging) 8.dp else 3.dp,
-            color = animatedColor,
-            // The fill is a blend of the card's own, which the theme has no content color paired with
+                .graphicsLayer { scaleX = scale; scaleY = scale; alpha = cardAlpha },
+            shape = RoundedCornerShape(cardStyle.cardRadius),
+            color = bodyColor,
+            // The header draws in the card style's colors, and the body on its plain fill
             contentColor = MaterialTheme.colorScheme.onSurface,
-            border = CardBorder.of(animatedBorderColor)
+            border = CardBorder.of(edgeColor)
         ) {
-            ProvideCardAccent(accentColor, cardColor) {
+            ProvideCardAccent(accentColor, bodyColor) {
                 // Build content description
                 val contentDesc = remember(bundle.displayTitle, isEnabled, expanded, folds) {
                     buildString {
@@ -909,10 +926,11 @@ private fun BundleManagementCard(
                     }
                 }
 
-                Column(modifier = Modifier.padding(Defaults.SpaceLarge)) {
+                Column {
                     // Click target only on the header so expanded children stay independently focusable for screen readers
                     BundleCardHeader(
                         bundle = bundle,
+                        cardStyle = cardStyle,
                         expanded = expanded,
                         showChevron = !forceExpanded,
                         selected = isSelected.takeIf { isSelectionMode },
@@ -924,6 +942,8 @@ private fun BundleManagementCard(
                         patchMatchCount = info.patchMatchCount,
                         onShowPatchMatches = actions.onPatchesClick,
                         modifier = Modifier
+                            .background(headerColor)
+                            .padding(horizontal = cardStyle.contentPadding)
                             .then(
                                 if (onHeaderClick != null || onLongClick != null) {
                                     Modifier.combinedClickable(
@@ -969,7 +989,9 @@ private fun BundleManagementCard(
                     // Expanded content
                     ListRowFold(visible = expanded) {
                         Column(
-                            modifier = Modifier.fillMaxWidth(),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(cardStyle.contentPadding),
                             verticalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall)
                         ) {
                             Column {
@@ -980,7 +1002,7 @@ private fun BundleManagementCard(
                                 CardNotice(
                                     visible = info.blockedInfo != null,
                                     text = if (blockedReason != null) "$blockedLabel: $blockedReason" else blockedLabel,
-                                    icon = MaterialSymbols.Rounded.Block
+                                    icon = SourceStateIcons.Blocked
                                 )
 
                                 // Metadata unavailable hint (shown when patches-bundle.json / remote fetch failed)
@@ -991,14 +1013,14 @@ private fun BundleManagementCard(
                                     } else {
                                         stringResource(R.string.sources_management_metadata_unavailable_hint)
                                     },
-                                    icon = MaterialSymbols.Rounded.Cloud_off
+                                    icon = SourceStateIcons.Unavailable
                                 )
 
                                 // Signing key hint (shown when an update was refused for its signer)
                                 CardNotice(
                                     visible = signingKeyChanged,
                                     text = stringResource(R.string.sources_management_signing_key_changed_hint),
-                                    icon = MaterialSymbols.Rounded.Gpp_bad,
+                                    icon = SourceStateIcons.SigningKeyChanged,
                                     onClick = actions.onReviewSigningKey
                                 )
 
@@ -1006,7 +1028,7 @@ private fun BundleManagementCard(
                                 CardNotice(
                                     visible = bundle.isHeldBack,
                                     text = stringResource(R.string.sources_management_held_back_hint),
-                                    icon = MaterialSymbols.Rounded.Error
+                                    icon = SourceStateIcons.HeldBack
                                 )
 
                                 // Outdated manager hint
@@ -1018,7 +1040,7 @@ private fun BundleManagementCard(
                                         BuildConfig.VERSION_NAME,
                                         BuildConfig.PATCHER_VERSION
                                     ),
-                                    icon = MaterialSymbols.Rounded.System_update,
+                                    icon = SourceStateIcons.OutdatedManager,
                                     onClick = actions.onOutdatedManagerClick
                                 )
                             }
@@ -1255,6 +1277,7 @@ private fun BundleManagementCard(
 @Composable
 private fun BundleCardHeader(
     bundle: PatchBundleSource,
+    cardStyle: GlassCardStyle,
     expanded: Boolean,
     showChevron: Boolean,
     modifier: Modifier = Modifier,
@@ -1270,97 +1293,72 @@ private fun BundleCardHeader(
     // Set while reordering, which puts the drag handle where the chevron sits
     dragHandleModifier: Modifier? = null,
 ) {
-    // The name dims by color rather than alpha so it stays crisp and above the lines under it,
-    // which fade along with the icon, so a source switched off reads as such before its badge is read
-    val titleColor by animateColorAsState(
-        targetValue = if (enabled) LocalContentColor.current else MaterialTheme.colorScheme.onSurfaceVariant,
-        label = "bundle_title_color"
-    )
-    val detailsAlpha by animateFloatAsState(
-        targetValue = if (enabled) 1f else DISABLED_SOURCE_ALPHA,
-        label = "bundle_details_alpha"
-    )
+    // Version • date
+    // When showChevron=false (single bundle): show only date, no version.
+    // When showChevron=true (multiple bundles): show version • date.
+    val timestamp = bundle.updatedAt ?: bundle.createdAt
+    val versionText = if (showChevron) bundle.version?.normalizeVersion() else null
+    val subtitle = remember(versionText, timestamp) {
+        listOfNotNull(versionText, timestamp?.let { getRelativeTimeString(it) }).joinToString(" • ")
+    }
 
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .padding(vertical = Defaults.SpaceSmall),
+            .heightIn(min = cardStyle.cardHeight),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceMedium)
+        horizontalArrangement = Arrangement.spacedBy(cardStyle.contentSpacing)
     ) {
-        // Bundle icon with GitHub avatar support
-        BundleIcon(
-            bundle = bundle,
-            enabled = enabled,
-            metadataFetchError = metadataFetchError,
-            modifier = Modifier.size(44.dp)
-        )
-        // Title + badges
-        Column(modifier = Modifier.weight(1f)) {
+        // Where the source comes from stays on the end corner, and a source switched off takes the
+        // other one, so the card says both without a badge for either
+        MarkedIcon(
+            mark = bundle.sourceType.icon,
+            startMark = MaterialSymbols.Rounded.Power_settings_new.takeIf { !enabled && blockedInfo == null },
+            markColor = cardStyle.markContainerColor,
+            markSize = cardStyle.markSize,
+            markContentColor = cardStyle.chipContentColor,
+            iconSize = cardStyle.iconSize,
+            contentFraction = AppIconContentFraction
+        ) {
+            // As large as an app's icon on its card, which leaves the same margin to its square
+            BundleIcon(
+                bundle = bundle,
+                enabled = enabled,
+                metadataFetchError = metadataFetchError,
+                modifier = Modifier
+                    .wrapContentSize()
+                    .fillMaxSize(AppIconContentFraction)
+            )
+        }
+
+        Column(
+            modifier = Modifier.weight(1f),
+            verticalArrangement = Arrangement.spacedBy(cardStyle.textSpacing)
+        ) {
             Text(
                 text = bundle.displayTitle,
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold,
-                color = titleColor,
+                style = cardStyle.titleStyle,
+                color = cardStyle.titleColor,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
 
-            // Version • date
-            // When showChevron=false (single bundle): show only date, no version.
-            // When showChevron=true (multiple bundles): show version • date.
-            val timestamp = bundle.updatedAt ?: bundle.createdAt
-            val versionText = if (showChevron) bundle.version?.normalizeVersion() else null
-            val dateText = remember(timestamp) { timestamp?.let { getRelativeTimeString(it) } }
-
-            if (versionText != null || dateText != null) {
-                Row(
-                    modifier = Modifier.graphicsLayer { alpha = detailsAlpha },
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceExtraSmall)
-                ) {
-                    if (versionText != null) {
-                        Text(
-                            text = versionText,
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            maxLines = 1,
-                            overflow = TextOverflow.Ellipsis
-                        )
-                    }
-                    if (versionText != null && dateText != null) {
-                        Text(
-                            text = "  •  ",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-                    if (dateText != null) {
-                        Icon(
-                            imageVector = if (bundle.updatedAt != null) MaterialSymbols.Rounded.Schedule else MaterialSymbols.Rounded.Calendar_today,
-                            contentDescription = null,
-                            modifier = Modifier.size(11.dp),
-                            tint = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                        Text(
-                            text = dateText,
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            maxLines = 1,
-                            overflow = TextOverflow.Ellipsis
-                        )
-                    }
-                }
-            }
-
-            Spacer(Modifier.height(2.dp))
-
-            // The badges inside animate their own entry and exit, so animating the row on top of
-            // that only buys a second measure pass per frame while the list is scrolling
-            FlowRow(
-                horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceExtraSmall),
-                verticalArrangement = Arrangement.spacedBy(Defaults.SpaceExtraSmall),
+            // Version, with the source's state badges pinned to the card edge like on an app card
+            Row(
+                // Badge height is reserved whether a badge is showing, so the name above stays put
+                modifier = Modifier.height(statusBadgeHeight),
+                horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall),
+                verticalAlignment = Alignment.CenterVertically
             ) {
+                Text(
+                    modifier = Modifier.weight(1f),
+                    text = subtitle,
+                    style = cardStyle.subtitleStyle,
+                    color = cardStyle.subtitleColor,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+
                 // What the search found inside the source leads, being the reason the card is on
                 // screen at all. It swaps in without an animation of its own, since the list
                 // behind it is already re-ordering on every keystroke
@@ -1372,44 +1370,42 @@ private fun BundleCardHeader(
                             patchMatchCount.toString()
                         ),
                         icon = MaterialSymbols.Rounded.Search,
-                        tone = SemanticTone.Primary,
+                        containerColor = cardStyle.chipContainerColor,
+                        contentColor = cardStyle.chipContentColor,
                         onClick = onShowPatchMatches
                     )
                 }
 
-                // Bundle type badge, faded with the version line since it describes the source as well
-                BundleTypeBadge(
-                    type = bundle.sourceType,
-                    modifier = Modifier.graphicsLayer { alpha = detailsAlpha }
-                )
-
                 val signingKeyChanged = metadataFetchError is PatchBundleSignerChangedException
                 SourceStateBadge(
                     visible = unavailable && !signingKeyChanged,
-                    text = stringResource(R.string.sources_management_metadata_unavailable)
+                    text = stringResource(R.string.sources_management_metadata_unavailable),
+                    icon = SourceStateIcons.Unavailable,
+                    cardStyle = cardStyle
                 )
                 SourceStateBadge(
                     visible = signingKeyChanged,
-                    text = stringResource(R.string.sources_management_signing_key_changed_badge)
+                    text = stringResource(R.string.sources_management_signing_key_changed_badge),
+                    icon = SourceStateIcons.SigningKeyChanged,
+                    cardStyle = cardStyle
                 )
                 SourceStateBadge(
                     visible = bundle.requiresManagerUpdate,
-                    text = stringResource(R.string.sources_management_outdated_manager_badge)
+                    text = stringResource(R.string.sources_management_outdated_manager_badge),
+                    icon = SourceStateIcons.OutdatedManager,
+                    cardStyle = cardStyle
                 )
                 SourceStateBadge(
                     visible = bundle.isHeldBack,
-                    text = stringResource(R.string.sources_management_held_back_badge)
+                    text = stringResource(R.string.sources_management_held_back_badge),
+                    icon = SourceStateIcons.HeldBack,
+                    cardStyle = cardStyle
                 )
                 SourceStateBadge(
                     visible = blockedInfo != null,
-                    text = stringResource(R.string.sources_management_source_blocked_badge)
-                )
-                // Switching a source off is a choice rather than a fault, so it takes no alarm color
-                SourceStateBadge(
-                    visible = !enabled && blockedInfo == null,
-                    text = stringResource(R.string.disabled),
-                    tone = SemanticTone.Neutral,
-                    icon = MaterialSymbols.Rounded.Power_settings_new
+                    text = stringResource(R.string.sources_management_source_blocked_badge),
+                    icon = SourceStateIcons.Blocked,
+                    cardStyle = cardStyle
                 )
             }
         }
@@ -1420,12 +1416,25 @@ private fun BundleCardHeader(
             // The chevron gives way to the mark while the card is picked rather than folded
             SelectionMark(
                 selected = selected,
+                ink = cardStyle.titleColor.takeIf { !cardStyle.monochrome },
                 idle = if (showChevron) {
-                    { ExpandChevron(expanded = expanded) }
+                    { ExpandChevron(expanded = expanded, tint = cardStyle.subtitleColor) }
                 } else null
             )
         }
     }
+}
+
+/**
+ * Icons a source's problems go by, shared by the badges on its card and the notices inside it, so
+ * a problem is told by the same picture in both.
+ */
+private object SourceStateIcons {
+    val Blocked: ImageVector get() = MaterialSymbols.Rounded.Block
+    val Unavailable: ImageVector get() = MaterialSymbols.Rounded.Cloud_off
+    val SigningKeyChanged: ImageVector get() = MaterialSymbols.Rounded.Gpp_bad
+    val HeldBack: ImageVector get() = MaterialSymbols.Rounded.Error
+    val OutdatedManager: ImageVector get() = MaterialSymbols.Rounded.System_update
 }
 
 /**
@@ -1436,15 +1445,20 @@ private fun BundleCardHeader(
 private fun RowScope.SourceStateBadge(
     visible: Boolean,
     text: String,
-    tone: SemanticTone = SemanticTone.Error,
-    icon: ImageVector? = null
+    icon: ImageVector,
+    cardStyle: GlassCardStyle
 ) {
     AnimatedVisibility(
         visible = visible,
         enter = Animations.expandHorizFadeIn,
         exit = Animations.shrinkHorizFadeOut
     ) {
-        AppAccentBadge(text = text, accentColor = null, icon = icon, tone = tone)
+        StatusBadge(
+            text = text,
+            icon = icon,
+            containerColor = cardStyle.chipContainerColor,
+            contentColor = cardStyle.chipContentColor
+        )
     }
 }
 
