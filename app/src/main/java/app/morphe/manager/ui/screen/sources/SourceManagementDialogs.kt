@@ -101,26 +101,47 @@ fun DialogHostScope.AddSourceDialog(
         localFiles.count { it.check is LocalFileCheck.New || it.check is LocalFileCheck.Update }
     }
 
+    var showCommunityNotice by rememberSaveable { mutableStateOf(false) }
+
+    DialogHost(visible = showCommunityNotice) {
+        CommunityPatchesNoticeDialog(onDismiss = { showCommunityNotice = false })
+    }
+
     AppDialog(
         onDismissRequest = onDismiss,
         title = stringResource(R.string.sources_dialog_add_source),
         footer = {
-            AppDialogButtonRow(
-                primaryText = if (readyCount > 1) {
-                    pluralStringResource(R.plurals.sources_dialog_add_count, readyCount, readyCount.toString())
-                } else {
-                    stringResource(R.string.add)
-                },
-                onPrimaryClick = {
-                    when (selectedTab) {
-                        0 -> onRemoteSubmit(remote.readyLinks, chooseApps)
-                        1 -> onLocalSubmit(chooseApps)
+            Column(modifier = Modifier.fillMaxWidth()) {
+                // The website hands out remote URLs, so it has nothing to offer the local tab
+                FoldingVisibility(visible = selectedTab == 0) {
+                    Column {
+                        AppDialogOutlinedButton(
+                            text = stringResource(R.string.sources_dialog_community),
+                            onClick = { showCommunityNotice = true },
+                            icon = MaterialSymbols.Rounded.Open_in_new.autoMirrored,
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                        // As far as the buttons under it stand apart, so the three read as one grid
+                        Spacer(modifier = Modifier.height(Defaults.SpaceMedium))
                     }
-                },
-                primaryEnabled = readyCount > 0,
-                secondaryText = stringResource(android.R.string.cancel),
-                onSecondaryClick = onDismiss
-            )
+                }
+                AppDialogButtonRow(
+                    primaryText = if (readyCount > 1) {
+                        pluralStringResource(R.plurals.sources_dialog_add_count, readyCount, readyCount.toString())
+                    } else {
+                        stringResource(R.string.add)
+                    },
+                    onPrimaryClick = {
+                        when (selectedTab) {
+                            0 -> onRemoteSubmit(remote.readyLinks, chooseApps)
+                            1 -> onLocalSubmit(chooseApps)
+                        }
+                    },
+                    primaryEnabled = readyCount > 0,
+                    secondaryText = stringResource(android.R.string.cancel),
+                    onSecondaryClick = onDismiss
+                )
+            }
         }
     ) {
         SegmentedTabs(
