@@ -98,8 +98,8 @@
     <string name="home_category_name">Nume categorie</string>
     <string name="home_category_move_to">Mută în categorie</string>
     <string name="home_category_move_selected_title">Mută aplicațiile selectate</string>
-    <string name="home_category_delete_confirm_title">Șterge categorie</string>
-    <string name="home_category_delete_confirm_message">Șterge categoria &lt;b&gt;%1$s&lt;/b&gt;? Aplicațiile din aceasta vor reveni la &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Acțiuni indisponibile pentru această categorie</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Ce aplicație dorești să patch-uiești?</string>
@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Această sursă este construită pentru patcherul %1$s, însă Morphe %2$s include patcherul %3$s. Actualizează Morphe pentru a-l folosi</string>
     <string name="sources_management_held_back_badge">A cauzat prăbușirea</string>
     <string name="sources_management_held_back_hint">Această sursă a cauzat prăbușirea Morphe în timpul încărcării. Actualizați-o sau reimportați-o pentru a încerca din nou.</string>
+    <string name="sources_management_signed_by">Semnat de</string>
+    <string name="sources_management_signing_key_changed_badge">Cheia a fost schimbată</string>
+    <string name="sources_management_signing_key_changed_hint">Cea mai recentă versiune nu este semnată cu cheia pe care această sursă a folosit-o anterior, deci nu a fost instalată. Apasă pentru a o revizui</string>
     <string name="sources_management_source_enabled">Sursă activată</string>
     <string name="sources_management_source_disabled">Sursă dezactivată</string>
     <string name="sources_management_source_updating">Se actualizează sursa</string>
@@ -227,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">Nu s-au găsit linkuri în clipboard</string>
     <string name="sources_dialog_local">Local</string>
     <string name="sources_dialog_local_files">Selectează fișierele sursă de corecții</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Adaugă mai multe fișiere</string>
-    <string name="sources_dialog_local_file_tap_hint">Atingeți pentru a răsfoi stocarea</string>
     <string name="sources_dialog_local_invalid_extension">Fișierul trebuie să aibă o extensie .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Actualizează %s</string>
@@ -237,6 +237,7 @@
     <string name="sources_dialog_url_invalid">URL-ul trebuie să indice un depozit GitHub/GitLab sau un fișier .json</string>
     <string name="sources_dialog_preinstalled">Preinstalate</string>
     <string name="sources_dialog_community">Patch-uri comunitare</string>
+    <string name="sources_dialog_choose_apps">Alege aplicațiile</string>
     <string name="sources_dialog_choose_apps_description">Alegeți pe care dintre aplicațiile sale să le păstrați după ce sursa s-a încărcat.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Surse de patch-uri terțe</string>
@@ -246,18 +247,22 @@
     <string name="sources_download_fail">Eroare la descărcarea surselor: %s</string>
     <string name="sources_download_fail_named">\"%s\" nu a putut fi actualizat. Verificați conexiunea la internet și încercați din nou</string>
     <string name="sources_download_endpoint_not_found">\"%s\": metadatele patch-ului nu au fost găsite</string>
+    <string name="sources_signing_key_changed_named">\"%s\" nu a fost actualizat deoarece cea mai recentă versiune nu este semnată cu cheia folosită anterior</string>
+    <string name="sources_signing_key_changed_local">Fișierul nu este semnat cu cheia pe care această sursă a folosit-o anterior. Pentru a avea încredere în el, ștergeți sursa și adăugați fișierul din nou</string>
+    <string name="sources_signing_key_trust_title">Aveți încredere în noua cheie?</string>
+    <string name="sources_signing_key_trust_message">Ultima versiune este semnată cu o cheie diferită. Fie dezvoltatorul și-a înlocuit cheia, fie altcineva a publicat această versiune. Aveți încredere în ea doar dacă dezvoltatorul a anunțat o cheie nouă</string>
+    <string name="sources_signing_key_trust_message_unsigned">Ultima versiune nu este semnată. Fie dezvoltatorul a încetat să semneze versiunile, fie altcineva a publicat această versiune. Aveți încredere în ea doar dacă dezvoltatorul a anunțat acest lucru</string>
+    <string name="sources_signing_key_trusted">Cheie de încredere</string>
+    <string name="sources_signing_key_new">Cheie nouă</string>
     <string name="sources_patch_expert_badge">Expert</string>
     <string name="sources_patch_expert_badge_tooltip">Activează modul Expert în Setări pentru a include manual acest patch</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Ai nevoie de ajutor să găsești un APK original nepatch-uit?</string>
     <string name="home_apk_availability_dialog_simple">Pentru a patch-ui &lt;b&gt;%s&lt;/b&gt;, ai nevoie de o versiune APK nepatch-uită:</string>
     <string name="home_apk_availability_dialog_expert">Pentru a patch-ui &lt;b&gt;%s&lt;/b&gt;, ai nevoie de un APK de versiuni nepatch-uit:</string>
     <string name="home_apk_availability_recommended_label">Recomandat</string>
     <string name="home_apk_availability_unpatched_label">Nepatch-uit</string>
     <string name="home_apk_availability_incompatible_label">Incompatibil</string>
     <string name="home_apk_availability_installed_version">Instalat pe acest dispozitiv: %s</string>
-    <string name="home_apk_availability_yes">Da, ajută-mă să găsesc un APK</string>
-    <string name="home_apk_availability_no">Nu, am deja un APK</string>
     <string name="home_apk_helper_download">Utilizați o aplicație de asistență</string>
     <string name="home_apk_helper_untrusted">O aplicație auxiliară este instalată, dar nu este încă de încredere, așa că nu este oferită aici</string>
     <string name="home_apk_helper_untrusted_action">Revizuiește asistenții</string>
@@ -273,8 +278,6 @@
     <string name="home_apk_helper_wrong_package">Aplicația de ajutor a returnat o aplicație diferită de cea care este modificată</string>
     <string name="home_apk_helper_installed_unavailable">Morphe nu a putut utiliza aplicația instalată</string>
     <string name="home_apk_helper_installed_incompatible">Versiunea instalată nu poate fi modificată</string>
-    <string name="home_apk_use_saved">Utilizează APK salvat</string>
-    <string name="home_apk_use_installed">Utilizează APK instalat</string>
     <string name="home_apk_use_saved_unsupported">The patches do not support this saved copy. Patching it will ask you to confirm, or pick another APK</string>
     <string name="home_apk_use_installed_unverified">Nu s-a putut verifica semnătura aplicației instalate, deci este posibil să fie deja patch-uită</string>
     <string name="home_unverified">Neverificat</string>
@@ -310,14 +313,14 @@
     <string name="home_download_instructions_copy_link">Copiază linkul</string>
     <string name="home_download_instructions_link_copied">Link copiat</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Selectează APK-ul descărcat</string>
-    <string name="home_file_picker_prompt_description">Selectează fișierul APK &lt;b&gt;%s&lt;/b&gt; pe care tocmai l-ai descărcat</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Deschide fișierul APK</string>
     <string name="home_recommended_version">Versiune recomandată</string>
     <string name="home_selected_version">Versiune selectată</string>
     <string name="home_select_apk_title">Selectează APK</string>
-    <string name="home_select_any_apk_description">Selectați un fișier APK al oricărei aplicații sau alege o aplicație deja instalată pe acest dispozitiv</string>
     <string name="home_use_installed_app">Utilizează aplicația instalată</string>
+    <string name="home_use_installed_app_description">Alege o aplicație deja instalată pe acest dispozitiv</string>
+    <string name="home_open_apk_file_description">Alege un fișier APK, APKM, APKS sau XAPK din stocare</string>
     <string name="home_installed_app_picker_title">Aplicații instalate</string>
     <string name="home_installed_app_picker_empty">Nu au fost găsite aplicații</string>
     <string name="home_installed_app_picker_filter_user">Doar aplicații de utilizator</string>
@@ -351,9 +354,6 @@
     <string name="expert_mode_patch_required_by_installer">Necesar pentru ținta de instalare selectată</string>
     <string name="expert_mode_patch_unavailable_for_installer">Nu este disponibil pentru ținta de instalare selectată</string>
     <string name="expert_mode_multiple_sources_warning_title">Mai multe surse de patch-uri selectate</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Ai selectat patch-uri din mai multe surse de patch-uri. Asta poate cauza probleme de compatibilitate sau comportamente neașteptate.
-
-Sigur vrei să continui?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK neverificat</string>
     <string name="home_invalid_signature_message">Fișierul APK selectat pentru &lt;b&gt;%s&lt;/b&gt; nu corespunde certificatului de semnătură așteptat. Poate fi modificat sau provenit dintr-o sursă nesigură</string>
@@ -367,7 +367,9 @@ Pentru cele mai bune rezultate, această aplicație recomandă patch-uirea unui 
     <string name="home_dialog_unsupported_version_experimental_label">Experimental</string>
     <string name="home_dialog_unsupported_version_experimental_description">Această versiune are suport experimental și poate fi instabilă sau incompletă</string>
     <string name="morphe_experimental_app_version_dialog_title">Vrei să experimentezi? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">Această versiune a &lt;b&gt;%s&lt;/b&gt; are suport experimental timpuriu&lt;br/&gt;&lt;br/&gt;🔧 Așteptați-vă la un comportament ciudat al aplicației sau la erori nedetectate, deoarece patch-urile sunt rafinate pentru această versiune a aplicației</string>
+    <string name="morphe_experimental_app_version_dialog_message">"Această versiune a &lt;b&gt;%s&lt;/b&gt; are suport experimental timpuriu.
+
+🔧 Așteptați-vă la un comportament neobișnuit al aplicației sau la erori neidentificate, pe măsură ce patch-urile sunt rafinate pentru această versiune a aplicației"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Versiune neacceptată</string>
     <string name="home_dialog_unsupported_version_dialog_description">Acest APK nu este o versiune recomandată a aplicației. Continuarea poate duce la o aplicație nefuncțională</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -504,7 +506,6 @@ Pentru cele mai bune rezultate, această aplicație recomandă patch-uirea unui 
     <string name="shortcut_check_updates_long">Verifică actualizările patch-ului</string>
     <string name="shortcut_patch_app">Aplică patch la %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Sigur vrei să dezinstalezi această aplicație?</string>
     <string name="batch_uninstall_confirm_body">Aplicațiile selectate vor fi eliminate permanent de pe dispozitivul dumneavoastră</string>
     <string name="home_app_info_remove_app_warning">Aceasta va șterge permanent:</string>
     <string name="home_app_info_delete_item_database">Intrare în bază de date</string>
@@ -666,8 +667,7 @@ Dezinstalarea va șterge definitiv toate datele aplicației."</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Se aplică modificările…</string>
     <string name="patcher_notification_text">Atinge pentru a reveni la patcher</string>
-    <string name="patcher_stop_confirm_title">Opriți instrumentul de modificare</string>
-    <string name="patcher_stop_confirm_description">Sigur doriți să opriți procesul de modificare?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Transformăm aplicația ta în ceva grozav… 🏆</string>
     <string name="patcher_message_2">Învățăm aplicațiile vechi trucuri noi… 🎩</string>
@@ -809,21 +809,15 @@ Dezinstalarea va șterge definitiv toate datele aplicației."</string>
     <string name="settings_appearance_repatch_notice_description">Afișează o banderolă când aplicațiile cu patch-uri pot fi repatch-uite</string>
     <string name="settings_appearance_more_apps_card">Cardul Mai multe aplicații</string>
     <string name="settings_appearance_more_apps_card_description">Afișează un card sub aplicații, care conduce către patch-urile comunității</string>
-    <string name="settings_appearance_app_card_colors">Culori card aplicație</string>
     <string name="settings_appearance_app_card_colors_default">Implicit</string>
-    <string name="settings_appearance_app_card_colors_default_description">Oferă fiecărei aplicații culoarea propriului pachet</string>
     <string name="settings_appearance_app_card_colors_accent">Accent</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Use the app accent color for home app cards</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradient</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Use one custom gradient for home app cards</string>
     <string name="settings_appearance_app_card_colors_solid">Solid</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Use one custom color for home app cards</string>
     <string name="settings_appearance_app_card_colors_start">Start color</string>
     <string name="settings_appearance_app_card_colors_middle">Middle color</string>
     <string name="settings_appearance_app_card_colors_end">End color</string>
     <string name="settings_appearance_app_card_colors_solid_color">Solid color</string>
     <string name="settings_appearance_app_card_colors_bundle">Culoare pachet aplicație</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Utilizează culoarea proprie a fiecărei aplicații aici, nuanțată automat pentru a se potrivi</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Pictogramă aplicație</string>
     <string name="settings_appearance_app_icon_selector_description">Cum arată Morphe pe ecranul de pornire și în sertarul de aplicații</string>
@@ -849,7 +843,7 @@ Dezinstalarea va șterge definitiv toate datele aplicației."</string>
     <string name="settings_appearance_app_icon_mark_white">Alb</string>
     <string name="settings_appearance_app_icon_mark_black">Negru</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Schimbi pictograma aplicației?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Schimbă în &lt;b&gt;%s&lt;/b&gt; și repornește?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Schimbă pictograma</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1036,6 +1030,8 @@ Dimensiunile imaginilor trebuie să fie următoarele:
     <string name="installer_play_store_warning_continue">Am înțeles, continuă</string>
     <string name="installer_play_store_mode">Instalează ca Play Store</string>
     <string name="installer_play_store_mode_description">Marchează Google Play Store ca sursă de instalare</string>
+    <string name="settings_nomount_only">Doar NoMount</string>
+    <string name="settings_nomount_only_description">Montează aplicațiile doar cu NoMount și nu revine niciodată la un bind mount, astfel încât acestea să rămână demontate fără acesta</string>
     <string name="settings_prompt_installer_on_install">Solicitare de selecție a installerului</string>
     <string name="settings_prompt_installer_on_install_description">Intreabă cum se instalează fiecare aplicație: cu root înainte de patch, altfel după</string>
     <string name="settings_auto_install_with_shizuku">Instalare automată după patch-uire</string>
@@ -1219,7 +1215,6 @@ Detalii: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">De încredere: %1$d din %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Aplicațiile de ajutor pot descărca APK-uri originale pentru tine. Doar cele în care ai încredere aici sunt oferite în instrucțiunile de descărcare</string>
     <string name="settings_system_apk_download_helper_trust_title">Încredere în acest asistent?</string>
-    <string name="settings_system_apk_download_helper_trust">Încredere</string>
     <string name="settings_system_apk_download_helper_warning">APK-ul provine de la aplicația de ajutor, așa că ai încredere doar în aplicațiile pe care le cunoști. Morphe verifică în continuare pachetul, versiunea și semnătura fiecărui fișier înainte de a aplica patch-ul</string>
     <string name="settings_system_apk_download_helper_installed_by">Instalat de %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Instalator necunoscut</string>
@@ -1314,6 +1309,7 @@ Detalii: %2$s"</string>
     <string name="include">Include</string>
     <string name="disable">Dezactivează</string>
     <string name="enable">Activează</string>
+    <string name="trust">Încredere</string>
     <string name="loading">Se încarcă…</string>
     <string name="creating">Se creează…</string>
     <string name="processing_apk">Se procesează APK…</string>

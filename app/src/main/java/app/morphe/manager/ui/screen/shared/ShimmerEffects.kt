@@ -11,7 +11,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
@@ -179,32 +178,38 @@ fun ShimmerApkItem() {
  */
 @Composable
 fun ShimmerBundleRow() {
+    val cardStyle = glassCardStyle()
     Surface(
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(Defaults.CornerLarge),
-        color = MaterialTheme.colorScheme.surfaceColorAtElevation(2.dp),
-        border = CardBorder.of(MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
+        shape = RoundedCornerShape(cardStyle.cardRadius),
+        color = cardStyle.flatFill(null),
+        border = CardBorder.of(cardStyle.flatEdgeColor)
     ) {
+        // Laid out as the card's header, so the real one takes its place without a jump
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(Defaults.SpaceLarge),
-            horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceMedium),
+                .height(cardStyle.cardHeight)
+                .padding(horizontal = cardStyle.contentPadding),
+            horizontalArrangement = Arrangement.spacedBy(cardStyle.contentSpacing),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            ShimmerBox(modifier = Modifier.size(48.dp), shape = CircleShape)
+            ShimmerBox(
+                modifier = Modifier
+                    .size(cardStyle.iconSize)
+                    .wrapContentSize()
+                    .fillMaxSize(AppIconContentFraction),
+                shape = CircleShape
+            )
             Column(
                 modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.spacedBy(Defaults.SpaceExtraSmall)
+                verticalArrangement = Arrangement.spacedBy(cardStyle.textSpacing)
             ) {
-                ShimmerText(widthFraction = 0.55f, height = 18.dp)
-                ShimmerText(widthFraction = 0.4f, height = 12.dp)
-                ShimmerBox(
-                    modifier = Modifier
-                        .fillMaxWidth(0.3f)
-                        .height(24.dp),
-                    shape = Defaults.PillShape
+                ShimmerLine(
+                    height = with(LocalDensity.current) { cardStyle.titleStyle.lineHeight.toDp() },
+                    widthFraction = 0.55f
                 )
+                ShimmerLine(height = statusBadgeHeight, widthFraction = 0.4f)
             }
         }
     }

@@ -98,8 +98,8 @@
     <string name="home_category_name">Kategorijos pavadinimas</string>
     <string name="home_category_move_to">Perkelti į kategoriją</string>
     <string name="home_category_move_selected_title">Perkelti pasirinktas programas</string>
-    <string name="home_category_delete_confirm_title">Ištrinti kategoriją</string>
-    <string name="home_category_delete_confirm_message">Ištrinti kategoriją &lt;b&gt;%1$s&lt;/b&gt;? Jos programos bus perkeltos atgal į &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Veiksmai šiai kategorijai neprieinami</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Kokią programėlę norėtumėte pataisyti?</string>
@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Šis šaltinis sukurtas pataisymo įrankiui %1$s, o „Morphe“ %2$s apima pataisymo įrankį %3$s. Atnaujinkite „Morphe“, kad galėtumėte jį naudoti</string>
     <string name="sources_management_held_back_badge">Sugriuvo</string>
     <string name="sources_management_held_back_hint">Šis šaltinis sukėlė „Morphe“ gedimą įkėlimo metu, todėl jis praleidžiamas. Atnaujinkite arba iš naujo importuokite jį, kad bandytumėte dar kartą</string>
+    <string name="sources_management_signed_by">Pasirašyta</string>
+    <string name="sources_management_signing_key_changed_badge">Raktas pakeistas</string>
+    <string name="sources_management_signing_key_changed_hint">Naujausia versija nėra pasirašyta raktu, kurio šis šaltinis naudojo anksčiau, todėl ji nebuvo įdiegta. Bakstelėkite, kad peržiūrėtumėte</string>
     <string name="sources_management_source_enabled">Šaltinis įjungtas</string>
     <string name="sources_management_source_disabled">Šaltinis išjungtas</string>
     <string name="sources_management_source_updating">Atnaujinamas šaltinis</string>
@@ -227,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">Iškarpinėje nuorodų nerasta</string>
     <string name="sources_dialog_local">Vietinis</string>
     <string name="sources_dialog_local_files">Pasirinkite pataisų šaltinio failus</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Pridėti daugiau failų</string>
-    <string name="sources_dialog_local_file_tap_hint">Palieskite, kad peržiūrėtumėte saugojimo vietą</string>
     <string name="sources_dialog_local_invalid_extension">Failas turi turėti .mpp pabaiga</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Atnaujina %s</string>
@@ -237,6 +237,7 @@
     <string name="sources_dialog_url_invalid">URL turi rodyti į GitHub/GitLab repo arba .json failą</string>
     <string name="sources_dialog_preinstalled">iš anksto įdiegta</string>
     <string name="sources_dialog_community">Bendruomenės pataisos</string>
+    <string name="sources_dialog_choose_apps">Pasirinkite programėles</string>
     <string name="sources_dialog_choose_apps_description">Pasirinkite, kurias jo programas išlaikyti, kai šaltinis bus įkeltas</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Trečiųjų šalių pataisų šaltiniai</string>
@@ -246,18 +247,22 @@
     <string name="sources_download_fail">Nepavyko atsisiųsti šaltinio: %s</string>
     <string name="sources_download_fail_named">\'%s\' neįmanoma atnaujinti. Patikrinkite savo interneto ryšį ir bandykite dar kartą</string>
     <string name="sources_download_endpoint_not_found">\'%s\': trūkst meta duomenų apie pataisą</string>
+    <string name="sources_signing_key_changed_named">\"%s\" nebuvo atnaujinta, nes naujausia versija nėra pasirašyta raktu, kurio ji naudojo anksčiau</string>
+    <string name="sources_signing_key_changed_local">Failas nėra pasirašytas raktu, kurio šis šaltinis naudojo anksčiau. Norėdami jį patikėti, ištrinkite šaltinį ir pridėkite failą iš naujo</string>
+    <string name="sources_signing_key_trust_title">Pasitikėti nauju raktu?</string>
+    <string name="sources_signing_key_trust_message">Naujausia versija pasirašyta kitu raktu. Galbūt kūrėjas pakeitė savo raktą arba šią versiją paskelbė kažkas kitas. Pasitikėkite ja tik tada, jei kūrėjas pranešė apie naują raktą</string>
+    <string name="sources_signing_key_trust_message_unsigned">Naujausia versija nėra pasirašyta. Galbūt kūrėjas nustojo pasirašyti versijas arba šią versiją paskelbė kažkas kitas. Pasitikėkite ja tik tada, jei kūrėjas tai pranešė</string>
+    <string name="sources_signing_key_trusted">Pasitikėtas raktas</string>
+    <string name="sources_signing_key_new">Naujas raktas</string>
     <string name="sources_patch_expert_badge">Ekspertas</string>
     <string name="sources_patch_expert_badge_tooltip">Įjunkite Ekspertų režimą Parametruose, kad galėtumėte rankiniu būdu įtraukti šį pataisą</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Reikia pagalbos randant originalų nepataisyta APK?</string>
     <string name="home_apk_availability_dialog_simple">Kad pataisyti&lt;b&gt;%s&lt;/b&gt;, jums reikia nepataisytos versijos:</string>
     <string name="home_apk_availability_dialog_expert">Kad pataisyti&lt;b&gt;%s&lt;/b&gt;, jums reikia nepataisytu versiju:</string>
     <string name="home_apk_availability_recommended_label">Rekomenduojama</string>
     <string name="home_apk_availability_unpatched_label">Nepataisytas</string>
     <string name="home_apk_availability_incompatible_label">Nesuderinama</string>
     <string name="home_apk_availability_installed_version">Įdiegta šiame įrenginyje: %s</string>
-    <string name="home_apk_availability_yes">Taip, padėkite man rasti APK</string>
-    <string name="home_apk_availability_no">Ne, jau turiu APK</string>
     <string name="home_apk_helper_download">Naudoti pagalbinę programą</string>
     <string name="home_apk_helper_untrusted">Padalinio programėlė įdiegta, bet dar nėra patikima, todėl čia ne siūloma</string>
     <string name="home_apk_helper_untrusted_action">Peržiūrėti padalinius</string>
@@ -273,8 +278,7 @@
     <string name="home_apk_helper_wrong_package">Pagalbinė programa grąžino kitą programą, nei ta, kuri pataisoma</string>
     <string name="home_apk_helper_installed_unavailable">„Morphe“ nepavyko naudoti įdiegtos programos</string>
     <string name="home_apk_helper_installed_incompatible">Įdiegtos versijos pataisyti negalima</string>
-    <string name="home_apk_use_saved">Naudoti išsaugotą APK failą</string>
-    <string name="home_apk_use_installed">Naudoti įdiegtą APK failą</string>
+    <string name="home_apk_use_installed_app">Naudoti įdiegtą programą</string>
     <string name="home_apk_use_saved_unsupported">Pataisos nepalaiko šios išsaugotos kopijos. Pataisant jos bus paprašyta patvirtinti arba pasirinkti kitą APK</string>
     <string name="home_apk_use_installed_unverified">Nepavyko patikrinti įdiegtos programos parašo, todėl ji gali būti jau pataisyta</string>
     <string name="home_unverified">Nepatikrinta</string>
@@ -310,14 +314,14 @@
     <string name="home_download_instructions_copy_link">Kopijuoti nuorodą</string>
     <string name="home_download_instructions_link_copied">Nuoroda nukopijuota</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Pasirinkite atsisiųstą APK</string>
-    <string name="home_file_picker_prompt_description">Pasirinkite &lt;b&gt;%s&lt;/b&gt; APK kuri tika atsisiuntete</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Atverti APK failą</string>
     <string name="home_recommended_version">Rekomenduojama versija</string>
     <string name="home_selected_version">Pasirinkta versija</string>
     <string name="home_select_apk_title">Pasirinkite APK</string>
-    <string name="home_select_any_apk_description">Pasirinkite bet kurios programos APK failą arba pasirinkite įdiegtą programą šiame įrenginyje</string>
     <string name="home_use_installed_app">Naudoti įdiegtą programą</string>
+    <string name="home_use_installed_app_description">Pasirinkite programėlę, kuri jau yra šiame įrenginyje</string>
+    <string name="home_open_apk_file_description">Iš atminties pasirinkite APK, APKM, APKS arba XAPK failą</string>
     <string name="home_installed_app_picker_title">Įdiegtos programos</string>
     <string name="home_installed_app_picker_empty">Nėra rastų programų</string>
     <string name="home_installed_app_picker_filter_user">Tik naudotojo programos</string>
@@ -351,9 +355,6 @@
     <string name="expert_mode_patch_required_by_installer">Būtina pasirinktam diegimo tikslui</string>
     <string name="expert_mode_patch_unavailable_for_installer">Neprieinama pasirinktam diegimo tikslui</string>
     <string name="expert_mode_multiple_sources_warning_title">Pasirinkta keli šaltiniai</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Jūs pasirinkote pataisas iš kelių pataisų šaltinių. Tai gali sukelti nesuderinamumo problemų arba netikėtų veikimo ypatumų.
-
-Ar tikrai norite tęsti?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Nepatvirtintas APK</string>
     <string name="home_invalid_signature_message">Pasiringtas APK rinkinys nesutampa su tikėtinu skaitmenimis sertifikatu. Jis galbētč buvo modifikuotas arba yra nepatikimos šaltinio.</string>
@@ -367,7 +368,9 @@ Norint gauti geriausią rezultatą, ši programa rekomenduoja pataisyti &lt;b&gt
     <string name="home_dialog_unsupported_version_experimental_label">Eksperimentinis</string>
     <string name="home_dialog_unsupported_version_experimental_description">Ši versija turi eksperimentinę palaikymą ir gali būti nestabili arba nebaigta</string>
     <string name="morphe_experimental_app_version_dialog_title">Ar norite eksperimentuoti? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">Ši versija &lt;b&gt;%s&lt;/b&gt; turi ankstyvą eksperimentinį palaikymą&lt;br/&gt;&lt;br/&gt;🔧 Tikėtinos keistos programos veikimas arba neatpažintų klaidų, nes šios programos versijos pataisos yra tobulinamas</string>
+    <string name="morphe_experimental_app_version_dialog_message">"Ši versija &lt;b&gt;%s&lt;/b&gt; turi ankstyvą eksperimentinį palaikymą.
+
+🔧 Tikėtės keisto programėlės elgesio arba neatpažintų klaidų, kol pataisos šiai programėlės versijai yra tobulinamos"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Nepalaikoma versija</string>
     <string name="home_dialog_unsupported_version_dialog_description">Šis APK yra nerekomenduota programos versija. Toliau veikti gali lemti neveikiancią programą</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -504,7 +507,6 @@ Norint gauti geriausią rezultatą, ši programa rekomenduoja pataisyti &lt;b&gt
     <string name="shortcut_check_updates_long">Ieškoti pataisų naujinimų</string>
     <string name="shortcut_patch_app">Pataisyti %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Ar tikrai norite ištrinti šią programą?</string>
     <string name="batch_uninstall_confirm_body">Pasirinktos programos bus visam laikui pašalintos iš jūsų įrenginio</string>
     <string name="home_app_info_remove_app_warning">Tai visam laikui ištryns:</string>
     <string name="home_app_info_delete_item_database">Duomenų bazės įrašas</string>
@@ -666,8 +668,7 @@ Pašalinus bus visam laikui ištrinti visi programos duomenys."</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Vyksta taisymas…</string>
     <string name="patcher_notification_text">Paspauskite, kad grįžtumėte į taisytoją</string>
-    <string name="patcher_stop_confirm_title">Sustabdyti taisytoją</string>
-    <string name="patcher_stop_confirm_description">Ar jūs tikrai norite sustabdyti taisymą?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Jūsų programa transformuojama į kažką neįtikėtino… 🏆</string>
     <string name="patcher_message_2">Senos programos mokinamos naujų triukų… 🎩</string>
@@ -809,21 +810,15 @@ Pašalinus bus visam laikui ištrinti visi programos duomenys."</string>
     <string name="settings_appearance_repatch_notice_description">Rodo šaukštą, kai pataisytas programas galima pataisyti dar kartą</string>
     <string name="settings_appearance_more_apps_card">„Daugiau programų“ kortelė</string>
     <string name="settings_appearance_more_apps_card_description">Rodo kortelę po programėlėmis, vedančią į bendruomenės pataisymus</string>
-    <string name="settings_appearance_app_card_colors">Programų kortelių spalvos</string>
     <string name="settings_appearance_app_card_colors_default">Numatytasis</string>
-    <string name="settings_appearance_app_card_colors_default_description">Suteikite kiekvienai programai jos pačios rinkinio spalvą</string>
     <string name="settings_appearance_app_card_colors_accent">Akcentas</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Naudoti programos akcento spalvą pradinio ekrano programų kortelėse</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradientas</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Naudoti vieną pasirinktinį gradientą pradinio ekrano programų kortelėse</string>
     <string name="settings_appearance_app_card_colors_solid">Vientisa</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Naudoti vieną pasirinktinę spalvą pradinio ekrano programų kortelėse</string>
     <string name="settings_appearance_app_card_colors_start">Pradžios spalva</string>
     <string name="settings_appearance_app_card_colors_middle">Vidurio spalva</string>
     <string name="settings_appearance_app_card_colors_end">Pabaigos spalva</string>
     <string name="settings_appearance_app_card_colors_solid_color">Vientisa spalva</string>
     <string name="settings_appearance_app_card_colors_bundle">Programų rinkinio spalva</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Čia naudokite kiekvienos programos spalvą, automatiškai pritemdytą, kad tiktų</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Programėlės piktograma</string>
     <string name="settings_appearance_app_icon_selector_description">Kaip „Morphe“ atrodo pradiniame ekrane ir programų stalčiuje</string>
@@ -849,7 +844,7 @@ Pašalinus bus visam laikui ištrinti visi programos duomenys."</string>
     <string name="settings_appearance_app_icon_mark_white">Balta</string>
     <string name="settings_appearance_app_icon_mark_black">Juoda</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Pakeisti programėlės piktogramą?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Pakeisti į &lt;b&gt;%s&lt;/b&gt; ir paleisti iš naujo?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Pakeisti piktogramą</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1036,6 +1031,8 @@ Vaizdų matmenys turi būti tokie:
     <string name="installer_play_store_warning_continue">Suprantu, tęskite</string>
     <string name="installer_play_store_mode">Diegti kaip „Play“ parduotuvės</string>
     <string name="installer_play_store_mode_description">Žymi „Google Play Store</string>
+    <string name="settings_nomount_only">Tik NoMount</string>
+    <string name="settings_nomount_only_description">Programas montuoja tik naudojant „NoMount“ ir niekada negrįžta prie „bind mount“, todėl be jo jos lieka nemontuotos</string>
     <string name="settings_prompt_installer_on_install">Diegimo įrankio pasirinkimo raginimas</string>
     <string name="settings_prompt_installer_on_install_description">Kiekvieno programėle įdiegimo metu klausia, kaip ją diegti: su root teisėmis prieš šlifavimą, kitaip – po jo</string>
     <string name="settings_auto_install_with_shizuku">Automatiškai įdiegti po pataisymo</string>
@@ -1219,7 +1216,6 @@ Išsami informacija: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Patikima: %1$d iš %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Pagalbinės programos gali už jus atsisiųsti originalius APK. Atsisiuntimo instrukcijose siūlomos tik tos, kuriomis čia pasitikite</string>
     <string name="settings_system_apk_download_helper_trust_title">Ar pasitikite šiuo pagalbininku?</string>
-    <string name="settings_system_apk_download_helper_trust">Pasitikėti</string>
     <string name="settings_system_apk_download_helper_warning">APK gaunamas iš pagalbinės programos, todėl pasitikėkite tik jums žinomomis programomis. „Morphe“ vis tiek prieš pataisymą patikrina kiekvieno failo paketą, versiją ir parašą</string>
     <string name="settings_system_apk_download_helper_installed_by">Įdiegė %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Diegimo įrankis nežinomas</string>
@@ -1314,6 +1310,7 @@ Išsami informacija: %2$s"</string>
     <string name="include">Įtraukti</string>
     <string name="disable">Išjungti</string>
     <string name="enable">Įjungti</string>
+    <string name="trust">Pasitikėti</string>
     <string name="loading">Įkeliama…</string>
     <string name="creating">Kuriama…</string>
     <string name="processing_apk">Apdorojamas APK…</string>

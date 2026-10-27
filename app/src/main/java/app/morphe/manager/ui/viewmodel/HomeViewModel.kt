@@ -120,7 +120,6 @@ class HomeViewModel(
 
     // Dialog visibility states
     var showAndroid11Dialog by mutableStateOf(false)
-    var showAddSourceDialog by mutableStateOf(false)
     var bundleToRename by mutableStateOf<PatchBundleSource?>(null)
     var showRenameBundleDialog by mutableStateOf(false)
 
@@ -160,7 +159,7 @@ class HomeViewModel(
         }
     }
 
-    /** Imports the opened file the way the add source dialog would, updating the source it is a version of. */
+    /** Imports the opened file the way the add source panel would, updating the source it is a version of. */
     fun confirmMppImport(chooseApps: Boolean) {
         val pending = pendingMpp ?: return
         pendingMpp = null
@@ -172,12 +171,15 @@ class HomeViewModel(
     }
 
     /**
-     * A file picked in the add source dialog, with the bundle name its manifest declares and what
+     * A file picked in the add source panel, with the bundle name its manifest declares and what
      * importing it would do, both null while they are read.
      */
-    data class PickedBundle(val uri: Uri, val name: String, val bundleName: String?, val check: LocalFileCheck?)
+    data class PickedBundle(val uri: Uri, val name: String, val bundleName: String?, val check: LocalFileCheck?) {
+        /** Whether importing it adds a source or updates one, see [importOf]. */
+        val adds: Boolean get() = check is LocalFileCheck.New || check is LocalFileCheck.Update
+    }
 
-    /** Files picked in the add source dialog, kept here so they outlive the picker's round trip. */
+    /** Files picked in the add source panel, kept here so they outlive the picker's round trip. */
     private var pickedBundles by mutableStateOf<List<PickedBundle>>(emptyList())
 
     /**
@@ -198,7 +200,7 @@ class HomeViewModel(
             }
         }
 
-    /** Adds files to the add source dialog and reads what importing each would do. */
+    /** Adds files to the add source panel and reads what importing each would do. */
     fun pickBundles(uris: List<Uri>) {
         val fresh = uris.distinct().filter { uri -> pickedBundles.none { it.uri == uri } }.map { uri ->
             val name = uri.displayName(contentResolver) ?: uri.toString()
@@ -249,13 +251,19 @@ class HomeViewModel(
     }
 
     /**
-     * Imports the picked files: a new bundle as a source of its own, and another version of a local
-     * source into it, as its update action would. Files already added are left out.
+     * Adds a remote source for each of [urls] and imports the picked files, a new bundle as a source
+     * of its own and another version of a local source into it, as its update action would. Files
+     * already added are left out. With [chooseApps] the app list of each new source opens once its
+     * patches have loaded.
      */
-    fun importPickedBundles(chooseApps: Boolean) {
+    fun addSources(urls: List<String>, chooseApps: Boolean) = viewModelScope.launch {
         val imports = pickedBundleImports.mapNotNull { importOf(it.uri, it.check) }
         pickedBundles = emptyList()
-        importLocalSources(imports, chooseApps)
+        val added = withContext(NonCancellable) {
+            val remote = if (urls.isEmpty()) emptyList() else patchBundleRepository.createRemotes(urls)
+            remote + importLocalFiles(imports)
+        }
+        onSourcesAdded(added, chooseApps)
     }
 
     /** Local source waiting for a replacement file, so the picker result knows what it updates. */
@@ -456,24 +464,32 @@ class HomeViewModel(
     }
 
     /**
-     * Imports each file, as a new local source or into the one its uid names, one after another
-     * under one import message. With [chooseApps] the app list of each new source opens once its
-     * patches have loaded.
+     * Imports each file through [importLocalFiles]. With [chooseApps] the app list of each new source
+     * opens once its patches have loaded.
      */
     private fun importLocalSources(imports: List<Pair<Uri, Int?>>, chooseApps: Boolean) = viewModelScope.launch {
-        val imported = withContext(NonCancellable) {
-            val importing = messages.showUntilDismissed(R.string.importing_ellipsis)
-            try {
-                imports.map { (uri, replacingUid) -> replacingUid to importLocalFile(uri, replacingUid) }
-            } finally {
-                importing.dismiss()
-            }
+        val added = withContext(NonCancellable) { importLocalFiles(imports) }
+        onSourcesAdded(added, chooseApps)
+    }
+
+    /**
+     * Imports each file, as a new local source or into the one its uid names, one after another
+     * under one import message.
+     *
+     * @return The uids of the new sources, without the ones updated in place.
+     */
+    private suspend fun importLocalFiles(imports: List<Pair<Uri, Int?>>): List<Int> {
+        if (imports.isEmpty()) return emptyList()
+        val importing = messages.showUntilDismissed(R.string.importing_ellipsis)
+        val imported = try {
+            imports.map { (uri, replacingUid) -> replacingUid to importLocalFile(uri, replacingUid) }
+        } finally {
+            importing.dismiss()
         }
         // A file that failed has already said why
         if (imported.any { (_, uid) -> uid != null }) messages.show(R.string.imported_successfully)
         // Two files carrying the same bundle land on the same source
-        val added = imported.mapNotNull { (replacingUid, uid) -> uid.takeIf { replacingUid == null } }
-        onSourcesAdded(added.distinct(), chooseApps)
+        return imported.mapNotNull { (replacingUid, uid) -> uid.takeIf { replacingUid == null } }.distinct()
     }
 
     /**
@@ -628,9 +644,7 @@ class HomeViewModel(
         showAndroid11Dialog = false
         showRenameBundleDialog = false
         bundleToRename = null
-        showAddSourceDialog = false
         sourceAppsQueue = emptyList()
-        pickedBundles = emptyList()
     }
 
     /**
@@ -699,6 +713,16 @@ class HomeViewModel(
      */
     fun getBundleDisplayName(uid: Int): String? =
         allBundlesInfoState.value[uid]?.name
+
+    /**
+     * The package [item] opens as on the device, patched or not, or null when it is not there or
+     * has nothing to open. Lets the user see what the app already does before patching it.
+     */
+    fun launchablePackage(item: HomeAppItem): String? =
+        (item.installedApp?.currentPackageName ?: item.packageName)
+            .takeIf { item.isInstalledOnDevice && pm.canLaunch(it) }
+
+    fun openApp(packageName: String) = pm.launch(packageName)
 
     suspend fun persistReinstalledApp(
         app: InstalledApp,

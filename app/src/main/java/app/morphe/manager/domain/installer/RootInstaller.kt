@@ -10,6 +10,9 @@ import android.content.pm.PackageInfo
 import android.os.Process
 import android.os.SystemClock
 import android.util.Log
+import app.morphe.manager.domain.manager.PreferencesManager
+import app.morphe.manager.patcher.split.SplitApkInspector
+import app.morphe.manager.patcher.split.SplitApkPreparer
 import app.morphe.manager.util.PLAY_STORE_INSTALLER_PACKAGE
 import app.morphe.manager.util.PM
 import com.topjohnwu.superuser.Shell
@@ -22,13 +25,15 @@ import kotlinx.coroutines.time.withTimeoutOrNull
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.time.Duration
+import java.util.zip.ZipFile
 import kotlin.time.Duration.Companion.milliseconds
 
 private const val TAG = "Morphe RootInstaller"
 
 class RootInstaller(
     private val app: Application,
-    private val pm: PM
+    private val pm: PM,
+    private val prefs: PreferencesManager
 ) {
     @Volatile
     private var cachedHasRoot: Boolean? = null
@@ -157,7 +162,12 @@ class RootInstaller(
             // The redirect leaves system_server on the stock APK, so a framework restart scans that
             // one and needs no watcher. Whatever a bind mount left behind is lifted first, and only
             // the rule decides whether the redirect took
-            val redirected = noMountBin()?.shellQuote()?.let { nm ->
+            val noMountOnly = prefs.noMountOnly.get()
+            val marker = "$MODULES_PATH/${moduleId(packageName)}/$NO_MOUNT_MARKER".shellQuote()
+            execute("printf %s ${noMountMarker(noMountOnly)} > $marker")
+                .assertSuccess("Failed to save the NoMount only setting")
+            val nm = noMountBin()?.shellQuote()
+            val redirected = nm?.let {
                 execute(
                     "chcon u:object_r:apk_data_file:s0 $patchedPath; " +
                             unmountBindCommands(stockPath) + "; " +
@@ -165,12 +175,26 @@ class RootInstaller(
                             noMountRemoveCommand(nm, stockPath) + "; " +
                             "$nm rule add $NO_MOUNT_SCOPE $stockPath $patchedPath"
                 ).also { result ->
-                    if (!result.isSuccess) Log.w(TAG, "NoMount redirect failed, bind mounting instead: ${result.failureDetail()}")
+                    if (!result.isSuccess) Log.w(TAG, "NoMount redirect failed: ${result.failureDetail()}")
                 }.isSuccess
             } == true
 
             if (redirected) {
-                execute(moduleStatusCommand(packageName, "Redirected the patched APK in Morphe with NoMount") + "; " + forceStop)
+                execute(
+                    moduleStatusCommand(packageName, "Redirected the patched APK in Morphe with NoMount") + "; " +
+                            forceStop + "; " +
+                            detachCommand(packageName)
+                )
+            } else if (noMountOnly) {
+                // Whatever a bind mount left behind is lifted, so the app is left on the stock APK
+                val reason = if (nm == null) "NoMount is unavailable" else "NoMount redirect failed"
+                execute(
+                    unmountBindCommands(stockPath) + "; " +
+                            frameworkWatcherCommand(packageName, "stop") + "; " +
+                            moduleStatusCommand(packageName, "Not mounted in Morphe: $reason and bind mounts are off") + "; " +
+                            forceStop
+                )
+                error("$reason and bind mounts are off")
             } else {
                 // Set SELinux context, bind-mount in the root and zygote namespaces, replace any other
                 // APK running processes still hold, and restart the app so its next process inherits
@@ -183,7 +207,8 @@ class RootInstaller(
                             replaceOtherMountsCommand(patchedAPK, stockPath) + "; " +
                             frameworkWatcherCommand(packageName, "watch") + "; " +
                             moduleStatusCommand(packageName, "Mounted the patched APK in Morphe") + "; " +
-                            forceStop
+                            forceStop + "; " +
+                            detachCommand(packageName)
                 ).assertSuccess("Failed to mount APK")
             }
 
@@ -217,8 +242,8 @@ class RootInstaller(
      * A process killed during the slow copies leaves the previous module in place, still
      * matching what was recorded about it.
      *
-     * [stockAPK] is only installed when the matching stock app is missing. The stock copy the
-     * module mounts at boot always comes from the installed APK.
+     * [stockAPK], an APK or a split archive, is only installed when the matching stock app is
+     * missing. The stock copy the module mounts at boot always comes from the installed APK.
      */
     suspend fun install(
         patchedAPK: File,
@@ -241,7 +266,7 @@ class RootInstaller(
         var installedStockInfo = pm.getPackageInfo(packageName)
 
         stockAPK?.let { stockApp ->
-            val stockInfo = pm.getPackageInfo(stockApp)
+            val stockInfo = readStockInfo(stockApp)
                 ?: error("Failed to get package info for stock app")
             if (stockInfo.packageName != packageName) {
                 error("Stock APK package (${stockInfo.packageName}) does not match $packageName")
@@ -294,7 +319,8 @@ class RootInstaller(
         } else {
             emptyMap()
         }
-        val textFiles = (moduleFiles + stockPathsFile).mapKeys { (name, _) -> "$modulePath/$name" }
+        val noMountFile = NO_MOUNT_MARKER to noMountMarker(prefs.noMountOnly.get())
+        val textFiles = (moduleFiles + stockPathsFile + noMountFile).mapKeys { (name, _) -> "$modulePath/$name" }
         stageModuleFiles(modulePath, textFiles)
 
         val patchedModuleApk = "$modulePath/$packageName.apk"
@@ -312,6 +338,10 @@ class RootInstaller(
         onStaged()
         commitStaged(textFiles.keys + apkPaths)
     }
+
+    /** The package info of a stock APK, or of the base module of a split archive. */
+    suspend fun readStockInfo(file: File): PackageInfo? =
+        SplitApkInspector.withRepresentativeApk(file, app.cacheDir) { apk -> pm.getPackageInfo(apk) }
 
     suspend fun installAsPlayStore(apkFile: File) = withContext(Dispatchers.IO) {
         if (!apkFile.exists()) throw Exception("File doesn't exist")
@@ -331,7 +361,13 @@ class RootInstaller(
         if (isAppMounted(packageName))
             unmount(packageName)
 
-        execute("rm -rf ${"$MODULES_PATH/${moduleId(packageName)}".shellQuote()}")
+        // A NoMount only module redirects the hidden system copy to its stock APK until the next
+        // boot, and the rule would point at nothing once the module is gone
+        val modulePath = "$MODULES_PATH/${moduleId(packageName)}"
+        val removeStockRedirects = noMountBin()?.let { nm ->
+            noMountRemoveRedirectsToCommand(nm.shellQuote(), "$modulePath/$packageName-stock.apk") + "; "
+        }.orEmpty()
+        execute(removeStockRedirects + reattachCommand(packageName) + "; rm -rf ${modulePath.shellQuote()}")
             .assertSuccess("Failed to delete files")
     }
 
@@ -383,25 +419,57 @@ class RootInstaller(
             .assertSuccess("Failed to put the module in place")
     }
 
+    /**
+     * Installs the stock app in one session, as a store does. A split archive is installed from
+     * its own modules: the merged APK patching builds from one keeps the base module's signing
+     * block over contents it no longer describes, so PackageManager rejects it.
+     */
     private suspend fun installStockApp(stockApp: File, packageName: String): Shell.Result {
-        val tempPath = "/data/local/tmp/morphe-stock-$packageName.apk"
-        val tempPathQuoted = tempPath.shellQuote()
+        val extractDir = app.cacheDir.resolve("stock-splits-$packageName")
+        val tempDirQuoted = "/data/local/tmp/morphe-stock-$packageName".shellQuote()
 
-        // The subshell keeps exit from closing the shared root shell, which would leave the
-        // commands queued after this one reading nothing back
-        return execute(
-            $$"""
-                (
-                    rm -f $$tempPathQuoted;
-                    cp $${stockApp.absolutePath.shellQuote()} $$tempPathQuoted &&
-                    chmod 644 $$tempPathQuoted &&
-                    pm install -r -d $$tempPathQuoted;
-                    result=$?;
-                    rm -f $$tempPathQuoted;
-                    exit $result
-                )
-            """.trimIndent()
-        )
+        try {
+            val modules = if (SplitApkPreparer.isSplitArchive(stockApp)) {
+                extractDir.deleteRecursively()
+                extractDir.mkdirs()
+                ZipFile(stockApp).use { zip ->
+                    SplitApkPreparer.splitModuleEntries(zip).map { entry ->
+                        extractDir.resolve(entry.name).also { module ->
+                            zip.getInputStream(entry).use { input -> module.outputStream().use { input.copyTo(it) } }
+                        }
+                    }.toList()
+                }.ifEmpty { error("Split archive does not contain any APK entries") }
+            } else {
+                listOf(stockApp)
+            }
+
+            val writes = modules.joinToString(" && ") { module ->
+                val name = module.name.shellQuote()
+                $$"""pm install-write -S $${module.length()} "$session" $$name $$tempDirQuoted/$$name"""
+            }
+
+            // The subshell keeps exit from closing the shared root shell, which would leave the
+            // commands queued after this one reading nothing back. A module that fails to write
+            // abandons the session, so nothing half installed is left
+            return execute(
+                $$"""
+                    (
+                        rm -rf $$tempDirQuoted;
+                        mkdir -p $$tempDirQuoted &&
+                        cp $${modules.joinToString(" ") { it.absolutePath.shellQuote() }} $$tempDirQuoted/ &&
+                        chmod 644 $$tempDirQuoted/* &&
+                        session="$(pm install-create -r -d | sed -n 's/.*\[\([0-9]*\)\].*/\1/p')" &&
+                        [ -n "$session" ] &&
+                        { $$writes && pm install-commit "$session" || { pm install-abandon "$session"; false; }; };
+                        result=$?;
+                        rm -rf $$tempDirQuoted;
+                        exit $result
+                    )
+                """.trimIndent()
+            )
+        } finally {
+            extractDir.deleteRecursively()
+        }
     }
 
     private suspend fun waitForInstalledStock(packageName: String, stockInfo: PackageInfo): Boolean =
@@ -511,6 +579,13 @@ class RootInstaller(
     private fun noMountRemoveCommand(nm: String, stockPath: String) =
         "$nm rule del $NO_MOUNT_SCOPE $stockPath 2>/dev/null; $nm rule del $stockPath 2>/dev/null; true"
 
+    // Removes the unscoped rules redirecting to the real path, which are listed as "virtual -> real"
+    private fun noMountRemoveRedirectsToCommand(nm: String, realPath: String) =
+        $$"""
+            $$nm rule list 2>/dev/null | grep -F $${" -> $realPath".shellQuote()} | sed 's| -> .*||' |
+                while IFS= read -r path; do $$nm rule del "$path"; done; true
+        """.trimIndent()
+
     // A namespace can hold the patched APK twice, once propagated from the root namespace and
     // once mounted into it directly, and a single umount only lifts the top one. Morphe's own
     // namespace was copied from zygote's, so it is cleared too or the APK it reads back for
@@ -538,6 +613,26 @@ class RootInstaller(
         mountTable = $$"\"/proc/$pid/mountinfo\"",
         umount = $$"nsenter -t \"$pid\" -m -- umount -l $$targetPath"
     )
+
+    /**
+     * Hides the app from Play Store updates, which would replace the stock APK under the mount, when
+     * zygisk-detach is installed. The marker records that Morphe detached it, not the user.
+     */
+    private fun detachCommand(packageName: String): String {
+        val marker = "$MODULES_PATH/${moduleId(packageName)}/$DETACHED_MARKER".shellQuote()
+        return $$"""
+            if [ -x $$DETACH_BIN ] && out=$($$DETACH_BIN detach $${packageName.shellQuote()} 2>/dev/null); then
+                case "$out" in *"already detached"*) ;; *) touch $$marker ;; esac;
+            fi; true
+        """.trimIndent()
+    }
+
+    /** Gives the app back to Play Store updates, unless the user detached it before Morphe did. */
+    private fun reattachCommand(packageName: String): String {
+        val marker = "$MODULES_PATH/${moduleId(packageName)}/$DETACHED_MARKER".shellQuote()
+        return "if [ -f $marker ] && [ -x $DETACH_BIN ]; then " +
+                "$DETACH_BIN reattach ${packageName.shellQuote()} >/dev/null 2>&1; fi"
+    }
 
     companion object {
         const val MODULES_PATH = "/data/adb/modules"
@@ -578,6 +673,10 @@ class RootInstaller(
         private val MODULE_SCRIPTS = listOf("service.sh", "post-fs-data.sh")
         private val MODULE_FILES = MODULE_SCRIPTS + "module.prop"
         private const val STOCK_PATHS_FILE = "stock-paths.txt"
+        /** Holds "1" when the module may only redirect with NoMount and never falls back to a bind mount. */
+        private const val NO_MOUNT_MARKER = "nomount-only"
+
+        private fun noMountMarker(noMountOnly: Boolean) = if (noMountOnly) "1" else "0"
 
         /** Where NoMount puts its CLI, linked next to the root manager's own tools. */
         private val NO_MOUNT_BINS = listOf(
@@ -591,6 +690,11 @@ class RootInstaller(
 
         // Every UID but system_server's, so PackageManager keeps seeing the stock APK it verifies
         private const val NO_MOUNT_SCOPE = "--uid-range all --uid-excluded 1000-1000"
+
+        /** Where zygisk-detach puts its CLI. */
+        private const val DETACH_BIN = "$MODULES_PATH/zygisk-detach/detach"
+        /** Present when Morphe, not the user, detached the app with zygisk-detach. */
+        private const val DETACHED_MARKER = "detached"
     }
 }
 

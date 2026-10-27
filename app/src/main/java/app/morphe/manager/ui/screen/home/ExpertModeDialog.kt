@@ -513,7 +513,7 @@ fun DialogHostScope.ExpertModeDialog(
     DialogHost(visible = showMultipleSourcesWarning.value) {
         ConfirmDialog(
             title = stringResource(R.string.expert_mode_multiple_sources_warning_title),
-            message = stringResource(R.string.expert_mode_multiple_sources_warning_message),
+            message = stringResource(R.string.expert_mode_multiple_sources_warning_conflict),
             primaryText = stringResource(R.string.home_dialog_unsupported_version_dialog_proceed),
             isPrimaryDestructive = false,
             onConfirm = {

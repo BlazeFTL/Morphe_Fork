@@ -93,8 +93,8 @@
     <string name="home_category_name">Kategoriya nomi</string>
     <string name="home_category_move_to">Kategoriyaga ko\'chirish</string>
     <string name="home_category_move_selected_title">Tanlangan ilovalarni ko\'chirish</string>
-    <string name="home_category_delete_confirm_title">Kategoriyani o\'chirish</string>
-    <string name="home_category_delete_confirm_message">&lt;b&gt;%1$s&lt;/b&gt; kategoriyasini o\'chirmoqchimisiz? Undagi ilovalar &lt;b&gt;%2$s&lt;/b&gt; ga qaytariladi</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Ushbu kategoriya uchun harakatlar mavjud emas</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Qaysi ilovani tuzatmoqchisiz?</string>
@@ -221,9 +221,6 @@
     <string name="sources_dialog_paste_no_links">Klipbordda havolalar topilmadi</string>
     <string name="sources_dialog_local">Mahalliy</string>
     <string name="sources_dialog_local_files">Patch manba fayllarini tanlang</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Ko‘proq fayl qo‘shish</string>
-    <string name="sources_dialog_local_file_tap_hint">Saqlashni ko‘rib chiqish uchun bosing</string>
     <string name="sources_dialog_local_invalid_extension">Fayl .mpp kengaytmasiga ega bo‘lishi kerak</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">%s ni yangilaydi</string>
@@ -242,15 +239,12 @@
     <string name="sources_patch_expert_badge">Ekspert</string>
     <string name="sources_patch_expert_badge_tooltip">Ekspert rejimini sozlamalarda yoqing, shu bilan ushbu patchni qo‘lda kiritishingiz mumkin</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Asl o\'rnatilmagan APKni topishda yordam kerakmi?</string>
     <string name="home_apk_availability_dialog_simple">&lt;b&gt;%s&lt;/b&gt; ni patchlash uchun, uning patchlanmagan APK versiyasi kerak:</string>
     <string name="home_apk_availability_dialog_expert">&lt;b&gt;%s&lt;/b&gt;ni patchlash uchun siz versiyalarning tuzatilmagan APKsini talab qilasiz:</string>
     <string name="home_apk_availability_recommended_label">Tavsiya etilgan</string>
     <string name="home_apk_availability_unpatched_label">Tuzatilmagan</string>
     <string name="home_apk_availability_incompatible_label">Uyushmaslik</string>
     <string name="home_apk_availability_installed_version">Ushbu qurilmada o‘rnatilgan: %s</string>
-    <string name="home_apk_availability_yes">Qayta urinish</string>
-    <string name="home_apk_availability_no">Yo\'q, allaqachon APK bor</string>
     <string name="home_apk_helper_download">Yordamchi ilovadan foydalaning</string>
     <string name="home_apk_helper_untrusted">Yordamchi ilova o\'rnatilgan, lekin hali ishonilmagan, shuning uchun u bu yerda taklif qilinmaydi.</string>
     <string name="home_apk_helper_untrusted_action">Yordamchilarni ko\'rib chiqish</string>
@@ -266,8 +260,6 @@
     <string name="home_apk_helper_wrong_package">Yordamchi ilova yamlanayotgan ilovadan boshqa ilovani qaytardi.</string>
     <string name="home_apk_helper_installed_unavailable">Morphe o\'rnatilgan ilovadan foydalana olmadi.</string>
     <string name="home_apk_helper_installed_incompatible">O\'rnatilgan versiyani yamlab bo\'lmaydi.</string>
-    <string name="home_apk_use_saved">Saqlangan APKdan foydalanish</string>
-    <string name="home_apk_use_installed">O\'rnatilgan APKdan foydalanish</string>
     <string name="home_apk_use_saved_unsupported">Yamoqlar bu saqlangan nusxani qo\'llab-quvvatlamaydi. Uni yamash sizdan tasdiqlashni so\'raydi yoki boshqa APK tanlang.</string>
     <string name="home_apk_use_installed_unverified">O\'rnatilgan ilovaning imzosi tasdiqlanmadi, shuning uchun u allaqachon o\'zgartirilgan bo\'lishi mumkin</string>
     <string name="home_unverified">Tasdiqlanmagan</string>
@@ -303,13 +295,11 @@
     <string name="home_download_instructions_copy_link">Havolani nusxalash</string>
     <string name="home_download_instructions_link_copied">Havola nusxalandi</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Yuklab olingan APKni tanlang</string>
-    <string name="home_file_picker_prompt_description">Yaqinda yuklab olingan &lt;b&gt;%s&lt;/b&gt; APK faylini tanlang</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">APK faylini ochish</string>
     <string name="home_recommended_version">Tavsiya etilgan versiya</string>
     <string name="home_selected_version">Tanlangan versiya</string>
     <string name="home_select_apk_title">APK ni tanlang</string>
-    <string name="home_select_any_apk_description">Kechiryapsiz</string>
     <string name="home_use_installed_app">Jumal ayting</string>
     <string name="home_installed_app_picker_title">Oʻrnatilgan ilovalar</string>
     <string name="home_installed_app_picker_empty">Yuklab olishingiz mumkin</string>
@@ -344,9 +334,6 @@
     <string name="expert_mode_patch_required_by_installer">Tanlangan oʻrnatish maqsadi uchun talab etiladi</string>
     <string name="expert_mode_patch_unavailable_for_installer">Tanlangan oʻrnatish maqsadi uchun mavjud emas</string>
     <string name="expert_mode_multiple_sources_warning_title">Bir nechta patch manbalari tanlandi</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Siz bir nechta patch manbalaridan patch tanlagansiz. Bu moslik muammolari yoki kutilmagan xatti-harakatlarga olib kelishi mumkin.
-
-Davom etmoqchi ekanligingizga ishonchingiz komilmi?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Tasdiqlanmagan APK</string>
     <string name="home_invalid_signature_message">&lt;b&gt;%s&lt;/b&gt; uchun tanlagan APK kutilgan imzo sertifikatiga mos kelmaydi. U o\'zgartirilgan yoki ishonchsiz manbadan bo\'lishi mumkin</string>
@@ -360,7 +347,6 @@ Eng yaxshi natijalar uchun ushbu ilova to‘liq &lt;b&gt;APK&lt;/b&gt;ni patchla
     <string name="home_dialog_unsupported_version_experimental_label">Tajribali</string>
     <string name="home_dialog_unsupported_version_experimental_description">Bu versiya eksperimental qo‘llab-quvvatlashga ega va barqaror yoki to‘liq bo‘lmasligi mumkin</string>
     <string name="morphe_experimental_app_version_dialog_title">Tajriba qilishni xohlaysizmi? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">&lt;b&gt;%s&lt;/b&gt; ning bu versiyasi dastlabki eksperimental qo‘llab-quvvatlashga ega&lt;br/&gt;&lt;br/&gt;🔧 Ushbu ilova versiyasi uchun patchlar aniqlanadigan bo‘lganda, ilovaning g‘alati ishlashi yoki aniqlanmagan xatolar kutilishi mumkin</string>
     <string name="home_dialog_unsupported_version_dialog_title">Qo\'llab-quvvatlanmaydigan versiya</string>
     <string name="home_dialog_unsupported_version_dialog_description">Mavjud emas</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -497,7 +483,6 @@ Eng yaxshi natijalar uchun ushbu ilova to‘liq &lt;b&gt;APK&lt;/b&gt;ni patchla
     <string name="shortcut_check_updates_long">Patch yangilanishlarini tekshirish</string>
     <string name="shortcut_patch_app">%s ni ta’mirlash</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Ushbu ilovani o\'chirib tashlashga ishonch hosil qilasizmi?</string>
     <string name="batch_uninstall_confirm_body">Tanlangan ilovalar sizning qurilmangizdan doimiy ravishda o\'chiriladi</string>
     <string name="home_app_info_remove_app_warning">Ilovangiz o\'chirib tashlandi</string>
     <string name="home_app_info_delete_item_database">Ma\'lumotlar bazasidagi yozuv</string>
@@ -658,8 +643,7 @@ O‘rnatish barcha ilova ma'lumotlarini o‘chiradi"</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patchlash jarayonida…</string>
     <string name="patcher_notification_text">Patcherni ko‘rish uchun bosish</string>
-    <string name="patcher_stop_confirm_title">Patcherni to‘xtatishni tasdiqlash?</string>
-    <string name="patcher_stop_confirm_description">Patchlash jarayonini to‘xtatishni xohlayapsizmi?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Ilovingizni ajoyib narsaga aylantiryapmiz… 🏆</string>
     <string name="patcher_message_2">Eski ilovalarga yangi triklar o‘rgatyapmiz… 🎩</string>
@@ -798,21 +782,15 @@ O‘rnatish barcha ilova ma'lumotlarini o‘chiradi"</string>
     <string name="settings_appearance_greeting_phrases_subtitle">Tabrik xabarini ko\'rsatadi.</string>
     <string name="settings_appearance_repatch_notice">Qayta yamash bildirishnomasi</string>
     <string name="settings_appearance_repatch_notice_description">Patchlangan ilovalar qayta patchlanishi mumkin bo\'lganda banner ko\'rsatadi.</string>
-    <string name="settings_appearance_app_card_colors">Ilovalar kartasining ranglari</string>
     <string name="settings_appearance_app_card_colors_default">Standart</string>
-    <string name="settings_appearance_app_card_colors_default_description">Har bir ilovaga o\'z to\'plamining rangini bering</string>
     <string name="settings_appearance_app_card_colors_accent">Rang</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Uy ekranidagi kartalar uchun ilova rangini ishlatish</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradient</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Uy ekranidagi kartalar uchun bitta moslashtirilgan gradientdan foydalanish</string>
     <string name="settings_appearance_app_card_colors_solid">Bitta rang</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Uy ekranidagi kartalar uchun bitta moslashtirilgan rangdan foydalanish</string>
     <string name="settings_appearance_app_card_colors_start">Boshlang\'ich rang</string>
     <string name="settings_appearance_app_card_colors_middle">O\'rtadagi rang</string>
     <string name="settings_appearance_app_card_colors_end">Tugash rang</string>
     <string name="settings_appearance_app_card_colors_solid_color">Bitta rang</string>
     <string name="settings_appearance_app_card_colors_bundle">Ilova to\'plamining rangi</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Bu yerda har bir ilovaning o\'z rangini ishlatib, avtomatik ravishda moslash uchun soyalanadi</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Ilona belgisi</string>
     <string name="settings_appearance_app_icon_selector_description">Morphe bosh ekranda va ilovalar ro‘yxatida qanday ko‘rinishi</string>
@@ -838,7 +816,7 @@ O‘rnatish barcha ilova ma'lumotlarini o‘chiradi"</string>
     <string name="settings_appearance_app_icon_mark_white">Oq</string>
     <string name="settings_appearance_app_icon_mark_black">Qora</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Ilona belgisini o\'zgartirish?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">&lt;b&gt;%s&lt;/b&gt; ga o‘zgartirish va qayta ishga tushirish kerakmi?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Tasdiqlash</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1204,7 +1182,6 @@ Ma’lumotlar: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Ishonchli: %1$d / %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Yordamchi ilovalar siz uchun original APK’larni yuklab olishi mumkin. Yuklab olish ko‘rsatmalarida faqat siz ishonganlari taklif qilinadi</string>
     <string name="settings_system_apk_download_helper_trust_title">Bu yordamchiga ishonasizmi?</string>
-    <string name="settings_system_apk_download_helper_trust">Ishonish</string>
     <string name="settings_system_apk_download_helper_warning">APK yordamchi ilovadan keladi, shuning uchun faqat o‘zingiz bilgan ilovalarga ishoning. Morphe baribir yamashdan oldin har bir faylning paketi, versiyasi va imzosini tekshiradi</string>
     <string name="settings_system_apk_download_helper_installed_by">%s tomonidan o‘rnatilgan</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">O‘rnatuvchi noma’lum</string>

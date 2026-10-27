@@ -98,8 +98,8 @@
     <string name="home_category_name">Име на категория</string>
     <string name="home_category_move_to">Премести в категория</string>
     <string name="home_category_move_selected_title">Премести избрани приложения</string>
-    <string name="home_category_delete_confirm_title">Изтрий категория</string>
-    <string name="home_category_delete_confirm_message">Изтрий категория &lt;b&gt;%1$s&lt;/b&gt;? Приложенията в нея ще се върнат в &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Действията не са достъпни за тази категория</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Кое приложение искате да пачнете?</string>
@@ -212,6 +212,9 @@
     <string name="sources_management_outdated_manager_hint">Този източник е създаден за пачър %1$s, но Morphe %2$s включва пачър %3$s. Актуализирайте Morphe, за да го използвате.</string>
     <string name="sources_management_held_back_badge">Срив</string>
     <string name="sources_management_held_back_hint">Този източник предизвика срив на Morphe по време на зареждане, затова той се пропуска. Обновете го или го импортирайте отново, за да опитате отново.</string>
+    <string name="sources_management_signed_by">Подписано от</string>
+    <string name="sources_management_signing_key_changed_badge">Ключът е променен</string>
+    <string name="sources_management_signing_key_changed_hint">Последната версия не е подписана с ключа, който този източник е използвал преди, затова не беше инсталирана. Докоснете, за да я прегледате</string>
     <string name="sources_management_source_enabled">Източникът е активиран</string>
     <string name="sources_management_source_disabled">Източникът е деактивиран</string>
     <string name="sources_management_source_updating">Актуализиране на източник</string>
@@ -228,9 +231,6 @@
     <string name="sources_dialog_paste_no_links">Не са намерени връзки в клипборда</string>
     <string name="sources_dialog_local">Локален</string>
     <string name="sources_dialog_local_files">Изберете файлове за източници на корекции</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Добавете още файлове</string>
-    <string name="sources_dialog_local_file_tap_hint">Докоснете, за да разгледате хранилището</string>
     <string name="sources_dialog_local_invalid_extension">Файлът трябва да има разширение .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Актуализира %s</string>
@@ -238,6 +238,7 @@
     <string name="sources_dialog_url_invalid">URL адресът трябва да сочи към GitHub/GitLab хранилище или .json файл</string>
     <string name="sources_dialog_preinstalled">Предварително инсталиран</string>
     <string name="sources_dialog_community">Общностни пачове</string>
+    <string name="sources_dialog_choose_apps">Изберете приложения</string>
     <string name="sources_dialog_choose_apps_description">Изберете кои от неговите приложения да запазите, след като източникът се зареди.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Източници на пачове от трети страни</string>
@@ -247,18 +248,22 @@
     <string name="sources_download_fail">Неуспешно сваляне на източника: %s</string>
     <string name="sources_download_fail_named">\'%s\' не може да бъде актуализиран. Проверете връзката си с интернет и опитайте отново</string>
     <string name="sources_download_endpoint_not_found">\'%s\': метаданни за пакета не са намерени</string>
+    <string name="sources_signing_key_changed_named">\'%s\' не беше актуализиран, защото последната му версия не е подписана с ключа, който е използван преди</string>
+    <string name="sources_signing_key_changed_local">Файлът не е подписан с ключа, който този източник е използвал преди. За да му се доверите, изтрийте източника и добавете файла отново</string>
+    <string name="sources_signing_key_trust_title">Да се доверите ли на новия ключ?</string>
+    <string name="sources_signing_key_trust_message">Последната версия е подписана с различен ключ. Или разработчикът е заменил ключа си, или някой друг е публикувал тази версия. Доверете се на нея само ако разработчикът е обявил нов ключ</string>
+    <string name="sources_signing_key_trust_message_unsigned">Последната версия не е подписана. Или разработчикът е спрял да подписва версиите, или някой друг е публикувал тази версия. Доверете се на нея само ако разработчикът е обявил това</string>
+    <string name="sources_signing_key_trusted">Доверен ключ</string>
+    <string name="sources_signing_key_new">Нов ключ</string>
     <string name="sources_patch_expert_badge">Експерт</string>
     <string name="sources_patch_expert_badge_tooltip">Активиране на Експертен режим в Настройки, за да включите ръчно тази поправка.</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Трябва ви помощ за намиране на оригинален непатчен APK?</string>
     <string name="home_apk_availability_dialog_simple">За да оновяваш &lt;b&gt;%s&lt;/b&gt;, ти трябва непрошатата версия на APK:</string>
     <string name="home_apk_availability_dialog_expert">За да прилагате &lt;b&gt;%s&lt;/b&gt;, нужна е непренагласена APK от версиите:</string>
     <string name="home_apk_availability_recommended_label">Рекомендовано</string>
     <string name="home_apk_availability_unpatched_label">Необновен</string>
     <string name="home_apk_availability_incompatible_label">Несъвместим</string>
     <string name="home_apk_availability_installed_version">Инсталирано на това устройство: %s</string>
-    <string name="home_apk_availability_yes">Да, помогнете ми да намира APK</string>
-    <string name="home_apk_availability_no">Не, вече имам APK</string>
     <string name="home_apk_helper_download">Използвайте помощно приложение</string>
     <string name="home_apk_helper_untrusted">Инсталирана е помощна програма, но все още не е удостоверяема, така че не се предлага тук</string>
     <string name="home_apk_helper_untrusted_action">Преглед на помощните програми</string>
@@ -274,8 +279,6 @@
     <string name="home_apk_helper_wrong_package">Помощното приложение върна различно приложение от това, което се кърпи.</string>
     <string name="home_apk_helper_installed_unavailable">Morphe не можа да използва инсталираното приложение</string>
     <string name="home_apk_helper_installed_incompatible">Инсталираната версия не може да бъде кръпната</string>
-    <string name="home_apk_use_saved">Използвайте запазен APK</string>
-    <string name="home_apk_use_installed">Използвайте инсталиран APK</string>
     <string name="home_apk_use_saved_unsupported">Кръпките не поддържат това запазено копие. Прилагането на кръпката ще изисква потвърждение, или изберете друг APK</string>
     <string name="home_apk_use_installed_unverified">Не успяхме да потвърдим подписа на инсталираното приложение, затова е възможно вече да е променено</string>
     <string name="home_unverified">Неверифицирано</string>
@@ -311,14 +314,14 @@
     <string name="home_download_instructions_copy_link">Копирай връзка</string>
     <string name="home_download_instructions_link_copied">Връзката е копирана</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Изберете сваления APK</string>
-    <string name="home_file_picker_prompt_description">Изберете APK файла &lt;b&gt;%s&lt;/b&gt;, който току-що изтеглихте</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Отваряне на APK файл</string>
     <string name="home_recommended_version">Рекомендирана версия</string>
     <string name="home_selected_version">Избрана версия</string>
     <string name="home_select_apk_title">Избор на APK</string>
-    <string name="home_select_any_apk_description">Изберете APK файл на което и да е приложение или изберете приложение, вече инсталирано на това устройство</string>
     <string name="home_use_installed_app">Използвай инсталирано приложение</string>
+    <string name="home_use_installed_app_description">Изберете приложение, което вече е на това устройство</string>
+    <string name="home_open_apk_file_description">Изберете APK, APKM, APKS или XAPK файл от паметта</string>
     <string name="home_installed_app_picker_title">Инсталирани приложения</string>
     <string name="home_installed_app_picker_empty">Не са намерени приложения</string>
     <string name="home_installed_app_picker_filter_user">Само потребителски приложения</string>
@@ -352,9 +355,6 @@
     <string name="expert_mode_patch_required_by_installer">Изисква се за избраната инсталационна цел</string>
     <string name="expert_mode_patch_unavailable_for_installer">Не е налично за избраната инсталационна цел</string>
     <string name="expert_mode_multiple_sources_warning_title">Избрани са патове от различни източници</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Избрахте патове от различни източници. Това може да доведе до съвместимост проблеми или непредвидимо поведение.
-
-Сигурни ли сте, че искате да продължите?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Непотвърден APK</string>
     <string name="home_invalid_signature_message">APK файлът, който избрахте за &lt;b&gt;%s&lt;/b&gt;, не съвпада с очаквания сертификат за подписване. Възможно е да е модифициран или да е от ненадежден източник</string>
@@ -368,7 +368,9 @@
     <string name="home_dialog_unsupported_version_experimental_label">Експериментално</string>
     <string name="home_dialog_unsupported_version_experimental_description">Тази версия има експериментална поддръжка и може да е нестабилна или непълна</string>
     <string name="morphe_experimental_app_version_dialog_title">Искате ли да експериментирате? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">Тази версия на &lt;b&gt;%s&lt;/b&gt; има ранна експериментална поддръжка&lt;br/&gt;&lt;br/&gt;🔧 Очаквайте странно поведение на приложението или неидентифицирани грешки, тъй като корекциите се усъвършенстват за тази версия на приложението</string>
+    <string name="morphe_experimental_app_version_dialog_message">"Тази версия на &lt;b&gt;%s&lt;/b&gt; има ранна експериментална поддръжка.
+
+🔧 Очаквайте странно поведение на приложението или неидентифицирани бъгове, докато пачовете се оптимизират за тази версия на приложението"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Неподдържана версия</string>
     <string name="home_dialog_unsupported_version_dialog_description">Това APK не е препоръчана версия на приложението. Продължаване може да доведе до неработещо приложение</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -505,7 +507,6 @@
     <string name="shortcut_check_updates_long">Проверка за актуализации на пачове</string>
     <string name="shortcut_patch_app">Закърпване на %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Сигурни ли сте, че искате да деинсталирате това приложение?</string>
     <string name="batch_uninstall_confirm_body">Избраните приложения ще бъдат трайно премахнати от вашето устройство</string>
     <string name="home_app_info_remove_app_warning">Това ще изтрие завинаги:</string>
     <string name="home_app_info_delete_item_database">Вход в базата данни</string>
@@ -667,8 +668,7 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Morphe</string>
     <string name="patcher_notification_text">Toast</string>
-    <string name="patcher_stop_confirm_title">Settings</string>
-    <string name="patcher_stop_confirm_description">Select an app</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Превръщаме вашето приложение в нещо страхотно… 🏆</string>
     <string name="patcher_message_2">Учим старите приложения на нови трикове… 🎩</string>
@@ -810,21 +810,21 @@
     <string name="settings_appearance_repatch_notice_description">Показва банер, когато модифицираните приложения могат да бъдат повторно модифицирани</string>
     <string name="settings_appearance_more_apps_card">Карта \"Още приложения\"</string>
     <string name="settings_appearance_more_apps_card_description">Показва карта под приложенията, водеща към общностни корекции</string>
-    <string name="settings_appearance_app_card_colors">Цветове на картите на приложенията</string>
+    <string name="settings_appearance_app_card_colors">Цветове на картите</string>
     <string name="settings_appearance_app_card_colors_default">По подразбиране</string>
-    <string name="settings_appearance_app_card_colors_default_description">Присвояване на цвета на пакета на всяко приложение</string>
+    <string name="settings_appearance_app_card_colors_default_description">Присвоете собствен цвят на всяко приложение и източник</string>
     <string name="settings_appearance_app_card_colors_accent">Акцент</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Използвайте акцентния цвят на приложението за картите на началния екран</string>
+    <string name="settings_appearance_app_card_colors_accent_description">Използвайте акцентния цвят на приложението за картите на приложения и източници</string>
     <string name="settings_appearance_app_card_colors_gradient">Градиент</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Използвайте един потребителски градиент за картите на началния екран</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">Използвайте един персонализиран градиент за картите на приложенията, смесен в един цвят за картите на източниците</string>
     <string name="settings_appearance_app_card_colors_solid">Плътен</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Използвайте един потребителски цвят за картите на началния екран</string>
+    <string name="settings_appearance_app_card_colors_solid_description">Използвайте един персонализиран цвят за картите на приложения и източници</string>
     <string name="settings_appearance_app_card_colors_start">Начален цвят</string>
     <string name="settings_appearance_app_card_colors_middle">Среден цвят</string>
     <string name="settings_appearance_app_card_colors_end">Краен цвят</string>
     <string name="settings_appearance_app_card_colors_solid_color">Плътен цвят</string>
     <string name="settings_appearance_app_card_colors_bundle">Цвет на пакета приложения</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Използвайте собствения цвят на всяко приложение тук, оцветен автоматично, за да пасне</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">Използвайте собствения цвят на всяко приложение или източник тук, автоматично засенчен за съответствие</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Икона на приложението</string>
     <string name="settings_appearance_app_icon_selector_description">Как изглежда Morphe на началния екран и в чекмеджето за приложения</string>
@@ -850,7 +850,7 @@
     <string name="settings_appearance_app_icon_mark_white">Бяло</string>
     <string name="settings_appearance_app_icon_mark_black">Черно</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Промяна на икона на приложението?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Промяна на &lt;b&gt;%s&lt;/b&gt; и рестартиране?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Промяна на икона</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1037,6 +1037,8 @@ morphe_header_custom_dark.png
     <string name="installer_play_store_warning_continue">Разбирам, продължи</string>
     <string name="installer_play_store_mode">Инсталиране като Play Store</string>
     <string name="installer_play_store_mode_description">Маркира Google Play Store като инсталационен източник</string>
+    <string name="settings_nomount_only">Само NoMount</string>
+    <string name="settings_nomount_only_description">Монтира приложения само с NoMount и никога не превключва към bind mount, така че те остават немонтирани без него</string>
     <string name="settings_prompt_installer_on_install">Показва се прозорец за избор на инсталатор</string>
     <string name="settings_prompt_installer_on_install_description">Поискайте как да инсталирате всяко приложение: с root преди паченето, иначе след него</string>
     <string name="settings_auto_install_with_shizuku">Автоматична инсталация след поправяне</string>
@@ -1220,7 +1222,6 @@ morphe_header_custom_dark.png
     <string name="settings_system_apk_download_helper_trusted_count">Доверени: %1$d от %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Помощните приложения могат да изтеглят оригинални APK вместо вас. В инструкциите за изтегляне се предлагат само тези, на които се доверявате тук.</string>
     <string name="settings_system_apk_download_helper_trust_title">Да доверите ли на този помощник?</string>
-    <string name="settings_system_apk_download_helper_trust">Довери</string>
     <string name="settings_system_apk_download_helper_warning">APK файлът идва от помощното приложение, затова се доверявайте само на приложения, които познавате. Morphe все пак проверява пакета, версията и подписа на всеки файл преди кръпване.</string>
     <string name="settings_system_apk_download_helper_installed_by">Инсталирано от %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Неизвестен инсталатор</string>
@@ -1315,6 +1316,7 @@ morphe_header_custom_dark.png
     <string name="include">Включване</string>
     <string name="disable">Деактивирай</string>
     <string name="enable">Активирай</string>
+    <string name="trust">Доверям се</string>
     <string name="loading">Зареждане…</string>
     <string name="creating">Създаване…</string>
     <string name="processing_apk">Обработване на APK…</string>

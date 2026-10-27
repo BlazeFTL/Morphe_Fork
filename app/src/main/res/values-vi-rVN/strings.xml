@@ -2,7 +2,7 @@
 <resources>
     <!-- Home Screen -->
     <string name="home_other_apps">Các ứng dụng khác</string>
-    <string name="home_other_apps_action">Select other apps</string>
+    <string name="home_other_apps_action">Chọn ứng dụng khác</string>
     <string name="home_not_patched_yet">Chưa vá</string>
     <string name="home_unpatched_version_installed">Đã cài đặt phiên bản chưa vá</string>
     <string name="home_unpatched_badge">Chưa vá</string>
@@ -98,8 +98,8 @@
     <string name="home_category_name">Tên danh mục</string>
     <string name="home_category_move_to">Di chuyển đến danh mục</string>
     <string name="home_category_move_selected_title">Di chuyển ứng dụng đã chọn</string>
-    <string name="home_category_delete_confirm_title">Xóa danh mục</string>
-    <string name="home_category_delete_confirm_message">Xóa danh mục &lt;b&gt;%1$s&lt;/b&gt;? Các ứng dụng trong danh mục này sẽ được chuyển về &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Không khả dụng cho danh mục này</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Bạn muốn vá ứng dụng nào?</string>
@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Nguồn vá này được xây dựng cho trình vá %1$s, nhưng Morphe %2$s chỉ có trình vá %3$s. Hãy cập nhật Morphe để sử dụng nguồn vá này</string>
     <string name="sources_management_held_back_badge">Đã sập</string>
     <string name="sources_management_held_back_hint">Nguồn này đã làm Morphe sập khi đang tải nên đang bị bỏ qua. Cập nhật hoặc nhập lại nguồn này để thử lại</string>
+    <string name="sources_management_signed_by">Đã ký bởi</string>
+    <string name="sources_management_signing_key_changed_badge">Khóa đã thay đổi</string>
+    <string name="sources_management_signing_key_changed_hint">Bản phát hành mới nhất không được ký bằng khóa mà nguồn này đã sử dụng trước đó, vì vậy nó không được cài đặt. Nhấn để xem xét</string>
     <string name="sources_management_source_enabled">Nguồn đã bật</string>
     <string name="sources_management_source_disabled">Nguồn đã tắt</string>
     <string name="sources_management_source_updating">Đang cập nhật nguồn</string>
@@ -227,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">Không tìm thấy liên kết nào trong bảng tạm</string>
     <string name="sources_dialog_local">Từ bộ nhớ trong</string>
     <string name="sources_dialog_local_files">Chọn tệp nguồn bản vá</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Thêm tệp khác</string>
-    <string name="sources_dialog_local_file_tap_hint">Bấm để duyệt bộ nhớ</string>
     <string name="sources_dialog_local_invalid_extension">Tệp phải có đuôi .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Cập nhật %s</string>
@@ -246,18 +246,22 @@
     <string name="sources_download_fail">Không thể tải nguồn vá: %s</string>
     <string name="sources_download_fail_named">Không thể cập nhật \"%s\". Vui lòng kiểm tra kết nối mạng và thử lại</string>
     <string name="sources_download_endpoint_not_found">\'%s\': không tìm thấy metadata của bản vá</string>
+    <string name="sources_signing_key_changed_named">\'%s\' không được cập nhật vì bản phát hành mới nhất của nó không được ký bằng khóa đã sử dụng trước đó</string>
+    <string name="sources_signing_key_changed_local">Tệp không được ký bằng khóa mà nguồn này đã sử dụng trước đó. Để tin cậy tệp này, hãy xóa nguồn và thêm tệp một lần nữa</string>
+    <string name="sources_signing_key_trust_title">Tin cậy khóa mới?</string>
+    <string name="sources_signing_key_trust_message">Bản phát hành mới nhất được ký bởi một khóa khác. Có thể nhà phát triển đã thay thế khóa của họ, hoặc ai đó khác đã xuất bản bản phát hành này. Chỉ tin cậy nếu nhà phát triển đã thông báo về khóa mới</string>
+    <string name="sources_signing_key_trust_message_unsigned">Bản phát hành mới nhất không được ký. Có thể nhà phát triển đã ngừng ký các bản phát hành, hoặc ai đó khác đã xuất bản bản phát hành này. Chỉ tin cậy nếu nhà phát triển đã thông báo về điều này</string>
+    <string name="sources_signing_key_trusted">Khóa đáng tin cậy</string>
+    <string name="sources_signing_key_new">Khóa mới</string>
     <string name="sources_patch_expert_badge">Chuyên gia</string>
     <string name="sources_patch_expert_badge_tooltip">Bật chế độ Chuyên gia trong Cài đặt để có thể tự thêm bản vá này</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Chưa tìm được APK gốc chứ gì? Cần giúp không?</string>
     <string name="home_apk_availability_dialog_simple">Để vá &lt;b&gt;%s&lt;/b&gt;, bạn cần APK chưa vá với phiên bản:</string>
     <string name="home_apk_availability_dialog_expert">Để vá &lt;b&gt;%s&lt;/b&gt;, bạn cần APK chưa vá thuộc một trong các phiên bản:</string>
     <string name="home_apk_availability_recommended_label">Khuyên dùng</string>
     <string name="home_apk_availability_unpatched_label">Chưa vá</string>
     <string name="home_apk_availability_incompatible_label">Không tương thích</string>
     <string name="home_apk_availability_installed_version">Đã cài đặt trên thiết bị này: %s</string>
-    <string name="home_apk_availability_yes">Có, giúp tôi với</string>
-    <string name="home_apk_availability_no">Không, tôi có APK rồi</string>
     <string name="home_apk_helper_download">Dùng ứng dụng hỗ trợ</string>
     <string name="home_apk_helper_untrusted">Một ứng dụng trợ lý đã được cài đặt nhưng chưa được tin tưởng, vì vậy nó không được hiển thị ở đây</string>
     <string name="home_apk_helper_untrusted_action">Xem lại các ứng dụng trợ lý</string>
@@ -273,8 +277,7 @@
     <string name="home_apk_helper_wrong_package">Ứng dụng hỗ trợ đã trả về một ứng dụng khác với ứng dụng đang được vá</string>
     <string name="home_apk_helper_installed_unavailable">Morphe không thể sử dụng ứng dụng đã cài đặt</string>
     <string name="home_apk_helper_installed_incompatible">Phiên bản đã cài đặt không thể vá được</string>
-    <string name="home_apk_use_saved">Sử dụng APK đã lưu</string>
-    <string name="home_apk_use_installed">Sử dụng APK đã cài đặt</string>
+    <string name="home_apk_use_installed_app">Dùng ứng dụng đã cài</string>
     <string name="home_apk_use_saved_unsupported">Các bản vá không hỗ trợ bản sao đã lưu này. Việc vá sẽ yêu cầu bạn xác nhận, hoặc chọn một APK khác.</string>
     <string name="home_apk_use_installed_unverified">Không thể xác minh chữ ký của ứng dụng đã cài đặt, vì vậy ứng dụng có thể đã được vá</string>
     <string name="home_unverified">Chưa xác minh</string>
@@ -310,14 +313,14 @@
     <string name="home_download_instructions_copy_link">Sao chép liên kết</string>
     <string name="home_download_instructions_link_copied">Đã sao chép liên kết</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Chọn APK đã tải</string>
-    <string name="home_file_picker_prompt_description">Chọn tệp APK &lt;b&gt;%s&lt;/b&gt; bạn vừa tải</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Mở tệp APK</string>
     <string name="home_recommended_version">Phiên bản đề xuất</string>
     <string name="home_selected_version">Phiên bản đã chọn</string>
     <string name="home_select_apk_title">Chọn APK</string>
-    <string name="home_select_any_apk_description">Chọn một tệp APK của bất kỳ ứng dụng nào, hoặc chọn một ứng dụng đã được cài đặt trên máy bạn</string>
     <string name="home_use_installed_app">Dùng ứng dụng đã cài</string>
+    <string name="home_use_installed_app_description">Chọn một ứng dụng đã có trên thiết bị này</string>
+    <string name="home_open_apk_file_description">Chọn tệp APK, APKM, APKS hoặc XAPK từ bộ nhớ</string>
     <string name="home_installed_app_picker_title">Ứng dụng đã cài</string>
     <string name="home_installed_app_picker_empty">Không tìm thấy ứng dụng nào</string>
     <string name="home_installed_app_picker_filter_user">Chỉ ứng dụng đã cài</string>
@@ -351,9 +354,6 @@
     <string name="expert_mode_patch_required_by_installer">Bắt buộc đối với đích cài đặt đã chọn</string>
     <string name="expert_mode_patch_unavailable_for_installer">Không khả dụng với đích cài đặt đã chọn</string>
     <string name="expert_mode_multiple_sources_warning_title">Đã chọn nhiều nguồn vá</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Bạn đã chọn các bản vá từ nhiều nguồn khác nhau. Điều đó khiến ứng dụng có thể gặp phải các vấn đề về tương thích hoặc không hoạt động như mong muốn.
-
-Bạn có chắc muốn tiếp tục không?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK chưa xác minh</string>
     <string name="home_invalid_signature_message">Tệp APK bạn chọn cho &lt;b&gt;%s&lt;/b&gt; không khớp với chữ ký dự kiến. Nó có thể đã bị chỉnh sửa hoặc đến từ một nguồn không đáng tin</string>
@@ -367,7 +367,9 @@ Tốt nhất bạn nên chuyển sang &lt;b&gt;APK đầy đủ&lt;/b&gt; để 
     <string name="home_dialog_unsupported_version_experimental_label">Thử nghiệm</string>
     <string name="home_dialog_unsupported_version_experimental_description">Phiên bản này vẫn đang thử nghiệm và có thể không ổn định hoặc chưa hoàn thiện</string>
     <string name="morphe_experimental_app_version_dialog_title">Muốn thử không? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">Phiên bản &lt;b&gt;%s&lt;/b&gt; hiện mới được hỗ trợ thử nghiệm&lt;br/&gt;&lt;br/&gt;🔧 Ứng dụng có thể hoạt động chưa ổn định hoặc còn lỗi trong quá trình hoàn thiện bản vá</string>
+    <string name="morphe_experimental_app_version_dialog_message">"Phiên bản &lt;b&gt;%s&lt;/b&gt; hiện mới được hỗ trợ thử nghiệm.
+
+🔧 Ứng dụng có thể hoạt động chưa ổn định hoặc còn lỗi trong quá trình hoàn thiện bản vá cho phiên bản ứng dụng này"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Phiên bản không hỗ trợ</string>
     <string name="home_dialog_unsupported_version_dialog_description">Phiên bản APK này không được đề xuất. Tiếp tục có thể dẫn đến ứng dụng không hoạt động</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -504,7 +506,6 @@ Tốt nhất bạn nên chuyển sang &lt;b&gt;APK đầy đủ&lt;/b&gt; để 
     <string name="shortcut_check_updates_long">Kiểm tra cập nhật bản vá</string>
     <string name="shortcut_patch_app">Vá %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">Bạn có chắc muốn gỡ ứng dụng này không?</string>
     <string name="batch_uninstall_confirm_body">Các ứng dụng đã chọn sẽ bị xóa vĩnh viễn khỏi thiết bị của bạn</string>
     <string name="home_app_info_remove_app_warning">Thao tác này sẽ xóa vĩnh viễn:</string>
     <string name="home_app_info_delete_item_database">Nhật ký cơ sở dữ liệu</string>
@@ -666,8 +667,7 @@ Gỡ cài đặt sẽ xóa vĩnh viễn toàn bộ dữ liệu ứng dụng"</st
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Đang vá…</string>
     <string name="patcher_notification_text">Bấm để quay trở lại trình vá</string>
-    <string name="patcher_stop_confirm_title">Dừng vá</string>
-    <string name="patcher_stop_confirm_description">Bạn có chắc chắn muốn dừng tiến trình vá không?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Biến ứng dụng của bạn trở nên xịn hơn… 🏆</string>
     <string name="patcher_message_2">Dạy ứng dụng cũ chiêu mới… 🎩</string>
@@ -809,21 +809,15 @@ Gỡ cài đặt sẽ xóa vĩnh viễn toàn bộ dữ liệu ứng dụng"</st
     <string name="settings_appearance_repatch_notice_description">Hiển thị banner khi các ứng dụng đã vá có thể được vá lại</string>
     <string name="settings_appearance_more_apps_card">Thẻ Thêm ứng dụng</string>
     <string name="settings_appearance_more_apps_card_description">Hiển thị một thẻ bên dưới các ứng dụng dẫn đến các bản vá cộng đồng</string>
-    <string name="settings_appearance_app_card_colors">Màu thẻ ứng dụng</string>
     <string name="settings_appearance_app_card_colors_default">Mặc định</string>
-    <string name="settings_appearance_app_card_colors_default_description">Gán cho mỗi ứng dụng màu sắc của nguồn vá tương ứng</string>
     <string name="settings_appearance_app_card_colors_accent">Nổi bật</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Sử dụng màu nổi bật của ứng dụng cho các thẻ ứng dụng trên màn hình chính</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradient</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Sử dụng một gradient tùy chỉnh cho các thẻ ứng dụng trên màn hình chính</string>
     <string name="settings_appearance_app_card_colors_solid">Solid</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Sử dụng một màu tùy chỉnh chung cho thẻ ứng dụng trên màn hình chính</string>
     <string name="settings_appearance_app_card_colors_start">Màu bắt đầu</string>
     <string name="settings_appearance_app_card_colors_middle">Màu giữa</string>
     <string name="settings_appearance_app_card_colors_end">Màu kết thúc</string>
     <string name="settings_appearance_app_card_colors_solid_color">Màu đồng nhất</string>
     <string name="settings_appearance_app_card_colors_bundle">Màu ứng dụng</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Sử dụng màu riêng của từng ứng dụng và tự động điều chỉnh sắc độ cho phù hợp</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Biểu tượng</string>
     <string name="settings_appearance_app_icon_selector_description">Cách Morphe hiển thị trên màn hình chính và trong ngăn kéo ứng dụng</string>
@@ -849,7 +843,7 @@ Gỡ cài đặt sẽ xóa vĩnh viễn toàn bộ dữ liệu ứng dụng"</st
     <string name="settings_appearance_app_icon_mark_white">Trắng</string>
     <string name="settings_appearance_app_icon_mark_black">Đen</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Đổi biểu tượng?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">Bạn có muốn đổi sang &lt;b&gt;%s&lt;/b&gt; và khởi động lại?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Chốt</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1039,6 +1033,8 @@ Kết quả thực tế có thể khác nhau tùy theo phiên bản Android, ROM
     <string name="installer_play_store_warning_continue">Tôi hiểu, tiếp đi</string>
     <string name="installer_play_store_mode">Cài đặt như ứng dụng từ Cửa hàng Play</string>
     <string name="installer_play_store_mode_description">Đánh dấu Google Play Store là nguồn cài đặt</string>
+    <string name="settings_nomount_only">Chỉ NoMount</string>
+    <string name="settings_nomount_only_description">Chỉ gắn kết các ứng dụng bằng NoMount và không bao giờ quay lại dùng bind mount, vì vậy chúng sẽ không được gắn kết nếu thiếu NoMount</string>
     <string name="settings_prompt_installer_on_install">Hỏi chọn trình cài đặt</string>
     <string name="settings_prompt_installer_on_install_description">Hỏi cách cài đặt từng ứng dụng: với quyền root trước khi vá, nếu không thì sau đó</string>
     <string name="settings_auto_install_with_shizuku">Tự động cài đặt sau khi vá</string>
@@ -1222,7 +1218,6 @@ Chi tiết: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">Đã tin cậy: %1$d trên %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Các ứng dụng trợ giúp có thể tải APK gốc cho bạn. Chỉ những ứng dụng bạn tin cậy ở đây mới được đề xuất trong hướng dẫn tải xuống.</string>
     <string name="settings_system_apk_download_helper_trust_title">Có tin cậy trợ lý này không?</string>
-    <string name="settings_system_apk_download_helper_trust">Tin cậy</string>
     <string name="settings_system_apk_download_helper_warning">APK đến từ ứng dụng trợ giúp, vì vậy chỉ tin cậy những ứng dụng bạn biết. Morphe vẫn kiểm tra gói, phiên bản và chữ ký của mọi tệp trước khi vá.</string>
     <string name="settings_system_apk_download_helper_installed_by">Được cài đặt bởi %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Không rõ trình cài đặt</string>
@@ -1317,6 +1312,7 @@ Chi tiết: %2$s"</string>
     <string name="include">Bao gồm</string>
     <string name="disable">Tắt</string>
     <string name="enable">Không sợ</string>
+    <string name="trust">Tin cậy</string>
     <string name="loading">Đang tải…</string>
     <string name="creating">Đang tạo…</string>
     <string name="processing_apk">Đang xử lý APK…</string>

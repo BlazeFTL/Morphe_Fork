@@ -75,6 +75,8 @@
     <string name="home_all_apps_hidden_title">هەموو ئەپەکان شاراوەن</string>
     <string name="home_all_apps_hidden_subtitle">هەموو ئەپەکانت لە شاشەی سەرەکی شاردووەتەوە</string>
     <string name="home_category_custom">باو</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">دەتەوێت چی ئەپێک پینە بکەیت؟</string>
     <!-- Humorous hype message with light nostalgia -->
@@ -131,8 +133,6 @@
     <string name="sources_dialog_remote">دوورەدەست</string>
     <string name="sources_dialog_remote_url">URLی سەرچاوە</string>
     <string name="sources_dialog_local">ناوخۆ</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_file_tap_hint">بۆ گەڕان بەناو کۆگادا پەنجە بنێ</string>
     <string name="sources_dialog_local_invalid_extension">پەڕگەکە دەبێت درێژکراوەی .mpp ی هەبێت</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_url_valid">عەمباری دروست یان URL JSON</string>
@@ -147,14 +147,11 @@
     <string name="sources_patch_expert_badge">شارەزا</string>
     <string name="sources_patch_expert_badge_tooltip">دۆخی شارەزا چالاک بکە لە ڕێکخستنەکان بۆ گرتنەخۆی ئەم پینەیە بە دەستی</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">پێویستت بە یارمەتی هەیە بۆ دۆزینەوەی APKی پینە نەکراوی ڕەسەن؟</string>
     <string name="home_apk_availability_dialog_simple">بۆ پینەکردنی &lt;b&gt;%s&lt;/b&gt;, تۆ پێویستت بە وەشانی پینەنەکراوی APKە:</string>
     <string name="home_apk_availability_dialog_expert">بۆ پینەکردنی &lt;b&gt;%s&lt;/b&gt;, تۆ پێویستت بە وەشانەکانی پینەنەکراوی APKە:</string>
     <string name="home_apk_availability_recommended_label">پێشنیازکراو</string>
     <string name="home_apk_availability_unpatched_label">پینەنەکراو</string>
     <string name="home_apk_availability_incompatible_label">نەگونجان</string>
-    <string name="home_apk_availability_yes">بەڵێ، یارمەتیم بدە لە دۆزینەوەی APK</string>
-    <string name="home_apk_availability_no">نەخێر پێشتر APK هەیە</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="home_app_info_no_saved_apk">APK پاشەکەوت نەکراوە. پینەکردن پێویستی بە دیاریکردنی فایلی APK دووبارە هەیە</string>
     <string name="home_version_requires_android">پێویستی بە ئەندرۆید %s+ هەیە</string>
@@ -171,8 +168,7 @@
     <string name="home_download_instructions_step4">دوای تەواوبوونی داگرتنەکە بگەڕێوە بۆ Morphe</string>
     <string name="home_download_instructions_step4_mount">دوای دامەزراندنی APK ی بنەڕەتی، بگەڕێوە بۆ Morphe</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">APKی دابەزێندراو دیاری بکە</string>
-    <string name="home_file_picker_prompt_description">&lt;b&gt;%s&lt;/b&gt; APK دیاری بکە کە داتبەزاندووە</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">کردنەوەی فایلی APK</string>
     <string name="home_recommended_version">وەشانی پێشنیارکراو</string>
     <string name="home_selected_version">وەشانی دیاریکراو</string>
@@ -195,7 +191,6 @@
     <string name="expert_mode_universal_patches">پینەی جیهانی</string>
     <string name="expert_mode_new_patches">نوێ</string>
     <string name="expert_mode_multiple_sources_warning_title">سەرچاوە هەمەجۆرەکانی پینە دەسنیشان کراوە</string>
-    <string name="expert_mode_multiple_sources_warning_message">"تۆ پینەکانت هەڵبژاردووە لە چەند سەرچاوەیەکی پینەکردن. ئەمە لەوانەیە ببێتە هۆی کێشەی گونجان یان هەڵسوکەوتی چاوەڕوان نەکراو."</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APKی پشتڕاستنەکراو</string>
     <string name="home_invalid_signature_message">ئەو APK تۆ دیاریت کردووە بۆ &lt;b&gt;%s&lt;/b&gt; یەکناگرێتەوە لەگەڵ بڕوانامەی ئیمزاکردنی چاوەڕوانکراو. لەوانەیە دەستکاری کرابێت یان لە سەرچاوەیەکی باوەڕپێنەکراوەوە بێ</string>
@@ -209,7 +204,6 @@
     <string name="home_dialog_unsupported_version_experimental_label">تاقیکاری</string>
     <string name="home_dialog_unsupported_version_experimental_description">ئەم وەشانە پشتیوانی ئەزموونی هەیە و لەوانەیە ناجێگیر یان ناتەواو بێت</string>
     <string name="morphe_experimental_app_version_dialog_title">دەتەوێت تاقی بکەیتەوە؟ 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">ئەم وەشانەی &lt;b&gt;%s&lt;/b&gt; پاڵپشتی ئەزموونی سەرەتایی هەیە &lt;br/&gt;&lt;br/&gt; 🔧 چاوەڕێی هەڵسوکەوتی نائاسایی ئەپەکە یان هەڵەی نەناسراو بکە کاتێک پینەکراوەکان بۆ ئەم وەشانە پوختەکراون</string>
     <string name="home_dialog_unsupported_version_dialog_title">وەشانی پشتگیری نەکراو</string>
     <string name="home_dialog_unsupported_version_dialog_description">ئەم APK وەشانێکی ئەپی پێشنیارکراو نیە. لەوانەیە بەردەوامبوون ببێتە هۆی ئەپێکی کارا نەکراو</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -344,8 +338,7 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">پینەکردن بەردەوامە…</string>
     <string name="patcher_notification_text">کرتە بکە بۆ گەڕانەوە بۆ پینەکەرەکە</string>
-    <string name="patcher_stop_confirm_title">ڕاگرتنی پینەکەر</string>
-    <string name="patcher_stop_confirm_description">ئایا دڵنیایت کە دەتەوێت پرۆسەی پینەکردنەکە بوەستێنیت؟</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">گۆڕینی کاربەرنامەکەت بۆ شتێکی نایاب… 🏆</string>
     <string name="patcher_message_2">فێرکردنی فێڵێکی نوێ بۆ ئەپە کۆنەکان… 🎩</string>
@@ -438,7 +431,7 @@
     <string name="settings_appearance_app_icon_dark_2">بەتاڵ</string>
     <string name="settings_appearance_app_icon_mark_color">ڕەنگ</string>
     <string name="settings_appearance_app_icon_change_dialog_title">وێنۆچکەی ئەپەکە بگۆڕیت؟</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">بگۆڕە بۆ &lt;b&gt;%s&lt;/b&gt; وە دەستپێکردنەوە؟</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">گۆڕینی وێنۆچکە</string>
     <!-- Settings - Advanced Tab - Updates Section -->

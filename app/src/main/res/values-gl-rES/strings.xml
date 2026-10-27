@@ -37,6 +37,8 @@
     <string name="home_all_apps_hidden_title">Todas as aplicacións están ocultas</string>
     <string name="home_all_apps_hidden_subtitle">Ocultaches todas as apps da pantalla de inicio</string>
     <string name="home_category_custom">Personalizado</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Qué aplicación desexa parchear?</string>
     <!-- Humorous hype message with light nostalgia -->
@@ -99,8 +101,6 @@
     <string name="sources_dialog_remote">Remoto</string>
     <string name="sources_dialog_remote_url">URL da fonte</string>
     <string name="sources_dialog_local">Local</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_file_tap_hint">Toca para acceder ao almacenamento</string>
     <string name="sources_dialog_local_invalid_extension">O arquivo debe ter a extensión .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_url_valid">URL de repositorio ou JSON válido</string>
@@ -115,14 +115,11 @@
     <string name="sources_patch_expert_badge">Experto</string>
     <string name="sources_patch_expert_badge_tooltip">Activar o modo Experto en Configuración para incluír o parche manualmente</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">Precisa axuda para atopar un APK orixinal sen parchear?</string>
     <string name="home_apk_availability_dialog_simple">Para parchear &lt;b&gt;%s&lt;/b&gt; necesitas a versión non parcheada da APK:</string>
     <string name="home_apk_availability_dialog_expert">Para aplicar a corrección &lt;b&gt;%s&lt;/b&gt;, precisas un APK sen corrixir destas versións:</string>
     <string name="home_apk_availability_recommended_label">Recomendado</string>
     <string name="home_apk_availability_unpatched_label">Sen parchear</string>
     <string name="home_apk_availability_incompatible_label">Incompatible</string>
-    <string name="home_apk_availability_yes">Sí, axúdame a encontrar un APK</string>
-    <string name="home_apk_availability_no">Non, xa teño un APK</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="home_app_info_no_saved_apk">Sen APK gardado. O parche precisa seleccionar o arquivo APK de novo</string>
     <string name="home_version_requires_android">Require Android %s+</string>
@@ -138,8 +135,7 @@
     <string name="home_download_instructions_step4">Cando remate a descarga, regrese a Morphe</string>
     <string name="home_download_instructions_step4_mount">Tras instalar o APK orixinal, regrese a Morphe</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Seleccionar o APK descargado</string>
-    <string name="home_file_picker_prompt_description">Escolle a APK &lt;b&gt;%s&lt;/b&gt; que acabas de descargar</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Abrir arquivo APK</string>
     <string name="home_recommended_version">Versión recomendada</string>
     <string name="home_selected_version">Versión seleccionada</string>
@@ -162,9 +158,6 @@
     <string name="expert_mode_universal_patches">Parches universais</string>
     <string name="expert_mode_new_patches">Novo</string>
     <string name="expert_mode_multiple_sources_warning_title">Múltiples fontes de parche seleccionadas</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Seleccionaches parches de diferentes fontes. Isto pode causar problemas de incompatibilidade ou accións inesperadas.
-
-Seguro que queres continuar?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK non verificado</string>
     <string name="home_invalid_signature_message">O APK seleccionado para &lt;b&gt;%s&lt;/b&gt; non coincide co certificado de sinatura esperado. Pode que estea modificado por unha fonte externa non confiable</string>
@@ -267,7 +260,7 @@ Elixe outro APK</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Parcheado en progreso...</string>
     <string name="patcher_notification_text">Toque para volver ao parcheador</string>
-    <string name="patcher_stop_confirm_title">Deter parcheador</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Transformando a túa aplicación en algo incrible... 🏆</string>
     <string name="patcher_message_2">Ensinando trucos novos a aplicacións vellas… 🎩</string>
@@ -301,6 +294,7 @@ Elixe outro APK</string>
     <string name="settings_appearance_app_card_colors_solid">Sólido</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_default">Predefinido</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <!-- Settings - Advanced Tab - Updates Section -->
     <!-- "Morphe" here is the app itself, not the patches. Do not translate this as pre-release patches -->

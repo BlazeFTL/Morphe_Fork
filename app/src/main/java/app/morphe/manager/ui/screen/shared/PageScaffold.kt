@@ -137,7 +137,9 @@ fun PinnedHeaderPage(
         modifier = modifier.fillMaxSize(),
         bottomBar = {
             CompositionLocalProvider(LocalBackdropHaze provides haze) {
-                Box(modifier = Modifier.contentColumn()) { bottomBar() }
+                // Held to the bottom edge, so a panel coming in as a taller one leaves rises from
+                // there rather than from the top of the room the other still takes
+                Box(modifier = Modifier.contentColumn(), contentAlignment = Alignment.BottomCenter) { bottomBar() }
             }
         },
         topBar = {

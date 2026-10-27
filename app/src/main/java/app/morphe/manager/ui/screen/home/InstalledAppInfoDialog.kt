@@ -367,8 +367,8 @@ fun DialogHostScope.InstalledAppInfoDialog(
 
         DialogHost(visible = showUninstallConfirm.value) {
             ConfirmDialog(
-                title = stringResource(R.string.uninstall),
-                message = stringResource(R.string.home_app_info_uninstall_app_confirmation),
+                title = stringResource(R.string.home_app_info_uninstall_title),
+                message = stringResource(R.string.home_app_info_uninstall_removes_data),
                 primaryText = stringResource(R.string.uninstall),
                 subject = { AppConfirmSubject() },
                 onConfirm = {

@@ -98,8 +98,8 @@
     <string name="home_category_name">ชื่อหมวดหมู่</string>
     <string name="home_category_move_to">ย้ายไปที่หมวดหมู่</string>
     <string name="home_category_move_selected_title">ย้ายแอปที่เลือกไว้</string>
-    <string name="home_category_delete_confirm_title">ลบหมวดหมู่</string>
-    <string name="home_category_delete_confirm_message">ลบหมวดหมู่ &lt;b&gt;%1$s&lt;/b&gt;? แอปในหมวดหมู่นี้จะย้ายกลับไปที่ &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">ไม่มีการดำเนินการสำหรับหมวดหมู่นี้</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">คุณต้องการแพตช์แอปอะไร?</string>
@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">แหล่งที่มานี้สร้างขึ้นสำหรับตัวแพตช์ %1$s แต่ Morphe %2$s มีตัวแพตช์ %3$s อัปเดต Morphe เพื่อใช้งาน</string>
     <string name="sources_management_held_back_badge">ขัดข้อง</string>
     <string name="sources_management_held_back_hint">แหล่งนี้ทำให้ Morphe เกิดข้อขัดข้องระหว่างการโหลด จึงถูกข้ามไป อัปเดตหรือนำเข้าแหล่งนี้ใหม่เพื่อลองอีกครั้ง</string>
+    <string name="sources_management_signed_by">ลงนามโดย</string>
+    <string name="sources_management_signing_key_changed_badge">คีย์เปลี่ยนไป</string>
+    <string name="sources_management_signing_key_changed_hint">เวอร์ชันล่าสุดไม่ได้ลงนามด้วยคีย์ที่แหล่งที่มานี้เคยใช้ก่อนหน้านี้ จึงไม่ได้ติดตั้ง แตะเพื่อตรวจสอบ</string>
     <string name="sources_management_source_enabled">แหล่งที่มาเปิดใช้งานแล้ว</string>
     <string name="sources_management_source_disabled">แหล่งที่มาปิดใช้งานแล้ว</string>
     <string name="sources_management_source_updating">กำลังอัปเดตแหล่งที่มา</string>
@@ -227,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">ไม่พบลิงก์ในคลิปบอร์ด</string>
     <string name="sources_dialog_local">อุปกรณ์</string>
     <string name="sources_dialog_local_files">เลือกไฟล์ต้นทางแพตช์</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">เพิ่มไฟล์เพิ่มเติม</string>
-    <string name="sources_dialog_local_file_tap_hint">แตะเพื่อเรียกดูที่เก็บข้อมูล</string>
     <string name="sources_dialog_local_invalid_extension">ไฟล์ต้องมีนามสกุล .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">อัปเดต %s</string>
@@ -246,18 +246,22 @@
     <string name="sources_download_fail">ไม่สามารถดาวน์โหลดแหล่งที่มาได้: %s</string>
     <string name="sources_download_fail_named">ไม่สามารถอัปเดต \'%s\' ได้ โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณและลองอีกครั้ง</string>
     <string name="sources_download_endpoint_not_found">ไม่พบข้อมูลเมตาแพตช์สำหรับ \'%s\'</string>
+    <string name="sources_signing_key_changed_named">\'%s\' ไม่ได้รับการอัปเดตเนื่องจากเวอร์ชันล่าสุดไม่ได้ลงนามด้วยคีย์ที่เคยใช้ก่อนหน้านี้</string>
+    <string name="sources_signing_key_changed_local">ไฟล์นี้ไม่ได้ลงนามด้วยคีย์ที่แหล่งที่มานี้เคยใช้ก่อนหน้านี้ หากต้องการเชื่อถือไฟล์นี้ ให้ลบแหล่งที่มาแล้วเพิ่มไฟล์อีกครั้ง</string>
+    <string name="sources_signing_key_trust_title">เชื่อถือคีย์ใหม่หรือไม่?</string>
+    <string name="sources_signing_key_trust_message">เวอร์ชันล่าสุดถูกลงนามด้วยคีย์ที่แตกต่างกัน อาจเป็นเพราะนักพัฒนาเปลี่ยนคีย์ของตนเอง หรือมีผู้อื่นเผยแพร่เวอร์ชันนี้ ให้เชื่อถือก็ต่อเมื่อนักพัฒนาได้ประกาศคีย์ใหม่เท่านั้น</string>
+    <string name="sources_signing_key_trust_message_unsigned">เวอร์ชันล่าสุดไม่ได้มีการลงนาม อาจเป็นเพราะนักพัฒนาเลิกการลงนามเวอร์ชัน หรือมีผู้อื่นเผยแพร่เวอร์ชันนี้ ให้เชื่อถือก็ต่อเมื่อนักพัฒนาได้ประกาศแจ้งไว้เท่านั้น</string>
+    <string name="sources_signing_key_trusted">คีย์ที่เชื่อถือได้</string>
+    <string name="sources_signing_key_new">คีย์ใหม่</string>
     <string name="sources_patch_expert_badge">ผู้เชี่ยวชาญ</string>
     <string name="sources_patch_expert_badge_tooltip">เปิดใช้งานโหมดผู้เชี่ยวชาญในการตั้งค่าเพื่อเลือกแพตช์นี้ด้วยตนเอง</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">ต้องการความช่วยเหลือในการค้นหา APK เวอร์ชันที่ยังไม่ถูกแพตช์?</string>
     <string name="home_apk_availability_dialog_simple">เพื่อที่จะแพตช์ &lt;b&gt;%s&lt;/b&gt; คุณต้องมี APK ที่ยังไม่ถูกแพตช์เวอร์ชัน:</string>
     <string name="home_apk_availability_dialog_expert">เพื่อที่จะแพตช์ &lt;b&gt;%s&lt;/b&gt; คุณต้องมี APK ที่ยังไม่ถูกแพตช์ของเวอร์ชัน:</string>
     <string name="home_apk_availability_recommended_label">แนะนำ</string>
     <string name="home_apk_availability_unpatched_label">ไม่ได้แพตช์</string>
     <string name="home_apk_availability_incompatible_label">ไม่รองรับ</string>
     <string name="home_apk_availability_installed_version">ติดตั้งบนอุปกรณ์นี้แล้ว: %s</string>
-    <string name="home_apk_availability_yes">ใช่, ช่วยฉันค้นหา APK</string>
-    <string name="home_apk_availability_no">ไม่, ฉันมี APK แล้ว</string>
     <string name="home_apk_helper_download">ใช้แอปตัวช่วย</string>
     <string name="home_apk_helper_untrusted">มีแอปผู้ช่วยติดตั้งแล้ว แต่ยังไม่ได้ความไว้วางใจ ดังนั้นจึงไม่ปรากฏที่นี่</string>
     <string name="home_apk_helper_untrusted_action">ตรวจสอบผู้ช่วย</string>
@@ -273,8 +277,6 @@
     <string name="home_apk_helper_wrong_package">แอปตัวช่วยส่งคืนแอปอื่นที่ไม่ใช่แอปที่กำลังแพตช์</string>
     <string name="home_apk_helper_installed_unavailable">Morphe ไม่สามารถใช้แอปที่ติดตั้งอยู่ได้</string>
     <string name="home_apk_helper_installed_incompatible">ไม่สามารถแพตช์เวอร์ชันที่ติดตั้งอยู่ได้</string>
-    <string name="home_apk_use_saved">ใช้ APK ที่บันทึกไว้</string>
-    <string name="home_apk_use_installed">ใช้ APK ที่ติดตั้งไว้</string>
     <string name="home_apk_use_saved_unsupported">แพตช์ไม่รองรับไฟล์ที่บันทึกไว้นี้ การแพตช์จะขอให้คุณยืนยัน หรือเลือกไฟล์ APK อื่น</string>
     <string name="home_apk_use_installed_unverified">ไม่สามารถตรวจสอบลายเซ็นของแอปที่ติดตั้งได้ ดังนั้นจึงอาจได้รับการแพตช์แล้ว</string>
     <string name="home_unverified">ไม่ได้รับการยืนยัน</string>
@@ -310,14 +312,14 @@
     <string name="home_download_instructions_copy_link">คัดลอกลิงก์</string>
     <string name="home_download_instructions_link_copied">คัดลอกลิงก์แล้ว</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">เลือก APK ที่ดาวน์โหลด</string>
-    <string name="home_file_picker_prompt_description">เลือกไฟล์ APK &lt;b&gt;%s&lt;/b&gt; ที่คุณดาวน์โหลด</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">เปิดไฟล์ APK</string>
     <string name="home_recommended_version">เวอร์ชันแนะนำ</string>
     <string name="home_selected_version">เลือกเวอร์ชัน</string>
     <string name="home_select_apk_title">เลือกไฟล์ APK</string>
-    <string name="home_select_any_apk_description">เลือกไฟล์ APK ของแอปใดก็ได้ หรือเลือกแอปที่ติดตั้งบนอุปกรณ์นี้อยู่แล้ว</string>
     <string name="home_use_installed_app">ใช้แอปที่ติดตั้งแล้ว</string>
+    <string name="home_use_installed_app_description">เลือกแอปที่มีอยู่ในอุปกรณ์นี้</string>
+    <string name="home_open_apk_file_description">เลือกไฟล์ APK, APKM, APKS หรือ XAPK จากที่จัดเก็บข้อมูล</string>
     <string name="home_installed_app_picker_title">แอปที่ติดตั้งแล้ว</string>
     <string name="home_installed_app_picker_empty">ไม่พบแอปพลิเคชัน</string>
     <string name="home_installed_app_picker_filter_user">เฉพาะแอปพลิเคชันของผู้ใช้</string>
@@ -351,9 +353,6 @@
     <string name="expert_mode_patch_required_by_installer">จำเป็นสำหรับเป้าหมายการติดตั้งที่เลือก</string>
     <string name="expert_mode_patch_unavailable_for_installer">ใช้ไม่ได้กับเป้าหมายการติดตั้งที่เลือก</string>
     <string name="expert_mode_multiple_sources_warning_title">หลายแหล่งที่มาแพตช์ถูกเลือก</string>
-    <string name="expert_mode_multiple_sources_warning_message">"คุณเลือกแพตช์จากหลายที่มารวมกันซึ่งอาจจะมีผลกระทบต่อความเข้ากันของแอปพลิเคชันหรือพบปัญหาแปลกๆ
-
-คุณแน่ใจที่จะดำเนินต่อไปหรือไม่?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK ที่ยังไม่ได้รับการยืนยัน</string>
     <string name="home_invalid_signature_message">APK ที่คุณเลือกสำหรับ &lt;b&gt;%s&lt;/b&gt; ไม่ตรงกับใบรับรองการลงนามที่คาดหวัง อาจถูกแก้ไขหรือมาจากแหล่งที่ไม่น่าเชื่อถือ</string>
@@ -367,7 +366,9 @@
     <string name="home_dialog_unsupported_version_experimental_label">ทดลอง</string>
     <string name="home_dialog_unsupported_version_experimental_description">รุ่นนี้มีการรองรับแบบทดลองและอาจไม่เสถียรหรือไม่สมบูรณ์</string>
     <string name="morphe_experimental_app_version_dialog_title">คุณต้องการทดลองไหม? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">เวอร์ชั่นนี้ของ &lt;b&gt;%s&lt;/b&gt; มีการรองรับแบบทดลองในระยะเริ่มต้น&lt;br/&gt;&lt;br/&gt;🔧 โปรดคาดว่าแอปจะทำงานแปลกๆ หรือมีข้อผิดพลาดที่ไม่สามารถระบุได้ ในขณะที่แพตช์ถูกปรับปรุงสำหรับแอปเวอร์ชันนี้</string>
+    <string name="morphe_experimental_app_version_dialog_message">"เวอร์ชันนี้ของ &lt;b&gt;%s&lt;/b&gt; มีการรองรับแบบทดลองในระยะเริ่มต้น
+
+🔧 โปรดคาดว่าแอปจะทำงานแปลกๆ หรือมีข้อผิดพลาดที่ไม่สามารถระบุได้ ในขณะที่แพตช์ถูกปรับปรุงสำหรับแอปเวอร์ชันนี้"</string>
     <string name="home_dialog_unsupported_version_dialog_title">เวอร์ชันนี้ไม่รองรับ</string>
     <string name="home_dialog_unsupported_version_dialog_description">ไฟล์ APK นี้ไม่ใช่เวอร์ชันแอปที่แนะนำ หากดำเนินต่อไปอาจจะใช้งานไม่ได้</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -504,7 +505,6 @@
     <string name="shortcut_check_updates_long">ตรวจสอบการอัปเดตแพตช์</string>
     <string name="shortcut_patch_app">แพตช์ %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">คุณแน่ใจหรือไม่ว่าต้องการลบแอปนี้?</string>
     <string name="batch_uninstall_confirm_body">แอปที่เลือกจะถูกลบออกจากอุปกรณ์ของคุณอย่างถาวร</string>
     <string name="home_app_info_remove_app_warning">การดำเนินการนี้จะลบถาวร:</string>
     <string name="home_app_info_delete_item_database">บันทึกฐานข้อมูล</string>
@@ -666,8 +666,7 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">กำลังดำเนินการแพตช์…</string>
     <string name="patcher_notification_text">แตะเพื่อกลับไปยังตัวแพตช์</string>
-    <string name="patcher_stop_confirm_title">หยุดตัวแพตช์</string>
-    <string name="patcher_stop_confirm_description">คุณแน่ใจหรือไม่ว่าต้องการหยุดกระบวนการแพตช์?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">กำลังแปลงแอปของคุณให้เป็นสิ่งที่ยอดเยี่ยม… 🏆</string>
     <string name="patcher_message_2">กำลังสอนแอปเก่าให้ทำสิ่งใหม่ๆ… 🎩</string>
@@ -705,7 +704,7 @@
     <string name="patched_app_save_failed_toast">ไม่สามารถบันทึกแอปที่แพตช์แล้วได้</string>
     <string name="plugin_activity_dialog_body">ต้องมีการติดต่อผู้ใช้เพื่อดำเนินการต่อไปนี้</string>
     <string name="patcher_process_killed_message">ระบบหยุดการทำงานของตัวแพตช์ก่อนที่จะเสร็จสิ้น โดยปกติแล้วเพื่อเพิ่มพื้นที่ว่างในหน่วยความจำ โปรดปิดแอปอื่นๆ แล้วลองใหม่อีกครั้ง</string>
-    <string name="patcher_process_crashed_message">ตัวแพตเชอร์หยุดทำงานก่อนที่จะเสร็จสิ้น หากเกิดขึ้นอีก ให้ปิด \"Use embedded VM\" ในการตั้งค่าและรายงานปัญหาพร้อมกับส่งล็อก</string>
+    <string name="patcher_process_crashed_message">ตัวแพตช์หยุดทำงานก่อนที่จะเสร็จสิ้น หากเกิดขึ้นอีก ให้ปิด \"ใช้ VM ในตัว\" ในการตั้งค่า และรายงานปัญหาพร้อมบันทึก</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
     <string name="patcher_out_of_memory_message">ตัวแพตช์ทำงานล้มเหลวเนื่องจากหน่วยความจำหมดโดยมีฮีปขนาด %1$s MB แอปนี้มีขนาดใหญ่เกินไปสำหรับแพตช์ที่เลือก ลองแพตช์โดยใช้แหล่งแพตช์น้อยลง หรือเลือกแพตช์ให้น้อยลง</string>
     <string name="install_app_success">ติดตั้งสำเร็จแล้ว</string>
@@ -809,21 +808,15 @@
     <string name="settings_appearance_repatch_notice_description">แสดงแบนเนอร์เมื่อแอปที่แพตช์แล้วสามารถแพตช์ซ้ำได้</string>
     <string name="settings_appearance_more_apps_card">การ์ดแอปเพิ่มเติม</string>
     <string name="settings_appearance_more_apps_card_description">แสดงการ์ดใต้แอปที่นำไปสู่แพตช์ชุมชน</string>
-    <string name="settings_appearance_app_card_colors">สีการ์ดแอป</string>
     <string name="settings_appearance_app_card_colors_default">ค่าเริ่มต้น</string>
-    <string name="settings_appearance_app_card_colors_default_description">กำหนดสีให้บันเดิลของแต่ละแอป</string>
     <string name="settings_appearance_app_card_colors_accent">สีเน้น</string>
-    <string name="settings_appearance_app_card_colors_accent_description">ใช้สีเน้นของแอปสำหรับการ์ดแอปในบ้าน</string>
     <string name="settings_appearance_app_card_colors_gradient">การไล่ระดับสี</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">ใช้การไล่ระดับสีที่กำหนดเองหนึ่งรายการสำหรับการ์ดแอปในหน้าจอหลัก</string>
     <string name="settings_appearance_app_card_colors_solid">สีทึบ</string>
-    <string name="settings_appearance_app_card_colors_solid_description">ใช้สีที่กำหนดเองหนึ่งสีสำหรับการ์ดแอปในหน้าจอหลัก</string>
     <string name="settings_appearance_app_card_colors_start">สีเริ่ม</string>
     <string name="settings_appearance_app_card_colors_middle">สีกลาง</string>
     <string name="settings_appearance_app_card_colors_end">สีจบ</string>
     <string name="settings_appearance_app_card_colors_solid_color">สีทึบ</string>
     <string name="settings_appearance_app_card_colors_bundle">สีบันเดิลแอป</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">ใช้สีของแอปแต่ละแอปที่นี่ ซึ่งจะปรับเฉดสีโดยอัตโนมัติเพื่อให้เข้ากัน</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">ไอคอนแอป</string>
     <string name="settings_appearance_app_icon_selector_description">หน้าตาของ Morphe บนหน้าจอหลักและในลิ้นชักแอป</string>
@@ -849,7 +842,7 @@
     <string name="settings_appearance_app_icon_mark_white">ขาว</string>
     <string name="settings_appearance_app_icon_mark_black">ดำ</string>
     <string name="settings_appearance_app_icon_change_dialog_title">เปลี่ยนไอคอนแอป?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">เปลี่ยนเป็น &lt;b&gt;%s&lt;/b&gt; แล้วเริ่มใหม่หรือไม่?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">เปลี่ยนไอคอน</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1036,6 +1029,8 @@ morphe_header_custom_dark.png
     <string name="installer_play_store_warning_continue">ฉันเข้าใจแล้ว ดำเนินการต่อ</string>
     <string name="installer_play_store_mode">ติดตั้งเป็น Play Store</string>
     <string name="installer_play_store_mode_description">กำหนด Google Play Store เป็นแหล่งติดตั้ง</string>
+    <string name="settings_nomount_only">NoMount เท่านั้น</string>
+    <string name="settings_nomount_only_description">ติดตั้งแอปด้วย NoMount เท่านั้น และจะไม่ถอยกลับไปใช้ bind mount เพื่อให้แอปยังคงไม่ถูกติดตั้งหากไม่มี NoMount</string>
     <string name="settings_prompt_installer_on_install">แจ้งเตือนการเลือกตัวติดตั้ง</string>
     <string name="settings_prompt_installer_on_install_description">ถามวิธีการติดตั้งแอปทุกแอป: ต้องมีสิทธิ์รูทก่อนแพตช์ หรือหลังจากแพตช์เสร็จแล้ว</string>
     <string name="settings_auto_install_with_shizuku">ติดตั้งอัตโนมัติหลังจากการแพตช์</string>
@@ -1219,7 +1214,6 @@ morphe_header_custom_dark.png
     <string name="settings_system_apk_download_helper_trusted_count">ไว้วางใจแล้ว: %1$d จาก %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">แอปตัวช่วยสามารถดาวน์โหลด APK ต้นฉบับให้คุณได้ เฉพาะแอปที่คุณไว้วางใจที่นี่เท่านั้นที่จะแสดงในคำแนะนำการดาวน์โหลด</string>
     <string name="settings_system_apk_download_helper_trust_title">ไว้วางใจผู้ช่วยตัวนี้?</string>
-    <string name="settings_system_apk_download_helper_trust">ไว้วางใจ</string>
     <string name="settings_system_apk_download_helper_warning">APK มาจากแอปตัวช่วย ดังนั้นให้ไว้วางใจเฉพาะแอปที่คุณรู้จักเท่านั้น Morphe ยังคงตรวจสอบแพ็กเกจ เวอร์ชัน และลายเซ็นของทุกไฟล์ก่อนแพตช์</string>
     <string name="settings_system_apk_download_helper_installed_by">ติดตั้งโดย %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">ไม่ทราบผู้ติดตั้ง</string>
@@ -1314,6 +1308,7 @@ morphe_header_custom_dark.png
     <string name="include">รวม</string>
     <string name="disable">ปิดการใช้งาน</string>
     <string name="enable">อนุญาต</string>
+    <string name="trust">เชื่อถือ</string>
     <string name="loading">กำลังโหลด…</string>
     <string name="creating">กำลังสร้าง…</string>
     <string name="processing_apk">กำลังประมวลผล APK…</string>

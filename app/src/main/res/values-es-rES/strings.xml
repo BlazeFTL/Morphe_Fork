@@ -98,8 +98,8 @@
     <string name="home_category_name">Nombre de la categoría</string>
     <string name="home_category_move_to">Mover a la categoría</string>
     <string name="home_category_move_selected_title">Mover aplicaciones seleccionadas</string>
-    <string name="home_category_delete_confirm_title">Eliminar categoría</string>
-    <string name="home_category_delete_confirm_message">¿Eliminar la categoría &lt;b&gt;%1$s&lt;/b&gt;? Las aplicaciones que contiene volverán a &lt;b&gt;%2$s&lt;/b&gt;</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">No hay acciones disponibles para esta categoría</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">¿Qué aplicación quieres parchear?</string>
@@ -211,6 +211,9 @@
     <string name="sources_management_outdated_manager_hint">Esta fuente está creada para el parcheador %1$s, pero Morphe %2$s incluye el parcheador %3$s. Actualiza Morphe para usarlo</string>
     <string name="sources_management_held_back_badge">Falló</string>
     <string name="sources_management_held_back_hint">Esta fuente hizo que Morphe fallara al cargarse, por lo que se omite. Actualízala o vuelve a importarla para intentarlo de nuevo</string>
+    <string name="sources_management_signed_by">Firmado por</string>
+    <string name="sources_management_signing_key_changed_badge">Clave cambiada</string>
+    <string name="sources_management_signing_key_changed_hint">La última versión no está firmada con la clave que esta fuente utilizaba anteriormente, por lo que no se instaló. Toca para revisarla</string>
     <string name="sources_management_source_enabled">Fuente activada</string>
     <string name="sources_management_source_disabled">Fuente desactivada</string>
     <string name="sources_management_source_updating">Actualizando fuente</string>
@@ -227,9 +230,6 @@
     <string name="sources_dialog_paste_no_links">No se encontraron enlaces en el portapapeles</string>
     <string name="sources_dialog_local">Local</string>
     <string name="sources_dialog_local_files">Seleccionar archivos de fuente de parches</string>
-    <!-- Button under the files already picked, which opens the picker again -->
-    <string name="sources_dialog_local_add_more">Añadir más archivos</string>
-    <string name="sources_dialog_local_file_tap_hint">Pulsa para explorar el almacenamiento</string>
     <string name="sources_dialog_local_invalid_extension">El archivo debe tener una extensión .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Actualiza %s</string>
@@ -237,6 +237,7 @@
     <string name="sources_dialog_url_invalid">La URL debe apuntar a un repositorio de GitHub/GitLab o a un archivo .json</string>
     <string name="sources_dialog_preinstalled">Preinstalada</string>
     <string name="sources_dialog_community">Parches de la comunidad</string>
+    <string name="sources_dialog_choose_apps">Seleccionar aplicaciones</string>
     <string name="sources_dialog_choose_apps_description">Elige qué aplicaciones conservar una vez cargada la fuente</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Fuentes de parches de terceros</string>
@@ -246,18 +247,22 @@
     <string name="sources_download_fail">Error al descargar las fuentes: %s</string>
     <string name="sources_download_fail_named">\"%s\" no se pudo actualizar. Comprueba tu conexión a internet e inténtalo de nuevo</string>
     <string name="sources_download_endpoint_not_found">\"%s\": no se encontraron los metadatos del parche</string>
+    <string name="sources_signing_key_changed_named">\'%s\' no se actualizó porque su última versión no está firmada con la clave que utilizaba anteriormente</string>
+    <string name="sources_signing_key_changed_local">El archivo no está firmado con la clave que esta fuente utilizaba anteriormente. Para confiar en él, elimina la fuente y añade el archivo de nuevo</string>
+    <string name="sources_signing_key_trust_title">¿Confiar en la nueva clave?</string>
+    <string name="sources_signing_key_trust_message">La última versión está firmada con una clave diferente. Es posible que el desarrollador haya reemplazado su clave o que alguien más haya publicado esta versión. Confía solo si el desarrollador ha anunciado una nueva clave</string>
+    <string name="sources_signing_key_trust_message_unsigned">La última versión no está firmada. Es posible que el desarrollador haya dejado de firmar las versiones o que alguien más haya publicado esta versión. Confía solo si el desarrollador lo ha anunciado</string>
+    <string name="sources_signing_key_trusted">Clave de confianza</string>
+    <string name="sources_signing_key_new">Clave nueva</string>
     <string name="sources_patch_expert_badge">Experto</string>
     <string name="sources_patch_expert_badge_tooltip">Activa el modo Experto en la configuración para incluir este parche manualmente</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_dialog_title">¿Necesitas ayuda para encontrar un APK original sin parchear?</string>
     <string name="home_apk_availability_dialog_simple">Para parchear &lt;b&gt;%s&lt;/b&gt;, necesitas la versión APK sin parchear:</string>
     <string name="home_apk_availability_dialog_expert">Para parchear &lt;b&gt;%s&lt;/b&gt;, necesitas un APK sin parchear de las versiones:</string>
     <string name="home_apk_availability_recommended_label">Recomendado</string>
     <string name="home_apk_availability_unpatched_label">Sin parchear</string>
     <string name="home_apk_availability_incompatible_label">Incompatible</string>
     <string name="home_apk_availability_installed_version">Instalado en este dispositivo: %s</string>
-    <string name="home_apk_availability_yes">Sí, ayúdame a encontrar un APK</string>
-    <string name="home_apk_availability_no">No, ya tengo un APK</string>
     <string name="home_apk_helper_download">Utilizar una aplicación auxiliar</string>
     <string name="home_apk_helper_untrusted">Una aplicación auxiliar está instalada pero aún no es de confianza, por lo que no se ofrece aquí</string>
     <string name="home_apk_helper_untrusted_action">Revisar asistentes</string>
@@ -273,8 +278,6 @@
     <string name="home_apk_helper_wrong_package">La aplicación auxiliar devolvió una aplicación diferente a la que se está parcheando</string>
     <string name="home_apk_helper_installed_unavailable">Morphe no pudo usar la aplicación instalada</string>
     <string name="home_apk_helper_installed_incompatible">La versión instalada no se puede parchear</string>
-    <string name="home_apk_use_saved">Usar APK guardado</string>
-    <string name="home_apk_use_installed">Usar APK instalado</string>
     <string name="home_apk_use_saved_unsupported">Los parches no son compatibles con esta copia guardada. Al parchearla, se te pedirá confirmación o que elijas otro APK</string>
     <string name="home_apk_use_installed_unverified">No se pudo verificar la firma de la aplicación instalada, por lo que es posible que ya esté parcheada</string>
     <string name="home_unverified">No verificado</string>
@@ -310,14 +313,14 @@
     <string name="home_download_instructions_copy_link">Copiar enlace</string>
     <string name="home_download_instructions_link_copied">Enlace copiado</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
-    <string name="home_file_picker_prompt_title">Selecciona el APK descargado</string>
-    <string name="home_file_picker_prompt_description">Selecciona el archivo APK de &lt;b&gt;%s&lt;/b&gt; que acabas de descargar</string>
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <string name="home_file_picker_prompt_open_apk">Abrir archivo APK</string>
     <string name="home_recommended_version">Versión recomendada</string>
     <string name="home_selected_version">Versión seleccionada</string>
     <string name="home_select_apk_title">Selecciona el APK</string>
-    <string name="home_select_any_apk_description">Selecciona un archivo APK de cualquier aplicación o elige una aplicación que ya esté instalada en este dispositivo</string>
     <string name="home_use_installed_app">Usar aplicación instalada</string>
+    <string name="home_use_installed_app_description">Elige una aplicación que ya esté en este dispositivo</string>
+    <string name="home_open_apk_file_description">Elige un archivo APK, APKM, APKS o XAPK del almacenamiento</string>
     <string name="home_installed_app_picker_title">Aplicaciones instaladas</string>
     <string name="home_installed_app_picker_empty">No se encontraron aplicaciones</string>
     <string name="home_installed_app_picker_filter_user">Solo aplicaciones de usuario</string>
@@ -351,9 +354,6 @@
     <string name="expert_mode_patch_required_by_installer">Necesario para el destino de instalación seleccionado</string>
     <string name="expert_mode_patch_unavailable_for_installer">No disponible para el destino de instalación seleccionado</string>
     <string name="expert_mode_multiple_sources_warning_title">Se han seleccionado varias fuentes de parches</string>
-    <string name="expert_mode_multiple_sources_warning_message">"Has seleccionado parches de varias fuentes de parches. Esto puede causar problemas de compatibilidad o comportamiento inesperado.
-
-¿Realmente quieres continuar?"</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK no verificado</string>
     <string name="home_invalid_signature_message">El APK que has seleccionado para &lt;b&gt;%s&lt;/b&gt; no coincide con el certificado de firma esperado. Puede que esté modificado o provenga de una fuente no fiable</string>
@@ -367,7 +367,9 @@ Para un mejor resultado, esta aplicación te recomienda parchear un &lt;b&gt;APK
     <string name="home_dialog_unsupported_version_experimental_label">Experimental</string>
     <string name="home_dialog_unsupported_version_experimental_description">Esta versión tiene soporte experimental y puede ser inestable o incompleta</string>
     <string name="morphe_experimental_app_version_dialog_title">¿Quieres experimentar? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">Esta versión de &lt;b&gt;%s&lt;/b&gt; cuenta con soporte experimental preliminar&lt;br/&gt;&lt;br/&gt;🔧 Pueden aparecer comportamientos inesperados de la aplicación o errores desconocidos mientras se ajustan los parches para esta versión</string>
+    <string name="morphe_experimental_app_version_dialog_message">"Esta versión de &lt;b&gt;%s&lt;/b&gt; cuenta con soporte experimental preliminar.
+
+🔧 Pueden aparecer comportamientos inesperados de la aplicación o errores desconocidos mientras se ajustan los parches para esta versión de la aplicación"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Versión no compatible</string>
     <string name="home_dialog_unsupported_version_dialog_description">Este APK no es una versión recomendada de la aplicación. Continuar puede resultar en una aplicación no funcional</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -504,7 +506,6 @@ Para un mejor resultado, esta aplicación te recomienda parchear un &lt;b&gt;APK
     <string name="shortcut_check_updates_long">Buscar actualizaciones de los parches</string>
     <string name="shortcut_patch_app">Parchear %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_app_confirmation">¿Realmente quieres desinstalar esta aplicación?</string>
     <string name="batch_uninstall_confirm_body">Las aplicaciones seleccionadas se eliminarán permanentemente de tu dispositivo</string>
     <string name="home_app_info_remove_app_warning">Esto eliminará permanentemente:</string>
     <string name="home_app_info_delete_item_database">Entrada de base de datos</string>
@@ -666,8 +667,7 @@ Al desinstalarla se borrarán permanentemente todos los datos de la aplicación"
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Aplicando parches…</string>
     <string name="patcher_notification_text">Pulsa para volver al parcheador</string>
-    <string name="patcher_stop_confirm_title">Detener parcheador</string>
-    <string name="patcher_stop_confirm_description">¿Realmente quieres detener el proceso de parcheo?</string>
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Transformando tu aplicación en algo increíble… 🏆</string>
     <string name="patcher_message_2">Enseñando trucos nuevos a aplicaciones viejas… 🎩</string>
@@ -809,21 +809,15 @@ Al desinstalarla se borrarán permanentemente todos los datos de la aplicación"
     <string name="settings_appearance_repatch_notice_description">Muestra un banner cuando las aplicaciones parcheadas se pueden volver a parchear</string>
     <string name="settings_appearance_more_apps_card">Tarjeta de Más aplicaciones</string>
     <string name="settings_appearance_more_apps_card_description">Muestra una tarjeta debajo de las aplicaciones que lleva a los parches de la comunidad</string>
-    <string name="settings_appearance_app_card_colors">Colores de las tarjetas de aplicaciones</string>
     <string name="settings_appearance_app_card_colors_default">Predeterminado</string>
-    <string name="settings_appearance_app_card_colors_default_description">Da a cada aplicación el color de su propio paquete</string>
     <string name="settings_appearance_app_card_colors_accent">Color de acento</string>
-    <string name="settings_appearance_app_card_colors_accent_description">Usa el color de acento de la aplicación para las tarjetas de aplicaciones de inicio</string>
     <string name="settings_appearance_app_card_colors_gradient">Degradado</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">Usa un degradado personalizado para las tarjetas de aplicaciones de Inicio</string>
     <string name="settings_appearance_app_card_colors_solid">Sólido</string>
-    <string name="settings_appearance_app_card_colors_solid_description">Usa un color personalizado para las tarjetas de aplicaciones de inicio</string>
     <string name="settings_appearance_app_card_colors_start">Color inicial</string>
     <string name="settings_appearance_app_card_colors_middle">Color intermedio</string>
     <string name="settings_appearance_app_card_colors_end">Color final</string>
     <string name="settings_appearance_app_card_colors_solid_color">Color sólido</string>
     <string name="settings_appearance_app_card_colors_bundle">Color del paquete de la aplicación</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">Usa el color propio de cada aplicación aquí, sombreado automáticamente para que encaje</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Icono de la aplicación</string>
     <string name="settings_appearance_app_icon_selector_description">Cómo se ve Morphe en la pantalla de inicio y en el cajón de aplicaciones</string>
@@ -849,7 +843,7 @@ Al desinstalarla se borrarán permanentemente todos los datos de la aplicación"
     <string name="settings_appearance_app_icon_mark_white">Blanco</string>
     <string name="settings_appearance_app_icon_mark_black">Negro</string>
     <string name="settings_appearance_app_icon_change_dialog_title">¿Cambiar el icono de la aplicación?</string>
-    <string name="settings_appearance_app_icon_change_dialog_message">¿Cambiar a &lt;b&gt;%s&lt;/b&gt; y reiniciar?</string>
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Cambiar icono</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1036,6 +1030,8 @@ Las dimensiones de la imagen deben ser las siguientes:
     <string name="installer_play_store_warning_continue">Entiendo, continuar</string>
     <string name="installer_play_store_mode">Instalar como Play Store</string>
     <string name="installer_play_store_mode_description">Marca Google Play Store como la fuente de instalación</string>
+    <string name="settings_nomount_only">Solo NoMount</string>
+    <string name="settings_nomount_only_description">Monta las aplicaciones solo con NoMount y nunca recurre a un montaje de enlace, por lo que permanecen desmontadas sin él</string>
     <string name="settings_prompt_installer_on_install">Solicitud de selección del instalador</string>
     <string name="settings_prompt_installer_on_install_description">Pregunta cómo instalar cada aplicación: con root antes del parcheo o, de lo contrario, después del parcheo</string>
     <string name="settings_auto_install_with_shizuku">Instalación automática después del parcheo</string>
@@ -1219,7 +1215,6 @@ Detalles: %2$s"</string>
     <string name="settings_system_apk_download_helper_trusted_count">De confianza: %1$d de %2$d</string>
     <string name="settings_system_apk_download_helper_dialog_description">Las aplicaciones auxiliares pueden descargar APKs originales por ti. En las instrucciones de descarga solo se ofrecen aquellas en las que confíes aquí</string>
     <string name="settings_system_apk_download_helper_trust_title">¿Confiar en este asistente?</string>
-    <string name="settings_system_apk_download_helper_trust">Confiar</string>
     <string name="settings_system_apk_download_helper_warning">El APK proviene de la aplicación auxiliar, así que confía solo en aplicaciones que conozcas. Morphe sigue comprobando el paquete, la versión y la firma de cada archivo antes de parchear</string>
     <string name="settings_system_apk_download_helper_installed_by">Instalada por %s</string>
     <string name="settings_system_apk_download_helper_installed_by_unknown">Instalador desconocido</string>
@@ -1314,6 +1309,7 @@ Detalles: %2$s"</string>
     <string name="include">Incluir</string>
     <string name="disable">Desactivar</string>
     <string name="enable">Activar</string>
+    <string name="trust">Confiar</string>
     <string name="loading">Cargando…</string>
     <string name="creating">Creando…</string>
     <string name="processing_apk">Procesando APK…</string>

@@ -347,10 +347,11 @@ private fun PatcherScreenContent(
     // Cancel patching confirmation dialog
     DialogHost(visible = showCancelDialog) {
         ConfirmDialog(
-            title = stringResource(R.string.patcher_stop_confirm_title),
-            message = stringResource(R.string.patcher_stop_confirm_description),
-            primaryText = stringResource(R.string.yes),
-            secondaryText = stringResource(R.string.no),
+            title = stringResource(R.string.patcher_stop_title),
+            message = stringResource(R.string.patcher_stop_discards),
+            primaryText = stringResource(R.string.stop),
+            // Cancel would read as cancelling the patching itself
+            secondaryText = stringResource(R.string.patcher_keep_patching),
             onConfirm = {
                 showCancelDialog = false
                 patcherViewModel.cancelPatching()

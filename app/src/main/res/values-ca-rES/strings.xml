@@ -24,6 +24,8 @@
     <string name="home_update_success_subtitle">Les teves fonts estan actualitzades</string>
     <string name="home_sources_are_loading">S\'estan carregant les fonts, si us plau espereu…</string>
     <string name="home_app_grouping_none">Cap</string>
+    <!-- %s is the name of the category -->
+    <!-- %s is the name of the category the apps fall back to -->
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Quina aplicació vols aplicar els pedaços?</string>
     <!-- Humorous hype message with light nostalgia -->
@@ -69,7 +71,6 @@
     <string name="sources_dialog_display_name">Nom mostrat</string>
     <string name="sources_dialog_rename">Canviar la font del pegat</string>
     <string name="sources_dialog_duplicate_name_error">Una font de pegats amb aquest nom ja existeix</string>
-    <!-- Button under the files already picked, which opens the picker again -->
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -82,6 +83,7 @@
     <string name="home_download_instructions_step3">Espereu que la descàrrega s\'acabi, i &lt;b&gt;no instal·leu&lt;/b&gt; l\'APK</string>
     <string name="home_download_instructions_step3_mount">Espereu que la descàrrega s\'acabi, i llavors&lt;b&gt;instal·leu l\'APK&lt;/b&gt;</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
+    <!-- %s is the name of the app whose APK was just downloaded -->
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <!-- Home Screen - Home Sub-Dialogs -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -123,6 +125,7 @@
     <!-- Patcher Screen - Patcher Steps -->
     <!-- Battery optimization pre-flight dialog -->
     <!-- Patcher Screen - Patcher Worker -->
+    <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
     <!-- Patcher Screen - Patcher Messages -->
     <!-- Morphe patches fix YouTube bugs that Google still has not fixed. -->
     <!-- "bytecode" can be translated from "the app code" -->
@@ -141,6 +144,7 @@
     <!-- Settings - Appearance Tab - Interface Scale -->
     <!-- Settings - Appearance Tab - Home Screen Section -->
     <!-- Settings - Appearance Tab - App Icon Selector -->
+    <!-- %s is the name of the icon picked -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <!-- Settings - Advanced Tab - Updates Section -->
     <!-- "Morphe" here is the app itself, not the patches. Do not translate this as pre-release patches -->

@@ -118,6 +118,12 @@ dependencies {
     testImplementation(libs.kotlin.test.junit)
 }
 
+// The full Kotlin reflection comes with the patcher, yet neither it, the patches nor the app go
+// beyond the reflection of the standard library, as the patcher host already runs without it
+configurations.configureEach {
+    if (name.endsWith("RuntimeClasspath")) exclude(group = "org.jetbrains.kotlin", module = "kotlin-reflect")
+}
+
 /**
  * Languages Morphe is translated into as language and region pairs, read from the resource folders
  * Crowdin writes, so a new language needs no change anywhere else.
@@ -259,6 +265,8 @@ android {
         externalNativeBuild {
             cmake {
                 arguments += "-DANDROID_STL=c++_shared"
+                // Only an ABI the app ships a JVM for starts one
+                abiFilters += embeddedJvms.keys
             }
         }
 

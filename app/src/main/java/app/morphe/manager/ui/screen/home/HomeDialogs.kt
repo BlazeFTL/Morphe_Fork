@@ -66,9 +66,7 @@ import org.koin.core.parameter.parametersOf
 fun HomeDialogs(
     homeViewModel: HomeViewModel,
     storagePickerLauncher: () -> Unit,
-    openBundlePicker: () -> Unit,
     patchesItem: MutableState<HomeAppItem?>,
-    onSourceAdded: () -> Unit,
     settingsNavigation: SettingsNavigation
 ) {
     val scope = rememberCoroutineScope()
@@ -96,30 +94,6 @@ fun HomeDialogs(
                 onTrustApkDownloadHelpers = { settingsNavigation.openSubpage(SettingsSubpage.APK_DOWNLOAD_HELPERS) }
             )
         }
-    }
-
-    // Add bundle dialog
-    DialogHost(visible = homeViewModel.showAddSourceDialog) {
-        AddSourceDialog(
-            onDismiss = {
-                homeViewModel.showAddSourceDialog = false
-                homeViewModel.clearPickedBundles()
-            },
-            onRemoteSubmit = { urls, chooseApps ->
-                homeViewModel.showAddSourceDialog = false
-                homeViewModel.createRemoteSources(urls, chooseApps)
-                onSourceAdded()
-            },
-            onLocalSubmit = { chooseApps ->
-                homeViewModel.showAddSourceDialog = false
-                homeViewModel.importPickedBundles(chooseApps)
-                onSourceAdded()
-            },
-            onLocalPick = openBundlePicker,
-            onLocalRemove = homeViewModel::unpickBundle,
-            localFiles = homeViewModel.pickedBundleImports,
-            onCheckUrl = homeViewModel.patchBundleRepository::checkRemoteUrl
-        )
     }
 
     // Deep link: Add source confirmation dialog
@@ -226,12 +200,14 @@ fun HomeDialogs(
                 homeViewModel.getBundleDisplayName(uid) ?: uid.toString()
             }
         }
+        val launchPackage = remember(item) { homeViewModel.launchablePackage(item) }
         AppPatchesDialog(
             item = item,
             patchesByBundle = patchesByBundle.orEmpty(),
             bundleNames = bundleNames,
             isLoading = patchesByBundle == null,
-            onDismiss = { patchesItem.value = null }
+            onDismiss = { patchesItem.value = null },
+            onOpenApp = launchPackage?.let { { homeViewModel.openApp(it) } }
         )
     }
 }
@@ -323,16 +299,15 @@ private fun DialogHostScope.PatchFlowDialog(
         // Dialog 3: File picker prompt
         HomeDialog.FilePickerPrompt -> {
             session ?: return
-            val isOtherApps = session.packageName == null
 
             FilePickerPromptDialog(
                 appName = session.appName,
                 packageName = session.packageName,
-                isOtherApps = isOtherApps,
                 isLoadingInstalledApps = flow.loadingInstalledApps,
                 onDismiss = flow::backFromApkSource,
                 onOpenFilePicker = storagePickerLauncher,
-                onUseInstalledApp = if (isOtherApps) flow::loadInstalledAppsForPicker else null
+                // Only universal patches, with no package of their own, can take any installed app
+                onUseInstalledApp = if (session.packageName == null) flow::loadInstalledAppsForPicker else null
             )
         }
 
@@ -884,7 +859,7 @@ private fun DeepLinkScopeRow(
  * Confirmation dialog shown when a .mpp file is opened from a file manager, headed by the name its
  * manifest gives, or the file's while it is read.
  *
- * As in the add source dialog, a file that [check] finds to be another version of a local source
+ * As in the add source panel, a file that [check] finds to be another version of a local source
  * updates it, and one already added has nothing to confirm.
  */
 @Composable

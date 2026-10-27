@@ -8,6 +8,7 @@ package app.morphe.manager.ui.screen.shared
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.MutableTransitionState
 import androidx.compose.animation.core.animate
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.Orientation
@@ -23,6 +24,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.layout
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
@@ -36,9 +38,10 @@ import com.composables.icons.materialsymbols.MaterialSymbols
 import com.composables.icons.materialsymbols.rounded.*
 
 /**
- * Slide-up surface docked over the bottom of a list: a selection panel, a reorder bar, or the
- * options the list is arranged by. It sits on the bottom edge of the screen like a sheet, its
- * content clear of the navigation bar. Unlike a sheet it leaves the list above it live.
+ * Slide-up surface docked over the bottom of a list: a selection panel, a reorder bar, the options
+ * the list is arranged by, or a form such as the one sources are added from. It sits on the bottom
+ * edge of the screen like a sheet, its content clear of the navigation bar and of the keyboard.
+ * Unlike a sheet it leaves the list above it live.
  *
  * Meant for the home screen's footer dock and the [ListDialog] bottom bar, so the surface, blur and
  * enter/exit animations stay the same everywhere one is docked.
@@ -77,6 +80,7 @@ fun DockedPanel(
         Surface(
             modifier = Modifier
                 .fillMaxWidth()
+                .belowStatusBar()
                 .predictiveBackSlide(backProgress)
                 .graphicsLayer { translationY = dragOffset.floatValue }
                 // A surface of its own with an edge of its own, blurring what scrolls under it
@@ -89,13 +93,31 @@ fun DockedPanel(
             Column(
                 modifier = Modifier
                     .drawnDownBy(dragOffset, onDismiss = onBack)
-                    .navigationBarsPadding()
+                    .windowInsetsPadding(WindowInsets.navigationBars.union(WindowInsets.ime))
                     .padding(bottom = Defaults.SpaceExtraSmall)
             ) {
                 PanelHandle()
                 content()
             }
         }
+    }
+}
+
+/**
+ * Holds a panel under the status bar, however much it holds and however far the keyboard lifts it,
+ * so a panel taller than the room left scrolls its content rather than running up under the bar.
+ */
+@Composable
+private fun Modifier.belowStatusBar(): Modifier {
+    val statusBar = WindowInsets.statusBars
+    return layout { measurable, constraints ->
+        val placeable = measurable.measure(
+            if (constraints.hasBoundedHeight) {
+                val room = (constraints.maxHeight - statusBar.getTop(this)).coerceAtLeast(constraints.minHeight)
+                constraints.copy(maxHeight = room)
+            } else constraints
+        )
+        layout(placeable.width, placeable.height) { placeable.place(0, 0) }
     }
 }
 
@@ -323,19 +345,66 @@ fun SelectionActionBar(
  * short enough for the panel to leave the list above it usable. Destructive actions are kept
  * apart from the rest by a divider. [enabled] holds them all back at once, as an empty selection
  * does.
+ *
+ * An action that comes or goes while the panel is open folds in or out, so the rows around it
+ * slide rather than jump.
  */
 @Composable
 fun PanelActions(actions: List<SelectionAction>, enabled: Boolean = true) {
-    actions.forEachIndexed { index, action ->
+    val slots = remember { PanelActionSlots() }.update(actions)
+    slots.forEachIndexed { index, slot ->
+        val action = slot.action
         val startsDestructiveGroup = action.tone == ActionTone.Destructive &&
-                index > 0 && actions[index - 1].tone != ActionTone.Destructive
+                index > 0 && slots[index - 1].action.tone != ActionTone.Destructive
         if (startsDestructiveGroup) {
             SettingsDivider(modifier = Modifier.padding(vertical = Defaults.SpaceExtraSmall))
         }
         // Keyed so a row keeps its own state when an action ahead of it comes or goes
         key(action.label) {
-            PanelActionRow(action = action, enabled = enabled && action.enabled)
+            SideEffect { slot.visibility.targetState = slot.present }
+            AnimatedVisibility(
+                visibleState = slot.visibility,
+                enter = Animations.expandFadeEnter,
+                exit = Animations.shrinkFadeExit
+            ) {
+                PanelActionRow(action = action, enabled = enabled && action.enabled)
+            }
         }
+    }
+}
+
+/** One row of a [PanelActions], kept after its action is gone until it has folded away. */
+private class PanelActionSlot(var action: SelectionAction, foldIn: Boolean) {
+    var present = true
+    val visibility = MutableTransitionState(!foldIn).apply { targetState = true }
+    val isFolded: Boolean get() = !present && visibility.isIdle && !visibility.currentState
+}
+
+/**
+ * The rows of a [PanelActions] by label: the actions given, with each one that left still where
+ * it stood until folded away. The rows the panel opens with are simply there.
+ */
+private class PanelActionSlots {
+    private var slots = emptyList<PanelActionSlot>()
+    private var opened = false
+
+    fun update(actions: List<SelectionAction>): List<PanelActionSlot> {
+        val byLabel = slots.associateBy { it.action.label }
+        val next = actions.mapTo(ArrayList()) { action ->
+            byLabel[action.label]?.apply {
+                this.action = action
+                present = true
+            } ?: PanelActionSlot(action, foldIn = opened)
+        }
+        slots.forEachIndexed { index, slot ->
+            if (slot in next || slot.isFolded) return@forEachIndexed
+            slot.present = false
+            val anchor = slots.subList(0, index).lastOrNull { it in next }
+            next.add(if (anchor == null) 0 else next.indexOf(anchor) + 1, slot)
+        }
+        slots = next
+        opened = true
+        return next
     }
 }
 
