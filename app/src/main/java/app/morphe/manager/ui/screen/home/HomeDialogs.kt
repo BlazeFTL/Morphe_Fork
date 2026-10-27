@@ -411,7 +411,6 @@ private fun DialogHostScope.PatchFlowDialog(
                         options = selection.options,
                         totalSelectedCount = selection.totalSelectedCount,
                         newPatches = selection.newPatches,
-                        savedPatches = selection.savedPatches,
                         lockStateOf = selection::lockState,
                         holdsUniversalPatches = selection::selectAllHoldsUniversal
                     ),
@@ -420,15 +419,13 @@ private fun DialogHostScope.PatchFlowDialog(
                         onPatchToggle = selection::toggle,
                         onSelectAll = selection::selectAll,
                         onDeselectAll = selection::deselectAll,
-                        onResetToDefault = selection::resetToDefault,
-                        onRestoreSaved = selection::restoreSaved,
-                        onCopyFromBundle = selection::openCopy,
                         onOptionChange = selection::updateOption,
                         onResetOptions = selection::resetOptions
                     ),
                     usesPrerelease = { homeViewModel.getPatchSource(it)?.usesPrerelease == true },
                     hiddenSourceCount = selection.hiddenSources,
                     onShowHiddenSources = selection::revealHiddenSources,
+                    selectionPanel = expertSelectionPanel(selection),
                     onDismiss = flow::dismissExpertMode,
                     onProceed = flow::proceedExpertMode
                 )
@@ -442,25 +439,6 @@ private fun DialogHostScope.PatchFlowDialog(
                         canClearPaths = true,
                         onClearPaths = flow::proceedExpertModeWithoutUnreadablePaths,
                         onDismiss = selection::dismissUnreadablePaths
-                    )
-                }
-
-                val copyTarget = selection.bundles
-                    .firstOrNull { it.uid == selection.copy.targetBundleUid }
-                    ?.let { targetBundle ->
-                        CopySelectionTarget(
-                            packageName = selectedApp.packageName,
-                            bundleUid = targetBundle.uid,
-                            bundleName = targetBundle.name,
-                            appDisplayName = targetBundle.displayName ?: selectedApp.packageName
-                        )
-                    }
-                DialogHost(target = copyTarget) { target ->
-                    CopySelectionFromBundleDialog(
-                        target = target,
-                        candidates = selection.copy.candidates,
-                        onConfirm = selection::applyCopy,
-                        onDismiss = selection.copy::close
                     )
                 }
             }

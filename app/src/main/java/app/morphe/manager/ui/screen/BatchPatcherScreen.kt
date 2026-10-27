@@ -354,7 +354,6 @@ fun BatchPatcherScreen(
                             options = edit.options,
                             totalSelectedCount = edit.totalSelectedCount,
                             newPatches = edit.newPatches,
-                            savedPatches = edit.savedSelection,
                             lockStateOf = edit::lockStateOf,
                             holdsUniversalPatches = edit::selectAllHoldsUniversal
                         ),
@@ -363,9 +362,6 @@ fun BatchPatcherScreen(
                             onPatchToggle = edit::togglePatch,
                             onSelectAll = edit::selectAll,
                             onDeselectAll = edit::deselectAll,
-                            onResetToDefault = edit::resetToDefault,
-                            onRestoreSaved = edit::restoreSaved,
-                            onCopyFromBundle = viewModel::openEditCopyDialog,
                             onOptionChange = edit::updateOption,
                             onResetOptions = edit::resetOptions
                         ),
@@ -373,28 +369,10 @@ fun BatchPatcherScreen(
                         proceedText = stringResource(R.string.save),
                         // The queue combines sources by design, and the tabs make it plain enough
                         warnOnMultipleBundles = false,
+                        selectionPanel = expertSelectionPanel(edit),
                         onDismiss = viewModel::cancelEdit,
                         onProceed = viewModel::applyEdit
                     )
-
-                    val copyTarget = edit.bundles
-                        .firstOrNull { it.uid == viewModel.editCopy.targetBundleUid }
-                        ?.let { bundle ->
-                            CopySelectionTarget(
-                                packageName = edit.configurationKey,
-                                bundleUid = bundle.uid,
-                                bundleName = bundle.name,
-                                appDisplayName = edit.appName
-                            )
-                        }
-                    DialogHost(target = copyTarget) { target ->
-                        CopySelectionFromBundleDialog(
-                            target = target,
-                            candidates = viewModel.editCopy.candidates,
-                            onConfirm = viewModel::applyEditCopy,
-                            onDismiss = viewModel.editCopy::close
-                        )
-                    }
                 }
             }
         }

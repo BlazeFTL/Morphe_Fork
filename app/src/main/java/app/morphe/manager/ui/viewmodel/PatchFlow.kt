@@ -195,7 +195,7 @@ class PatchFlow(
     private val localApkSources: LocalApkSources,
     private val compatibleVersions: StateFlow<Map<String, List<BundledAppTarget>>>,
     private val recommendedVersions: StateFlow<Map<String, AppTarget>>,
-    expertModeCopy: CopySelectionController,
+    expertModePanel: SelectionPanelController,
     private val patcherProcesses: PatcherProcesses
 ) : ApkDownloadHelperHost {
     /** The dialogs the flow has open, see [HomeDialog]. */
@@ -206,7 +206,7 @@ class PatchFlow(
         private set
 
     /** The patches picked by hand for the run, while the expert dialog is open. */
-    val expertMode = ExpertModeSelection(scope, expertModeCopy)
+    val expertMode = ExpertModeSelection(scope, expertModePanel)
 
     /** Starts the patcher on a run once it is set up. */
     var onStartQuickPatch: ((Patcher.ViewModelParams) -> Unit)? = null

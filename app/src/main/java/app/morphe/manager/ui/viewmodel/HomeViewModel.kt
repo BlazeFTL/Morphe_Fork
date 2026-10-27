@@ -85,7 +85,7 @@ class HomeViewModel(
     versionCatalog: AppVersionCatalog,
     private val localApkSources: LocalApkSources,
     /** Picker behind the copy-from-another-bundle action of the expert-mode dialog. */
-    expertModeCopy: CopySelectionController
+    expertModePanel: SelectionPanelController
 ) : ViewModel(), KoinComponent {
     // Past the parameters viewModelOf takes
     private val patcherProcesses: PatcherProcesses by inject()
@@ -320,7 +320,7 @@ class HomeViewModel(
         localApkSources = localApkSources,
         compatibleVersions = compatibleVersionsFlow,
         recommendedVersions = recommendedVersionsFlow,
-        expertModeCopy = expertModeCopy,
+        expertModePanel = expertModePanel,
         patcherProcesses = patcherProcesses
     )
 

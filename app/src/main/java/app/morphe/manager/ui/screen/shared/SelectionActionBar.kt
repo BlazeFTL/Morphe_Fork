@@ -468,6 +468,8 @@ fun PanelRow(
     iconTint: Color = MaterialTheme.colorScheme.onSurfaceVariant,
     titleColor: Color = MaterialTheme.colorScheme.onSurface,
     enabled: Boolean = true,
+    onLongClick: (() -> Unit)? = null,
+    onLongClickLabel: String? = null,
     trailing: (@Composable RowScope.() -> Unit)? = null
 ) {
     val alpha = if (enabled) 1f else Defaults.DISABLED_ALPHA
@@ -478,7 +480,19 @@ fun PanelRow(
             // highlight does not run into the border and the corners the panel is drawn with
             .padding(horizontal = PanelActionInset)
             .heightIn(min = 48.dp)
-            .shapedClickable(PanelActionShape, enabled = enabled, role = Role.Button, onClick = onClick)
+            .then(
+                if (onLongClick != null) {
+                    Modifier.shapedCombinedClickable(
+                        PanelActionShape,
+                        enabled = enabled,
+                        onLongClickLabel = onLongClickLabel,
+                        onLongClick = onLongClick,
+                        onClick = onClick
+                    )
+                } else {
+                    Modifier.shapedClickable(PanelActionShape, enabled = enabled, role = Role.Button, onClick = onClick)
+                }
+            )
             .padding(horizontal = Defaults.SpaceLarge - PanelActionInset),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceLarge)
