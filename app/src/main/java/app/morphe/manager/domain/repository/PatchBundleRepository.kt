@@ -464,14 +464,17 @@ class PatchBundleRepository(
         )
     }
 
+    /** @param await Returns only once the action is applied, see [Store.dispatchAndAwait]. */
     private suspend inline fun dispatchAction(
         name: String,
+        await: Boolean = false,
         crossinline block: suspend ActionContext.(current: BundleState) -> BundleState
     ) {
-        store.dispatch(object : Action<BundleState> {
+        val action = object : Action<BundleState> {
             override suspend fun ActionContext.execute(current: BundleState) = block(current)
             override fun toString() = name
-        })
+        }
+        if (await) store.dispatchAndAwait(action) else store.dispatch(action)
     }
 
     /**
@@ -2269,6 +2272,9 @@ class PatchBundleRepository(
      * In [ImportMode.Replace] mode this first removes existing custom remote bundles that are
      * absent from [snapshots] (the default source and local bundles are always kept), then adds
      * the missing ones. Triggers a full reload and starts a download job for newly added bundles.
+     *
+     * Returns once the bundles are in place, so what a backup refers to them by, such as the
+     * selections made from them, finds them when it is imported right after.
      */
     suspend fun importCustomBundles(
         snapshots: List<BundleSnapshot>,
@@ -2277,7 +2283,7 @@ class PatchBundleRepository(
         // Empty snapshot in Merge mode is a no-op; in Replace mode it still needs to clear existing customs
         if (snapshots.isEmpty() && mode == ImportMode.Merge) return
 
-        dispatchAction("Import custom bundles ($mode)") { state ->
+        dispatchAction("Import custom bundles ($mode)", await = true) { state ->
             val ready = state as? BundleState.Ready ?: return@dispatchAction state
 
             val incomingEndpoints = snapshots
