@@ -67,7 +67,15 @@ internal fun CategoryActionBar(
                 ReorderPanel(onDone = onExitReorder)
             } else {
                 Column {
+                    // Reordering acts on every header rather than on the one pressed, so it sits
+                    // with the panel's own controls, as in a selection panel
                     PanelHeader(title = { category.title?.let { PanelTitle(text = it) } }) {
+                        TitleAction(
+                            icon = MaterialSymbols.Rounded.Reorder,
+                            contentDescription = reorderListLabel,
+                            onClick = onEnterReorder,
+                            style = TitleActionStyle.Neutral
+                        )
                         TitleAction(
                             icon = MaterialSymbols.Rounded.Close,
                             contentDescription = cancelLabel,
@@ -75,24 +83,19 @@ internal fun CategoryActionBar(
                             style = TitleActionStyle.Neutral
                         )
                     }
-                    PanelActions(
-                        actions = buildList {
-                            if (category.showEditActions) {
-                                add(SelectionAction(MaterialSymbols.Rounded.Edit, renameLabel, onRename))
-                            }
-                            add(SelectionAction(MaterialSymbols.Rounded.Reorder, reorderListLabel, onEnterReorder))
-                            if (category.showEditActions) {
-                                add(
-                                    SelectionAction(
-                                        icon = MaterialSymbols.Rounded.Delete,
-                                        label = deleteLabel,
-                                        onClick = onDelete,
-                                        tone = ActionTone.Destructive
-                                    )
+                    if (category.showEditActions) {
+                        PanelActions(
+                            actions = listOf(
+                                SelectionAction(MaterialSymbols.Rounded.Edit, renameLabel, onRename),
+                                SelectionAction(
+                                    icon = MaterialSymbols.Rounded.Delete,
+                                    label = deleteLabel,
+                                    onClick = onDelete,
+                                    tone = ActionTone.Destructive
                                 )
-                            }
-                        }
-                    )
+                            )
+                        )
+                    }
                 }
             }
         }

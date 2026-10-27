@@ -23,11 +23,12 @@ import org.koin.compose.koinInject
 
 /**
  * Reorder mode of a [MultiSelectBar]: whether it is on, and what its pills do. The mode is
- * entered through one of the bar's actions. A list with no order of its own to go back to leaves
- * [onReset] out.
+ * entered through [onStart] from the selection panel's header, which leaves it out while there is
+ * no order to drag. A list with no order of its own to go back to leaves [onReset] out.
  */
 internal class MultiSelectReorder(
     val isActive: Boolean,
+    val onStart: (() -> Unit)?,
     val onSave: () -> Unit,
     val onCancel: () -> Unit,
     val onReset: (() -> Unit)? = null
@@ -100,6 +101,7 @@ internal fun MultiSelectBar(
                     onSelectAll = onSelectAll,
                     onDeselectAll = onDeselectAll,
                     onCancel = onCancel,
+                    onReorder = activeReorder?.onStart,
                     actions = selection.actions
                 )
             }

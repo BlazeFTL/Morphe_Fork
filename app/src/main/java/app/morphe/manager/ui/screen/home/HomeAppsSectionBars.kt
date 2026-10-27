@@ -125,9 +125,10 @@ private fun HomeAppsFooterBars(
         val selected = selectedPackages.keys.toSet()
         homeAppItems.filter { it.id in selected }
     }
+    // Reinstall and uninstall each reach only the picked apps they apply to, so a selection
+    // mixing them offers both. Apps that are on the device but were never patched here have
+    // nothing Morphe can uninstall, so they sit that one out
     val selectedInstalledItems = remember(selectedAppItems) {
-        // Apps that are on the device but were never patched here have nothing Morphe can
-        // uninstall, so they must not put the selection into the uninstall verb
         selectedAppItems.filter { it.isInstalledOnDevice && it.installedApp != null }
     }
     val selectedReinstallItems = remember(selectedAppItems) {
@@ -135,12 +136,6 @@ private fun HomeAppsFooterBars(
             !it.isInstalledOnDevice && it.hasSavedCopy && it.installedApp != null
         }
     }
-    // Reinstall and uninstall are offered only when they apply to the whole selection rather
-    // than to some of it
-    val contextActionIsReinstall = selectedAppItems.isNotEmpty() &&
-            selectedReinstallItems.size == selectedAppItems.size
-    val contextActionIsUninstall = selectedAppItems.isNotEmpty() &&
-            selectedInstalledItems.size == selectedAppItems.size
     val messages = koinInject<UserMessages>()
     val reinstallLabel = stringResource(R.string.reinstall)
     val uninstallLabel = stringResource(R.string.uninstall)
@@ -149,7 +144,6 @@ private fun HomeAppsFooterBars(
     )
     val patchSourcesLabel = stringResource(R.string.sources_management_title)
     val moveToCategoryLabel = stringResource(R.string.home_category_move_to)
-    val reorderListLabel = stringResource(R.string.reorder_list)
     val hideLabel = stringResource(R.string.hide)
     val hiddenMessage = appsHiddenMessage(selectedPackages.keys.mapNotNull(itemsByPackage::get))
 
@@ -216,18 +210,8 @@ private fun HomeAppsFooterBars(
                 )
             )
         }
-        // A grouped view orders each group on its own, so a selection spread over several has no order to edit
-        if (groupedSelectionGroup != null || !(isCustomCategoryView || isSourceCategoryView)) {
+        if (selectedReinstallItems.isNotEmpty()) {
             add(
-                SelectionAction(
-                    icon = MaterialSymbols.Rounded.Reorder,
-                    label = reorderListLabel,
-                    onClick = enterReorder
-                )
-            )
-        }
-        when {
-            contextActionIsReinstall -> add(
                 SelectionAction(
                     icon = MaterialSymbols.Rounded.Install_mobile,
                     label = reinstallLabel,
@@ -237,7 +221,9 @@ private fun HomeAppsFooterBars(
                     }
                 )
             )
-            contextActionIsUninstall -> add(
+        }
+        if (selectedInstalledItems.isNotEmpty()) {
+            add(
                 SelectionAction(
                     icon = MaterialSymbols.Rounded.Delete_forever,
                     label = uninstallLabel,
@@ -274,6 +260,10 @@ private fun HomeAppsFooterBars(
         onCancel = { state.exitMultiSelect() },
         reorder = MultiSelectReorder(
             isActive = state.isReorderMode,
+            // A grouped view orders each group on its own, so a selection spread over several has no order to edit
+            onStart = enterReorder.takeIf {
+                groupedSelectionGroup != null || !(isCustomCategoryView || isSourceCategoryView)
+            },
             onSave = {
                 val sourceUid = state.reorderScopeSourceUid
                 if (sourceUid != null) {

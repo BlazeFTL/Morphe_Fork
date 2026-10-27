@@ -200,6 +200,10 @@ sealed class PatchBundleSource(
             get() = (this as? JsonPatchBundle)?.usePrerelease == true ||
                     (this as? APIPatchBundle)?.usePrerelease == true
 
+        /** True for a source with a pre-release branch to switch to, see [usesPrerelease]. */
+        val PatchBundleSource.hasPrereleaseChannel: Boolean
+            get() = (this as? JsonPatchBundle)?.supportsPrerelease == true || this is APIPatchBundle
+
         /**
          * True while the source is skipped because reading it took the process down with it.
          * Distinct from every other failure in that nothing about the source itself is wrong

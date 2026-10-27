@@ -658,12 +658,9 @@ private fun DialogHostScope.ApkManagementDialogContent(
     val selectedInstallableItems = selectedItems.filter {
         !it.isInstalledOnDevice && it.isInstallableFromStorage
     }
-    val canUninstallSelected = selectedItems.isNotEmpty() &&
-            selectedInstalledItems.size == selectedItems.size &&
-            actions.onUninstallSelected != null
-    val canInstallSelected = selectedItems.isNotEmpty() &&
-            selectedInstallableItems.size == selectedItems.size &&
-            actions.onInstallSelected != null
+    // Each reaches only the picked entries it applies to, so a selection mixing them offers both
+    val canUninstallSelected = selectedInstalledItems.isNotEmpty() && actions.onUninstallSelected != null
+    val canInstallSelected = selectedInstallableItems.isNotEmpty() && actions.onInstallSelected != null
     val canDeleteAll = selectedItems.isEmpty() && items.isNotEmpty() &&
             actions.onDeleteAllConfirm != null
     val selectedTotalSize = selectedItems.sumOf { it.fileSize }

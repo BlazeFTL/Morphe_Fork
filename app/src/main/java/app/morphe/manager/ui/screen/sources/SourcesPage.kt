@@ -43,6 +43,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.morphe.manager.BuildConfig
 import app.morphe.manager.R
 import app.morphe.manager.domain.bundles.*
+import app.morphe.manager.domain.bundles.PatchBundleSource.Extensions.hasPrereleaseChannel
 import app.morphe.manager.domain.bundles.PatchBundleSource.Extensions.isDefault
 import app.morphe.manager.domain.bundles.PatchBundleSource.Extensions.isHeldBack
 import app.morphe.manager.domain.bundles.PatchBundleSource.Extensions.sourceType
@@ -196,6 +197,9 @@ private fun SourcesPageContent(
     // Every source, not only the enabled ones: a disabled source still answers a patch search
     // and still declares whether it carries experimental targets
     val bundleInfo by patchBundleRepository.allBundlesInfoFlow.collectAsStateWithLifecycle(emptyMap())
+    val withExperimentalVersions = remember(bundleInfo) {
+        bundleInfo.filterValues { it.hasExperimentalVersions() }.keys
+    }
     val blockedSources by patchBundleRepository.blockedSources.collectAsStateWithLifecycle(emptyMap())
     val keptFrom by sourceMuteRepository.mutedSources.collectAsStateWithLifecycle(emptyMap())
     val unseenNewApps by sourceMuteRepository.unseenNewApps.collectAsStateWithLifecycle(emptyMap())
@@ -216,9 +220,9 @@ private fun SourcesPageContent(
 
     // The sources a delete waits on confirmation for, one from its card or several from a selection
     val bundlesToDelete = remember { mutableStateOf<List<PatchBundleSource>>(emptyList()) }
-    // Set when the user flips pre-releases on: the toggle waits for confirmation first,
-    // so the meaning of unstable testing builds is explained before anything changes
-    val bundleToConfirmPrerelease = remember { mutableStateOf<PatchBundleSource?>(null) }
+    // Set when the user flips pre-releases on, from a card or a selection: the switch waits for
+    // confirmation first, so the meaning of unstable testing builds is explained before anything changes
+    val bundlesToConfirmPrerelease = remember { mutableStateOf<List<PatchBundleSource>>(emptyList()) }
     // Search, sorting and filtering are offered from two sources up
     val isSearchable = sources.size >= 2
     val search = rememberSearchFieldState(searchable = isSearchable)
@@ -335,15 +339,24 @@ private fun SourcesPageContent(
     var bundleToTrustKey by remember { mutableStateOf<RemotePatchBundle?>(null) }
     var bundleToShowChangelogUid by remember { mutableStateOf<Int?>(null) }
 
-    // Switching branches invalidates whatever the changelog dialog is holding, so the cache goes
-    // and an open dialog closes rather than keeping entries from the branch that was just left
-    fun applyPrerelease(bundle: PatchBundleSource, usePrerelease: Boolean) {
-        if (bundle.uid == bundleToShowChangelogUid) {
+    // Switching branches invalidates whatever the changelog dialog is holding, so an open dialog
+    // closes rather than keeping entries from the branch that was just left
+    fun applyPrerelease(bundles: List<PatchBundleSource>, usePrerelease: Boolean) {
+        if (bundles.any { it.uid == bundleToShowChangelogUid }) {
             bundleToShowChangelogUid = null
         }
-        (bundle as? RemotePatchBundle)?.clearChangelogCache()
         scope.launch {
-            patchBundleRepository.setUsePrerelease(bundle.uid, usePrerelease)
+            patchBundleRepository.setUsePrerelease(bundles.uids(), usePrerelease)
+        }
+    }
+
+    fun setPrerelease(bundles: List<PatchBundleSource>, usePrerelease: Boolean) {
+        if (usePrerelease) bundlesToConfirmPrerelease.value = bundles else applyPrerelease(bundles, false)
+    }
+
+    fun setExperimentalVersions(bundles: List<PatchBundleSource>, useExperimental: Boolean) {
+        scope.launch {
+            patchBundleRepository.setUseExperimentalVersions(bundles.uids(), useExperimental)
         }
     }
 
@@ -442,8 +455,12 @@ private fun SourcesPageContent(
                 sources = sources,
                 listed = visibleSources,
                 blocked = blockedSources.keys,
+                withExperimentalVersions = withExperimentalVersions,
+                experimentalVersionsEnabled = experimentalVersionsEnabled,
                 onUpdate = onUpdate,
                 onToggleEnabled = onToggleEnabled,
+                onSetPrerelease = ::setPrerelease,
+                onSetExperimentalVersions = ::setExperimentalVersions,
                 onDelete = { bundlesToDelete.value = it },
                 // Reorder maps list positions onto the full order, so a filtered list would move
                 // the wrong sources. A search is only put away, being typed again in a moment
@@ -511,13 +528,6 @@ private fun SourcesPageContent(
                         }
 
                         items(visibleSources, key = { bundle -> bundle.uid }) { bundle ->
-                            val hasExperimentalVersions = remember(bundle.uid, bundleInfo) {
-                                bundleInfo[bundle.uid]?.patches?.any { patch ->
-                                    patch.compatiblePackages?.any { pkg ->
-                                        pkg.experimentalVersions?.isNotEmpty() == true
-                                    } == true
-                                } == true
-                            }
                             val useExperimentalVersions = bundle.uid.toString() in experimentalVersionsEnabled
 
                             val isFirstCard = bundle.uid == visibleSources.firstOrNull()?.uid
@@ -568,28 +578,11 @@ private fun SourcesPageContent(
                                         onShare = (bundle as? RemotePatchBundle)?.addSourceLink?.let { link ->
                                             { shareText(link) }
                                         },
-                                        onPrereleasesToggle = when {
-                                            bundle is JsonPatchBundle && bundle.supportsPrerelease ||
-                                                    bundle is APIPatchBundle -> { usePrerelease ->
-                                                if (usePrerelease) {
-                                                    // Explain what pre-release means before flipping it on
-                                                    bundleToConfirmPrerelease.value = bundle
-                                                } else {
-                                                    applyPrerelease(bundle, false)
-                                                }
-                                            }
-
-                                            else -> null
-                                        },
-                                        onExperimentalVersionsToggle = if (hasExperimentalVersions) {
-                                            { useExperimental ->
-                                                scope.launch {
-                                                    patchBundleRepository.setUseExperimentalVersions(
-                                                        bundle.uid,
-                                                        useExperimental
-                                                    )
-                                                }
-                                            }
+                                        onPrereleasesToggle = if (bundle.hasPrereleaseChannel) {
+                                            { usePrerelease -> setPrerelease(listOf(bundle), usePrerelease) }
+                                        } else null,
+                                        onExperimentalVersionsToggle = if (bundle.offersExperimentalVersions(withExperimentalVersions)) {
+                                            { useExperimental -> setExperimentalVersions(listOf(bundle), useExperimental) }
                                         } else null,
                                         onDisable = { onToggleEnabled(listOf(bundle)) },
                                         onUpdate = { onUpdate(listOf(bundle)) },
@@ -677,17 +670,18 @@ private fun SourcesPageContent(
         )
     }
 
-    // Pre-release enable confirmation dialog
-    DialogHost(target = bundleToConfirmPrerelease.value) { bundle ->
+    // Pre-release enable confirmation dialog, which a selection waits on as it does on a delete
+    DialogHost(target = bundlesToConfirmPrerelease.value.takeIf { it.isNotEmpty() }) { bundles ->
         ConfirmDialog(
             title = stringResource(R.string.sources_prerelease_warning_title),
             message = stringResource(R.string.sources_prerelease_warning_message),
             primaryText = stringResource(R.string.enable),
             isPrimaryDestructive = false,
-            onDismiss = { bundleToConfirmPrerelease.value = null },
+            onDismiss = { bundlesToConfirmPrerelease.value = emptyList() },
             onConfirm = {
-                bundleToConfirmPrerelease.value = null
-                applyPrerelease(bundle, true)
+                bundlesToConfirmPrerelease.value = emptyList()
+                applyPrerelease(bundles, true)
+                state.exitSelection()
             }
         )
     }
@@ -779,6 +773,16 @@ private fun PatchBundleSource.sourceSortTitle(): String =
 /** Whether the source's own name answers to a search query, before its patches are consulted. */
 private fun PatchBundleSource.matchesQuery(query: String): Boolean =
     displayTitle.contains(query, ignoreCase = true) || name.contains(query, ignoreCase = true)
+
+private fun List<PatchBundleSource>.uids() = mapTo(mutableSetOf()) { it.uid }
+
+/**
+ * Whether the experimental app versions switch is offered for the source, given the uids of the
+ * sources [withExperimentalVersions] declaring any. One with a pre-release channel offers it only
+ * while on that channel.
+ */
+internal fun PatchBundleSource.offersExperimentalVersions(withExperimentalVersions: Set<Int>) =
+    uid in withExperimentalVersions && (!hasPrereleaseChannel || usesPrerelease)
 
 /**
  * Apps a source still [brought] to the home screen, out of all it [listed], and how many of them
@@ -1198,19 +1202,16 @@ private fun BundleManagementCard(
 
                             SettingsDivider(fullWidth = true)
 
-                            // Resolve prerelease state once
-                            val currentUsePrerelease = bundle.usesPrerelease
-
                             if (actions.onPrereleasesToggle != null || actions.onExperimentalVersionsToggle != null) {
                                 // Grouped apart from the card's spaced column, so the experimental toggle
                                 // brings its gap along as it folds in rather than the column opening it at once
                                 Column {
-                                    // Prerelease toggle (for JsonPatchBundle with GitHub endpoint or APIPatchBundle)
+                                    // Prerelease toggle, for a source with a pre-release channel
                                     if (actions.onPrereleasesToggle != null) {
                                         ToggleRow(
                                             title = stringResource(R.string.sources_management_prerelease_toggle),
                                             description = stringResource(R.string.sources_management_prerelease_toggle_description),
-                                            checked = currentUsePrerelease,
+                                            checked = bundle.usesPrerelease,
                                             onCheckedChange = actions.onPrereleasesToggle,
                                             enabled = !info.isUpdating,
                                             isLoading = info.isUpdating,
@@ -1219,12 +1220,8 @@ private fun BundleManagementCard(
                                         )
                                     }
 
-                                    // Experimental versions toggle - shown for any bundle type that has experimental app version targets.
-                                    // For remote bundles (prerelease supported) it additionally requires prereleases to be ON.
-                                    ListRowFold(
-                                        visible = actions.onExperimentalVersionsToggle != null &&
-                                                (actions.onPrereleasesToggle == null || currentUsePrerelease)
-                                    ) {
+                                    // Experimental versions toggle, see offersExperimentalVersions
+                                    ListRowFold(visible = actions.onExperimentalVersionsToggle != null) {
                                         ToggleRow(
                                             title = stringResource(R.string.sources_management_experimental_versions_toggle),
                                             description = stringResource(R.string.sources_management_experimental_versions_toggle_description),

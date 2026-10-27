@@ -206,6 +206,11 @@
     <string name="expert_mode_experimental_version_notice">This source has only experimental support for this app version. Its patches may be unstable or incomplete</string>
     <string name="sources_management_experimental_versions_toggle">Experimental app versions</string>
     <string name="sources_management_experimental_versions_toggle_description">Shows and patches experimental app targets</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Enable pre-release patches</string>
+    <string name="sources_management_prerelease_disable">Disable pre-release patches</string>
+    <string name="sources_management_experimental_versions_enable">Enable experimental app versions</string>
+    <string name="sources_management_experimental_versions_disable">Disable experimental app versions</string>
     <string name="sources_management_already_exists">This source has already been added</string>
     <string name="sources_management_invalid_url">Invalid source URL. Please check the address and try again</string>
     <string name="sources_management_blocked">This patch source is blocked and cannot be added</string>
