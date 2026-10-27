@@ -1085,81 +1085,81 @@ private fun BundleManagementCard(
                                     icon = SourceProblem.OutdatedManager.icon,
                                     onClick = actions.onOutdatedManagerClick
                                 )
-                            }
 
-                            // What the source holds, in one panel the way the app details list theirs
-                            InfoPanel {
-                                InfoRow(
-                                    modifier = Modifier.tourTarget(TourTarget.SOURCE_PATCHES, tour),
-                                    icon = MaterialSymbols.Rounded.Info,
-                                    label = stringResource(R.string.patches),
-                                    value = if (info.patchMatchCount != null) {
-                                        "${info.patchMatchCount}/${info.patchCount}"
-                                    } else {
-                                        info.patchCount.toString()
-                                    },
-                                    onClick = actions.onPatchesClick,
-                                    // A disabled source still lists what it holds, which is what the
-                                    // decision to switch it back on is made on. A blocked one does not,
-                                    // and neither does one whose patches never loaded
-                                    enabled = !isBlocked && !info.isUpdating && info.patchCount > 0
-                                )
-
-                                SettingsDivider()
-
-                                InfoRow(
-                                    modifier = Modifier.tourTarget(TourTarget.SOURCE_VERSION, tour),
-                                    icon = MaterialSymbols.Rounded.Update,
-                                    label = stringResource(R.string.version),
-                                    value = bundle.version?.normalizeVersion()?.isolateLtr() ?: "N/A",
-                                    onClick = actions.onVersionClick,
-                                    enabled = !info.isUpdating
-                                )
-
-                                bundle.signingKeyFingerprint?.let { fingerprint ->
-                                    SettingsDivider()
-
+                                // What the source holds, in one panel the way the app details list theirs
+                                InfoPanel {
                                     InfoRow(
-                                        icon = MaterialSymbols.Rounded.Verified,
-                                        label = stringResource(R.string.sources_management_signed_by),
-                                        value = fingerprint,
-                                        // The whole key, which is what a developer publishes to compare against
-                                        onClick = { bundle.signingKey?.let(copyToClipboard) },
-                                        trailing = {
-                                            Icon(
-                                                imageVector = MaterialSymbols.Rounded.Content_copy,
-                                                contentDescription = copy,
-                                                modifier = Modifier.size(Defaults.IconSizeSmall),
-                                                tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
-                                            )
-                                        }
-                                    )
-                                }
-
-                                // Apps, for any source naming some. It is also the one way back from an
-                                // app kept from the source that does not depend on which mode the user
-                                // patches in
-                                val (broughtApps, listedApps, unseenApps) = info.appCount
-                                if (listedApps > 0) {
-                                    SettingsDivider()
-
-                                    val count = if (broughtApps < listedApps) {
-                                        "$broughtApps/$listedApps"
-                                    } else {
-                                        listedApps.toString()
-                                    }
-                                    InfoRow(
-                                        modifier = Modifier.tourTarget(TourTarget.SOURCE_APPS, tour),
-                                        icon = MaterialSymbols.Rounded.Apps,
-                                        label = stringResource(R.string.sources_apps),
-                                        value = if (unseenApps > 0) {
-                                            pluralStringResource(R.plurals.sources_apps_count_with_new, unseenApps, count, unseenApps)
+                                        modifier = Modifier.tourTarget(TourTarget.SOURCE_PATCHES, tour),
+                                        icon = MaterialSymbols.Rounded.Info,
+                                        label = stringResource(R.string.patches),
+                                        value = if (info.patchMatchCount != null) {
+                                            "${info.patchMatchCount}/${info.patchCount}"
                                         } else {
-                                            count
+                                            info.patchCount.toString()
                                         },
-                                        onClick = actions.onAppsClick,
+                                        onClick = actions.onPatchesClick,
+                                        // A disabled source still lists what it holds, which is what the
+                                        // decision to switch it back on is made on. A blocked one does not,
+                                        // and neither does one whose patches never loaded
+                                        enabled = !isBlocked && !info.isUpdating && info.patchCount > 0
+                                    )
+
+                                    SettingsDivider()
+
+                                    InfoRow(
+                                        modifier = Modifier.tourTarget(TourTarget.SOURCE_VERSION, tour),
+                                        icon = MaterialSymbols.Rounded.Update,
+                                        label = stringResource(R.string.version),
+                                        value = bundle.version?.normalizeVersion()?.isolateLtr() ?: "N/A",
+                                        onClick = actions.onVersionClick,
                                         enabled = !info.isUpdating
                                     )
+
+                                    bundle.signingKeyFingerprint?.let { fingerprint ->
+                                        SettingsDivider()
+
+                                        InfoRow(
+                                            icon = MaterialSymbols.Rounded.Verified,
+                                            label = stringResource(R.string.sources_management_signed_by),
+                                            value = fingerprint,
+                                            // The whole key, which is what a developer publishes to compare against
+                                            onClick = { bundle.signingKey?.let(copyToClipboard) },
+                                            trailing = {
+                                                Icon(
+                                                    imageVector = MaterialSymbols.Rounded.Content_copy,
+                                                    contentDescription = copy,
+                                                    modifier = Modifier.size(Defaults.IconSizeSmall),
+                                                    tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+                                                )
+                                            }
+                                        )
+                                    }
+
+                                    // Apps, for any source naming some. It is also the one way back from an
+                                    // app kept from the source that does not depend on which mode the user
+                                    // patches in
+                                    val (broughtApps, listedApps, unseenApps) = info.appCount
+                                    if (listedApps > 0) {
+                                        SettingsDivider()
+
+                                        val count = if (broughtApps < listedApps) {
+                                            "$broughtApps/$listedApps"
+                                        } else {
+                                            listedApps.toString()
+                                        }
+                                        InfoRow(
+                                            modifier = Modifier.tourTarget(TourTarget.SOURCE_APPS, tour),
+                                            icon = MaterialSymbols.Rounded.Apps,
+                                            label = stringResource(R.string.sources_apps),
+                                            value = if (unseenApps > 0) {
+                                                pluralStringResource(R.plurals.sources_apps_count_with_new, unseenApps, count, unseenApps)
+                                            } else {
+                                                count
+                                            },
+                                            onClick = actions.onAppsClick,
+                                            enabled = !info.isUpdating
+                                        )
+                                    }
                                 }
                             }
 
@@ -1522,7 +1522,7 @@ private fun CardNotice(
 ) {
     ListRowFold(visible = visible) {
         Notice(
-            modifier = modifier,
+            modifier = modifier.padding(bottom = Defaults.SpaceSmall),
             text = text,
             icon = icon,
             tone = SemanticTone.Error,
