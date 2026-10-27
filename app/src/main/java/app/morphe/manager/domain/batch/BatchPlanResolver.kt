@@ -430,7 +430,7 @@ class BatchPlanResolver(
 
         // A queue must not stop to ask about one app, so a path that leads nowhere is dropped
         // here and reported on the preflight screen instead of failing inside the patcher
-        val unreadablePaths = validateOptionPaths(savedOptions)
+        val unreadablePaths = validateOptionPaths(savedOptions, contributing)
         val options = savedOptions.withoutFailingPaths(unreadablePaths)
 
         return BatchPatchItem(

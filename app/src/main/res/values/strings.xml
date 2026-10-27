@@ -685,12 +685,15 @@ Uninstalling will permanently erase all app data"</string>
     <string name="patcher_storage_permission_open_settings">Open storage settings</string>
     <string name="patcher_storage_badge_denied">Permission denied</string>
     <string name="patcher_storage_badge_missing">Not found</string>
+    <string name="patcher_storage_badge_rejected">Not usable</string>
     <string name="batch_patch_option_paths_skipped">Patch option files are missing and will be skipped: %1$s</string>
     <string name="patcher_missing_patches_title">Some patches are gone</string>
     <string name="patcher_missing_patches_description">The saved selection for this app names patches that no enabled source offers anymore. Continuing patches the app without them</string>
     <string name="patcher_missing_patches_label">No longer offered</string>
     <string name="patcher_option_paths_gone_title">Patch option files are missing</string>
     <string name="patcher_option_paths_gone_description">One or more patch options point to files that are no longer there. Remove the paths to patch without them, or put the files back and try again</string>
+    <string name="patcher_option_paths_rejected_title">Patch option files cannot be used</string>
+    <string name="patcher_option_paths_rejected_description">One or more patch options point to files that are missing or do not have what the patch asks for. Remove the paths to patch without them, or fix the files as the option instructions describe and try again</string>
     <string name="patcher_option_paths_clear">Remove the paths and continue</string>
     <string name="patcher_storage_permission_hint">Tip: Move files to /Android/data/app.morphe.manager/files/ - no extra permissions needed</string>
 

@@ -1305,7 +1305,7 @@ class PatchFlow(
         // option it belongs to is out of reach. So it is asked about while the selection is
         // still open and the value can be fixed or dropped on the spot
         val failures = withContext(Dispatchers.IO) {
-            validateOptionPaths(patcherOptions.restrictTo(finalPatches))
+            validateOptionPaths(patcherOptions.restrictTo(finalPatches), bundles)
         }
 
         if (failures.isNotEmpty()) {

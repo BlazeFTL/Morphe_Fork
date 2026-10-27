@@ -633,7 +633,9 @@ class PatcherViewModel(
         }
 
         // Validate any file-system paths supplied as patch options before handing off to the worker
-        val pathFailures = withContext(Dispatchers.IO) { validateOptionPaths(options.restrictTo(runSelection)) }
+        val pathFailures = withContext(Dispatchers.IO) {
+            validateOptionPaths(options.restrictTo(runSelection), globalBundlesForCheck.values)
+        }
         if (pathFailures.isNotEmpty()) {
             inaccessibleOptionPaths = InaccessibleOptionPathsState(
                 failures = pathFailures,
