@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-27T08:32:19",
-  "description": "# [2.3.0-dev.4](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.3...v2.3.0-dev.4) (2026-10-27)\n\n\n### Features\n\n* Switch pre-release patches and experimental app versions for selected sources ([83fbbea](https://github.com/MorpheApp/morphe-manager/commit/83fbbea7aea4916d8bedd411c5a115208224b07c))",
-  "download_url": "https://github.com/MorpheApp/morphe-manager/releases/download/v2.3.0-dev.4/morphe-manager-2.3.0-dev.4.apk",
-  "signature_download_url": "https://github.com/MorpheApp/morphe-manager/releases/download/v2.3.0-dev.4/morphe-manager-2.3.0-dev.4.apk.asc",
-  "version": "2.3.0-dev.4"
+  "created_at": "2026-10-27T14:24:19",
+  "description": "# [2.3.0-dev.5](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.4...v2.3.0-dev.5) (2026-10-27)\n\n\n### Bug Fixes\n\n* Extra gap above the info panel in expanded source cards ([73f3221](https://github.com/MorpheApp/morphe-manager/commit/73f322195b6e7fc02f0b3792be73caf7e6cf9076))\n* Keep restored patch selections as saved ([167492e](https://github.com/MorpheApp/morphe-manager/commit/167492ea76bbde2201a91905e4988472527eba52))\n\n\n### Features\n\n* Check patch option paths with the patch's own validator before patching ([9d5eee0](https://github.com/MorpheApp/morphe-manager/commit/9d5eee02c09fe5ba10ebecdadf620cd2cbedbe03))\n* Move reorder controls into the page header ([2e7694d](https://github.com/MorpheApp/morphe-manager/commit/2e7694d9fa14215c9559e2067eee7a7e7902a362))\n* Pre-release switch when adding a source ([405e56c](https://github.com/MorpheApp/morphe-manager/commit/405e56ca4599d99cabc6e88a3bba79570ac61ed5))",
+  "download_url": "https://github.com/MorpheApp/morphe-manager/releases/download/v2.3.0-dev.5/morphe-manager-2.3.0-dev.5.apk",
+  "signature_download_url": "https://github.com/MorpheApp/morphe-manager/releases/download/v2.3.0-dev.5/morphe-manager-2.3.0-dev.5.apk.asc",
+  "version": "2.3.0-dev.5"
 }
