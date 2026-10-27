@@ -1147,12 +1147,11 @@ class PatchFlow(
                     ))
                 }
 
-                // Runs after validation, so patches the sources dropped never sneak back in. The
-                // saved selection stands in for a snapshot that does not exist yet
+                // Runs after validation, so patches the sources dropped never sneak back in
                 mergeNewlyAdded(
                     bundles = contributingBundles,
                     validated = validatedPatches,
-                    known = { uid -> seenByBundle[uid] ?: savedSelections[uid] },
+                    known = seenByBundle::get,
                     installerType = target.installerType,
                     apkArchitecture = target.apkArchitecture
                 )
