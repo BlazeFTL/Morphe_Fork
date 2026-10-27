@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Hierdie bron het slegs eksperimentele ondersteuning vir hierdie app-weergawe. Die kolke daarvan mag onstabil of onvolledig wees</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentele program-weergawes</string>
     <string name="sources_management_experimental_versions_toggle_description">Wys en patch eksperimentele app-teikens</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Hierdie oorsprong is reeds bygevoeg</string>
     <string name="sources_management_invalid_url">Ongeldige bron-URL. Gaan asseblief die adres na en probeer weer</string>
     <string name="sources_management_blocked">Hierdie bron vir pleisters is geblokkeer en kan nie bygevoeg word nie</string>

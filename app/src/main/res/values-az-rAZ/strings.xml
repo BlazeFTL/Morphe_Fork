@@ -200,6 +200,8 @@
     <string name="expert_mode_experimental_version_notice">Bu mənbənin yalnız bu tətbiq versiyası üçün təcrübi dəstəyi var. Yamaqlar qeyri-sabit və ya natamam ola bilər</string>
     <string name="sources_management_experimental_versions_toggle">Təcrübi tətbiq versiyaları</string>
     <string name="sources_management_experimental_versions_toggle_description">Təcrübi tətbiq hədəflərini və yamaqlarını göstərir</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">İlkin buraxılış yamaqlarını aktivləşdirsin</string>
     <string name="sources_management_already_exists">Bu mənbə artıq əlavə edilib</string>
     <string name="sources_management_invalid_url">Etibarsız mənbə URL-si. Xahiş olunur, ünvanı yoxla və təkrar cəhd et</string>
     <string name="sources_management_blocked">Bu yamaq mənbəyi bloklanıb və əlavə edilə bilməz</string>

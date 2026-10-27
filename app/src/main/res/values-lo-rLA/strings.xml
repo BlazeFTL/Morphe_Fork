@@ -126,6 +126,7 @@
     <string name="sources_management_prerelease_toggle">ຊຸດແພດກ່ອນວາງຈຳໜ່າຍ</string>
     <string name="sources_management_prerelease_toggle_description">ໄດ້ຮັບສິດເຂົ້າເຖິງເວີຊັນຊຸດແພດທົດລອງໃໝ່ກ່ອນໄວ</string>
     <string name="sources_management_experimental_versions_toggle">ເວີຊັນແອັບທົດລອງ</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">ແຫຼ່ງຂໍ້ມູນນີ້ຖືກເພີ່ມແລ້ວ</string>
     <string name="sources_management_invalid_url">URL ແຫຼ່ງຂໍ້ມູນບໍ່ຖືກຕ້ອງ. ກະລຸນາກວດເບິ່ງທີ່ຢູ່ແລ້ວລອງໃໝ່</string>
     <string name="sources_management_blocked">ແຫຼ່ງຊຸດແພດນີ້ຖືກບລັອກ ແລະບໍ່ສາມາດເພີ່ມໄດ້</string>

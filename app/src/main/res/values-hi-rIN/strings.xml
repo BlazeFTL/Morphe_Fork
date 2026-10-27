@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">इस स्रोत में इस ऐप वर्ज़न के लिए केवल प्रायोगिक समर्थन है। इसके पैच अस्थिर या अधूरे हो सकते हैं</string>
     <string name="sources_management_experimental_versions_toggle">प्रायोगिक ऐप संस्करण</string>
     <string name="sources_management_experimental_versions_toggle_description">प्रयोगात्मक ऐप टारगेट्स को दिखाता और पैच करता है</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">यह स्रोत पहले से ही जोड़ा गया है</string>
     <string name="sources_management_invalid_url">अमान्य स्रोत URL। कृपया पता जांचें और फिर प्रयास करें</string>
     <string name="sources_management_blocked">यह पैच स्रोत अवरुद्ध है और इसे नहीं जोड़ा जा सकता</string>

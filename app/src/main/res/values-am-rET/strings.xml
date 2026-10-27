@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">ይህ ምንጭ ለዚህ የአፕሊኬሽን ስሪት የሙከራ ድጋፍ ብቻ አለው። ፓቾቹ የማይረግቡ ወይም ያልተሟሉ ሊሆኑ ይችላሉ</string>
     <string name="sources_management_experimental_versions_toggle">የሙከራ መተግበሪያ ስሪቶች</string>
     <string name="sources_management_experimental_versions_toggle_description">የሙከራ መተግበሪያ ኢላማዎችን ያሳያል እንዲሁም ይጠግናል</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">ይህ ምንጭ አስቀድሞ ተጨምሯል</string>
     <string name="sources_management_invalid_url">የተሳሳተ የምንጭ URL ነው። እባክዎ አድራሻውን ያረጋግጡ እና እንደገና ይሞክሩ</string>
     <string name="sources_management_blocked">ይህ የማሻሻያ ምንጭ ታግዶታል እና ሊጨመር አይችልም</string>

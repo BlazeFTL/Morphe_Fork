@@ -119,6 +119,7 @@
     <!-- Marks an app (not a patch) the source started supporting since its app list was last opened -->
     <string name="sources_apps_new">نوێ</string>
     <!-- Under the Bring new apps switch in a source's app list, whichever way it is set. "It" is the patch source -->
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">ئەم سەرچاوەیە پێشتر زیاد کراوە</string>
     <string name="sources_management_invalid_url">بەستەری سەرچاوەی نادروستە. تکایە ناونیشانەکە بپشکنە و دووبارە هەوڵدەوە</string>
     <string name="sources_management_metadata_unavailable">مێتاداتا N/A</string>

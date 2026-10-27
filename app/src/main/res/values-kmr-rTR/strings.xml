@@ -173,6 +173,7 @@
     <string name="expert_mode_prerelease_notice">Ev çavkanî li ser patchên pêş-berdanê ye. Patchkirin dibe ku têk biçe an bi awayekî neçaverêkirî tevbigere.</string>
     <string name="sources_management_experimental_versions_toggle">Werzîyonên sepanê yên eksperîmental</string>
     <string name="sources_management_experimental_versions_toggle_description">Armancên sepanê yên ceribandinî nîşan dide û patch dike</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Evîn pêştirîye, berê zêdekirine.</string>
     <string name="sources_management_invalid_url">URL-a çavkaniyê nebaş e. Ji kerema xwe navnîşanê kontrol bikin û dîsa biceribîn</string>
     <string name="sources_management_blocked">Çavkaniya vê pelikê blok kirî ye û nikare were zêdekirin</string>

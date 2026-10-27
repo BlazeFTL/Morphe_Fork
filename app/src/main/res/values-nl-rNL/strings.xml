@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Deze bron heeft slechts experimentele ondersteuning voor deze app-versie. De patches kunnen onstabiel of onvolledig zijn</string>
     <string name="sources_management_experimental_versions_toggle">Experimentele app-versies</string>
     <string name="sources_management_experimental_versions_toggle_description">Toont en patcht experimentele app-targets</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Deze bron is al toegevoegd</string>
     <string name="sources_management_invalid_url">Ongeldige bron-URL. Controleer het adres en probeer het opnieuw</string>
     <string name="sources_management_blocked">Deze patchbron is geblokkeerd en kan niet worden toegevoegd</string>

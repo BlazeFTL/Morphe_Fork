@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Această sursă are doar suport experimental pentru această versiune de aplicație. Patch-urile sale pot fi instabile sau incomplete</string>
     <string name="sources_management_experimental_versions_toggle">Versiuni experimentale ale aplicației</string>
     <string name="sources_management_experimental_versions_toggle_description">Afișează și corectează țintele experimentale ale aplicației</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Sursă deja adăugată</string>
     <string name="sources_management_invalid_url">URL-ul sursei este nevalid. Te rugăm să verifici adresa și să încerci din nou</string>
     <string name="sources_management_blocked">Această sursă de patch este blocată și nu poate fi adăugată</string>

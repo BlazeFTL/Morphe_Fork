@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">此來源對此應用程式版本僅提供實驗性支援。其補丁可能不穩定或不完整</string>
     <string name="sources_management_experimental_versions_toggle">實驗性應用程式版本</string>
     <string name="sources_management_experimental_versions_toggle_description">顯示和修補實驗性應用程式目標</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">已新增此來源</string>
     <string name="sources_management_invalid_url">來源 URL 無效。請檢查位址並重試</string>
     <string name="sources_management_blocked">此修補程式來源已封鎖，無法新增</string>

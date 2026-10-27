@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Tällä lähteellä on vain kokeellinen tuki tälle sovellusversiolle. Sen päivitykset voivat olla epävakaita tai puutteellisia</string>
     <string name="sources_management_experimental_versions_toggle">Kokeelliset sovellusversiot</string>
     <string name="sources_management_experimental_versions_toggle_description">Näyttää ja korjaa kokeellisia sovelluksen kohteita</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Tämä lähde on jo lisätty</string>
     <string name="sources_management_invalid_url">Virheellinen lähde-URL-osoite. Tarkista osoite ja yritä uudelleen</string>
     <string name="sources_management_blocked">Tämä päivityslähde on estetty, eikä sitä voi lisätä</string>

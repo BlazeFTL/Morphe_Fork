@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">此来源对该应用版本仅提供实验性支持。其补丁可能不稳定或不完整</string>
     <string name="sources_management_experimental_versions_toggle">实验版应用版本</string>
     <string name="sources_management_experimental_versions_toggle_description">显示并修补实验性应用目标</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">此资源已添加</string>
     <string name="sources_management_invalid_url">无效的源URL。请检查地址并重试</string>
     <string name="sources_management_blocked">此补丁源被阻止，无法添加</string>

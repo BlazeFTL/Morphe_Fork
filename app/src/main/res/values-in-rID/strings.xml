@@ -99,6 +99,7 @@
     <string name="home_category_move_to">Pindahkan ke kategori</string>
     <string name="home_category_move_selected_title">Pindahkan aplikasi terpilih</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">Hapus %s?</string>
     <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_actions_unavailable">Tindakan tidak tersedia untuk kategori ini</string>
     <!-- Home Screen - Home Greetings -->
@@ -200,6 +201,11 @@
     <string name="expert_mode_experimental_version_notice">Sumber ini hanya memiliki dukungan eksperimental untuk versi aplikasi ini. Tambalannya mungkin tidak stabil atau tidak lengkap</string>
     <string name="sources_management_experimental_versions_toggle">Versi aplikasi eksperimental</string>
     <string name="sources_management_experimental_versions_toggle_description">Menampilkan dan menambal target aplikasi eksperimental</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Aktifkan tambalan pra-rilis</string>
+    <string name="sources_management_prerelease_disable">Nonaktifkan tambalan pra-rilis</string>
+    <string name="sources_management_experimental_versions_enable">Aktifkan versi aplikasi experimental</string>
+    <string name="sources_management_experimental_versions_disable">Nonaktifkan versi aplikasi experimental</string>
     <string name="sources_management_already_exists">Sumber ini sudah ditambahkan</string>
     <string name="sources_management_invalid_url">URL sumber tidak sah. Harap periksa alamatnya dan coba lagi</string>
     <string name="sources_management_blocked">Sumber tambalan ini diblokir dan tidak dapat ditambahkan</string>
@@ -257,12 +263,15 @@
     <string name="sources_patch_expert_badge">Ahli</string>
     <string name="sources_patch_expert_badge_tooltip">Aktifkan mode Ahli di Setelan untuk menambahkan tambalan ini secara manual</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">Butuh bantuan untuk menemukan APK-nya?</string>
     <string name="home_apk_availability_dialog_simple">Untuk menambal &lt;b&gt;%s&lt;/b&gt;, Anda membutuhkan versi APK yang belum ditambal:</string>
     <string name="home_apk_availability_dialog_expert">Untuk menambal &lt;b&gt;%s&lt;/b&gt;, Anda membutuhkan APK yang belum ditambal dengan versi:</string>
     <string name="home_apk_availability_recommended_label">Direkomendasikan</string>
     <string name="home_apk_availability_unpatched_label">Tidak ditambal</string>
     <string name="home_apk_availability_incompatible_label">Tidak kompatibel</string>
     <string name="home_apk_availability_installed_version">Terpasang di perangkat ini: %s</string>
+    <string name="home_apk_availability_find">Ya, bantu aku menemukannya</string>
+    <string name="home_apk_availability_have">Tidak, aku sudah memilikinya</string>
     <string name="home_apk_helper_download">Gunakan aplikasi pembantu</string>
     <string name="home_apk_helper_untrusted">Sebuah aplikasi pendamping terinstal namun belum dipercaya, sehingga tidak ditampilkan di sini</string>
     <string name="home_apk_helper_untrusted_action">Tinjau aplikasi pendamping</string>
@@ -278,6 +287,8 @@
     <string name="home_apk_helper_wrong_package">Aplikasi pembantu mengembalikan aplikasi yang berbeda dari aplikasi yang sedang diperbarui</string>
     <string name="home_apk_helper_installed_unavailable">Morphe tidak dapat menggunakan aplikasi yang telah dipasang</string>
     <string name="home_apk_helper_installed_incompatible">Versi yang sudah terpasang tidak dapat ditambal</string>
+    <string name="home_apk_use_saved_copy">Gunakan salinan tersimpan</string>
+    <string name="home_apk_use_installed_app">Gunakan aplikasi terpasang</string>
     <string name="home_apk_use_saved_unsupported">Tambalan tidak mendukung salinan tersimpan ini. Menambalnya akan meminta konfirmasi Anda, atau pilih APK lain</string>
     <string name="home_apk_use_installed_unverified">Tanda tangan aplikasi yang terpasang tidak dapat diverifikasi, jadi kemungkinan aplikasi tersebut sudah ditambal</string>
     <string name="home_unverified">Tidak Terverifikasi</string>
@@ -314,10 +325,14 @@
     <string name="home_download_instructions_link_copied">Tautan disalin</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_where">Peramban biasanya menyimpannya ke folder Download</string>
     <string name="home_file_picker_prompt_open_apk">Buka berkas APK</string>
     <string name="home_recommended_version">Rekomendasi versi</string>
     <string name="home_selected_version">Versi yang terpilih</string>
     <string name="home_select_apk_title">Pilih APK</string>
+    <string name="home_select_apk_description">"Tambalan universal berfungsi dengan aplikasi apa pun
+
+Pilih dari mana Anda ingin mengambil APK-nya"</string>
     <string name="home_use_installed_app">Gunakan aplikasi yang terpasang</string>
     <string name="home_use_installed_app_description">Pilih aplikasi yang sudah ada di perangkat ini</string>
     <string name="home_open_apk_file_description">Pilih file APK, APKM, APKS, atau XAPK dari penyimpanan</string>
@@ -354,6 +369,7 @@
     <string name="expert_mode_patch_required_by_installer">Diperlukan untuk target pemasangan yang dipilih</string>
     <string name="expert_mode_patch_unavailable_for_installer">Tidak tersedia untuk target pemasangan yang dipilih</string>
     <string name="expert_mode_multiple_sources_warning_title">Beberapa sumber tambalan telah dipilih</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">Tambalan yang berasal dari sumber berbeda tidak dirancang untuk digunakan bersama dan dapat menimbulkan konflik atau menyebabkan aplikasi rusak</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK Tidak Terverifikasi</string>
     <string name="home_invalid_signature_message">APK yang Anda pilih untuk &lt;b&gt;%s&lt;/b&gt; tidak sesuai dengan sertifikat yang diharapkan. Ini mungkin telah dimodifikasi atau berasal dari sumber yang tidak terpercaya</string>
@@ -506,6 +522,8 @@ Untuk hasil terbaik, aplikasi ini merekomendasikan untuk menambal &lt;b&gt;APK l
     <string name="shortcut_check_updates_long">Periksa pembaruan tambalan</string>
     <string name="shortcut_patch_app">Tambal %s</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">Copot aplikasi ini?</string>
+    <string name="home_app_info_uninstall_removes_data">Aplikasi beserta datanya dihapus dari perangkat ini</string>
     <string name="batch_uninstall_confirm_body">Aplikasi yang dipilih akan dihapus secara permanen dari perangkat Anda</string>
     <string name="home_app_info_remove_app_warning">Ini akan menghapus secara permanen:</string>
     <string name="home_app_info_delete_item_database">Entri basis data</string>

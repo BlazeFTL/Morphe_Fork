@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">แหล่งที่มานี้มีการรองรับแบบทดลองสำหรับแอปเวอร์ชันนี้เท่านั้น แพตช์ต่างๆ อาจไม่เสถียรหรือไม่สมบูรณ์</string>
     <string name="sources_management_experimental_versions_toggle">ใช้แอปเวอร์ชันทดลอง</string>
     <string name="sources_management_experimental_versions_toggle_description">แสดงและแพตช์เป้าหมายแอปทดลอง</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">แหล่งที่มานี้ได้ถูกเพิ่มไปแล้ว</string>
     <string name="sources_management_invalid_url">URL ต้นทางไม่ถูกต้อง โปรดตรวจสอบที่อยู่และลองอีกครั้ง</string>
     <string name="sources_management_blocked">แหล่งแพตช์นี้ถูกบล็อกและไม่สามารถเพิ่มได้</string>

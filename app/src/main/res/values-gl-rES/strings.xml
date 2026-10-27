@@ -84,6 +84,7 @@
     <string name="sources_management_prerelease_toggle">Parche pre-lanzamento</string>
     <string name="sources_management_prerelease_toggle_description">Recibe acceso anticipado a novas versións experimentais dos parches</string>
     <string name="sources_management_experimental_versions_toggle">Versións experimentais da aplicación</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Esta fonte xa foi engadida</string>
     <string name="sources_management_invalid_url">URL de orixe inválido. Por favor, comprprobe o enderezo e tente de novo</string>
     <string name="sources_management_metadata_unavailable">Metadatos N/A</string>

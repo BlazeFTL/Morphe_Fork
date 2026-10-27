@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Ez a forrás csak kísérleti támogatást biztosít a hozzájuk tartozó alkalmazásverzióhoz. A javítások instabilak vagy hiányosak lehetnek</string>
     <string name="sources_management_experimental_versions_toggle">Kísérleti alkalmazásverziók</string>
     <string name="sources_management_experimental_versions_toggle_description">Megmutatja és javítja a kísérleti alkalmazás célpontjait. MaxLength: null. Applied translations: none.</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Ez a forrás már hozzá lett adva</string>
     <string name="sources_management_invalid_url">Érvénytelen forrás URL. Kérjük, ellenőrizze a címet, és próbálja újra.</string>
     <string name="sources_management_blocked">Ez a javításcsomag forrás le van blokkolva, és nem adható hozzá</string>

@@ -200,6 +200,8 @@
     <string name="expert_mode_experimental_version_notice">Denne kilden har kun eksperimentell støtte for denne app-versjonen. Oppdateringene kan være ustabile eller ufullstendige</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentelle appversjoner</string>
     <string name="sources_management_experimental_versions_toggle_description">Viser og patcher eksperimentelle app-mål</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Aktiver forhåndsutgitte patcher</string>
     <string name="sources_management_already_exists">Denne kilden er allerede lagt til</string>
     <string name="sources_management_invalid_url">Ugyldig kilde-URL. Vennligst sjekk adressen og prøv igjen</string>
     <string name="sources_management_blocked">Denne patch-kilden er blokkert og kan ikke legges til</string>

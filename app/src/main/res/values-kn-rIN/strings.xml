@@ -81,6 +81,7 @@
     <string name="sources_management_prerelease_toggle">ಪರಿ- ಬಿಡುಗಡೆ ಪ್ಯಾचಗಳು</string>
     <string name="sources_management_prerelease_toggle_description">ಹೊಚ್ಚಹೊತ್ತಾದ ಪ್ರಾಯೋಗಿಕ ಪ್ಯಾಚ್ಅವಕಾಶ ಪಡೆಯಿರಿ</string>
     <string name="sources_management_experimental_versions_toggle">ಪ್ರಾಯೋಗಿಕ ಅಪ್ಲಿಕೇಶನ್ आवृತ್ತಿಗಳು</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">ಈ ಮೂಲವನ್ನು ಈಗಾಗಲೇ ಸೇರಿಸಲಾಗಿದೆ</string>
     <string name="sources_management_invalid_url">చెల్లని మూల URL. దయచేసి చిరునామాను తనిఖీ చేసి మళ్లీ ప్రయత్నించండి</string>
     <string name="sources_management_metadata_unavailable">ಮೆಟಾಡೇಟಾ ಲಭ್ಯವಿಲ್ಲ</string>

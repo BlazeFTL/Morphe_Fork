@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Αυτή η πηγή έχει μόνο πειραματική υποστήριξη για αυτήν την έκδοση της εφαρμογής. Τα patches της ενδέχεται να είναι ασταθή ή ελλιπή</string>
     <string name="sources_management_experimental_versions_toggle">Πειραματικές εκδόσεις εφαρμογών</string>
     <string name="sources_management_experimental_versions_toggle_description">Εμφανίζει και επιδιορθώνει πειραματικούς στόχους εφαρμογής</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Αυτή η πηγή έχει ήδη προστεθεί</string>
     <string name="sources_management_invalid_url">Μη έγκυρη διεύθυνση URL πηγής. Παρακαλώ ελέγξτε τη διεύθυνση και προσπαθήστε ξανά</string>
     <string name="sources_management_blocked">Η πηγή ενημερώσεων είναι αποκλεισμένη και δεν μπορεί να προστεθεί</string>

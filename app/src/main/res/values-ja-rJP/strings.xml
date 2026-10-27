@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">このアプリのバージョンは、このソースでは試験的にのみサポートされています。パッチが不安定であったり、不完全な場合があります</string>
     <string name="sources_management_experimental_versions_toggle">試験的なバージョンのアプリを使用</string>
     <string name="sources_management_experimental_versions_toggle_description">試験的なパッチ対象アプリを表示し、パッチを適用できるようにします</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">このソースは既に存在します</string>
     <string name="sources_management_invalid_url">無効なソース URL です。アドレスを確認してもう一度お試しください</string>
     <string name="sources_management_blocked">このパッチソースはブロックされており、追加できません</string>

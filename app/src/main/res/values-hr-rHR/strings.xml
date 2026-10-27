@@ -201,6 +201,8 @@ Ovaj izvor se nalazi na predizdanjima patcheva. Patchanje može propasti ili se 
     <string name="expert_mode_experimental_version_notice">Ovaj izvor ima samo eksperimentalnu podršku za ovu verziju aplikacije. Njegovi zakrpe mogu biti nestabilne ili nepotpune</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentalne verzije aplikacije</string>
     <string name="sources_management_experimental_versions_toggle_description">Prikazuje i patcha eksperimentalne ciljne aplikacije</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Omogućiti predizdanja patcheva</string>
     <string name="sources_management_already_exists">Ovaj izvor je već dodan</string>
     <string name="sources_management_invalid_url">Nevažeći izvor poveznice. Molimo provjerite adresu i pokušajte ponovno</string>
     <string name="sources_management_blocked">Ovaj izvor patcha je blokiran i ne može se dodati</string>

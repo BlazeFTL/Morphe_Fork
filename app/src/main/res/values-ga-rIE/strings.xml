@@ -200,6 +200,8 @@
     <string name="expert_mode_experimental_version_notice">Níl ach tacaíocht thurgnamhach ag an bhfoinse seo don leagan seo den aip. D’fhéadfadh a paistí a bheith éagobhsaí nó neamhiomlán.</string>
     <string name="sources_management_experimental_versions_toggle">Leaganacha turgnamhacha aipeanna</string>
     <string name="sources_management_experimental_versions_toggle_description">Taispeánann agus paistíonn spriocanna aipeanna turgnamhacha</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Paistí réamh-eisiúna a chumasú</string>
     <string name="sources_management_already_exists">Tá an fhoinse seo curtha leis cheana féin</string>
     <string name="sources_management_invalid_url">URL foinse neamhbhailí. Seiceáil an seoladh agus bain triail eile as</string>
     <string name="sources_management_blocked">Tá an foinse paiste seo blocáilte agus ní féidir í a chur leis</string>

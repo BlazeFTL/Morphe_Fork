@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Þessi uppspretta hefur aðeins tilraunastöðu fyrir þessa útgáfu af forritinu. Pötsunir hennar gætu verið óstöðugar eða ófullkomnar</string>
     <string name="sources_management_experimental_versions_toggle">Tilrauna app úgáfur</string>
     <string name="sources_management_experimental_versions_toggle_description">Sýnir og lagar tilraunamarkmið forrita</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Þessi heimild hefur þegar verið bætt við</string>
     <string name="sources_management_invalid_url">Ógild URL uppspretta. Vinsamlegast skoðaðu netfangið og reyndu aftur</string>
     <string name="sources_management_blocked">Þessi uppfærslujafi er blokkaður og ekki er hægt að bæta við honum</string>

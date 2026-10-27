@@ -99,7 +99,9 @@
     <string name="home_category_move_to">Déplacer vers la catégorie</string>
     <string name="home_category_move_selected_title">Déplacer les applications sélectionnées</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">Supprimer %s ?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">Ses applications reviennent dans &lt;b&gt;%s&lt;/b&gt;</string>
     <string name="home_category_actions_unavailable">Actions indisponibles pour cette catégorie</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Quelle application voulez-vous patcher ?</string>
@@ -201,6 +203,7 @@
     <string name="expert_mode_experimental_version_notice">Cette source ne prend en charge cette version de l\'application qu\'à titre expérimental. Ses patchs peuvent être instables ou incomplets</string>
     <string name="sources_management_experimental_versions_toggle">Versions expérimentales de l\'application</string>
     <string name="sources_management_experimental_versions_toggle_description">Affiche et patche les cibles d\'applications expérimentales</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Cette source a déjà été ajoutée</string>
     <string name="sources_management_invalid_url">L\'URL de la source est invalide. Vérifiez l\'adresse puis réessayez</string>
     <string name="sources_management_blocked">Cette source de patchs est bloquée et ne peut pas être ajoutée</string>
@@ -259,12 +262,15 @@
     <string name="sources_patch_expert_badge_tooltip">Activer le mode Expert dans les Paramètres pour inclure ce patch manuellement
 </string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">Besoin d\'aide pour trouver l\'APK ?</string>
     <string name="home_apk_availability_dialog_simple">Pour patcher &lt;b&gt;%s&lt;/b&gt;, vous avez besoin de la version APK non patchée :</string>
     <string name="home_apk_availability_dialog_expert">Pour patcher &lt;b&gt;%s&lt;/b&gt;, vous avez besoin d\'un APK non patché des versions :</string>
     <string name="home_apk_availability_recommended_label">Recommandé</string>
     <string name="home_apk_availability_unpatched_label">Non patchée</string>
     <string name="home_apk_availability_incompatible_label">Incompatible</string>
     <string name="home_apk_availability_installed_version">Installé sur cet appareil : %s</string>
+    <string name="home_apk_availability_find">Oui, aidez-moi à le trouver</string>
+    <string name="home_apk_availability_have">Non, je l\'ai déjà</string>
     <string name="home_apk_helper_download">Utiliser une application d\'assistance</string>
     <string name="home_apk_helper_untrusted">Une application d\'assistance est installée mais elle n\'est pas encore considérée comme fiable, elle n\'est donc pas proposée ici</string>
     <string name="home_apk_helper_untrusted_action">Assistants à vérifier</string>
@@ -280,6 +286,7 @@
     <string name="home_apk_helper_wrong_package">L\'application d\'assistance a renvoyé une application différente de celle en train d’être patchée</string>
     <string name="home_apk_helper_installed_unavailable">Morphe n\'a pas pu utiliser l\'application installée</string>
     <string name="home_apk_helper_installed_incompatible">La version installée ne peut pas être patchée</string>
+    <string name="home_apk_use_saved_copy">Utiliser la copie enregistrée</string>
     <string name="home_apk_use_installed_app">Utiliser l\'application installée</string>
     <string name="home_apk_use_saved_unsupported">Les patchs ne prennent pas en charge cette copie enregistrée. Le patching vous demandera de confirmer, ou de choisir un autre APK</string>
     <string name="home_apk_use_installed_unverified">Impossible de vérifier la signature de l\'application installée, il est donc possible qu\'elle soit déjà patchée</string>
@@ -317,10 +324,15 @@
     <string name="home_download_instructions_link_copied">Lien copié</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">Sélectionnez l\'APK de %s</string>
+    <string name="home_file_picker_prompt_where">Les navigateurs l\'enregistrent généralement dans le dossier Download</string>
     <string name="home_file_picker_prompt_open_apk">Ouvrir un fichier APK</string>
     <string name="home_recommended_version">Version recommandée</string>
     <string name="home_selected_version">Version sélectionnée</string>
     <string name="home_select_apk_title">Sélectionner un APK</string>
+    <string name="home_select_apk_description">"Les patchs universels fonctionnent avec n'importe quelle application
+
+Choisissez d'où provient son APK"</string>
     <string name="home_use_installed_app">Utiliser l\'application installée</string>
     <string name="home_use_installed_app_description">Choisissez une application déjà installée sur cet appareil</string>
     <string name="home_open_apk_file_description">Choisissez un fichier APK, APKM, APKS ou XAPK dans le stockage</string>
@@ -357,6 +369,7 @@
     <string name="expert_mode_patch_required_by_installer">Nécessaire pour la cible d\'installation sélectionnée</string>
     <string name="expert_mode_patch_unavailable_for_installer">Indisponible pour la cible d\'installation sélectionnée</string>
     <string name="expert_mode_multiple_sources_warning_title">Plusieurs sources de patchs sélectionnées</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">Les patchs provenant de différentes sources ne sont pas conçus pour fonctionner ensemble et peuvent entrer en conflit ou rendre l\'application inutilisable</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK non vérifié</string>
     <string name="home_invalid_signature_message">L\'APK que vous avez sélectionné pour &lt;b&gt;%s&lt;/b&gt; ne correspond pas au certificat de signature attendu. Il peut avoir été modifié ou provenir d\'une source non fiable</string>
@@ -369,7 +382,7 @@ Pour de meilleurs résultats, cette application recommande d'effectuer le patchi
     <string name="home_dialog_unsupported_version_experimental_label">Expérimentale</string>
     <string name="home_dialog_unsupported_version_experimental_description">Cette version bénéficie d\'un support expérimental et peut être instable ou incomplète</string>
     <string name="morphe_experimental_app_version_dialog_title">Voulez-vous expérimenter ? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">"Cette version de &lt;b&gt;%s&lt;/b&gt; bénéficie d'un support expérimental précoce.
+    <string name="morphe_experimental_app_version_dialog_message">"Cette version de &lt;b&gt;%s&lt;/b&gt; bénéficie d'un support expérimental.
 
 🔧 Attendez-vous à des comportements inhabituels de l'application ou à des bugs non identifiés pendant que les patchs sont affinés pour cette version de l'application"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Version non prise en charge</string>
@@ -508,6 +521,8 @@ Pour de meilleurs résultats, cette application recommande d'effectuer le patchi
     <string name="shortcut_check_updates_long">Vérifier les mises à jour de patchs</string>
     <string name="shortcut_patch_app">Patcher %s</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">Désinstaller cette application ?</string>
+    <string name="home_app_info_uninstall_removes_data">L\'application et ses données seront supprimées de cet appareil</string>
     <string name="batch_uninstall_confirm_body">Les applications sélectionnées seront définitivement supprimées de votre appareil</string>
     <string name="home_app_info_remove_app_warning">Cela supprimera définitivement :</string>
     <string name="home_app_info_delete_item_database">Entrée de base de données</string>
@@ -671,7 +686,10 @@ La désinstallation effacera définitivement toutes les données de l'applicatio
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patching en cours…</string>
     <string name="patcher_notification_text">Appuyez pour revenir au patcheur</string>
+    <string name="patcher_stop_title">Arrêter le patching ?</string>
+    <string name="patcher_stop_discards">La progression actuelle sera perdue et rien ne sera installé</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Continuer le patching</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Transformation de votre application en quelque chose d\'extraordinaire… 🏆</string>
     <string name="patcher_message_2">Apprenez de nouveaux tours aux vieilles applications… 🎩</string>
@@ -854,6 +872,7 @@ La désinstallation effacera définitivement toutes les données de l'applicatio
     <string name="settings_appearance_app_icon_mark_black">Noir</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Changer l\'icône de l\'application ? </string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe redémarre pour passer à &lt;b&gt;%s&lt;/b&gt;</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Changer l\'icône</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1395,6 +1414,7 @@ Détails : %2$s"</string>
     <string name="show_all">Tout afficher</string>
     <string name="ignore">Ignorer</string>
     <string name="stop_ignoring">Ne plus ignorer</string>
+    <string name="stop">Arrêter</string>
     <string name="logs">Journaux</string>
     <string name="sources">Sources</string>
     <string name="installing_ellipsis">Installation…</string>

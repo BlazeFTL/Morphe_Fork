@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Questa sorgente ha solo un supporto sperimentale per questa versione dell\'app. Le sue patch potrebbero essere instabili o incomplete</string>
     <string name="sources_management_experimental_versions_toggle">Versioni sperimentali delle app</string>
     <string name="sources_management_experimental_versions_toggle_description">Mostra e applica patch ai target di app sperimentali</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Questa fonte è già stata aggiunta</string>
     <string name="sources_management_invalid_url">URL di origine non valido. Controlla l\'indirizzo e riprova</string>
     <string name="sources_management_blocked">Questa sorgente di patch è bloccata e non può essere aggiunta</string>

@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">এই সোর্সটির জন্য এই অ্যাপ ভার্সনে শুধুমাত্র পরীক্ষামূলক সমর্থন রয়েছে। এর প্যাচগুলি অস্থিতিশীল বা অসম্পূর্ণ হতে পারে</string>
     <string name="sources_management_experimental_versions_toggle">পরীক্ষামূলক অ্যাপ সংস্করণ</string>
     <string name="sources_management_experimental_versions_toggle_description">পরীক্ষামূলক অ্যাপ টার্গেট দেখায় এবং প্যাচ করে</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">এই উৎসটি ইতিমধ্যেই যোগ করা হয়েছে</string>
     <string name="sources_management_invalid_url">অবৈধ উৎস URL। অনুগ্রহ করে ঠিকানাটি পরীক্ষা করুন এবং পুনরায় চেষ্টা করুন</string>
     <string name="sources_management_blocked">এই প্যাচ উৎসটি ব্লক করা হয়েছে এবং এটি যোগ করা যাবে না</string>

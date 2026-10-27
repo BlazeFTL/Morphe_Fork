@@ -148,6 +148,7 @@
     <string name="sources_management_prerelease_toggle">Перадвыпускныя патчы</string>
     <string name="sources_management_prerelease_toggle_description">Атрымлівае ранні доступ да новых эксперыментальных версій патчаў</string>
     <string name="sources_management_experimental_versions_toggle">Эксперыментальныя версіі праграмы</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Гэтая крыніца ўжо дададзены</string>
     <string name="sources_management_invalid_url">Няправільны URL крыніцы. Калі ласка, праверце адрас і паспрабуйце зноў</string>
     <string name="sources_management_blocked">Гэтая крыніца патча заблакавана і не можа быць дададзена.</string>

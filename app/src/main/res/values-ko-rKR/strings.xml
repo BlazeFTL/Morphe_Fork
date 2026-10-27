@@ -99,7 +99,9 @@
     <string name="home_category_move_to">카테고리로 이동</string>
     <string name="home_category_move_selected_title">선택된 앱 이동</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">%s를 삭제하시겠습니까?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">앱이 &lt;b&gt;%s&lt;/b&gt;로 돌아갑니다</string>
     <string name="home_category_actions_unavailable">이 카테고리에 사용할 수 있는 작업이 없습니다</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">어떤 앱을 패치하시겠습니까?</string>
@@ -200,6 +202,7 @@
     <string name="expert_mode_experimental_version_notice">이 소스는 이 앱 버전에 대해 실험적인 지원만 제공합니다. 패치가 불안정하거나 불완전할 수 있습니다</string>
     <string name="sources_management_experimental_versions_toggle">실험 앱 버전</string>
     <string name="sources_management_experimental_versions_toggle_description">실험 앱 대상을 표시하고 패치합니다</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">이 소스는 이미 추가되어 있습니다</string>
     <string name="sources_management_invalid_url">잘못된 소스 URL입니다. 주소를 확인하고 다시 시도하세요</string>
     <string name="sources_management_blocked">이 패치 소스는 차단되어 추가할 수 없습니다</string>
@@ -257,12 +260,15 @@
     <string name="sources_patch_expert_badge">전문가</string>
     <string name="sources_patch_expert_badge_tooltip">설정에서 전문가 모드를 활성화하여 이 패치를 수동으로 포함할 수 있습니다</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">APK를 찾는 데 도움이 필요하세요?</string>
     <string name="home_apk_availability_dialog_simple">&lt;b&gt;%s&lt;/b&gt;를 패치하려면 패치되지 않은 APK가 필요합니다:</string>
     <string name="home_apk_availability_dialog_expert">&lt;b&gt;%s&lt;/b&gt;를 패치하려면 패치되지 않은 APK가 필요합니다:</string>
     <string name="home_apk_availability_recommended_label">권장 버전</string>
     <string name="home_apk_availability_unpatched_label">패치되지 않음</string>
     <string name="home_apk_availability_incompatible_label">호환되지 않음</string>
     <string name="home_apk_availability_installed_version">이 기기에 설치된 버전: %s</string>
+    <string name="home_apk_availability_find">네, 찾는 데 도움을 주세요</string>
+    <string name="home_apk_availability_have">아니요, 이미 가지고 있습니다</string>
     <string name="home_apk_helper_download">Helper 앱 사용</string>
     <string name="home_apk_helper_untrusted">Helper 앱이 설치되어 있지만 아직 신뢰할 수 있는 앱으로 설정되지 않아 여기에 표시되지 않습니다.</string>
     <string name="home_apk_helper_untrusted_action">Helper 검토</string>
@@ -278,6 +284,7 @@
     <string name="home_apk_helper_wrong_package">Helper 앱이 패치하려는 앱과 다른 앱을 반환하였습니다</string>
     <string name="home_apk_helper_installed_unavailable">Morphe가 설치된 앱을 사용할 수 없습니다</string>
     <string name="home_apk_helper_installed_incompatible">설치된 버전은 패치할 수 없습니다</string>
+    <string name="home_apk_use_saved_copy">저장된 복사본 사용</string>
     <string name="home_apk_use_installed_app">설치된 앱 사용</string>
     <string name="home_apk_use_saved_unsupported">현재 저장된 APK에는 이 패치를 적용할 수 없습니다. 계속 진행하려면 확인을 거치거나 다른 APK를 선택하세요</string>
     <string name="home_apk_use_installed_unverified">설치된 앱의 서명을 검증할 수 없으므로 이미 패치된 앱일 수 있습니다</string>
@@ -315,10 +322,15 @@
     <string name="home_download_instructions_link_copied">링크 복사됨</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">%s APK 선택</string>
+    <string name="home_file_picker_prompt_where">브라우저는 일반적으로 다운로드 폴더에 저장합니다</string>
     <string name="home_file_picker_prompt_open_apk">APK 파일 열기</string>
     <string name="home_recommended_version">권장 버전</string>
     <string name="home_selected_version">선택된 버전</string>
     <string name="home_select_apk_title">APK 선택</string>
+    <string name="home_select_apk_description">"유니버설 패치는 모든 앱에서 작동합니다
+
+APK를 가져올 위치를 선택하세요"</string>
     <string name="home_use_installed_app">설치된 앱 사용</string>
     <string name="home_use_installed_app_description">이 기기에 이미 설치된 앱을 선택하세요</string>
     <string name="home_open_apk_file_description">저장소에서 APK, APKM, APKS 또는 XAPK 파일을 선택하세요</string>
@@ -355,6 +367,7 @@
     <string name="expert_mode_patch_required_by_installer">선택한 설치 대상에 필요합니다</string>
     <string name="expert_mode_patch_unavailable_for_installer">선택한 설치 대상에 사용할 수 없습니다</string>
     <string name="expert_mode_multiple_sources_warning_title">여러 패치 소스가 선택됨</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">다른 소스의 패치는 함께 작동하도록 만들어지지 않았으며 충돌하거나 앱을 손상시킬 수 있습니다</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">미검증된 APK</string>
     <string name="home_invalid_signature_message">선택된 &lt;b&gt;%s&lt;/b&gt;에 대한 APK는 예상된 서명 인증서와 일치하지 않습니다. 수정되었거나 신뢰할 수 없는 출처에서 가져온 파일일 수 있습니다</string>
@@ -507,6 +520,8 @@
     <string name="shortcut_check_updates_long">패치 업데이트 확인</string>
     <string name="shortcut_patch_app">%s 패치</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">이 앱을 제거하시겠습니까?</string>
+    <string name="home_app_info_uninstall_removes_data">앱과 해당 데이터가 이 기기에서 제거됩니다</string>
     <string name="batch_uninstall_confirm_body">선택된 앱을 기기에서 영구적으로 제거합니다</string>
     <string name="home_app_info_remove_app_warning">다음 항목들을 영구적으로 삭제합니다:</string>
     <string name="home_app_info_delete_item_database">데이터베이스 엔트리</string>
@@ -668,7 +683,10 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">패치를 진행하는 중…</string>
     <string name="patcher_notification_text">패처로 돌아가려면 여기를 탭하세요</string>
+    <string name="patcher_stop_title">패치를 중지하시겠습니까?</string>
+    <string name="patcher_stop_discards">지금까지의 진행 상황은 폐기되고 아무것도 설치되지 않습니다</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">패치 계속</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">앱을 멋지게 변환 중… 🏆</string>
     <string name="patcher_message_2">오래된 앱에 새 기능 가르치는 중… 🎩</string>
@@ -810,15 +828,21 @@
     <string name="settings_appearance_repatch_notice_description">패치된 앱을 다시 패치할 수 있을 경우 배너를 표시합니다</string>
     <string name="settings_appearance_more_apps_card">앱 카드 더보기</string>
     <string name="settings_appearance_more_apps_card_description">앱 목록 아래에 커뮤니티 패치로 연결되는 카드를 표시합니다</string>
+    <string name="settings_appearance_app_card_colors">카드 색상</string>
     <string name="settings_appearance_app_card_colors_default">기본값</string>
+    <string name="settings_appearance_app_card_colors_default_description">각 앱과 소스에 고유한 색상을 지정하세요</string>
     <string name="settings_appearance_app_card_colors_accent">강조</string>
+    <string name="settings_appearance_app_card_colors_accent_description">앱 및 소스 카드에 앱 강조 색상을 사용합니다</string>
     <string name="settings_appearance_app_card_colors_gradient">그라데이션</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">앱 카드에는 하나의 사용자 정의 그라데이션을 사용하고, 소스 카드에는 하나의 색상으로 혼합하여 사용합니다</string>
     <string name="settings_appearance_app_card_colors_solid">단색</string>
+    <string name="settings_appearance_app_card_colors_solid_description">앱 및 소스 카드에 하나의 사용자 정의 색상을 사용합니다</string>
     <string name="settings_appearance_app_card_colors_start">시작 색상</string>
     <string name="settings_appearance_app_card_colors_middle">중간 색상</string>
     <string name="settings_appearance_app_card_colors_end">최종 색상</string>
     <string name="settings_appearance_app_card_colors_solid_color">단색</string>
     <string name="settings_appearance_app_card_colors_bundle">앱 번들 색상</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">각 앱 또는 소스 고유의 색상을 사용하고, 자동으로 음영을 처리하여 조정합니다</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">앱 아이콘</string>
     <string name="settings_appearance_app_icon_selector_description">홈 화면과 앱 서랍에서 Morphe의 모양</string>
@@ -845,6 +869,7 @@
     <string name="settings_appearance_app_icon_mark_black">검정</string>
     <string name="settings_appearance_app_icon_change_dialog_title">앱 아이콘을 변경할까요?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe가 다시 시작되어 &lt;b&gt;%s&lt;/b&gt;로 전환됩니다</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">앱 아이콘 변경</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1383,6 +1408,7 @@ morphe_header_custom_dark.png
     <string name="show_all">모두 표시</string>
     <string name="ignore">무시</string>
     <string name="stop_ignoring">무시 중지</string>
+    <string name="stop">중지</string>
     <string name="logs">로그</string>
     <string name="sources">소스</string>
     <string name="installing_ellipsis">설치하는 중…</string>

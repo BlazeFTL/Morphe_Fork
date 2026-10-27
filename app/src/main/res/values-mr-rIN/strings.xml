@@ -172,6 +172,7 @@
     <string name="expert_mode_prerelease_notice">हे स्रोत पूर्व-प्रकाशन पॅचवर आहे. पॅचिंग अयशस्वी होऊ शकते किंवा अनपेक्षित वर्तन होऊ शकते.</string>
     <string name="sources_management_experimental_versions_toggle">प्रायोगिक ॲप आवृत्त्या</string>
     <string name="sources_management_experimental_versions_toggle_description">प्रायोगिक अॅप लक्ष्ये दाखवते आणि पॅच करते</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">हे मूळ आधीच जोडले गेले आहे</string>
     <string name="sources_management_invalid_url">अवैध स्रोत URL. कृपया पत्ता तपासा आणि पुन्हा प्रयत्न करा</string>
     <string name="sources_management_blocked">हे पॅच स्रोत अवरोधित केले आहे आणि ते जोडले जाऊ शकत नाही</string>

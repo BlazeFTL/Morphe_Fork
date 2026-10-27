@@ -51,6 +51,7 @@
     <!-- Under an app left out of a source that keeps its home screen card because the user has patched it -->
     <!-- Marks an app (not a patch) the source started supporting since its app list was last opened -->
     <!-- Under the Bring new apps switch in a source's app list, whichever way it is set. "It" is the patch source -->
+    <!-- Actions of the panel for several selected sources at once -->
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_add_source">បន្ថែមប្រភពបំណះ</string>
     <string name="sources_dialog_remote_url">URL ប្រភព</string>

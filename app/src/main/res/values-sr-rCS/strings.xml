@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Ovaj izvor ima samo eksperimentalnu podršku za ovu verziju aplikacije. Njegovi zakrpe mogu biti nestabilne ili nepotpune</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentalne verzije aplikacije</string>
     <string name="sources_management_experimental_versions_toggle_description">Prikazuje i zakrpava eksperimentalne ciljne aplikacije</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Ovaj izvor je već dodat</string>
     <string name="sources_management_invalid_url">Nevalidna URL adresa izvora. Molimo proverite adresu i pokušajte ponovo.</string>
     <string name="sources_management_blocked">Ovaj izvor zakrpa je blokiran i ne može biti dodat</string>

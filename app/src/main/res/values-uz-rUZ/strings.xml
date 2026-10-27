@@ -194,6 +194,7 @@
     <string name="expert_mode_prerelease_notice">Bu manba oldindan chiqarilgan yangilanishlarda. Yangilash muvaffaqiyatsiz bo\'lishi yoki kutilmagan xatti-harakatlarga olib kelishi mumkin.</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimental ilova versiyalari</string>
     <string name="sources_management_experimental_versions_toggle_description">Eksperimental ilova maqsadlarini ko‘rsatadi va yamaydi</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Ushbu manba allaqachon qo\'shilgan</string>
     <string name="sources_management_invalid_url">Noto‘g‘ri manba URL. Iltimos, manzilni tekshiring va yana urinib ko‘ring</string>
     <string name="sources_management_blocked">Sumber tambalan ini diblokir dan tidak dapat ditambahkan</string>

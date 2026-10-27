@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Esta fuente solo tiene soporte experimental para esta versión de la aplicación. Sus parches pueden ser inestables o estar incompletos</string>
     <string name="sources_management_experimental_versions_toggle">Versiones experimentales de la aplicación</string>
     <string name="sources_management_experimental_versions_toggle_description">Muestra y parchea versiones experimentales de la aplicación</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Esta fuente ya ha sido añadida</string>
     <string name="sources_management_invalid_url">La URL de la fuente no es válida. Comprueba la dirección e inténtalo de nuevo</string>
     <string name="sources_management_blocked">Esta fuente de parches está bloqueada y no se puede añadir</string>

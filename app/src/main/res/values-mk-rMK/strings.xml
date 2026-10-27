@@ -90,6 +90,7 @@
     <string name="sources_management_prerelease_toggle">Пред-издадени закрпи</string>
     <string name="sources_management_prerelease_toggle_description">Прима ран пристап до нови експериментални верзии на закрпи</string>
     <string name="sources_management_experimental_versions_toggle">Експериментални верзии на апликацијата</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Овој извор веќе е додаден</string>
     <string name="sources_management_invalid_url">Невалидна URL адреса на извор. Проверете ја адресата и обидете се повторно</string>
     <string name="sources_management_metadata_unavailable">Метаподатоци N/A</string>

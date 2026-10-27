@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Ang source na ito ay may experimental support lamang para sa bersyong ito ng app. Maaaring hindi stable o hindi kumpleto ang mga patch nito</string>
     <string name="sources_management_experimental_versions_toggle">Mga bersyon ng app na pang-eksperimento</string>
     <string name="sources_management_experimental_versions_toggle_description">Nagpapakita at nag-aayos ng mga eksperimentong target ng app</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Ang pinagmulang ito ay naidagdag na.</string>
     <string name="sources_management_invalid_url">Hindi balido ang source URL. Pakisuri ang address at subukang muli.</string>
     <string name="sources_management_blocked">Ang source ng patch na ito ay naka-block at hindi maaaring idagdag</string>

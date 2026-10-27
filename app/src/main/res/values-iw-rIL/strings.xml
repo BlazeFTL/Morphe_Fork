@@ -201,6 +201,7 @@
     <string name="expert_mode_experimental_version_notice">למקור זה יש תמיכה ניסיונית בלבד עבור גרסת אפליקציה זו. הפאטצ\'ים שלו עשויים להיות לא יציבים או לא מלאים</string>
     <string name="sources_management_experimental_versions_toggle">גרסאות אפליקציה ניסיוניות</string>
     <string name="sources_management_experimental_versions_toggle_description">מציג ומתקן יעדים ניסיוניים של אפליקציות</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">מקור זה כבר נוסף</string>
     <string name="sources_management_invalid_url">כתובת URL מקור לא תקינה. אנא בדוק את הכתובת ונסה שוב</string>
     <string name="sources_management_blocked">מקור הטלאים הזה חסום ואינו יכול להיות מוסף</string>

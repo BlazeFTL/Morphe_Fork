@@ -200,6 +200,8 @@
     <string name="expert_mode_experimental_version_notice">Ta vir ima za to različico aplikacije le eksperimentalno podporo. Njegovi popravki so lahko nestabilni ali nepopolni</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentalne različice aplikacij</string>
     <string name="sources_management_experimental_versions_toggle_description">Prikaže in popravi eksperimentalne cilje aplikacij</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Omogoči predizdajne-popravke</string>
     <string name="sources_management_already_exists">Ta vir je bil že dodan</string>
     <string name="sources_management_invalid_url">Neveljaven izvorni URL. Preverite naslov in poskusite znova</string>
     <string name="sources_management_blocked">Ta vir popravkov je blokiran in ga ni mogoče dodati</string>

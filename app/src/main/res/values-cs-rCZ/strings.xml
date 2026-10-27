@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Tento zdroj má pro tuto verzi aplikace pouze experimentální podporu. Jeho záplaty mohou být nestabilní nebo neúplné</string>
     <string name="sources_management_experimental_versions_toggle">Experimentální verze aplikací</string>
     <string name="sources_management_experimental_versions_toggle_description">Zobrazuje a opravuje experimentální cíle aplikací</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Tento zdroj byl již přidán</string>
     <string name="sources_management_invalid_url">Neplatná adresa URL zdroje. Zkontrolujte adresu a zkuste to znovu</string>
     <string name="sources_management_blocked">Tento zdroj aktualizací je zablokovaný a nelze jej přidat</string>

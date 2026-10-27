@@ -200,6 +200,8 @@
     <string name="expert_mode_experimental_version_notice">To źródło oferuje jedynie eksperymentalną obsługę tej wersji aplikacji. Jego modyfikacje mogą działać niestabilnie lub być niekompletne</string>
     <string name="sources_management_experimental_versions_toggle">Eksperymentalne wersje aplikacji</string>
     <string name="sources_management_experimental_versions_toggle_description">Wyświetla i modyfikuje eksperymentalne wersje docelowe aplikacji</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Włączyć przedpremierowe modyfikacje</string>
     <string name="sources_management_already_exists">To źródło zostało już dodane</string>
     <string name="sources_management_invalid_url">Nieprawidłowy adres źródła. Sprawdź adres i spróbuj ponownie</string>
     <string name="sources_management_blocked">To źródło modyfikacji jest zablokowane i nie może zostać dodane</string>

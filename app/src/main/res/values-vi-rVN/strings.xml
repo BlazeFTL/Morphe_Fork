@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Nguồn này chỉ có hỗ trợ thử nghiệm cho phiên bản ứng dụng này. Các bản vá của nó có thể không ổn định hoặc không đầy đủ</string>
     <string name="sources_management_experimental_versions_toggle">Phiên bản ứng dụng thử nghiệm</string>
     <string name="sources_management_experimental_versions_toggle_description">Hiển thị và vá các mục tiêu ứng dụng thử nghiệm</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Nguồn này đã được thêm vào rồi</string>
     <string name="sources_management_invalid_url">URL nguồn không hợp lệ. Vui lòng kiểm tra địa chỉ và thử lại</string>
     <string name="sources_management_blocked">Không thể thêm nguồn vá này vì nó bị chặn</string>

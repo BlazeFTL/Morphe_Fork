@@ -99,7 +99,9 @@
     <string name="home_category_move_to">Kategoriye taşı</string>
     <string name="home_category_move_selected_title">Seçili uygulamaları taşı</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">%s silinsin mi?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">Uygulamaları &lt;b&gt;%s&lt;/b&gt; kategorisine geri taşınır</string>
     <string name="home_category_actions_unavailable">Bu kategori için kullanılamayan işlemler</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Hangi uygulamayı yamalamak istiyorsunuz?</string>
@@ -200,6 +202,7 @@
     <string name="expert_mode_experimental_version_notice">Bu kaynak, bu uygulama sürümü için yalnızca deneysel desteğe sahiptir. Yamaları kararsız veya eksik olabilir</string>
     <string name="sources_management_experimental_versions_toggle">Deneysel uygulama sürümleri</string>
     <string name="sources_management_experimental_versions_toggle_description">Deneysel uygulama hedeflerini gösterir ve yamalar</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Bu kaynak zaten eklenmiş</string>
     <string name="sources_management_invalid_url">Geçersiz kaynak URL\'si. Lütfen adresi kontrol edin ve tekrar deneyin</string>
     <string name="sources_management_blocked">Bu yama kaynağı engellenmiş ve eklenemiyor</string>
@@ -237,6 +240,7 @@
     <string name="sources_dialog_url_invalid">URL, bir GitHub/GitLab deposuna veya .json dosyasına işaret etmelidir</string>
     <string name="sources_dialog_preinstalled">Ön yüklü</string>
     <string name="sources_dialog_community">Topluluk yamaları</string>
+    <string name="sources_dialog_choose_apps">Uygulamaları seçin</string>
     <string name="sources_dialog_choose_apps_description">Kaynak yüklendikten sonra, uygulamalarından hangilerinin tutulacağını seçin.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Üçüncü taraf yama kaynakları</string>
@@ -256,12 +260,15 @@
     <string name="sources_patch_expert_badge">Uzman</string>
     <string name="sources_patch_expert_badge_tooltip">Bu yamayı manuel olarak eklemek için Ayarlar\'da Uzman modunu etkinleştirin</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">APK bulmada yardıma ihtiyacınız var mı?</string>
     <string name="home_apk_availability_dialog_simple">&lt;b&gt;%s&lt;/b&gt;\'i yamalamak için bu yamalanmamış APK sürümüne ihtiyacınız var:</string>
     <string name="home_apk_availability_dialog_expert">&lt;b&gt;%s&lt;/b&gt;\'i yamalamak için bu yamalanmamış APK sürümlerinden birine ihtiyacınız var:</string>
     <string name="home_apk_availability_recommended_label">Önerilen</string>
     <string name="home_apk_availability_unpatched_label">Yamalanmamış</string>
     <string name="home_apk_availability_incompatible_label">Uyumsuz</string>
     <string name="home_apk_availability_installed_version">Bu cihazda yüklü: %s</string>
+    <string name="home_apk_availability_find">Evet, bulmama yardım et</string>
+    <string name="home_apk_availability_have">Hayır, zaten bende var</string>
     <string name="home_apk_helper_download">Bir yardımcı uygulama kullanın</string>
     <string name="home_apk_helper_untrusted">Yardımcı bir uygulama yüklü ancak henüz güvenilir değil, bu yüzden burada sunulmuyor</string>
     <string name="home_apk_helper_untrusted_action">Yardımcıları incele</string>
@@ -277,6 +284,7 @@
     <string name="home_apk_helper_wrong_package">Yardımcı uygulama yamalanan uygulamadan farklı bir uygulama döndürdü</string>
     <string name="home_apk_helper_installed_unavailable">Morphe yüklü uygulamayı kullanamadı</string>
     <string name="home_apk_helper_installed_incompatible">Yüklü sürüm yamalanamıyor</string>
+    <string name="home_apk_use_saved_copy">Kayıtlı kopyayı kullan</string>
     <string name="home_apk_use_installed_app">Yüklü uygulamayı kullan</string>
     <string name="home_apk_use_saved_unsupported">Bu kaydedilmiş kopya yamalar tarafından desteklenmiyor. Yamalama sırasında onay istenecek veya başka bir APK seçin</string>
     <string name="home_apk_use_installed_unverified">Yüklenen uygulamanın imzası doğrulanamadı, bu nedenle zaten yama uygulanmış olabilir</string>
@@ -314,10 +322,15 @@
     <string name="home_download_instructions_link_copied">Bağlantı kopyalandı</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">%s APK\'sini seçin</string>
+    <string name="home_file_picker_prompt_where">Tarayıcılar bunu genellikle Download klasörüne kaydeder</string>
     <string name="home_file_picker_prompt_open_apk">APK dosyasını aç</string>
     <string name="home_recommended_version">Önerilen sürüm</string>
     <string name="home_selected_version">Seçilen sürüm</string>
     <string name="home_select_apk_title">APK seç</string>
+    <string name="home_select_apk_description">"Evrensel yamalar herhangi bir uygulama ile çalışır
+
+APK'nin nereden alınacağını seçin"</string>
     <string name="home_use_installed_app">Yüklü uygulamayı kullan</string>
     <string name="home_use_installed_app_description">Bu cihazda zaten yüklü olan bir uygulama seçin</string>
     <string name="home_open_apk_file_description">Depolamadan bir APK, APKM, APKS veya XAPK dosyası seçin</string>
@@ -354,6 +367,7 @@
     <string name="expert_mode_patch_required_by_installer">Seçilen kurulum hedefi için gerekli</string>
     <string name="expert_mode_patch_unavailable_for_installer">Seçilen kurulum hedefi için kullanılamıyor</string>
     <string name="expert_mode_multiple_sources_warning_title">Birden fazla yama kaynağı seçildi</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">Farklı kaynaklardan yamalar birlikte çalışmak için tasarlanmaz, bu yüzden çakışabilir veya uygulamayı bozabilir</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Onaylanmamış APK</string>
     <string name="home_invalid_signature_message">&lt;b&gt;%s&lt;/b&gt; için seçtiğiniz APK, beklenen imzalama sertifikasıyla eşleşmiyor. Değiştirilmiş olabilir veya güvenilmeyen bir kaynaktan olabilir</string>
@@ -369,7 +383,7 @@ En iyi sonuçlar için bu uygulama, &lt;b&gt;tam APK&lt;/b&gt; dosyasını yamal
     <string name="morphe_experimental_app_version_dialog_title">Deney yapmak ister misiniz? 🧪</string>
     <string name="morphe_experimental_app_version_dialog_message">"&lt;b&gt;%s&lt;/b&gt;'nin bu sürümü erken deneysel desteğe sahiptir.
 
-🔧 Yamalar bu uygulama sürümü için iyileştirilirken tuhaf uygulama davranışları veya tanımlanmamış hatalar bekleyin"</string>
+🔧 Yamalar bu uygulama sürümü için iyileştirilirken tuhaf uygulama davranışlarıyla veya tanımlanmamış hatalarla karşılaşabilirsiniz"</string>
     <string name="home_dialog_unsupported_version_dialog_title">Desteklenmeyen Sürüm</string>
     <string name="home_dialog_unsupported_version_dialog_description">Bu APK, önerilen uygulama sürümü değil. Devam edilmesi çalışmayan bir uygulamaya neden olabilir</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
@@ -506,6 +520,8 @@ En iyi sonuçlar için bu uygulama, &lt;b&gt;tam APK&lt;/b&gt; dosyasını yamal
     <string name="shortcut_check_updates_long">Yama güncellemelerini kontrol et</string>
     <string name="shortcut_patch_app">%s\'yi yamala</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">Bu uygulama kaldırılsın mı?</string>
+    <string name="home_app_info_uninstall_removes_data">Uygulama ve verileri bu cihazdan kaldırılır</string>
     <string name="batch_uninstall_confirm_body">Seçili uygulamalar cihazınızdan kalıcı olarak silinecektir.</string>
     <string name="home_app_info_remove_app_warning">Bu, aşağıdakileri kalıcı olarak silecektir:</string>
     <string name="home_app_info_delete_item_database">Veri tabanı girişi</string>
@@ -667,7 +683,10 @@ Kaldırma işlemi tüm uygulama verilerini kalıcı olarak silecektir"</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Yamalama devam ediyor…</string>
     <string name="patcher_notification_text">Patcher\'a dönmek için dokunun</string>
+    <string name="patcher_stop_title">Yamalama durdurulsun mu?</string>
+    <string name="patcher_stop_discards">Şu ana kadarki ilerleme iptal edilir ve hiçbir şey yüklenmez</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Yamalamaya devam et</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Uygulamanızı harika bir şeye dönüştürüyoruz… 🏆</string>
     <string name="patcher_message_2">Eski uygulamalara yeni numaralar öğretiyoruz… 🎩</string>
@@ -844,6 +863,7 @@ Kaldırma işlemi tüm uygulama verilerini kalıcı olarak silecektir"</string>
     <string name="settings_appearance_app_icon_mark_black">Siyah</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Uygulama simgesi değiştirilsin mi?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe, &lt;b&gt;%s&lt;/b&gt; simgesine geçmek için yeniden başlatılıyor</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Simgeyi değiştir</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1382,6 +1402,7 @@ Ayrıntılar: %2$s"</string>
     <string name="show_all">Tümünü göster</string>
     <string name="ignore">Yoksay</string>
     <string name="stop_ignoring">Yok saymayı bırak</string>
+    <string name="stop">Durdur</string>
     <string name="logs">Günlükler</string>
     <string name="sources">Kaynaklar</string>
     <string name="installing_ellipsis">Yükleniyor…</string>

@@ -202,6 +202,11 @@
     <string name="expert_mode_experimental_version_notice">Це джерело лише експериментально підтримує цю версію застосунку. Його патчі можуть бути нестабільними або неповними</string>
     <string name="sources_management_experimental_versions_toggle">Експериментальні версії застосунків</string>
     <string name="sources_management_experimental_versions_toggle_description">Показує та патчить експериментальні версії застосунків</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Увімкнути передрелізні патчі</string>
+    <string name="sources_management_prerelease_disable">Вимкнути передрелізні патчі</string>
+    <string name="sources_management_experimental_versions_enable">Увімкнути експерментальні версії</string>
+    <string name="sources_management_experimental_versions_disable">Вимкнути експерментальні версії</string>
     <string name="sources_management_already_exists">Це джерело вже додано</string>
     <string name="sources_management_invalid_url">Недійсна URL-адреса джерела. Перевірте адресу та спробуйте ще раз</string>
     <string name="sources_management_blocked">Це джерело патчів заблоковано і не може бути додано</string>

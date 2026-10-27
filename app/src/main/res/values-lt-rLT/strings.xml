@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">Šis šaltinis šiai programėlės versijai turi tik eksperimentinį palaikymą. Jo pataisai gali būti nestabilios arba nepilnos</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentinės programos versijos</string>
     <string name="sources_management_experimental_versions_toggle_description">Rodo ir pataiso eksperimentines programų versijas</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Šis šaltinis jau pridėtas</string>
     <string name="sources_management_invalid_url">Neteisynga šaltinio URL. Patikrinkite adresą ir bandykite dar kartą</string>
     <string name="sources_management_blocked">Šis pataisų šaltinis užblokuotas ir jo negalima pridėti</string>

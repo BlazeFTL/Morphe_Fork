@@ -200,6 +200,7 @@
     <string name="expert_mode_experimental_version_notice">این منبع برای این نسخه از برنامه فقط دارای پشتیبانی آزمایشی است. وصله‌های آن ممکن است ناپایدار یا ناقص باشند</string>
     <string name="sources_management_experimental_versions_toggle">نسخه‌های آزمایشی برنامه</string>
     <string name="sources_management_experimental_versions_toggle_description">هدف‌های آزمایشی برنامه را نشان می‌دهد و پچ می‌کند</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">این منبع قبلاً اضافه شده است</string>
     <string name="sources_management_invalid_url">نشانی اینترنتی منبع نامعتبر است. لطفاً آدرس را بررسی و دوباره تلاش کنید</string>
     <string name="sources_management_blocked">این منبع پچ مسدود شده و نمی‌توان آن را اضافه کرد</string>

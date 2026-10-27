@@ -200,6 +200,8 @@
     <string name="expert_mode_experimental_version_notice">Den här källan har endast experimentellt stöd för den här appversionen. Dess tillägg kan vara instabila eller ofullständiga</string>
     <string name="sources_management_experimental_versions_toggle">Experimentella appversioner</string>
     <string name="sources_management_experimental_versions_toggle_description">Visar och modifierar experimentella appmål</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Aktivera förhandsversioner av tillägg</string>
     <string name="sources_management_already_exists">Den här källan har redan lagts till</string>
     <string name="sources_management_invalid_url">Ogiltig källadress. Kontrollera adressen och försök igen</string>
     <string name="sources_management_blocked">Den här tilläggskällan är blockerad och kan inte läggas till</string>
