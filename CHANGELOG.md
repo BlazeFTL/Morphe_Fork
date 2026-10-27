@@ -1,3 +1,10 @@
+# [2.3.0-dev.4](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.3...v2.3.0-dev.4) (2026-10-27)
+
+
+### Features
+
+* Switch pre-release patches and experimental app versions for selected sources ([83fbbea](https://github.com/MorpheApp/morphe-manager/commit/83fbbea7aea4916d8bedd411c5a115208224b07c))
+
 # [2.3.0-dev.3](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.2...v2.3.0-dev.3) (2026-10-26)
 
 
