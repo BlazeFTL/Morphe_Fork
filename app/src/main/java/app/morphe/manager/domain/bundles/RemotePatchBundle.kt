@@ -416,14 +416,8 @@ class JsonPatchBundle(
     /** The endpoint for the current [usePrerelease] state, see [endpointOn]. */
     private val activeEndpoint get() = endpointOn(if (usePrerelease) BRANCH_DEV else BRANCH_STABLE)
 
-    /**
-     * Returns true if this bundle supports prerelease toggling.
-     * Only bundles whose endpoint explicitly points to `BRANCH_STABLE` or `BRANCH_DEV` branch support.
-     */
-    val supportsPrerelease: Boolean get() {
-        val branch = endpointBranch ?: return false
-        return branch == BRANCH_STABLE || branch == BRANCH_DEV
-    }
+    /** Returns true if this bundle supports prerelease toggling, see [Companion.supportsPrerelease]. */
+    val supportsPrerelease: Boolean get() = supportsPrerelease(endpoint)
 
     /**
      * Fetches the latest release metadata for this bundle.
@@ -514,6 +508,13 @@ class JsonPatchBundle(
     )
 
     companion object {
+        /**
+         * Whether a source reading [endpoint] can switch to prerelease. Only an endpoint that
+         * explicitly points to the `BRANCH_STABLE` or `BRANCH_DEV` branch can.
+         */
+        fun supportsPrerelease(endpoint: String): Boolean =
+            extractBranch(endpoint).let { it == BRANCH_STABLE || it == BRANCH_DEV }
+
         /**
          * Extracts the branch name from a GitHub or GitLab URL.
          *

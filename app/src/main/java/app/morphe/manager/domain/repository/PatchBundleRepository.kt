@@ -1326,10 +1326,15 @@ class PatchBundleRepository(
      *
      * With [keptApps] each added source leaves out every other app it names, the ones it adds later
      * included. It is recorded before the download starts, so the others never reach the home screen.
+     * With [usePrerelease] each source that has a prerelease branch downloads from it from the start.
      *
      * @return The uid of each source added, in the order of [urls].
      */
-    suspend fun createRemotes(urls: List<String>, keptApps: Set<String>? = null): List<Int> {
+    suspend fun createRemotes(
+        urls: List<String>,
+        keptApps: Set<String>? = null,
+        usePrerelease: Boolean = false
+    ): List<Int> {
         val added = CompletableDeferred<List<Int>>()
         dispatchAction("Add bundles (${urls.size})") { state ->
             val ready = state as? BundleState.Ready
@@ -1351,7 +1356,7 @@ class PatchBundleRepository(
                         is RemoteUrlCheck.Accepted -> {
                             // The same repository pasted twice is one source
                             takenKeys += check.endpoint.lowercase(Locale.US)
-                            created += createRemoteEntity(check.endpoint)
+                            created += createRemoteEntity(check.endpoint, usePrerelease)
                         }
                     }
                 }
@@ -1421,12 +1426,17 @@ class PatchBundleRepository(
             ?.uid
     }
 
-    /** Saves and loads a new remote source for [endpoint]. Do not use this outside an action. */
-    private suspend fun createRemoteEntity(endpoint: String): RemotePatchBundle {
+    /**
+     * Saves and loads a new remote source for [endpoint], on prerelease with [usePrerelease] where
+     * it can be. Do not use this outside an action.
+     */
+    private suspend fun createRemoteEntity(endpoint: String, usePrerelease: Boolean): RemotePatchBundle {
         val src = createEntity("", SourceInfo.from(endpoint)).load() as RemotePatchBundle
 
-        // Auto-enable prerelease if the URL explicitly targets the "dev" branch
-        if (src is JsonPatchBundle && src.endpointBranch == "dev") {
+        // Auto-enable prerelease if asked for or if the URL explicitly targets the "dev" branch
+        if (src is JsonPatchBundle &&
+            (src.endpointBranch == RemotePatchBundle.BRANCH_DEV || usePrerelease && src.supportsPrerelease)
+        ) {
             val current = prefs.bundlePrereleasesEnabled.get().toMutableSet()
             current.add(src.uid.toString())
             prefs.bundlePrereleasesEnabled.update(current)
@@ -2157,7 +2167,10 @@ class PatchBundleRepository(
     /** A URL checked against what [createRemotes] accepts. */
     sealed interface RemoteUrlCheck {
         /** Would be added, as a source reading [endpoint]. */
-        data class Accepted(val endpoint: String) : RemoteUrlCheck
+        data class Accepted(val endpoint: String) : RemoteUrlCheck {
+            /** Whether the source could start on prerelease, see [createRemotes]. */
+            val supportsPrerelease get() = JsonPatchBundle.supportsPrerelease(endpoint)
+        }
 
         data class Rejected(val reason: RemoteSourceRejection) : RemoteUrlCheck
     }

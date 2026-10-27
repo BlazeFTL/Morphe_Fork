@@ -127,8 +127,8 @@ fun SourcesPage(
             AddSourcePanel(
                 visible = state.isAddingSource,
                 onClose = state::closeAddSource,
-                onSubmit = { urls, chooseApps ->
-                    homeViewModel.addSources(urls, chooseApps)
+                onSubmit = { urls, options ->
+                    homeViewModel.addSources(urls, options)
                     state.closeAddSource()
                     onSourceAdded()
                 },

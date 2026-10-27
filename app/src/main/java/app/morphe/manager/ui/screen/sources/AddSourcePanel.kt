@@ -36,6 +36,7 @@ import app.morphe.manager.R
 import app.morphe.manager.domain.repository.PatchBundleRepository.LocalFileCheck
 import app.morphe.manager.domain.repository.PatchBundleRepository.RemoteSourceRejection
 import app.morphe.manager.domain.repository.PatchBundleRepository.RemoteUrlCheck
+import app.morphe.manager.ui.model.NewSourceOptions
 import app.morphe.manager.ui.screen.shared.*
 import app.morphe.manager.ui.viewmodel.HomeViewModel.PickedBundle
 import app.morphe.manager.util.toFilePath
@@ -60,7 +61,7 @@ import java.util.Locale
 fun AddSourcePanel(
     visible: Boolean,
     onClose: () -> Unit,
-    onSubmit: (urls: List<String>, chooseApps: Boolean) -> Unit,
+    onSubmit: (urls: List<String>, options: NewSourceOptions) -> Unit,
     onPickFiles: () -> Unit,
     onRemoveFile: (Uri) -> Unit,
     localFiles: List<PickedBundle>,
@@ -78,9 +79,9 @@ fun AddSourcePanel(
     val files = rememberWhileVisible(visible, localFiles)
 
     DockedPanel(visible = visible, onBack = onClose, modifier = modifier) {
-        // Composed only while the panel is up, so the links typed and the choice made start over
+        // Composed only while the panel is up, so the links typed and the choices made start over
         // each time it opens
-        var chooseApps by rememberSaveable { mutableStateOf(false) }
+        var options by rememberSaveable { mutableStateOf(NewSourceOptions()) }
         val remote = rememberRemoteLinksState(onCheckUrl)
         val readyCount = remote.readyLinks.size + files.count { it.adds }
 
@@ -124,14 +125,11 @@ fun AddSourcePanel(
                         modifier = Modifier.fillMaxWidth()
                     )
                 }
-                // What a source holds is only known once it has loaded, so this asks now and the
-                // list opens then
-                ToggleRow(
-                    title = stringResource(R.string.sources_dialog_choose_apps),
-                    description = stringResource(R.string.sources_dialog_choose_apps_description),
-                    checked = chooseApps,
-                    onCheckedChange = { chooseApps = it },
-                    showDivider = false
+                NewSourceOptionsGroup(
+                    options = options,
+                    onOptionsChange = { options = it },
+                    offersChooseApps = true,
+                    offersPrerelease = remote.offersPrerelease
                 )
             }
             Box(modifier = Modifier.padding(horizontal = Defaults.SpaceLarge)) {
@@ -141,10 +139,51 @@ fun AddSourcePanel(
                     } else {
                         stringResource(R.string.add)
                     },
-                    onPrimaryClick = { onSubmit(remote.readyLinks, chooseApps) },
+                    onPrimaryClick = { onSubmit(remote.readyLinks, options) },
                     primaryEnabled = readyCount > 0
                 )
             }
+        }
+    }
+}
+
+/**
+ * The switches a source is added with, as one group: whether its app list opens once it has loaded,
+ * and whether it starts on prerelease. Each row shows only where its choice applies, and the group
+ * nothing where none does.
+ */
+@Composable
+internal fun NewSourceOptionsGroup(
+    options: NewSourceOptions,
+    onOptionsChange: (NewSourceOptions) -> Unit,
+    offersChooseApps: Boolean,
+    offersPrerelease: Boolean,
+    modifier: Modifier = Modifier
+) {
+    if (!offersChooseApps && !offersPrerelease) return
+
+    // Spaced by each row rather than by the column, so a row folding in brings its gap along
+    Column(modifier = modifier) {
+        // What a source holds is only known once it has loaded, so this asks now and the list opens then
+        if (offersChooseApps) {
+            ToggleRow(
+                title = stringResource(R.string.sources_dialog_choose_apps),
+                description = stringResource(R.string.sources_dialog_choose_apps_description),
+                checked = options.chooseApps,
+                onCheckedChange = { onOptionsChange(options.copy(chooseApps = it)) },
+                showDivider = false
+            )
+        }
+        // Only a source on a stable or dev branch has a pre-release channel, see createRemotes
+        ListRowFold(visible = offersPrerelease) {
+            ToggleRow(
+                title = stringResource(R.string.sources_management_prerelease_toggle),
+                description = stringResource(R.string.sources_management_prerelease_toggle_description),
+                checked = options.usePrerelease,
+                onCheckedChange = { onOptionsChange(options.copy(usePrerelease = it)) },
+                modifier = Modifier.padding(top = if (offersChooseApps) Defaults.SpaceSmall else 0.dp),
+                showDivider = false
+            )
         }
     }
 }
@@ -196,12 +235,18 @@ private class RemoteLinksState(
             ?: inputEntries.firstOrNull()?.check
     }
 
-    /** Links that will become sources, the ones in the field included. */
-    val readyLinks by derivedStateOf {
+    private val readyEntries by derivedStateOf {
         (entries + inputEntries)
             .distinctBy { it.key }
             .filter { it.check is RemoteUrlCheck.Accepted }
-            .map { it.link }
+    }
+
+    /** Links that will become sources, the ones in the field included. */
+    val readyLinks by derivedStateOf { readyEntries.map { it.link } }
+
+    /** Whether any of [readyLinks] could start on prerelease. */
+    val offersPrerelease by derivedStateOf {
+        readyEntries.any { (it.check as RemoteUrlCheck.Accepted).supportsPrerelease }
     }
 
     fun onInputChange(text: String) {
