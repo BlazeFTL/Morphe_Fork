@@ -1,3 +1,17 @@
+# [2.3.0-dev.6](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.5...v2.3.0-dev.6) (2026-10-27)
+
+
+### Bug Fixes
+
+* Restore selections of sources a backup adds on the first import ([2c1ae90](https://github.com/MorpheApp/morphe-manager/commit/2c1ae90541941bd9f2d8eb7d1c8a648b3c9ce18e))
+
+
+### Features
+
+* Keep patch selections as named sets ([b4bce2e](https://github.com/MorpheApp/morphe-manager/commit/b4bce2ebe45dcaca55976c20c04865439f25f8d0))
+* List the import modes as the APK source choice does ([22b24a4](https://github.com/MorpheApp/morphe-manager/commit/22b24a4186dce1beddaa3c1e4805d163c18294fb))
+* Move saved APK actions into a menu ([58f86e4](https://github.com/MorpheApp/morphe-manager/commit/58f86e42c766b0cd1c9cad162c0ff3fa444c8f37))
+
 # [2.3.0-dev.5](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.4...v2.3.0-dev.5) (2026-10-27)
 
 
