@@ -99,7 +99,9 @@
     <string name="home_category_move_to">カテゴリへ移動</string>
     <string name="home_category_move_selected_title">選択したアプリを移動</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">%s を削除しますか？</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">アプリは &lt;b&gt;%s&lt;/b&gt; に戻ります</string>
     <string name="home_category_actions_unavailable">このカテゴリで利用可能な操作はありません</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">どのアプリにパッチを適用しますか？</string>
@@ -193,14 +195,18 @@
     <!-- Under the Bring new apps switch in a source's app list, whichever way it is set. "It" is the patch source -->
     <string name="sources_apps_new_apps_description">後で追加されるアプリはホーム画面に表示されます</string>
     <string name="sources_management_prerelease_toggle">プレリリース版のパッチを使用</string>
-    <string name="sources_management_prerelease_toggle_description">試験的なバージョンのパッチを取得します</string>
+    <string name="sources_management_prerelease_toggle_description">実験的なバージョンのパッチを取得します</string>
     <string name="sources_prerelease_warning_title">プレリリース版パッチを有効にしますか？</string>
     <string name="sources_prerelease_warning_message">プレリリース版は現在開発中です。パッチに失敗したり、アプリが正常に動作しなくなったりする可能性があります。また、予告なく機能が変更される場合があります</string>
     <string name="expert_mode_prerelease_notice">このソースはプレリリース版パッチを使用しています。パッチ適用が失敗したり、予期しない動作が発生したりする可能性があります</string>
     <string name="expert_mode_experimental_version_notice">このアプリのバージョンは、このソースでは試験的にのみサポートされています。パッチが不安定であったり、不完全な場合があります</string>
-    <string name="sources_management_experimental_versions_toggle">試験的なバージョンのアプリを使用</string>
-    <string name="sources_management_experimental_versions_toggle_description">試験的なパッチ対象アプリを表示し、パッチを適用できるようにします</string>
+    <string name="sources_management_experimental_versions_toggle">実験的なバージョンのアプリ</string>
+    <string name="sources_management_experimental_versions_toggle_description">実験的なパッチ対象アプリを表示し、パッチを適用できるようにします</string>
     <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">プレリリース版のパッチを有効にする</string>
+    <string name="sources_management_prerelease_disable">プレリリース版のパッチを無効にする</string>
+    <string name="sources_management_experimental_versions_enable">実験的なバージョンのアプリを有効にする</string>
+    <string name="sources_management_experimental_versions_disable">実験的なバージョンのアプリを無効にする</string>
     <string name="sources_management_already_exists">このソースは既に存在します</string>
     <string name="sources_management_invalid_url">無効なソース URL です。アドレスを確認してもう一度お試しください</string>
     <string name="sources_management_blocked">このパッチソースはブロックされており、追加できません</string>
@@ -258,12 +264,15 @@
     <string name="sources_patch_expert_badge">エキスパート</string>
     <string name="sources_patch_expert_badge_tooltip">このパッチを手動で追加するには、設定でエキスパート モードを有効にしてください</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">APK を探すのにお困りですか？</string>
     <string name="home_apk_availability_dialog_simple">&lt;b&gt;%s&lt;/b&gt; にパッチを適用するには、以下のバージョンの APK (未パッチ) が必要です</string>
     <string name="home_apk_availability_dialog_expert">&lt;b&gt;%s&lt;/b&gt; にパッチを適用するには、以下のバージョンの APK (未パッチ) が必要です</string>
     <string name="home_apk_availability_recommended_label">おすすめ</string>
     <string name="home_apk_availability_unpatched_label">未パッチ</string>
     <string name="home_apk_availability_incompatible_label">非対応</string>
     <string name="home_apk_availability_installed_version">このデバイスにインストール済み: %s</string>
+    <string name="home_apk_availability_find">はい、探すのを手伝ってください</string>
+    <string name="home_apk_availability_have">いいえ、すでに持っています</string>
     <string name="home_apk_helper_download">ヘルパーアプリを使用する</string>
     <string name="home_apk_helper_untrusted">ヘルパー アプリはインストールされていますが、まだ信頼されていないため、ここには表示されません</string>
     <string name="home_apk_helper_untrusted_action">ヘルパーを確認</string>
@@ -279,6 +288,8 @@
     <string name="home_apk_helper_wrong_package">ヘルパーアプリから、パッチ対象とは異なるアプリが返されました</string>
     <string name="home_apk_helper_installed_unavailable">Morphe はインストール済みのアプリを使用できませんでした</string>
     <string name="home_apk_helper_installed_incompatible">インストール済みのバージョンはパッチできません</string>
+    <string name="home_apk_use_saved_copy">保存済みのコピーを使用</string>
+    <string name="home_apk_use_installed_app">インストール済みアプリを使用</string>
     <string name="home_apk_use_saved_unsupported">この保存済みの APK のコピーはパッチに対応しておらず、このまま進むと、確認を求めるメッセージが表示されます。または、別の APK を選択することもできます</string>
     <string name="home_apk_use_installed_unverified">インストールされているアプリの署名を検証できなかったため、すでにパッチが適用されている可能性があります</string>
     <string name="home_unverified">未検証</string>
@@ -315,13 +326,18 @@
     <string name="home_download_instructions_link_copied">リンクをコピーしました</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">%s の APK を選択してください</string>
+    <string name="home_file_picker_prompt_where">通常、APK ファイルは「Download」フォルダに保存されます</string>
     <string name="home_file_picker_prompt_open_apk">APK ファイルを開く</string>
     <string name="home_recommended_version">推奨バージョン</string>
     <string name="home_selected_version">選択したバージョン</string>
     <string name="home_select_apk_title">APK を選択</string>
+    <string name="home_select_apk_description">"ユニバーサル パッチはどのアプリでも動作します
+
+APK ファイルの取得元を選択してください"</string>
     <string name="home_use_installed_app">インストール済みアプリを使用</string>
-    <string name="home_use_installed_app_description">このデバイスにインストール済みのアプリを選択する</string>
-    <string name="home_open_apk_file_description">ストレージからAPK、APKM、APKS、またはXAPKファイルを選択する</string>
+    <string name="home_use_installed_app_description">このデバイスにインストール済みのアプリを選択してください</string>
+    <string name="home_open_apk_file_description">ストレージから APK、APKM、APKS、XAPK ファイルのいずれかを選択してください</string>
     <string name="home_installed_app_picker_title">インストール済みアプリ</string>
     <string name="home_installed_app_picker_empty">アプリが見つかりません</string>
     <string name="home_installed_app_picker_filter_user">ユーザーアプリのみ</string>
@@ -334,27 +350,26 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">パッチを検索</string>
     <string name="expert_mode_disable_all">すべて無効化</string>
-    <string name="expert_mode_disable_all_done">すべてのパッチが無効になりました</string>
     <string name="expert_mode_enable_all">すべて有効化</string>
-    <string name="expert_mode_enable_all_done">すべてのパッチが有効になりました</string>
-    <string name="expert_mode_enable_all_universal_pending">ユニバーサルパッチを有効にするには、もう一度タップしてください</string>
-    <string name="expert_mode_universal_all_warning_title">すべてのユニバーサルパッチを有効にしますか？</string>
-    <string name="expert_mode_universal_all_warning_message">ユニバーサルパッチは、すべてを同時に使用した場合の動作をテストしていません。すべてを一度に有効にすると、競合やパッチの失敗、クラッシュが発生する可能性があります</string>
+    <string name="expert_mode_enable_all_universal_pending">ユニバーサル パッチを有効にするには、もう一度タップしてください</string>
+    <string name="expert_mode_universal_all_warning_title">すべてのユニバーサル パッチを有効にしますか？</string>
+    <string name="expert_mode_universal_all_warning_message">ユニバーサル パッチは、すべてを同時に使用した場合の動作をテストしていません。すべてを一度に有効にすると、競合やパッチの失敗、クラッシュが発生する可能性があります</string>
     <string name="expert_mode_reset_to_default">推奨パッチを有効化</string>
     <string name="expert_mode_reset_to_default_done">推奨パッチを適用しました</string>
+    <string name="expert_mode_selected_count">%1$s / %2$s を選択中</string>
     <string name="expert_mode_restore_saved">保存済みのパッチ セレクションの復元</string>
     <string name="expert_mode_restore_saved_done">保存したセレクションを復元しました</string>
-    <string name="expert_mode_copy_from_bundle">別のバンドルからセレクションをコピー</string>
     <string name="expert_mode_copy_from_bundle_no_patches">このバンドルに一致するパッチはありません</string>
     <string name="expert_mode_no_results">パッチが見つかりません</string>
     <string name="expert_mode_selected_only_on">選択されたパッチのみを表示</string>
     <string name="expert_mode_selected_only_off">すべてのパッチを表示</string>
-    <string name="expert_mode_universal_patches">ユニバーサルパッチ</string>
+    <string name="expert_mode_universal_patches">ユニバーサル パッチ</string>
     <string name="expert_mode_new_patches">新着</string>
     <string name="expert_mode_options_customized">カスタマイズ済み</string>
     <string name="expert_mode_patch_required_by_installer">選択したインストール対象に必要です</string>
     <string name="expert_mode_patch_unavailable_for_installer">選択したインストール対象では利用できません</string>
     <string name="expert_mode_multiple_sources_warning_title">複数のパッチソースが選択されました</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">異なるソースのパッチは併用を想定していないため、競合したり、アプリが正常に動作しなくなったりする場合があります</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">未検証の APK</string>
     <string name="home_invalid_signature_message">選択した &lt;b&gt;%s&lt;/b&gt; の APK の署名証明書が想定と一致しません。改ざんされているか、信頼できないソースからのものである可能性があります</string>
@@ -365,10 +380,10 @@
 
 このアプリのパッチには、&lt;b&gt;フル APK&lt;/b&gt; を使用することをお勧めします"</string>
     <string name="home_split_apk_warning_pick_another">別の APK を選択してください</string>
-    <string name="home_dialog_unsupported_version_experimental_label">試験的</string>
-    <string name="home_dialog_unsupported_version_experimental_description">このバージョンは試験的な機能を含んでおり、不安定または不完全である可能性があります</string>
+    <string name="home_dialog_unsupported_version_experimental_label">実験的</string>
+    <string name="home_dialog_unsupported_version_experimental_description">このバージョンは実験的な機能を含んでおり、不安定または不完全である可能性があります</string>
     <string name="morphe_experimental_app_version_dialog_title">試してみますか？ 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">"このバージョンの &lt;b&gt;%s&lt;/b&gt; は、初期段階の試験的なサポートのみとなっています。
+    <string name="morphe_experimental_app_version_dialog_message">"このバージョンの &lt;b&gt;%s&lt;/b&gt; は、初期段階の実験的なサポートのみとなっています。
 
 🔧 パッチはまだ最適化中のため、アプリの動作が不安定になったり、予期しない不具合が発生する可能性があります"</string>
     <string name="home_dialog_unsupported_version_dialog_title">非対応のバージョン</string>
@@ -507,6 +522,8 @@
     <string name="shortcut_check_updates_long">パッチの更新を確認</string>
     <string name="shortcut_patch_app">%s をパッチ処理</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">このアプリをアンインストールしますか？</string>
+    <string name="home_app_info_uninstall_removes_data">このデバイスからアプリとアプリデータが削除されます</string>
     <string name="batch_uninstall_confirm_body">選択したアプリは端末から完全に削除されます</string>
     <string name="home_app_info_remove_app_warning">以下を完全に削除します</string>
     <string name="home_app_info_delete_item_database">データベースエントリ</string>
@@ -645,12 +662,15 @@
     <string name="patcher_storage_permission_open_settings">ストレージの設定を開く</string>
     <string name="patcher_storage_badge_denied">権限が許可されていません</string>
     <string name="patcher_storage_badge_missing">見つかりません</string>
+    <string name="patcher_storage_badge_rejected">使用できません</string>
     <string name="batch_patch_option_paths_skipped">パッチ設定ファイルが見つからないため、スキップします: %1$s</string>
     <string name="patcher_missing_patches_title">一部のパッチが利用できなくなりました</string>
     <string name="patcher_missing_patches_description">このアプリに保存されたパッチ セレクションには、現在有効なソースから提供されていないパッチが含まれています。このまま続行すると、それらのパッチなしでアプリにパッチを適用します</string>
     <string name="patcher_missing_patches_label">利用できなくなりました</string>
     <string name="patcher_option_paths_gone_title">パッチ設定ファイルが見つかりません</string>
     <string name="patcher_option_paths_gone_description">存在しないファイルを参照しているパッチ設定があります。パッチ処理を続けるにはパスを削除するか、ファイルを元に戻して再度お試しください</string>
+    <string name="patcher_option_paths_rejected_title">パッチ設定ファイルを使用できません</string>
+    <string name="patcher_option_paths_rejected_description">1 つ以上のパッチ オプションが、存在しないファイル、またはパッチの要件を満たさないファイルを指しています。それらのファイルを除外してパッチを適用するか、オプションの説明に従ってファイルを修正してから、もう一度お試しください</string>
     <string name="patcher_option_paths_clear">パスを削除して続行</string>
     <string name="patcher_storage_permission_hint">ヒント: ファイルを /Android/data/app.morphe.manager/files/ に移動すれば、追加の権限は必要ありません</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -668,7 +688,10 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">パッチを適用中…</string>
     <string name="patcher_notification_text">パッチ画面に戻るにはタップ</string>
+    <string name="patcher_stop_title">パッチ適用を停止しますか？</string>
+    <string name="patcher_stop_discards">これまで行われたパッチ適用は破棄されます。インストールは実行されません</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">パッチ適用を続ける</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">アプリを最高な姿に変身中…</string>
     <string name="patcher_message_2">古いアプリに新技伝授中… 🎩</string>
@@ -811,15 +834,21 @@
     <string name="settings_appearance_repatch_notice_description">再パッチ可能なアプリがある場合、バナーを表示します</string>
     <string name="settings_appearance_more_apps_card">その他のアプリカード</string>
     <string name="settings_appearance_more_apps_card_description">アプリ一覧の下に、コミュニティ製パッチへのリンクカードを表示します</string>
+    <string name="settings_appearance_app_card_colors">アプリカードの色</string>
     <string name="settings_appearance_app_card_colors_default">デフォルト</string>
+    <string name="settings_appearance_app_card_colors_default_description">アプリやソースごとに個別の色を使用します</string>
     <string name="settings_appearance_app_card_colors_accent">アクセント</string>
+    <string name="settings_appearance_app_card_colors_accent_description">アプリカードとソースカードに各アプリのアクセントカラーを使用します</string>
     <string name="settings_appearance_app_card_colors_gradient">グラデーション</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">アプリカードにはカスタム グラデーションを使用し、ソースカードにはその色を 1 色にまとめて適用します</string>
     <string name="settings_appearance_app_card_colors_solid">単色</string>
+    <string name="settings_appearance_app_card_colors_solid_description">アプリカードとソースカードに単色を使用します</string>
     <string name="settings_appearance_app_card_colors_start">開始色</string>
     <string name="settings_appearance_app_card_colors_middle">中間色</string>
     <string name="settings_appearance_app_card_colors_end">終了色</string>
     <string name="settings_appearance_app_card_colors_solid_color">単色</string>
     <string name="settings_appearance_app_card_colors_bundle">アプリのバンドルカラー</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">各アプリまたはソース固有の色を使用し、自動でなじむように色調を調整します</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">アプリアイコン</string>
     <string name="settings_appearance_app_icon_selector_description">ホーム画面やアプリドロワーでの Morphe の見た目です</string>
@@ -846,6 +875,7 @@
     <string name="settings_appearance_app_icon_mark_black">ブラック</string>
     <string name="settings_appearance_app_icon_change_dialog_title">アプリのアイコンを変更しますか？</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">&lt;b&gt;%s&lt;/b&gt; に切り替えるため、Morphe を再起動します</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">アイコンを変更</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1032,7 +1062,7 @@ morphe_header_custom_dark.png
     <string name="installer_play_store_warning_continue">了解しました。続行します</string>
     <string name="installer_play_store_mode">Play ストア経由としてインストール</string>
     <string name="installer_play_store_mode_description">Google Play ストアをインストール元として設定します</string>
-    <string name="settings_nomount_only">NoMount のみ</string>
+    <string name="settings_nomount_only">NoMount のみ（バインド マウントを使用しない）</string>
     <string name="settings_nomount_only_description">NoMount がインストールされている場合にのみアプリをマウントします。バインド マウントへのフォールバックは発生しないため、NoMount がインストールされていない場合はアプリはマウントされません</string>
     <string name="settings_prompt_installer_on_install">インストーラーの選択</string>
     <string name="settings_prompt_installer_on_install_description">各アプリのインストール方法（root 権限がある場合はパッチ適用前に、ない場合はパッチ適用後に）を確認します</string>
@@ -1203,12 +1233,9 @@ morphe_header_custom_dark.png
     <string name="settings_system_import_source_data_success">ソースデータのインポートに成功しました</string>
     <string name="settings_system_selected_patches_section">選択したパッチ</string>
     <string name="settings_system_no_patches_or_options">保存されたパッチやオプションなし</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">セレクションのコピー元を選択</string>
-    <string name="copy_selection_confirm_with_count">%s 個をコピー</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">コピー可能な保存済みのセレクションはありません</string>
     <string name="copy_selection_available_format">%1$s / %2$s が利用可能</string>
-    <string name="copy_selection_same_source">同一のソース</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">カスタム ファイルピッカー</string>
     <string name="settings_system_custom_file_picker_description">システム標準のファイル選択画面ではなく、Morphe 内蔵のファイル選択画面を使用します</string>
@@ -1333,6 +1360,8 @@ morphe_header_custom_dark.png
     <string name="reorder_done">並び順を保存しました</string>
     <string name="reset_order">並び順をリセット</string>
     <string name="reset_order_done">並び順をリセットしました</string>
+    <string name="reset_order_confirm_title">並び順をリセットしますか？</string>
+    <string name="reset_order_confirm_message">リストがデフォルトの順序に戻り、手動でドラッグして変更した順序は失われます</string>
     <string name="accessibility_select_app">アプリを選択</string>
     <string name="accessibility_select_source">ソースを選択</string>
     <string name="accessibility_move_up">上に移動</string>
@@ -1384,6 +1413,7 @@ morphe_header_custom_dark.png
     <string name="show_all">すべて表示</string>
     <string name="ignore">無視</string>
     <string name="stop_ignoring">無視を解除</string>
+    <string name="stop">停止</string>
     <string name="logs">ログ</string>
     <string name="sources">ソース</string>
     <string name="installing_ellipsis">インストール中…</string>

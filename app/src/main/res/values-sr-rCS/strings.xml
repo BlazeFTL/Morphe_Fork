@@ -201,6 +201,10 @@
     <string name="sources_management_experimental_versions_toggle">Eksperimentalne verzije aplikacije</string>
     <string name="sources_management_experimental_versions_toggle_description">Prikazuje i zakrpava eksperimentalne ciljne aplikacije</string>
     <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Omogući pre-release zakrpe</string>
+    <string name="sources_management_prerelease_disable">Onemogući pre-release zakrpe</string>
+    <string name="sources_management_experimental_versions_enable">Omogući eksperimentalne verzije aplikacije</string>
+    <string name="sources_management_experimental_versions_disable">Onemogući eksperimentalne verzije aplikacije</string>
     <string name="sources_management_already_exists">Ovaj izvor je već dodat</string>
     <string name="sources_management_invalid_url">Nevalidna URL adresa izvora. Molimo proverite adresu i pokušajte ponovo.</string>
     <string name="sources_management_blocked">Ovaj izvor zakrpa je blokiran i ne može biti dodat</string>
@@ -333,9 +337,7 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Pretraži patchove</string>
     <string name="expert_mode_disable_all">Onemogući sve</string>
-    <string name="expert_mode_disable_all_done">Sve zakrpe su isključene</string>
     <string name="expert_mode_enable_all">Omogući sve</string>
-    <string name="expert_mode_enable_all_done">Sve zakrpe su uključene</string>
     <string name="expert_mode_enable_all_universal_pending">Dodirnite ponovo za univerzalne zakrpe</string>
     <string name="expert_mode_universal_all_warning_title">Omogući sve univerzalne zakrpe?</string>
     <string name="expert_mode_universal_all_warning_message">Univerzalne zakrpe nisu testirane zajedno. Omogućavanje svih odjednom može izazvati sukobe, neuspešno zakrpljivanje ili padove.</string>
@@ -343,7 +345,6 @@
     <string name="expert_mode_reset_to_default_done">Preporučene zakrpe su primenjene</string>
     <string name="expert_mode_restore_saved">Ponovi poslednji izbor</string>
     <string name="expert_mode_restore_saved_done">Vraćena sačuvana selekcija</string>
-    <string name="expert_mode_copy_from_bundle">Kopiraj selekciju iz drugog paketa</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nema odgovarajućih zakrpa u ovom paketu</string>
     <string name="expert_mode_no_results">Nema pronađenih zakrpa</string>
     <string name="expert_mode_selected_only_on">Prikazuju se samo odabrane zakrpe</string>
@@ -644,12 +645,15 @@ Deinstalacija će trajno obrisati sve podatke aplikacije"</string>
     <string name="patcher_storage_permission_open_settings">Otvori postavke pohrane</string>
     <string name="patcher_storage_badge_denied">Odbijena dopuštenja</string>
     <string name="patcher_storage_badge_missing">Nema pronađenih</string>
+    <string name="patcher_storage_badge_rejected">Ne može se koristiti</string>
     <string name="batch_patch_option_paths_skipped">Nedostaju datoteke opcija zakrpe i biće preskočene: %1$s</string>
     <string name="patcher_missing_patches_title">Neke zakrpe su nestale.</string>
     <string name="patcher_missing_patches_description">Sačevana selekcija za ovu aplikaciju označava zakrpe koje nijedan omogućeni izvor više ne nudi. Nastavak će zakrpiti aplikaciju bez njih</string>
     <string name="patcher_missing_patches_label">Više se ne nudi</string>
     <string name="patcher_option_paths_gone_title">Nedostaju datoteke opcija zakrpe</string>
     <string name="patcher_option_paths_gone_description">Barem jedna opcija zakrpe upućuje na datoteke kojih više nema. Ukloni putanje da zakrpiš aplikaciju bez njih, ili vrati datoteke i pokušaj ponovo.</string>
+    <string name="patcher_option_paths_rejected_title">Datoteke opcija zakrpe se ne mogu koristiti</string>
+    <string name="patcher_option_paths_rejected_description">Jedna ili više opcija zakrpe ukazuju na datoteke koje nedostaju ili nemaju ono što zakrpa zahteva. Uklonite putanje kako biste izvršili zakrpu bez njih, ili popravite datoteke prema uputstvima opcije i pokušajte ponovo</string>
     <string name="patcher_option_paths_clear">Ukloni putanje i nastavi</string>
     <string name="patcher_storage_permission_hint">Savet: Premestite fajlove u /Android/data/app.morphe.manager/files/ - ne potrebne su dodatne dopuštenja</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1185,12 +1189,9 @@ Detalji: %2$s"</string>
     <string name="settings_system_import_source_data_success">Podaci izvorišta uspešno uvezeni</string>
     <string name="settings_system_selected_patches_section">Izabrane zakrpe</string>
     <string name="settings_system_no_patches_or_options">Nema sačuvanih patch-ova ili opcija</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Kopiraj selekciju iz…</string>
-    <string name="copy_selection_confirm_with_count">Kopiraj %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Nema drugih sačuvanih selekcija za kopiranje</string>
     <string name="copy_selection_available_format">%1$s od %2$s dostupno</string>
-    <string name="copy_selection_same_source">Istori izvor</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Prilagođeni odabir datoteka</string>
     <string name="settings_system_custom_file_picker_description">Koristi Morphe-ov ugrađeni birač fajlova umesto sistemskog</string>
@@ -1315,6 +1316,8 @@ Detalji: %2$s"</string>
     <string name="reorder_done">Redosled je sačŪvan</string>
     <string name="reset_order">Vrati redosled</string>
     <string name="reset_order_done">Narudžba je resetovana</string>
+    <string name="reset_order_confirm_title">Resetujte redosled?</string>
+    <string name="reset_order_confirm_message">Lista se vraća na podrazumevani redosled i redosled koji je ručno promenjen biće izgubljen</string>
     <string name="accessibility_select_app">Izaberi aplikaciju</string>
     <string name="accessibility_select_source">Izaberite izvor</string>
     <string name="accessibility_move_up">Pomeri se nagore</string>

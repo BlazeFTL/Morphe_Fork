@@ -201,6 +201,10 @@
     <string name="sources_management_experimental_versions_toggle">प्रायोगिक ऐप संस्करण</string>
     <string name="sources_management_experimental_versions_toggle_description">प्रयोगात्मक ऐप टारगेट्स को दिखाता और पैच करता है</string>
     <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">प्री-रिलीज़ पैच सक्षम करें</string>
+    <string name="sources_management_prerelease_disable">प्री-रिलीज़ पैच अक्षम करें</string>
+    <string name="sources_management_experimental_versions_enable">प्रायोगिक ऐप वर्ज़न सक्षम करें</string>
+    <string name="sources_management_experimental_versions_disable">प्रायोगिक ऐप वर्ज़न अक्षम करें</string>
     <string name="sources_management_already_exists">यह स्रोत पहले से ही जोड़ा गया है</string>
     <string name="sources_management_invalid_url">अमान्य स्रोत URL। कृपया पता जांचें और फिर प्रयास करें</string>
     <string name="sources_management_blocked">यह पैच स्रोत अवरुद्ध है और इसे नहीं जोड़ा जा सकता</string>
@@ -334,17 +338,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">पैच खोजें</string>
     <string name="expert_mode_disable_all">सभी को असक्षम करें</string>
-    <string name="expert_mode_disable_all_done">सभी पैच अक्षम किए गए</string>
     <string name="expert_mode_enable_all">सभी को सक्षम करें</string>
-    <string name="expert_mode_enable_all_done">सभी पैच सक्षम किए गए</string>
     <string name="expert_mode_enable_all_universal_pending">यूनिवर्सल पैच के लिए फिर से टैप करें</string>
     <string name="expert_mode_universal_all_warning_title">क्या सभी यूनिवर्सल पैच सक्षम करें?</string>
     <string name="expert_mode_universal_all_warning_message">यूनिवर्सल पैच एक साथ परीक्षण नहीं किए गए हैं। उन सभी को एक साथ सक्षम करने से टकराव, विफल पैचिंग या क्रैश हो सकते हैं</string>
     <string name="expert_mode_reset_to_default">अनुशंसित पैच सक्षम करें</string>
     <string name="expert_mode_reset_to_default_done">अनुशंसित पैच लागू किए गए</string>
+    <string name="expert_mode_selected_count">%2$s में से %1$s चुने गए</string>
     <string name="expert_mode_restore_saved">चयन पुनर्स्थापित करें</string>
     <string name="expert_mode_restore_saved_done">सहेजे गए चयन को पुनर्स्थापित किया गया</string>
-    <string name="expert_mode_copy_from_bundle">किसी अन्य बंडल से चयन कॉपी करें</string>
     <string name="expert_mode_copy_from_bundle_no_patches">इस बंडल में कोई मिलान करने वाला पैच नहीं है</string>
     <string name="expert_mode_no_results">कोई पैच नहीं मिला</string>
     <string name="expert_mode_selected_only_on">केवल चयनित पैच दिखाए जा रहे हैं</string>
@@ -645,12 +647,15 @@
     <string name="patcher_storage_permission_open_settings">स्टोरेज सेटिंग्स खोलें</string>
     <string name="patcher_storage_badge_denied">पर्मिशन नकारा गया</string>
     <string name="patcher_storage_badge_missing">नहीं मिला</string>
+    <string name="patcher_storage_badge_rejected">उपयोग करने योग्य नहीं</string>
     <string name="batch_patch_option_paths_skipped">पैच विकल्प फ़ाइलें मौजूद नहीं हैं और छोड़ दी जाएँगी: %1$s</string>
     <string name="patcher_missing_patches_title">कुछ पैच अब उपलब्ध नहीं हैं</string>
     <string name="patcher_missing_patches_description">इस ऐप के लिए सहेजी गई चयन उन पैचों के नाम है जिन्हें कोई भी सक्रिय स्रोत अब प्रदान नहीं करता है। जारी रखने पर ऐप को उनके बिना पैच किया जाएगा</string>
     <string name="patcher_missing_patches_label">अब उपलब्ध नहीं</string>
     <string name="patcher_option_paths_gone_title">पैच विकल्प फ़ाइलें मौजूद नहीं हैं</string>
     <string name="patcher_option_paths_gone_description">एक या अधिक पैच विकल्प ऐसी फ़ाइलों की ओर इशारा करते हैं जो अब मौजूद नहीं हैं। उनके बिना पैच करने के लिए पथ हटाएँ, या फ़ाइलें वापस रखकर फिर से प्रयास करें।</string>
+    <string name="patcher_option_paths_rejected_title">पैच विकल्प फ़ाइलों का उपयोग नहीं किया जा सकता</string>
+    <string name="patcher_option_paths_rejected_description">एक या अधिक पैच विकल्प उन फ़ाइलों की ओर इशारा करते हैं जो गायब हैं या जिनमें वह नहीं है जिसकी पैच मांग करता है। उनके बिना पैच करने के लिए पथ हटा दें, या विकल्प निर्देशों के अनुसार फ़ाइलों को ठीक करें और पुनः प्रयास करें</string>
     <string name="patcher_option_paths_clear">पथ हटाएँ और जारी रखें</string>
     <string name="patcher_storage_permission_hint">टिप: फ़ाइलें /Android/data/app.morphe.manager/files/ में स्थानांतरित करें - अतिरिक्त पर्मिशन की आवश्यकता नहीं है</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1208,12 +1213,9 @@ morphe_header_custom_dark.png
     <string name="settings_system_import_source_data_success">स्रोत डेटा सफलतापूर्वक आयात किया गया</string>
     <string name="settings_system_selected_patches_section">चयनित पैच</string>
     <string name="settings_system_no_patches_or_options">कोई पटच या विकल्प सहेजे गए नहीं</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">किसी अन्य बंडल से चयन कॉपी करें…</string>
-    <string name="copy_selection_confirm_with_count">%s कॉपी करें</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">कॉपी करने के लिए कोई अन्य सहेजा गया चयन नहीं है</string>
     <string name="copy_selection_available_format">%1$s में से %2$s उपलब्ध हैं</string>
-    <string name="copy_selection_same_source">समान स्रोत</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">कस्टम फ़ाइल पिकर</string>
     <string name="settings_system_custom_file_picker_description">सिस्टम वाली स्थानांतरण के बजाय मोर्फ़े के निर्मित फ़ाइल पिकर का उपयोग करता है</string>
@@ -1338,6 +1340,8 @@ morphe_header_custom_dark.png
     <string name="reorder_done">क्रम सहेजा गया</string>
     <string name="reset_order">क्रम रीसेट करें</string>
     <string name="reset_order_done">ऑर्डर रीसेट हो गया</string>
+    <string name="reset_order_confirm_title">क्रम रीसेट करें?</string>
+    <string name="reset_order_confirm_message">सूची अपने डिफ़ॉल्ट क्रम पर वापस चली जाएगी और हाथ से खींचा गया क्रम हट जाएगा</string>
     <string name="accessibility_select_app">ऐप चुनें</string>
     <string name="accessibility_select_source">स्रोत चुनें</string>
     <string name="accessibility_move_up">ऊपर ले जाएं</string>

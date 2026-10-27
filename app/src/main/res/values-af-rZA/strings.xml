@@ -201,6 +201,10 @@
     <string name="sources_management_experimental_versions_toggle">Eksperimentele program-weergawes</string>
     <string name="sources_management_experimental_versions_toggle_description">Wys en patch eksperimentele app-teikens</string>
     <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Aktiveer voorvrystelling-veranderinge</string>
+    <string name="sources_management_prerelease_disable">Deaktiveer voorvrystelling-veranderinge</string>
+    <string name="sources_management_experimental_versions_enable">Aktiveer eksperimentele program-weergawes</string>
+    <string name="sources_management_experimental_versions_disable">Deaktiveer eksperimentele program-weergawes</string>
     <string name="sources_management_already_exists">Hierdie oorsprong is reeds bygevoeg</string>
     <string name="sources_management_invalid_url">Ongeldige bron-URL. Gaan asseblief die adres na en probeer weer</string>
     <string name="sources_management_blocked">Hierdie bron vir pleisters is geblokkeer en kan nie bygevoeg word nie</string>
@@ -334,17 +338,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Soek patchings</string>
     <string name="expert_mode_disable_all">Deaktiveer alles</string>
-    <string name="expert_mode_disable_all_done">Alle pleisters gedeaktiveer</string>
     <string name="expert_mode_enable_all">Aktiveer alles</string>
-    <string name="expert_mode_enable_all_done">Alle pleisters geaktiveer</string>
     <string name="expert_mode_enable_all_universal_pending">Tik weer vir universele patches</string>
     <string name="expert_mode_universal_all_warning_title">Aktiveer alle universele patches?</string>
     <string name="expert_mode_universal_all_warning_message">Universele patches word nie saam getoets nie. Om almal gelyktydig te aktiveer kan konflikte, mislukte patching of crashes veroorsaak.</string>
     <string name="expert_mode_reset_to_default">Aktiveer aanbevole pleisters</string>
     <string name="expert_mode_reset_to_default_done">Aanbevole pleisters toegepas</string>
+    <string name="expert_mode_selected_count">%1$s van %2$s gekies</string>
     <string name="expert_mode_restore_saved">Ingevoeg suksesvol</string>
     <string name="expert_mode_restore_saved_done">Gestoorde keuse herstel</string>
-    <string name="expert_mode_copy_from_bundle">Kopieer seleksie van \'n ander bundel</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Geen ooreenstemmende patrone in hierdie bundel nie</string>
     <string name="expert_mode_no_results">Geen patchings gevind</string>
     <string name="expert_mode_selected_only_on">Wys slegs geselekteerde patches</string>
@@ -645,12 +647,15 @@ Deïnstallering sal alle toepassingsdata permanent uitwis."</string>
     <string name="patcher_storage_permission_open_settings">Open berginginstellings</string>
     <string name="patcher_storage_badge_denied">Toestemming geweier</string>
     <string name="patcher_storage_badge_missing">Nie gevind nie</string>
+    <string name="patcher_storage_badge_rejected">Nie bruikbaar nie</string>
     <string name="batch_patch_option_paths_skipped">Patch-opsielêers ontbreek en sal oorgeslaan word: %1$s</string>
     <string name="patcher_missing_patches_title">Sommige patches is weg</string>
     <string name="patcher_missing_patches_description">Die bewaarde keuse vir hierdie program naam kolle wat geen aktiewe bron meer aanbied nie. Gaan voort om die program sonder hulle te kol</string>
     <string name="patcher_missing_patches_label">Nie meer aangebied nie</string>
     <string name="patcher_option_paths_gone_title">Patch-opsielêers ontbreek</string>
     <string name="patcher_option_paths_gone_description">Een of meer patch-opsies wys na lêers wat nie meer bestaan nie. Verwyder die paaie om sonder hulle te patch, of sit die lêers terug en probeer weer.</string>
+    <string name="patcher_option_paths_rejected_title">Klapopsie-lêers kan nie gebruik word nie</string>
+    <string name="patcher_option_paths_rejected_description">Een of meer klapopsies verwys na lêers wat ontbreek of nie bevat wat die klap vereis nie. Verwyder die paaie om sonder hulle te klap, of regstel die lêers soos die opsie-instruksies beskryf en probeer weer</string>
     <string name="patcher_option_paths_clear">Verwyder die paaie en gaan voort</string>
     <string name="patcher_storage_permission_hint">Wenke: Skuif lêers na /Android/data/app.morphe.manager/files/ - geen ekstra toestemmings benodig nie</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1208,12 +1213,9 @@ Besonderhede: %2$s"</string>
     <string name="settings_system_import_source_data_success">Bron data suksesvol uitgevoer</string>
     <string name="settings_system_selected_patches_section">Gekose patchs</string>
     <string name="settings_system_no_patches_or_options">Geen patches of opsies gered nie</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Kopieer seleksie van…</string>
-    <string name="copy_selection_confirm_with_count">Kopieer %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Geen ander gestoorde seleksies om van te kopieer nie</string>
     <string name="copy_selection_available_format">%1$s van %2$s beskikbaar</string>
-    <string name="copy_selection_same_source">Dieselfde bron</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Pasgemaakte lêerkeurder</string>
     <string name="settings_system_custom_file_picker_description">Gebruik Morphe se ingeboude kiesprogram in plaas van die stelsel een</string>
@@ -1338,6 +1340,8 @@ Besonderhede: %2$s"</string>
     <string name="reorder_done">Volgorde stoor</string>
     <string name="reset_order">Herstel volgorde</string>
     <string name="reset_order_done">Bestelling terugstel</string>
+    <string name="reset_order_confirm_title">Stel die volgorde terug?</string>
+    <string name="reset_order_confirm_message">Die lys gaan terug na sy standaardvolgorde en die volgorde wat handmatig gesleep is, gaan verlore</string>
     <string name="accessibility_select_app">Kies program</string>
     <string name="accessibility_select_source">Kies bron</string>
     <string name="accessibility_move_up">Beweeg op</string>

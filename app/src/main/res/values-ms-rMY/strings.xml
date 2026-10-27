@@ -293,9 +293,7 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Cari tampalan</string>
     <string name="expert_mode_disable_all">Matikan semua</string>
-    <string name="expert_mode_disable_all_done">Semua tampalan dilumpuhkan</string>
     <string name="expert_mode_enable_all">Dayakan semua</string>
-    <string name="expert_mode_enable_all_done">Semua tampalan didayakan</string>
     <string name="expert_mode_enable_all_universal_pending">Ketuk sekali lagi untuk tampalan universal</string>
     <string name="expert_mode_universal_all_warning_title">Aktifkan semua tampalan universal?</string>
     <string name="expert_mode_universal_all_warning_message">Tampalan universal tidak diuji bersama. Mengaktifkan kesemuanya sekaligus boleh menyebabkan konflik, kegagalan tampalan atau ranap</string>
@@ -303,7 +301,6 @@
     <string name="expert_mode_reset_to_default_done">Tampalan disyorkan digunakan</string>
     <string name="expert_mode_restore_saved">Pulihkan pemilihan yang disimpan</string>
     <string name="expert_mode_restore_saved_done">Pemilihan yang disimpan telah dipulihkan</string>
-    <string name="expert_mode_copy_from_bundle">Salin pilihan daripada bundle lain</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Tiada tampalan sepadan dalam bundle ini</string>
     <string name="expert_mode_no_results">Tiada tampalan tersedia</string>
     <string name="expert_mode_selected_only_on">Memaparkan tampalan terpilih sahaja</string>
@@ -1067,12 +1064,9 @@ Butiran: %2$s"</string>
     <string name="settings_system_import_source_data_success">Data sumber diimport dengan jayanya</string>
     <string name="settings_system_selected_patches_section">Tampalan dipilih</string>
     <string name="settings_system_no_patches_or_options">Tiada tampalan atau pilihan yang disimpan</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Salin pilihan daripada…</string>
-    <string name="copy_selection_confirm_with_count">Salin %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Tiada pilihan disimpan lain untuk disalin</string>
     <string name="copy_selection_available_format">%1$s daripada %2$s tersedia</string>
-    <string name="copy_selection_same_source">Sumber sama</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Pemilih fail tersuai</string>
     <!-- Settings - System Tab - APK download helper -->

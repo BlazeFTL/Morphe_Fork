@@ -203,6 +203,10 @@
     <string name="sources_management_experimental_versions_toggle">Deneysel uygulama sürümleri</string>
     <string name="sources_management_experimental_versions_toggle_description">Deneysel uygulama hedeflerini gösterir ve yamalar</string>
     <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Ön sürüm yamaları etkinleştir</string>
+    <string name="sources_management_prerelease_disable">Ön sürüm yamaları devre dışı bırak</string>
+    <string name="sources_management_experimental_versions_enable">Deneysel uygulama sürümlerini etkinleştir</string>
+    <string name="sources_management_experimental_versions_disable">Deneysel uygulama sürümlerini devre dışı bırak</string>
     <string name="sources_management_already_exists">Bu kaynak zaten eklenmiş</string>
     <string name="sources_management_invalid_url">Geçersiz kaynak URL\'si. Lütfen adresi kontrol edin ve tekrar deneyin</string>
     <string name="sources_management_blocked">Bu yama kaynağı engellenmiş ve eklenemiyor</string>
@@ -346,17 +350,15 @@ APK'nin nereden alınacağını seçin"</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Yamaları ara</string>
     <string name="expert_mode_disable_all">Hepsini devre dışı bırak</string>
-    <string name="expert_mode_disable_all_done">Tüm yamalar devre dışı bırakıldı</string>
     <string name="expert_mode_enable_all">Hepsini etkinleştir</string>
-    <string name="expert_mode_enable_all_done">Tüm yamalar etkinleştirildi</string>
     <string name="expert_mode_enable_all_universal_pending">Evrensel yamalar için tekrar dokunun</string>
     <string name="expert_mode_universal_all_warning_title">Tüm evrensel yamaları etkinleştir?</string>
     <string name="expert_mode_universal_all_warning_message">Evrensel yamalar birlikte test edilmemiştir. Hepsini aynı anda etkinleştirmek çakışmalara, başarısız yamalara veya çökmelere neden olabilir.</string>
     <string name="expert_mode_reset_to_default">Önerilen yamaları etkinleştir</string>
     <string name="expert_mode_reset_to_default_done">Önerilen yamalar uygulandı</string>
+    <string name="expert_mode_selected_count">%1$s / %2$s seçildi</string>
     <string name="expert_mode_restore_saved">Kaydedilen seçimi geri yükle</string>
     <string name="expert_mode_restore_saved_done">Kaydedilmiş seçim geri yüklendi</string>
-    <string name="expert_mode_copy_from_bundle">Başka bir bundle\'dan seçimi kopyala</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Bu bundle\'da eşleşen yama yok</string>
     <string name="expert_mode_no_results">Yama bulunamadı</string>
     <string name="expert_mode_selected_only_on">Yalnızca seçili yamalar gösteriliyor</string>
@@ -660,12 +662,15 @@ Kaldırma işlemi tüm uygulama verilerini kalıcı olarak silecektir"</string>
     <string name="patcher_storage_permission_open_settings">Depolama ayarlarını aç</string>
     <string name="patcher_storage_badge_denied">İzin reddedildi</string>
     <string name="patcher_storage_badge_missing">Bulunamadı</string>
+    <string name="patcher_storage_badge_rejected">Kullanılamaz</string>
     <string name="batch_patch_option_paths_skipped">Yama seçenek dosyaları eksik ve atlanacak: %1$s</string>
     <string name="patcher_missing_patches_title">Bazı yamalar eksik</string>
     <string name="patcher_missing_patches_description">Bu uygulama için kaydedilen seçim, artık hiçbir etkin kaynağın sunmadığı yamaları içeriyor. Devam etmek, uygulamayı bu yamalar olmadan yamalar</string>
     <string name="patcher_missing_patches_label">Artık sunulmuyor</string>
     <string name="patcher_option_paths_gone_title">Yama seçenek dosyaları eksik</string>
     <string name="patcher_option_paths_gone_description">Bir veya daha fazla yama seçeneği, artık bulunmayan dosyalara işaret ediyor. Bu dosyalar olmadan yamalamak için dosya yollarını kaldırın veya dosyaları geri koyup tekrar deneyin</string>
+    <string name="patcher_option_paths_rejected_title">Yama seçenek dosyaları kullanılamaz</string>
+    <string name="patcher_option_paths_rejected_description">Bir veya daha fazla yama seçeneği, eksik olan veya yamanın gerektirdiği özelliklere sahip olmayan dosyalara işaret ediyor. Bu dosyalar olmadan yamalamak için yolları kaldırın veya seçenek talimatlarında açıklandığı gibi dosyaları düzeltip tekrar deneyin</string>
     <string name="patcher_option_paths_clear">Dosya yollarını kaldır ve devam et</string>
     <string name="patcher_storage_permission_hint">İpucu: Dosyaları /Android/data/app.morphe.manager/files/ dizinine taşıyın - ekstra izin gerektirmez</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -828,15 +833,21 @@ Kaldırma işlemi tüm uygulama verilerini kalıcı olarak silecektir"</string>
     <string name="settings_appearance_repatch_notice_description">Yamalanmış uygulamalar yeniden yamalanabilir olduğunda bir başlık gösterir.</string>
     <string name="settings_appearance_more_apps_card">Daha fazla uygulama kartı</string>
     <string name="settings_appearance_more_apps_card_description">Uygulamaların altında topluluk yamalarına yönlendiren bir kart gösterir</string>
+    <string name="settings_appearance_app_card_colors">Kart renkleri</string>
     <string name="settings_appearance_app_card_colors_default">Varsayılan</string>
+    <string name="settings_appearance_app_card_colors_default_description">Her uygulama ve kaynağa kendi rengini ver</string>
     <string name="settings_appearance_app_card_colors_accent">Vurgu rengi</string>
+    <string name="settings_appearance_app_card_colors_accent_description">Uygulama ve kaynak kartları için uygulamanın vurgu rengini kullan</string>
     <string name="settings_appearance_app_card_colors_gradient">Degrade</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">Uygulama kartları için tek bir gradyan kullan, kaynak kartları için tek bir renge karıştırılır</string>
     <string name="settings_appearance_app_card_colors_solid">Düz renk</string>
+    <string name="settings_appearance_app_card_colors_solid_description">Uygulama ve kaynak kartları için tek bir özel renk kullan</string>
     <string name="settings_appearance_app_card_colors_start">Başlangıç rengi</string>
     <string name="settings_appearance_app_card_colors_middle">Orta renk</string>
     <string name="settings_appearance_app_card_colors_end">Bitiş rengi</string>
     <string name="settings_appearance_app_card_colors_solid_color">Geçersiz renk</string>
     <string name="settings_appearance_app_card_colors_bundle">Uygulama paketi rengi</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">Burada, her bir uygulamanın veya kaynağın kendi rengini kullan; uyum sağlaması için otomatik olarak tonlandırılır.</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Uygulama simgesi</string>
     <string name="settings_appearance_app_icon_selector_description">Morphe\'nin ana ekranınızda ve uygulama çekmecesinde nasıl göründüğü</string>
@@ -1221,12 +1232,9 @@ Ayrıntılar: %2$s"</string>
     <string name="settings_system_import_source_data_success">Kaynak verisi başarıyla içe aktarıldı</string>
     <string name="settings_system_selected_patches_section">Seçili yamalar</string>
     <string name="settings_system_no_patches_or_options">Hiçbir yama veya seçenek kaydedilmedi</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Seçimi kopyala…</string>
-    <string name="copy_selection_confirm_with_count">%s kopyala</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Kopyalanacak başka kaydedilmiş seçim yok</string>
     <string name="copy_selection_available_format">%1$s / %2$s kullanılabilir</string>
-    <string name="copy_selection_same_source">Aynı kaynak</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Özel dosya seçici</string>
     <string name="settings_system_custom_file_picker_description">Sistem dosya seçicisi yerine Morphe\'nin yerleşik dosya seçicisini kullanır.</string>
@@ -1351,6 +1359,8 @@ Ayrıntılar: %2$s"</string>
     <string name="reorder_done">Sıra kaydedildi</string>
     <string name="reset_order">Sırayı sıfırla</string>
     <string name="reset_order_done">Sıra sıfırlandı</string>
+    <string name="reset_order_confirm_title">Sıralama sıfırlansın mı?</string>
+    <string name="reset_order_confirm_message">Liste varsayılan sıralamasına geri döner ve elle yapılan sıralama kaybolur</string>
     <string name="accessibility_select_app">Uygulama seç</string>
     <string name="accessibility_select_source">Kaynak seçin</string>
     <string name="accessibility_move_up">Yukarı taşı</string>
@@ -1358,6 +1368,7 @@ Ayrıntılar: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s, %3$s\'nin %2$s konumuna taşındı</string>
     <string name="accessibility_scroll_to_top">Listenin en üstüne kaydır</string>
     <string name="rename">Yeniden adlandır</string>
+    <string name="more_options">Daha fazla seçenek</string>
     <string name="import_">İçe aktar</string>
     <string name="export">Dışa aktar</string>
     <string name="copy">Kopyala</string>

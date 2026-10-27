@@ -203,6 +203,10 @@
     <string name="sources_management_experimental_versions_toggle">إصدارات تجريبية للتطبيقات</string>
     <string name="sources_management_experimental_versions_toggle_description">عرض وتعديل التطبيقات المستهدفة التجريبية</string>
     <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">تمكين تعديلات ما قبل الإطلاق</string>
+    <string name="sources_management_prerelease_disable">تعطيل تعديلات ما قبل الإطلاق</string>
+    <string name="sources_management_experimental_versions_enable">تمكين إصدارات التطبيقات التجريبية</string>
+    <string name="sources_management_experimental_versions_disable">تعطيل إصدارات التطبيقات التجريبية</string>
     <string name="sources_management_already_exists">تمت إضافة هذا المصدر بالفعل</string>
     <string name="sources_management_invalid_url">عنوان URL المصدر غير صالح. يرجى التحقق من العنوان والمحاولة مرة أخرى</string>
     <string name="sources_management_blocked">تم حظر مصدر التعديل هذا ولا يمكن إضافته</string>
@@ -346,17 +350,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">البحث عن التعديلات</string>
     <string name="expert_mode_disable_all">تعطيل الكل</string>
-    <string name="expert_mode_disable_all_done">تم تعطيل كل التعديلات</string>
     <string name="expert_mode_enable_all">تمكين الكل</string>
-    <string name="expert_mode_enable_all_done">تم تمكين كل التعديلات</string>
     <string name="expert_mode_enable_all_universal_pending">انقر مرة أخرى لتطبيق التعديلات الشاملة</string>
     <string name="expert_mode_universal_all_warning_title">تمكين كل التعديلات الشاملة؟</string>
     <string name="expert_mode_universal_all_warning_message">التعديلات الشاملة لم تُختبر معًا. قد يؤدي تمكين جميعها مرةً واحدة إلى حدوث تعارضات، فشل في تطبيق التعديل، أو أعطال</string>
     <string name="expert_mode_reset_to_default">تمكين التعديلات الموصى بها</string>
     <string name="expert_mode_reset_to_default_done">تم تطبيق التعديلات الموصى بها</string>
+    <string name="expert_mode_selected_count">%1$s من %2$s محدد</string>
     <string name="expert_mode_restore_saved">استعادة التحديد المحفوظ</string>
     <string name="expert_mode_restore_saved_done">تم استعادة التحديد المحفوظ</string>
-    <string name="expert_mode_copy_from_bundle">نسخ التحديد من مجموعة أخرى</string>
     <string name="expert_mode_copy_from_bundle_no_patches">لا توجد تعديلات مطابقة في هذه المجموعة</string>
     <string name="expert_mode_no_results">لم يتم العثور على تعديلات</string>
     <string name="expert_mode_selected_only_on">عرض التعديلات المحددة فقط</string>
@@ -660,12 +662,15 @@
     <string name="patcher_storage_permission_open_settings">فتح إعدادات التخزين</string>
     <string name="patcher_storage_badge_denied">تم رفض الإذن</string>
     <string name="patcher_storage_badge_missing">غير موجود</string>
+    <string name="patcher_storage_badge_rejected">غير قابل للاستخدام</string>
     <string name="batch_patch_option_paths_skipped">ملفات خيارات التعديل مفقودة وسيتم تخطيها: %1$s</string>
     <string name="patcher_missing_patches_title">بعض التعديلات لم تعد متوفرة</string>
     <string name="patcher_missing_patches_description">يُشير الاختيار المحفوظ لهذا التطبيق إلى تعديلات لم تعد متاحة ضمن أي مصدر مفعَّل. سيتم المتابعة في تطبيق التعديلات دون تضمين تلك العناصر</string>
     <string name="patcher_missing_patches_label">لم تعد متوفرة</string>
     <string name="patcher_option_paths_gone_title">ملفات خيارات التعديل مفقودة</string>
     <string name="patcher_option_paths_gone_description">يشير واحد أو أكثر من خيارات التعديل إلى ملفات لم تعد موجودة. أزل المسارات للتعديل بدونها، أو أعد الملفات إلى مكانها وحاول مرة أخرى</string>
+    <string name="patcher_option_paths_rejected_title">لا يمكن استخدام ملفات خيارات التعديل</string>
+    <string name="patcher_option_paths_rejected_description">يشير خيار واحد أو أكثر من خيارات التعديل إلى ملفات مفقودة أو لا تحتوي على ما يطلبه التعديل. أزل المسارات للتعديل بدونها، أو أصلح الملفات كما توضح تعليمات الخيار وحاول مرة أخرى</string>
     <string name="patcher_option_paths_clear">أزل المسارات وتابع</string>
     <string name="patcher_storage_permission_hint">تلميح: نقل الملفات إلى /Android/data/app.morphe.manager/files/ - لا تحتاج إلى أي إذن إضافي</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1231,12 +1236,9 @@ morphe_adaptive_monochrome_custom.xml
     <string name="settings_system_import_source_data_success">تم استيراد بيانات المصدر بنجاح</string>
     <string name="settings_system_selected_patches_section">التعديلات المحددة</string>
     <string name="settings_system_no_patches_or_options">لا يوجد تعديلات أو خيارات محفوظة</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">نسخ المحدد من…</string>
-    <string name="copy_selection_confirm_with_count">نسخ %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">لا توجد تحديدات أخرى محفوظة للنسخ منها</string>
     <string name="copy_selection_available_format">%1$s من %2$s متاح</string>
-    <string name="copy_selection_same_source">نفس المصدر</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">مستعرض ملفات مخصص</string>
     <string name="settings_system_custom_file_picker_description">يستخدم مستعرض ملفات Morphe المدمج بدلًا من مستعرض النظام </string>
@@ -1361,6 +1363,8 @@ morphe_adaptive_monochrome_custom.xml
     <string name="reorder_done">تم حفظ الترتيب</string>
     <string name="reset_order">إعادة تعيين الترتيب</string>
     <string name="reset_order_done">تم إعادة تعيين الترتيب</string>
+    <string name="reset_order_confirm_title">إعادة تعيين الترتيب؟</string>
+    <string name="reset_order_confirm_message">ستعود القائمة إلى ترتيبها الافتراضي وسيتم فقدان الترتيب الذي تم سحبه يدويًا</string>
     <string name="accessibility_select_app">اختر تطبيق</string>
     <string name="accessibility_select_source">تحديد المصدر</string>
     <string name="accessibility_move_up">حرّك لأعلى</string>
@@ -1368,6 +1372,7 @@ morphe_adaptive_monochrome_custom.xml
     <string name="accessibility_app_moved_announcement">%1$s حُرِّك إلى الموضع %2$s من %3$s</string>
     <string name="accessibility_scroll_to_top">التمرير إلى أعلى القائمة</string>
     <string name="rename">إعادة تسمية</string>
+    <string name="more_options">خيارات إضافية</string>
     <string name="import_">استيراد</string>
     <string name="export">تصدير</string>
     <string name="copy">نسخ</string>

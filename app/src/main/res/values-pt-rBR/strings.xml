@@ -202,6 +202,9 @@
     <string name="sources_management_experimental_versions_toggle_description">Mostra e corrige alvos de aplicativos experimentais</string>
     <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_prerelease_enable">Ativar patches de pré-lançamento</string>
+    <string name="sources_management_prerelease_disable">Desativar patches de pré-lançamento</string>
+    <string name="sources_management_experimental_versions_enable">Ativar versões experimentais do app</string>
+    <string name="sources_management_experimental_versions_disable">Desativar versões experimentais do app</string>
     <string name="sources_management_already_exists">Esta fonte já foi adicionada</string>
     <string name="sources_management_invalid_url">URL de origem inválida. Verifique o endereço e tente novamente.</string>
     <string name="sources_management_blocked">Esta fonte de atualização está bloqueada e não pode ser adicionada</string>
@@ -336,17 +339,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Procurar patches</string>
     <string name="expert_mode_disable_all">Desativar todos</string>
-    <string name="expert_mode_disable_all_done">Todos os patches desativados</string>
     <string name="expert_mode_enable_all">Ativar todos</string>
-    <string name="expert_mode_enable_all_done">Todos os patches ativados</string>
     <string name="expert_mode_enable_all_universal_pending">Toque novamente para patches universais</string>
     <string name="expert_mode_universal_all_warning_title">Ativar todos os patches universais?</string>
     <string name="expert_mode_universal_all_warning_message">Patches universais não são testados juntos. Ativar todos de uma vez pode causar conflitos, falhas ao patchear ou travamentos</string>
     <string name="expert_mode_reset_to_default">Ativar patches recomendados</string>
     <string name="expert_mode_reset_to_default_done">Patches recomendados aplicados</string>
+    <string name="expert_mode_selected_count">%1$s de %2$s selecionados</string>
     <string name="expert_mode_restore_saved">Restaurar seleção salva</string>
     <string name="expert_mode_restore_saved_done">Seleção salva restaurada</string>
-    <string name="expert_mode_copy_from_bundle">Copiar seleção de outro pacote</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nenhum patch correspondente neste pacote</string>
     <string name="expert_mode_no_results">Nenhum patch encontrado</string>
     <string name="expert_mode_selected_only_on">Exibindo apenas patches selecionados</string>
@@ -648,12 +649,15 @@ A desinstalação apagará permanentemente todos os dados do aplicativo"</string
     <string name="patcher_storage_permission_open_settings">Abrir configurações de armazenamento</string>
     <string name="patcher_storage_badge_denied">Permissão negada</string>
     <string name="patcher_storage_badge_missing">Não encontrado</string>
+    <string name="patcher_storage_badge_rejected">Não utilizável</string>
     <string name="batch_patch_option_paths_skipped">Arquivos de opção do patch estão ausentes e serão ignorados: %1$s</string>
     <string name="patcher_missing_patches_title">Alguns patches desapareceram</string>
     <string name="patcher_missing_patches_description">A seleção salva para este app nomeia patches que nenhuma fonte ativa oferece mais. Continuar aplica o patch no aplicativo sem eles</string>
     <string name="patcher_missing_patches_label">Não é mais oferecido</string>
     <string name="patcher_option_paths_gone_title">Arquivos de opção do patch estão faltando</string>
     <string name="patcher_option_paths_gone_description">Uma ou mais opções de patch apontam para arquivos que não estão mais lá. Remova os caminhos para aplicar o patch sem eles, ou restaure os arquivos e tente novamente</string>
+    <string name="patcher_option_paths_rejected_title">Arquivos de opção do patch não podem ser usados</string>
+    <string name="patcher_option_paths_rejected_description">Uma ou mais opções de patch apontam para arquivos que estão faltando ou não possuem o que o patch solicita. Remova os caminhos para aplicar o patch sem eles, ou corrija os arquivos conforme as instruções da opção e tente novamente</string>
     <string name="patcher_option_paths_clear">Remova os caminhos e continue</string>
     <string name="patcher_storage_permission_hint">Dica: Mova os arquivos para /Android/data/app.morphe.manager/files/ - sem permissão extra necessária</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1205,12 +1209,9 @@ Detalhes: %2$s"</string>
     <string name="settings_system_import_source_data_success">Dados da origem importados com sucesso</string>
     <string name="settings_system_selected_patches_section">Patches selecionados</string>
     <string name="settings_system_no_patches_or_options">Não há patches ou opções salvas</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Copiar seleção de…</string>
-    <string name="copy_selection_confirm_with_count">Copiar %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Não há outras seleções salvas para copiar</string>
     <string name="copy_selection_available_format">%1$s de %2$s disponíveis</string>
-    <string name="copy_selection_same_source">Mesma origem</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Seletor de arquivos personalizado</string>
     <string name="settings_system_custom_file_picker_description">Usa o seletor de arquivos integrado do Morphe em vez do do sistema</string>
@@ -1335,6 +1336,8 @@ Detalhes: %2$s"</string>
     <string name="reorder_done">Ordem salva</string>
     <string name="reset_order">Restaurar ordem</string>
     <string name="reset_order_done">Pedido redefinido</string>
+    <string name="reset_order_confirm_title">Redefinir o pedido?</string>
+    <string name="reset_order_confirm_message">A lista retornará à sua ordem padrão e a ordem arrastada manualmente será perdida</string>
     <string name="accessibility_select_app">Selecionar aplicativo</string>
     <string name="accessibility_select_source">Selecionar fonte</string>
     <string name="accessibility_move_up">Mover para cima</string>

@@ -291,9 +291,7 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Paqejî bîne lêgeran</string>
     <string name="expert_mode_disable_all">Hemû çêbake</string>
-    <string name="expert_mode_disable_all_done">Hemû pelikên guherînê neçalak hatin kirin</string>
     <string name="expert_mode_enable_all">Hemû çêbakîne</string>
-    <string name="expert_mode_enable_all_done">Hemû pelikên guherînê aktîv hatin kirin</string>
     <string name="expert_mode_enable_all_universal_pending">Dîsa bikirtîne ji bo pêçekên gerdûnî</string>
     <string name="expert_mode_universal_all_warning_title">Hemû patchên gerdûnî çalak bike?</string>
     <string name="expert_mode_universal_all_warning_message">Patchên gerdûnî bi hev re nehatine ceribandin. Çalakkirina hemûyan bi carekê dikare bibe sedema nakokî, patchkirina têkçûyî, an jî hilweşînan.</string>
@@ -301,7 +299,6 @@
     <string name="expert_mode_reset_to_default_done">Pelîkên ku hatine pêşniyar kirin hatin çêkirin</string>
     <string name="expert_mode_restore_saved">Şêvikî serdest vegerîne</string>
     <string name="expert_mode_restore_saved_done">Hilbijartina ku hatî parastin</string>
-    <string name="expert_mode_copy_from_bundle">Hilbijarkirina ji pakêtek din kopye bike</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Di vê pakêtê de tu parçe nehatine dîtin</string>
     <string name="expert_mode_no_results">Paqejiyê ne hebin</string>
     <string name="expert_mode_selected_only_on">Tenê patchên hilbijartî têne nîşandan</string>
@@ -1065,12 +1062,9 @@ Detay: %2$s"</string>
     <string name="settings_system_import_source_data_success">Dane seyarê serketine</string>
     <string name="settings_system_selected_patches_section">Patchên hilbijartî</string>
     <string name="settings_system_no_patches_or_options">Ke tu bejna yâ bejna diteya ne</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Hilbijarkirina ji… kopye bike</string>
-    <string name="copy_selection_confirm_with_count">%s kopye bike</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Tu hilbijarkirinên din ên ku hatine tomarkirin ji bo kopyekirinê hene</string>
     <string name="copy_selection_available_format">%1$s ji %2$s peyda</string>
-    <string name="copy_selection_same_source">Çavkaniya heman</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Hilbijêrkê pelan yê xwerû</string>
     <!-- Settings - System Tab - APK download helper -->

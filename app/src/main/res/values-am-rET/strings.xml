@@ -201,6 +201,10 @@
     <string name="sources_management_experimental_versions_toggle">የሙከራ መተግበሪያ ስሪቶች</string>
     <string name="sources_management_experimental_versions_toggle_description">የሙከራ መተግበሪያ ኢላማዎችን ያሳያል እንዲሁም ይጠግናል</string>
     <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">ቅድመ-ብቅያ ፓቾችን አግብ</string>
+    <string name="sources_management_prerelease_disable">ቅድመ-ብቅያ ፓቾችን አጥፋ</string>
+    <string name="sources_management_experimental_versions_enable">የሙከራ መተግበሪያ ስሪቶችን አግብ</string>
+    <string name="sources_management_experimental_versions_disable">የሙከራ መተግበሪያ ስሪቶችን አጥፋ</string>
     <string name="sources_management_already_exists">ይህ ምንጭ አስቀድሞ ተጨምሯል</string>
     <string name="sources_management_invalid_url">የተሳሳተ የምንጭ URL ነው። እባክዎ አድራሻውን ያረጋግጡ እና እንደገና ይሞክሩ</string>
     <string name="sources_management_blocked">ይህ የማሻሻያ ምንጭ ታግዶታል እና ሊጨመር አይችልም</string>
@@ -334,17 +338,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">ፓቾችን ፈልግ</string>
     <string name="expert_mode_disable_all">ሁሉንም አጥፋ</string>
-    <string name="expert_mode_disable_all_done">ሁሉም ፓቾች ተዘግተዋል</string>
     <string name="expert_mode_enable_all">ሁሉንም አብራ</string>
-    <string name="expert_mode_enable_all_done">ሁሉም ፓቾች ተከፍተዋል</string>
     <string name="expert_mode_enable_all_universal_pending">ለዩኒቨርሳል ፓቾች እንደገና ይጫኑ</string>
     <string name="expert_mode_universal_all_warning_title">ሁሉንም አጠቃላይ ፓቾች ማብራት?</string>
     <string name="expert_mode_universal_all_warning_message">አጠቃላይ ፓቾች አብረው አልተሞከሩም። ሁሉንም በአንድ ጊዜ ማብራት ግጭቶችን፣ የፓች ውድቀትን ወይም መተግበሪያው እንዲዘጋ ሊያደርግ ይችላል</string>
     <string name="expert_mode_reset_to_default">የሚመከሩ ፓቾችን ያብሩ</string>
     <string name="expert_mode_reset_to_default_done">የሚመከሩት ፓቾች ተተግብረዋል</string>
+    <string name="expert_mode_selected_count">%2$s ውስጥ %1$s ተመርጧል</string>
     <string name="expert_mode_restore_saved">የተቀመጠውን ምርጫ መልስ</string>
     <string name="expert_mode_restore_saved_done">የተቀመጠው ምርጫ ተመልሷል</string>
-    <string name="expert_mode_copy_from_bundle">ምርጫን ከሌላ ባንድል ኮፒ ያድርጉ</string>
     <string name="expert_mode_copy_from_bundle_no_patches">በዚህ ባንድል ውስጥ የሚዛመዱ ፓቾች የሉም</string>
     <string name="expert_mode_no_results">ምንም ፓቾች አልተገኙም</string>
     <string name="expert_mode_selected_only_on">የተመረጡ ፓቾች ብቻ እየታዩ ነው</string>
@@ -645,12 +647,15 @@
     <string name="patcher_storage_permission_open_settings">የማከማቻ ቅንብሮችን ይክፈቱ</string>
     <string name="patcher_storage_badge_denied">ፈቃድ ተከልክሏል</string>
     <string name="patcher_storage_badge_missing">አልተገኘም</string>
+    <string name="patcher_storage_badge_rejected">ሊጠቀሙበት የማይችሉት</string>
     <string name="batch_patch_option_paths_skipped">የፓች አማራጭ ፋይሎች የሉም እና ይዘለላሉ: %1$s</string>
     <string name="patcher_missing_patches_title">አንዳንድ ፓቾች የሉም</string>
     <string name="patcher_missing_patches_description">ለዚህ መተግበሪያ የተቀመጠው ምርጫ ምንም ዓይነት ንቁ ምንጭ የማይሰጣቸውን ማስተካከያዎች ይጠቅሳል። መቀጠል መተግበሪያውን ያለ እነሱ ያስተካክላል</string>
     <string name="patcher_missing_patches_label">ከእንግዲህ አይቀርብም</string>
     <string name="patcher_option_paths_gone_title">የፓች አማራጭ ፋይሎች የሉም</string>
     <string name="patcher_option_paths_gone_description">አንድ ወይም ከዚያ በላይ የፓች አማራጮች አሁን ወደሌሉ ፋይሎች ያመለክታሉ። ያለ እነሱ ፓች ለማድረግ መንገዶቹን ያስወግዱ፣ ወይም ፋይሎቹን መልሰው ያስቀምጡ እና እንደገና ይሞክሩ</string>
+    <string name="patcher_option_paths_rejected_title">የፓች አማራጭ ፋይሎች ጥቅም ላይ ሊውሉ አይችሉም</string>
+    <string name="patcher_option_paths_rejected_description">አንድ ወይም ከዚያ በላይ የፓች አማራጮች ወደሌሉ ወይም ፓቹ የሚፈልገውን ነገር ወደማይይዙ ፋይሎች ያመለክታሉ። ያለ እነሱ ፓች ለማድረግ መንገዶቹን ያስወግዱ፣ ወይም አማራጭ መመሪያዎቹ በሚገልጹት መሠረት ፋይሎቹን ያስተካክሉ እና እንደገና ይሞክሩ</string>
     <string name="patcher_option_paths_clear">መንገዶቹን አስወግደህ ቀጥል</string>
     <string name="patcher_storage_permission_hint">ጠቃሚ ምክር፦ ፋይሎችን ወደ /Android/data/app.morphe.manager/files/ ያዛውሩ - ተጨማሪ ፈቃዶች አያስፈልጉም</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1208,12 +1213,9 @@ morphe_header_custom_dark.png
     <string name="settings_system_import_source_data_success">የምንጭ መረጃ በተሳካ ሁኔታ ገብቷል</string>
     <string name="settings_system_selected_patches_section">የተመረጡ ፓቾች</string>
     <string name="settings_system_no_patches_or_options">የተቀመጡ ፓቾች ወይም አማራጮች የሉም</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">ምርጫን ኮፒ ያድርጉ ከ…</string>
-    <string name="copy_selection_confirm_with_count">%s ኮፒ ያድርጉ</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">ለኮፒ የሚሆኑ ሌሎች የተቀመጡ ምርጫዎች የሉም</string>
     <string name="copy_selection_available_format">ከ%2$s ውስጥ %1$s ይገኛሉ</string>
-    <string name="copy_selection_same_source">ተመሳሳይ ምንጭ</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">ብጁ የፋይል መረጫ</string>
     <string name="settings_system_custom_file_picker_description">ከሲስተሙ ፋይል መረጫ ይልቅ የMorpheን የውስጥ ፋይል መረጫ ይጠቀማል</string>
@@ -1338,6 +1340,8 @@ morphe_header_custom_dark.png
     <string name="reorder_done">ቅደም ተከተሉ ተቀምጧል</string>
     <string name="reset_order">ቅደም ተከተሉን ወደ ነበረበት መልስ</string>
     <string name="reset_order_done">ቅደም ተከተሉ ወደ ነበረበት ተመልሷል</string>
+    <string name="reset_order_confirm_title">ትዕዛዙን እንደገና ያስተካክሉ?</string>
+    <string name="reset_order_confirm_message">ዝርዝሩ ወደ መደበኛው ቅደም ተከተል ይመለሳል እንዲሁም በእጅ የተሳበው ቅደም ተከተል ይጠፋል</string>
     <string name="accessibility_select_app">መተግበሪያ ይምረጡ</string>
     <string name="accessibility_select_source">ምንጩን ይምረጡ</string>
     <string name="accessibility_move_up">ወደ ላይ አሳብ</string>

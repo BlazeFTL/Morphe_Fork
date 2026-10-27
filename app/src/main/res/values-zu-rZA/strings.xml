@@ -346,9 +346,7 @@ Khetha ukuthi uthathe i-APK yayo kuphi"</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Funa izigaba</string>
     <string name="expert_mode_disable_all">Vala zonke</string>
-    <string name="expert_mode_disable_all_done">Zonke izipathi zikhishwe</string>
     <string name="expert_mode_enable_all">Vula zonke</string>
-    <string name="expert_mode_enable_all_done">Zonke izipathi zivunyelwe</string>
     <string name="expert_mode_enable_all_universal_pending">Thinta futhi ukuze uthole ama-patches onke</string>
     <string name="expert_mode_universal_all_warning_title">Vula wonke ama-patches universal?</string>
     <string name="expert_mode_universal_all_warning_message">Ama-patches universal awakuhloliswana. Ukuvula wonke ngasikhathi sinye kungabangela ukungahambisani, ukuhluleka kokufaka i-patch, noma ukuqhuma kwe-app</string>
@@ -356,7 +354,6 @@ Khetha ukuthi uthathe i-APK yayo kuphi"</string>
     <string name="expert_mode_reset_to_default_done">Izipathi ezinekilwayo sezifakwe</string>
     <string name="expert_mode_restore_saved">Buyisela ukukhetha okugcinwe</string>
     <string name="expert_mode_restore_saved_done">Ukukhetha okugcinwe sekubuyiselwe</string>
-    <string name="expert_mode_copy_from_bundle">Kopisha ukukhetha ku-bundle enye</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Azikho ama-patch ahambisana naleyo bundle</string>
     <string name="expert_mode_no_results">Azikho izigaba ezitholakele</string>
     <string name="expert_mode_selected_only_on">Kukhonjiswa ama-patches akhethiwe kuphela</string>
@@ -1227,12 +1224,9 @@ Imininingwane: %2$s"</string>
     <string name="settings_system_import_source_data_success">Idatha komthombo ingeniswe ngempumelelo</string>
     <string name="settings_system_selected_patches_section">Ama-patch akhethiwe</string>
     <string name="settings_system_no_patches_or_options">Azikho izipathi noma izinketho ezigcinwe</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Kopisha ukukhetha ku…</string>
-    <string name="copy_selection_confirm_with_count">Kopisha %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Azikho ezinye izikhetho ezigcinwe zokukopisha kuzo</string>
     <string name="copy_selection_available_format">%1$s kwe-%2$s ezitholakalayo</string>
-    <string name="copy_selection_same_source">Umthombo ofanayo</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Isikhetho sefaili esikhethekile</string>
     <string name="settings_system_custom_file_picker_description">Sebenzisa i-file picker eyakhiwe ku-Morphe esikhundleni seye-system</string>

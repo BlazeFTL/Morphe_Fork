@@ -202,6 +202,9 @@
     <string name="sources_management_experimental_versions_toggle_description">Taispeánann agus paistíonn spriocanna aipeanna turgnamhacha</string>
     <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_prerelease_enable">Paistí réamh-eisiúna a chumasú</string>
+    <string name="sources_management_prerelease_disable">Paistí réamh-eisiúna a dhíghumasú</string>
+    <string name="sources_management_experimental_versions_enable">Leaganacha turgnamhacha d\'aipeanna a chumasú</string>
+    <string name="sources_management_experimental_versions_disable">Leaganacha turgnamhacha d\'aipeanna a dhíghumasú</string>
     <string name="sources_management_already_exists">Tá an fhoinse seo curtha leis cheana féin</string>
     <string name="sources_management_invalid_url">URL foinse neamhbhailí. Seiceáil an seoladh agus bain triail eile as</string>
     <string name="sources_management_blocked">Tá an foinse paiste seo blocáilte agus ní féidir í a chur leis</string>
@@ -336,17 +339,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Paistí cuardaigh</string>
     <string name="expert_mode_disable_all">Díchumasaigh gach rud</string>
-    <string name="expert_mode_disable_all_done">Gach paiste díchumasaithe</string>
     <string name="expert_mode_enable_all">Cumasaigh gach rud</string>
-    <string name="expert_mode_enable_all_done">Gach paiste cumasaithe</string>
     <string name="expert_mode_enable_all_universal_pending">Tapáil arís le haghaidh paistí uilíocha</string>
     <string name="expert_mode_universal_all_warning_title">Cumasaigh na paistí uilíocha go léir?</string>
     <string name="expert_mode_universal_all_warning_message">Ní dhéantar paistí uilíocha a thástáil le chéile. Má chuirtear ar chumas iad go léir ag an am céanna, d’fhéadfadh coimhlintí, paistí teipthe, nó tuairteanna a bheith mar thoradh orthu.</string>
     <string name="expert_mode_reset_to_default">Cumasaigh paistí molta</string>
     <string name="expert_mode_reset_to_default_done">Paistí molta curtha i bhfeidhm</string>
+    <string name="expert_mode_selected_count">%1$s de %2$s roghnaithe</string>
     <string name="expert_mode_restore_saved">Athchóirigh an rogha sábháilte</string>
     <string name="expert_mode_restore_saved_done">Athchóiríodh an rogha sábháilte</string>
-    <string name="expert_mode_copy_from_bundle">Cóipeáil rogha ó phacáiste eile</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Níl aon phaistí comhoiriúnacha sa phacáiste seo</string>
     <string name="expert_mode_no_results">Níor aimsíodh aon phaistí</string>
     <string name="expert_mode_selected_only_on">Paistí roghnaithe amháin á thaispeáint</string>
@@ -647,12 +648,15 @@ Scriosfaidh díshuiteáil gach sonraí aip go buan."</string>
     <string name="patcher_storage_permission_open_settings">Oscail socruithe stórála</string>
     <string name="patcher_storage_badge_denied">Cead diúltaithe</string>
     <string name="patcher_storage_badge_missing">Níor aimsíodh</string>
+    <string name="patcher_storage_badge_rejected">Ní féidir leis a bheith in úsáid</string>
     <string name="batch_patch_option_paths_skipped">Tá comhaid roghanna an phaiste ar iarraidh agus sárófar iad: %1$s</string>
     <string name="patcher_missing_patches_title">Tá roinnt paistí imithe</string>
     <string name="patcher_missing_patches_description">Luaitear sa roghnú sábháilte don aip seo paistí nach gcuireann aon fhoinse ghníomhach ar fáil a thuilleadh. Leanann an aip ar aghaidh leis na paistí sin in ainneoin a n-easpa</string>
     <string name="patcher_missing_patches_label">Ní chuirtear ar fáil a thuilleadh é</string>
     <string name="patcher_option_paths_gone_title">Tá comhaid roghanna an phaiste ar iarraidh</string>
     <string name="patcher_option_paths_gone_description">Tá rogha paiste amháin nó níos mó ag tagairt do chomhaid nach bhfuil ann a thuilleadh. Bain na cosáin chun an paiste a chur i bhfeidhm gan iad, nó cuir na comhaid ar ais agus déan iarracht arís</string>
+    <string name="patcher_option_paths_rejected_title">Ní féidir comhaid roghanna an phaiste a úsáid</string>
+    <string name="patcher_option_paths_rejected_description">Tá rogha paiste amháin nó níos mó ag tagairt do chomhaid atá ar iarraidh nó nach bhfuil an méid a iarrann an paiste ann. Bain na cosáin chun an paiste a chur i bhfeidhm gan iad, nó ceilní na comhaid mar a thuileann treoracha na roghna agus déan iarracht arís</string>
     <string name="patcher_option_paths_clear">Bain na cosáin agus lean ar aghaidh</string>
     <string name="patcher_storage_permission_hint">Leid: Bog comhaid go /Android/data/app.morphe.manager/files/ - níl aon cheadanna breise ag teastáil</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1202,12 +1206,9 @@ Sonraí: %2$s"</string>
     <string name="settings_system_import_source_data_success">D\'éirigh le sonraí foinse a allmhairiú</string>
     <string name="settings_system_selected_patches_section">Paistí roghnaithe</string>
     <string name="settings_system_no_patches_or_options">Gan aon phaistí ná roghanna sábháilte</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Cóipeáil rogha ó…</string>
-    <string name="copy_selection_confirm_with_count">Cóipeáil %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Níl aon roghanna sábháilte eile le cóipeáil uathu</string>
     <string name="copy_selection_available_format">%1$s de %2$s ar fáil</string>
-    <string name="copy_selection_same_source">An fhoinse chéanna</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Roghnóir comhad saincheaptha</string>
     <string name="settings_system_custom_file_picker_description">Úsáideann sé roghnóir comhad ionsuite Morphe in ionad an cheann chórais</string>
@@ -1332,6 +1333,8 @@ Sonraí: %2$s"</string>
     <string name="reorder_done">Ordú sábháilte</string>
     <string name="reset_order">Athshocraigh an t-ordú</string>
     <string name="reset_order_done">Athshocrú ordaithe</string>
+    <string name="reset_order_confirm_title">Athshocraigh an t-ordú?</string>
+    <string name="reset_order_confirm_message">Téann an liosta ar ais go dtí a ordú bunleasa agus cailltear an ordú a tharraingeat ar láimh</string>
     <string name="accessibility_select_app">Roghnaigh aip</string>
     <string name="accessibility_select_source">Roghnaigh foinse</string>
     <string name="accessibility_move_up">Bog suas</string>
@@ -1339,6 +1342,7 @@ Sonraí: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s bogtha go suíomh %2$s de %3$s</string>
     <string name="accessibility_scroll_to_top">Scrollaigh go barr an liosta</string>
     <string name="rename">Athainmnigh</string>
+    <string name="more_options">Tuilleadh roghanna</string>
     <string name="import_">Iompórtáil</string>
     <string name="export">Easpórtáil</string>
     <string name="copy">Cóipeáil</string>

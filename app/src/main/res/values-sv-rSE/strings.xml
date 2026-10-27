@@ -145,7 +145,7 @@
     <!-- Halloween greetings, shown instead of the ones above around October 31 -->
     <!-- Pun on "Trick or treat" -->
     <string name="home_greeting_halloween_1">Bus eller tillägg?</string>
-    <string name="home_greeting_halloween_2">Inga spöken i dessa APK-filer, vi har kollat</string>
+    <string name="home_greeting_halloween_2">Inga spöken i de här APK-filerna, vi har kollat</string>
     <string name="home_greeting_halloween_3">Läskig säsong, färska tillägg</string>
     <!-- Pun on "Something wicked this way comes", a line from Shakespeare's Macbeth -->
     <string name="home_greeting_halloween_4">Något ont hitåt modifierar</string>
@@ -202,6 +202,9 @@
     <string name="sources_management_experimental_versions_toggle_description">Visar och modifierar experimentella appmål</string>
     <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_prerelease_enable">Aktivera förhandsversioner av tillägg</string>
+    <string name="sources_management_prerelease_disable">Inaktivera förhandsversioner av tillägg</string>
+    <string name="sources_management_experimental_versions_enable">Aktivera experimentella appversioner</string>
+    <string name="sources_management_experimental_versions_disable">Inaktivera experimentella appversioner</string>
     <string name="sources_management_already_exists">Den här källan har redan lagts till</string>
     <string name="sources_management_invalid_url">Ogiltig källadress. Kontrollera adressen och försök igen</string>
     <string name="sources_management_blocked">Den här tilläggskällan är blockerad och kan inte läggas till</string>
@@ -335,17 +338,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Sök efter tillägg</string>
     <string name="expert_mode_disable_all">Inaktivera alla</string>
-    <string name="expert_mode_disable_all_done">Alla tillägg har inaktiverats</string>
     <string name="expert_mode_enable_all">Aktivera alla</string>
-    <string name="expert_mode_enable_all_done">Alla tillägg har aktiverats</string>
     <string name="expert_mode_enable_all_universal_pending">Tryck igen för universella tillägg</string>
     <string name="expert_mode_universal_all_warning_title">Aktivera alla universella tillägg?</string>
     <string name="expert_mode_universal_all_warning_message">Universella tillägg testas inte tillsammans. Om du aktiverar alla på en gång kan det orsaka konflikter, misslyckad modifiering eller krascher</string>
     <string name="expert_mode_reset_to_default">Aktivera rekommenderade tillägg</string>
     <string name="expert_mode_reset_to_default_done">Rekommenderade tillägg har tillämpats</string>
+    <string name="expert_mode_selected_count">%1$s av %2$s har valts</string>
     <string name="expert_mode_restore_saved">Återställ sparat urval</string>
     <string name="expert_mode_restore_saved_done">Det sparade urvalet har återställts</string>
-    <string name="expert_mode_copy_from_bundle">Kopiera urval från ett annat paket</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Inga matchande tillägg i det här paketet</string>
     <string name="expert_mode_no_results">Inga tillägg hittades</string>
     <string name="expert_mode_selected_only_on">Visar endast valda tillägg</string>
@@ -646,12 +647,15 @@ Om du avinstallerar raderas alla appdata permanent"</string>
     <string name="patcher_storage_permission_open_settings">Öppna lagringsinställningar</string>
     <string name="patcher_storage_badge_denied">Behörighet nekades</string>
     <string name="patcher_storage_badge_missing">Hittades inte</string>
+    <string name="patcher_storage_badge_rejected">Ej användbar</string>
     <string name="batch_patch_option_paths_skipped">Filer för tilläggsalternativ saknas och hoppas över: %1$s</string>
     <string name="patcher_missing_patches_title">Vissa tillägg är borta</string>
     <string name="patcher_missing_patches_description">Det sparade urvalet för den här appen anger tillägg som ingen aktiverad källa längre erbjuder. Om du fortsätter modifieras appen utan dem</string>
     <string name="patcher_missing_patches_label">Erbjuds inte längre</string>
     <string name="patcher_option_paths_gone_title">Filer för tilläggsalternativ saknas</string>
     <string name="patcher_option_paths_gone_description">Ett eller flera tilläggsalternativ pekar på filer som inte längre finns kvar. Ta bort sökvägarna för att modifiera utan dem, eller lägg tillbaka filerna och försök igen</string>
+    <string name="patcher_option_paths_rejected_title">Filer för tilläggsalternativ kan inte användas</string>
+    <string name="patcher_option_paths_rejected_description">Ett eller flera tilläggsalternativ pekar på filer som saknas eller inte innehåller det som tillägget kräver. Ta bort sökvägarna för att modifiera utan dem, eller åtgärda filerna enligt instruktionerna för alternativen och försök igen</string>
     <string name="patcher_option_paths_clear">Ta bort sökvägarna och fortsätt</string>
     <string name="patcher_storage_permission_hint">Tips: Flytta filerna till /Android/data/app.morphe.manager/files/ – inga extra behörigheter behövs</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1203,12 +1207,9 @@ Information: %2$s"</string>
     <string name="settings_system_import_source_data_success">Källdata har importerats</string>
     <string name="settings_system_selected_patches_section">Valda tillägg</string>
     <string name="settings_system_no_patches_or_options">Inga tillägg eller alternativ har sparats</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Kopiera urval från …</string>
-    <string name="copy_selection_confirm_with_count">Kopiera %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Inga andra sparade urval att kopiera från</string>
     <string name="copy_selection_available_format">%1$s av %2$s är tillgängliga</string>
-    <string name="copy_selection_same_source">Samma källa</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Anpassad filväljare</string>
     <string name="settings_system_custom_file_picker_description">Använder Morphes inbyggda filväljare istället för systemets</string>
@@ -1333,6 +1334,8 @@ Information: %2$s"</string>
     <string name="reorder_done">Ordningen har sparats</string>
     <string name="reset_order">Återställ ordning</string>
     <string name="reset_order_done">Ordningen har återställts</string>
+    <string name="reset_order_confirm_title">Återställ ordningen?</string>
+    <string name="reset_order_confirm_message">Listan återgår till sin standardordning och den manuellt dragna ordningen går förlorad</string>
     <string name="accessibility_select_app">Välj app</string>
     <string name="accessibility_select_source">Välj källa</string>
     <string name="accessibility_move_up">Flytta uppåt</string>

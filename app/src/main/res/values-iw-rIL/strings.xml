@@ -202,6 +202,10 @@
     <string name="sources_management_experimental_versions_toggle">גרסאות אפליקציה ניסיוניות</string>
     <string name="sources_management_experimental_versions_toggle_description">מציג ומתקן יעדים ניסיוניים של אפליקציות</string>
     <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">הפעל תיקונים לפני הפצה</string>
+    <string name="sources_management_prerelease_disable">בטל תיקונים לפני הפצה</string>
+    <string name="sources_management_experimental_versions_enable">הפעל גרסאות אפליקציה ניסיוניות</string>
+    <string name="sources_management_experimental_versions_disable">בטל גרסאות אפליקציה ניסיוניות</string>
     <string name="sources_management_already_exists">מקור זה כבר נוסף</string>
     <string name="sources_management_invalid_url">כתובת URL מקור לא תקינה. אנא בדוק את הכתובת ונסה שוב</string>
     <string name="sources_management_blocked">מקור הטלאים הזה חסום ואינו יכול להיות מוסף</string>
@@ -335,17 +339,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">חפש תיקונים</string>
     <string name="expert_mode_disable_all">השבת את כולם</string>
-    <string name="expert_mode_disable_all_done">כל התיקונים מושבתים</string>
     <string name="expert_mode_enable_all">הפעל את כולם</string>
-    <string name="expert_mode_enable_all_done">כל התיקונים מופעלים</string>
     <string name="expert_mode_enable_all_universal_pending">הקש שוב עבור תיקונים אוניברסליים</string>
     <string name="expert_mode_universal_all_warning_title">להפעיל את כל התיקונים האוניברסליים?</string>
     <string name="expert_mode_universal_all_warning_message">תיקונים אוניברסליים אינם נבדקים יחד. הפעלת כולם עלולה לגרום להתנגשויות, כשלים בתיקון או קריסות</string>
     <string name="expert_mode_reset_to_default">להפעיל תיקונים מומלצים</string>
     <string name="expert_mode_reset_to_default_done">התיקונים המומלצים הוחלו</string>
+    <string name="expert_mode_selected_count">%1$s מתוך %2$s נבחר</string>
     <string name="expert_mode_restore_saved">שחזור בחירה שמורה</string>
     <string name="expert_mode_restore_saved_done">שחזור הבחירה השמורה הסתיים</string>
-    <string name="expert_mode_copy_from_bundle">העתק את הבחירה מחבילה אחרת</string>
     <string name="expert_mode_copy_from_bundle_no_patches">לא נמצאו התאמות מדבקות בחבילה זו</string>
     <string name="expert_mode_no_results">לא נמצאו תיקונים</string>
     <string name="expert_mode_selected_only_on">מציג רק טלאים נבחרים</string>
@@ -646,12 +648,15 @@
     <string name="patcher_storage_permission_open_settings">פתח הגדרות אחסון</string>
     <string name="patcher_storage_badge_denied">ההרשאה נדחתה</string>
     <string name="patcher_storage_badge_missing">לא נמצא</string>
+    <string name="patcher_storage_badge_rejected">לא ניתן לשימוש</string>
     <string name="batch_patch_option_paths_skipped">קבצי אפשרויות תיקון חסרים וידולגו: %1$s</string>
     <string name="patcher_missing_patches_title">חלק מהתיקונים אינם זמינים יותר</string>
     <string name="patcher_missing_patches_description">הבחירה השמורה עבור אפליקציה זו מציינת תיקונים שאף מקור פעיל כבר לא מציע. המשך התהליך יבצע תיקון לאפליקציה ללא תיקונים אלו</string>
     <string name="patcher_missing_patches_label">לא מוצעים יותר</string>
     <string name="patcher_option_paths_gone_title">קבצי אפשרויות תיקון חסרים</string>
     <string name="patcher_option_paths_gone_description">אפשרות תיקון אחת או יותר מצביעות על קבצים שאינם קיימים יותר. הסר את הנתיבים כדי לתקן בלעדיהם, או החזר את הקבצים ונסה שוב</string>
+    <string name="patcher_option_paths_rejected_title">לא ניתן להשתמש בקובצי אפשרויות תיקון</string>
+    <string name="patcher_option_paths_rejected_description">אפשרות תיקון אחת או יותר מפנות לקבצים חסרים או לקבצים שאינם מכילים את מה שהתיקון דורש. הסר את הנתיבים כדי לבצע תיקון בלעדיהם, או תקן את הקבצים לפי הוראות האפשרות ונסה שוב</string>
     <string name="patcher_option_paths_clear">הסר את הנתיבים והמשך</string>
     <string name="patcher_storage_permission_hint">עצה: העבר קבצים ל- /Android/data/app.morphe.manager/files/ - אין צורך ברשאות נוספות</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1219,12 +1224,9 @@ drawable-xxhdpi: 387x144 פיקסלים
     <string name="settings_system_import_source_data_success">נתוני מקור יובאו בהצלחה</string>
     <string name="settings_system_selected_patches_section">תיקונים נבחרים</string>
     <string name="settings_system_no_patches_or_options">אין תיקונים או אפשרויות שמורות</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">העתק בחירה מ…</string>
-    <string name="copy_selection_confirm_with_count">העתק %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">אין בחירות שמורות אחרות להעתקה מהן</string>
     <string name="copy_selection_available_format">%1$s מתוך %2$s זמינים</string>
-    <string name="copy_selection_same_source">אותו מקור</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">בחירת קבצים מותאמת אישית</string>
     <string name="settings_system_custom_file_picker_description">משתמש בבחירת קבצים מובנית של Morphe במקום זו של המערכת</string>
@@ -1349,6 +1351,8 @@ drawable-xxhdpi: 387x144 פיקסלים
     <string name="reorder_done">הסדר נשמר</string>
     <string name="reset_order">אפס סדר</string>
     <string name="reset_order_done">איפוס ההזמנה</string>
+    <string name="reset_order_confirm_title">לאפס את הסדר?</string>
+    <string name="reset_order_confirm_message">הרשימה תחזור לסדר ברירת המחדל שלה והסדר שנקבע ידנית יאבד</string>
     <string name="accessibility_select_app">בחר אפליקציה</string>
     <string name="accessibility_select_source">בחר מקור</string>
     <string name="accessibility_move_up">עלה</string>
