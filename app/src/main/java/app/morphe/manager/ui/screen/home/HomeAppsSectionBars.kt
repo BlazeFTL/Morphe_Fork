@@ -16,8 +16,8 @@ import app.morphe.manager.ui.model.HomeAppItem
 import app.morphe.manager.ui.screen.shared.ActionTone
 import app.morphe.manager.ui.screen.shared.ListOptionSection
 import app.morphe.manager.ui.screen.shared.ListOptionsPanel
+import app.morphe.manager.ui.screen.shared.ListReorder
 import app.morphe.manager.ui.screen.shared.MultiSelectBar
-import app.morphe.manager.ui.screen.shared.MultiSelectReorder
 import app.morphe.manager.ui.screen.shared.SearchFieldState
 import app.morphe.manager.ui.screen.shared.SelectionAction
 import app.morphe.manager.ui.screen.shared.UserMessages
@@ -88,7 +88,49 @@ internal fun HomeFooterBarDock(host: HomeFooterBarHost, modifier: Modifier = Mod
 }
 
 /**
- * The bar that occupies the footer slot: app multi-select and reorder, the category context
+ * The reorder under way in the section [this] draws, of its apps or of their groups, with the ways
+ * out of it the page header offers in its place, or null while neither is dragged.
+ */
+internal fun HomeFooterBarContent.listReorder(): ListReorder? = when {
+    state.isReorderMode -> ListReorder(
+        onDone = {
+            val sourceUid = state.reorderScopeSourceUid
+            if (sourceUid != null) {
+                appActions.onSaveSourceOrder(sourceUid, state.scopedSourceOrder ?: reorderItems.map { it.id })
+            } else {
+                appActions.onSaveOrder(state.localOrder)
+            }
+            state.exitReorder()
+        },
+        onReset = {
+            val sourceUid = state.reorderScopeSourceUid
+            if (sourceUid != null) {
+                appActions.onResetSourceOrder(sourceUid)
+            } else {
+                appActions.onResetOrder()
+            }
+            state.exitReorder(apps.visible.map { it.id })
+        },
+        onCancel = { state.exitReorder(apps.visible.map { it.id }) }
+    )
+
+    state.isCategoryReorderMode -> ListReorder(
+        onDone = {
+            if (isSourceCategoryView) {
+                appActions.onSaveSourceGroupOrder(state.localSourceGroupOrder)
+            } else {
+                appActions.onSaveCategoryOrder(state.localCategoryOrder)
+            }
+            state.isCategoryReorderMode = false
+        },
+        onCancel = state::closeCategoryBar
+    )
+
+    else -> null
+}
+
+/**
+ * The bar that occupies the footer slot: app multi-select, the category context
  * actions, or the options the list is arranged by. Only one is ever visible - [HomeAppsSectionState]
  * keeps the modes exclusive - so they live together here, out of the section body.
  */
@@ -251,42 +293,17 @@ private fun HomeAppsFooterBars(
     MultiSelectBar(
         selectedCount = selectedPackages.size,
         totalCount = activeAppScopeItems.size,
-        visible = state.isMultiSelectMode || state.isReorderMode,
+        visible = state.isMultiSelectMode,
         onSelectAll = {
             selectedPackages.setAll(activeAppScopeItems.map { it.id })
         },
         onDeselectAll = selectedPackages::clear,
         actions = actions,
         onCancel = { state.exitMultiSelect() },
-        reorder = MultiSelectReorder(
-            isActive = state.isReorderMode,
-            // A grouped view orders each group on its own, so a selection spread over several has no order to edit
-            onStart = enterReorder.takeIf {
-                groupedSelectionGroup != null || !(isCustomCategoryView || isSourceCategoryView)
-            },
-            onSave = {
-                val sourceUid = state.reorderScopeSourceUid
-                if (sourceUid != null) {
-                    appActions.onSaveSourceOrder(
-                        sourceUid,
-                        state.scopedSourceOrder ?: reorderItems.map { it.id }
-                    )
-                } else {
-                    appActions.onSaveOrder(state.localOrder)
-                }
-                state.exitReorder()
-            },
-            onReset = {
-                val sourceUid = state.reorderScopeSourceUid
-                if (sourceUid != null) {
-                    appActions.onResetSourceOrder(sourceUid)
-                } else {
-                    appActions.onResetOrder()
-                }
-                state.exitReorder(homeAppItems.map { it.id })
-            },
-            onCancel = { state.exitReorder(homeAppItems.map { it.id }) }
-        ),
+        // A grouped view orders each group on its own, so a selection spread over several has no order to edit
+        onReorder = enterReorder.takeIf {
+            groupedSelectionGroup != null || !(isCustomCategoryView || isSourceCategoryView)
+        },
         modifier = modifier
     )
 
@@ -298,8 +315,7 @@ private fun HomeAppsFooterBars(
     }
     CategoryActionBar(
         activeCategoryTitle = activeCategoryTitle ?: activeSourceTitle,
-        visible = state.isCategoryBarVisible,
-        isReorderMode = state.isCategoryReorderMode,
+        visible = state.activeCategoryId != null || state.activeSourceUid != null,
         onRename = {
             val category = apps.categoryState.categories
                 .firstOrNull { it.id == state.activeCategoryId }
@@ -323,14 +339,6 @@ private fun HomeAppsFooterBars(
             state.activeSourceUid = null
             search.collapse()
             state.isCategoryReorderMode = true
-        },
-        onExitReorder = {
-            if (isSourceCategoryView) {
-                appActions.onSaveSourceGroupOrder(state.localSourceGroupOrder)
-            } else {
-                appActions.onSaveCategoryOrder(state.localCategoryOrder)
-            }
-            state.isCategoryReorderMode = false
         },
         onCancel = {
             state.activeCategoryId = null

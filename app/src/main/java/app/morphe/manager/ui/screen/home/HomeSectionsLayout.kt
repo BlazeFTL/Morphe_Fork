@@ -162,6 +162,7 @@ internal fun SectionsLayout(
                 sortOpen = state.isListOptionsOpen,
                 onSortClick = { state.isListOptionsOpen = !state.isListOptionsOpen },
                 onPatchFileClick = chromeActions.onOtherAppsClick,
+                reorder = footerBar.content?.listReorder(),
                 tour = onboardingState
             )
         },

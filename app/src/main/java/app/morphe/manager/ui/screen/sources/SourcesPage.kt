@@ -395,20 +395,37 @@ private fun SourcesPageContent(
         ) { sourceFilter = it }
     )
 
+    val reorder = if (state.isReordering) {
+        ListReorder(
+            onDone = {
+                onReorder(localOrder)
+                state.exitReorder()
+            },
+            onCancel = {
+                localOrder = sources.map { it.uid }
+                state.exitReorder()
+            }
+        )
+    } else null
+
     PinnedHeaderPage(
         header = {
             PageHeader(
                 title = stringResource(R.string.sources),
-                subtitle = pluralStringResource(
-                    R.plurals.sources_management_subtitle,
-                    sources.size,
-                    sources.size.toString()
-                ),
-                search = search,
-                searchLabel = searchLabel,
+                subtitle = if (reorder != null) {
+                    stringResource(R.string.reorder_list_hint)
+                } else {
+                    pluralStringResource(R.plurals.sources_management_subtitle, sources.size, sources.size.toString())
+                },
                 // A query would narrow the list the order is being dragged on
-                searchEnabled = isSearchable && !state.isReordering
+                search = search.takeIf { reorder == null },
+                searchLabel = searchLabel,
+                searchEnabled = isSearchable
             ) {
+                if (reorder != null) {
+                    ReorderHeaderActions(reorder)
+                    return@PageHeader
+                }
                 AnimatedVisibility(visible = isSearchable) {
                     val optionsState = listOptionsStateDescription(
                         sourceSortMode.labelRes,
@@ -425,9 +442,7 @@ private fun SourcesPageContent(
                         },
                         style = TitleActionStyle.Toggle,
                         active = state.isListOptionsOpen,
-                        marked = listOptions.any { it.isChanged },
-                        // The order being dragged is the one the list is sorted by
-                        enabled = !state.isReordering
+                        marked = listOptions.any { it.isChanged }
                     )
                 }
                 TitleAction(
@@ -435,8 +450,6 @@ private fun SourcesPageContent(
                     contentDescription = stringResource(R.string.add),
                     onClick = state::openAddSource,
                     style = TitleActionStyle.Accent,
-                    // Opened over a reorder, the order being dragged would be left unsaved under it
-                    enabled = !state.isReordering,
                     modifier = Modifier.tourTarget(TourTarget.ADD_SOURCE, onboardingState)
                 )
             }
@@ -470,8 +483,6 @@ private fun SourcesPageContent(
                         state.startReorder()
                     }
                 } else null,
-                onSaveOrder = { onReorder(localOrder) },
-                onCancelReorder = { localOrder = sources.map { it.uid } },
                 modifier = Modifier.fillMaxWidth()
             )
         },

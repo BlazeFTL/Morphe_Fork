@@ -1451,6 +1451,8 @@ Details: %2$s"</string>
     <string name="reorder_done">Order saved</string>
     <string name="reset_order">Reset order</string>
     <string name="reset_order_done">Order reset</string>
+    <string name="reset_order_confirm_title">Reset the order?</string>
+    <string name="reset_order_confirm_message">The list goes back to its default order and the order dragged by hand is lost</string>
     <string name="accessibility_select_app">Select app</string>
     <string name="accessibility_select_source">Select source</string>
     <string name="accessibility_move_up">Move up</string>

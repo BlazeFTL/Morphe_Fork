@@ -33,7 +33,7 @@ import com.composables.icons.materialsymbols.rounded.*
  * @param withExperimentalVersions Uids of the sources declaring experimental app versions.
  * @param experimentalVersionsEnabled Uids of the sources with experimental app versions switched on.
  * @param onStartReorder Leaves the selection for the reorder, or null while the list's order is not
- *   the user's own to drag.
+ *   the user's own to drag. The page header carries the reorder from there.
  */
 @Composable
 internal fun SourcesSelectionBar(
@@ -49,8 +49,6 @@ internal fun SourcesSelectionBar(
     onSetExperimentalVersions: (List<PatchBundleSource>, Boolean) -> Unit,
     onDelete: (List<PatchBundleSource>) -> Unit,
     onStartReorder: (() -> Unit)?,
-    onSaveOrder: () -> Unit,
-    onCancelReorder: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val selection = state.selection
@@ -169,23 +167,12 @@ internal fun SourcesSelectionBar(
     MultiSelectBar(
         selectedCount = selection.size,
         totalCount = listed.size,
-        visible = state.isSelecting || state.isReordering,
+        visible = state.isSelecting,
         onSelectAll = { selection.setAll(listed.map { it.uid }) },
         onDeselectAll = selection::clear,
         onCancel = state::exitSelection,
         actions = actions,
-        reorder = MultiSelectReorder(
-            isActive = state.isReordering,
-            onStart = onStartReorder,
-            onSave = {
-                onSaveOrder()
-                state.exitReorder()
-            },
-            onCancel = {
-                onCancelReorder()
-                state.exitReorder()
-            }
-        ),
+        onReorder = onStartReorder,
         modifier = modifier
     )
 }
