@@ -1,3 +1,10 @@
+# [2.3.0-dev.9](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.8...v2.3.0-dev.9) (2026-10-28)
+
+
+### Bug Fixes
+
+* Keep picking and saving files working where the system has no screen for them ([609ebc6](https://github.com/MorpheApp/morphe-manager/commit/609ebc6b300ed788f8908bff75329bc7bcdfad6a))
+
 # [2.3.0-dev.8](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.7...v2.3.0-dev.8) (2026-10-28)
 
 
