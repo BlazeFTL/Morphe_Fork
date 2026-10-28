@@ -464,14 +464,17 @@ class PatchBundleRepository(
         )
     }
 
+    /** @param await Returns only once the action is applied, see [Store.dispatchAndAwait]. */
     private suspend inline fun dispatchAction(
         name: String,
+        await: Boolean = false,
         crossinline block: suspend ActionContext.(current: BundleState) -> BundleState
     ) {
-        store.dispatch(object : Action<BundleState> {
+        val action = object : Action<BundleState> {
             override suspend fun ActionContext.execute(current: BundleState) = block(current)
             override fun toString() = name
-        })
+        }
+        if (await) store.dispatchAndAwait(action) else store.dispatch(action)
     }
 
     /**
@@ -1021,61 +1024,66 @@ class PatchBundleRepository(
     }
 
     /**
-     * Toggle prerelease (dev branch) for an [APIPatchBundle] or [JsonPatchBundle].
-     * Persists in preferences, updates in-memory state, and triggers a bundle update.
-     * Reverts the change and shows a message if the update fails (e.g. branch does not exist).
+     * Switches the sources [uids] onto the prerelease (dev) branch or back. Only an [APIPatchBundle]
+     * or [JsonPatchBundle] has one, any other uid is left alone in memory.
+     *
+     * The enabled sources are redownloaded in one pass, so the new channel takes effect at once;
+     * a disabled one picks it up once enabled again, see [disable].
      */
-    suspend fun setUsePrerelease(uid: Int, usePrerelease: Boolean) {
-        val current = prefs.bundlePrereleasesEnabled.get().toMutableSet()
-        if (usePrerelease) current.add(uid.toString()) else current.remove(uid.toString())
-        prefs.bundlePrereleasesEnabled.update(current)
-
-        dispatchAction("Set prerelease ($uid=$usePrerelease)") { state ->
-            val ready = state as? BundleState.Ready ?: return@dispatchAction state
-            val src = ready.sources[uid] ?: return@dispatchAction state
-            val updated = when (src) {
-                is APIPatchBundle -> src.copy(usePrerelease = usePrerelease)
-                is JsonPatchBundle -> src.copy(usePrerelease = usePrerelease)
-                else -> return@dispatchAction state
+    suspend fun setUsePrerelease(uids: Set<Int>, usePrerelease: Boolean) {
+        if (uids.isEmpty()) return
+        prefs.bundlePrereleasesEnabled.update(
+            prefs.bundlePrereleasesEnabled.get().toMutableSet().apply {
+                uids.forEach { toggleUid(it, usePrerelease) }
             }
-            ready.copy(sources = ready.sources.putting(uid, updated))
+        )
+
+        dispatchAction("Set prerelease (${uids.joinToString(",")}=$usePrerelease)") { state ->
+            val ready = state as? BundleState.Ready ?: return@dispatchAction state
+            val switched = mutableSetOf<Int>()
+            val sources = ready.sources.mutate { mut ->
+                uids.forEach { uid ->
+                    val updated = when (val src = mut[uid]) {
+                        is APIPatchBundle -> src.copy(usePrerelease = usePrerelease)
+                        is JsonPatchBundle -> src.copy(usePrerelease = usePrerelease)
+                        else -> return@forEach
+                    }
+                    // What was read from the branch just left no longer describes the source
+                    updated.clearChangelogCache()
+                    mut[uid] = updated
+                    if (updated.enabled) switched += uid
+                }
+            }
+            if (switched.isNotEmpty()) {
+                startRemoteUpdateJob(UpdateRequest(target = UpdateTarget(uids = switched), force = true))
+            }
+            ready.copy(sources = sources)
         }
 
-        // If this is the default Morphe Patches bundle, sync FCM patches topic
-        if (uid == DEFAULT_SOURCE_UID) {
-            val notificationsEnabled = prefs.backgroundUpdateNotifications.get()
+        // The default source's channel decides which patches topic notifications come from
+        if (DEFAULT_SOURCE_UID in uids) {
             syncFcmTopics(
-                notificationsEnabled = notificationsEnabled,
+                notificationsEnabled = prefs.backgroundUpdateNotifications.get(),
                 useManagerPrereleases = prefs.useManagerPrereleases.get(),
                 usePatchesPrereleases = usePrerelease,
             )
         }
-
-        // Skip download if the bundle is disabled - it will be downloaded when re-enabled
-        // via disable() which triggers startRemoteUpdateJob for newly enabled bundles.
-        val isEnabled = (store.state.value as? BundleState.Ready)?.sources?.get(uid)?.enabled == true
-        if (!isEnabled) return
-
-        // Trigger update so the new channel takes effect immediately.
-        startRemoteUpdateJob(
-            UpdateRequest(
-                target = UpdateTarget(uids = setOf(uid)),
-                force = true,
-            )
-        )
     }
 
     /**
-     * Toggle experimental-version mode for a bundle.
+     * Toggles experimental-version mode for the sources [uids].
      *
-     * When enabled, the highest experimental app version declared in the bundle's
+     * When enabled, the highest experimental app version declared in a source's
      * Compatibility targets becomes the recommended patching target for that app.
      * When disabled, the highest stable (non-experimental) version is recommended instead.
      */
-    suspend fun setUseExperimentalVersions(uid: Int, useExperimental: Boolean) {
-        val current = prefs.bundleExperimentalVersionsEnabled.get().toMutableSet()
-        if (useExperimental) current.add(uid.toString()) else current.remove(uid.toString())
-        prefs.bundleExperimentalVersionsEnabled.update(current)
+    suspend fun setUseExperimentalVersions(uids: Set<Int>, useExperimental: Boolean) {
+        if (uids.isEmpty()) return
+        prefs.bundleExperimentalVersionsEnabled.update(
+            prefs.bundleExperimentalVersionsEnabled.get().toMutableSet().apply {
+                uids.forEach { toggleUid(it, useExperimental) }
+            }
+        )
     }
 
     /** @return The uid of the source the file landed under, or null when it could not be read. */
@@ -1321,10 +1329,15 @@ class PatchBundleRepository(
      *
      * With [keptApps] each added source leaves out every other app it names, the ones it adds later
      * included. It is recorded before the download starts, so the others never reach the home screen.
+     * With [usePrerelease] each source that has a prerelease branch downloads from it from the start.
      *
      * @return The uid of each source added, in the order of [urls].
      */
-    suspend fun createRemotes(urls: List<String>, keptApps: Set<String>? = null): List<Int> {
+    suspend fun createRemotes(
+        urls: List<String>,
+        keptApps: Set<String>? = null,
+        usePrerelease: Boolean = false
+    ): List<Int> {
         val added = CompletableDeferred<List<Int>>()
         dispatchAction("Add bundles (${urls.size})") { state ->
             val ready = state as? BundleState.Ready
@@ -1346,7 +1359,7 @@ class PatchBundleRepository(
                         is RemoteUrlCheck.Accepted -> {
                             // The same repository pasted twice is one source
                             takenKeys += check.endpoint.lowercase(Locale.US)
-                            created += createRemoteEntity(check.endpoint)
+                            created += createRemoteEntity(check.endpoint, usePrerelease)
                         }
                     }
                 }
@@ -1416,12 +1429,17 @@ class PatchBundleRepository(
             ?.uid
     }
 
-    /** Saves and loads a new remote source for [endpoint]. Do not use this outside an action. */
-    private suspend fun createRemoteEntity(endpoint: String): RemotePatchBundle {
+    /**
+     * Saves and loads a new remote source for [endpoint], on prerelease with [usePrerelease] where
+     * it can be. Do not use this outside an action.
+     */
+    private suspend fun createRemoteEntity(endpoint: String, usePrerelease: Boolean): RemotePatchBundle {
         val src = createEntity("", SourceInfo.from(endpoint)).load() as RemotePatchBundle
 
-        // Auto-enable prerelease if the URL explicitly targets the "dev" branch
-        if (src is JsonPatchBundle && src.endpointBranch == "dev") {
+        // Auto-enable prerelease if asked for or if the URL explicitly targets the "dev" branch
+        if (src is JsonPatchBundle &&
+            (src.endpointBranch == RemotePatchBundle.BRANCH_DEV || usePrerelease && src.supportsPrerelease)
+        ) {
             val current = prefs.bundlePrereleasesEnabled.get().toMutableSet()
             current.add(src.uid.toString())
             prefs.bundlePrereleasesEnabled.update(current)
@@ -2152,7 +2170,10 @@ class PatchBundleRepository(
     /** A URL checked against what [createRemotes] accepts. */
     sealed interface RemoteUrlCheck {
         /** Would be added, as a source reading [endpoint]. */
-        data class Accepted(val endpoint: String) : RemoteUrlCheck
+        data class Accepted(val endpoint: String) : RemoteUrlCheck {
+            /** Whether the source could start on prerelease, see [createRemotes]. */
+            val supportsPrerelease get() = JsonPatchBundle.supportsPrerelease(endpoint)
+        }
 
         data class Rejected(val reason: RemoteSourceRejection) : RemoteUrlCheck
     }
@@ -2251,6 +2272,9 @@ class PatchBundleRepository(
      * In [ImportMode.Replace] mode this first removes existing custom remote bundles that are
      * absent from [snapshots] (the default source and local bundles are always kept), then adds
      * the missing ones. Triggers a full reload and starts a download job for newly added bundles.
+     *
+     * Returns once the bundles are in place, so what a backup refers to them by, such as the
+     * selections made from them, finds them when it is imported right after.
      */
     suspend fun importCustomBundles(
         snapshots: List<BundleSnapshot>,
@@ -2259,7 +2283,7 @@ class PatchBundleRepository(
         // Empty snapshot in Merge mode is a no-op; in Replace mode it still needs to clear existing customs
         if (snapshots.isEmpty() && mode == ImportMode.Merge) return
 
-        dispatchAction("Import custom bundles ($mode)") { state ->
+        dispatchAction("Import custom bundles ($mode)", await = true) { state ->
             val ready = state as? BundleState.Ready ?: return@dispatchAction state
 
             val incomingEndpoints = snapshots

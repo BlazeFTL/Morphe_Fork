@@ -658,12 +658,9 @@ private fun DialogHostScope.ApkManagementDialogContent(
     val selectedInstallableItems = selectedItems.filter {
         !it.isInstalledOnDevice && it.isInstallableFromStorage
     }
-    val canUninstallSelected = selectedItems.isNotEmpty() &&
-            selectedInstalledItems.size == selectedItems.size &&
-            actions.onUninstallSelected != null
-    val canInstallSelected = selectedItems.isNotEmpty() &&
-            selectedInstallableItems.size == selectedItems.size &&
-            actions.onInstallSelected != null
+    // Each reaches only the picked entries it applies to, so a selection mixing them offers both
+    val canUninstallSelected = selectedInstalledItems.isNotEmpty() && actions.onUninstallSelected != null
+    val canInstallSelected = selectedInstallableItems.isNotEmpty() && actions.onInstallSelected != null
     val canDeleteAll = selectedItems.isEmpty() && items.isNotEmpty() &&
             actions.onDeleteAllConfirm != null
     val selectedTotalSize = selectedItems.sumOf { it.fileSize }
@@ -1021,73 +1018,57 @@ private fun ApkItemCard(
                         }
                     }
 
-                    SelectionMark(selected.takeIf { selectionMode })
-                }
-
-                FoldingVisibility(visible = !selectionMode) {
-                    Column {
-                        SettingsDivider()
-
-                        // Action buttons
-                        ActionPillRow(
-                            modifier = Modifier.padding(
-                                horizontal = Defaults.SpaceLarge,
-                                vertical = Defaults.SpaceMedium
-                            )
-                        ) {
-                            if (onShare != null) {
-                                val shareLabel = stringResource(R.string.share)
-                                ActionPillButton(
-                                    onClick = onShare,
-                                    icon = MaterialSymbols.Rounded.Share,
-                                    contentDescription = shareLabel,
-                                    tooltip = shareLabel
-                                )
-                            }
-
-                            if (onExport != null) {
-                                val exportLabel = stringResource(R.string.export)
-                                ActionPillButton(
-                                    onClick = onExport,
-                                    icon = MaterialSymbols.Rounded.Upload,
-                                    contentDescription = exportLabel,
-                                    tooltip = exportLabel
-                                )
-                            }
-
-                            if (onUninstall != null) {
-                                val uninstallLabel = stringResource(R.string.uninstall)
-                                ActionPillButton(
-                                    onClick = onUninstall,
-                                    icon = MaterialSymbols.Rounded.Delete_forever,
-                                    contentDescription = uninstallLabel,
-                                    tooltip = uninstallLabel,
-                                    destructive = true
-                                )
-                            } else if (onInstall != null) {
-                                val isMountType = data.installType == InstallType.MOUNT
-                                val installLabel = stringResource(data.installLabelRes)
-                                ActionPillButton(
-                                    onClick = onInstall,
-                                    icon = if (isMountType) MaterialSymbols.Rounded.Link else MaterialSymbols.Rounded.Install_mobile,
-                                    contentDescription = installLabel,
-                                    tooltip = installLabel
-                                )
-                            }
-
-                            val deleteLabel = stringResource(R.string.delete)
-                            ActionPillButton(
-                                onClick = onDelete,
-                                icon = MaterialSymbols.Rounded.Delete,
-                                contentDescription = deleteLabel,
-                                tooltip = deleteLabel,
-                                destructive = true
-                            )
-                        }
-                    }
+                    // Outside a selection the slot offers what can be done with the APK, behind one
+                    // button so the card keeps to its details
+                    SelectionMark(
+                        selected = selected.takeIf { selectionMode },
+                        idle = { RowActionsMenu(apkActions(data, onShare, onExport, onInstall, onUninstall, onDelete)) }
+                    )
                 }
             }
         }
+    }
+}
+
+/**
+ * What can be done with the APK of [data], for its card's [RowActionsMenu]: passing it on first,
+ * then installing it or uninstalling the app it was installed as, and deleting it last.
+ */
+@Composable
+private fun apkActions(
+    data: ApkItemData,
+    onShare: (() -> Unit)?,
+    onExport: (() -> Unit)?,
+    onInstall: (() -> Unit)?,
+    onUninstall: (() -> Unit)?,
+    onDelete: () -> Unit
+): List<SelectionAction> {
+    val shareLabel = stringResource(R.string.share)
+    val exportLabel = stringResource(R.string.export)
+    val uninstallLabel = stringResource(R.string.uninstall)
+    val installLabel = stringResource(data.installLabelRes)
+    val deleteLabel = stringResource(R.string.delete)
+    return buildList {
+        onShare?.let { add(SelectionAction(MaterialSymbols.Rounded.Share, shareLabel, it)) }
+        onExport?.let { add(SelectionAction(MaterialSymbols.Rounded.Upload, exportLabel, it)) }
+        if (onUninstall != null) {
+            add(
+                SelectionAction(
+                    MaterialSymbols.Rounded.Delete_forever,
+                    uninstallLabel,
+                    onUninstall,
+                    tone = ActionTone.Destructive
+                )
+            )
+        } else if (onInstall != null) {
+            val icon = if (data.installType == InstallType.MOUNT) {
+                MaterialSymbols.Rounded.Link
+            } else {
+                MaterialSymbols.Rounded.Install_mobile
+            }
+            add(SelectionAction(icon, installLabel, onInstall))
+        }
+        add(SelectionAction(MaterialSymbols.Rounded.Delete, deleteLabel, onDelete, tone = ActionTone.Destructive))
     }
 }
 

@@ -124,48 +124,27 @@ fun ShimmerText(
 @Composable
 fun ShimmerApkItem() {
     SectionCard {
-        Column {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(Defaults.SpaceLarge),
-                horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceMedium),
-                verticalAlignment = Alignment.CenterVertically
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(Defaults.SpaceLarge),
+            horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceMedium),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            ShimmerBox(
+                modifier = Modifier.size(48.dp),
+                shape = RoundedCornerShape(Defaults.CornerMedium)
+            )
+
+            Column(
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.spacedBy(Defaults.SpaceExtraSmall)
             ) {
-                ShimmerBox(
-                    modifier = Modifier.size(48.dp),
-                    shape = RoundedCornerShape(Defaults.CornerMedium)
-                )
-
-                Column(
-                    modifier = Modifier.weight(1f),
-                    verticalArrangement = Arrangement.spacedBy(Defaults.SpaceExtraSmall)
-                ) {
-                    ShimmerText(widthFraction = 0.6f, height = 18.dp)
-                    Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                        ShimmerText(widthFraction = 0.8f, height = 14.dp)
-                        ShimmerText(widthFraction = 0.4f, height = 14.dp)
-                        ShimmerText(widthFraction = 0.25f, height = 14.dp)
-                    }
-                }
-            }
-
-            SettingsDivider()
-
-            FlowRow(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = Defaults.SpaceLarge, vertical = Defaults.SpaceMedium),
-                horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall, Alignment.CenterHorizontally),
-                verticalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall)
-            ) {
-                repeat(4) {
-                    ShimmerBox(
-                        modifier = Modifier
-                            .width(72.dp)
-                            .height(36.dp),
-                        shape = Defaults.PillShape
-                    )
+                ShimmerText(widthFraction = 0.6f, height = 18.dp)
+                Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                    ShimmerText(widthFraction = 0.8f, height = 14.dp)
+                    ShimmerText(widthFraction = 0.4f, height = 14.dp)
+                    ShimmerText(widthFraction = 0.25f, height = 14.dp)
                 }
             }
         }

@@ -28,6 +28,8 @@ import androidx.compose.ui.res.stringResource
 import app.morphe.manager.R
 import app.morphe.manager.data.platform.Filesystem
 import app.morphe.manager.domain.manager.PreferencesManager
+import app.morphe.manager.patcher.patch.PatchBundleInfo
+import app.morphe.manager.patcher.patch.PatchInfo
 import app.morphe.manager.ui.screen.shared.DialogHost
 import app.morphe.manager.ui.screen.shared.FilePicker
 import app.morphe.manager.ui.screen.shared.UserMessages
@@ -225,15 +227,27 @@ data class PathValidationResult(
         Missing,
 
         /** The app cannot read the path, either because of its own access or the storage it is on. */
-        NotReadable
+        NotReadable,
+
+        /** The patch does not take what is there, such as a folder without the files it asks for. */
+        Rejected
     }
 }
 
-/** Every option value that is an absolute path the app cannot use, empty when all of them can be. */
-fun validateOptionPaths(options: Map<Int, Map<String, Map<String, Any?>>>): List<PathValidationResult> {
+/**
+ * Every option value that is an absolute path the app cannot use, empty when all of them can be.
+ * A path the app can read is still put to the check its option declares in [bundles], as only
+ * the patch knows what the path has to hold.
+ */
+fun validateOptionPaths(
+    options: Map<Int, Map<String, Map<String, Any?>>>,
+    bundles: Collection<PatchBundleInfo>
+): List<PathValidationResult> {
+    val patchesByBundle = bundles.associate { it.uid to it.patches.associateBy(PatchInfo::name) }
     val failures = mutableListOf<PathValidationResult>()
-    for ((_, patchOptions) in options) {
+    for ((bundleUid, patchOptions) in options) {
         for ((patchName, keyValues) in patchOptions) {
+            val declared = patchesByBundle[bundleUid]?.get(patchName)?.options.orEmpty()
             for ((optionKey, value) in keyValues) {
                 // Only validate String values that look like absolute paths.
                 val raw = value as? String ?: continue
@@ -241,7 +255,9 @@ fun validateOptionPaths(options: Map<Int, Map<String, Map<String, Any?>>>): List
 
                 val file = File(raw)
                 val reason = when {
-                    file.canRead() -> null
+                    file.canRead() -> PathValidationResult.Reason.Rejected.takeIf {
+                        declared.firstOrNull { it.key == optionKey }?.accepts(raw) == false
+                    }
                     file.exists() -> PathValidationResult.Reason.NotReadable
                     // A deleted folder and one hidden by missing storage access both read as
                     // absent, so the folder it sits in is what tells the two apart

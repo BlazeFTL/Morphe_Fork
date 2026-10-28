@@ -200,6 +200,11 @@
     <string name="expert_mode_experimental_version_notice">Tällä lähteellä on vain kokeellinen tuki tälle sovellusversiolle. Sen päivitykset voivat olla epävakaita tai puutteellisia</string>
     <string name="sources_management_experimental_versions_toggle">Kokeelliset sovellusversiot</string>
     <string name="sources_management_experimental_versions_toggle_description">Näyttää ja korjaa kokeellisia sovelluksen kohteita</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Ota käyttöön ennakkoversiopäivitykset</string>
+    <string name="sources_management_prerelease_disable">Poista käytöstä ennakkoversiopäivitykset</string>
+    <string name="sources_management_experimental_versions_enable">Ota käyttöön sovelluksen kokeelliset versiot</string>
+    <string name="sources_management_experimental_versions_disable">Poista käytöstä sovelluksen kokeelliset versiot</string>
     <string name="sources_management_already_exists">Tämä lähde on jo lisätty</string>
     <string name="sources_management_invalid_url">Virheellinen lähde-URL-osoite. Tarkista osoite ja yritä uudelleen</string>
     <string name="sources_management_blocked">Tämä päivityslähde on estetty, eikä sitä voi lisätä</string>
@@ -333,17 +338,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Hae lisäosia</string>
     <string name="expert_mode_disable_all">Poista kaikki käytöstä</string>
-    <string name="expert_mode_disable_all_done">Kaikki korjaukset poistettu käytöstä</string>
     <string name="expert_mode_enable_all">Ota kaikki käyttöön</string>
-    <string name="expert_mode_enable_all_done">Kaikki korjaukset käytössä</string>
     <string name="expert_mode_enable_all_universal_pending">Napauta uudelleen ottaaksesi universaalit korjaukset käyttöön</string>
     <string name="expert_mode_universal_all_warning_title">Ota käyttöön kaikki universaalipatchit?</string>
     <string name="expert_mode_universal_all_warning_message">Universaalipatchit eivät ole testattuja yhdessä. Kaikkien käyttöönotto kerralla voi aiheuttaa ristiriitoja, epäonnistuneita patchauksia tai kaatumisia</string>
     <string name="expert_mode_reset_to_default">Ota suositellut lisäosat käyttöön</string>
     <string name="expert_mode_reset_to_default_done">Suositellut korjaukset asennettu</string>
+    <string name="expert_mode_selected_count">%1$s kpl %2$s valittu</string>
     <string name="expert_mode_restore_saved">Palauta tallennettu valinta</string>
     <string name="expert_mode_restore_saved_done">Tallennusvalinta palautettu</string>
-    <string name="expert_mode_copy_from_bundle">Kopioi valinta toisesta paketista</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Tästä paketista ei löytynyt vastaavia korjauksia</string>
     <string name="expert_mode_no_results">Lisäosia ei löytynyt</string>
     <string name="expert_mode_selected_only_on">Näytetään vain valitut korjaukset</string>
@@ -644,12 +647,15 @@ Poistaminen poistaa pysyvästi kaikki sovelluksen tiedot."</string>
     <string name="patcher_storage_permission_open_settings">Avaa tallennusasetukset</string>
     <string name="patcher_storage_badge_denied">Lupa evätty</string>
     <string name="patcher_storage_badge_missing">Ei löytynyt</string>
+    <string name="patcher_storage_badge_rejected">Ei käytettävissä</string>
     <string name="batch_patch_option_paths_skipped">Paikkausasetustiedostot puuttuvat, joten ne ohitetaan: %1$s</string>
     <string name="patcher_missing_patches_title">Jotkin paikkaukset ovat kadonneet</string>
     <string name="patcher_missing_patches_description">Tälle sovellukselle tallennettu valinta sisältää korjauksia, joita mikään aktiivinen lähde ei enää tarjoa. Jatkamalla sovellusta korjataan se ilman näitä korjauksia</string>
     <string name="patcher_missing_patches_label">Ei enää tarjota</string>
     <string name="patcher_option_paths_gone_title">Paikkausasetustiedostot puuttuvat</string>
     <string name="patcher_option_paths_gone_description">Yksi tai useampi paikkausasetus viittaa tiedostoihin, joita ei enää ole. Poista polut paikataksesi ilman niitä tai palauta tiedostot ja yritä uudelleen.</string>
+    <string name="patcher_option_paths_rejected_title">Paikkausvaihtoehtojen tiedostoja ei voida käyttää</string>
+    <string name="patcher_option_paths_rejected_description">Yksi tai useampi paikkausvaihtoehto viittaa tiedostoihin, jotka puuttuvat tai joista puuttuu paikkauksen vaatima sisältö. Poista polut ja paikkaa ilman niitä, tai korjaa tiedostot vaihtoehdon ohjeiden mukaisesti ja yritä uudelleen</string>
     <string name="patcher_option_paths_clear">Poista polut ja jatka</string>
     <string name="patcher_storage_permission_hint">Vinkki: Siirrä tiedostot /Android/data/app.morphe.manager/files/ – ei tarvita ylimääräisiä lupia</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1205,12 +1211,9 @@ Yksityiskohdat: %2$s"</string>
     <string name="settings_system_import_source_data_success">Lähdetiedot on tuotu</string>
     <string name="settings_system_selected_patches_section">Valitut lisäosat</string>
     <string name="settings_system_no_patches_or_options">Ei lisäosia tai asetuksia tallennettu</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Kopioi valinta…</string>
-    <string name="copy_selection_confirm_with_count">Kopioi %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Ei muita tallennettuja valintoja kopioitavaksi</string>
     <string name="copy_selection_available_format">%1$s / %2$s käytettävissä</string>
-    <string name="copy_selection_same_source">Sama lähde</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Mukautettu tiedostonvalitsin</string>
     <string name="settings_system_custom_file_picker_description">Käyttää Morphen sisäänrakennettua tiedostonvalitsijaa järjestelmän valitsijan sijaan</string>
@@ -1335,6 +1338,8 @@ Yksityiskohdat: %2$s"</string>
     <string name="reorder_done">Järjestys tallennettu</string>
     <string name="reset_order">Palauta järjestys</string>
     <string name="reset_order_done">Tilaus nollattu</string>
+    <string name="reset_order_confirm_title">Nollataanko järjestys?</string>
+    <string name="reset_order_confirm_message">Luettelo palautuu oletusjärjestykseen ja käsin muutettu järjestys poistuu</string>
     <string name="accessibility_select_app">Valitse sovellus</string>
     <string name="accessibility_select_source">Valitse lähde</string>
     <string name="accessibility_move_up">Siirrä ylös</string>

@@ -1,3 +1,39 @@
+# [2.3.0-dev.6](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.5...v2.3.0-dev.6) (2026-10-27)
+
+
+### Bug Fixes
+
+* Restore selections of sources a backup adds on the first import ([2c1ae90](https://github.com/MorpheApp/morphe-manager/commit/2c1ae90541941bd9f2d8eb7d1c8a648b3c9ce18e))
+
+
+### Features
+
+* Keep patch selections as named sets ([b4bce2e](https://github.com/MorpheApp/morphe-manager/commit/b4bce2ebe45dcaca55976c20c04865439f25f8d0))
+* List the import modes as the APK source choice does ([22b24a4](https://github.com/MorpheApp/morphe-manager/commit/22b24a4186dce1beddaa3c1e4805d163c18294fb))
+* Move saved APK actions into a menu ([58f86e4](https://github.com/MorpheApp/morphe-manager/commit/58f86e42c766b0cd1c9cad162c0ff3fa444c8f37))
+
+# [2.3.0-dev.5](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.4...v2.3.0-dev.5) (2026-10-27)
+
+
+### Bug Fixes
+
+* Extra gap above the info panel in expanded source cards ([73f3221](https://github.com/MorpheApp/morphe-manager/commit/73f322195b6e7fc02f0b3792be73caf7e6cf9076))
+* Keep restored patch selections as saved ([167492e](https://github.com/MorpheApp/morphe-manager/commit/167492ea76bbde2201a91905e4988472527eba52))
+
+
+### Features
+
+* Check patch option paths with the patch's own validator before patching ([9d5eee0](https://github.com/MorpheApp/morphe-manager/commit/9d5eee02c09fe5ba10ebecdadf620cd2cbedbe03))
+* Move reorder controls into the page header ([2e7694d](https://github.com/MorpheApp/morphe-manager/commit/2e7694d9fa14215c9559e2067eee7a7e7902a362))
+* Pre-release switch when adding a source ([405e56c](https://github.com/MorpheApp/morphe-manager/commit/405e56ca4599d99cabc6e88a3bba79570ac61ed5))
+
+# [2.3.0-dev.4](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.3...v2.3.0-dev.4) (2026-10-27)
+
+
+### Features
+
+* Switch pre-release patches and experimental app versions for selected sources ([83fbbea](https://github.com/MorpheApp/morphe-manager/commit/83fbbea7aea4916d8bedd411c5a115208224b07c))
+
 # [2.3.0-dev.3](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.2...v2.3.0-dev.3) (2026-10-26)
 
 

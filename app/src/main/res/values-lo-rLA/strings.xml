@@ -126,6 +126,7 @@
     <string name="sources_management_prerelease_toggle">ຊຸດແພດກ່ອນວາງຈຳໜ່າຍ</string>
     <string name="sources_management_prerelease_toggle_description">ໄດ້ຮັບສິດເຂົ້າເຖິງເວີຊັນຊຸດແພດທົດລອງໃໝ່ກ່ອນໄວ</string>
     <string name="sources_management_experimental_versions_toggle">ເວີຊັນແອັບທົດລອງ</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">ແຫຼ່ງຂໍ້ມູນນີ້ຖືກເພີ່ມແລ້ວ</string>
     <string name="sources_management_invalid_url">URL ແຫຼ່ງຂໍ້ມູນບໍ່ຖືກຕ້ອງ. ກະລຸນາກວດເບິ່ງທີ່ຢູ່ແລ້ວລອງໃໝ່</string>
     <string name="sources_management_blocked">ແຫຼ່ງຊຸດແພດນີ້ຖືກບລັອກ ແລະບໍ່ສາມາດເພີ່ມໄດ້</string>
@@ -199,9 +200,7 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">ຄົ້ນຫາຊຸດແພດ</string>
     <string name="expert_mode_disable_all">ປິດທັງໝົດ</string>
-    <string name="expert_mode_disable_all_done">ປິດຊຸດແພດທັງໝົດແລ້ວ</string>
     <string name="expert_mode_enable_all">ເປີດທັງໝົດ</string>
-    <string name="expert_mode_enable_all_done">ເປີດຊຸດແພດທັງໝົດແລ້ວ</string>
     <string name="expert_mode_reset_to_default">ເປີດໃຊ້ຊຸດແພດທີ່ແນະນຳ</string>
     <string name="expert_mode_reset_to_default_done">ນຳໃຊ້ຊຸດແພດທີ່ແນະນຳແລ້ວ</string>
     <string name="expert_mode_restore_saved">ກູ້ຄືນການເລືອກທີ່ບັນທຶກໄວ້</string>
@@ -712,7 +711,7 @@ morphe_header_custom_dark.png
     <string name="settings_system_import_source_data_fail">ນຳເຂົ້າຂໍ້ມູນແຫຼ່ງຂໍ້ມູນລົ້ມເຫຼວ</string>
     <string name="settings_system_import_source_data_success">ນຳເຂົ້າຂໍ້ມູນແຫຼ່ງຂໍ້ມູນສຳເລັດ</string>
     <string name="settings_system_no_patches_or_options">ບໍ່ມີຊຸດແພດ ຫຼືຕົວເລືອກທີ່ບັນທຶກໄວ້</string>
-    <!-- Copy selection from another bundle -->
+    <!-- Selection panel: saved selection, sets and copies -->
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">ຕົວເລືອກໄຟລ໌ທີ່ກຳນົດເອງ</string>
     <!-- Settings - System Tab - APK download helper -->

@@ -200,6 +200,11 @@
     <string name="expert_mode_experimental_version_notice">Nguồn này chỉ có hỗ trợ thử nghiệm cho phiên bản ứng dụng này. Các bản vá của nó có thể không ổn định hoặc không đầy đủ</string>
     <string name="sources_management_experimental_versions_toggle">Phiên bản ứng dụng thử nghiệm</string>
     <string name="sources_management_experimental_versions_toggle_description">Hiển thị và vá các mục tiêu ứng dụng thử nghiệm</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Bật các bản vá tiền phát hành</string>
+    <string name="sources_management_prerelease_disable">Tắt các bản vá tiền phát hành</string>
+    <string name="sources_management_experimental_versions_enable">Bật các phiên bản ứng dụng thử nghiệm</string>
+    <string name="sources_management_experimental_versions_disable">Tắt các phiên bản ứng dụng thử nghiệm</string>
     <string name="sources_management_already_exists">Nguồn này đã được thêm vào rồi</string>
     <string name="sources_management_invalid_url">URL nguồn không hợp lệ. Vui lòng kiểm tra địa chỉ và thử lại</string>
     <string name="sources_management_blocked">Không thể thêm nguồn vá này vì nó bị chặn</string>
@@ -333,17 +338,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Tìm kiếm</string>
     <string name="expert_mode_disable_all">Tắt tất cả</string>
-    <string name="expert_mode_disable_all_done">Đã tắt tất cả bản vá</string>
     <string name="expert_mode_enable_all">Bật tất cả</string>
-    <string name="expert_mode_enable_all_done">Đã bật tất cả bản vá</string>
     <string name="expert_mode_enable_all_universal_pending">Chạm lần nữa để dùng bản vá phổ quát</string>
     <string name="expert_mode_universal_all_warning_title">Bật tất cả các bản vá phổ quát?</string>
     <string name="expert_mode_universal_all_warning_message">Các bản vá phổ quát không được kiểm tra cùng nhau. Bật tất cả chúng cùng lúc có thể gây ra xung đột, vá thất bại hoặc treo máy</string>
     <string name="expert_mode_reset_to_default">Bật các bản vá đề xuất</string>
     <string name="expert_mode_reset_to_default_done">Đã áp dụng các bản vá đề xuất</string>
+    <string name="expert_mode_selected_count">Đã chọn %1$s/%2$s</string>
     <string name="expert_mode_restore_saved">Khôi phục lựa chọn đã lưu</string>
     <string name="expert_mode_restore_saved_done">Đã khôi phục bản vá đã chọn</string>
-    <string name="expert_mode_copy_from_bundle">Sao chép lựa chọn từ gói khác</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Không tìm thấy bản vá phù hợp trong gói này</string>
     <string name="expert_mode_no_results">Không tìm thấy bản vá nào</string>
     <string name="expert_mode_selected_only_on">Chỉ hiển thị các bản vá đã chọn</string>
@@ -644,12 +647,15 @@ Gỡ cài đặt sẽ xóa vĩnh viễn toàn bộ dữ liệu ứng dụng"</st
     <string name="patcher_storage_permission_open_settings">Mở cài đặt truy cập bộ nhớ</string>
     <string name="patcher_storage_badge_denied">Quyền truy cập bị từ chối</string>
     <string name="patcher_storage_badge_missing">Không tìm thấy gì</string>
+    <string name="patcher_storage_badge_rejected">Không thể sử dụng</string>
     <string name="batch_patch_option_paths_skipped">Các tệp tùy chọn bản vá bị thiếu và sẽ bị bỏ qua: %1$s</string>
     <string name="patcher_missing_patches_title">Không còn được cung cấp</string>
     <string name="patcher_missing_patches_description">Lựa chọn đã lưu cho ứng dụng này chỉ tên các bản vá mà nguồn đang kích hoạt không còn cung cấp nữa. Tiếp tục sẽ vá ứng dụng mà không có chúng</string>
     <string name="patcher_missing_patches_label">Một hoặc nhiều tùy chọn vá trỏ đến các tệp không còn ở đó. Hãy xóa các đường dẫn để vá mà không có chúng, hoặc đặt lại các tệp và thử lại.</string>
     <string name="patcher_option_paths_gone_title">Xóa các đường dẫn và tiếp tục</string>
     <string name="patcher_option_paths_gone_description">Thư mục này không thể đọc được nữa. Hãy chọn lại thư mục hoặc xóa nó, nếu không quá trình vá sẽ dừng lại và hỏi về nó.</string>
+    <string name="patcher_option_paths_rejected_title">Không thể sử dụng các tệp tùy chọn bản vá</string>
+    <string name="patcher_option_paths_rejected_description">Một hoặc nhiều tùy chọn bản vá trỏ đến các tệp bị thiếu hoặc không có nội dung mà bản vá yêu cầu. Hãy xóa các đường dẫn để vá mà không cần chúng, hoặc sửa các tệp theo hướng dẫn của tùy chọn và thử lại</string>
     <string name="patcher_option_paths_clear">Biểu tượng dùng để vá ứng dụng. Nó cũng được sử dụng ở những nơi mà ứng dụng không thể thay đổi nó sau này, chẳng hạn như Android Auto và danh sách ứng dụng trong cài đặt hệ thống.</string>
     <string name="patcher_storage_permission_hint">Gợi ý: Di chuyển tệp sang /Android/data/app.morphe.manager/files/ - sẽ không cần cấp thêm quyền truy cập</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1204,12 +1210,9 @@ Chi tiết: %2$s"</string>
     <string name="settings_system_import_source_data_success">Đã nhập dữ liệu nguồn thành công</string>
     <string name="settings_system_selected_patches_section">Số bản vá đã chọn</string>
     <string name="settings_system_no_patches_or_options">Không có bản vá hoặc tùy chỉnh được lưu</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Sao chép lựa chọn từ…</string>
-    <string name="copy_selection_confirm_with_count">Sao chép %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Không có lựa chọn đã lưu nào khác để sao chép</string>
     <string name="copy_selection_available_format">%1$s/%2$s khả dụng</string>
-    <string name="copy_selection_same_source">Nguồn giống nhau</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Tùy chỉnh trình chọn tệp</string>
     <string name="settings_system_custom_file_picker_description">Sử dụng trình chọn tệp tích hợp của Morphe thay vì trình chọn hệ thống</string>
@@ -1334,6 +1337,8 @@ Chi tiết: %2$s"</string>
     <string name="reorder_done">Đã lưu thứ tự</string>
     <string name="reset_order">Đặt lại thứ tự</string>
     <string name="reset_order_done">Đặt lại thứ tự</string>
+    <string name="reset_order_confirm_title">Đặt lại thứ tự?</string>
+    <string name="reset_order_confirm_message">Danh sách sẽ quay trở lại thứ tự mặc định và thứ tự được kéo thủ công sẽ bị mất</string>
     <string name="accessibility_select_app">Chọn ứng dụng</string>
     <string name="accessibility_select_source">Chọn nguồn</string>
     <string name="accessibility_move_up">Lên trên</string>
@@ -1341,6 +1346,7 @@ Chi tiết: %2$s"</string>
     <string name="accessibility_app_moved_announcement">Đã chuyển %1$s đến vị trí %2$s/%3$s</string>
     <string name="accessibility_scroll_to_top">Về đầu danh sách</string>
     <string name="rename">Đổi tên</string>
+    <string name="more_options">Nhiều tuỳ chọn hơn</string>
     <string name="import_">Nhập</string>
     <string name="export">Xuất</string>
     <string name="copy">Sao chép</string>

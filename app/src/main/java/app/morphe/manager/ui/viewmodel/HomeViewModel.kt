@@ -85,7 +85,7 @@ class HomeViewModel(
     versionCatalog: AppVersionCatalog,
     private val localApkSources: LocalApkSources,
     /** Picker behind the copy-from-another-bundle action of the expert-mode dialog. */
-    expertModeCopy: CopySelectionController
+    expertModePanel: SelectionPanelController
 ) : ViewModel(), KoinComponent {
     // Past the parameters viewModelOf takes
     private val patcherProcesses: PatcherProcesses by inject()
@@ -160,10 +160,10 @@ class HomeViewModel(
     }
 
     /** Imports the opened file the way the add source panel would, updating the source it is a version of. */
-    fun confirmMppImport(chooseApps: Boolean) {
+    fun confirmMppImport(options: NewSourceOptions) {
         val pending = pendingMpp ?: return
         pendingMpp = null
-        importOf(pending.uri, pending.check)?.let { importLocalSources(listOf(it), chooseApps) }
+        importOf(pending.uri, pending.check)?.let { importLocalSources(listOf(it), options) }
     }
 
     fun dismissMppImport() {
@@ -253,17 +253,18 @@ class HomeViewModel(
     /**
      * Adds a remote source for each of [urls] and imports the picked files, a new bundle as a source
      * of its own and another version of a local source into it, as its update action would. Files
-     * already added are left out. With [chooseApps] the app list of each new source opens once its
-     * patches have loaded.
+     * already added are left out. Each new source starts with [options], see [onSourcesAdded].
      */
-    fun addSources(urls: List<String>, chooseApps: Boolean) = viewModelScope.launch {
+    fun addSources(urls: List<String>, options: NewSourceOptions) = viewModelScope.launch {
         val imports = pickedBundleImports.mapNotNull { importOf(it.uri, it.check) }
         pickedBundles = emptyList()
         val added = withContext(NonCancellable) {
-            val remote = if (urls.isEmpty()) emptyList() else patchBundleRepository.createRemotes(urls)
+            val remote = if (urls.isEmpty()) emptyList() else {
+                patchBundleRepository.createRemotes(urls, usePrerelease = options.usePrerelease)
+            }
             remote + importLocalFiles(imports)
         }
-        onSourcesAdded(added, chooseApps)
+        onSourcesAdded(added, options)
     }
 
     /** Local source waiting for a replacement file, so the picker result knows what it updates. */
@@ -319,7 +320,7 @@ class HomeViewModel(
         localApkSources = localApkSources,
         compatibleVersions = compatibleVersionsFlow,
         recommendedVersions = recommendedVersionsFlow,
-        expertModeCopy = expertModeCopy,
+        expertModePanel = expertModePanel,
         patcherProcesses = patcherProcesses
     )
 
@@ -464,12 +465,12 @@ class HomeViewModel(
     }
 
     /**
-     * Imports each file through [importLocalFiles]. With [chooseApps] the app list of each new source
-     * opens once its patches have loaded.
+     * Imports each file through [importLocalFiles]. Each new source starts with [options], see
+     * [onSourcesAdded].
      */
-    private fun importLocalSources(imports: List<Pair<Uri, Int?>>, chooseApps: Boolean) = viewModelScope.launch {
+    private fun importLocalSources(imports: List<Pair<Uri, Int?>>, options: NewSourceOptions) = viewModelScope.launch {
         val added = withContext(NonCancellable) { importLocalFiles(imports) }
-        onSourcesAdded(added, chooseApps)
+        onSourcesAdded(added, options)
     }
 
     /**
@@ -493,24 +494,23 @@ class HomeViewModel(
     }
 
     /**
-     * Adds a remote source for each of [urls], downloaded together as one update. With
-     * [chooseApps] the app list of each added source opens once its patches have loaded, and each
-     * one brings as much as [scope] asks for.
+     * Adds a remote source for each of [urls], downloaded together as one update. Each added source
+     * starts with [options], see [onSourcesAdded], and brings as much as [scope] asks for.
      */
     fun createRemoteSources(
         urls: List<String>,
-        chooseApps: Boolean = false,
-        scope: SourceScope = SourceScope.Whole
+        options: NewSourceOptions,
+        scope: SourceScope
     ) = viewModelScope.launch {
         val added = withContext(NonCancellable) {
-            patchBundleRepository.createRemotes(urls, keptApps = scope.keptApps)
+            patchBundleRepository.createRemotes(urls, keptApps = scope.keptApps, usePrerelease = options.usePrerelease)
         }
-        onSourcesAdded(added, chooseApps, scope)
+        onSourcesAdded(added, options, scope)
     }
 
     /**
-     * Queues the app list of each of [uids] that has apps to list as its patches load, then hints
-     * at the swipe gestures of the source cards.
+     * With [NewSourceOptions.chooseApps] queues the app list of each of [uids] that has apps to list
+     * as its patches load, then hints at the swipe gestures of the source cards.
      *
      * A source only appears among the loaded ones once its patches are in, which is also what the
      * list is built from. The sources load together, so they are taken as each one arrives rather
@@ -520,7 +520,7 @@ class HomeViewModel(
      * [PatchBundleRepository.createRemotes]. They were never offered, so none of them is new to the
      * user, and a source that turns out not to have what [scope] asks for is added as any other.
      */
-    private suspend fun onSourcesAdded(uids: List<Int>, chooseApps: Boolean, scope: SourceScope = SourceScope.Whole) {
+    private suspend fun onSourcesAdded(uids: List<Int>, options: NewSourceOptions, scope: SourceScope = SourceScope.Whole) {
         if (uids.isEmpty()) return
 
         val pending = uids.toMutableList()
@@ -531,7 +531,7 @@ class HomeViewModel(
                     val bundle = info[uid] ?: return@removeAll false
                     loaded[uid] = bundle
                     // Universal patches put no app on the home screen, so there would be nothing to list
-                    if (chooseApps && bundle.listedApps().isNotEmpty()) sourceAppsQueue += uid
+                    if (options.chooseApps && bundle.listedApps().isNotEmpty()) sourceAppsQueue += uid
                     true
                 }
                 pending.isEmpty()
@@ -551,7 +551,7 @@ class HomeViewModel(
      * Points an existing local source at a newly picked file. Adding the updated file instead
      * would create a second source and strand the patch selection on the old one.
      */
-    fun updateLocalSource(uid: Int, patchBundle: Uri) = importLocalSources(listOf(patchBundle to uid), chooseApps = false)
+    fun updateLocalSource(uid: Int, patchBundle: Uri) = importLocalSources(listOf(patchBundle to uid), NewSourceOptions())
 
     /** @return The uid of the source [patchBundle] landed under, or null when it could not be read. */
     private suspend fun importLocalFile(patchBundle: Uri, replacingUid: Int?): Int? {
@@ -618,7 +618,7 @@ class HomeViewModel(
      * A link for one app from a source that is already here only asks for that app, so it is
      * brought back to the source rather than the source being refused as a duplicate.
      */
-    fun confirmDeepLinkSource(chooseApps: Boolean) {
+    fun confirmDeepLinkSource(options: NewSourceOptions) {
         val source = deepLinkPendingSource ?: return
         deepLinkPendingSource = null
         val scope = source.scope
@@ -626,7 +626,7 @@ class HomeViewModel(
         if (scope is SourceScope.App && existingUid != null) {
             viewModelScope.launch { sourceMuteRepository.unmuteApps(existingUid, listOf(scope.packageName)) }
         } else {
-            createRemoteSources(listOf(source.url), chooseApps, scope)
+            createRemoteSources(listOf(source.url), options, scope)
         }
     }
 

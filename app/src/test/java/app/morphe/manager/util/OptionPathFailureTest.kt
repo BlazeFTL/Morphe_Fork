@@ -5,6 +5,12 @@
 
 package app.morphe.manager.util
 
+import app.morphe.manager.patcher.patch.Option
+import app.morphe.manager.patcher.patch.PatchBundleInfo
+import app.morphe.manager.patcher.patch.PatchInfo
+import kotlinx.collections.immutable.persistentListOf
+import kotlin.io.path.createTempDirectory
+import kotlin.reflect.typeOf
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertSame
@@ -71,5 +77,74 @@ class OptionPathFailureTest {
         val options = mapOf(0 to mapOf("Custom branding" to mapOf("customName" to "Morphe")))
 
         assertSame(options, options.withoutFailingPaths(emptyList()))
+    }
+}
+
+/**
+ * A path the app can read is still put to the check its option declares, so a folder without what
+ * the patch needs is caught before the run rather than failing it.
+ */
+class OptionPathValidationTest {
+    private val folder = createTempDirectory().toFile().apply { deleteOnExit() }
+
+    private fun bundle(validator: (String?) -> Boolean) = PatchBundleInfo.Scoped(
+        name = "Source",
+        version = null,
+        uid = 0,
+        enabled = true,
+        patches = listOf(
+            PatchInfo(
+                name = "Change header",
+                description = null,
+                include = true,
+                compatiblePackages = null,
+                options = persistentListOf(
+                    Option(
+                        title = "Custom header logo",
+                        key = "custom",
+                        description = "",
+                        required = false,
+                        type = typeOf<String>(),
+                        default = null,
+                        presets = null,
+                        validator = validator
+                    )
+                )
+            )
+        ),
+        compatible = emptyList(),
+        incompatible = emptyList(),
+        universal = emptyList()
+    )
+
+    // Only a path starting at the root is checked, which a Windows host reaches without its drive
+    private val path = folder.invariantSeparatorsPath.substringAfter(':')
+
+    private val options = mapOf(0 to mapOf("Change header" to mapOf<String, Any?>("custom" to path)))
+
+    @Test
+    fun `a folder the option turns down is rejected`() {
+        assertEquals(
+            listOf(PathValidationResult.Reason.Rejected),
+            validateOptionPaths(options, listOf(bundle { false })).map { it.reason }
+        )
+    }
+
+    @Test
+    fun `a folder the option takes passes`() {
+        assertTrue(validateOptionPaths(options, listOf(bundle { it == path })).isEmpty())
+    }
+
+    @Test
+    fun `a check that throws turns the folder down`() {
+        assertEquals(
+            listOf(PathValidationResult.Reason.Rejected),
+            validateOptionPaths(options, listOf(bundle { error("unreadable") })).map { it.reason }
+        )
+    }
+
+    @Test
+    fun `an option no bundle declares is only checked for being there`() {
+        assertTrue(validateOptionPaths(options, emptyList()).isEmpty())
     }
 }

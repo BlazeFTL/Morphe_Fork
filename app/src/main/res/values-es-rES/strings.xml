@@ -200,6 +200,11 @@
     <string name="expert_mode_experimental_version_notice">Esta fuente solo tiene soporte experimental para esta versión de la aplicación. Sus parches pueden ser inestables o estar incompletos</string>
     <string name="sources_management_experimental_versions_toggle">Versiones experimentales de la aplicación</string>
     <string name="sources_management_experimental_versions_toggle_description">Muestra y parchea versiones experimentales de la aplicación</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Activar parches pre-lanzamiento</string>
+    <string name="sources_management_prerelease_disable">Desactivar parches pre-lanzamiento</string>
+    <string name="sources_management_experimental_versions_enable">Activar versiones experimentales de la aplicación</string>
+    <string name="sources_management_experimental_versions_disable">Desactivar versiones experimentales de la aplicación</string>
     <string name="sources_management_already_exists">Esta fuente ya ha sido añadida</string>
     <string name="sources_management_invalid_url">La URL de la fuente no es válida. Comprueba la dirección e inténtalo de nuevo</string>
     <string name="sources_management_blocked">Esta fuente de parches está bloqueada y no se puede añadir</string>
@@ -333,17 +338,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Buscar parches</string>
     <string name="expert_mode_disable_all">Desactivar todo</string>
-    <string name="expert_mode_disable_all_done">Todos los parches desactivados</string>
     <string name="expert_mode_enable_all">Activar todo</string>
-    <string name="expert_mode_enable_all_done">Todos los parches activados</string>
     <string name="expert_mode_enable_all_universal_pending">Pulsa de nuevo para ver parches universales</string>
     <string name="expert_mode_universal_all_warning_title">¿Activar todos los parches universales?</string>
     <string name="expert_mode_universal_all_warning_message">Los parches universales no se prueban en conjunto. Activarlos todos a la vez puede provocar conflictos, fallos en el parcheo o cierres inesperados</string>
     <string name="expert_mode_reset_to_default">Activar parches recomendados</string>
     <string name="expert_mode_reset_to_default_done">Parches recomendados aplicados</string>
+    <string name="expert_mode_selected_count">%1$s de %2$s seleccionado</string>
     <string name="expert_mode_restore_saved">Restaurar selección guardada</string>
     <string name="expert_mode_restore_saved_done">Selección guardada restaurada</string>
-    <string name="expert_mode_copy_from_bundle">Copiar selección de otro paquete</string>
     <string name="expert_mode_copy_from_bundle_no_patches">No hay parches que coincidan en este paquete</string>
     <string name="expert_mode_no_results">No se encontraron parches</string>
     <string name="expert_mode_selected_only_on">Mostrando solo los parches seleccionados</string>
@@ -644,12 +647,15 @@ Al desinstalarla se borrarán permanentemente todos los datos de la aplicación"
     <string name="patcher_storage_permission_open_settings">Abrir ajustes de almacenamiento</string>
     <string name="patcher_storage_badge_denied">Permiso denegado</string>
     <string name="patcher_storage_badge_missing">No encontrado</string>
+    <string name="patcher_storage_badge_rejected">No utilizable</string>
     <string name="batch_patch_option_paths_skipped">Faltan archivos de opciones de parches y se omitirán: %1$s</string>
     <string name="patcher_missing_patches_title">Algunos parches ya no existen</string>
     <string name="patcher_missing_patches_description">La selección guardada para esta aplicación nombra parches que ya no ofrece ninguna fuente activada. Si continúas, la aplicación se parcheará sin ellos.</string>
     <string name="patcher_missing_patches_label">Ya no se ofrece</string>
     <string name="patcher_option_paths_gone_title">Faltan archivos de opciones de parches</string>
     <string name="patcher_option_paths_gone_description">Una o más opciones de parches apuntan a archivos que ya no están. Elimina las rutas para parchear sin ellos, o vuelve a poner los archivos e inténtalo de nuevo</string>
+    <string name="patcher_option_paths_rejected_title">Los archivos de opciones de parches no se pueden usar</string>
+    <string name="patcher_option_paths_rejected_description">Una o más opciones de parches apuntan a archivos que faltan o que no tienen lo que el parche requiere. Elimina las rutas para parchear sin ellos, o corrige los archivos como describen las instrucciones de la opción e inténtalo de nuevo</string>
     <string name="patcher_option_paths_clear">Eliminar las rutas y continuar</string>
     <string name="patcher_storage_permission_hint">Consejo: Mueve los archivos a /Android/data/app.morphe.manager/files/ - no se necesitan permisos adicionales</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1201,12 +1207,9 @@ Detalles: %2$s"</string>
     <string name="settings_system_import_source_data_success">Datos de fuente importados correctamente</string>
     <string name="settings_system_selected_patches_section">Parches seleccionados</string>
     <string name="settings_system_no_patches_or_options">No hay parches ni opciones guardadas</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Copiar selección de…</string>
-    <string name="copy_selection_confirm_with_count">Copiar %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">No hay otras selecciones guardadas para copiar</string>
     <string name="copy_selection_available_format">%1$s de %2$s disponibles</string>
-    <string name="copy_selection_same_source">Misma fuente</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Selector de archivos personalizado</string>
     <string name="settings_system_custom_file_picker_description">Utiliza el selector de archivos integrado de Morphe en lugar del del sistema</string>
@@ -1331,6 +1334,8 @@ Detalles: %2$s"</string>
     <string name="reorder_done">Orden guardado</string>
     <string name="reset_order">Restablecer orden</string>
     <string name="reset_order_done">Orden restablecido</string>
+    <string name="reset_order_confirm_title">¿Restablecer el orden?</string>
+    <string name="reset_order_confirm_message">La lista vuelve a su orden predeterminado y se pierde el orden arrastrado manualmente</string>
     <string name="accessibility_select_app">Seleccionar aplicación</string>
     <string name="accessibility_select_source">Seleccionar fuente</string>
     <string name="accessibility_move_up">Mover hacia arriba</string>

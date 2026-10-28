@@ -15,7 +15,9 @@ import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable
 import androidx.compose.foundation.gestures.rememberDraggableState
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -252,6 +254,9 @@ private val PanelActionInset = Defaults.SpaceSmall
 
 private val PanelActionShape = RoundedCornerShape(Defaults.CornerMedium)
 
+/** Share of the window's height a [SelectionActionBar] reaches up to at most. */
+private const val SELECTION_PANEL_MAX_HEIGHT_FRACTION = 0.6f
+
 /** What an action of a panel does, as far as its color goes. */
 enum class ActionTone { Neutral, Primary, Secondary, Tertiary, Destructive }
 
@@ -273,6 +278,9 @@ data class SelectionAction(
  * one of [actions] as a row under its full name. Meant to be placed inside a [DockedPanel].
  *
  * None of the actions has anything to act on until something is selected.
+ *
+ * @param onReorder Leaves the selection for dragging the list into order. Kept in the header with
+ *   the controls of the selection itself, as it acts on the list rather than on what is picked.
  */
 @Composable
 fun SelectionActionBar(
@@ -283,18 +291,22 @@ fun SelectionActionBar(
     modifier: Modifier = Modifier,
     subtitle: String? = null,
     onDeselectAll: (() -> Unit)? = null,
-    onCancel: (() -> Unit)? = null
+    onCancel: (() -> Unit)? = null,
+    onReorder: (() -> Unit)? = null
 ) {
     val selectAllLabel = stringResource(R.string.select_all)
     val deselectAllLabel = stringResource(R.string.deselect_all)
+    val reorderListLabel = stringResource(R.string.reorder_list)
     val cancelLabel = stringResource(android.R.string.cancel)
     val selectedLabel = stringResource(R.string.state_selected).lowercase()
     val allSelected = totalCount in 1..selectedCount
     val canToggleToDeselect = allSelected && onDeselectAll != null
     val selectionToggleLabel = if (canToggleToDeselect) deselectAllLabel else selectAllLabel
     val hasSelection = selectedCount > 0
+    // However many actions there are, the page above stays in view
+    val maxHeight = windowSizeDp().height * SELECTION_PANEL_MAX_HEIGHT_FRACTION
 
-    Column(modifier = modifier.fillMaxWidth()) {
+    Column(modifier = modifier.fillMaxWidth().heightIn(max = maxHeight)) {
         PanelHeader(
             title = {
                 Column {
@@ -317,6 +329,15 @@ fun SelectionActionBar(
                 }
             }
         ) {
+            if (onReorder != null) {
+                TitleAction(
+                    icon = MaterialSymbols.Rounded.Reorder,
+                    contentDescription = reorderListLabel,
+                    onClick = onReorder,
+                    style = TitleActionStyle.Neutral,
+                    enabled = hasSelection
+                )
+            }
             TitleAction(
                 icon = if (canToggleToDeselect) MaterialSymbols.Rounded.Remove_done else MaterialSymbols.Rounded.Done_all,
                 contentDescription = selectionToggleLabel,
@@ -335,7 +356,17 @@ fun SelectionActionBar(
             }
         }
 
-        PanelActions(actions = actions, enabled = hasSelection)
+        // The header stays put while rows the panel has no room for scroll under it, as they do
+        // on a short screen or in landscape
+        val actionsScroll = rememberScrollState()
+        Column(
+            modifier = Modifier
+                .weight(1f, fill = false)
+                .verticalScrollFade(actionsScroll)
+                .verticalScroll(actionsScroll)
+        ) {
+            PanelActions(actions = actions, enabled = hasSelection)
+        }
     }
 }
 
@@ -437,6 +468,8 @@ fun PanelRow(
     iconTint: Color = MaterialTheme.colorScheme.onSurfaceVariant,
     titleColor: Color = MaterialTheme.colorScheme.onSurface,
     enabled: Boolean = true,
+    onLongClick: (() -> Unit)? = null,
+    onLongClickLabel: String? = null,
     trailing: (@Composable RowScope.() -> Unit)? = null
 ) {
     val alpha = if (enabled) 1f else Defaults.DISABLED_ALPHA
@@ -447,7 +480,19 @@ fun PanelRow(
             // highlight does not run into the border and the corners the panel is drawn with
             .padding(horizontal = PanelActionInset)
             .heightIn(min = 48.dp)
-            .shapedClickable(PanelActionShape, enabled = enabled, role = Role.Button, onClick = onClick)
+            .then(
+                if (onLongClick != null) {
+                    Modifier.shapedCombinedClickable(
+                        PanelActionShape,
+                        enabled = enabled,
+                        onLongClickLabel = onLongClickLabel,
+                        onLongClick = onLongClick,
+                        onClick = onClick
+                    )
+                } else {
+                    Modifier.shapedClickable(PanelActionShape, enabled = enabled, role = Role.Button, onClick = onClick)
+                }
+            )
             .padding(horizontal = Defaults.SpaceLarge - PanelActionInset),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceLarge)

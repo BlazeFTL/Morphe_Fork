@@ -200,6 +200,11 @@
     <string name="expert_mode_experimental_version_notice">Denne kilde har kun eksperimentel understøttelse for denne app-version. Dens patches kan være ustabile eller ufuldstændige</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentelle app-versioner</string>
     <string name="sources_management_experimental_versions_toggle_description">Viser og retter eksperimentelle app-mål</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Aktiver pre-release patches</string>
+    <string name="sources_management_prerelease_disable">Deaktiver pre-release patches</string>
+    <string name="sources_management_experimental_versions_enable">Aktiver eksperimentelle app-versioner</string>
+    <string name="sources_management_experimental_versions_disable">Deaktiver eksperimentelle app-versioner</string>
     <string name="sources_management_already_exists">Denne kilde er allerede tilføjet</string>
     <string name="sources_management_invalid_url">Ugyldig kilde-URL. Kontroller venligst adressen og prøv igen</string>
     <string name="sources_management_blocked">Denne patchkilde er blokeret og kan ikke tilføjes</string>
@@ -333,9 +338,7 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Søg patches</string>
     <string name="expert_mode_disable_all">Deaktiver alle</string>
-    <string name="expert_mode_disable_all_done">Alle patches deaktiveret</string>
     <string name="expert_mode_enable_all">Aktiver alle</string>
-    <string name="expert_mode_enable_all_done">Alle patches aktiveret</string>
     <string name="expert_mode_enable_all_universal_pending">Tryk igen for universelle patches</string>
     <string name="expert_mode_universal_all_warning_title">Aktivér alle universelle patcher?</string>
     <string name="expert_mode_universal_all_warning_message">Universelle patcher er ikke testet sammen. Aktivering af alle på én gang kan forårsage konflikter, mislykket patchning eller nedbrud</string>
@@ -343,7 +346,6 @@
     <string name="expert_mode_reset_to_default_done">Anbefalede patches anvendt</string>
     <string name="expert_mode_restore_saved">Gendan gemt valg</string>
     <string name="expert_mode_restore_saved_done">Gemt valg er gendannet</string>
-    <string name="expert_mode_copy_from_bundle">Kopier udvalg fra en anden pakke</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Ingen matchende patches i denne pakke</string>
     <string name="expert_mode_no_results">Ingen patches fundet</string>
     <string name="expert_mode_selected_only_on">Viser kun udvalgte patches</string>
@@ -644,12 +646,15 @@ Afinstallation sletter permanent alle appdata."</string>
     <string name="patcher_storage_permission_open_settings">Åbn lagerindstillinger </string>
     <string name="patcher_storage_badge_denied">Tilladelse afvist</string>
     <string name="patcher_storage_badge_missing">Ikke fundet</string>
+    <string name="patcher_storage_badge_rejected">Kan ikke bruges</string>
     <string name="batch_patch_option_paths_skipped">Patch-indstillingsfiler mangler og vil blive sprunget over: %1$s</string>
     <string name="patcher_missing_patches_title">Nogle patches er væk</string>
     <string name="patcher_missing_patches_description">Den gemte valgmulighed for denne app refererer til patches, som ingen aktiveret kilde længere tilbyder. Ved at fortsætte patches af appen uden dem</string>
     <string name="patcher_missing_patches_label">Tilbydes ikke længere</string>
     <string name="patcher_option_paths_gone_title">Patch-indstillingsfiler mangler</string>
     <string name="patcher_option_paths_gone_description">En eller flere patch-indstillinger peger på filer, der ikke længere findes. Fjern stierne for at patche uden dem, eller læg filerne tilbage og prøv igen</string>
+    <string name="patcher_option_paths_rejected_title">Patch-optionsfiler kan ikke bruges</string>
+    <string name="patcher_option_paths_rejected_description">En eller flere patch-optioner henviser til filer, der mangler eller ikke indeholder det, patchen beder om. Fjern stierne for at patche uden dem, eller ret filerne som beskrevet i instruktionerne for optionen, og prøv igen</string>
     <string name="patcher_option_paths_clear">Fjern stierne og fortsæt</string>
     <string name="patcher_storage_permission_hint">Tip: Flyt filer til /Android/data/app.morphe.manager/files/ - ingen ekstra tilladelser nødvendige</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1207,12 +1212,9 @@ Detaljer: %2$s"</string>
     <string name="settings_system_import_source_data_success">Kilde-data importeret med succes</string>
     <string name="settings_system_selected_patches_section">Valgte patches</string>
     <string name="settings_system_no_patches_or_options">Ingen patches eller valg gemt</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Kopier udvalg fra…</string>
-    <string name="copy_selection_confirm_with_count">Kopier %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Ingen andre gemte udvalg at kopiere fra</string>
     <string name="copy_selection_available_format">%1$s af %2$s tilgængelig</string>
-    <string name="copy_selection_same_source">Samme kilde</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Brugerdefineret filvælger</string>
     <string name="settings_system_custom_file_picker_description">Bruger Morphes indbyggede filvælger i stedet for systemets</string>
@@ -1337,6 +1339,8 @@ Detaljer: %2$s"</string>
     <string name="reorder_done">Rækkefølge gemt</string>
     <string name="reset_order">Nulstil rækkefølge</string>
     <string name="reset_order_done">Ordre nulstillet</string>
+    <string name="reset_order_confirm_title">Nulstil rækkefølgen?</string>
+    <string name="reset_order_confirm_message">Listen vender tilbage til sin standardrækkefølge, og den rækkefølge, der er trukket manuelt, går tabt</string>
     <string name="accessibility_select_app">Vælg app</string>
     <string name="accessibility_select_source">Vælg kilde</string>
     <string name="accessibility_move_up">Flyt op</string>

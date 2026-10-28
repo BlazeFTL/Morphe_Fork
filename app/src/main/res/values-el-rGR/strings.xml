@@ -200,6 +200,11 @@
     <string name="expert_mode_experimental_version_notice">Αυτή η πηγή έχει μόνο πειραματική υποστήριξη για αυτήν την έκδοση της εφαρμογής. Τα patches της ενδέχεται να είναι ασταθή ή ελλιπή</string>
     <string name="sources_management_experimental_versions_toggle">Πειραματικές εκδόσεις εφαρμογών</string>
     <string name="sources_management_experimental_versions_toggle_description">Εμφανίζει και επιδιορθώνει πειραματικούς στόχους εφαρμογής</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Ενεργοποίηση προεκδόσεων τροποποιήσεων</string>
+    <string name="sources_management_prerelease_disable">Απενεργοποίηση προεκδόσεων τροποποιήσεων</string>
+    <string name="sources_management_experimental_versions_enable">Ενεργοποίηση πειραματικών εκδόσεων της εφαρμογής</string>
+    <string name="sources_management_experimental_versions_disable">Απενεργοποίηση πειραματικών εκδόσεων της εφαρμογής</string>
     <string name="sources_management_already_exists">Αυτή η πηγή έχει ήδη προστεθεί</string>
     <string name="sources_management_invalid_url">Μη έγκυρη διεύθυνση URL πηγής. Παρακαλώ ελέγξτε τη διεύθυνση και προσπαθήστε ξανά</string>
     <string name="sources_management_blocked">Η πηγή ενημερώσεων είναι αποκλεισμένη και δεν μπορεί να προστεθεί</string>
@@ -334,9 +339,7 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Αναζήτηση τροποποιήσεων</string>
     <string name="expert_mode_disable_all">Απενεργοποίηση όλων</string>
-    <string name="expert_mode_disable_all_done">Όλες οι διορθώσεις απενεργοποιήθηκαν</string>
     <string name="expert_mode_enable_all">Ενεργοποίηση όλων</string>
-    <string name="expert_mode_enable_all_done">Όλες οι διορθώσεις ενεργοποιήθηκαν</string>
     <string name="expert_mode_enable_all_universal_pending">Πατήστε ξανά για καθολικά patches</string>
     <string name="expert_mode_universal_all_warning_title">Ενεργοποίηση όλων των καθολικών επιδιορθώσεων;</string>
     <string name="expert_mode_universal_all_warning_message">Οι καθολικές επιδιορθώσεις δεν δοκιμάζονται μαζί. Η ενεργοποίηση όλων ταυτόχρονα μπορεί να προκαλέσει συγκρούσεις, αποτυχία επιδιόρθωσης ή σφάλματα</string>
@@ -344,7 +347,6 @@
     <string name="expert_mode_reset_to_default_done">Εφαρμόστηκαν οι προτεινόμενες διορθώσεις</string>
     <string name="expert_mode_restore_saved">Επαναφορά αποθηκευμένης επιλογής</string>
     <string name="expert_mode_restore_saved_done">Επαναφορά επιλεγμένων αποθηκευμένων στοιχείων</string>
-    <string name="expert_mode_copy_from_bundle">Αντιγραφή επιλογής από άλλο πακέτο</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Δεν βρέθηκαν αντίστοιχα διορθωτικά σε αυτό το πακέτο</string>
     <string name="expert_mode_no_results">Δε βρέθηκαν τροποποιήσεις </string>
     <string name="expert_mode_selected_only_on">Εμφάνιση μόνο επιλεγμένων επιδιορθώσεων</string>
@@ -645,12 +647,15 @@
     <string name="patcher_storage_permission_open_settings">Άνοιγμα ρυθμίσεων αποθήκευσης χώρου</string>
     <string name="patcher_storage_badge_denied">Δεν επιτράπηκε η άδεια</string>
     <string name="patcher_storage_badge_missing">Δεν βρέθηκε</string>
+    <string name="patcher_storage_badge_rejected">Μη χρησιμοποιήσιμο</string>
     <string name="batch_patch_option_paths_skipped">Λείπουν τα αρχεία επιλογών τροποποίησης και θα παραλειφθούν: %1$s</string>
     <string name="patcher_missing_patches_title">Κάποιες τροποποιήσεις λείπουν.</string>
     <string name="patcher_missing_patches_description">Η αποθηκευμένη επιλογή για αυτή την εφαρμογή ορίζει επιδιορθώσεις που δεν προσφέρει πλέον καμία ενεργή πηγή. Συνεχίζοντας, θα επιδιορθωθεί η εφαρμογή χωρίς αυτές</string>
     <string name="patcher_missing_patches_label">Δεν προσφέρεται πλέον.</string>
     <string name="patcher_option_paths_gone_title">Λείπουν τα αρχεία επιλογών τροποποίησης.</string>
     <string name="patcher_option_paths_gone_description">Μία ή περισσότερες επιλογές τροποποίησης δείχνουν σε αρχεία που δεν υπάρχουν πλέον. Αφαιρέστε τις διαδρομές για να τροποποιήσετε χωρίς αυτά ή επαναφέρετε τα αρχεία και δοκιμάστε ξανά.</string>
+    <string name="patcher_option_paths_rejected_title">Τα αρχεία επιλογών διορθώματος δεν μπορούν να χρησιμοποιηθούν</string>
+    <string name="patcher_option_paths_rejected_description">Μία ή περισσότερες επιλογές διορθώματος δείχνουν σε αρχεία που λείπουν ή δεν διαθέτουν τα στοιχεία που απαιτεί το διορθώμα. Αφαιρέστε τις διαδρομές για να προχωρήσετε στη διόρθωση χωρίς αυτά, ή διορθώστε τα αρχεία σύμφωνα με τις οδηγίες των επιλογών και δοκιμάστε ξανά</string>
     <string name="patcher_option_paths_clear">Αφαιρέστε τις διαδρομές.</string>
     <string name="patcher_storage_permission_hint">Συμβουλή: Μετακινήστε τα αρχεία στο /Android/data/app.morphe.manager/files/ - Δε χρειάζονται επιπλέον άδειες</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1208,12 +1213,9 @@ morphe_header_custom_dark.png
     <string name="settings_system_import_source_data_success">Επιτυχής εισαγωγή δεδομένων πηγής</string>
     <string name="settings_system_selected_patches_section">Επιλεγμένες τροποποιήσεις</string>
     <string name="settings_system_no_patches_or_options">Δεν υπάρχουν αποθηκευμένες τροποποιήσεις ή επιλογές</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Αντιγραφή επιλογής από…</string>
-    <string name="copy_selection_confirm_with_count">Αντιγραφή %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Δεν υπάρχουν άλλες αποθηκευμένες επιλογές για αντιγραφή</string>
     <string name="copy_selection_available_format">%1$s από %2$s διαθέσιμα</string>
-    <string name="copy_selection_same_source">Ίδια πηγή</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Προσαρμοσμένη επιλογή αρχείων</string>
     <string name="settings_system_custom_file_picker_description">Χρησιμοποιεί τον ενσωματωμένο επιλογέα αρχείων Morphe αντί για τον συστημικό</string>
@@ -1338,6 +1340,8 @@ morphe_header_custom_dark.png
     <string name="reorder_done">Η σειρά αποθηκεύτηκε</string>
     <string name="reset_order">Επαναφορά σειράς</string>
     <string name="reset_order_done">Επαναφορά παραγγελίας</string>
+    <string name="reset_order_confirm_title">Επαναφορά της σειράς;</string>
+    <string name="reset_order_confirm_message">Η λίστα επιστρέφει στην προεπιλεγμένη σειρά της και η σειρά που ορίστηκε χειροκίνητα χάνεται</string>
     <string name="accessibility_select_app">Επιλογή εφαρμογής</string>
     <string name="accessibility_select_source">Επίλεξε πηγή</string>
     <string name="accessibility_move_up">Μετακίνηση προς τα πάνω</string>

@@ -195,7 +195,7 @@ class PatchFlow(
     private val localApkSources: LocalApkSources,
     private val compatibleVersions: StateFlow<Map<String, List<BundledAppTarget>>>,
     private val recommendedVersions: StateFlow<Map<String, AppTarget>>,
-    expertModeCopy: CopySelectionController,
+    expertModePanel: SelectionPanelController,
     private val patcherProcesses: PatcherProcesses
 ) : ApkDownloadHelperHost {
     /** The dialogs the flow has open, see [HomeDialog]. */
@@ -206,7 +206,7 @@ class PatchFlow(
         private set
 
     /** The patches picked by hand for the run, while the expert dialog is open. */
-    val expertMode = ExpertModeSelection(scope, expertModeCopy)
+    val expertMode = ExpertModeSelection(scope, expertModePanel)
 
     /** Starts the patcher on a run once it is set up. */
     var onStartQuickPatch: ((Patcher.ViewModelParams) -> Unit)? = null
@@ -1147,12 +1147,11 @@ class PatchFlow(
                     ))
                 }
 
-                // Runs after validation, so patches the sources dropped never sneak back in. The
-                // saved selection stands in for a snapshot that does not exist yet
+                // Runs after validation, so patches the sources dropped never sneak back in
                 mergeNewlyAdded(
                     bundles = contributingBundles,
                     validated = validatedPatches,
-                    known = { uid -> seenByBundle[uid] ?: savedSelections[uid] },
+                    known = seenByBundle::get,
                     installerType = target.installerType,
                     apkArchitecture = target.apkArchitecture
                 )
@@ -1306,7 +1305,7 @@ class PatchFlow(
         // option it belongs to is out of reach. So it is asked about while the selection is
         // still open and the value can be fixed or dropped on the spot
         val failures = withContext(Dispatchers.IO) {
-            validateOptionPaths(patcherOptions.restrictTo(finalPatches))
+            validateOptionPaths(patcherOptions.restrictTo(finalPatches), bundles)
         }
 
         if (failures.isNotEmpty()) {

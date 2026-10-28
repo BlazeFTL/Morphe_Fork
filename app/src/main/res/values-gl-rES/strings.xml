@@ -84,6 +84,7 @@
     <string name="sources_management_prerelease_toggle">Parche pre-lanzamento</string>
     <string name="sources_management_prerelease_toggle_description">Recibe acceso anticipado a novas versións experimentais dos parches</string>
     <string name="sources_management_experimental_versions_toggle">Versións experimentais da aplicación</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Esta fonte xa foi engadida</string>
     <string name="sources_management_invalid_url">URL de orixe inválido. Por favor, comprprobe o enderezo e tente de novo</string>
     <string name="sources_management_metadata_unavailable">Metadatos N/A</string>
@@ -147,11 +148,10 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Buscar parches</string>
     <string name="expert_mode_disable_all">Desactivar todo</string>
-    <string name="expert_mode_disable_all_done">Todos os parches foron desactivados</string>
     <string name="expert_mode_enable_all">Activar todo</string>
-    <string name="expert_mode_enable_all_done">Todos os parches foron activados</string>
     <string name="expert_mode_reset_to_default">Activar parches recomendados</string>
     <string name="expert_mode_reset_to_default_done">Aplicáronse os parches recomendados</string>
+    <string name="expert_mode_selected_count">%1$s de %2$s seleccionado</string>
     <string name="expert_mode_restore_saved">Restaurar selección gardada</string>
     <string name="expert_mode_restore_saved_done">Restaurouse a selección gardada </string>
     <string name="expert_mode_no_results">Non se atoparon parches</string>
@@ -328,7 +328,7 @@ Elixe outro APK</string>
     <!-- Settings - System Tab - Storage Management - Patched APKs Management -->
     <!-- Settings - System Tab - Storage Management - Original APKs Management -->
     <!-- Settings - System Tab - Storage Management - Patch Selection Management -->
-    <!-- Copy selection from another bundle -->
+    <!-- Selection panel: saved selection, sets and copies -->
     <!-- Settings - System Tab - Custom file picker -->
     <!-- Settings - System Tab - APK download helper -->
     <!-- File Picker -->

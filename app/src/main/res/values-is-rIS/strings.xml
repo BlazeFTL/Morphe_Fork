@@ -200,6 +200,11 @@
     <string name="expert_mode_experimental_version_notice">Þessi uppspretta hefur aðeins tilraunastöðu fyrir þessa útgáfu af forritinu. Pötsunir hennar gætu verið óstöðugar eða ófullkomnar</string>
     <string name="sources_management_experimental_versions_toggle">Tilrauna app úgáfur</string>
     <string name="sources_management_experimental_versions_toggle_description">Sýnir og lagar tilraunamarkmið forrita</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Virkja fyrirframútgáfu-leiðréttingar</string>
+    <string name="sources_management_prerelease_disable">Óvirkja fyrirframútgáfu-leiðréttingar</string>
+    <string name="sources_management_experimental_versions_enable">Virkja tilraununarútgáfur forrita</string>
+    <string name="sources_management_experimental_versions_disable">Óvirkja tilraununarútgáfur forrita</string>
     <string name="sources_management_already_exists">Þessi heimild hefur þegar verið bætt við</string>
     <string name="sources_management_invalid_url">Ógild URL uppspretta. Vinsamlegast skoðaðu netfangið og reyndu aftur</string>
     <string name="sources_management_blocked">Þessi uppfærslujafi er blokkaður og ekki er hægt að bæta við honum</string>
@@ -333,17 +338,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Leita breytistillinga</string>
     <string name="expert_mode_disable_all">Gerðu allt óvirkt</string>
-    <string name="expert_mode_disable_all_done">Allar breytingar gerða óvirkar</string>
     <string name="expert_mode_enable_all">Gerðu allt virkt</string>
-    <string name="expert_mode_enable_all_done">Allar breytingar virkar</string>
     <string name="expert_mode_enable_all_universal_pending">Ýttu aftur til að fá algilda plástra</string>
     <string name="expert_mode_universal_all_warning_title">Virkja alla alhliða plástra?</string>
     <string name="expert_mode_universal_all_warning_message">Alhliða plástrar eru ekki prófaðir saman. Að virkja alla í einu getur valdið árekstrum, mistekinni plástrun eða hruni.</string>
     <string name="expert_mode_reset_to_default">Virkja mæltu breytingar</string>
     <string name="expert_mode_reset_to_default_done">Mæltu breytingarnar notaðar</string>
+    <string name="expert_mode_selected_count">%1$s af %2$s valdir</string>
     <string name="expert_mode_restore_saved">Endurheimta valda</string>
     <string name="expert_mode_restore_saved_done">Geymt val endurheimt</string>
-    <string name="expert_mode_copy_from_bundle">Afrita val frá öðrum pakka</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Engar samsvarandi breytingar í þessum pakka</string>
     <string name="expert_mode_no_results">Engar breytistillingar fundust</string>
     <string name="expert_mode_selected_only_on">Sýni aðeins valda plástra</string>
@@ -644,12 +647,15 @@ Afnaman eyðir varanlega öllum forritsgögnum"</string>
     <string name="patcher_storage_permission_open_settings">Opna geymslustillingar</string>
     <string name="patcher_storage_badge_denied">Umsókn afneitt</string>
     <string name="patcher_storage_badge_missing">Ekki fundist</string>
+    <string name="patcher_storage_badge_rejected">Ekki hægt að nota</string>
     <string name="batch_patch_option_paths_skipped">Skrár fyrir plástursvalkosti vantar og þeim verður sleppt: %1$s</string>
     <string name="patcher_missing_patches_title">Sumir plástrar eru horfnir</string>
     <string name="patcher_missing_patches_description">Viðvarandi valið fyrir þetta forrit nefnir flika sem enginn virkur uppruni býður upp á lengur. Að halda áfram breytir forritinu án þeirra</string>
     <string name="patcher_missing_patches_label">Skrár plásturvalkosta vantar.</string>
     <string name="patcher_option_paths_gone_title">Fjarlægðu slóðirnar og haltu áfram.</string>
     <string name="patcher_option_paths_gone_description">Forritstákn.</string>
+    <string name="patcher_option_paths_rejected_title">Hægt er ekki að nota valskrár fyrir váð</string>
+    <string name="patcher_option_paths_rejected_description">Ein eða fleiri valkostir fyrir váð vísa til skráa sem vantar eða innihalda ekki það sem váðið krefst. Fjarlæg slíkar leiðir til að váða án þeirra, eða leiðréttu skránar eins og lýst er í leiðbeiningum valkostsins og reyndu aftur</string>
     <string name="patcher_option_paths_clear">Fjarlægja slóðirnar og halda áfram</string>
     <string name="patcher_storage_permission_hint">Ábending: Hreyfðu skráar til /Android/data/app.morphe.manager/files/ - þurfir ekki auka heimildir</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1199,12 +1205,9 @@ Nánari upplýsingar: %2$s"</string>
     <string name="settings_system_import_source_data_success">Gagnagögn frá gjafa flutt inn vel</string>
     <string name="settings_system_selected_patches_section">Valdir brekkur</string>
     <string name="settings_system_no_patches_or_options">Engar pattaðar valkostir eða valkostir geymdar</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Afrita val frá…</string>
-    <string name="copy_selection_confirm_with_count">Afrita %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Engin önnur vistað val til að afrita frá</string>
     <string name="copy_selection_available_format">%1$s af %2$s í boði</string>
-    <string name="copy_selection_same_source">Sama heimild</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Sérsniðin skráaraðjari</string>
     <string name="settings_system_custom_file_picker_description">Notar innbyggjan skráaveljanda Morphe í stað kerfisins</string>
@@ -1329,6 +1332,8 @@ Nánari upplýsingar: %2$s"</string>
     <string name="reorder_done">Röð vistuð</string>
     <string name="reset_order">Endurstilla röð</string>
     <string name="reset_order_done">Pöntun endurstillt</string>
+    <string name="reset_order_confirm_title">Endurstilla röðun?</string>
+    <string name="reset_order_confirm_message">Listinn snýr aftur í upphaflegu röð og handvirk röðun glatast</string>
     <string name="accessibility_select_app">Veldu app</string>
     <string name="accessibility_select_source">Veldu uppruna</string>
     <string name="accessibility_move_up">Færa upp</string>

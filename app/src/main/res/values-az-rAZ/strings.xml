@@ -99,7 +99,9 @@
     <string name="home_category_move_to">Kateqoriyaya köçür</string>
     <string name="home_category_move_selected_title">Seçilmiş tətbiqləri köçür</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">%s silinsin?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">Tətbiqləri &lt;b&gt;%s&lt;/b&gt; yerinə geri köçürülür</string>
     <string name="home_category_actions_unavailable">Bu kateqoriya üçün əlçatmaz fəaliyyətlər</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Hansı tətbiqi yamaqlamaq istəyirsiniz?</string>
@@ -200,6 +202,11 @@
     <string name="expert_mode_experimental_version_notice">Bu mənbənin yalnız bu tətbiq versiyası üçün təcrübi dəstəyi var. Yamaqlar qeyri-sabit və ya natamam ola bilər</string>
     <string name="sources_management_experimental_versions_toggle">Təcrübi tətbiq versiyaları</string>
     <string name="sources_management_experimental_versions_toggle_description">Təcrübi tətbiq hədəflərini və yamaqlarını göstərir</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">İlkin buraxılış yamaqlarını aktivləşdir</string>
+    <string name="sources_management_prerelease_disable">İlkin buraxılış yamaqlarını qapat</string>
+    <string name="sources_management_experimental_versions_enable">Təcrübi tətbiq versiyaların işə sal</string>
+    <string name="sources_management_experimental_versions_disable">Təcrübi tətbiq versiyaların qapat</string>
     <string name="sources_management_already_exists">Bu mənbə artıq əlavə edilib</string>
     <string name="sources_management_invalid_url">Etibarsız mənbə URL-si. Xahiş olunur, ünvanı yoxla və təkrar cəhd et</string>
     <string name="sources_management_blocked">Bu yamaq mənbəyi bloklanıb və əlavə edilə bilməz</string>
@@ -257,12 +264,15 @@
     <string name="sources_patch_expert_badge">Mütəxəssis</string>
     <string name="sources_patch_expert_badge_tooltip">Bu yamağı əl ilə yerləşdirmək üçün Tənzimləmələrdə Mütəxəssis rejimin aktivləşdir</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">APK-nı tapmaqda köməyə ehtiyac varmı?</string>
     <string name="home_apk_availability_dialog_simple">&lt;b&gt;%s&lt;/b&gt;, yamaqlamaq üçün yamaqlanmayan APK versiyasına ehtiyacınız var:</string>
     <string name="home_apk_availability_dialog_expert">&lt;b&gt;%s&lt;/b&gt; yamaqlamaq üçün versiyaların yamaqlanmayan APK-sına ehtiyacınız var:</string>
     <string name="home_apk_availability_recommended_label">Tövsiyə olunan</string>
     <string name="home_apk_availability_unpatched_label">Yamaqlanmayan</string>
     <string name="home_apk_availability_incompatible_label">Uyuşmaz</string>
     <string name="home_apk_availability_installed_version">Bu cihazda quraşdırılıb: %s</string>
+    <string name="home_apk_availability_find">Bəli, mənə bunu tapmağa kömək et</string>
+    <string name="home_apk_availability_have">Xeyr, Mənim artıq var</string>
     <string name="home_apk_helper_download">Köməkçi tətbiq istifadə et</string>
     <string name="home_apk_helper_untrusted">Köməkçi tətbiq quraşdırılıb, lakin hələ etibarlı deyil, buna görə də burada təklif olunmur</string>
     <string name="home_apk_helper_untrusted_action">Köməkçiləri nəzərdən keçir</string>
@@ -278,6 +288,7 @@
     <string name="home_apk_helper_wrong_package">Köməkçi tətbiq yamaqlanan tətbiqdən fərqli tətbiq qaytardı</string>
     <string name="home_apk_helper_installed_unavailable">Morphe quraşdırılmış tətbiqi istifadə edə bilmədi</string>
     <string name="home_apk_helper_installed_incompatible">Quraşdırılmış versiya yamaqlana bilməz</string>
+    <string name="home_apk_use_saved_copy">Saxlanılan nüsxəni istifadə et</string>
     <string name="home_apk_use_installed_app">Quraşdırılan tətbiqi istifadə et</string>
     <string name="home_apk_use_saved_unsupported">Yamaqlar bu saxlanılan nüsxəni dəstəkləmir. Yamaqlama sizdən təsdiq istəyəcək və ya başqa APK seçməyi təklif edəcək</string>
     <string name="home_apk_use_installed_unverified">Quraşdırılmış tətbiqin imzasını təsdiqləmək olmadı, mümkündür ki, artıq yamaqlanmış ola bilər</string>
@@ -315,10 +326,15 @@
     <string name="home_download_instructions_link_copied">Link köçürüldü</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">%s APK Seç</string>
+    <string name="home_file_picker_prompt_where">Brauzerlər adətən bunu Yükləmələr qovluğunda saxlayır</string>
     <string name="home_file_picker_prompt_open_apk">APK faylını aç</string>
     <string name="home_recommended_version">Tövsiyə olunan versiya</string>
     <string name="home_selected_version">Seçilən versiya</string>
     <string name="home_select_apk_title">APK Seçin</string>
+    <string name="home_select_apk_description">"Ümumi yamaqlar istənilən tətbiqlə işləyir
+
+APK-nı haradan götürəcəyinizi seçin"</string>
     <string name="home_use_installed_app">Quraşdırılan tətbiqi istifadə et</string>
     <string name="home_use_installed_app_description">Bu cihazda artıq olan tətbiqi seç</string>
     <string name="home_open_apk_file_description">Yaddaşdan APK, APKM, APKS və ya XAPK faylı seç</string>
@@ -334,17 +350,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Yamaqları axtar</string>
     <string name="expert_mode_disable_all">Hamısını qapa</string>
-    <string name="expert_mode_disable_all_done">Bütün yamaqlar qapadılıb</string>
     <string name="expert_mode_enable_all">Hamısını aktivləşdir</string>
-    <string name="expert_mode_enable_all_done">Bütün yamaqlar işləkdir</string>
     <string name="expert_mode_enable_all_universal_pending">Ümumi yamaqlar üçün təkrar toxun</string>
     <string name="expert_mode_universal_all_warning_title">Bütün ümumi yamaqlar aktivləşdirilsin?</string>
     <string name="expert_mode_universal_all_warning_message">Ümumi yamaqlar birlikdə sınaqdan keçirilməyib. Hamısını eyni anda aktivləşdirmək ziddiyyətlərə, yamaqlamanın uğursuz olmasına və ya çökmələrə səbəb ola bilər</string>
     <string name="expert_mode_reset_to_default">Tövsiyə olunan yamaqları aktivləşdir</string>
     <string name="expert_mode_reset_to_default_done">Tövsiyə olunan yamaqlar tətbiq olundu</string>
+    <string name="expert_mode_selected_count">%2$s - dan %1$s ədəd seçildi</string>
     <string name="expert_mode_restore_saved">Saxlanılan seçimi bərpa et</string>
     <string name="expert_mode_restore_saved_done">Saxlanılan seçim bərpa olundu</string>
-    <string name="expert_mode_copy_from_bundle">Seçimi digər paketdən köçür</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Bu paketdəki yamaqlar uyğun deyil</string>
     <string name="expert_mode_no_results">Yamaqlar tapılmadı</string>
     <string name="expert_mode_selected_only_on">Yalnız seçilmiş yamaqları göstərir</string>
@@ -355,6 +369,7 @@
     <string name="expert_mode_patch_required_by_installer">Seçilmiş quraşdırma hədəfi üçün tələb olunur</string>
     <string name="expert_mode_patch_unavailable_for_installer">Seçilmiş quraşdırma hədəfi üçün əlçatan deyil</string>
     <string name="expert_mode_multiple_sources_warning_title">Çoxlu yamaq mənbəyi seçilib</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">Müxtəlif mənbələrdən yamaqlar birlikdə işləmək üçün nəzərdə tutulmayıb və ziddiyyət təşkil edə və ya tətbiqi işləməz hala gətirə bilər</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Təsdiqlənməyən APK</string>
     <string name="home_invalid_signature_message"> &lt;b&gt;%s&lt;/b&gt; üçün seçdiyiniz APK gözlənilən imza sertifikatına uyuşmur. O, dəyişdirilən və ya etibarsız mənbədən ola bilər.</string>
@@ -507,6 +522,8 @@
     <string name="shortcut_check_updates_long">Yamaq yeniləmələrini yoxla</string>
     <string name="shortcut_patch_app">%s tətbiqini yamaqla</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">Bu tətbiqi silsin?</string>
+    <string name="home_app_info_uninstall_removes_data">Tətbiq və onun məlumatları bu cihazdan silinib</string>
     <string name="batch_uninstall_confirm_body">Seçilmiş tətbiqlər cihazınızdan həmişəlik silinəcək</string>
     <string name="home_app_info_remove_app_warning">Bu, həmişəlik silinəcək:</string>
     <string name="home_app_info_delete_item_database">Məlumat saxlanma girişi</string>
@@ -645,12 +662,15 @@ Quraşdırma ləğvi bütün tətbiq məlumatını qalıcı siləcək"</string>
     <string name="patcher_storage_permission_open_settings">Saxlanc tənzimləmələrin aç</string>
     <string name="patcher_storage_badge_denied">İcazə rədd edildi</string>
     <string name="patcher_storage_badge_missing">Tapılmadı</string>
+    <string name="patcher_storage_badge_rejected">İstifadəyə yararsız</string>
     <string name="batch_patch_option_paths_skipped">Yamaq seçimi faylları yoxdur və ötürüləcək: %1$s</string>
     <string name="patcher_missing_patches_title">Bəzi yamaqlar silinib</string>
     <string name="patcher_missing_patches_description">Bu tətbiq üçün saxlanılmış seçimdə artıq heç bir aktiv mənbə tərəfindən təklif olunmayan yamaqlar var. Davam etmək tətbiqi onlar olmadan yamaqlayır</string>
     <string name="patcher_missing_patches_label">Artıq təklif olunmur</string>
     <string name="patcher_option_paths_gone_title">Yamaq seçim faylları çatışmır</string>
     <string name="patcher_option_paths_gone_description">Bir və ya bir neçə yamaq seçimi artıq yerində olmayan fayllara istinad edir. Onlar olmadan yamaqlamaq üçün keçidləri sil və ya faylları geri qaytarıb təkrar cəhd et</string>
+    <string name="patcher_option_paths_rejected_title">Yamaq seçim faylları istifadə edilə bilməz</string>
+    <string name="patcher_option_paths_rejected_description">Bir və ya daha çox yamaq seçimi tapılmayan və ya yamağın tələb etdiklərini ehtiva etməyən fayllara istinad edir. Yamaqlamaq üçün həmin yolları sil və ya faylları seçimin təlimatlarında göstərildiyi kimi düzəldib təkrar cəhd et</string>
     <string name="patcher_option_paths_clear">Fayl yollarını sil və davam et</string>
     <string name="patcher_storage_permission_hint">İpucu: Faylları /Android/data/app.morphe.manager/files/ -a köçür - əlavə icazələrə ehtiyac yoxdur</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -668,7 +688,10 @@ Quraşdırma ləğvi bütün tətbiq məlumatını qalıcı siləcək"</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Yamaqlanma irəliləyişdədir...</string>
     <string name="patcher_notification_text">Yamaqlayıcıya qayıtmaq üçün toxun</string>
+    <string name="patcher_stop_title">Yamaqlamanı dayandırsın?</string>
+    <string name="patcher_stop_discards">İndiyə qədər olan gedişat ləğv edilir və heç nə quraşdırılmır</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Yamaqlamanı saxla</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Tətbiqiniz mükəmməl bir şeyə döndərilir... 🏆</string>
     <string name="patcher_message_2">Köhnə tətbiqlərə yeni fokuslar öyrədirik… 🎩</string>
@@ -851,6 +874,7 @@ Quraşdırma ləğvi bütün tətbiq məlumatını qalıcı siləcək"</string>
     <string name="settings_appearance_app_icon_mark_black">Qara</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Tətbiq simvolu dəyişdirilsin?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe &lt;b&gt;%s&lt;/b&gt; -yə keçmək üçün yenidən başladılır</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Simvolu dəyişdir</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1207,12 +1231,9 @@ Təfərrüatlar: %2$s"</string>
     <string name="settings_system_import_source_data_success">Mənbə məlumatı uğurla idxal olundu</string>
     <string name="settings_system_selected_patches_section">Seçilmiş yamaqlar</string>
     <string name="settings_system_no_patches_or_options">Yamaqlar və ya seçimlər saxlanılmayıb</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Seçimi buradan köçür…</string>
-    <string name="copy_selection_confirm_with_count">%s köçür</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Köçürmək üçün başqa saxlanılmış seçim yoxdur</string>
     <string name="copy_selection_available_format">%2$s saydan %1$s var</string>
-    <string name="copy_selection_same_source">Eyni mənbə</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Fərdi fayl seçici</string>
     <string name="settings_system_custom_file_picker_description">Sistem əvəzinə Morphe-nin qurulu fayl seçicisini istifadə edir</string>
@@ -1337,6 +1358,8 @@ Təfərrüatlar: %2$s"</string>
     <string name="reorder_done">Düzülüş saxlanıldı</string>
     <string name="reset_order">Düzülüşü sıfırla</string>
     <string name="reset_order_done">Düzülüş sıfırlandı</string>
+    <string name="reset_order_confirm_title">Düzülüşü sıfırlasın?</string>
+    <string name="reset_order_confirm_message">Siyahı standarta görə sırasına qayıdır və əllə dəyişdirilmiş sıra itirilir</string>
     <string name="accessibility_select_app">Tətbiq seç</string>
     <string name="accessibility_select_source">Mənbə seç</string>
     <string name="accessibility_move_up">Yuxarı köçür</string>
@@ -1344,6 +1367,7 @@ Təfərrüatlar: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s %3$s-dən %2$s mövqeyinə köçürüldü</string>
     <string name="accessibility_scroll_to_top">Siyahının ən yuxarısına sürüşdür</string>
     <string name="rename">Təkrar adlandır</string>
+    <string name="more_options">Daha çox seçim</string>
     <string name="import_">İdxal et</string>
     <string name="export">Köçür</string>
     <string name="copy">Köçür</string>
@@ -1388,6 +1412,7 @@ Təfərrüatlar: %2$s"</string>
     <string name="show_all">Hamısını göstər</string>
     <string name="ignore">Məhəl qoyma</string>
     <string name="stop_ignoring">Məhəl qoymamağı dayandır</string>
+    <string name="stop">Dayandır</string>
     <string name="logs">Jurnallar</string>
     <string name="sources">Mənbələr</string>
     <string name="installing_ellipsis">Quraşdırılır…</string>

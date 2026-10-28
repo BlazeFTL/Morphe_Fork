@@ -202,6 +202,11 @@
     <string name="expert_mode_experimental_version_notice">Це джерело лише експериментально підтримує цю версію застосунку. Його патчі можуть бути нестабільними або неповними</string>
     <string name="sources_management_experimental_versions_toggle">Експериментальні версії застосунків</string>
     <string name="sources_management_experimental_versions_toggle_description">Показує та патчить експериментальні версії застосунків</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Увімкнути передрелізні патчі</string>
+    <string name="sources_management_prerelease_disable">Вимкнути передрелізні патчі</string>
+    <string name="sources_management_experimental_versions_enable">Увімкнути експерментальні версії</string>
+    <string name="sources_management_experimental_versions_disable">Вимкнути експерментальні версії</string>
     <string name="sources_management_already_exists">Це джерело вже додано</string>
     <string name="sources_management_invalid_url">Недійсна URL-адреса джерела. Перевірте адресу та спробуйте ще раз</string>
     <string name="sources_management_blocked">Це джерело патчів заблоковано і не може бути додано</string>
@@ -343,19 +348,18 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Пошук патчів</string>
     <string name="expert_mode_disable_all">Вимкнути всі</string>
-    <string name="expert_mode_disable_all_done">Усі патчі вимкнено</string>
     <string name="expert_mode_enable_all">Увімкнути всі</string>
-    <string name="expert_mode_enable_all_done">Усі патчі ввімкнено</string>
     <string name="expert_mode_enable_all_universal_pending">Натисніть ще раз для універсальних патчів</string>
     <string name="expert_mode_universal_all_warning_title">Увімкнути всі універсальні патчі?</string>
     <string name="expert_mode_universal_all_warning_message">Універсальні патчі не тестуються разом. Увімкнення всіх одночасно може спричинити конфлікти, невдалий патчинг або збої</string>
     <string name="expert_mode_reset_to_default">Увімкнути рекомендовані патчі</string>
     <string name="expert_mode_reset_to_default_done">Рекомендовані патчі застосовано</string>
+    <string name="expert_mode_selected_count">Вибрано %1$s з %2$s</string>
     <string name="expert_mode_restore_saved">Відновити збережений вибір</string>
     <string name="expert_mode_restore_saved_done">Збережений вибір відновлено</string>
-    <string name="expert_mode_copy_from_bundle">Копіювати вибір з іншого пакета</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Немає відповідних патчів у цьому пакеті</string>
     <string name="expert_mode_no_results">Патчі не знайдено</string>
+    <string name="expert_mode_selected_only">Лише вибрані патчі</string>
     <string name="expert_mode_selected_only_on">Показано лише вибрані патчі</string>
     <string name="expert_mode_selected_only_off">Показано всі патчі</string>
     <string name="expert_mode_universal_patches">Універсальні патчі</string>
@@ -657,12 +661,15 @@
     <string name="patcher_storage_permission_open_settings">Відкрити налаштування сховища</string>
     <string name="patcher_storage_badge_denied">Дозвіл відхилено</string>
     <string name="patcher_storage_badge_missing">Не знайдено</string>
+    <string name="patcher_storage_badge_rejected">Непридатно</string>
     <string name="batch_patch_option_paths_skipped">Файли параметрів патчів відсутні та будуть пропущені: %1$s</string>
     <string name="patcher_missing_patches_title">Деякі патчі зникли</string>
     <string name="patcher_missing_patches_description">Збережений вибір для цього застосунку містить патчі, які більше не пропонує жодне увімкнене джерело. Продовження запатчить застосунок без них</string>
     <string name="patcher_missing_patches_label">Більше не пропонується</string>
     <string name="patcher_option_paths_gone_title">Файли параметрів патчів відсутні</string>
     <string name="patcher_option_paths_gone_description">Один або декілька параметрів патчів вказують на файли, яких більше немає. Видаліть шляхи, щоб пропатчити без них, або поверніть файли та спробуйте знову</string>
+    <string name="patcher_option_paths_rejected_title">Файли параметрів патчів не можна використовувати</string>
+    <string name="patcher_option_paths_rejected_description">Один або кілька параметрів патчів вказують на файли, яких немає або які не містять того, що потрібно патчу. Видаліть шляхи, щоб пропатчити без них, або виправте файли відповідно до інструкцій параметра та спробуйте знову</string>
     <string name="patcher_option_paths_clear">Видалити шляхи та продовжити</string>
     <string name="patcher_storage_permission_hint">Порада: перемістіть файли до /Android/data/app.morphe.manager/files/ - додаткові дозволи не потрібні</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1224,12 +1231,22 @@ morphe_header_custom_dark.png
     <string name="settings_system_import_source_data_success">Дані джерела імпортовано успішно</string>
     <string name="settings_system_selected_patches_section">Вибрані патчі</string>
     <string name="settings_system_no_patches_or_options">Не збережено жодних патчів або параметрів</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Копіювати вибір з…</string>
-    <string name="copy_selection_confirm_with_count">Копіювати %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Вибір</string>
+    <string name="selection_panel_copy_into">Копіювати до %s</string>
+    <string name="selection_sets_title">Набори</string>
+    <string name="selection_set_name">Назва набору</string>
+    <string name="selection_set_save">Зберегти як набір</string>
+    <string name="selection_set_replace">Замінити набір</string>
+    <string name="selection_set_saved">Збережено як %s</string>
+    <string name="selection_set_applied">Перемкнено на %s</string>
+    <string name="selection_set_deleted">Видалено %s</string>
+    <string name="selection_set_renamed">Перейменовано на %s</string>
+    <string name="selection_set_rename_title">Перейменувати набір</string>
+    <string name="selection_set_delete_title">Видалити набір?</string>
+    <string name="selection_set_delete_message">Це назавжди видалить набір %s</string>
     <string name="copy_selection_empty">Немає інших збережених виборів для копіювання</string>
     <string name="copy_selection_available_format">%1$s з %2$s доступно</string>
-    <string name="copy_selection_same_source">Те саме джерело</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Власний вибір файлів</string>
     <string name="settings_system_custom_file_picker_description">Використовує вбудований у Morphe вибір файлів замість системного</string>
@@ -1354,6 +1371,8 @@ morphe_header_custom_dark.png
     <string name="reorder_done">Порядок збережено</string>
     <string name="reset_order">Скинути порядок</string>
     <string name="reset_order_done">Порядок скинуто</string>
+    <string name="reset_order_confirm_title">Скинути порядок?</string>
+    <string name="reset_order_confirm_message">Список повернеться до типового порядку, а порядок, змінений перетягуванням, буде втрачено</string>
     <string name="accessibility_select_app">Вибрати застосунок</string>
     <string name="accessibility_select_source">Виберіть джерело</string>
     <string name="accessibility_move_up">Перемістити вгору</string>
@@ -1361,6 +1380,7 @@ morphe_header_custom_dark.png
     <string name="accessibility_app_moved_announcement">%1$s переміщено на позицію %2$s з %3$s</string>
     <string name="accessibility_scroll_to_top">Прокрутити до початку списку</string>
     <string name="rename">Перейменувати</string>
+    <string name="more_options">Більше параметрів</string>
     <string name="import_">Імпорт</string>
     <string name="export">Експорт</string>
     <string name="copy">Копіювати</string>

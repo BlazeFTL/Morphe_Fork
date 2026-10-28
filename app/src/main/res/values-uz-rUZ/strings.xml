@@ -194,6 +194,7 @@
     <string name="expert_mode_prerelease_notice">Bu manba oldindan chiqarilgan yangilanishlarda. Yangilash muvaffaqiyatsiz bo\'lishi yoki kutilmagan xatti-harakatlarga olib kelishi mumkin.</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimental ilova versiyalari</string>
     <string name="sources_management_experimental_versions_toggle_description">Eksperimental ilova maqsadlarini ko‘rsatadi va yamaydi</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Ushbu manba allaqachon qo\'shilgan</string>
     <string name="sources_management_invalid_url">Noto‘g‘ri manba URL. Iltimos, manzilni tekshiring va yana urinib ko‘ring</string>
     <string name="sources_management_blocked">Sumber tambalan ini diblokir dan tidak dapat ditambahkan</string>
@@ -313,9 +314,7 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Tuzatishlarni qidirish</string>
     <string name="expert_mode_disable_all">Hammasini o\'chirish</string>
-    <string name="expert_mode_disable_all_done">Barcha patchlar o‘chirilgan</string>
     <string name="expert_mode_enable_all">Hammasini yoqish</string>
-    <string name="expert_mode_enable_all_done">Barcha patchlar yoqildi</string>
     <string name="expert_mode_enable_all_universal_pending">Universal yamalar uchun yana bir marta bosing</string>
     <string name="expert_mode_universal_all_warning_title">Barcha universal yangilanishlarni yoqish?</string>
     <string name="expert_mode_universal_all_warning_message">Universal yangilanishlar birgalikda sinovdan o\'tkazilmagan. Ularning hammasini bir vaqtda yoqish konfliktlarga, yangilanishning muvaffaqiyatsiz bo\'lishiga yoki ishdan chiqishiga olib kelishi mumkin.</string>
@@ -323,7 +322,6 @@
     <string name="expert_mode_reset_to_default_done">Tavsiya etilgan patchlar qo‘llandi</string>
     <string name="expert_mode_restore_saved">Saqlangan tanlovni tiklash</string>
     <string name="expert_mode_restore_saved_done">Saqlangan tanlov tiklandi</string>
-    <string name="expert_mode_copy_from_bundle">Boshqa paketdan tanlangan qismini nusxalash</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Ushbu paketda mos keladigan takrorlash yo‘q</string>
     <string name="expert_mode_no_results">Tuzatishlar topilmadi</string>
     <string name="expert_mode_selected_only_on">Faqat tanlangan yamoqlar ko‘rsatilmoqda</string>
@@ -1168,12 +1166,9 @@ Ma’lumotlar: %2$s"</string>
     <string name="settings_system_import_source_data_success">Manba ma\'lumotlari muvaffaqiyatli import qilindi</string>
     <string name="settings_system_selected_patches_section">Tanlangan qismlar</string>
     <string name="settings_system_no_patches_or_options">Qayta urinish</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Tanlangan qismini… dan nusxalash</string>
-    <string name="copy_selection_confirm_with_count">%s nusxalash</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Nusxalash uchun boshqa saqlangan tanlangan qismlar yo‘q</string>
     <string name="copy_selection_available_format">%1$s dan %2$s mavjud</string>
-    <string name="copy_selection_same_source">Xuddi shu manba</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Narsangizdan farq qiling</string>
     <string name="settings_system_custom_file_picker_description">Tizim fayl tanlovchisi o\'rniga Morphe\'ning ichki fayl tanlovchisidan foydalanadi.</string>

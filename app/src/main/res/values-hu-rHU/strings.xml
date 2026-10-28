@@ -200,6 +200,11 @@
     <string name="expert_mode_experimental_version_notice">Ez a forrás csak kísérleti támogatást biztosít a hozzájuk tartozó alkalmazásverzióhoz. A javítások instabilak vagy hiányosak lehetnek</string>
     <string name="sources_management_experimental_versions_toggle">Kísérleti alkalmazásverziók</string>
     <string name="sources_management_experimental_versions_toggle_description">Megmutatja és javítja a kísérleti alkalmazás célpontjait. MaxLength: null. Applied translations: none.</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Kiadás előtti módosítások engedélyezése</string>
+    <string name="sources_management_prerelease_disable">Kiadás előtti módosítások tiltása</string>
+    <string name="sources_management_experimental_versions_enable">Kísérleti alkalmazásverziók engedélyezése</string>
+    <string name="sources_management_experimental_versions_disable">Kísérleti alkalmazásverziók tiltása</string>
     <string name="sources_management_already_exists">Ez a forrás már hozzá lett adva</string>
     <string name="sources_management_invalid_url">Érvénytelen forrás URL. Kérjük, ellenőrizze a címet, és próbálja újra.</string>
     <string name="sources_management_blocked">Ez a javításcsomag forrás le van blokkolva, és nem adható hozzá</string>
@@ -333,17 +338,15 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Módosítások keresése</string>
     <string name="expert_mode_disable_all">Minden módosítás letiltása</string>
-    <string name="expert_mode_disable_all_done">Az összes patch le van tiltva</string>
     <string name="expert_mode_enable_all">Minden módosítás engedélyezése</string>
-    <string name="expert_mode_enable_all_done">Az összes patch engedélyezve van</string>
     <string name="expert_mode_enable_all_universal_pending">Koppintson újra az univerzális javításokhoz.</string>
     <string name="expert_mode_universal_all_warning_title">Az összes univerzális javítás engedélyezése?</string>
     <string name="expert_mode_universal_all_warning_message">Az univerzális javítások nincsenek együtt tesztelve. Ha egyszerre engedélyezed mindet, az ütközéseket, sikertelen javítást vagy összeomlást okozhat.</string>
     <string name="expert_mode_reset_to_default">Ajánlott módosítások engedélyezése</string>
     <string name="expert_mode_reset_to_default_done">A javasolt patch-ek alkalmazva</string>
+    <string name="expert_mode_selected_count">%1$s/%2$s módosítás kiválasztva</string>
     <string name="expert_mode_restore_saved">Mentett összeállítás visszaállítása</string>
     <string name="expert_mode_restore_saved_done">A mentett kijelölés visszaállítva</string>
-    <string name="expert_mode_copy_from_bundle">Más csomagból másolja a kiválasztást</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nincs megfelelő patch ehhez a csomaghoz</string>
     <string name="expert_mode_no_results">Nem találhatók módosítások</string>
     <string name="expert_mode_selected_only_on">Csak a kiválasztott javítások megjelenítése</string>
@@ -644,12 +647,15 @@ Az eltávolítás véglegesen törli az alkalmazás összes adatát."</string>
     <string name="patcher_storage_permission_open_settings">Tárhelybeállítások megnyitása</string>
     <string name="patcher_storage_badge_denied">Engedély megtagadva</string>
     <string name="patcher_storage_badge_missing">Nem található</string>
+    <string name="patcher_storage_badge_rejected">Nem használható</string>
     <string name="batch_patch_option_paths_skipped">A javítási beállítások fájljai hiányoznak, ezért kihagyásra kerülnek: %1$s</string>
     <string name="patcher_missing_patches_title">Egyes javítások már nem érhetők el.</string>
     <string name="patcher_missing_patches_description">Az ebben az appban mentett kiválasztás olyan javításokat tartalmaz, amelyeket már egyik engedélyezett forrás sem kínál. Ha folytatod, az appot ezeken a hiányzó elemek nélkül javítja</string>
     <string name="patcher_missing_patches_label">Már nem ajánlott.</string>
     <string name="patcher_option_paths_gone_title">A javítási beállítások fájljai hiányoznak.</string>
     <string name="patcher_option_paths_gone_description">Egy vagy több javítási beállítás olyan fájlokra mutat, amelyek már nem léteznek. Távolítsa el az útvonalakat, hogy a javítás ezek nélkül folytatódjon, vagy tegye vissza a fájlokat, és próbálja újra.</string>
+    <string name="patcher_option_paths_rejected_title">A javítás opciófájljai nem használhatók</string>
+    <string name="patcher_option_paths_rejected_description">Egy vagy több javítási opció olyan fájlra mutat, amely hiányzik, vagy nem tartalmazza a javításhoz szükséges adatokat. Távolítsa el azokat az útvonalakat, amelyek nélkül is lefuttatható a javítás, vagy javítsa a fájlokat az opció utasításai szerint, majd próbálja újra</string>
     <string name="patcher_option_paths_clear">Távolítsa el az útvonalakat, és folytassa.</string>
     <string name="patcher_storage_permission_hint">Tipp: Mozgasd át a fájlokat az /Android/data/app.morphe.manager/files/ könyvtárba - nincs szükség extra engedélyekre</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1207,12 +1213,9 @@ Részletek: %2$s"</string>
     <string name="settings_system_import_source_data_success">Forrásadatok sikeresen importálva</string>
     <string name="settings_system_selected_patches_section">Kiválasztott módosítások</string>
     <string name="settings_system_no_patches_or_options">Nincsenek mentett módosítások vagy beállítások</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Másolás…</string>
-    <string name="copy_selection_confirm_with_count">%s másolása</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Nincs más mentett kiválasztás, amiből másolhatna</string>
     <string name="copy_selection_available_format">%1$s/%2$s elérhető</string>
-    <string name="copy_selection_same_source">Ugyanaz a forrás</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Egyéni fájlválasztó</string>
     <string name="settings_system_custom_file_picker_description">A Morphe beépített fájlkezelőjének használata a rendszer helyett</string>
@@ -1337,6 +1340,8 @@ Részletek: %2$s"</string>
     <string name="reorder_done">Rendezés mentve</string>
     <string name="reset_order">Rendezés alaphelyzetbe állítása</string>
     <string name="reset_order_done">Rendelés visszaállítva</string>
+    <string name="reset_order_confirm_title">Visszaállítsa a sorrendet?</string>
+    <string name="reset_order_confirm_message">A lista visszátér az alapértelmezett sorrendbe, és a kézzel beállított sorrend elveszik</string>
     <string name="accessibility_select_app">Alkalmazás kiválasztása</string>
     <string name="accessibility_select_source">Forrás kiválasztása</string>
     <string name="accessibility_move_up">Feljebb mozog</string>
@@ -1344,6 +1349,7 @@ Részletek: %2$s"</string>
     <string name="accessibility_app_moved_announcement">A(z) %1$s a(z) %3$s %2$s. pozíciójára került</string>
     <string name="accessibility_scroll_to_top">Görgés a lista tetejére</string>
     <string name="rename">Átnevezés</string>
+    <string name="more_options">További lehetőségek</string>
     <string name="import_">Importálás</string>
     <string name="export">Exportálás</string>
     <string name="copy">Másolás</string>

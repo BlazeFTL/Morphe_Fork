@@ -133,14 +133,12 @@ private fun Float.startingAt(start: Float): Float = ((this - start) / (1f - star
  * @param accentColor Color of the app the list belongs to, which tints the band and the title
  *   actions and badges on it, or null for a neutral band and actions in the theme's palette. The
  *   dialog's own by default, see [ListDialog].
- * @param badges What the whole list shares, in a row under the title as the app details keep theirs,
- *   folding away with the [collapsible] part.
+ * @param badges What the whole list shares, in a row under the title as the app details keep theirs.
+ *   It folds away under the rest of the header as the list scrolls on, and comes back as the list
+ *   scrolls back, see [DialogHeaderCollapse].
  * @param content More of the list's head, under the title, that stays in place however far the
  *   list scrolls, such as where a file picker is in the folder tree or the tabs between sources.
- * @param collapsible What heads the list but is wanted only now and then, such as actions over
- *   the whole of it. Under the [content], it folds away under the rest of the header together with
- *   the [badges] as the list scrolls on, and comes back as the list scrolls back, see
- *   [DialogHeaderCollapse].
+ *   It leads into the list, so the header ends as close under it as it sits under the title.
  * @param alwaysShowBand Keeps the band down while the list rests too, for a dialog about one thing,
  *   such as an app's details or a patch's options, rather than a list to browse.
  * @param actions Title actions drawn ahead of the search toggle.
@@ -158,7 +156,6 @@ fun ListDialogHeader(
     accentColor: Color? = LocalAccent.current,
     badges: (@Composable FlowRowScope.() -> Unit)? = null,
     content: (@Composable ColumnScope.() -> Unit)? = null,
-    collapsible: (@Composable ColumnScope.() -> Unit)? = null,
     alwaysShowBand: Boolean = false,
     actions: (@Composable RowScope.() -> Unit)? = null
 ) {
@@ -188,7 +185,6 @@ fun ListDialogHeader(
             badges = badges,
             actions = actions,
             content = content,
-            collapsible = collapsible,
             modifier = Modifier
                 .align(Alignment.TopCenter)
                 .windowInsetsPadding(WindowInsets.systemBars.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal))
@@ -212,12 +208,12 @@ private fun HeaderContent(
     badges: (@Composable FlowRowScope.() -> Unit)?,
     actions: (@Composable RowScope.() -> Unit)?,
     content: (@Composable ColumnScope.() -> Unit)?,
-    collapsible: (@Composable ColumnScope.() -> Unit)?,
     modifier: Modifier
 ) {
     val entrance = rememberDialogHeaderEntrance()
 
-    Column(modifier = modifier.padding(vertical = DialogHeaderDefaults.VerticalPadding)) {
+    val bottomPadding = if (content != null) Defaults.SpaceSmall else DialogHeaderDefaults.VerticalPadding
+    Column(modifier = modifier.padding(top = DialogHeaderDefaults.VerticalPadding, bottom = bottomPadding)) {
         ProvideAccent(accentColor) {
             HeaderBar(
                 title = {
@@ -246,30 +242,25 @@ private fun HeaderContent(
         // Kept while they fold away, as on a page of the dialog that goes without them, so the
         // header shrinks along rather than the list under it jumping up
         val shownBadges = rememberLatest(badges)
-        if (shownBadges != null || collapsible != null) {
+        if (shownBadges != null) {
             val collapse = LocalDialogHeaderCollapse.current
             if (collapse != null) {
                 // Leaving the header, as on a page without it, leaves no room held for it folded
                 DisposableEffect(collapse) { onDispose { collapse.measured(0) } }
             }
             Column(modifier = if (collapse != null) Modifier.foldsWith(collapse) else Modifier) {
-                if (shownBadges != null) {
-                    FoldingVisibility(visible = badges != null) {
-                        // A row that folds its chips out resizes on the list's own spring, as the list's
-                        // rows do, without the settle, which would dip below the chips and clip them
-                        ProvideAccent(accentColor) {
-                            StatusBadgeRow(
-                                modifier = Modifier
-                                    .padding(top = Defaults.SpaceSmall)
-                                    .animateContentSize(Animations.listSpring(dampingRatio = Spring.DampingRatioNoBouncy))
-                                    .headerBadgeEntrance(entrance),
-                                content = shownBadges
-                            )
-                        }
+                FoldingVisibility(visible = badges != null) {
+                    // A row that folds its chips out resizes on the list's own spring, as the list's
+                    // rows do, without the settle, which would dip below the chips and clip them
+                    ProvideAccent(accentColor) {
+                        StatusBadgeRow(
+                            modifier = Modifier
+                                .padding(top = Defaults.SpaceSmall)
+                                .animateContentSize(Animations.listSpring(dampingRatio = Spring.DampingRatioNoBouncy))
+                                .headerBadgeEntrance(entrance),
+                            content = shownBadges
+                        )
                     }
-                }
-                if (collapsible != null) {
-                    Column(modifier = Modifier.padding(top = Defaults.SpaceSmall), content = collapsible)
                 }
             }
         }
@@ -317,11 +308,19 @@ private fun HeaderTitleText(
                     height = with(LocalDensity.current) { subtitleStyle.lineHeight.toDp() }
                 )
             } else {
-                Text(
-                    text = text,
-                    style = subtitleStyle,
-                    color = dialogSecondaryTextColor()
-                )
+                // Each of its lines kept to one, as the title is, scrolling through a phrase too long
+                // for it rather than wrapping into a line the header never asked for
+                Column {
+                    text.lines().forEach { line ->
+                        Text(
+                            text = line,
+                            style = subtitleStyle,
+                            color = dialogSecondaryTextColor(),
+                            maxLines = 1,
+                            modifier = Modifier.marquee()
+                        )
+                    }
+                }
             }
         }
     }

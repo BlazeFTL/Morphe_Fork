@@ -90,6 +90,7 @@
     <string name="sources_management_prerelease_toggle">Пред-издадени закрпи</string>
     <string name="sources_management_prerelease_toggle_description">Прима ран пристап до нови експериментални верзии на закрпи</string>
     <string name="sources_management_experimental_versions_toggle">Експериментални верзии на апликацијата</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">Овој извор веќе е додаден</string>
     <string name="sources_management_invalid_url">Невалидна URL адреса на извор. Проверете ја адресата и обидете се повторно</string>
     <string name="sources_management_metadata_unavailable">Метаподатоци N/A</string>
@@ -159,9 +160,7 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Пребарувај поправки</string>
     <string name="expert_mode_disable_all">Исклучи ги сите</string>
-    <string name="expert_mode_disable_all_done">Сите закрпи се деактивирани</string>
     <string name="expert_mode_enable_all">Вклучи ги сите</string>
-    <string name="expert_mode_enable_all_done">Сите закрпи се активирани</string>
     <string name="expert_mode_reset_to_default">Овозможете препорачани закрпи</string>
     <string name="expert_mode_reset_to_default_done">Препорачани закрпи применети</string>
     <string name="expert_mode_restore_saved">Врати ја зачуваната селекција</string>
@@ -613,7 +612,7 @@ morphe_header_custom_dark.png
     <string name="settings_system_import_source_data_fail">Неуспешен увоз на податоците од изворот</string>
     <string name="settings_system_import_source_data_success">Податоците од изворот се успешно увезени</string>
     <string name="settings_system_no_patches_or_options">Не се зачувани закрпи или опции</string>
-    <!-- Copy selection from another bundle -->
+    <!-- Selection panel: saved selection, sets and copies -->
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Прилагоден избирач на датотеки</string>
     <!-- Settings - System Tab - APK download helper -->

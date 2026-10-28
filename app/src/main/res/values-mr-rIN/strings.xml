@@ -172,6 +172,7 @@
     <string name="expert_mode_prerelease_notice">हे स्रोत पूर्व-प्रकाशन पॅचवर आहे. पॅचिंग अयशस्वी होऊ शकते किंवा अनपेक्षित वर्तन होऊ शकते.</string>
     <string name="sources_management_experimental_versions_toggle">प्रायोगिक ॲप आवृत्त्या</string>
     <string name="sources_management_experimental_versions_toggle_description">प्रायोगिक अॅप लक्ष्ये दाखवते आणि पॅच करते</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">हे मूळ आधीच जोडले गेले आहे</string>
     <string name="sources_management_invalid_url">अवैध स्रोत URL. कृपया पत्ता तपासा आणि पुन्हा प्रयत्न करा</string>
     <string name="sources_management_blocked">हे पॅच स्रोत अवरोधित केले आहे आणि ते जोडले जाऊ शकत नाही</string>
@@ -289,9 +290,7 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">पॅच शोधा</string>
     <string name="expert_mode_disable_all">सर्व अक्षम करा</string>
-    <string name="expert_mode_disable_all_done">सर्व पॅच अक्षम केले</string>
     <string name="expert_mode_enable_all">सर्व सक्षम करा</string>
-    <string name="expert_mode_enable_all_done">सर्व पॅच सक्षम केले</string>
     <string name="expert_mode_enable_all_universal_pending">सार्वत्रिक पॅचेससाठी पुन्हा टॅप करा</string>
     <string name="expert_mode_universal_all_warning_title">सर्व सार्वत्रिक पॅच सक्षम करायचे?</string>
     <string name="expert_mode_universal_all_warning_message">सार्वत्रिक पॅच एकत्र तपासले गेले नाहीत. त्या सर्वांना एकाच वेळी सक्षम केल्याने संघर्ष, अयशस्वी पॅचिंग किंवा क्रॅश होऊ शकतात.</string>
@@ -299,7 +298,6 @@
     <string name="expert_mode_reset_to_default_done">शिफारस केलेले पॅच लागू केले</string>
     <string name="expert_mode_restore_saved">निवडलेला डेटा पुनर्संचयित करा</string>
     <string name="expert_mode_restore_saved_done">निवड जतन केली पुनर्स्थापित</string>
-    <string name="expert_mode_copy_from_bundle">\u0928\u093e\u0932\u093e\u0928\u093e \u092c\u0941\u0928\u093e\u0932\u093e\u0928\u093e \u0905\u0928\u093e\u0925 \u092c\u0941\u0928\u093e\u0932\u093e\u0928\u093e \u0926\u0941\u0928\u0941\u0928\u093e</string>
     <string name="expert_mode_copy_from_bundle_no_patches">\u0928\u093e\u0932\u093e \u092a\u093e\u0939\u093e\u0928\u093e \u092c\u0941\u0928\u093e\u0932\u093e\u0928\u093e \u0905\u0928\u093e\u0925 \u092a\u093e\u0939\u093e\u0928\u093e \u0926\u0941\u0928\u0941\u0928\u093e</string>
     <string name="expert_mode_no_results">पॅच आढळले नाहीत</string>
     <string name="expert_mode_selected_only_on">फक्त निवडलेले पॅच दाखवत आहे</string>
@@ -1061,12 +1059,9 @@ morphe_header_custom_dark.png
     <string name="settings_system_import_source_data_success">स्रोत डेटा यशस्वीरित्या आयात केला</string>
     <string name="settings_system_selected_patches_section">निवडलेले पॅच</string>
     <string name="settings_system_no_patches_or_options">कोणतेही पॅच किंवा पर्याय जतन केलेले नाहीत</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">\u0928\u093e\u0932\u093e \u0926\u0941\u0928\u0941\u0928\u093e \u0928\u093e\u0932\u093e…</string>
-    <string name="copy_selection_confirm_with_count">कॉपी करा %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">\u0928\u093e\u0932\u093e \u092c\u0941\u0928\u093e\u0932\u093e\u0928\u093e \u0926\u0941\u0928\u0941\u0928\u093e \u0926\u0941\u0928\u0941\u0928\u093e \u0928\u093e\u0932\u093e \u0926\u094d\u0926\u0947 \u0926\u0941\u0928\u0941\u0928\u093e</string>
     <string name="copy_selection_available_format">%1$s पैकी %2$s उपलब्ध</string>
-    <string name="copy_selection_same_source">समान स्रोत</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">कस्टम फाइल पिकर</string>
     <!-- Settings - System Tab - APK download helper -->

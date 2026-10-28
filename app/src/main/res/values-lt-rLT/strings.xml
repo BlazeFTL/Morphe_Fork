@@ -200,6 +200,11 @@
     <string name="expert_mode_experimental_version_notice">Šis šaltinis šiai programėlės versijai turi tik eksperimentinį palaikymą. Jo pataisai gali būti nestabilios arba nepilnos</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentinės programos versijos</string>
     <string name="sources_management_experimental_versions_toggle_description">Rodo ir pataiso eksperimentines programų versijas</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Įjungti bandomosios versijos pataisymus</string>
+    <string name="sources_management_prerelease_disable">Išjungti bandomosios versijos pataisymus</string>
+    <string name="sources_management_experimental_versions_enable">Įjungti eksperimentines programos versijas</string>
+    <string name="sources_management_experimental_versions_disable">Išjungti eksperimentines programos versijas</string>
     <string name="sources_management_already_exists">Šis šaltinis jau pridėtas</string>
     <string name="sources_management_invalid_url">Neteisynga šaltinio URL. Patikrinkite adresą ir bandykite dar kartą</string>
     <string name="sources_management_blocked">Šis pataisų šaltinis užblokuotas ir jo negalima pridėti</string>
@@ -334,9 +339,7 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Ieškoti modifikacijų</string>
     <string name="expert_mode_disable_all">Išjungti viską</string>
-    <string name="expert_mode_disable_all_done">Visi pataisymai išjungti</string>
     <string name="expert_mode_enable_all">Įjungti visus</string>
-    <string name="expert_mode_enable_all_done">Visi pataisymai įjungti</string>
     <string name="expert_mode_enable_all_universal_pending">Palieskite dar kartą, kad įjungtumėte universalias pataisas</string>
     <string name="expert_mode_universal_all_warning_title">Įjungti visas universalias pataisas?</string>
     <string name="expert_mode_universal_all_warning_message">Universalios pataisos nėra išbandytos kartu. Įjungus jas visas vienu metu, gali kilti konfliktų, pataisymas gali nepavykti arba programa gali strigti</string>
@@ -344,7 +347,6 @@
     <string name="expert_mode_reset_to_default_done">Rekomenduojami pataisymai pridėti</string>
     <string name="expert_mode_restore_saved">Atkurti išsaugotą pasirinkimą</string>
     <string name="expert_mode_restore_saved_done">Išsaugotas pasirinkimas atkurtas</string>
-    <string name="expert_mode_copy_from_bundle">Kopijuoti pasirinkimą iš kito rinkinio</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Šiame rinkinyje nėra atitinkančių pataisų</string>
     <string name="expert_mode_no_results">Nėra rasti pataisų</string>
     <string name="expert_mode_selected_only_on">Rodomos tik pasirinktos pataisos</string>
@@ -645,12 +647,15 @@ Pašalinus bus visam laikui ištrinti visi programos duomenys."</string>
     <string name="patcher_storage_permission_open_settings">Atverti saugyklos nustatymus</string>
     <string name="patcher_storage_badge_denied">Leidimas atmestas</string>
     <string name="patcher_storage_badge_missing">Nerasta</string>
+    <string name="patcher_storage_badge_rejected">Nenaudojamas</string>
     <string name="batch_patch_option_paths_skipped">Trūksta pataisos parinkčių failų, jie bus praleisti: %1$s</string>
     <string name="patcher_missing_patches_title">Kai kurių pataisų nebėra</string>
     <string name="patcher_missing_patches_description">Išsaugotas šios programėlės pasirinkimas nurodo pleistrus, kurių daugiau nebeturi jokia įjungta šaltinio versija. Tęsdami, taikysite pleistrus programėlei be jų</string>
     <string name="patcher_missing_patches_label">Nebesiūloma</string>
     <string name="patcher_option_paths_gone_title">Trūksta pataisos parinkčių failų</string>
     <string name="patcher_option_paths_gone_description">Viena ar daugiau pataisos parinkčių nurodo failus, kurių jau nebėra. Pašalinkite kelius, kad pataisytumėte be jų, arba grąžinkite failus ir bandykite dar kartą</string>
+    <string name="patcher_option_paths_rejected_title">Lopų parinkčių failai negali būti naudojami</string>
+    <string name="patcher_option_paths_rejected_description">Viena arba daugiau lopų parinkčių nurodo failus, kurie nėra rasti arba neturi reikiamų lopui duomenų. Pašalinkite keliamus Lopai be jų, arba sutvarkykite failus pagal parinkties instrukcijas ir pabandykite dar kartą</string>
     <string name="patcher_option_paths_clear">Pašalinti kelius ir tęsti</string>
     <string name="patcher_storage_permission_hint">Patarimas: perkelkite failus į /Android/data/app.morphe.manager/files/ – jokių papildomų leidimų nereikia</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1202,12 +1207,9 @@ Išsami informacija: %2$s"</string>
     <string name="settings_system_import_source_data_success">Šaltinio duomenys sėkmingai importuoti</string>
     <string name="settings_system_selected_patches_section">Pasirinktos pataisos</string>
     <string name="settings_system_no_patches_or_options">Nėra išsaugotų pataisų ar parinkčių</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Kopijuoti pasirinkimą iš…</string>
-    <string name="copy_selection_confirm_with_count">Kopijuoti %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Nėra kitų išsaugotų pasirinkimų, iš kurių būtų galima kopijuoti</string>
     <string name="copy_selection_available_format">Prieinama %1$s iš %2$s</string>
-    <string name="copy_selection_same_source">Tas pats šaltinis</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Pasirinktinis failų parinkiklis</string>
     <string name="settings_system_custom_file_picker_description">Naudoja „Morphe</string>
@@ -1332,6 +1334,8 @@ Išsami informacija: %2$s"</string>
     <string name="reorder_done">Eilė išsaugota</string>
     <string name="reset_order">Atstatyti eilę</string>
     <string name="reset_order_done">Eilė atstatyta</string>
+    <string name="reset_order_confirm_title">Atstatyti tvarką?</string>
+    <string name="reset_order_confirm_message">Sąrašas grįš į pradinę tvarką, o rankiniu būdu nustatyta tvarka bus prarasta</string>
     <string name="accessibility_select_app">Pasirinkti programą</string>
     <string name="accessibility_select_source">Pasirinkite šaltinį</string>
     <string name="accessibility_move_up">Perkelti aukštyn</string>

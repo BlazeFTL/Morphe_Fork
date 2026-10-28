@@ -81,6 +81,7 @@
     <string name="sources_management_prerelease_toggle">ಪರಿ- ಬಿಡುಗಡೆ ಪ್ಯಾचಗಳು</string>
     <string name="sources_management_prerelease_toggle_description">ಹೊಚ್ಚಹೊತ್ತಾದ ಪ್ರಾಯೋಗಿಕ ಪ್ಯಾಚ್ಅವಕಾಶ ಪಡೆಯಿರಿ</string>
     <string name="sources_management_experimental_versions_toggle">ಪ್ರಾಯೋಗಿಕ ಅಪ್ಲಿಕೇಶನ್ आवृತ್ತಿಗಳು</string>
+    <!-- Actions of the panel for several selected sources at once -->
     <string name="sources_management_already_exists">ಈ ಮೂಲವನ್ನು ಈಗಾಗಲೇ ಸೇರಿಸಲಾಗಿದೆ</string>
     <string name="sources_management_invalid_url">చెల్లని మూల URL. దయచేసి చిరునామాను తనిఖీ చేసి మళ్లీ ప్రయత్నించండి</string>
     <string name="sources_management_metadata_unavailable">ಮೆಟಾಡೇಟಾ ಲಭ್ಯವಿಲ್ಲ</string>
@@ -116,9 +117,7 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">ಪ್ಯಾಚ್‌ಗಳನ್ನು ಹುಡುಕಿ</string>
     <string name="expert_mode_disable_all">ಎಲ್ಲವನ್ನೂ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
-    <string name="expert_mode_disable_all_done">ಎಲ್ಲಾ ಪ್ಯಾಚ್‌ಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</string>
     <string name="expert_mode_enable_all">ಎಲ್ಲ ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
-    <string name="expert_mode_enable_all_done">ಎಲ್ಲಾ ಪ್ಯಾಚ್\'ಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <!-- "Build" here refers to a specific compiled version of the app (versionCode) -->
@@ -199,7 +198,7 @@
     <!-- Settings - System Tab - Storage Management - Patched APKs Management -->
     <!-- Settings - System Tab - Storage Management - Original APKs Management -->
     <!-- Settings - System Tab - Storage Management - Patch Selection Management -->
-    <!-- Copy selection from another bundle -->
+    <!-- Selection panel: saved selection, sets and copies -->
     <!-- Settings - System Tab - Custom file picker -->
     <!-- Settings - System Tab - APK download helper -->
     <!-- File Picker -->

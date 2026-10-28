@@ -200,6 +200,11 @@
     <string name="expert_mode_experimental_version_notice">Овај извор има само експерименталну подршку за ову верзију апликације. Његове закрпе могу бити нестабилне или некомплетне</string>
     <string name="sources_management_experimental_versions_toggle">Експерименталне верзије апликације</string>
     <string name="sources_management_experimental_versions_toggle_description">Приказује и исправља експерименталне циљеве апликација</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Омогући пред-релизне закрпе</string>
+    <string name="sources_management_prerelease_disable">Онемогући пред-релизне закрпе</string>
+    <string name="sources_management_experimental_versions_enable">Омогући експерименталне верзије апликације</string>
+    <string name="sources_management_experimental_versions_disable">Онемогући експерименталне верзије апликације</string>
     <string name="sources_management_already_exists">Ovaj izvor je već dodan</string>
     <string name="sources_management_invalid_url">Невалидна УРЛ адреса извора. Молимо проверите адресу и покушајте поново</string>
     <string name="sources_management_blocked">Овај извор за надоградњу је блокиран и не може бити додат</string>
@@ -332,9 +337,7 @@
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Претражи печеве</string>
     <string name="expert_mode_disable_all">Онемогући све</string>
-    <string name="expert_mode_disable_all_done">Сви закрпе су деактивиране</string>
     <string name="expert_mode_enable_all">Омогући све</string>
-    <string name="expert_mode_enable_all_done">Све закрпе су активиране</string>
     <string name="expert_mode_enable_all_universal_pending">Додирните поново за универзалне закрпе</string>
     <string name="expert_mode_universal_all_warning_title">Омогући све универзалне закрпе?</string>
     <string name="expert_mode_universal_all_warning_message">Универзалне закрпе нису тестиране заједно. Омогућавање свих одједном може изазвати конфликте, неуспех примене закрпа или падове.</string>
@@ -342,7 +345,6 @@
     <string name="expert_mode_reset_to_default_done">Примењене препоручене закрпе</string>
     <string name="expert_mode_restore_saved">Поврати сачувани избор</string>
     <string name="expert_mode_restore_saved_done">Враћена сачувана селекција</string>
-    <string name="expert_mode_copy_from_bundle">Копирај селекцију из другог пакета</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Нема поклапајућих закрпа у овом пакету</string>
     <string name="expert_mode_no_results">Нema пронађених печева</string>
     <string name="expert_mode_selected_only_on">Приказ само изабраних закрпа</string>
@@ -643,12 +645,15 @@
     <string name="patcher_storage_permission_open_settings">Отворите поставке складиштења</string>
     <string name="patcher_storage_badge_denied">Дозвола одбијена</string>
     <string name="patcher_storage_badge_missing">Непознато</string>
+    <string name="patcher_storage_badge_rejected">Неупотребљиво</string>
     <string name="batch_patch_option_paths_skipped">Датотеке са опцијама закрпе недостају и биће прескочене: %1$s</string>
     <string name="patcher_missing_patches_title">Неки пачеви су нестали</string>
     <string name="patcher_missing_patches_description">Сачувана селекција за ову апликацију означава закључке које више нису понуђени од стране било ког активног извора. Настављањем се патчира апликација без тих закључака</string>
     <string name="patcher_missing_patches_label">Више се не нуде</string>
     <string name="patcher_option_paths_gone_title">Недостају датотеке са опцијама закрпе.</string>
     <string name="patcher_option_paths_gone_description">Једна или више опција закрпе указује на датотеке којих више нема. Уклоните путање да бисте закрпили без њих, или вратите датотеке и покушајте поново.</string>
+    <string name="patcher_option_paths_rejected_title">Датотеке опција за патчевање се не могу користити</string>
+    <string name="patcher_option_paths_rejected_description">Једна или више опција за патчевање указују на датотеке које недостају или немају оно што патч захтева. Уклоните путење како бисте патчевали без њих, или поправите датотеке као што је описано у упутствима за опције и покушајте поново</string>
     <string name="patcher_option_paths_clear">Уклоните путање и наставите.</string>
     <string name="patcher_storage_permission_hint">Совет: Преместите датотеке у /Android/data/app.morphe.manager/files/ - није потребна додатна дозвола</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1200,12 +1205,9 @@ morphe_header_custom_dark.png
     <string name="settings_system_import_source_data_success">Подаци извора успешно увезени</string>
     <string name="settings_system_selected_patches_section">Изабрани пакети</string>
     <string name="settings_system_no_patches_or_options">Нema сачуваних пакета или опција</string>
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Копирај селекцију из…</string>
-    <string name="copy_selection_confirm_with_count">Копирај %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
     <string name="copy_selection_empty">Нема других сачуваних селекција за копирање</string>
     <string name="copy_selection_available_format">%1$s od %2$s dostupno</string>
-    <string name="copy_selection_same_source">Исти извор</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Подешавач фајлова по мери</string>
     <string name="settings_system_custom_file_picker_description">Користи уграђени бирач датотека Морфеа уместо системског</string>
@@ -1330,6 +1332,8 @@ morphe_header_custom_dark.png
     <string name="reorder_done">Ред је сачуван</string>
     <string name="reset_order">Ресетуј ред</string>
     <string name="reset_order_done">Ресет поруџбине</string>
+    <string name="reset_order_confirm_title">Ресетовати редослед?</string>
+    <string name="reset_order_confirm_message">Листа се враћа на подразмешани редослед, а ручно подешени редослед ће бити изгубљен</string>
     <string name="accessibility_select_app">Изаберите апликацију</string>
     <string name="accessibility_select_source">Изаберите извор</string>
     <string name="accessibility_move_up">Помери нагоре</string>

@@ -206,6 +206,11 @@
     <string name="expert_mode_experimental_version_notice">This source has only experimental support for this app version. Its patches may be unstable or incomplete</string>
     <string name="sources_management_experimental_versions_toggle">Experimental app versions</string>
     <string name="sources_management_experimental_versions_toggle_description">Shows and patches experimental app targets</string>
+    <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Enable pre-release patches</string>
+    <string name="sources_management_prerelease_disable">Disable pre-release patches</string>
+    <string name="sources_management_experimental_versions_enable">Enable experimental app versions</string>
+    <string name="sources_management_experimental_versions_disable">Disable experimental app versions</string>
     <string name="sources_management_already_exists">This source has already been added</string>
     <string name="sources_management_invalid_url">Invalid source URL. Please check the address and try again</string>
     <string name="sources_management_blocked">This patch source is blocked and cannot be added</string>
@@ -354,19 +359,18 @@ Choose where to take its APK from"</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_search">Search patches</string>
     <string name="expert_mode_disable_all">Disable all</string>
-    <string name="expert_mode_disable_all_done">All patches disabled</string>
     <string name="expert_mode_enable_all">Enable all</string>
-    <string name="expert_mode_enable_all_done">All patches enabled</string>
     <string name="expert_mode_enable_all_universal_pending">Tap again for universal patches</string>
     <string name="expert_mode_universal_all_warning_title">Enable all universal patches?</string>
     <string name="expert_mode_universal_all_warning_message">Universal patches are not tested together. Enabling all of them at once can cause conflicts, failed patching, or crashes</string>
     <string name="expert_mode_reset_to_default">Enable recommended patches</string>
     <string name="expert_mode_reset_to_default_done">Recommended patches applied</string>
+    <string name="expert_mode_selected_count">%1$s of %2$s selected</string>
     <string name="expert_mode_restore_saved">Restore saved selection</string>
     <string name="expert_mode_restore_saved_done">Saved selection restored</string>
-    <string name="expert_mode_copy_from_bundle">Copy selection from another bundle</string>
     <string name="expert_mode_copy_from_bundle_no_patches">No matching patches in this bundle</string>
     <string name="expert_mode_no_results">No patches found</string>
+    <string name="expert_mode_selected_only">Selected patches only</string>
     <string name="expert_mode_selected_only_on">Showing selected patches only</string>
     <string name="expert_mode_selected_only_off">Showing all patches</string>
     <string name="expert_mode_universal_patches">Universal patches</string>
@@ -680,12 +684,15 @@ Uninstalling will permanently erase all app data"</string>
     <string name="patcher_storage_permission_open_settings">Open storage settings</string>
     <string name="patcher_storage_badge_denied">Permission denied</string>
     <string name="patcher_storage_badge_missing">Not found</string>
+    <string name="patcher_storage_badge_rejected">Not usable</string>
     <string name="batch_patch_option_paths_skipped">Patch option files are missing and will be skipped: %1$s</string>
     <string name="patcher_missing_patches_title">Some patches are gone</string>
     <string name="patcher_missing_patches_description">The saved selection for this app names patches that no enabled source offers anymore. Continuing patches the app without them</string>
     <string name="patcher_missing_patches_label">No longer offered</string>
     <string name="patcher_option_paths_gone_title">Patch option files are missing</string>
     <string name="patcher_option_paths_gone_description">One or more patch options point to files that are no longer there. Remove the paths to patch without them, or put the files back and try again</string>
+    <string name="patcher_option_paths_rejected_title">Patch option files cannot be used</string>
+    <string name="patcher_option_paths_rejected_description">One or more patch options point to files that are missing or do not have what the patch asks for. Remove the paths to patch without them, or fix the files as the option instructions describe and try again</string>
     <string name="patcher_option_paths_clear">Remove the paths and continue</string>
     <string name="patcher_storage_permission_hint">Tip: Move files to /Android/data/app.morphe.manager/files/ - no extra permissions needed</string>
 
@@ -1306,12 +1313,22 @@ Details: %2$s"</string>
     <string name="settings_system_selected_patches_section">Selected patches</string>
     <string name="settings_system_no_patches_or_options">No patches or options saved</string>
 
-    <!-- Copy selection from another bundle -->
-    <string name="copy_selection_title">Copy selection from…</string>
-    <string name="copy_selection_confirm_with_count">Copy %s</string>
+    <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Selections</string>
+    <string name="selection_panel_copy_into">Copy into %s</string>
+    <string name="selection_sets_title">Sets</string>
+    <string name="selection_set_name">Set name</string>
+    <string name="selection_set_save">Save as set</string>
+    <string name="selection_set_replace">Replace set</string>
+    <string name="selection_set_saved">Saved as %s</string>
+    <string name="selection_set_applied">Switched to %s</string>
+    <string name="selection_set_deleted">%s deleted</string>
+    <string name="selection_set_renamed">Renamed to %s</string>
+    <string name="selection_set_rename_title">Rename set</string>
+    <string name="selection_set_delete_title">Delete set?</string>
+    <string name="selection_set_delete_message">This permanently deletes the set %s</string>
     <string name="copy_selection_empty">No other saved selections to copy from</string>
     <string name="copy_selection_available_format">%1$s of %2$s available</string>
-    <string name="copy_selection_same_source">Same source</string>
 
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Custom file picker</string>
@@ -1443,6 +1460,8 @@ Details: %2$s"</string>
     <string name="reorder_done">Order saved</string>
     <string name="reset_order">Reset order</string>
     <string name="reset_order_done">Order reset</string>
+    <string name="reset_order_confirm_title">Reset the order?</string>
+    <string name="reset_order_confirm_message">The list goes back to its default order and the order dragged by hand is lost</string>
     <string name="accessibility_select_app">Select app</string>
     <string name="accessibility_select_source">Select source</string>
     <string name="accessibility_move_up">Move up</string>
@@ -1450,6 +1469,7 @@ Details: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s moved to position %2$s of %3$s</string>
     <string name="accessibility_scroll_to_top">Scroll to top of list</string>
     <string name="rename">Rename</string>
+    <string name="more_options">More options</string>
     <string name="import_">Import</string>
     <string name="export">Export</string>
     <string name="copy">Copy</string>
