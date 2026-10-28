@@ -1351,7 +1351,10 @@ Details: %2$s"</string>
     <string name="file_picker_internal_storage">Internal storage</string>
     <string name="file_picker_sd_card">SD card</string>
     <string name="file_picker_root">Root (/)</string>
+    <string name="file_picker_storage_access_unavailable">This device has no screen to allow access to all files. Allow it over ADB with: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Storages</string>
+    <string name="file_saver_downloads_failed">Could not create the file in Downloads</string>
+    <string name="file_saver_saving_to_downloads">This device has no save screen, so the file goes to Downloads as %1$s</string>
     <string name="file_picker_sort_name_asc">Name (A–Z)</string>
     <string name="file_picker_sort_name_desc">Name (Z–A)</string>
     <string name="file_picker_sort_size_desc">Size (largest first)</string>

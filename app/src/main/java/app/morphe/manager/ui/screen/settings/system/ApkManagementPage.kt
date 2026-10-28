@@ -7,8 +7,6 @@ package app.morphe.manager.ui.screen.settings.system
 
 import android.content.pm.PackageInfo
 import android.view.HapticFeedbackConstants
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
@@ -673,12 +671,9 @@ private fun DialogHostScope.ApkManagementDialogContent(
         selection.retain { it in currentKeys }
     }
 
-    val zipExportLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.CreateDocument("application/zip")
-    ) { uri ->
+    val exportZip = rememberDocumentSaver("application/zip") { uri ->
         val itemsToExport = zipExportItems
         zipExportItems = emptyList()
-        uri ?: return@rememberLauncherForActivityResult
         scope.launch {
             isExporting = true
             try {
@@ -793,7 +788,7 @@ private fun DialogHostScope.ApkManagementDialogContent(
                                         label = exportLabel,
                                         onClick = {
                                             zipExportItems = selectedItems
-                                            zipExportLauncher.launch(FilenameUtils.timestamped(meta.zipExportFileName))
+                                            exportZip(FilenameUtils.timestamped(meta.zipExportFileName))
                                         }
                                     )
                                 )

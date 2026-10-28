@@ -1,3 +1,27 @@
+# [2.3.0-dev.9](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.8...v2.3.0-dev.9) (2026-10-28)
+
+
+### Bug Fixes
+
+* Keep picking and saving files working where the system has no screen for them ([609ebc6](https://github.com/MorpheApp/morphe-manager/commit/609ebc6b300ed788f8908bff75329bc7bcdfad6a))
+
+# [2.3.0-dev.8](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.7...v2.3.0-dev.8) (2026-10-28)
+
+
+### Bug Fixes
+
+* Check a path option with the patch for the app being patched when patches share a name ([f7e2b25](https://github.com/MorpheApp/morphe-manager/commit/f7e2b25a411a97da315575320da78e89e09c0b28))
+* Patch on JDK 25 in 64-bit processes, keeping JDK 17 for 32-bit ARM ([#1302](https://github.com/MorpheApp/morphe-manager/issues/1302)) ([5645434](https://github.com/MorpheApp/morphe-manager/commit/5645434133dc4e0991312d88e5ee62a3dd646923))
+
+# [2.3.0-dev.7](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.6...v2.3.0-dev.7) (2026-10-28)
+
+
+### Bug Fixes
+
+* Keep the patcher process in the foreground during a run ([7097623](https://github.com/MorpheApp/morphe-manager/commit/7097623b8de36bc39b008667ae10825835a01f1b))
+* Log why the patcher JVM failed to start ([9ea4626](https://github.com/MorpheApp/morphe-manager/commit/9ea4626a025aa1e69ecfd3830b6a8cb211702559))
+* Record installs that finish after leaving the patcher screen ([7c8e86c](https://github.com/MorpheApp/morphe-manager/commit/7c8e86c996c0923f859fe720f2d7d1a6f5529f13))
+
 # [2.3.0-dev.6](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.5...v2.3.0-dev.6) (2026-10-27)
 
 

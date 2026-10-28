@@ -5,11 +5,16 @@
 
 package app.morphe.manager.patcher.runtime
 
+import android.app.Notification
 import android.app.Service
+import android.content.Context
 import android.content.Intent
 import android.os.ParcelFileDescriptor
 import android.os.Parcelable
 import android.os.Process
+import androidx.core.app.ServiceCompat
+import androidx.core.content.IntentCompat
+import androidx.work.ForegroundInfo
 import app.morphe.manager.patcher.host.serveRun
 import app.morphe.manager.patcher.patch.PatchBundle
 import app.morphe.manager.patcher.runtime.jvm.EmbeddedJvm
@@ -82,6 +87,21 @@ class PatcherService : Service() {
         return minOf(limitMb, reservable - RESERVATION_MARGIN_32_BIT_MB)
     }
 
+    // Started once the run begins, as some systems end a process that holds no foreground service
+    // of its own as soon as the app leaves the screen, whichever process it is busy for
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        if (intent != null) {
+            val notification = IntentCompat.getParcelableExtra(intent, EXTRA_NOTIFICATION, Notification::class.java)
+            ServiceCompat.startForeground(
+                this,
+                intent.getIntExtra(EXTRA_NOTIFICATION_ID, 0),
+                requireNotNull(notification),
+                intent.getIntExtra(EXTRA_SERVICE_TYPE, 0)
+            )
+        }
+        return START_NOT_STICKY
+    }
+
     override fun onBind(intent: Intent) = binder
 
     // The run is over or was given up on, and a host that is still running cannot be stopped otherwise
@@ -90,14 +110,28 @@ class PatcherService : Service() {
         return false
     }
 
-    private companion object {
-        const val CODE_CACHE_32_BIT_MB = 64
+    companion object {
+        private const val CODE_CACHE_32_BIT_MB = 64
 
         // Address space left beside the heap for the code cache and metaspace, reserved apart from it
-        const val RESERVATION_MARGIN_32_BIT_MB = CODE_CACHE_32_BIT_MB + 64
+        private const val RESERVATION_MARGIN_32_BIT_MB = CODE_CACHE_32_BIT_MB + 64
 
         // A heap below this is no bigger than ART gives a 32-bit app, so ART patches instead
-        const val HEAP_LIMIT_USABLE_MB = 512
+        private const val HEAP_LIMIT_USABLE_MB = 512
+
+        private const val EXTRA_NOTIFICATION_ID = "notification_id"
+        private const val EXTRA_NOTIFICATION = "notification"
+        private const val EXTRA_SERVICE_TYPE = "service_type"
+
+        /**
+         * Starts the service in the foreground under [foreground], the notification the app shows
+         * for the run, so both share the one notification.
+         */
+        fun foregroundIntent(context: Context, foreground: ForegroundInfo): Intent =
+            Intent(context, PatcherService::class.java)
+                .putExtra(EXTRA_NOTIFICATION_ID, foreground.notificationId)
+                .putExtra(EXTRA_NOTIFICATION, foreground.notification)
+                .putExtra(EXTRA_SERVICE_TYPE, foreground.foregroundServiceType)
     }
 }
 

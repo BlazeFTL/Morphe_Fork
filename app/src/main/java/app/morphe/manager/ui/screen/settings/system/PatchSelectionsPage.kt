@@ -7,8 +7,6 @@ package app.morphe.manager.ui.screen.settings.system
 
 import android.net.Uri
 import android.view.HapticFeedbackConstants
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
@@ -303,11 +301,7 @@ private fun PatchSelectionsContent(
         onResult = { uri -> uri?.let(onImportUriPicked) }
     )
 
-    val exportAllSelectionsLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.CreateDocument(JSON_MIMETYPE)
-    ) { uri ->
-        uri?.let { importExportViewModel.exportAllSelections(it) }
-    }
+    val exportAllSelections = rememberDocumentSaver(JSON_MIMETYPE, importExportViewModel::exportAllSelections)
 
     // Nothing to narrow down with a single entry
     val isSearchable = selections.size >= 2
@@ -372,11 +366,7 @@ private fun PatchSelectionsContent(
                     ImportExportFooter(
                         onImport = { openImportAllSelectionsPicker() },
                         onExport = if (selections.isNotEmpty() || data.hasSets) {
-                            {
-                                exportAllSelectionsLauncher.launch(
-                                    importExportViewModel.getAllSelectionsExportFileName()
-                                )
-                            }
+                            { exportAllSelections(importExportViewModel.getAllSelectionsExportFileName()) }
                         } else null
                     )
                 }
@@ -748,13 +738,8 @@ private fun BundleSelectionItem(
         ?: stringResource(R.string.settings_system_patch_selection_source_format, bundleUid)
     val patchCountText = pluralStringResource(R.plurals.patch_count, patchCount, patchCount.toString())
 
-    // Export launcher
-    val exportLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.CreateDocument(JSON_MIMETYPE)
-    ) { uri ->
-        uri?.let {
-            importExportViewModel.exportPackageBundleData(packageName, bundleUid, bundleName, it)
-        }
+    val export = rememberDocumentSaver(JSON_MIMETYPE) { uri ->
+        importExportViewModel.exportPackageBundleData(packageName, bundleUid, bundleName, uri)
     }
 
     SelectionSegment(packageName = packageName, segment = segment, onClick = onShowDetails, modifier = modifier) {
@@ -780,7 +765,7 @@ private fun BundleSelectionItem(
                             icon = MaterialSymbols.Rounded.Upload,
                             label = stringResource(R.string.export),
                             onClick = {
-                                exportLauncher.launch(
+                                export(
                                     importExportViewModel.getPackageBundleDataExportFileName(
                                         packageName, bundleUid, bundleName
                                     )

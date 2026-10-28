@@ -84,7 +84,7 @@ class PatcherWorker(
     private val patcherProcesses: PatcherProcesses
 ) : Worker<PatcherWorker.Args>(context, parameters) {
     private fun runtime(vm: PatcherVm) =
-        Runtime(applicationContext, fs, patchBundleRepository, patcherProcesses, vm)
+        Runtime(applicationContext, fs, patchBundleRepository, patcherProcesses, vm, ::getForegroundInfo)
 
     class Args(
         val input: SelectedApp,

@@ -192,9 +192,16 @@ class InstallViewModel(
         } catch (e: Exception) {
             Log.e(TAG, "Failed to unregister receiver", e)
         }
-        externalInstallTimeoutJob?.cancel()
-        pendingExternalInstall?.let(installerManager::cleanup)
+        // A running monitor is left alone: it ends by itself, and revoking the external
+        // installer's access now would break the installation the user is still going through
     }
+
+    /**
+     * Launches install work that must outlive the screen. The system keeps installing after the
+     * user walks away, and a result left unrecorded shows the app as never patched.
+     */
+    private fun launchDetached(block: suspend CoroutineScope.() -> Unit): Job =
+        applicationScope.launch(Dispatchers.Main.immediate, block = block)
 
     /**
      * Start installation process using user's preferred installer or prompt for selection.
@@ -220,14 +227,14 @@ class InstallViewModel(
         pendingAutoUninstallOnConflict = autoUninstallOnConflict
         pendingAllowSignatureMismatch = allowSignatureMismatch
 
-        installStart = viewModelScope.launch {
+        installStart = launchDetached {
             // Check if we should prompt for installer selection
             val shouldPrompt = prefs.promptInstallerOnInstall.get()
 
             if (shouldPrompt && oneTimeInstallerToken == null) {
                 // Show installer selection dialog
                 showInstallerSelectionDialog = true
-                return@launch
+                return@launchDetached
             }
 
             installState = InstallState.Installing()
@@ -247,7 +254,7 @@ class InstallViewModel(
                     if (pm.getVersionCode(packageInfo) < pm.getVersionCode(existingInfo)) {
                         Log.i(TAG, "Version downgrade detected - showing conflict")
                         installState = InstallState.Conflict(targetPackageName)
-                        return@launch
+                        return@launchDetached
                     }
                     // Check signature mismatch before launching the installer - avoids
                     // INSTALL_FAILED_UPDATE_INCOMPATIBLE from the system PackageInstaller
@@ -259,7 +266,7 @@ class InstallViewModel(
                             if (!tryAutoUninstallSignatureConflict(targetPackageName)) {
                                 Log.i(TAG, "Signature mismatch detected for $targetPackageName - showing conflict")
                                 installState = signatureConflictState(targetPackageName)
-                                return@launch
+                                return@launchDetached
                             }
                         }
                     }
@@ -309,7 +316,7 @@ class InstallViewModel(
                             )
                             installState = InstallState.Ready
                             selectedInstallerToken = null
-                            return@launch
+                            return@launchDetached
                         }
                         InstallerManager.Token.AutoSaved,
                         InstallerManager.Token.RootPlayStore -> {
@@ -321,7 +328,7 @@ class InstallViewModel(
                             )
                             installState = InstallState.Ready
                             selectedInstallerToken = null
-                            return@launch
+                            return@launchDetached
                         }
                         else -> {
                             // For other installers, proceed with fallback
@@ -600,15 +607,15 @@ class InstallViewModel(
         }
 
         // Monitor for install completion
-        externalInstallTimeoutJob = viewModelScope.launch {
+        externalInstallTimeoutJob = launchDetached {
             val timeoutAt = System.currentTimeMillis() + EXTERNAL_INSTALL_TIMEOUT_MS
             while (true) {
-                if (pendingExternalInstall != plan) return@launch
+                if (pendingExternalInstall != plan) return@launchDetached
 
                 val info = withContext(Dispatchers.IO) { pm.getPackageInfo(plan.expectedPackage) }
                 if (info != null && isUpdatedSinceBaseline(info)) {
                     handleExternalInstallSuccess(plan.expectedPackage)
-                    return@launch
+                    return@launchDetached
                 }
 
                 if (System.currentTimeMillis() >= timeoutAt) break
@@ -678,14 +685,14 @@ class InstallViewModel(
             return
         }
 
-        externalInstallTimeoutJob = viewModelScope.launch {
+        externalInstallTimeoutJob = launchDetached {
             val timeoutAt = System.currentTimeMillis() + EXTERNAL_INSTALL_TIMEOUT_MS
             while (true) {
-                if (pendingIntentFallbackPackage == null) return@launch
+                if (pendingIntentFallbackPackage == null) return@launchDetached
                 val info = withContext(Dispatchers.IO) { pm.getPackageInfo(targetPackageName) }
                 if (info != null && isUpdatedSinceBaseline(info)) {
                     handleIntentFallbackSuccess(targetPackageName)
-                    return@launch
+                    return@launchDetached
                 }
                 if (System.currentTimeMillis() >= timeoutAt) break
                 delay(INSTALL_MONITOR_POLL_MS)
@@ -706,15 +713,17 @@ class InstallViewModel(
         externalInstallBaseline = null
         externalInstallStartTime = null
         externalPackageWasPresentAtStart = false
-        pendingPersistCallback?.let { callback ->
-            // Detached from viewModelScope: the broadcast may arrive after the VM is
-            // cleared, so persistence must run on a scope that outlives it
-            applicationScope.launch {
-                runCatching { callback(packageName, installType) }
-                    .onFailure { Log.e(TAG, "Failed to persist app data", it) }
-            }
-        }
+        persistInstall(packageName, installType)
         handleInstallSuccess(packageName)
+    }
+
+    /** Records an install that a package broadcast or a monitor saw finish. */
+    private fun persistInstall(packageName: String, installType: InstallType) {
+        val callback = pendingPersistCallback ?: return
+        launchDetached {
+            runCatching { callback(packageName, installType) }
+                .onFailure { Log.e(TAG, "Failed to persist app data", it) }
+        }
     }
 
     private fun isUpdatedSinceBaseline(info: PackageInfo): Boolean {
@@ -751,17 +760,7 @@ class InstallViewModel(
             InstallType.DEFAULT
         }
 
-        // Detached from viewModelScope: the broadcast may arrive after the VM is cleared
-        pendingPersistCallback?.let { callback ->
-            applicationScope.launch {
-                try {
-                    callback(packageName, installType)
-                } catch (e: Exception) {
-                    Log.e(TAG, "Failed to persist app data", e)
-                }
-            }
-        }
-
+        persistInstall(packageName, installType)
         handleInstallSuccess(packageName)
         messages.show(R.string.installer_external_success, plan.installerLabel)
         return true
@@ -780,9 +779,9 @@ class InstallViewModel(
     ) {
         if (installState is InstallState.Installing) return
 
-        // Detached from viewModelScope: leaving the screen must not stop the install between
-        // writing the module and recording it, or the app runs a build the record does not know
-        applicationScope.launch(Dispatchers.Main.immediate) {
+        // Leaving the screen must not stop the install between writing the module and
+        // recording it, or the app runs a build the record does not know
+        launchDetached {
             currentInstallType = InstallType.MOUNT
             installState = InstallState.Installing()
             var recordCreated = false
@@ -843,14 +842,14 @@ class InstallViewModel(
                             stockVersion ?: "unknown"
                         )
                     )
-                    return@launch
+                    return@launchDetached
                 }
 
                 // Check for base APK - app must be installed for mount
                 if (stockInfo == null) {
                     if (stockCandidate == null || packageInfo.splitNames.isNotEmpty()) {
                         handleInstallError(app.getString(R.string.installer_hint_generic))
-                        return@launch
+                        return@launchDetached
                     }
                 }
 

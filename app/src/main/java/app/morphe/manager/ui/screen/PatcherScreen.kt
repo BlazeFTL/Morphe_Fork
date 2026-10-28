@@ -38,6 +38,7 @@ import app.morphe.manager.ui.viewmodel.InstallViewModel
 import app.morphe.manager.ui.viewmodel.PatcherViewModel
 import app.morphe.manager.util.APK_MIMETYPE
 import app.morphe.manager.util.EventEffect
+import app.morphe.manager.util.rememberDocumentSaver
 import app.morphe.manager.util.shareApks
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -235,11 +236,7 @@ private fun PatcherScreenContent(
 
     KeepScreenOn(patcherViewModel.isPatching)
 
-    val exportApkLauncher = rememberLauncherForActivityResult(
-        ActivityResultContracts.CreateDocument(APK_MIMETYPE)
-    ) { uri ->
-        uri?.let { patcherViewModel.export(it) }
-    }
+    val exportApk = rememberDocumentSaver(APK_MIMETYPE, patcherViewModel::export)
 
     // Post-patch prompts follow a successful install
     val installState = installViewModel.installState
@@ -556,7 +553,7 @@ private fun PatcherScreenContent(
                         onHomeClick = onBackClick,
                         onSaveClick = {
                             if (!isSaving) {
-                                exportApkLauncher.launch(patcherViewModel.exportFileName)
+                                exportApk(patcherViewModel.exportFileName)
                             }
                         },
                         onShareClick = {
