@@ -1,3 +1,12 @@
+# [2.3.0-dev.7](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.6...v2.3.0-dev.7) (2026-10-28)
+
+
+### Bug Fixes
+
+* Keep the patcher process in the foreground during a run ([7097623](https://github.com/MorpheApp/morphe-manager/commit/7097623b8de36bc39b008667ae10825835a01f1b))
+* Log why the patcher JVM failed to start ([9ea4626](https://github.com/MorpheApp/morphe-manager/commit/9ea4626a025aa1e69ecfd3830b6a8cb211702559))
+* Record installs that finish after leaving the patcher screen ([7c8e86c](https://github.com/MorpheApp/morphe-manager/commit/7c8e86c996c0923f859fe720f2d7d1a6f5529f13))
+
 # [2.3.0-dev.6](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.5...v2.3.0-dev.6) (2026-10-27)
 
 
