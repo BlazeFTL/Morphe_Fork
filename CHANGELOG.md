@@ -1,3 +1,11 @@
+# [2.3.0-dev.8](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.7...v2.3.0-dev.8) (2026-10-28)
+
+
+### Bug Fixes
+
+* Check a path option with the patch for the app being patched when patches share a name ([f7e2b25](https://github.com/MorpheApp/morphe-manager/commit/f7e2b25a411a97da315575320da78e89e09c0b28))
+* Patch on JDK 25 in 64-bit processes, keeping JDK 17 for 32-bit ARM ([#1302](https://github.com/MorpheApp/morphe-manager/issues/1302)) ([5645434](https://github.com/MorpheApp/morphe-manager/commit/5645434133dc4e0991312d88e5ee62a3dd646923))
+
 # [2.3.0-dev.7](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.6...v2.3.0-dev.7) (2026-10-28)
 
 
