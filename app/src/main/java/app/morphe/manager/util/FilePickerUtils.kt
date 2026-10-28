@@ -241,9 +241,14 @@ data class PathValidationResult(
  */
 fun validateOptionPaths(
     options: Map<Int, Map<String, Map<String, Any?>>>,
-    bundles: Collection<PatchBundleInfo>
+    bundles: Collection<PatchBundleInfo>,
+    packageName: String
 ): List<PathValidationResult> {
-    val patchesByBundle = bundles.associate { it.uid to it.patches.associateBy(PatchInfo::name) }
+    // Patches for different apps can share a name, such as Change header for YouTube and Music,
+    // and each declares its own check
+    val patchesByBundle = bundles.associate { bundle ->
+        bundle.uid to bundle.patches.filter { it.compatibleWith(packageName) }.associateBy(PatchInfo::name)
+    }
     val failures = mutableListOf<PathValidationResult>()
     for ((bundleUid, patchOptions) in options) {
         for ((patchName, keyValues) in patchOptions) {

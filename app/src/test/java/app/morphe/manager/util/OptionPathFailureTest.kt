@@ -5,6 +5,7 @@
 
 package app.morphe.manager.util
 
+import app.morphe.manager.patcher.patch.CompatiblePackage
 import app.morphe.manager.patcher.patch.Option
 import app.morphe.manager.patcher.patch.PatchBundleInfo
 import app.morphe.manager.patcher.patch.PatchInfo
@@ -87,31 +88,35 @@ class OptionPathFailureTest {
 class OptionPathValidationTest {
     private val folder = createTempDirectory().toFile().apply { deleteOnExit() }
 
-    private fun bundle(validator: (String?) -> Boolean) = PatchBundleInfo.Scoped(
+    private fun headerPatch(packageName: String?, validator: (String?) -> Boolean) = PatchInfo(
+        name = "Change header",
+        description = null,
+        include = true,
+        compatiblePackages = packageName?.let {
+            persistentListOf(CompatiblePackage(packageName = it, versions = null))
+        },
+        options = persistentListOf(
+            Option(
+                title = "Custom header logo",
+                key = "custom",
+                description = "",
+                required = false,
+                type = typeOf<String>(),
+                default = null,
+                presets = null,
+                validator = validator
+            )
+        )
+    )
+
+    private fun bundle(validator: (String?) -> Boolean) = bundle(headerPatch(null, validator))
+
+    private fun bundle(vararg patches: PatchInfo) = PatchBundleInfo.Scoped(
         name = "Source",
         version = null,
         uid = 0,
         enabled = true,
-        patches = listOf(
-            PatchInfo(
-                name = "Change header",
-                description = null,
-                include = true,
-                compatiblePackages = null,
-                options = persistentListOf(
-                    Option(
-                        title = "Custom header logo",
-                        key = "custom",
-                        description = "",
-                        required = false,
-                        type = typeOf<String>(),
-                        default = null,
-                        presets = null,
-                        validator = validator
-                    )
-                )
-            )
-        ),
+        patches = patches.toList(),
         compatible = emptyList(),
         incompatible = emptyList(),
         universal = emptyList()
@@ -126,25 +131,39 @@ class OptionPathValidationTest {
     fun `a folder the option turns down is rejected`() {
         assertEquals(
             listOf(PathValidationResult.Reason.Rejected),
-            validateOptionPaths(options, listOf(bundle { false })).map { it.reason }
+            validateOptionPaths(options, listOf(bundle { false }), APP).map { it.reason }
         )
     }
 
     @Test
     fun `a folder the option takes passes`() {
-        assertTrue(validateOptionPaths(options, listOf(bundle { it == path })).isEmpty())
+        assertTrue(validateOptionPaths(options, listOf(bundle { it == path }), APP).isEmpty())
     }
 
     @Test
     fun `a check that throws turns the folder down`() {
         assertEquals(
             listOf(PathValidationResult.Reason.Rejected),
-            validateOptionPaths(options, listOf(bundle { error("unreadable") })).map { it.reason }
+            validateOptionPaths(options, listOf(bundle { error("unreadable") }), APP).map { it.reason }
         )
     }
 
     @Test
     fun `an option no bundle declares is only checked for being there`() {
-        assertTrue(validateOptionPaths(options, emptyList()).isEmpty())
+        assertTrue(validateOptionPaths(options, emptyList(), APP).isEmpty())
+    }
+
+    @Test
+    fun `a patch of the same name for another app does not judge the folder`() {
+        val bundle = bundle(
+            headerPatch(APP) { it == path },
+            headerPatch("com.google.android.youtube") { false }
+        )
+
+        assertTrue(validateOptionPaths(options, listOf(bundle), APP).isEmpty())
+    }
+
+    private companion object {
+        const val APP = "com.google.android.apps.youtube.music"
     }
 }
