@@ -39,6 +39,7 @@ import app.morphe.manager.domain.repository.PatchBundleRepository.RemoteUrlCheck
 import app.morphe.manager.ui.model.NewSourceOptions
 import app.morphe.manager.ui.screen.shared.*
 import app.morphe.manager.ui.viewmodel.HomeViewModel.PickedBundle
+import app.morphe.manager.util.REMOTE_URL_PLACEHOLDER
 import app.morphe.manager.util.toFilePath
 import com.composables.icons.fontawesome.FontAwesome
 import com.composables.icons.fontawesome.brands.*
@@ -348,7 +349,7 @@ private fun LinkField(state: RemoteLinksState, showHint: Boolean) {
             value = state.input,
             onValueChange = state::onInputChange,
             label = { Text(stringResource(R.string.sources_dialog_remote_url)) },
-            placeholder = { Text("github.com/owner/repo") },
+            placeholder = { Text(REMOTE_URL_PLACEHOLDER) },
             trailingIcon = {
                 if (state.input.isNotEmpty()) {
                     IconButton(onClick = state::clearInput) {
@@ -372,43 +373,54 @@ private fun LinkField(state: RemoteLinksState, showHint: Boolean) {
                 }
             },
             isError = inputCheck is RemoteUrlCheck.Rejected,
-            keyboardOptions = KeyboardOptions(
-                // A keyboard fixing "github" into "GitHub" or capitalizing a pasted link rewrites it
-                capitalization = KeyboardCapitalization.None,
-                autoCorrectEnabled = false,
-                keyboardType = KeyboardType.Uri,
-                imeAction = ImeAction.Done
-            ),
+            keyboardOptions = RemoteUrlKeyboardOptions,
             keyboardActions = KeyboardActions(onDone = { state.commitInput() })
         )
 
-        // Live validation feedback on the link being typed, and what a link can be until the first
-        // source is in the list
-        AnimatedVisibility(visible = inputCheck != null || showHint) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall)
-            ) {
-                val (icon, color, text) = when (inputCheck) {
-                    is RemoteUrlCheck.Rejected -> Triple(
-                        MaterialSymbols.Rounded.Error,
-                        MaterialTheme.colorScheme.error,
-                        stringResource(inputCheck.reason.hintRes)
-                    )
-                    is RemoteUrlCheck.Accepted -> Triple(
-                        MaterialSymbols.Rounded.Check_circle,
-                        SemanticTone.Success.accent,
-                        stringResource(R.string.sources_dialog_url_valid)
-                    )
-                    null -> Triple(
-                        MaterialSymbols.Rounded.Info,
-                        dialogSecondaryTextColor(),
-                        stringResource(R.string.sources_dialog_remote_url_hint)
-                    )
-                }
-                Icon(icon, contentDescription = null, tint = color, modifier = Modifier.size(15.dp))
-                Text(text, style = MaterialTheme.typography.bodySmall, color = color)
+        // What a link can be until the first source is in the list
+        RemoteUrlCheckHint(check = inputCheck, showHint = showHint)
+    }
+}
+
+/** Keyboard for typing a source link, which takes it as written. */
+internal val RemoteUrlKeyboardOptions = KeyboardOptions(
+    // A keyboard fixing "github" into "GitHub" or capitalizing a pasted link rewrites it
+    capitalization = KeyboardCapitalization.None,
+    autoCorrectEnabled = false,
+    keyboardType = KeyboardType.Uri,
+    imeAction = ImeAction.Done
+)
+
+/**
+ * Live validation feedback on a link being typed, from its [check]. Without a link to check, it
+ * says what a link can be where [showHint] is set, and is gone otherwise.
+ */
+@Composable
+internal fun RemoteUrlCheckHint(check: RemoteUrlCheck?, showHint: Boolean) {
+    AnimatedVisibility(visible = check != null || showHint) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall)
+        ) {
+            val (icon, color, text) = when (check) {
+                is RemoteUrlCheck.Rejected -> Triple(
+                    MaterialSymbols.Rounded.Error,
+                    MaterialTheme.colorScheme.error,
+                    stringResource(check.reason.hintRes)
+                )
+                is RemoteUrlCheck.Accepted -> Triple(
+                    MaterialSymbols.Rounded.Check_circle,
+                    SemanticTone.Success.accent,
+                    stringResource(R.string.sources_dialog_url_valid)
+                )
+                null -> Triple(
+                    MaterialSymbols.Rounded.Info,
+                    dialogSecondaryTextColor(),
+                    stringResource(R.string.sources_dialog_remote_url_hint)
+                )
             }
+            Icon(icon, contentDescription = null, tint = color, modifier = Modifier.size(15.dp))
+            Text(text, style = MaterialTheme.typography.bodySmall, color = color)
         }
     }
 }

@@ -1381,11 +1381,50 @@ class PatchBundleRepository(
     }
 
     /**
-     * Checks [url] against the sources there are now, the way [createRemotes] will, so a form can
-     * flag it before it is submitted.
+     * Points [src] at [url] instead and downloads from there, for a source that never installed a
+     * bundle, as one added with a mistyped link. Without a bundle it holds no signing key, patch
+     * selections or options of the old link, so it stays the same source, keeping its name and place.
+     * A link that would not be added is refused the way [createRemotes] refuses it.
      */
-    fun checkRemoteUrl(url: String): RemoteUrlCheck =
-        checkRemoteUrl(url, (store.state.value as? BundleState.Ready)?.remoteSourceKeys().orEmpty())
+    suspend fun changeRemoteLink(src: RemotePatchBundle, url: String) =
+        dispatchAction("Change link (${src.uid})") { state ->
+            val ready = state as? BundleState.Ready ?: return@dispatchAction state
+            val current = ready.sources[src.uid] as? RemotePatchBundle ?: return@dispatchAction state
+            if (current.state !is PatchBundleSource.State.Missing) return@dispatchAction state
+
+            val endpoint = when (val check = checkRemoteUrl(url, ready.remoteSourceKeys(except = current))) {
+                is RemoteUrlCheck.Rejected -> {
+                    messages.showIfInForeground(check.reason.messageRes)
+                    return@dispatchAction state
+                }
+                is RemoteUrlCheck.Accepted -> check.endpoint
+            }
+
+            // Whatever the old link left behind, such as a refused release, is of no use to the new one
+            directoryOf(current.uid).deleteRecursively()
+            forgetBundle(current.uid)
+            metadataFetchErrorsFlow.update { it - current.uid }
+
+            val changed = createEntity("", SourceInfo.from(endpoint), uid = current.uid).load() as RemotePatchBundle
+            update(changed, allowUnsafeNetwork = prefs.allowMeteredUpdates.get())
+            ready.copy(sources = ready.sources.putting(changed.uid, changed))
+        }
+
+    /**
+     * Checks [url] against the sources there are now, the way [createRemotes] will, so a form can
+     * flag it before it is submitted. With [replacing], the way [changeRemoteLink] will.
+     */
+    fun checkRemoteUrl(url: String, replacing: RemotePatchBundle? = null): RemoteUrlCheck =
+        checkRemoteUrl(url, (store.state.value as? BundleState.Ready)?.remoteSourceKeys(except = replacing).orEmpty())
+
+    /**
+     * The link [src] reads as where it is typed: its repository when that expands to the same
+     * bundle, as a link typed in short does, and its endpoint otherwise, such as for another branch.
+     */
+    fun typedRemoteLink(src: RemotePatchBundle): String =
+        RemotePatchBundle.inferPageUrlFromEndpoint(src.endpoint)
+            ?.takeIf { runCatching { normalizeRemoteBundleUrl(it) }.getOrNull() == src.endpoint }
+            ?: src.endpoint
 
     private fun checkRemoteUrl(url: String, takenKeys: Set<String>): RemoteUrlCheck {
         val endpoint = try {
@@ -1411,9 +1450,12 @@ class PatchBundleRepository(
      * What the remote sources are recognized by when a new one is checked against them: each
      * endpoint, lowercased. The built-in source's endpoint is an API identifier no link reads as,
      * so it is also known by the repository it publishes, in the form [toBlocklistKey] gives.
+     * The source [except] is left out, as its own link does not duplicate it.
      */
-    private fun BundleState.Ready.remoteSourceKeys(): Set<String> =
-        sources.values.filterIsInstance<RemotePatchBundle>().flatMapTo(mutableSetOf()) { it.sourceKeys() }
+    private fun BundleState.Ready.remoteSourceKeys(except: RemotePatchBundle? = null): Set<String> =
+        sources.values.filterIsInstance<RemotePatchBundle>()
+            .filter { it.uid != except?.uid }
+            .flatMapTo(mutableSetOf()) { it.sourceKeys() }
 
     private fun RemotePatchBundle.sourceKeys(): Set<String> = buildSet {
         add(endpoint.lowercase(Locale.US))

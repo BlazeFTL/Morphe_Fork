@@ -337,6 +337,7 @@ private fun SourcesPageContent(
     val bundleToShowApps = remember { mutableStateOf<PatchBundleSource?>(null) }
     var bundleRequiringManagerUpdate by remember { mutableStateOf<PatchBundleSource?>(null) }
     var bundleToTrustKey by remember { mutableStateOf<RemotePatchBundle?>(null) }
+    var bundleToChangeLink by remember { mutableStateOf<RemotePatchBundle?>(null) }
     var bundleToShowChangelogUid by remember { mutableStateOf<Int?>(null) }
 
     // Switching branches invalidates whatever the changelog dialog is holding, so an open dialog
@@ -580,6 +581,10 @@ private fun SourcesPageContent(
                                         },
                                         onOutdatedManagerClick = { bundleRequiringManagerUpdate = bundle },
                                         onReviewSigningKey = { (bundle as? RemotePatchBundle)?.let { bundleToTrustKey = it } },
+                                        // Only while nothing was downloaded, see PatchBundleRepository.changeRemoteLink
+                                        onChangeLink = (bundle as? RemotePatchBundle)
+                                            ?.takeIf { !it.isDefault && it.state is PatchBundleSource.State.Missing }
+                                            ?.let { remote -> { bundleToChangeLink = remote } },
                                         onOpenInBrowser = {
                                             openUrl((bundle as? RemotePatchBundle)?.browsePageUrl ?: SOURCE_REPO_URL)
                                         },
@@ -681,7 +686,7 @@ private fun SourcesPageContent(
         )
     }
 
-    // Pre-release enable confirmation dialog, which a selection waits on as it does on a delete
+    // Pre-release enable confirmation dialog, which a selection waits on as it does when deleting
     DialogHost(target = bundlesToConfirmPrerelease.value.takeIf { it.isNotEmpty() }) { bundles ->
         ConfirmDialog(
             title = stringResource(R.string.sources_prerelease_warning_title),
@@ -708,6 +713,19 @@ private fun SourcesPageContent(
                 scope.launch { patchBundleRepository.trustNewSigningKey(bundle) }
             },
             onDismiss = { bundleToTrustKey = null }
+        )
+    }
+
+    // Link change dialog, for a source that could not download from the link it was added with
+    DialogHost(target = bundleToChangeLink) { bundle ->
+        ChangeSourceLinkDialog(
+            initialValue = patchBundleRepository.typedRemoteLink(bundle).bareLink(),
+            onCheckUrl = { patchBundleRepository.checkRemoteUrl(it, replacing = bundle) },
+            onDismissRequest = { bundleToChangeLink = null },
+            onConfirm = { url ->
+                bundleToChangeLink = null
+                scope.launch { patchBundleRepository.changeRemoteLink(bundle, url) }
+            }
         )
     }
 
@@ -817,13 +835,17 @@ private data class SourceCardInfo(
     val useExperimentalVersions: Boolean
 )
 
-/** What a source card's controls do. A null toggle or [onShare] leaves its control out. */
+/**
+ * What a source card's controls do. A null toggle, [onShare] or [onChangeLink] leaves its control
+ * out.
+ */
 private class SourceCardActions(
     val onPatchesClick: () -> Unit,
     val onAppsClick: () -> Unit,
     val onVersionClick: () -> Unit,
     val onOutdatedManagerClick: () -> Unit,
     val onReviewSigningKey: () -> Unit,
+    val onChangeLink: (() -> Unit)?,
     val onOpenInBrowser: () -> Unit,
     val onReportIssue: () -> Unit,
     val onShare: (() -> Unit)?,
@@ -1061,12 +1083,15 @@ private fun BundleManagementCard(
                                 // Metadata unavailable hint (shown when patches-bundle.json / remote fetch failed)
                                 CardNotice(
                                     visible = isUnavailable && !signingKeyChanged,
-                                    text = if (bundle.state is PatchBundleSource.State.Missing) {
-                                        stringResource(R.string.sources_management_metadata_unavailable_hint_missing)
-                                    } else {
-                                        stringResource(R.string.sources_management_metadata_unavailable_hint)
-                                    },
-                                    icon = SourceProblem.Unavailable.icon
+                                    text = stringResource(
+                                        when {
+                                            actions.onChangeLink != null -> R.string.sources_management_metadata_unavailable_hint_missing_editable
+                                            bundle.state is PatchBundleSource.State.Missing -> R.string.sources_management_metadata_unavailable_hint_missing
+                                            else -> R.string.sources_management_metadata_unavailable_hint
+                                        }
+                                    ),
+                                    icon = SourceProblem.Unavailable.icon,
+                                    onClick = actions.onChangeLink
                                 )
 
                                 // Signing key hint (shown when an update was refused for its signer)
@@ -1217,7 +1242,7 @@ private fun BundleManagementCard(
                                 // Grouped apart from the card's spaced column, so the experimental toggle
                                 // brings its gap along as it folds in rather than the column opening it at once
                                 Column {
-                                    // Prerelease toggle, for a source with a pre-release channel
+                                    // Pre-release toggle, for a source with a pre-release channel
                                     if (actions.onPrereleasesToggle != null) {
                                         ToggleRow(
                                             title = stringResource(R.string.sources_management_prerelease_toggle),
