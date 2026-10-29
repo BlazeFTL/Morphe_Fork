@@ -1,3 +1,18 @@
+# [2.3.0-dev.10](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.9...v2.3.0-dev.10) (2026-10-29)
+
+
+### Bug Fixes
+
+* Keep patching where the system refuses the patcher a foreground service ([38fa6b7](https://github.com/MorpheApp/morphe-manager/commit/38fa6b7cddb19f83219529297b2e1a30bc0b44aa))
+
+
+### Features
+
+* Change the link of a source that could not download ([122ddbe](https://github.com/MorpheApp/morphe-manager/commit/122ddbee93ccc7fd623895dba8c279047c467d32))
+* Date and sort sources by their release ([02352b0](https://github.com/MorpheApp/morphe-manager/commit/02352b0c8ba61a12e9568c2c2b4478d799abb70a))
+* Mark apps a source adds later with a badge ([b375f81](https://github.com/MorpheApp/morphe-manager/commit/b375f81957536551f56f25be20018b292256cabe))
+* Restore a mount a store update replaced from the copies its root module keeps ([#1306](https://github.com/MorpheApp/morphe-manager/issues/1306)) ([c41ac9b](https://github.com/MorpheApp/morphe-manager/commit/c41ac9b95e2cae2d51f8e1887701457908c5f998))
+
 # [2.3.0-dev.9](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.8...v2.3.0-dev.9) (2026-10-28)
 
 
