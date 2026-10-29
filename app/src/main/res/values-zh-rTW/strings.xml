@@ -99,7 +99,9 @@
     <string name="home_category_move_to">移至類別</string>
     <string name="home_category_move_selected_title">移動所選應用程式</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">刪除 %s？</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">其應用程式將移回 &lt;b&gt;%s&lt;/b&gt;</string>
     <string name="home_category_actions_unavailable">此類別的動作不可用</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">你想修補哪個應用程式？</string>
@@ -262,12 +264,15 @@
     <string name="sources_patch_expert_badge">專家</string>
     <string name="sources_patch_expert_badge_tooltip">在 [設定] 啟用專家模式，以手動納入此修補程式</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">需要幫助尋找 APK 嗎？</string>
     <string name="home_apk_availability_dialog_simple">若要修補 &lt;b&gt;%s&lt;/b&gt;，您需要這個版本的未修補 APK:</string>
     <string name="home_apk_availability_dialog_expert">若要修補 &lt;b&gt;%s&lt;/b&gt;，您需要以下版本的未修補 APK:</string>
     <string name="home_apk_availability_recommended_label">推薦</string>
     <string name="home_apk_availability_unpatched_label">未修補</string>
     <string name="home_apk_availability_incompatible_label">不相容</string>
     <string name="home_apk_availability_installed_version">已安裝於此裝置：%s</string>
+    <string name="home_apk_availability_find">是的，幫我找一下</string>
+    <string name="home_apk_availability_have">否，我已經有了</string>
     <string name="home_apk_helper_download">使用輔助應用程式</string>
     <string name="home_apk_helper_untrusted">已安裝輔助應用程式但尚未取得信任，因此在此處不提供選項</string>
     <string name="home_apk_helper_untrusted_action">檢視輔助程式</string>
@@ -283,6 +288,8 @@
     <string name="home_apk_helper_wrong_package">輔助應用程式回傳了與正在修補的應用程式不同的應用程式</string>
     <string name="home_apk_helper_installed_unavailable">Morphe 無法使用已安裝的應用程式</string>
     <string name="home_apk_helper_installed_incompatible">安裝的版本無法修補</string>
+    <string name="home_apk_use_saved_copy">使用儲存的複本</string>
+    <string name="home_apk_use_installed_app">使用已安裝的應用程式</string>
     <string name="home_apk_use_saved_unsupported">修補程式不支援此已儲存的副本。對其進行修補會要求您確認，或選擇另一個 APK。</string>
     <string name="home_apk_use_installed_unverified">無法驗證已安裝應用程式的簽名，因此可能已經被篡改</string>
     <string name="home_unverified">未驗證</string>
@@ -319,10 +326,15 @@
     <string name="home_download_instructions_link_copied">已複製連結</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">選擇 %s APK</string>
+    <string name="home_file_picker_prompt_where">瀏覽器通常將其儲存在 Download 資料夾中</string>
     <string name="home_file_picker_prompt_open_apk">開啟 APK 檔案</string>
     <string name="home_recommended_version">推薦版本</string>
     <string name="home_selected_version">所選版本</string>
     <string name="home_select_apk_title">選取 APK</string>
+    <string name="home_select_apk_description">"通用補丁適用於任何應用程式
+
+選擇 APK 的來源"</string>
     <string name="home_use_installed_app">使用已安裝的應用程式</string>
     <string name="home_use_installed_app_description">選擇已安裝在此裝置上的應用程式</string>
     <string name="home_open_apk_file_description">從儲存空間選擇 APK、APKM、APKS 或 XAPK 檔案</string>
@@ -349,6 +361,7 @@
     <string name="expert_mode_restore_saved_done">已儲存的選取已還原</string>
     <string name="expert_mode_copy_from_bundle_no_patches">此套件中沒有相符的修補程式</string>
     <string name="expert_mode_no_results">找不到修補程式</string>
+    <string name="expert_mode_selected_only">僅限已選取的修補補丁</string>
     <string name="expert_mode_selected_only_on">僅顯示已選取的修補程式</string>
     <string name="expert_mode_selected_only_off">顯示所有修補程式</string>
     <string name="expert_mode_universal_patches">通用型修補程式</string>
@@ -357,6 +370,7 @@
     <string name="expert_mode_patch_required_by_installer">選定安裝目標需要</string>
     <string name="expert_mode_patch_unavailable_for_installer">未針對選定的安裝目標提供</string>
     <string name="expert_mode_multiple_sources_warning_title">選取了多個修補來源</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">來自不同來源的補丁並非設計為共同運作，可能會產生衝突或導致應用程式損壞</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">未驗證的 APK</string>
     <string name="home_invalid_signature_message">您為 &lt;b&gt;%s&lt;/b&gt; 選取的 APK 與預期的簽署憑證不符。APK 可能已遭修改，或來自不受信任的來源</string>
@@ -509,6 +523,8 @@
     <string name="shortcut_check_updates_long">檢查修補程式更新</string>
     <string name="shortcut_patch_app">修補 %s</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">要解除安裝此應用程式嗎？</string>
+    <string name="home_app_info_uninstall_removes_data">該應用程式及其數據將從此裝置中移除</string>
     <string name="batch_uninstall_confirm_body">所選取的應用程式將會從您的裝置中永久移除。</string>
     <string name="home_app_info_remove_app_warning">這項操作將永久刪除：</string>
     <string name="home_app_info_delete_item_database">資料庫項目</string>
@@ -673,7 +689,10 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">修補進行中…</string>
     <string name="patcher_notification_text">輕觸以返回修補程式畫面</string>
+    <string name="patcher_stop_title">停止補丁？</string>
+    <string name="patcher_stop_discards">目前的進度將被捨棄且不會安裝任何內容</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">繼續修補</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">正在將您的應用程式變成很棒的東西… 🏆</string>
     <string name="patcher_message_2">教老應用程式新把戲… 🎩</string>
@@ -856,6 +875,7 @@
     <string name="settings_appearance_app_icon_mark_black">黑色</string>
     <string name="settings_appearance_app_icon_change_dialog_title">變更應用程式圖示？</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe 將重新啟動以切換至 &lt;b&gt;%s&lt;/b&gt;</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">變更圖示</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1212,6 +1232,19 @@ morphe_header_custom_dark.png
     <string name="settings_system_selected_patches_section">已選取的修補程式</string>
     <string name="settings_system_no_patches_or_options">未儲存任何修補程式或選項</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">選取項目</string>
+    <string name="selection_panel_copy_into">複製到 %s</string>
+    <string name="selection_sets_title">集組</string>
+    <string name="selection_set_name">集組名稱</string>
+    <string name="selection_set_save">儲存為集組</string>
+    <string name="selection_set_replace">取代集組</string>
+    <string name="selection_set_saved">已儲存為 %s</string>
+    <string name="selection_set_applied">已切換至 %s</string>
+    <string name="selection_set_deleted">%s 已刪除</string>
+    <string name="selection_set_renamed">已重新命名為 %s</string>
+    <string name="selection_set_rename_title">重新命名組合</string>
+    <string name="selection_set_delete_title">刪除組合？</string>
+    <string name="selection_set_delete_message">這將永久刪除組合 %s</string>
     <string name="copy_selection_empty">沒有其他已儲存的選取項目可供複製</string>
     <string name="copy_selection_available_format">%1$s of %2$s 可用</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1233,7 +1266,10 @@ morphe_header_custom_dark.png
     <string name="file_picker_internal_storage">內部儲存空間</string>
     <string name="file_picker_sd_card">SD 卡</string>
     <string name="file_picker_root">根目錄 (/)</string>
+    <string name="file_picker_storage_access_unavailable">此裝置沒有螢幕可允許存取所有檔案。請透過 ADB 允許：adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">儲存空間</string>
+    <string name="file_saver_downloads_failed">無法在「下載」中建立檔案</string>
+    <string name="file_saver_saving_to_downloads">此裝置沒有儲存螢幕，因此檔案將以 %1$s 的名稱儲存至「下載」</string>
     <string name="file_picker_sort_name_asc">名稱 (A–Z)</string>
     <string name="file_picker_sort_name_desc">名稱 (Z–A)</string>
     <string name="file_picker_sort_size_desc">大小 (由大到小)</string>
@@ -1347,6 +1383,7 @@ morphe_header_custom_dark.png
     <string name="accessibility_app_moved_announcement">%1$s 移至 %3$s 的第 %2$s 個位置</string>
     <string name="accessibility_scroll_to_top">捲動到列表頂端</string>
     <string name="rename">重新命名</string>
+    <string name="more_options">更多選項</string>
     <string name="import_">匯入</string>
     <string name="export">匯出</string>
     <string name="copy">複製</string>
@@ -1391,6 +1428,7 @@ morphe_header_custom_dark.png
     <string name="show_all">查看全部</string>
     <string name="ignore">忽略</string>
     <string name="stop_ignoring">停止忽略</string>
+    <string name="stop">停止</string>
     <string name="logs">記錄</string>
     <string name="sources">來源</string>
     <string name="installing_ellipsis">安裝中……</string>

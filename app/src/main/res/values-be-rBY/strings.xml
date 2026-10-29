@@ -356,10 +356,12 @@
     <string name="expert_mode_universal_all_warning_message">Універсальныя патчы не тэсціраваліся разам. Уключаэнне іх усіх адначасова можа прывесці да канфліктаў, памылак пры патчынгу або збояў</string>
     <string name="expert_mode_reset_to_default">Уключаць рэкамендаваныя патчы</string>
     <string name="expert_mode_reset_to_default_done">Рэкамендаваныя патчы прымененыя</string>
+    <string name="expert_mode_selected_count">Выбрана %1$s з %2$s</string>
     <string name="expert_mode_restore_saved">Аднавіць захаваны выбар</string>
     <string name="expert_mode_restore_saved_done">Захаваны выбар аднаўлены</string>
     <string name="expert_mode_copy_from_bundle_no_patches">У гэтым бандле няма адпаведных патчаў</string>
     <string name="expert_mode_no_results">Патчаў не знойдзена</string>
+    <string name="expert_mode_selected_only">Толькі выбраныя патчы</string>
     <string name="expert_mode_selected_only_on">Паказваюць толькі выбраныя патчы</string>
     <string name="expert_mode_selected_only_off">Паказваюць усе патчы</string>
     <string name="expert_mode_universal_patches">Універсальныя патчы</string>
@@ -661,12 +663,15 @@
     <string name="patcher_storage_permission_open_settings">Адкрыць налады сховішча</string>
     <string name="patcher_storage_badge_denied">У даступе адмоўлена</string>
     <string name="patcher_storage_badge_missing">Не знойдзена</string>
+    <string name="patcher_storage_badge_rejected">Непрыдатна</string>
     <string name="batch_patch_option_paths_skipped">Файлы опцый патча адсутнічаюць і будуць прапушчаны: %1$s</string>
     <string name="patcher_missing_patches_title">Некаторыя патчы зніклі</string>
     <string name="patcher_missing_patches_description">Захаваны выбар для гэтай праграмы ўключае патчы, якія больш не прапануе ніводнае ўключанае крыніца. Працяг працуе як патчынг праграмы без іх</string>
     <string name="patcher_missing_patches_label">Больш не прапануецца</string>
     <string name="patcher_option_paths_gone_title">Файлы опцый патча адсутнічаюць</string>
     <string name="patcher_option_paths_gone_description">Адна або некалькі опцый патча пасылаюцца на файлы, якіх больш няма. Выдаліце шляхі, каб прапатчыць без іх, або верніце файлы і паспрабуйце зноў</string>
+    <string name="patcher_option_paths_rejected_title">Файлы опцый патча не могуць быць выкарыстаны</string>
+    <string name="patcher_option_paths_rejected_description">Адно ці некалькі варыянтаў патчаў пасылаюцца на файлы, якіх няма або якія не ўтрымліваюць патрэбных патчу даных. Выдаліце шляхі да патчаў без іх або выправіце файлы згодна з інструкцыямі і паспрабуйце зноў</string>
     <string name="patcher_option_paths_clear">Выдаліць шляхі і працягнуць</string>
     <string name="patcher_storage_permission_hint">Падказка: Перамясціце файлы ў /Android/data/app.morphe.manager/files/ — дадатковыя дазволы не патрабуюцца</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1229,6 +1234,19 @@ morphe_header_custom_dark.png
     <string name="settings_system_selected_patches_section">Выбраныя патчы</string>
     <string name="settings_system_no_patches_or_options">Патчы або налады не захаваны</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Выбары</string>
+    <string name="selection_panel_copy_into">Капіяваць у %s</string>
+    <string name="selection_sets_title">Наборы</string>
+    <string name="selection_set_name">Усталіць назву</string>
+    <string name="selection_set_save">Захаваць як набор</string>
+    <string name="selection_set_replace">Замяніць набор</string>
+    <string name="selection_set_saved">Захавана як %s</string>
+    <string name="selection_set_applied">Пераключана на %s</string>
+    <string name="selection_set_deleted">%s выдалена</string>
+    <string name="selection_set_renamed">Пераіменавана ў %s</string>
+    <string name="selection_set_rename_title">Пераіменаваць набор</string>
+    <string name="selection_set_delete_title">Выдаліць набор?</string>
+    <string name="selection_set_delete_message">Гэта назаўсёды выдаліць набор %s</string>
     <string name="copy_selection_empty">Няма іншых захаваных выбараў для капіявання</string>
     <string name="copy_selection_available_format">%1$s з %2$s даступна</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1250,7 +1268,10 @@ morphe_header_custom_dark.png
     <string name="file_picker_internal_storage">Унутраная памяць</string>
     <string name="file_picker_sd_card">SD-карта</string>
     <string name="file_picker_root">Коран (/)</string>
+    <string name="file_picker_storage_access_unavailable">Гэтая прылада не мае экрана для прадастаўлення доступу да ўсіх файлаў. Дазвольце гэта праз ADB з дапамогой: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Сховішчы</string>
+    <string name="file_saver_downloads_failed">Не ўдалося стわりць файл у папцы «Загрузкі»</string>
+    <string name="file_saver_saving_to_downloads">Гэтая прылада не мае экрана захавання, таму файл захаваны ў «Загрузкі» як %1$s</string>
     <string name="file_picker_sort_name_asc">Імя (А–Я)</string>
     <string name="file_picker_sort_name_desc">Імя (Я–А)</string>
     <string name="file_picker_sort_size_desc">Памер (ад найбольшага)</string>
@@ -1355,6 +1376,8 @@ morphe_header_custom_dark.png
     <string name="reorder_done">Парядок захаваны</string>
     <string name="reset_order">Скінуць парадак</string>
     <string name="reset_order_done">Парядок скінуты</string>
+    <string name="reset_order_confirm_title">Скінуць парадак?</string>
+    <string name="reset_order_confirm_message">Спіс вернецца да пачатковага парадку, а парадак, зададзены ўручную, будзе страчаны</string>
     <string name="accessibility_select_app">Выбраць праграму</string>
     <string name="accessibility_select_source">Выбраць крыніцу</string>
     <string name="accessibility_move_up">Перамясціць уверх</string>
@@ -1362,6 +1385,7 @@ morphe_header_custom_dark.png
     <string name="accessibility_app_moved_announcement">%1$s перамешчана на пазіцыю %2$s з %3$s</string>
     <string name="accessibility_scroll_to_top">Пракруціць уверх спіса</string>
     <string name="rename">Пераімянаваць</string>
+    <string name="more_options">Больш папараметраў</string>
     <string name="import_">Імпартаваць</string>
     <string name="export">Экспартаваць</string>
     <string name="copy">Капіяваць</string>

@@ -203,6 +203,10 @@
     <string name="sources_management_experimental_versions_toggle">Izinguqulo ze-app ezizama izinto ezintsha</string>
     <string name="sources_management_experimental_versions_toggle_description">Kukhombisa futhi kulungiswa izinhlelo zezinhlelo zezinhlelo ezizama izinto ezintsha</string>
     <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Vumela ama-patch e-pre-release</string>
+    <string name="sources_management_prerelease_disable">Vimba ama-patch e-pre-release</string>
+    <string name="sources_management_experimental_versions_enable">Vumela izinhlobo zezinhlelo ze-experimental</string>
+    <string name="sources_management_experimental_versions_disable">Vimba izinhlobo zezinhlelo ze-experimental</string>
     <string name="sources_management_already_exists">Lo mthombo usevele wezeliwe</string>
     <string name="sources_management_invalid_url">I-URL komthombo ayilungile. Sicela uhlole ikheli bese uzama futhi</string>
     <string name="sources_management_blocked">Lo mthombo wepatch uvinywe futhi angeke wengezwe</string>
@@ -356,6 +360,7 @@ Khetha ukuthi uthathe i-APK yayo kuphi"</string>
     <string name="expert_mode_restore_saved_done">Ukukhetha okugcinwe sekubuyiselwe</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Azikho ama-patch ahambisana naleyo bundle</string>
     <string name="expert_mode_no_results">Azikho izigaba ezitholakele</string>
+    <string name="expert_mode_selected_only">Amaphetshi akhethiwe kuphela</string>
     <string name="expert_mode_selected_only_on">Kukhonjiswa ama-patches akhethiwe kuphela</string>
     <string name="expert_mode_selected_only_off">Kukhonjiswa wonke ama-patches</string>
     <string name="expert_mode_universal_patches">Ama-patch onke</string>
@@ -657,12 +662,15 @@ Ukususa kuzosula uphakade yonke idatha yohlelo"</string>
     <string name="patcher_storage_permission_open_settings">Vula izilungiselelo zokugcina</string>
     <string name="patcher_storage_badge_denied">Imvume yanqanyulwa</string>
     <string name="patcher_storage_badge_missing">Akutholakali</string>
+    <string name="patcher_storage_badge_rejected">Ayisebenziseki</string>
     <string name="batch_patch_option_paths_skipped">Amafayela ezinketho zokuphethisha ayashoda futhi azonqandwa: %1$s</string>
     <string name="patcher_missing_patches_title">Amaphetshi amanye anyamalale</string>
     <string name="patcher_missing_patches_description">Ukukhetha okugcinwe kwale app kubala ama-patches angafanelanga anikezwa yithunzi elivuliwe. Ukuqhubeka kuzolungisa i-app ngaphandle kwawo</string>
     <string name="patcher_missing_patches_label">Asezingeniswanga</string>
     <string name="patcher_option_paths_gone_title">Izifayela zezinketho ze-Patch azikho</string>
     <string name="patcher_option_paths_gone_description">Okukodwa noma okuningi kwezinketho ze-patch kukhomba amafayela angesekho. Susa imizila ukuze u-patch ngaphandle kwawo, noma ubuyise amafayela bese uzama futhi</string>
+    <string name="patcher_option_paths_rejected_title">Amafaila okukhetha i-patch aweke asetshenziswe</string>
+    <string name="patcher_option_paths_rejected_description">Okukhethwayo kwe-patch okukodwa noma okuningi kukhomba amafaila ashayekile noma angenalo okucelwe i-patch. Susa imigqa yokuxhumana ukuze wenze i-patch ngaphandle kwawo, noma ulungise amafaila njengoba kuchazwe emigqondweni yokukhetha bese uzama futhi</string>
     <string name="patcher_option_paths_clear">Susa imizila bese uyaqhubeka</string>
     <string name="patcher_storage_permission_hint">Iseluleko: Yisa amafaila ku /Android/data/app.morphe.manager/files/ - akudingeki imvume eyengeziwe</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1225,6 +1233,19 @@ Imininingwane: %2$s"</string>
     <string name="settings_system_selected_patches_section">Ama-patch akhethiwe</string>
     <string name="settings_system_no_patches_or_options">Azikho izipathi noma izinketho ezigcinwe</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Izikhetho</string>
+    <string name="selection_panel_copy_into">Kopisha ku-%s</string>
+    <string name="selection_sets_title">Ama-Sets</string>
+    <string name="selection_set_name">Igama le-set</string>
+    <string name="selection_set_save">Gcina njenge-set</string>
+    <string name="selection_set_replace">Thatha indawo ye-set</string>
+    <string name="selection_set_saved">Gcinwe njenge-%s</string>
+    <string name="selection_set_applied">Kushintshelwe ku-%s</string>
+    <string name="selection_set_deleted">u-%s ususwe</string>
+    <string name="selection_set_renamed">Kuguqulwe igama laba u-%s</string>
+    <string name="selection_set_rename_title">Guqula igama le-set</string>
+    <string name="selection_set_delete_title">Susa i-set?</string>
+    <string name="selection_set_delete_message">Lokhu kususa phukula isethi %s ngokuphelele</string>
     <string name="copy_selection_empty">Azikho ezinye izikhetho ezigcinwe zokukopisha kuzo</string>
     <string name="copy_selection_available_format">%1$s kwe-%2$s ezitholakalayo</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1246,7 +1267,10 @@ Imininingwane: %2$s"</string>
     <string name="file_picker_internal_storage">Isisongezelo sangaphakathi</string>
     <string name="file_picker_sd_card">Ikhadi le-SD</string>
     <string name="file_picker_root">Root (/)</string>
+    <string name="file_picker_storage_access_unavailable">Leli device alinayo isikrini sokuvumela ukufinyelela kuzo zonke izifayela. Kuvumele ngokusebenzisa i-ADB ngokusebenzisa: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Izindawo zokugcina</string>
+    <string name="file_saver_downloads_failed">Kukwazekile ukudala ifayela ku-Downloads</string>
+    <string name="file_saver_saving_to_downloads">Leli device alinaso isikrini sokugcina, ngakho ifayela liya ku-Downloads njenge %1$s</string>
     <string name="file_picker_sort_name_asc">Igama (A–Z)</string>
     <string name="file_picker_sort_name_desc">Igama (Z–A)</string>
     <string name="file_picker_sort_size_desc">Usayizi (enkulu kuqala)</string>
@@ -1351,6 +1375,8 @@ Imininingwane: %2$s"</string>
     <string name="reorder_done">Uhlelo loluhlu lolongezwe</string>
     <string name="reset_order">Buyisela uhlelo</string>
     <string name="reset_order_done">Uhlelo lubuyiselwe</string>
+    <string name="reset_order_confirm_title">Buyisela uhlelo?</string>
+    <string name="reset_order_confirm_message">Uhlu buyela ohlelweni lwawo lwezincwadi futhi uhlelo oluhwebwe ngesandla lulahleka</string>
     <string name="accessibility_select_app">Khetha i-app</string>
     <string name="accessibility_select_source">Khetha umthombo</string>
     <string name="accessibility_move_up">Nyusa phezulu</string>
@@ -1358,6 +1384,7 @@ Imininingwane: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s kusuthiswe esikhundleni %2$s kwama-%3$s</string>
     <string name="accessibility_scroll_to_top">Scrolluya uye phezulu ohlwini</string>
     <string name="rename">Shintsha igama</string>
+    <string name="more_options">Izinketho eziningi</string>
     <string name="import_">Ngenisa</string>
     <string name="export">Export</string>
     <string name="copy">Kopisha</string>

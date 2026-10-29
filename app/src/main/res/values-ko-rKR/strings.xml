@@ -99,7 +99,7 @@
     <string name="home_category_move_to">카테고리로 이동</string>
     <string name="home_category_move_selected_title">선택된 앱 이동</string>
     <!-- %s is the name of the category -->
-    <string name="home_category_delete_title">%s를 삭제하시겠습니까?</string>
+    <string name="home_category_delete_title">\'%s\'를 삭제하시겠습니까?</string>
     <!-- %s is the name of the category the apps fall back to -->
     <string name="home_category_delete_moves_apps">앱이 &lt;b&gt;%s&lt;/b&gt;로 돌아갑니다</string>
     <string name="home_category_actions_unavailable">이 카테고리에 사용할 수 있는 작업이 없습니다</string>
@@ -361,6 +361,7 @@ APK를 가져올 위치를 선택하세요"</string>
     <string name="expert_mode_restore_saved_done">저장된 선택 목록 복원됨</string>
     <string name="expert_mode_copy_from_bundle_no_patches">이 번들에는 일치하는 패치가 없습니다</string>
     <string name="expert_mode_no_results">패치를 찾을 수 없습니다</string>
+    <string name="expert_mode_selected_only">선택된 패치만</string>
     <string name="expert_mode_selected_only_on">선택된 패치만 표시</string>
     <string name="expert_mode_selected_only_off">모든 패치 표시</string>
     <string name="expert_mode_universal_patches">유니버설 패치</string>
@@ -1233,6 +1234,19 @@ morphe_header_custom_dark.png
     <string name="settings_system_selected_patches_section">선택된 패치</string>
     <string name="settings_system_no_patches_or_options">저장된 패치 또는 옵션이 없습니다</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">선택 항목</string>
+    <string name="selection_panel_copy_into">\'%s\'에 복사</string>
+    <string name="selection_sets_title">세트</string>
+    <string name="selection_set_name">세트 이름</string>
+    <string name="selection_set_save">세트로 저장</string>
+    <string name="selection_set_replace">세트 교체</string>
+    <string name="selection_set_saved">\'%s\'로 저장됨</string>
+    <string name="selection_set_applied">\'%s\'로 전환됨</string>
+    <string name="selection_set_deleted">%s 개 삭제됨</string>
+    <string name="selection_set_renamed">\'%s\'로 이름 변경됨</string>
+    <string name="selection_set_rename_title">세트 이름 변경</string>
+    <string name="selection_set_delete_title">세트를 삭제하시겠습니까?</string>
+    <string name="selection_set_delete_message">세트 \'%s\'를 영구적으로 삭제합니다</string>
     <string name="copy_selection_empty">복사할 다른 저장된 선택 목록이 없습니다</string>
     <string name="copy_selection_available_format">%2$s 개 중 %1$s 개 사용 가능</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1254,7 +1268,10 @@ morphe_header_custom_dark.png
     <string name="file_picker_internal_storage">내부 저장소</string>
     <string name="file_picker_sd_card">SD 카드</string>
     <string name="file_picker_root">루트 (/)</string>
+    <string name="file_picker_storage_access_unavailable">이 기기에는 모든 파일에 대한 액세스를 허용할 화면이 없습니다. ADB를 통해 다음 명령어로 허용하세요: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">저장소</string>
+    <string name="file_saver_downloads_failed">다운로드 폴더에 파일을 생성할 수 없습니다</string>
+    <string name="file_saver_saving_to_downloads">이 기기에는 저장 화면이 없으므로 파일이 다운로드 폴더에 \'%1$s\'로 저장됩니다</string>
     <string name="file_picker_sort_name_asc">이름 (오름차순)</string>
     <string name="file_picker_sort_name_desc">이름 (내림차순)</string>
     <string name="file_picker_sort_size_desc">크기 (큰 순)</string>

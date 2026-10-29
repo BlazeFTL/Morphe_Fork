@@ -214,6 +214,7 @@
     <string name="sources_management_metadata_unavailable">Метадані недоступні</string>
     <string name="sources_management_metadata_unavailable_hint">Віддалений файл метаданих недоступний. Патчинг з встановленим джерелом все ще працює, але автоматичне оновлення цього джерела недоступне</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Не вдалося завантажити пакет патчів. Можливо, URL-адреса джерела неправильна або файл не існує</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Не вдалося завантажити пакет патчів. Імовірно, URL джерела неправильний або файл не існує. Натисніть, щоб змінити його</string>
     <string name="sources_management_outdated_manager_badge">Оновити Morphe</string>
     <string name="sources_management_outdated_manager_hint">Це джерело створено для патчера %1$s, але Morphe %2$s містить патчер %3$s. Оновіть Morphe, щоб використовувати його</string>
     <string name="sources_management_held_back_badge">Збій</string>
@@ -227,6 +228,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Назва</string>
     <string name="sources_dialog_rename">Перейменувати джерело патчів</string>
+    <string name="sources_dialog_change_url">Змінити, звідки джерело патчів завантажує дані</string>
     <string name="sources_dialog_duplicate_name_error">Джерело з такою назвою вже існує</string>
     <string name="sources_dialog_missing_error">Не вдалося оновити це джерело патчів</string>
     <string name="sources_dialog_add_source">Додати джерело патчів</string>
@@ -1266,7 +1268,10 @@ morphe_header_custom_dark.png
     <string name="file_picker_internal_storage">Внутрішнє сховище</string>
     <string name="file_picker_sd_card">SD-карта</string>
     <string name="file_picker_root">Корінь (/)</string>
+    <string name="file_picker_storage_access_unavailable">Цей пристрій не має екрана для надання доступу до всіх файлів. Надайте його через ADB командою: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Сховища</string>
+    <string name="file_saver_downloads_failed">Не вдалося створити файл у \"Завантаження\"</string>
+    <string name="file_saver_saving_to_downloads">На цьому пристрої немає екрана збереження, тому файл потрапляє до \"Завантаження\" як %1$s</string>
     <string name="file_picker_sort_name_asc">Назва (А–Я)</string>
     <string name="file_picker_sort_name_desc">Назва (Я–А)</string>
     <string name="file_picker_sort_size_desc">Розмір (спочатку більші)</string>

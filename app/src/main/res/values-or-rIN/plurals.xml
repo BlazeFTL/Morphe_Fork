@@ -1,8 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="patch_count">
+        <item quantity="one">%s ପ୍ୟାଚ୍</item>
+        <item quantity="other">%s ପ୍ୟାଚ୍‌ଗୁଡ଼ିକ</item>
+    </plurals>
     <!-- Subtitle of the open-source licenses page: how many libraries it lists -->
+    <plurals name="library_count">
+        <item quantity="one">%s ଲାଇବ୍ରେରୀ</item>
+        <item quantity="other">%s ଲାଇବ୍ରେରୀ</item>
+    </plurals>
+    <plurals name="option_count">
+        <item quantity="one">%s ପ୍ୟାଚ୍ ବିକଳ୍ପ</item>
+        <item quantity="other">%s ପ୍ୟାଚ୍ ବିକଳ୍ପଗୁଡ଼ିକ</item>
+    </plurals>
     <!-- How many files and folders a folder holds, under its name in the file picker -->
+    <plurals name="file_picker_item_count">
+        <item quantity="one">%s ଆଇଟମ୍</item>
+        <item quantity="other">%s ଆଇଟମ୍</item>
+    </plurals>
     <!-- Button that confirms the files checked in the file picker -->
+    <plurals name="file_picker_select_count">
+        <item quantity="one">%s ଫାଇଲ୍ ଚୟନ କରନ୍ତୁ</item>
+        <item quantity="other">%s ଫାଇଲ୍ ଚୟନ କରନ୍ତୁ</item>
+    </plurals>
     <!-- Button that adds every source waiting in the add source dialog -->
+    <plurals name="sources_dialog_add_count">
+        <item quantity="one">%s ସୋର୍ସ ଯୋଡନ୍ତୁ</item>
+        <item quantity="other">%s ଉତ୍ସ ଯୋଗ କରନ୍ତୁ</item>
+    </plurals>
+    <plurals name="home_app_patch_sources_title">
+        <item quantity="one">%s ଆପ୍ ପାଇଁ ପ୍ୟାଚ୍ ସୋର୍ସ</item>
+        <item quantity="other">%s ଆପ୍ସ ପାଇଁ ପ୍ୟାଚ୍ ସୋର୍ସ</item>
+    </plurals>
+    <plurals name="home_apk_availability_hidden_sources">
+        <item quantity="one">ଏହି ଆପ୍ ପାଇଁ %s ସୋର୍ସ ଲୁଚାଯାଇଛି। ଏହାକୁ తిరిగి ଆଣିବା ପାଇଁ Apps ଟ୍ୟାବ୍‌ରେ ଆପ୍‌ଟିକୁ ଚୟନ କରନ୍ତୁ ଏବଂ Patch sources ଖୋଲନ୍ତୁ</item>
+        <item quantity="other">ଏହି ଆପ୍ ପାଇଁ %s ସୋର୍ସଗୁଡ଼ିକ ଲୁଚାଯାଇଛି। ଏହାକୁ తిరిగి ଆଣିବା ପାଇଁ Apps ଟ୍ୟାବ୍‌ରେ ଆପ୍‌ଟିକୁ ଚୟନ କରନ୍ତୁ ଏବଂ Patch sources ଖୋଲନ୍ତୁ</item>
+    </plurals>
+    <plurals name="expert_mode_hidden_sources_notice">
+        <item quantity="one">%s ସୋର୍ସ ଲୁଚାଯାଇଛି। ଦେଖାଇବା ପାଇଁ ଟ୍ୟାପ୍ କରନ୍ତୁ</item>
+        <item quantity="other">%s ସୋର୍ସ ଲୁଚାଯାଇଛି। ଦେଖାଇବା ପାଇଁ ଟ୍ୟାପ୍ କରନ୍ତୁ</item>
+    </plurals>
+    <plurals name="sources_search_patch_matches">
+        <item quantity="one">%s ମେଲିଖାଉଥିବା ପ୍ୟାଚ୍</item>
+        <item quantity="other">%s ମେଲିଖାଉଥିବା ପ୍ୟାଚ୍ସ</item>
+    </plurals>
+    <plurals name="source_count">
+        <item quantity="one">%s ଉତ୍ସ</item>
+        <item quantity="other">%s ଉତ୍ସଗୁଡ଼ିକ</item>
+    </plurals>
+    <plurals name="selection_set_count">
+        <item quantity="one">%s ସେଟ୍</item>
+        <item quantity="other">%s ସେଟ୍</item>
+    </plurals>
+    <plurals name="package_count">
+        <item quantity="one">%s ପ୍ୟାକେଜ୍</item>
+        <item quantity="other">%s ପ୍ୟାକେଜ୍‌ଗୁଡ଼ିକ</item>
+    </plurals>
+    <plurals name="patches_executed">
+        <item quantity="one">%s ପ୍ୟାଚ୍ କାର୍ଯ୍ୟକାରୀ ହେଲା</item>
+        <item quantity="other">%s ପ୍ୟାଚ୍ ଗୁଡ଼ିକ କାର୍ଯ୍ୟକାରୀ ହେଲା</item>
+    </plurals>
+    <plurals name="settings_system_apks_count">
+        <item quantity="one">%s APK ଫାଇଲ୍</item>
+        <item quantity="other">%s APK ଫାଇଲ୍</item>
+    </plurals>
+    <plurals name="batch_install_summary">
+        <item quantity="one">%s ଆପ୍ ଇନଷ୍ଟଲ୍ କରାଗଲା</item>
+        <item quantity="other">%s ଆପ୍ସ ଇନଷ୍ଟଲ୍ କରାଗଲା</item>
+    </plurals>
+    <plurals name="batch_mount_summary">
+        <item quantity="one">%s ଆପ୍ ମାଉଣ୍ଟ ହୋଇଛି</item>
+        <item quantity="other">%s ଆପ୍ ମାଉଣ୍ଟ ହୋଇଛି</item>
+    </plurals>
+    <plurals name="batch_reinstall_summary">
+        <item quantity="one">%s ଆପ୍ ପୁନଃ ଇନଷ୍ଟଲ୍ କରାଗଲା</item>
+        <item quantity="other">%s ଆପ୍ସ ପୁନଃ ଇନଷ୍ଟଲ୍ କରାଗଲା</item>
+    </plurals>
+    <plurals name="batch_uninstall_summary">
+        <item quantity="one">%s ଆପ୍ ଅନ-ଇନଷ୍ଟଲ୍ କରାଗଲା</item>
+        <item quantity="other">%s ଆପ୍ସ ଅନ-ଇନଷ୍ଟଲ୍ କରାଗଲା</item>
+    </plurals>
+    <plurals name="batch_uninstall_confirm_title">
+        <item quantity="one">%s ଆପ୍ ଅନଇନଷ୍ଟଲ୍ କରନ୍ତୁ?</item>
+        <item quantity="other">%s ଆପ୍ସ ଅନଇନଷ୍ଟଲ୍ କରନ୍ତୁ?</item>
+    </plurals>
+    <plurals name="batch_patch_ready_count">
+        <item quantity="one">%s ଆପ୍ ପ୍ୟାଚ୍ କରିବା ପାଇଁ ପ୍ରସ୍ତୁତ</item>
+        <item quantity="other">%s ଆପ୍ସ ପ୍ୟାଚ୍ କରିବା ପାଇଁ ପ୍ରସ୍ତୁତ</item>
+    </plurals>
+    <plurals name="batch_queue_pending_count">
+        <item quantity="one">ପ୍ୟାଚିଂ ପାଇଁ %s ଆପ୍ କ୍ୟୁରେ ରହିଛି</item>
+        <item quantity="other">ପ୍ୟାଚିଂ ପାଇଁ %s ଆପ୍ସ କ୍ୟୁରେ ରହିଛି</item>
+    </plurals>
+    <plurals name="home_alerts_snoozed_count">
+        <item quantity="one">%s ଲୁଚି ରହିଥିବା ନୋଟିଫିକେସନ୍, ଏହାକୁ ଦେଖାଇବା ପାଇଁ ଟ୍ୟାପ୍ କରନ୍ତୁ</item>
+        <item quantity="other">%s ଲୁଚି ରହିଥିବା ନୋଟିଫିକେସନ୍ ଗୁଡିକ, ସେଗୁଡିକୁ ଦେଖାଇବା ପାଇଁ ଟ୍ୟାପ୍ କରନ୍ତୁ</item>
+    </plurals>
+    <plurals name="repatch_available_count">
+        <item quantity="one">%s ଆପ୍ ପୁନର୍ବାର ପ୍ୟାଚ୍ କରାଯାଇପାରିବ</item>
+        <item quantity="other">%s ଆପ୍ସ ପୁନର୍ବାର ପ୍ୟାଚ୍ କରାଯାଇପାରିବ</item>
+    </plurals>
+    <plurals name="batch_skipped_summary">
+        <item quantity="one">%s ଆପ୍ ଏଡିଆଇକରାଗଲା</item>
+        <item quantity="other">%s ଆପ୍ସ ଏଡିଆଇକରାଗଲା</item>
+    </plurals>
+    <plurals name="home_app_info_repatch_cleaned_invalid_data">
+        <item quantity="one">ସେଭ୍ ହୋଇଥିବା ଚୟନରୁ %s ପୁରୁଣା ପ୍ୟାଚ୍ ହଟାଗଲା</item>
+        <item quantity="other">ସେଭ୍ ହୋଇଥିବା ଚୟନରୁ %s ପୁରୁଣା ପ୍ୟାଚ୍ ଗୁଡ଼ିକ ହଟାଗଲା</item>
+    </plurals>
+    <plurals name="sources_management_subtitle">
+        <item quantity="one">%s ସୋର୍ସ ସଂସ୍ଥାପିତ</item>
+        <item quantity="other">%s ସୋର୍ସ ଗୁଡ଼ିକ ସଂସ୍ଥାପିତ</item>
+    </plurals>
+    <plurals name="home_apps_hidden_count">
+        <item quantity="one">%s ଆପ୍ ଲୁଚାଯାଇଛି</item>
+        <item quantity="other">%s ଆପ୍ସ ଲୁଚାଯାଇଛି</item>
+    </plurals>
+    <plurals name="home_apps_shown_count">
+        <item quantity="one">%s ଆପ୍ ଦେଖାଯାଉଛି</item>
+        <item quantity="other">%s ଆପ୍ସ ଦେଖାଯାଉଛି</item>
+    </plurals>
+    <plurals name="home_apps_unhide_title">
+        <item quantity="one">%s ଆପ୍‌କୁ ଅન-ହାଇଡ୍ (Unhide) କରିବେ?</item>
+        <item quantity="other">%s ଆପ୍‌ଗୁଡ଼ିକୁ ଅନହାଇଡ୍ କରିବେ?</item>
+    </plurals>
+    <plurals name="home_app_show_hidden_count">
+        <item quantity="one">%s ଲୁଚି ରହିଥିବା ଆପ୍</item>
+        <item quantity="other">%s ଲୁଚି ରହିଥିବା ଆପ୍ ଗୁଡ଼ିକ</item>
+    </plurals>
+    <plurals name="home_category_app_count">
+        <item quantity="one">%s ଆପ୍</item>
+        <item quantity="other">%s ଆପ୍ସ</item>
+    </plurals>
+    <plurals name="expert_mode_selected_count">
+        <item quantity="one">%s ଚୟନ କରାଗଲା</item>
+        <item quantity="other">%s ଚୟନ କରାଗଲା</item>
+    </plurals>
+    <plurals name="expert_mode_copy_from_bundle_done">
+        <item quantity="one">ଚୟନିତ ବଣ୍ଡଲରୁ %s ପ୍ୟାଚ୍ କପି କରାଗଲା</item>
+        <item quantity="other">ଚୟନିତ ବଣ୍ଡଲରୁ %s ପ୍ୟାଚ୍ସ କପି କରାଗଲା</item>
+    </plurals>
+    <plurals name="core_count">
+        <item quantity="one">%s କୋର୍</item>
+        <item quantity="other">%s କୋର୍ସ</item>
+    </plurals>
+    <plurals name="changelog_feature_count">
+        <item quantity="one">%s ବିଶେଷତା</item>
+        <item quantity="other">%s ବିଶେଷତା</item>
+    </plurals>
+    <plurals name="changelog_fix_count">
+        <item quantity="one">%s ସୁଧାର</item>
+        <item quantity="other">%s ସୁଧାରଗୁଡିକ</item>
+    </plurals>
+    <plurals name="changelog_performance_count">
+        <item quantity="one">%s ଅପ୍ଟିମାଇଜେସନ୍</item>
+        <item quantity="other">%s ଅପ୍ଟିମାଇଜେସନ୍</item>
+    </plurals>
+    <plurals name="changelog_change_count">
+        <item quantity="one">%s ପରିବର୍ତ୍ତନ</item>
+        <item quantity="other">%s ପରିବର୍ତ୍ତନ</item>
+    </plurals>
     <!-- Value of the Apps row on a source card when apps were left out on arrival, for example "3/232 · 2 new". %1$s is the app count, %2$d the new apps -->
+    <plurals name="sources_apps_count_with_new">
+        <item quantity="one">%1$s · %2$d ନୂତନ</item>
+        <item quantity="other">%1$s · %2$d ନୂତନ</item>
+    </plurals>
+    <plurals name="changelog_new_releases">
+        <item quantity="one">%s ନୂତନ ରିଲିଜ୍</item>
+        <item quantity="other">%s ନୂତନ ରିଲିଜ୍</item>
+    </plurals>
+    <plurals name="app_links_count_enabled">
+        <item quantity="one">%d ଲିଙ୍କ୍ ସକ୍ଷମ</item>
+        <item quantity="other">%d ଲିଙ୍କ୍ ସକ୍ଷମ</item>
+    </plurals>
+    <plurals name="app_links_count_unverified">
+        <item quantity="one">%d ଅସତ୍ୟାପିତ ଲିଙ୍କ୍</item>
+        <item quantity="other">%d ଅସତ୍ୟାପିତ ଲିଙ୍କ୍</item>
+    </plurals>
 </resources>

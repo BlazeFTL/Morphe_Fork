@@ -99,7 +99,9 @@
     <string name="home_category_move_to">ย้ายไปที่หมวดหมู่</string>
     <string name="home_category_move_selected_title">ย้ายแอปที่เลือกไว้</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">ลบ %s หรือไม่?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">แอปต่างๆ จะย้ายกลับไปยัง &lt;b&gt;%s&lt;/b&gt;</string>
     <string name="home_category_actions_unavailable">ไม่มีการดำเนินการสำหรับหมวดหมู่นี้</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">คุณต้องการแพตช์แอปอะไร?</string>
@@ -242,6 +244,7 @@
     <string name="sources_dialog_url_invalid">URL ต้องชี้ไปยัง GitHub/GitLab repo หรือไฟล์ .json</string>
     <string name="sources_dialog_preinstalled">ติดตั้งล่วงหน้าแล้ว</string>
     <string name="sources_dialog_community">แพตช์ชุมชน</string>
+    <string name="sources_dialog_choose_apps">เลือกแอป</string>
     <string name="sources_dialog_choose_apps_description">เลือกว่าจะเก็บแอปใดของแหล่งข้อมูลนี้ไว้เมื่อแหล่งข้อมูลโหลดเสร็จ</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">แหล่งแพตช์ของบุคคลที่สาม</string>
@@ -261,12 +264,15 @@
     <string name="sources_patch_expert_badge">ผู้เชี่ยวชาญ</string>
     <string name="sources_patch_expert_badge_tooltip">เปิดใช้งานโหมดผู้เชี่ยวชาญในการตั้งค่าเพื่อเลือกแพตช์นี้ด้วยตนเอง</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">ต้องการความช่วยเหลือในการหา APK หรือไม่?</string>
     <string name="home_apk_availability_dialog_simple">เพื่อที่จะแพตช์ &lt;b&gt;%s&lt;/b&gt; คุณต้องมี APK ที่ยังไม่ถูกแพตช์เวอร์ชัน:</string>
     <string name="home_apk_availability_dialog_expert">เพื่อที่จะแพตช์ &lt;b&gt;%s&lt;/b&gt; คุณต้องมี APK ที่ยังไม่ถูกแพตช์ของเวอร์ชัน:</string>
     <string name="home_apk_availability_recommended_label">แนะนำ</string>
     <string name="home_apk_availability_unpatched_label">ไม่ได้แพตช์</string>
     <string name="home_apk_availability_incompatible_label">ไม่รองรับ</string>
     <string name="home_apk_availability_installed_version">ติดตั้งบนอุปกรณ์นี้แล้ว: %s</string>
+    <string name="home_apk_availability_find">ใช่ ช่วยฉันหาหน่อย</string>
+    <string name="home_apk_availability_have">ไม่ ฉันมีอยู่แล้ว</string>
     <string name="home_apk_helper_download">ใช้แอปตัวช่วย</string>
     <string name="home_apk_helper_untrusted">มีแอปผู้ช่วยติดตั้งแล้ว แต่ยังไม่ได้ความไว้วางใจ ดังนั้นจึงไม่ปรากฏที่นี่</string>
     <string name="home_apk_helper_untrusted_action">ตรวจสอบผู้ช่วย</string>
@@ -282,6 +288,8 @@
     <string name="home_apk_helper_wrong_package">แอปตัวช่วยส่งคืนแอปอื่นที่ไม่ใช่แอปที่กำลังแพตช์</string>
     <string name="home_apk_helper_installed_unavailable">Morphe ไม่สามารถใช้แอปที่ติดตั้งอยู่ได้</string>
     <string name="home_apk_helper_installed_incompatible">ไม่สามารถแพตช์เวอร์ชันที่ติดตั้งอยู่ได้</string>
+    <string name="home_apk_use_saved_copy">ใช้สำเนาที่บันทึกไว้</string>
+    <string name="home_apk_use_installed_app">ใช้แอปที่ติดตั้งแล้ว</string>
     <string name="home_apk_use_saved_unsupported">แพตช์ไม่รองรับไฟล์ที่บันทึกไว้นี้ การแพตช์จะขอให้คุณยืนยัน หรือเลือกไฟล์ APK อื่น</string>
     <string name="home_apk_use_installed_unverified">ไม่สามารถตรวจสอบลายเซ็นของแอปที่ติดตั้งได้ ดังนั้นจึงอาจได้รับการแพตช์แล้ว</string>
     <string name="home_unverified">ไม่ได้รับการยืนยัน</string>
@@ -318,10 +326,15 @@
     <string name="home_download_instructions_link_copied">คัดลอกลิงก์แล้ว</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">เลือก APK ของ %s</string>
+    <string name="home_file_picker_prompt_where">โดยปกติเบราว์เซอร์จะบันทึกไฟล์ไว้ในโฟลเดอร์ Download</string>
     <string name="home_file_picker_prompt_open_apk">เปิดไฟล์ APK</string>
     <string name="home_recommended_version">เวอร์ชันแนะนำ</string>
     <string name="home_selected_version">เลือกเวอร์ชัน</string>
     <string name="home_select_apk_title">เลือกไฟล์ APK</string>
+    <string name="home_select_apk_description">"แพตช์แบบสากลสามารถใช้งานได้กับทุกแอป
+
+เลือกแหล่งที่จะนำ APK มาใช้"</string>
     <string name="home_use_installed_app">ใช้แอปที่ติดตั้งแล้ว</string>
     <string name="home_use_installed_app_description">เลือกแอปที่มีอยู่ในอุปกรณ์นี้</string>
     <string name="home_open_apk_file_description">เลือกไฟล์ APK, APKM, APKS หรือ XAPK จากที่จัดเก็บข้อมูล</string>
@@ -343,10 +356,12 @@
     <string name="expert_mode_universal_all_warning_message">แพตช์สากลไม่ได้ทดสอบร่วมกัน การเปิดใช้ทั้งหมดพร้อมกันอาจทำให้เกิดความขัดแย้ง การแพตช์ล้มเหลว หรือการขัดข้อง</string>
     <string name="expert_mode_reset_to_default">เปิดใช้งานแพตช์ที่แนะนำ</string>
     <string name="expert_mode_reset_to_default_done">ใช้แพตช์ที่แนะนำแล้ว</string>
+    <string name="expert_mode_selected_count">เลือกแล้ว %1$s จาก %2$s</string>
     <string name="expert_mode_restore_saved">คืนการเลือกที่บันทึกไว้</string>
     <string name="expert_mode_restore_saved_done">การเลือกที่บันทึกไว้ได้รับการกู้คืนแล้ว</string>
     <string name="expert_mode_copy_from_bundle_no_patches">ไม่พบแพตช์ที่ตรงกันในบันเดิลนี้</string>
     <string name="expert_mode_no_results">ไม่พบแพตช์</string>
+    <string name="expert_mode_selected_only">เฉพาะแพตช์ที่เลือกเท่านั้น</string>
     <string name="expert_mode_selected_only_on">แสดงเฉพาะแพตช์ที่เลือกเท่านั้น</string>
     <string name="expert_mode_selected_only_off">แสดงแพตช์ทั้งหมด</string>
     <string name="expert_mode_universal_patches">แพตช์สากล</string>
@@ -355,6 +370,7 @@
     <string name="expert_mode_patch_required_by_installer">จำเป็นสำหรับเป้าหมายการติดตั้งที่เลือก</string>
     <string name="expert_mode_patch_unavailable_for_installer">ใช้ไม่ได้กับเป้าหมายการติดตั้งที่เลือก</string>
     <string name="expert_mode_multiple_sources_warning_title">หลายแหล่งที่มาแพตช์ถูกเลือก</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">แพตช์จากแหล่งที่มาที่ต่างกันไม่ได้ถูกออกแบบมาให้ทำงานร่วมกัน และอาจเกิดความขัดแย้งหรือทำให้แอปใช้งานไม่ได้</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK ที่ยังไม่ได้รับการยืนยัน</string>
     <string name="home_invalid_signature_message">APK ที่คุณเลือกสำหรับ &lt;b&gt;%s&lt;/b&gt; ไม่ตรงกับใบรับรองการลงนามที่คาดหวัง อาจถูกแก้ไขหรือมาจากแหล่งที่ไม่น่าเชื่อถือ</string>
@@ -507,6 +523,8 @@
     <string name="shortcut_check_updates_long">ตรวจสอบการอัปเดตแพตช์</string>
     <string name="shortcut_patch_app">แพตช์ %s</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">ถอนการติดตั้งแอปนี้หรือไม่?</string>
+    <string name="home_app_info_uninstall_removes_data">แอปและข้อมูลจะถูกลบออกจากอุปกรณ์นี้</string>
     <string name="batch_uninstall_confirm_body">แอปที่เลือกจะถูกลบออกจากอุปกรณ์ของคุณอย่างถาวร</string>
     <string name="home_app_info_remove_app_warning">การดำเนินการนี้จะลบถาวร:</string>
     <string name="home_app_info_delete_item_database">บันทึกฐานข้อมูล</string>
@@ -671,7 +689,10 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">กำลังดำเนินการแพตช์…</string>
     <string name="patcher_notification_text">แตะเพื่อกลับไปยังตัวแพตช์</string>
+    <string name="patcher_stop_title">หยุดการแพตช์หรือไม่?</string>
+    <string name="patcher_stop_discards">ความคืบหน้าจนถึงตอนนี้จะถูกยกเลิกและจะไม่มีการติดตั้งใดๆ</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">แพตช์ต่อไป</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">กำลังแปลงแอปของคุณให้เป็นสิ่งที่ยอดเยี่ยม… 🏆</string>
     <string name="patcher_message_2">กำลังสอนแอปเก่าให้ทำสิ่งใหม่ๆ… 🎩</string>
@@ -813,15 +834,21 @@
     <string name="settings_appearance_repatch_notice_description">แสดงแบนเนอร์เมื่อแอปที่แพตช์แล้วสามารถแพตช์ซ้ำได้</string>
     <string name="settings_appearance_more_apps_card">การ์ดแอปเพิ่มเติม</string>
     <string name="settings_appearance_more_apps_card_description">แสดงการ์ดใต้แอปที่นำไปสู่แพตช์ชุมชน</string>
+    <string name="settings_appearance_app_card_colors">สีการ์ด</string>
     <string name="settings_appearance_app_card_colors_default">ค่าเริ่มต้น</string>
+    <string name="settings_appearance_app_card_colors_default_description">กำหนดสีเฉพาะให้สำหรับแต่ละแอปและแหล่งที่มา</string>
     <string name="settings_appearance_app_card_colors_accent">สีเน้น</string>
+    <string name="settings_appearance_app_card_colors_accent_description">ใช้สีเน้นของแอปสำหรับการ์ดแอปและแหล่งที่มา</string>
     <string name="settings_appearance_app_card_colors_gradient">การไล่ระดับสี</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">ใช้การไล่ระดับสีที่กำหนดเองหนึ่งแบบสำหรับการ์ดแอป และผสมเป็นสีเดียวสำหรับการ์ดแหล่งที่มา</string>
     <string name="settings_appearance_app_card_colors_solid">สีทึบ</string>
+    <string name="settings_appearance_app_card_colors_solid_description">ใช้สีที่กำหนดเองหนึ่งสีสำหรับการ์ดแอปและแหล่งที่มา</string>
     <string name="settings_appearance_app_card_colors_start">สีเริ่ม</string>
     <string name="settings_appearance_app_card_colors_middle">สีกลาง</string>
     <string name="settings_appearance_app_card_colors_end">สีจบ</string>
     <string name="settings_appearance_app_card_colors_solid_color">สีทึบ</string>
     <string name="settings_appearance_app_card_colors_bundle">สีบันเดิลแอป</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">ใช้สีของแต่ละแอปหรือแหล่งที่มา โดยจะปรับเฉดสีให้เหมาะสมโดยอัตโนมัติ</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">ไอคอนแอป</string>
     <string name="settings_appearance_app_icon_selector_description">หน้าตาของ Morphe บนหน้าจอหลักและในลิ้นชักแอป</string>
@@ -848,6 +875,7 @@
     <string name="settings_appearance_app_icon_mark_black">ดำ</string>
     <string name="settings_appearance_app_icon_change_dialog_title">เปลี่ยนไอคอนแอป?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe จะเริ่มทำงานใหม่เพื่อเปลี่ยนเป็น &lt;b&gt;%s&lt;/b&gt;</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">เปลี่ยนไอคอน</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1206,6 +1234,19 @@ morphe_header_custom_dark.png
     <string name="settings_system_selected_patches_section">แพตช์ที่เลือก</string>
     <string name="settings_system_no_patches_or_options">ไม่มีการบันทึกแพตช์หรือตัวเลือก</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">รายการที่เลือก</string>
+    <string name="selection_panel_copy_into">คัดลอกไปยัง %s</string>
+    <string name="selection_sets_title">ชุด</string>
+    <string name="selection_set_name">ชื่อชุด</string>
+    <string name="selection_set_save">บันทึกเป็นชุด</string>
+    <string name="selection_set_replace">แทนที่ชุด</string>
+    <string name="selection_set_saved">บันทึกเป็น %s แล้ว</string>
+    <string name="selection_set_applied">เปลี่ยนเป็น %s แล้ว</string>
+    <string name="selection_set_deleted">ลบ %s แล้ว</string>
+    <string name="selection_set_renamed">เปลี่ยนชื่อเป็น %s แล้ว</string>
+    <string name="selection_set_rename_title">เปลี่ยนชื่อชุด</string>
+    <string name="selection_set_delete_title">ลบชุดนี้หรือไม่?</string>
+    <string name="selection_set_delete_message">การดำเนินการนี้จะลบชุด %s อย่างถาวร</string>
     <string name="copy_selection_empty">ไม่มีส่วนที่เลือกไว้ก่อนหน้านี้ที่จะคัดลอก</string>
     <string name="copy_selection_available_format">มีอยู่ %1$s จาก %2$s</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1227,7 +1268,10 @@ morphe_header_custom_dark.png
     <string name="file_picker_internal_storage">หน่วยความจำภายใน</string>
     <string name="file_picker_sd_card">การ์ด SD</string>
     <string name="file_picker_root">รูท (/)</string>
+    <string name="file_picker_storage_access_unavailable">อุปกรณ์นี้ไม่มีหน้าจอเพื่ออนุญาตให้เข้าถึงไฟล์ทั้งหมด อนุญาตผ่าน ADB ด้วยคำสั่ง: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">ที่เก็บข้อมูล</string>
+    <string name="file_saver_downloads_failed">ไม่สามารถสร้างไฟล์ในรายการดาวน์โหลดได้</string>
+    <string name="file_saver_saving_to_downloads">อุปกรณ์นี้ไม่มีหน้าจอสำหรับบันทึก ดังนั้นไฟล์จะถูกบันทึกลงในรายการดาวน์โหลดในชื่อ %1$s</string>
     <string name="file_picker_sort_name_asc">ชื่อ (A–Z)</string>
     <string name="file_picker_sort_name_desc">ชื่อ (Z–A)</string>
     <string name="file_picker_sort_size_desc">ขนาด (ใหญ่ที่สุดก่อน)</string>
@@ -1341,6 +1385,7 @@ morphe_header_custom_dark.png
     <string name="accessibility_app_moved_announcement">%1$s ย้ายไปยังตำแหน่งที่ %2$s จาก %3$s แล้ว</string>
     <string name="accessibility_scroll_to_top">เลื่อนไปยังด้านบนของรายการ</string>
     <string name="rename">เปลี่ยนชื่อ</string>
+    <string name="more_options">ตัวเลือกเพิ่มเติม</string>
     <string name="import_">นำเข้า</string>
     <string name="export">ส่งออก</string>
     <string name="copy">คัดลอก</string>
@@ -1385,6 +1430,7 @@ morphe_header_custom_dark.png
     <string name="show_all">แสดงทั้งหมด</string>
     <string name="ignore">ไม่สนใจ</string>
     <string name="stop_ignoring">หยุดเพิกเฉย</string>
+    <string name="stop">หยุด</string>
     <string name="logs">บันทึก</string>
     <string name="sources">แหล่งที่มา</string>
     <string name="installing_ellipsis">กำลังติดตั้ง…</string>

@@ -48,6 +48,10 @@
         <item quantity="one">%s स्रोत</item>
         <item quantity="other">%s स्रोतहरू</item>
     </plurals>
+    <plurals name="selection_set_count">
+        <item quantity="one">%s सेट</item>
+        <item quantity="other">%s सेटहरू</item>
+    </plurals>
     <plurals name="package_count">
         <item quantity="one">%s प्याकेज</item>
         <item quantity="other">%s प्याकेजहरू</item>

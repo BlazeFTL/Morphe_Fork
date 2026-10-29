@@ -24,9 +24,33 @@
         <item quantity="other">%s ෆයිල් තෝරන්න</item>
     </plurals>
     <!-- Button that adds every source waiting in the add source dialog -->
+    <plurals name="sources_dialog_add_count">
+        <item quantity="one">මූලාශ්‍ර %s එක් කරන්න</item>
+        <item quantity="other">මූලාශ්‍ර %s ක් එක් කරන්න</item>
+    </plurals>
+    <plurals name="home_app_patch_sources_title">
+        <item quantity="one">%s ඇප් එක සඳහා පැච් මූලාශ්‍ර</item>
+        <item quantity="other">ऐप %s සඳහා පැච් මූලාශ්‍ර</item>
+    </plurals>
+    <plurals name="home_apk_availability_hidden_sources">
+        <item quantity="one">මෙම ඇප් එක සඳහා %s මූලාශ්‍රයක් සඟවා ඇත. එය නැවත ලබා ගැනීමට Apps ටැබ් එකෙහි ඇප් එක තෝරා Patch sources විවෘත කරන්න</item>
+        <item quantity="other">මෙම ඇප් එක සඳහා මූලාශ්‍ර %sක් සඟවා ඇත. ඒවා නැවත ලබා ගැනීමට Apps ටැබ් එකෙහි ඇප් එක තෝරා Patch sources විවෘත කරන්න</item>
+    </plurals>
+    <plurals name="expert_mode_hidden_sources_notice">
+        <item quantity="one">මූලාශ්‍ර %s ක් සැඟවී ඇත. පෙන්වීමට ටැප් කරන්න</item>
+        <item quantity="other">මූලාශ්‍ර %s ක් සැඟවී ඇත. පෙන්වීමට ටැප් කරන්න</item>
+    </plurals>
+    <plurals name="sources_search_patch_matches">
+        <item quantity="one">ගැලපෙන පැච් %s ක්</item>
+        <item quantity="other">ගැලපෙන පැච් %s ක්</item>
+    </plurals>
     <plurals name="source_count">
         <item quantity="one">%s මූලාශ්‍රය</item>
         <item quantity="other">%s මූලාශ්‍ර</item>
+    </plurals>
+    <plurals name="selection_set_count">
+        <item quantity="one">සෙට් %sක්</item>
+        <item quantity="other">සෙට් %sක්</item>
     </plurals>
     <plurals name="package_count">
         <item quantity="one">%s පැකේජය</item>
@@ -44,6 +68,10 @@
         <item quantity="one">ඇප් %sක් ඉන්ස්ටෝල් කලා</item>
         <item quantity="other">ඇප් %sක් ඉන්ස්ටෝල් කලා</item>
     </plurals>
+    <plurals name="batch_mount_summary">
+        <item quantity="one">ඇප් %sක් Mount කළා</item>
+        <item quantity="other">ඇප් %sක් සවිකළා</item>
+    </plurals>
     <plurals name="batch_reinstall_summary">
         <item quantity="one">ඇප් %sක් නැවත ඉන්ස්ටෝල් කලා</item>
         <item quantity="other">ඇප් %sක් නැවත ඉන්ස්ටෝල් කලා</item>
@@ -60,6 +88,18 @@
         <item quantity="one">ඇප් %sක් පැච් කිරීමට සූදානම්</item>
         <item quantity="other">ඇප් %sක් පැච් කිරීමට සූදානම්</item>
     </plurals>
+    <plurals name="batch_queue_pending_count">
+        <item quantity="one">පැච් කිරීම සඳහා ඇප් %sක් පෝලිමේ ඇත</item>
+        <item quantity="other">පැච් කිරීම සඳහා ඇප් %sක් පෝලිමේ ඇත</item>
+    </plurals>
+    <plurals name="home_alerts_snoozed_count">
+        <item quantity="one">සඟවන ලද දැනුම්දීම %sක්, එය පෙන්වීමට ටැප් කරන්න</item>
+        <item quantity="other">සැඟවුණු දැනුම්දීම් %s ක්, ඒවා පෙන්වීමට තට්ටු කරන්න</item>
+    </plurals>
+    <plurals name="repatch_available_count">
+        <item quantity="one">ඇප් %s ක් නැවත පැච් කළ හැක</item>
+        <item quantity="other">ඇප් %s ක් නැවත පැච් කළ හැක</item>
+    </plurals>
     <plurals name="batch_skipped_summary">
         <item quantity="one">ඇප් %sක් මගහැරියා</item>
         <item quantity="other">ඇප් %sක් මගහැරියා</item>
@@ -72,6 +112,18 @@
         <item quantity="one"> මූලාශ්‍ර %sක් ඉන්ස්ටෝල් කලා</item>
         <item quantity="other">මූලාශ්‍ර %sක් ඉන්ස්ටෝල් කලා</item>
     </plurals>
+    <plurals name="home_apps_hidden_count">
+        <item quantity="one">ඇප් %s ක් සැඟවී ඇත</item>
+        <item quantity="other">ඇප් %s ක් සැඟවී ඇත</item>
+    </plurals>
+    <plurals name="home_apps_shown_count">
+        <item quantity="one">ඇප් %s ක් පෙන්වා ඇත</item>
+        <item quantity="other">ඇප් %s ක් පෙන්වා ඇත</item>
+    </plurals>
+    <plurals name="home_apps_unhide_title">
+        <item quantity="one">ඇප් %sක් අසඟව කරන්නද?</item>
+        <item quantity="other">ඇප් %sක් අසඟව කරන්නද?</item>
+    </plurals>
     <plurals name="home_app_show_hidden_count">
         <item quantity="one">හංගපු ඇප් %sක්</item>
         <item quantity="other">හංගපු ඇප් %sක්</item>
@@ -80,9 +132,49 @@
         <item quantity="one">ඇප් %sක්</item>
         <item quantity="other">ඇප් %sක්</item>
     </plurals>
+    <plurals name="expert_mode_selected_count">
+        <item quantity="one">%s ක් තෝරාගෙන ඇත</item>
+        <item quantity="other">%s ක් තෝරාගෙන ඇත</item>
+    </plurals>
     <plurals name="expert_mode_copy_from_bundle_done">
         <item quantity="one">තෝරගත්තු බන්ඩලයෙන් පැච් %sක් පිටපත් කලා</item>
         <item quantity="other">තෝරගත්තු බන්ඩලයෙන් පැච් %sක් පිටපත් කලා</item>
     </plurals>
+    <plurals name="core_count">
+        <item quantity="one">%s මධ්‍යන්තය</item>
+        <item quantity="other">%s මධ්‍යන්තය</item>
+    </plurals>
+    <plurals name="changelog_feature_count">
+        <item quantity="one">විශේෂාංග %s ක්</item>
+        <item quantity="other">විශේෂාංග %s ක්</item>
+    </plurals>
+    <plurals name="changelog_fix_count">
+        <item quantity="one">නිවැරීම %s ක්</item>
+        <item quantity="other">නිවැරීම් %s ක්</item>
+    </plurals>
+    <plurals name="changelog_performance_count">
+        <item quantity="one">%s ප්‍රශස්තකරණය</item>
+        <item quantity="other">%s ප්‍රශස්තකරණයන්</item>
+    </plurals>
+    <plurals name="changelog_change_count">
+        <item quantity="one">වෙනස් කිරීම %s ක්</item>
+        <item quantity="other">වෙනස්කම් %s</item>
+    </plurals>
     <!-- Value of the Apps row on a source card when apps were left out on arrival, for example "3/232 · 2 new". %1$s is the app count, %2$d the new apps -->
+    <plurals name="sources_apps_count_with_new">
+        <item quantity="one">%1$s · %2$d අලුත්</item>
+        <item quantity="other">%1$s · %2$d අලුත්</item>
+    </plurals>
+    <plurals name="changelog_new_releases">
+        <item quantity="one">නව නිකුතුව %s</item>
+        <item quantity="other">නව නිකුතු %s</item>
+    </plurals>
+    <plurals name="app_links_count_enabled">
+        <item quantity="one">සබැඳි %dක් සක්‍රීයයි</item>
+        <item quantity="other">සබැඳි %dක් සක්‍රීයයි</item>
+    </plurals>
+    <plurals name="app_links_count_unverified">
+        <item quantity="one">සත්‍යාපනය නොකළ සබැඳි %dක්</item>
+        <item quantity="other">සත්‍යාපනය නොකළ සබැඳි %dක්</item>
+    </plurals>
 </resources>

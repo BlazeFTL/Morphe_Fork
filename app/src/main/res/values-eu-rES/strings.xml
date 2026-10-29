@@ -356,10 +356,12 @@ Zukertu non hartu APK-a"</string>
     <string name="expert_mode_universal_all_warning_message">Universal patch-ak ez dira elkarrekin probatu. Guztira behin aktibatzeak gatazkak, patchatze hutsak edo crashes eragin ditzake</string>
     <string name="expert_mode_reset_to_default">Aktibatu gomendatutako patch-ak</string>
     <string name="expert_mode_reset_to_default_done">Patch gomendatuak aplikatuak</string>
+    <string name="expert_mode_selected_count">%2$s-tik %1$s hautatuak</string>
     <string name="expert_mode_restore_saved">Berreskuratu gorde eta eta izanda zen hautapena</string>
     <string name="expert_mode_restore_saved_done">Gorde 된 hautaketa berreskuratuta</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Ez daunik patchik matchatuko bundle honetan</string>
     <string name="expert_mode_no_results">Ez da patchingik aurkitu</string>
+    <string name="expert_mode_selected_only">Hautatutako patch-ak soilik</string>
     <string name="expert_mode_selected_only_on">Hautatutako patch-ak soilik erakusten dira</string>
     <string name="expert_mode_selected_only_off">Patch guztiak erakusten dira</string>
     <string name="expert_mode_universal_patches">Patch universalak</string>
@@ -661,12 +663,15 @@ Instalazioa kendupean aplikazioaren datu guztiak betiko ezabatuko dira"</string>
     <string name="patcher_storage_permission_open_settings">Ireki biltegi konfigurazioa</string>
     <string name="patcher_storage_badge_denied">Baimena ukatu da</string>
     <string name="patcher_storage_badge_missing">Ez da aurkitu</string>
+    <string name="patcher_storage_badge_rejected">Ez da erabilgarria</string>
     <string name="batch_patch_option_paths_skipped">Patch aukerakiko fitxategiak falta dira eta saltziko dira: %1$s</string>
     <string name="patcher_missing_patches_title">Patch batzuk desagertu dira</string>
     <string name="patcher_missing_patches_description">Aplikazio honentzat gordetako hautakizunak gabe jada ez dituzten iturri aktiboen patch-ak izaten ditu. Jarraituz, aplikazioa patch-atu egingo da haiek gabe</string>
     <string name="patcher_missing_patches_label">Ez da eskaintzen</string>
     <string name="patcher_option_paths_gone_title">Patch sailkatzaileen fitxategiak falta dira</string>
     <string name="patcher_option_paths_gone_description">Patch aukera bat edo bat gehiagok jada ez daudenen fitxategietara zuzentzen dira. Kendu bideak haiek gabe patch egiteko, edo itzuli fitxategiak eta saiatu berriro</string>
+    <string name="patcher_option_paths_rejected_title">Patch aukerak fitxategiak ezin dira erabili</string>
+    <string name="patcher_option_paths_rejected_description">Patch aukera bat edo bat gehiagok falta diren fitxategietara zuzentzen dira, edo patch-ek eskatzen duena ez dute. Kendu bideak haiek gabe patch egiteko, edo konpondu fitxategiak aukerak instrukzioek deskribatzen duten moduan eta saiatu berriro</string>
     <string name="patcher_option_paths_clear">Kendu bideak eta jarraitu</string>
     <string name="patcher_storage_permission_hint">Goeta: Mugitu fitxategiak /Android/data/app.morphe.manager/files/ bideera - baimen gehiarkoik ez dira behar</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1229,6 +1234,19 @@ Xehetasunak: %2$s"</string>
     <string name="settings_system_selected_patches_section">Patch-ak hautatuak</string>
     <string name="settings_system_no_patches_or_options">Ez da patching-ik edo aukerarik gordetakoik</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Hautaketak</string>
+    <string name="selection_panel_copy_into">Kopia %s-en</string>
+    <string name="selection_sets_title">Multzoek</string>
+    <string name="selection_set_name">Multzoaren izena</string>
+    <string name="selection_set_save">Gorde multzo gisa</string>
+    <string name="selection_set_replace">Ordezkaitu multzoa</string>
+    <string name="selection_set_saved">%s gisa gordeta</string>
+    <string name="selection_set_applied">%s-ra aldatuta</string>
+    <string name="selection_set_deleted">%s ezabatu da</string>
+    <string name="selection_set_renamed">%s izendatu da</string>
+    <string name="selection_set_rename_title">Multzoa izendatu</string>
+    <string name="selection_set_delete_title">Multzoa ezabatu?</string>
+    <string name="selection_set_delete_message">Honek %s multzoa betiko ezabatuko du</string>
     <string name="copy_selection_empty">Ez da kopiatzeko beste hautaketa gordetutaik</string>
     <string name="copy_selection_available_format">%2$s-tik %1$s eskuragarri</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1250,7 +1268,10 @@ Xehetasunak: %2$s"</string>
     <string name="file_picker_internal_storage">Barne storagea</string>
     <string name="file_picker_sd_card">SD txartela</string>
     <string name="file_picker_root">Errorea (/)</string>
+    <string name="file_picker_storage_access_unavailable">Gailu honek ez du pantailarik fitxategi guztietara sartzeko bidea emateko. ADB bidez onartu: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Biltegiak</string>
+    <string name="file_saver_downloads_failed">Ez izanliteke fitxategia Deskargakatuan sortu</string>
+    <string name="file_saver_saving_to_downloads">Gailu honek ez du pantaila gordetzekoa, beraz fitxategia Downloadsat doa %1$s gisa</string>
     <string name="file_picker_sort_name_asc">Izena (A–Z)</string>
     <string name="file_picker_sort_name_desc">Izena (Z–A)</string>
     <string name="file_picker_sort_size_desc">Kupurua (handiena lehenik)</string>
@@ -1355,6 +1376,8 @@ Xehetasunak: %2$s"</string>
     <string name="reorder_done">Ordena gordatuta</string>
     <string name="reset_order">Ordena berreskuratu</string>
     <string name="reset_order_done">Ordena berreskuratuta</string>
+    <string name="reset_order_confirm_title">Ordena berreskuratu?</string>
+    <string name="reset_order_confirm_message">Zerrendak bere orden lehenagoa hartuko du eta eskuz arrastatutako ordena galduko da</string>
     <string name="accessibility_select_app">Aukeratu aplikazioa</string>
     <string name="accessibility_select_source">Aukeratu iturria</string>
     <string name="accessibility_move_up">Gora mugitu</string>
@@ -1362,6 +1385,7 @@ Xehetasunak: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s %2$s. posizioera mugitu da %3$s-tik</string>
     <string name="accessibility_scroll_to_top">Zerrendaren goizera joan</string>
     <string name="rename">Izendatu berri</string>
+    <string name="more_options">Aukera gehiago</string>
     <string name="import_">Importatu</string>
     <string name="export">Esportatu</string>
     <string name="copy">Kopiaitu</string>

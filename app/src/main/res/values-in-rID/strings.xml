@@ -361,6 +361,7 @@ Pilih dari mana Anda ingin mengambil APK-nya"</string>
     <string name="expert_mode_restore_saved_done">Pilihan yang disimpan dikembalikan</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Tidak ada tambalan yang cocok dalam paket ini</string>
     <string name="expert_mode_no_results">Tambalan tidak ditemukan</string>
+    <string name="expert_mode_selected_only">Hanya tambalan yang dipilih</string>
     <string name="expert_mode_selected_only_on">Hanya menampilkan tambalan yang dipilih</string>
     <string name="expert_mode_selected_only_off">Menampilkan semua tambalan</string>
     <string name="expert_mode_universal_patches">Tambalan universal</string>
@@ -582,7 +583,7 @@ Untuk hasil terbaik, aplikasi ini merekomendasikan untuk menambal &lt;b&gt;APK l
     <string name="root_mount_module_unmount_warning">Jika KernelSU memiliki \"Unmount modules by default\" diaktifkan, buka KernelSU > Superuser > aplikasi yang Anda pasang > Profil > Custom dan nonaktifkan \"Unmount modules\". Selain itu, APK yang dipatch dan dipasang mungkin tidak berfungsi, meskipun Morphe menampilkannya sebagai terpasang</string>
     <string name="root_pre_patch_installer_standard_title">Mode pasang standar</string>
     <string name="root_pre_patch_installer_standard_description">Tambalan sebagai APK normal dengan dukungan GmsCore. Setelan pemasang Anda digunakan setelah penambalan</string>
-    <string name="root_pre_patch_installer_hint">Diminta saat Settings &gt; Patching &gt; Installation &gt; Installer selection prompt sedang aktif. Mode tambalan tidak dapat diubah setelah proses penambalan selesai</string>
+    <string name="root_pre_patch_installer_hint">Diminta saat Setelan &gt; Penambalan &gt; Pemasangan &gt; Permintaan pemilihan penginstal sedang aktif. Mode tambalan tidak dapat diubah setelah proses penambalan selesai</string>
     <!-- Patcher Screen -->
     <string name="patcher_error_copied">Kesalahan disalin ke papan klip</string>
     <string name="patcher_error_log">Catatan kesalahan</string>
@@ -688,8 +689,10 @@ Mencopot akan menghapus semua data aplikasi secara permanen"</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Penyematan sedang berlangsung…</string>
     <string name="patcher_notification_text">Ketuk untuk kembali ke penambal</string>
+    <string name="patcher_stop_title">Hentikan patching?</string>
     <string name="patcher_stop_discards">Progres sejauh ini dibuang dan tidak ada yang dipasang</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Tetap patching</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Menyulap aplikasi Anda menjadi sesuatu yang luar biasa… 🏆</string>
     <string name="patcher_message_2">Mengajarkan trik baru pada aplikasi lama… 🎩</string>
@@ -1062,7 +1065,7 @@ Dimensi gambar harus sebagai berikut:
     <string name="settings_nomount_only">Hanya NoMount</string>
     <string name="settings_nomount_only_description">Hanya memasang aplikasi dengan NoMount dan tidak pernah kembali ke bind mount, sehingga aplikasi tetap tidak terpasang tanpanya</string>
     <string name="settings_prompt_installer_on_install">Konfirmasi pilihan pemasang</string>
-    <string name="settings_prompt_installer_on_install_description">Meminta cara menginstal setiap aplikasi: dengan root sebelum pematch-an, selainnya setelah pematch-an</string>
+    <string name="settings_prompt_installer_on_install_description">Meminta cara menginstal setiap aplikasi: dengan root sebelum patching, jika tidak setelahnya</string>
     <string name="settings_auto_install_with_shizuku">Pasang otomatis setelah penambalan</string>
     <string name="settings_auto_install_with_shizuku_description">Menginstal atau memasang APK hasil patch secara otomatis segera setelah pematch-an selesai</string>
     <string name="settings_auto_uninstall_with_shizuku">Copot otomatis jika terjadi konflik</string>
@@ -1231,6 +1234,19 @@ Rincian: %2$s"</string>
     <string name="settings_system_selected_patches_section">Tambalan yang dipilih</string>
     <string name="settings_system_no_patches_or_options">Tidak ada tambalan atau opsi yang disimpan</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Pilihan</string>
+    <string name="selection_panel_copy_into">Salin ke %s</string>
+    <string name="selection_sets_title">Set</string>
+    <string name="selection_set_name">Nama set</string>
+    <string name="selection_set_save">Simpan sebagai set</string>
+    <string name="selection_set_replace">Ganti set</string>
+    <string name="selection_set_saved">Disimpan sebagai %s</string>
+    <string name="selection_set_applied">Beralih ke %s</string>
+    <string name="selection_set_deleted">%s dihapus</string>
+    <string name="selection_set_renamed">Diubah namanya menjadi %s</string>
+    <string name="selection_set_rename_title">Ubah nama set</string>
+    <string name="selection_set_delete_title">Hapus set?</string>
+    <string name="selection_set_delete_message">Ini akan menghapus set %s secara permanen</string>
     <string name="copy_selection_empty">Tidak ada pilihan tersimpan lainnya untuk disalin</string>
     <string name="copy_selection_available_format">%1$s dari %2$s tersedia</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1252,7 +1268,10 @@ Rincian: %2$s"</string>
     <string name="file_picker_internal_storage">Memori internal</string>
     <string name="file_picker_sd_card">Kartu SD</string>
     <string name="file_picker_root">Root (/)</string>
+    <string name="file_picker_storage_access_unavailable">Perangkat ini tidak memiliki layar untuk mengizinkan akses ke semua file. Izinkan melalui ADB dengan: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Penyimpanan</string>
+    <string name="file_saver_downloads_failed">Tidak dapat membuat file di Unduhan</string>
+    <string name="file_saver_saving_to_downloads">Perangkat ini tidak memiliki layar penyimpanan, jadi file masuk ke Unduhan sebagai %1$s</string>
     <string name="file_picker_sort_name_asc">Nama (A–Z)</string>
     <string name="file_picker_sort_name_desc">Nama (Z–A)</string>
     <string name="file_picker_sort_size_desc">Ukuran (terbesar dahulu)</string>
@@ -1366,6 +1385,7 @@ Rincian: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s dipindahkan ke posisi %2$s dari %3$s</string>
     <string name="accessibility_scroll_to_top">Gulir ke atas daftar</string>
     <string name="rename">Ganti nama</string>
+    <string name="more_options">Opsi lainnya</string>
     <string name="import_">Impor</string>
     <string name="export">Ekspor</string>
     <string name="copy">Salin</string>

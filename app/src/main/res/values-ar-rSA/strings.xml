@@ -5,7 +5,7 @@
     <string name="home_other_apps_action">اختيار تطبيقات أخرى</string>
     <string name="home_not_patched_yet">لم يتم تعديله بعد</string>
     <string name="home_unpatched_version_installed">تم تثبيت إصدار غير معدل</string>
-    <string name="home_unpatched_badge">لم يُطبَّق التعديل</string>
+    <string name="home_unpatched_badge">لم يتم تعديله</string>
     <string name="home_no_patches_available">لا يوجد تعديلات متاحة</string>
     <string name="home_app_hide_title">إخفاء هذا التطبيق؟</string>
     <string name="home_more_apps_title">المزيد من التطبيقات</string>
@@ -21,7 +21,7 @@
     <string name="home_apps_unhide_message">تعود التطبيقات المخفية إلى شاشة البداية</string>
     <string name="home_app_patch_sources_description">المصادر الغير محددة لا تُقدَّم عند تعديل هذه التطبيقات، وتعديلاتها لا تنضم أبدًا إلى أي تحديد من تلقاء نفسها. يبقى كل مصدر مفعَّلًا لكل تطبيق آخر</string>
     <string name="home_app_patch_sources_mixed">مقدَّمة إلى %1$s من %2$s</string>
-    <string name="home_app_patch_sources_covers">تصحيحات لـ %1$s من أصل %2$s</string>
+    <string name="home_app_patch_sources_covers">لديه تعديلات لـ %1$s من %2$s</string>
     <string name="home_app_patch_sources_last">يحتاج كل تطبيق إلى مصدر واحد متبقٍّ للتعديل منه</string>
     <string name="android_11_bug_dialog_title">خطأ Android 11</string>
     <string name="android_11_bug_dialog_description">يجب منح إذن تثبيت التطبيق مسبقًا لتجنب خطأ في نظام Android 11 سيؤثر سلبًا على تجربة المستخدم</string>
@@ -361,6 +361,7 @@
     <string name="expert_mode_restore_saved_done">تم استعادة التحديد المحفوظ</string>
     <string name="expert_mode_copy_from_bundle_no_patches">لا توجد تعديلات مطابقة في هذه المجموعة</string>
     <string name="expert_mode_no_results">لم يتم العثور على تعديلات</string>
+    <string name="expert_mode_selected_only">التعديلات المحددة فقط</string>
     <string name="expert_mode_selected_only_on">عرض التعديلات المحددة فقط</string>
     <string name="expert_mode_selected_only_off">عرض كل التعديلات</string>
     <string name="expert_mode_universal_patches">التعديلات الشاملة</string>
@@ -1237,6 +1238,19 @@ morphe_adaptive_monochrome_custom.xml
     <string name="settings_system_selected_patches_section">التعديلات المحددة</string>
     <string name="settings_system_no_patches_or_options">لا يوجد تعديلات أو خيارات محفوظة</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">التحديدات</string>
+    <string name="selection_panel_copy_into">نسخ إلى %s</string>
+    <string name="selection_sets_title">مجموعات</string>
+    <string name="selection_set_name">اسم المجموعة</string>
+    <string name="selection_set_save">حفظ كمجموعة</string>
+    <string name="selection_set_replace">استبدال المجموعة</string>
+    <string name="selection_set_saved">تم الحفظ باسم %s</string>
+    <string name="selection_set_applied">تم التبديل إلى %s</string>
+    <string name="selection_set_deleted">تم حذف %s</string>
+    <string name="selection_set_renamed">تم تغيير الاسم إلى %s</string>
+    <string name="selection_set_rename_title">إعادة تسمية المجموعة</string>
+    <string name="selection_set_delete_title">حذف المجموعة؟</string>
+    <string name="selection_set_delete_message">سيؤدي هذا إلى حذف المجموعة %s بشكل دائم</string>
     <string name="copy_selection_empty">لا توجد تحديدات أخرى محفوظة للنسخ منها</string>
     <string name="copy_selection_available_format">%1$s من %2$s متاح</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1258,7 +1272,10 @@ morphe_adaptive_monochrome_custom.xml
     <string name="file_picker_internal_storage">التخزين الداخلي</string>
     <string name="file_picker_sd_card">الذاكرة الخارجية SD</string>
     <string name="file_picker_root">Root (/)</string>
+    <string name="file_picker_storage_access_unavailable">هذا الجهاز لايحتوي على شاشة للسماح بالوصول إلى جميع الملفات. اسمح بذلك عبر ADB باستخدام: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">التخزين</string>
+    <string name="file_saver_downloads_failed">تعذر إنشاء الملف في التنزيلات</string>
+    <string name="file_saver_saving_to_downloads">لا يحتوي هذا الجهاز على شاشة حفظ، لذا سيتم نقل الملف إلى التنزيلات باسم %1$s</string>
     <string name="file_picker_sort_name_asc">الاسم (A–Z)</string>
     <string name="file_picker_sort_name_desc">الاسم (Z–A)</string>
     <string name="file_picker_sort_size_desc">الحجم (الأكبر أولًا)</string>

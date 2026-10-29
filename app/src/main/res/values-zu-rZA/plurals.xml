@@ -48,6 +48,10 @@
         <item quantity="one">umthombo oyedwa %s</item>
         <item quantity="other">imithombo %s</item>
     </plurals>
+    <plurals name="selection_set_count">
+        <item quantity="one">isethi eyodwa (%s)</item>
+        <item quantity="other">izethi %s</item>
+    </plurals>
     <plurals name="package_count">
         <item quantity="one">i-package eyodwa %s</item>
         <item quantity="other">ama-package %s</item>

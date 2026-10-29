@@ -2,157 +2,1518 @@
 <resources>
     <!-- Home Screen -->
     <string name="home_other_apps">အခြားအက်ပ်များ</string>
+    <string name="home_other_apps_action">အခြားအက်ပ်များကို ရွေးချယ်ပါ</string>
     <string name="home_not_patched_yet">ပီကေ မပြင်ရသေးပါ</string>
+    <string name="home_unpatched_version_installed">Patch မလုပ်ထားသော ဗားရှင်းကို ထည့်သွင်းထားသည်</string>
+    <string name="home_unpatched_badge">မပြင်ရသေးပါ</string>
     <string name="home_no_patches_available">Patch များ မရနိုင်ပါ </string>
     <string name="home_app_hide_title">ဤအက်ပ်ကို ဝှက်ထားလိုပါသလား။</string>
+    <string name="home_more_apps_title">အခြားအက်ပ်များ</string>
+    <string name="home_more_apps_hide_title">ဤကတ်ကို ဝှက်ထားလိုပါသလား?</string>
+    <string name="home_more_apps_hide_message">Settings &gt; Appearance &gt; Home screen တွင် ၎င်းကို အချိန်မရွေး ပြန်လည်ဖော်နိုင်သည်</string>
+    <string name="home_app_hide_message">ဤအက်ပ်ကို ပင်မမျက်နှာပြင်မှ ဝှက်ထားပါမည်။ ဝှက်ထားသော အက်ပ်များရှိ စာရင်းအောက်ခြေရှိ ခလုတ်ကို အသုံးပြု၍ နောက်မှ ပြန်လည်ရယူနိုင်ပါသည်</string>
     <string name="home_app_will_be_hidden">ဤအက်ပ်ကို ဝှက်ထားပါမည်</string>
+    <string name="home_app_hidden_named">%s ကို ဖျောက်ထားသည်</string>
+    <string name="home_app_shown_named">%s ကို ပြသထားသည်</string>
+    <string name="home_app_no_hidden">ဝှက်ထားသော အက်ပ်များ မရှိပါ</string>
+    <string name="home_app_hidden_apps_title">ဝှက်ထားသော အက်ပ်များ</string>
+    <string name="home_app_hidden_apps_hint">ပြန်ဖော်ရန် နှိပ်ပါ</string>
+    <string name="home_apps_unhide_message">ဖျောက်ထားခြင်းမှ ပြန်ဖွင့်ထားသော အက်ပ်များသည် ပင်မမျက်နှာပြင်သို့ ပြန်ရောက်ရှိမည်</string>
+    <string name="home_app_patch_sources_description">အမှတ်အသားမပြုထားသော အရင်းအမြစ်များကို ဤ app များကို patch ပြုလုပ်ရာတွင် အသုံးမပြုနိုင်ပါ၊ ၎င်းတို့၏ patch များသည်လည်း အလိုအလျောက် ရွေးချယ်မှုထဲသို့ မပါဝင်ပါ။ အရင်းအမြစ်တစ်ခုစီသည် အခြား app များအားလုံးအတွက် ပွင့်နေမည်ဖြစ်သည်</string>
+    <string name="home_app_patch_sources_mixed">%2$s တွင် %1$s သို့ ပံ့ပိုးပေးသည်</string>
+    <string name="home_app_patch_sources_covers">%2$s တွင် %1$s အတွက် patch များရှိသည်</string>
+    <string name="home_app_patch_sources_last">အက်ပ်တိုင်းအတွက် patch ပြုလုပ်ရန် အနည်းဆုံး အရင်းအမြစ်တစ်ခု ကျန်ရှိရမည်</string>
+    <string name="android_11_bug_dialog_title">Android 11 bug</string>
+    <string name="android_11_bug_dialog_description">အသုံးပြုသူ၏ အတွေ့အကြုံကို ထိခိုက်စေမည့် Android 11 စနစ်၏ bug တစ်ခုကို ရှောင်ရှားရန် အက်ပ်တပ်ဆင်ခွင့်ပြုချက်ကို ကြိုတင်ပေးအပ်ရမည်</string>
+    <string name="deep_link_add_source_title">Source ထည့်ရန်</string>
+    <string name="deep_link_add_source_message">ဤ patch source ကို Morphe တွင် ထည့်လိုပါသလား?</string>
+    <string name="deep_link_add_source_warning">သင်ယုံကြည်စိတ်ချရသော အရင်းအမြစ်များကိုသာ ထည့်သွင်းပါ</string>
     <!-- Shown under the app a link was opened for -->
+    <string name="deep_link_add_source_only_app">ဤ app တစ်ခုတည်းကိုသာ ထည့်သွင်းထားပါသည်။ source ၏ app စာရင်းမှ အခြား app များကို ထည့်သွင်းနိုင်သည်</string>
     <!-- Shown when the link was opened for the universal patches of a source, which no app is added with -->
+    <string name="deep_link_add_source_only_universal">Universal patch များကိုသာ ထည့်သွင်းထားပါသည်။ source ၏ app စာရင်းမှ app များကို သင်ထည့်သွင်းနိုင်သည်</string>
     <!-- Asked when the link names an app of a source that is already added -->
+    <string name="deep_link_add_source_app_back">ဤရင်းမြစ်ကို ထည့်သွင်းပြီးဖြစ်ပါသည်။ ရှိပြီးသားရင်းမြစ်မှ ဤအက်ပ်ကို ထည့်သွင်းလိုပါသလား?</string>
     <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">ဒါက %s ရဲ့ ဗားရှင်းအသစ် ဖြစ်ပါတယ်။ အပ်ဒိတ်လုပ်ချင်ပါသလား?</string>
+    <string name="mpp_import_unreadable">ဤဖိုင်ကို ဖတ်၍မရပါ</string>
     <!-- Home Screen - Update Notifications -->
+    <string name="home_update_available">Morphe အပ်ဒိတ် ရရှိနိုင်သည်</string>
+    <string name="home_update_available_subtitle">တပ်ဆင်ရန် ဗားရှင်းအသစ် အဆင်သင့်ဖြစ်ပြီ</string>
+    <string name="home_blocked_source_title">ပိတ်ပင်ထားသော patch အရင်းအမြစ်ကို တွေ့ရှိသည်</string>
+    <string name="home_blocked_source_subtitle">ပြန်လည်သုံးသပ်ပြီး ဖယ်ရှားရန် နှိပ်ပါ</string>
+    <string name="home_metadata_errors_title">အချို့သော patch အရင်းအမြစ်များကို အသုံးမပြုနိုင်ပါ</string>
+    <string name="home_metadata_errors_subtitle">အရင်းအမြစ်များကို ပြန်လည်သုံးသပ်ရန် နှိပ်ပါ</string>
+    <string name="home_outdated_manager_title">Morphe သည် ဗားရှင်းဟောင်းဖြစ်နေသည်</string>
+    <string name="home_outdated_manager_subtitle">အချို့သော patch source များအတွက် ပိုမိုသစ်သောဗားရှင်း လိုအပ်သည်</string>
+    <string name="home_held_back_title">Patch source တစ်ခုကြောင့် Morphe ပျက်သွားသည်</string>
+    <string name="home_held_back_subtitle">အက်ပ်စတင်နိုင်ရန် ၎င်းကို ကျော်လိုက်ပါသည်။ ပြန်လည်စစ်ဆေးရန် နှိပ်ပါ</string>
+    <string name="home_metered_skipped_title">မိုဘိုင်းဒေတာဖြင့် အပ်ဒိတ်ပြုလုပ်ခြင်းကို ခေတ္တရပ်နားထားသည်</string>
+    <string name="home_metered_skipped_subtitle">မိုဘိုင်းဒေတာဖြင့် အပ်ဒိတ်ပြုလုပ်ခွင့်ပြုရန် နှိပ်ပါ</string>
+    <string name="home_repatch_available_subtitle">အားလုံးကို queue ထဲထည့်ရန် နှိပ်ပါ</string>
+    <string name="home_update_error">အပ်ဒိတ်ပြုလုပ်မှု မအောင်မြင်ပါ</string>
+    <string name="home_update_error_subtitle">အရင်းအမြစ်များကို အပ်ဒိတ်လုပ်နေစဉ် တစ်စုံတစ်ခု မှားယွင်းသွားသည်</string>
+    <string name="home_update_skipped_metered">အပ်ဒိတ်များကို ကျော်သွားသည်</string>
+    <string name="home_update_skipped_metered_subtitle">မိုဘိုင်းဒေတာ ဖွင့်ထားသည်</string>
+    <string name="home_updating_sources">ရင်းမြစ်များကို အပ်ဒိတ်လုပ်နေသည်…</string>
+    <string name="home_update_success">ရင်းမြစ်များ အပ်ဒိတ်လုပ်ခြင်း ပြီးဆုံးပါပြီ</string>
+    <string name="home_update_success_subtitle">သင်၏ရင်းမြစ်များသည် နောက်ဆုံးဗားရှင်း ဖြစ်နေပြီ</string>
+    <string name="home_sources_are_loading">ရင်းမြစ်များကို တင်နေသည်၊ ခေတ္တစောင့်ဆိုင်းပေးပါ…</string>
+    <string name="home_search_apps">အက်ပ်များကို ရှာဖွေပါ</string>
+    <string name="list_options_title">စီစစ်ရန်နှင့် စစ်ထုတ်ရန်</string>
+    <string name="list_options_state_description">%1$s ဖြင့် စီထားသည်၊ %2$s ဖြင့် စစ်ထုတ်ထားသည်</string>
+    <string name="home_app_filter_all_description">ပင်မမျက်နှာပြင်ရှိ အက်ပ်အားလုံး</string>
+    <string name="home_app_filter_patched_description">Morphe ဖြင့် patch ပြုလုပ်ထားသော သို့မဟုတ် သိမ်းဆည်းထားသော အက်ပ်များ</string>
+    <string name="home_app_filter_not_patched_description">Morphe တွင် patch မပြုလုပ်ရသေးသော အက်ပ်များ</string>
+    <string name="home_app_filter_installed_description">ဤစက်တွင် လက်ရှိတပ်ဆင်ထားသော အက်ပ်များ</string>
+    <string name="home_app_filter_uninstalled_description">ဤစက်ပစ္စည်းတွင် မရှိတော့သော Morphe ဖြင့် patch လုပ်ထားသည့် အက်ပ်များ</string>
+    <string name="home_app_filter_clones">Clones များ</string>
+    <string name="home_app_filter_clones_description">မူရင်းအက်ပ်နှင့်အတူ ထည့်သွင်းထားသော၊ ၎င်းတို့ကိုယ်ပိုင် package name အောက်တွင် တည်ဆောက်ထားသော အက်ပ်များ</string>
+    <string name="home_app_grouping_none">မရှိပါ</string>
+    <string name="home_app_grouping_all_apps_description">App အားလုံးပါဝင်သော စာရင်းတစ်ခု</string>
+    <string name="home_app_grouping_sources_description">၎င်းတို့ကို ပံ့ပိုးပေးသော patch source အောက်ရှိ app များ</string>
+    <string name="home_app_grouping_custom_description">သင်ဖန်တီးထားသော ကဏ္ဍများရှိ app များ</string>
+    <string name="home_app_sort_manual_description">အက်ပ်တစ်ခုကို ဖိနှိပ်ထားပြီး ပြန်စီရန် ခလုတ်ကို နှိပ်ပါ</string>
+    <string name="home_app_sort_recommended">အကြံပြုထားသော အစီအစဉ်</string>
+    <string name="home_app_sort_recommended_description">ထည့်သွင်းထားပြီး ပင်ချိတ်ထားသော အက်ပ်များကို အရင်ပြမည်</string>
+    <string name="home_app_sort_name_asc_description">အက္ခရာစဉ်၊ A မှ Z အထိ</string>
+    <string name="home_app_sort_name_desc_description">အက္ခရာစဉ် ပြောင်းပြန်၊ Z မှ A အထိ</string>
+    <string name="home_app_sort_updates_first">Patch အပ်ဒိတ်များကို အရင်ပြရန်</string>
+    <string name="home_app_sort_updates_first_description">Patch အသစ်များရှိသော အက်ပ်များကို အရင်ပြမည်၊ ထို့နောက် အကြံပြုထားသော အစီအစဉ်အတိုင်း ပြမည်</string>
+    <string name="home_app_sort_recently_patched">မကြာသေးမီက patch လုပ်ထားသော</string>
+    <string name="home_app_sort_recently_patched_description">အလတ်တလော patch ပြုလုပ်ထားသော app များကို အရင်ပြရန်</string>
+    <string name="home_no_apps_title">အက်ပ်များ မရနိုင်ပါ</string>
+    <string name="home_no_apps_subtitle">%s တွင် patch source တစ်ခု ထည့်ပါ သို့မဟုတ် ရှိပြီးသားတစ်ခုကို အသက်သွင်းပါ</string>
+    <string name="home_no_apps_search_subtitle">\"%s\" နှင့် ကိုက်ညီသော အက်ပ်များမရှိပါ</string>
+    <string name="home_all_apps_hidden_title">အက်ပ်အားလုံးကို ဖျောက်ထားသည်</string>
+    <string name="home_all_apps_hidden_subtitle">ပင်မမျက်နှာပြင်မှ အက်ပ်အားလုံးကို သင်ဖျောက်ထားသည်</string>
+    <string name="home_no_apps_filter_title">ဤ filter နှင့် ကိုက်ညီသော အက်ပ်များ မရှိပါ</string>
+    <string name="home_no_apps_filter_subtitle">%s နှင့် ကိုက်ညီမှုမရှိပါ</string>
+    <string name="home_category_add">ကဏ္ဍအသစ်ထည့်ပါ</string>
+    <string name="home_category_all_apps">အက်ပ်အားလုံး</string>
+    <string name="home_category_custom">စိတ်ကြိုက်</string>
+    <string name="home_category_uncategorized">ကဏ္ဍသတ်မှတ်မထားသော</string>
+    <string name="home_category_new_title">ကဏ္ဍအသစ်</string>
+    <string name="home_category_rename_title">ကဏ္ဍအမည်ပြောင်းပါ</string>
+    <string name="home_category_name">ကဏ္ဍအမည်</string>
+    <string name="home_category_move_to">ကဏ္ဍသို့ ရွှေ့ပါ</string>
+    <string name="home_category_move_selected_title">ရွေးချယ်ထားသော အက်ပ်များကို ရွှေ့ပါ</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">%s ကို ဖျက်ရန်လား?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">၎င်း၏အက်ပ်များသည် &lt;b&gt;%s&lt;/b&gt; သို့ ပြန်လည်ရွှေ့ပြောင်းမည်ဖြစ်သည်</string>
+    <string name="home_category_actions_unavailable">ဤကဏ္ဍအတွက် လုပ်ဆောင်ချက်များကို အသုံးပြု၍မရပါ</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">သင့်ကိုဘယ်အက်‍ပလီကေးရှင်းကို patch ချင်လဲ။</string>
     <!-- Humorous hype message with light nostalgia -->
+    <string name="home_greeting_2">App တွေကို တစ်ကျော့ပြန် အမိုက်စားဖြစ်အောင် လုပ်ဖို့ အဆင်သင့်ဖြစ်ပြီလား?</string>
     <!-- "Buckle up" referring to fastening your vehicle seat belt. A light-hearted joke to build excitement -->
+    <string name="home_greeting_3">ခါးပတ်ပတ်ထားပါ၊ patch လုပ်ရမယ့်အချိန်ရောက်ပြီ</string>
     <!-- Sarcastic joke about blocking ads, intentionally over-the-top -->
+    <string name="home_greeting_4">နောက်ထပ်တစ်နေ့၊ ကြော်ငြာတွေပိတ်ထားတဲ့ လက်ရာမွန်တစ်ခုပေါ့</string>
     <!-- "Watch ads" refers to watching video ads in unpatched apps -->
+    <string name="home_greeting_5">ကြော်ငြာတွေကြည့်ချင်လား? ကျွန်တော်လည်း မကြည့်ချင်ဘူး</string>
     <!-- Friendly, slightly mischievous joke about controlling app behavior -->
+    <string name="home_greeting_6">မင်းရဲ့ app တွေကို အမိန့်နာခံလာအောင် လုပ်ကြစို့</string>
     <!-- Whimsical forecast-style joke, not meant literally -->
+    <string name="home_greeting_7" formatted="false">ယနေ့အတွက် ခန့်မှန်းချက်- Patch လုပ်နိုင်ခြေ ၁၀၀% ရှိသည်</string>
     <!-- From mediocrity to amazing -->
+    <string name="home_greeting_8">သာမန်အဆင့်ကနေ အံ့မခန်းအဆင့်ကို ပြောင်းလဲဖို့ အဆင်သင့်ဖြစ်ပြီလား?</string>
     <!-- Playful exaggeration, making patching feel heroic -->
+    <string name="home_greeting_9">ဒီနေ့ကစပြီး app တွေကို သူတို့ဘာသာသူတို့ အမှားမလုပ်အောင် ကာကွယ်ပေးမယ်</string>
     <!-- Light sarcasm, casual and tech-savvy humor -->
+    <string name="home_greeting_10">ကဖင်းဓာတ်နဲ့ ကောင်းမွန်တဲ့ patch တွေကနေ စွမ်းအင်ရရှိထားတာပါ</string>
     <!-- Morning greetings (5:00–11:59) -->
+    <string name="home_greeting_morning_1">နိုးထပြီး Patch လုပ်ကြစို့</string>
+    <string name="home_greeting_morning_2">မင်္ဂလာနံနက်ခင်းပါ! အက်ပ်တွေက သူ့အလိုလို Patch ဖြစ်မလာဘူးနော်</string>
     <!-- Afternoon greetings (12:00–16:59) -->
+    <string name="home_greeting_afternoon_1">မွန်းလွဲပိုင်း ပျင်းနေပြီလား? တစ်ခုခုကို patch လုပ်လိုက်ပါ</string>
+    <string name="home_greeting_afternoon_2">နေ့လယ်စာစားပြီးပြီးချင်း patch လုပ်တာက ပိုပြီးခံစားမှုရှိတယ်</string>
+    <string name="home_greeting_afternoon_3">မွန်းလွဲပိုင်း အလှည့်- patch ဗားရှင်း</string>
     <!-- Evening greetings (17:00–21:59) -->
+    <string name="home_greeting_evening_1">မင်္ဂလာညနေခင်းပါ! ညနေပိုင်း patch တွေက ပိုပြီးထူးခြားတယ်</string>
+    <string name="home_greeting_evening_2">အနားယူတော့မလား? အရင်ဆုံး app တစ်ခုကို patch လုပ်ပါ</string>
+    <string name="home_greeting_evening_3">အလုပ်ဆင်းတော့မလား? အရင်ဆုံး တစ်ခုခုကို patch လုပ်လိုက်ပါ</string>
     <!-- Late night greetings (22:00–23:59) -->
+    <string name="home_greeting_late_night_1">မအိပ်သေးဘူးလား? patch လုပ်ဖို့ လိုနေတဲ့ app တွေလည်း မအိပ်သေးပါဘူး</string>
+    <string name="home_greeting_late_night_2">ညဉ့်နက်ထိ patch လုပ်မလား? လေးစားပါတယ်</string>
+    <string name="home_greeting_late_night_3">ညဖက် အလုပ်လုပ်တဲ့မုဒ်- စတင်လိုက်ပြီ</string>
     <!-- Super late night greetings (0:00–4:59) -->
+    <string name="home_greeting_super_late_1">Patch လုပ်ဖို့ အကောင်းဆုံးအချိန်ပေါ့... ပြောရမယ်ဆိုရင်ပေါ့</string>
+    <string name="home_greeting_super_late_2">အိပ်မပျော်ဘူးလား? တစ်ခုခုကို Patch လုပ်လိုက်ပါ</string>
+    <string name="home_greeting_super_late_3">ဒီအချိန်ထိဆိုရင်တော့ မအိပ်ဘဲ Patch ပဲ လုပ်တော့မယ်</string>
+    <string name="home_greeting_super_late_4">သင်ရော၊ ဆာဗာတွေရော နှစ်ခုလုံး နိုးနေကြတာပဲ</string>
+    <string name="home_greeting_super_late_5">ညဘက်မှ နိုးကြားပြီး အလုပ်ဖြစ်တာပဲ</string>
     <!-- Halloween greetings, shown instead of the ones above around October 31 -->
     <!-- Pun on "Trick or treat" -->
+    <string name="home_greeting_halloween_1">Trick လား patch လား?</string>
+    <string name="home_greeting_halloween_2">ဤ APK များတွင် သရဲများမရှိကြောင်း ကျွန်ုပ်တို့ စစ်ဆေးပြီးပါပြီ</string>
+    <string name="home_greeting_halloween_3">ကြောက်စရာကောင်းသော ရာသီ၊ လတ်တလော patch များ</string>
     <!-- Pun on "Something wicked this way comes", a line from Shakespeare's Macbeth -->
+    <string name="home_greeting_halloween_4">ကြောက်စရာကောင်းတဲ့ patch အသစ်တွေ ရောက်လာပြီ</string>
     <!-- Winter holiday greetings, shown instead of the ones above from late December to early January -->
+    <string name="home_greeting_winter_1">ပျော်ရွှင်စရာ အားလပ်ရက်ဖြစ်ပါစေ၊ patch အသစ်လေးတွေ ရောက်လာပါပြီ</string>
     <!-- Pun on the song "Let It Snow! Let It Snow! Let It Snow!" -->
+    <string name="home_greeting_winter_2">နှင်းတွေကျပါစေ၊ patch တွေလည်း တက်ပါစေ</string>
+    <string name="home_greeting_winter_3">နှစ်သစ်၊ patch အသစ်များ</string>
     <!-- Pun on "Dashing through the snow", the opening line of "Jingle Bells" -->
+    <string name="home_greeting_winter_4">နှင်းတွေကြားထဲက patch အသစ်များ</string>
     <!-- New Year greetings, shown instead of the ones above on December 31 and January 1 -->
+    <string name="home_greeting_new_year_1">နှစ်သစ်ကူး ပျော်ရွှင်ပါစေ!</string>
+    <string name="home_greeting_new_year_2">Patch အသစ်များအတွက် အချိန်ရေတွက်နေသည်</string>
+    <string name="home_greeting_new_year_3">နှစ်သစ်ပေမယ့် ကြော်ငြာကင်းတဲ့ အက်ပ်တွေကတော့ အတူတူပါပဲ</string>
     <!-- Pun on the saying "Out with the old, in with the new" -->
+    <string name="home_greeting_new_year_4">ဗားရှင်းအဟောင်းတွေကို ဖယ်ထုတ်ပြီး ဗားရှင်းအသစ်တွေကို ကြိုဆိုလိုက်ပါ</string>
     <!-- Home Screen - Sources Management -->
     <string name="sources_management_title">ကိုင်းရှင်း။</string>
+    <string name="sources_search">အရင်းအမြစ်များနှင့် patch များကို ရှာဖွေပါ</string>
     <!-- Which sources the sources page lists, each with what it keeps -->
+    <string name="sources_filter_all_description">အရင်းအမြစ်တိုင်း</string>
+    <string name="sources_filter_enabled_description">အရင်းအမြစ် ပတ်ချ်များကို ယူထားသောနေရာများ</string>
+    <string name="sources_filter_disabled_description">ပိတ်ထားသော အရင်းအမြစ်များ</string>
+    <string name="sources_filter_issues">အာရုံစိုက်ရန် လိုအပ်သည်</string>
+    <string name="sources_filter_issues_description">ပိတ်ထားသော၊ load လုပ်ရန် ပျက်ကွက်သော သို့မဟုတ် ပို၍အသစ်သော Morphe လိုအပ်သော အရင်းအမြစ်များ</string>
+    <string name="sources_sort_manual">ကိုယ်တိုင်စီစဉ်ခြင်း</string>
+    <string name="sources_sort_manual_hint">စီစဉ်မှုအပြောင်းအလဲလုပ်ရန် source ကို ဖိထားပါ</string>
+    <string name="sources_sort_last_updated">နောက်ဆုံး update ပြုလုပ်သည့်အချိန်</string>
+    <string name="sources_sort_last_updated_description">အသစ်ဆုံး source အပ်ဒိတ်များကို အရင်ပြရန်</string>
+    <string name="sources_sort_enabled_first">ဖွင့်ထားသည်များကို အရင်ပြရန်</string>
+    <string name="sources_sort_enabled_first_description">ပိတ်ထားသော source များမတိုင်မီ အသုံးပြုနေသော source များကို ပြရန်</string>
+    <string name="sources_patches_source_disabled_hint">ဤအရင်းအမြစ်ကို ပိတ်ထားသည်။ ၎င်း၏ patch များကို ကိုးကားရန်အတွက်သာ ဖော်ပြထားပြီး အသုံးမပြုထားပါ</string>
+    <string name="sources_management_open_in_browser">ဘရောက်ဆာတွင် ဖွင့်ရန်</string>
+    <string name="sources_management_report_issue">ပြဿနာတစ်ခုကို အစီရင်ခံရန်</string>
+    <string name="sources_management_failed_to_open_url">URL ကို ဖွင့်၍မရပါ</string>
+    <string name="sources_apps">အက်ပ်များ</string>
+    <string name="sources_apps_description">အမှတ်အသားပြုထားသော အက်ပ်များသည် ဤရင်းမြစ်မှ လာခြင်းဖြစ်သည်။ အက်ပ်တစ်ခုကို ဖယ်ထုတ်ရန် သို့မဟုတ် ပြန်ထည့်ရန် ၎င်းကို နှိပ်ပါ။ အက်ပ်တစ်ခုကို မည်သည့်ရင်းမြစ်မှ မယူဆောင်လာတော့ပါက ၎င်းသည် ပင်မမျက်နှာပြင်မှ ပျောက်ကွယ်သွားမည်ဖြစ်သည်၊ သင်သည် ၎င်းကို patch လုပ်ထားလျှင်မူ ပျောက်ကွယ်မည်မဟုတ်ပါ</string>
+    <string name="sources_apps_brought">ဤရင်းမြစ်မှ ယူဆောင်လာသည်</string>
+    <string name="sources_apps_left_out">ဤရင်းမြစ်မှ ချန်လှပ်ထားသည်</string>
     <!-- Under an app left out of a source that keeps its home screen card because the user has patched it -->
+    <string name="sources_apps_stays_patched">Patched အဖြစ် ဆက်လက်ထားရှိသည်</string>
     <!-- Marks an app (not a patch) the source started supporting since its app list was last opened -->
+    <string name="sources_apps_new">အသစ်</string>
+    <string name="sources_apps_new_apps">App အသစ်များကို ယူဆောင်လာပါ</string>
     <!-- Under the Bring new apps switch in a source's app list, whichever way it is set. "It" is the patch source -->
+    <string name="sources_apps_new_apps_description">နောက်ပိုင်းတွင် ၎င်းမှထည့်သွင်းသော အက်ပ်များသည် ပင်မမျက်နှာပြင်တွင် ပေါ်လာမည်ဖြစ်သည်</string>
+    <string name="sources_management_prerelease_toggle">Pre-release patch များ</string>
+    <string name="sources_management_prerelease_toggle_description">စမ်းသပ်ဆဲ Patch ဗားရှင်းအသစ်များကို စောစီးစွာ အသုံးပြုခွင့်ရရှိမည်</string>
+    <string name="sources_prerelease_warning_title">Pre-release patch များကို အသုံးပြုမည်လား?</string>
+    <string name="sources_prerelease_warning_message">Pre-release build များသည် ဖွံ့ဖြိုးတိုးတက်မှုအဆင့်တွင်သာ ရှိသေးသည်။ Patch များသည် အလုပ်မလုပ်ခြင်း သို့မဟုတ် app ကို ပျက်စီးစေခြင်းများ ဖြစ်နိုင်ပြီး လုပ်ဆောင်ချက်များသည် ကြိုတင်အကြောင်းကြားခြင်းမရှိဘဲ ပြောင်းလဲနိုင်သည်</string>
+    <string name="expert_mode_prerelease_notice">ဤ source သည် pre-release patch များအပေါ်တွင် ရှိနေသည်။ Patch ပြုလုပ်ခြင်းသည် အလုပ်မလုပ်ခြင်း သို့မဟုတ် မျှော်လင့်မထားသော အပြုအမူများ ဖြစ်ပေါ်နိုင်သည်</string>
+    <string name="expert_mode_experimental_version_notice">ဤ source သည် ဤ app version အတွက် စမ်းသပ်ဆဲအဆင့် ထောက်ပံ့မှုသာရှိသည်။ ၎င်း၏ patches များသည် မတည်ငြိမ်ခြင်း သို့မဟုတ် မပြည့်စုံခြင်းများ ရှိနိုင်သည်</string>
+    <string name="sources_management_experimental_versions_toggle">စမ်းသပ်ဆဲ အပလီကေးရှင်း ဗားရှင်းများ</string>
+    <string name="sources_management_experimental_versions_toggle_description">စမ်းသပ်ဆဲ app target များကို ပြသပြီး patch လုပ်ပေးမည်</string>
     <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">Pre-release patch များကို အသက်သွင်းရန်</string>
+    <string name="sources_management_prerelease_disable">Pre-release patch များကို ပိတ်ရန်</string>
+    <string name="sources_management_experimental_versions_enable">စမ်းသပ်ဆဲ အက်ပ်ဗားရှင်းများကို အသက်သွင်းရန်</string>
+    <string name="sources_management_experimental_versions_disable">စမ်းသပ်ဆဲ အက်ပ်ဗားရှင်းများကို ပိတ်ရန်</string>
+    <string name="sources_management_already_exists">ဤ source ကို ထည့်သွင်းပြီးသား ဖြစ်နေပါသည်</string>
+    <string name="sources_management_invalid_url">မှားယွင်းသော source URL ဖြစ်နေပါသည်။ လိပ်စာကို စစ်ဆေးပြီး ထပ်မံကြိုးစားပါ</string>
+    <string name="sources_management_blocked">ဤ patch အရင်းအမြစ်သည် ပိတ်ပင်ထားသောကြောင့် ထည့်သွင်း၍မရပါ</string>
+    <string name="sources_management_source_blocked_badge">ပိတ်ပင်ထားသည်</string>
+    <string name="sources_management_metadata_unavailable">Metadata မရှိပါ</string>
+    <string name="sources_management_metadata_unavailable_hint">Remote metadata ဖိုင်ကို ရယူ၍မရပါ။ ထည့်သွင်းထားသော bundle ဖြင့် Patching ပြုလုပ်ခြင်းသည် ဆက်လက်အလုပ်လုပ်မည်ဖြစ်သော်လည်း ဤအရင်းအမြစ်အတွက် အလိုအလျောက် အပ်ဒိတ်ပြုလုပ်ခြင်းကို ပိတ်ထားသည်</string>
+    <string name="sources_management_metadata_unavailable_hint_missing">Patch bundle ကို ဒေါင်းလုဒ်ဆွဲ၍မရပါ။ Source URL မှားယွင်းနေခြင်း သို့မဟုတ် ဖိုင်မရှိခြင်းကြောင့် ဖြစ်နိုင်သည်</string>
+    <string name="sources_management_outdated_manager_badge">Morphe ကို အပ်ဒိတ်လုပ်ပါ</string>
+    <string name="sources_management_outdated_manager_hint">ဤ source ကို patcher %1$s အတွက် တည်ဆောက်ထားသော်လည်း Morphe %2$s တွင် patcher %3$s ပါဝင်ပါသည်။ ၎င်းကို အသုံးပြုရန် Morphe ကို အပ်ဒိတ်လုပ်ပါ</string>
+    <string name="sources_management_held_back_badge">ပျက်သွားသည်</string>
+    <string name="sources_management_held_back_hint">ဤ source သည် load လုပ်နေစဉ် Morphe ကို ပျက်သွားစေသောကြောင့် ကျော်လိုက်ပါသည်။ ထပ်မံကြိုးစားရန် ၎င်းကို အပ်ဒိတ်လုပ်ပါ သို့မဟုတ် ပြန်လည် import လုပ်ပါ</string>
+    <string name="sources_management_signed_by">လက်မှတ်ရေးထိုးသူ</string>
+    <string name="sources_management_signing_key_changed_badge">Key ပြောင်းလဲသွားသည်</string>
+    <string name="sources_management_signing_key_changed_hint">နောက်ဆုံးထွက်ရှိသောဗားရှင်းသည် ဤရင်းမြစ်ယခင်ကအသုံးပြုခဲ့သော key ဖြင့် လက်မှတ်ရေးထိုးထားခြင်းမရှိသောကြောင့် ထည့်သွင်း၍မရပါ။ ပြန်လည်စစ်ဆေးရန် နှိပ်ပါ</string>
+    <string name="sources_management_source_enabled">Source ကို ဖွင့်ထားသည်</string>
+    <string name="sources_management_source_disabled">Source ကို ပိတ်ထားသည်</string>
+    <string name="sources_management_source_updating">Source ကို အပ်ဒိတ်ပြုလုပ်နေသည်</string>
     <!-- Home Screen - Sources Dialogs -->
+    <string name="sources_dialog_display_name">ပြသမည့်အမည်</string>
+    <string name="sources_dialog_rename">Patch source အမည်ပြောင်းရန်</string>
+    <string name="sources_dialog_duplicate_name_error">ဤအမည်ဖြင့် patch source တစ်ခု ရှိပြီးသားဖြစ်သည်</string>
+    <string name="sources_dialog_missing_error">ဤ patch source ကို အပ်ဒိတ်မလုပ်နိုင်ပါ</string>
+    <string name="sources_dialog_add_source">Patch ရင်းမြစ် ထည့်ရန်</string>
+    <string name="sources_dialog_delete_confirm_body">ဤလုပ်ဆောင်ချက်ကို ပြန်ပြင်၍မရနိုင်ပါ</string>
+    <string name="sources_dialog_remote">အဝေးမှ</string>
+    <string name="sources_dialog_remote_url">ရင်းမြစ် URL</string>
+    <string name="sources_dialog_remote_url_hint">patch bundle .json ဖိုင်ရှိ repository သို့မဟုတ် link တစ်ခု။ အားလုံးကို တစ်ကြိမ်တည်းထည့်ရန် အများအပြားကို copy-paste လုပ်ပါ</string>
+    <string name="sources_dialog_paste_no_links">ကလစ်ဘုတ်ပေါ်တွင် လင့်ခ်များ မတွေ့ရှိပါ</string>
+    <string name="sources_dialog_local">ဒေသတွင်း</string>
+    <string name="sources_dialog_local_files">patch ရင်းမြစ်ဖိုင်များကို ရွေးချယ်ပါ</string>
+    <string name="sources_dialog_local_invalid_extension">ဖိုင်သည် .mpp extension ရှိရမည်</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
+    <string name="sources_dialog_local_updates">%s အပ်ဒိတ်များ</string>
+    <string name="sources_dialog_url_valid">မှန်ကန်သော repository သို့မဟုတ် JSON URL ဖြစ်ရမည်</string>
+    <string name="sources_dialog_url_invalid">URL သည် GitHub/GitLab repo သို့မဟုတ် .json ဖိုင်ကို ညွှန်ပြရမည်</string>
+    <string name="sources_dialog_preinstalled">ကြိုတင်ထည့်သွင်းပြီးသား</string>
+    <string name="sources_dialog_community">Community patch များ</string>
+    <string name="sources_dialog_choose_apps">အက်ပ်များကို ရွေးချယ်ပါ</string>
+    <string name="sources_dialog_choose_apps_description">ရင်းမြစ်ကို load လုပ်ပြီးသည်နှင့် မည်သည့်အက်ပ်များကို ထားရှိမည်ကို ရွေးချယ်ပါ</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
+    <string name="sources_dialog_community_notice_title">ပြင်ပ patch ရင်းမြစ်များ</string>
+    <string name="sources_dialog_community_notice_message">"Community patch sources များကို ၎င်းတို့၏ ကိုယ်ပိုင်ရေးသားသူများက ပြုလုပ်ပြီး ထိန်းသိမ်းထားခြင်းဖြစ်သည်။ Morphe သည် တတိယအဖွဲ့အစည်း၏ patches များကို ပြန်လည်သုံးသပ်ခြင်း သို့မဟုတ် အတည်ပြုခြင်းမပြု며၊ ၎င်းတို့၏ အကြောင်းအရာများ သို့မဟုတ် သင့်စက်ပစ္စည်းပေါ်တွင် လုပ်ဆောင်ချက်များအတွက် တာဝန်ယူမည်မဟုတ်ပါ"</string>
+    <string name="sources_update_success">အပ်ဒိတ်အောင်မြင်သည်</string>
+    <string name="sources_update_unavailable">အပ်ဒိတ် မရှိပါ</string>
+    <string name="sources_download_fail">ရင်းမြစ်များကို ဒေါင်းလုဒ်လုပ်၍ မရပါ: %s</string>
+    <string name="sources_download_fail_named">\'%s\' ကို အပ်ဒိတ်လုပ်၍မရပါ။ အင်တာနက်ချိတ်ဆက်မှုကို စစ်ဆေးပြီး ပြန်ကြိုးစားပါ</string>
+    <string name="sources_download_endpoint_not_found">\'%s\': patch metadata ကို ရှာမတွေ့ပါ</string>
+    <string name="sources_signing_key_changed_named">\'%s\' ၏ နောက်ဆုံးထွက်ရှိသောဗားရှင်းသည် ၎င်းယခင်ကအသုံးပြုခဲ့သော key ဖြင့် လက်မှတ်ရေးထိုးထားခြင်းမရှိသောကြောင့် အပ်ဒိတ်မလုပ်နိုင်ပါ</string>
+    <string name="sources_signing_key_changed_local">ဤဖိုင်ကို ဤရင်းမြစ်ယခင်ကအသုံးပြုခဲ့သော key ဖြင့် လက်မှတ်ရေးထိုးထားခြင်းမရှိပါ။ ယင်းကို ယုံကြည်ရန်အတွက် ရင်းမြစ်ကိုဖျက်ပြီး ဖိုင်ကိုပြန်ထည့်ပါ</string>
+    <string name="sources_signing_key_trust_title">Key အသစ်ကို ယုံကြည်ပါသလား?</string>
+    <string name="sources_signing_key_trust_message">နောက်ဆုံးထွက်ရှိသောဗားရှင်းကို မတူညီသော key ဖြင့် လက်မှတ်ရေးထိုးထားပါသည်။ Developer သည် ၎င်းတို့၏ key ကို အစားထိုးလိုက်ခြင်း သို့မဟုတ် အခြားတစ်စုံတစ်ယောက်က ဤဗားရှင်းကို ထုတ်ဝေခဲ့ခြင်း ဖြစ်နိုင်ပါသည်။ Developer မှ key အသစ်တစ်ခုကို ကြေညာထားမှသာ ယုံကြည်ပါ</string>
+    <string name="sources_signing_key_trust_message_unsigned">နောက်ဆုံးထွက်ရှိသောဗားရှင်းတွင် လက်မှတ်ရေးထိုးထားခြင်းမရှိပါ။ Developer သည် ဗားရှင်းများကို လက်မှတ်ရေးထိုးခြင်း ရပ်တန့်လိုက်ခြင်း သို့မဟုတ် အခြားတစ်စုံတစ်ယောက်က ဤဗားရှင်းကို ထုတ်ဝေခဲ့ခြင်း ဖြစ်နိုင်ပါသည်။ Developer မှ ကြေညာထားမှသာ ယုံကြည်ပါ</string>
+    <string name="sources_signing_key_trusted">ယုံကြည်စိတ်ချရသော key</string>
+    <string name="sources_signing_key_new">Key အသစ်</string>
+    <string name="sources_patch_expert_badge">ကျွမ်းကျင်သူ</string>
+    <string name="sources_patch_expert_badge_tooltip">ဤ patch ကို ကိုယ်တိုင်ထည့်သွင်းရန် Settings တွင် Expert mode ကို အသက်သွင်းပါ</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">APK ကို ရှာဖွေရန် အကူအညီ လိုအပ်ပါသလား?</string>
+    <string name="home_apk_availability_dialog_simple">&lt;b&gt;%s&lt;/b&gt; ကို patch လုပ်ရန်၊ patch မလုပ်ရသေးသော APK version လိုအပ်သည်-</string>
+    <string name="home_apk_availability_dialog_expert">&lt;b&gt;%s&lt;/b&gt; ကို patch လုပ်ရန်၊ အောက်ဖော်ပြပါ version များ၏ patch မလုပ်ရသေးသော APK လိုအပ်သည်-</string>
+    <string name="home_apk_availability_recommended_label">အကြံပြုထားသော</string>
+    <string name="home_apk_availability_unpatched_label">မပြုပြင်ထားသော</string>
+    <string name="home_apk_availability_incompatible_label">ကိုက်ညီမှုမရှိပါ</string>
+    <string name="home_apk_availability_installed_version">ဤစက်တွင် ထည့်သွင်းထားသည်- %s</string>
+    <string name="home_apk_availability_find">ဟုတ်ကဲ့၊ ရှာဖွေဖို့ ကူညီပေးပါ</string>
+    <string name="home_apk_availability_have">မဟုတ်ပါ၊ ကျွန်တော့်မှာ ရှိပြီးသားပါ</string>
+    <string name="home_apk_helper_download">Helper app တစ်ခုကို အသုံးပြုပါ</string>
+    <string name="home_apk_helper_untrusted">အကူအညီပေးအက်ပ်ကို ထည့်သွင်းထားသော်လည်း ယုံကြည်မှု မပေးရသေးသောကြောင့် ဤနေရာတွင် အသုံးမပြုနိုင်ပါ</string>
+    <string name="home_apk_helper_untrusted_action">ကူညီသူများကို ပြန်လည်သုံးသပ်ရန်</string>
+    <string name="home_apk_helper_title">Helper app တစ်ခုဖြင့် ဒေါင်းလုဒ်လုပ်ပါ</string>
+    <string name="home_apk_helper_description">Morphe သည် မူရင်း APK ကို ဒေါင်းလုဒ်လုပ်ရန် အောက်ပါ helper app ကို တောင်းဆိုမည်ဖြစ်ပြီး ဖိုင်ကို ပြန်လည်လက်ခံမည် ဖြစ်သည်</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="home_apk_helper_continue">Helper ကိုဖွင့်ရန်</string>
+    <string name="home_apk_helper_warning">ဤ helper app ကို ယုံကြည်ပါကသာ ဆက်လက်လုပ်ဆောင်ပါ။ Morphe သည် patch မလုပ်မီ လက်ခံရရှိသော အရာ၏ package၊ version နှင့် signature တို့ကို စစ်ဆေးပါသည်</string>
+    <string name="home_apk_helper_warning_unverified">ဤကူညီပေးသည့် အက်ပ်ကို ယုံကြည်ပါကသာ ဆက်လက်လုပ်ဆောင်ပါ။ Morphe သည် ဤ APK ၏ လက်မှတ်ကို အတည်မပြုနိုင်သောကြောင့် ပြင်ဆင်ထားသော ဖိုင်ရှိပါက သိရှိနိုင်မည်မဟုတ်ပါ</string>
+    <string name="home_apk_helper_no_result">Helper app မှ APK ကို ပြန်လည်ပေးပို့ခြင်း မရှိပါ</string>
+    <string name="home_apk_helper_no_access">ကူညီပေးသည့်အက်ပ်သည် ၎င်းပြန်ပေးသော APK သို့ ဝင်ရောက်ခွင့်မပေးခဲ့ပါ</string>
+    <string name="home_apk_helper_no_package">မည်သည့်တပ်ဆင်ထားသော အက်ပ်ကို အသုံးပြုရမည်ကို ကူညီပေးသည့်အက်ပ်က မပြောခဲ့ပါ</string>
+    <string name="home_apk_helper_wrong_package">ကူညီပေးသည့်အက်ပ်သည် ပက်ချ်လုပ်နေသော အက်ပ်နှင့် မတူညီသော အခြားအက်ပ်တစ်ခုကို ပြန်ပေးခဲ့သည်</string>
+    <string name="home_apk_helper_installed_unavailable">Morphe သည် တပ်ဆင်ထားသော အက်ပ်ကို အသုံးမပြုနိုင်ခဲ့ပါ</string>
+    <string name="home_apk_helper_installed_incompatible">တပ်ဆင်ထားသော ဗားရှင်းကို ပက်ချ်လုပ်၍မရနိုင်ပါ</string>
+    <string name="home_apk_use_saved_copy">သိမ်းဆည်းထားသော မိတ္တူကို အသုံးပြုပါ</string>
+    <string name="home_apk_use_installed_app">တပ်ဆင်ထားသော အက်ပ်ကို အသုံးပြုပါ</string>
+    <string name="home_apk_use_saved_unsupported">Patch များသည် ဤသိမ်းဆည်းထားသော မိတ္တူကို အထောက်အပံ့မပေးပါ။ ၎င်းကို patch လုပ်ပါက သင့်အား အတည်ပြုရန် တောင်းဆိုမည် သို့မဟုတ် အခြား APK တစ်ခုကို ရွေးချယ်ပါ</string>
+    <string name="home_apk_use_installed_unverified">တပ်ဆင်ထားသော app ၏ လက်မှတ်ကို အတည်မပြုနိုင်ပါ၊ ထို့ကြောင့် ၎င်းကို patch လုပ်ပြီးသား ဖြစ်နိုင်ပါသည်</string>
+    <string name="home_unverified">အတည်မပြုနိုင်ပါ</string>
+    <string name="home_install_verification_pending">ထည့်သွင်းမှုကို စစ်ဆေးနေသည်…</string>
+    <string name="home_app_info_install_unverified">တပ်ဆင်ထားသော app သည် ၎င်းပြင်ဆင်ခဲ့သော build ဖြစ်ကြောင်း Morphe အနေဖြင့် အတည်မပြုနိုင်ပါ။ ၎င်း၏လုပ်ဆောင်ချက်များကို ပြန်လည်ရရှိရန် ပြန်လည်ပြင်ဆင်ပါ သို့မဟုတ် သိမ်းဆည်းထားသော APK မှ ပြန်လည်တပ်ဆင်ပါ</string>
+    <string name="home_app_info_no_saved_apk">သိမ်းဆည်းထားသော APK မရှိပါ။ Patch လုပ်ရန်အတွက် APK ဖိုင်ကို ထပ်မံရွေးချယ်ရန် လိုအပ်ပါမည်</string>
+    <string name="home_version_requires_android">Android %s နှင့်အထက် လိုအပ်သည်</string>
+    <string name="home_apk_no_compatible_versions_title">ဤစက်တွင် အထောက်အပံ့မပေးပါ</string>
+    <string name="home_apk_no_compatible_versions_message">&lt;b&gt;%1$s&lt;/b&gt; တွင် Android %2$s (API %3$s) အတွက် ပံ့ပိုးထားသော ဗားရှင်းမရှိပါ။ ဖော်ပြထားသော ဗားရှင်းအားလုံးသည် ပိုမိုမြင့်မားသော Android ဗားရှင်းတစ်ခု လိုအပ်ပါသည်</string>
     <!-- Home Screen - Dialog 2: Download Instructions -->
+    <string name="home_download_instructions_title">မူရင်း APK ကို ဒေါင်းလုဒ်လုပ်ပါ</string>
+    <string name="home_download_instructions_finding">ဒေါင်းလုဒ်စာမျက်နှာကို ရှာဖွေနေသည်…</string>
+    <string name="home_download_instructions_step1">အောက်ပါ \'%s\' ခလုတ်ကို နှိပ်ပါ</string>
+    <string name="home_download_instructions_step2_part1">ဝဘ်စာမျက်နှာကို အောက်သို့ဆွဲချပြီး နှိပ်ပါ</string>
+    <string name="home_download_instructions_step2_generic">ဝဘ်စာမျက်နှာကို အောက်သို့ဆွဲချပြီး ၎င်း၏ download ခလုတ်ကို နှိပ်ပါ</string>
+    <string name="home_download_instructions_step2_variant">ဝဘ်စာမျက်နှာကို အောက်သို့ဆွဲချပြီး အပေါ်ဆုံးရှိ &lt;b&gt;APK variant&lt;/b&gt; ၏ download ခလုတ်ကို နှိပ်ပါ</string>
+    <string name="home_download_instructions_step2_search">သင်ယုံကြည်စိတ်ချရသော ဝဘ်ဆိုက်တစ်ခုမှ ရှာဖွေမှုရလဒ်ကို ဖွင့်ပါ</string>
+    <string name="home_download_instructions_step2_search_note">ဤဝက်ဘ်ဆိုက်များကို Morphe မှ အာမခံနိုင်ခြင်းမရှိပါ။ APK ဖိုင်အစား ၎င်းတို့၏ ကိုယ်ပိုင် app store ကို ပေးဆောင်သော ဆိုက်များကို ကျော်သွားပါ</string>
+    <string name="home_download_instructions_step3_search">ထိုဝက်ဘ်ဆိုက်တွင် နောက်ဆုံးထွက်ဗားရှင်းမဟုတ်ဘဲ ဗားရှင်း &lt;b&gt;%s&lt;/b&gt; ၏ APK ကို ဒေါင်းလုဒ်လုပ်ပါ</string>
+    <string name="home_download_instructions_step3_search_any">ထိုဝက်ဘ်ဆိုက်တွင် အက်ပ်၏ APK ကို ဒေါင်းလုဒ်လုပ်ပါ။ &lt;b&gt;မည်သည့်ဗားရှင်းကိုမဆို&lt;/b&gt; patch လုပ်နိုင်သည်</string>
+    <string name="home_download_instructions_download_button_toast">ဤနေရာတွင်မဟုတ်ဘဲ ဝဘ်ဆိုဒ်ပေါ်ရှိ ဒေါင်းလုဒ်ခလုတ်ကို နှိပ်ပါ 😊</string>
+    <string name="home_download_instructions_download_button_toast_2">ကောင်းပြီ! အခု ဆက်လက်လုပ်ဆောင်ရန် နှိပ်ပြီး ဝဘ်ဆိုဒ်သို့ သွားပါ 👆</string>
+    <string name="home_download_instructions_download_button_toast_3">လေ့ကျင့်မှုက အောင်မြင်မှုကို ဆောင်ကြဉ်းပေးပြီး သင်ဟာ ပန်းတိုင်ကို ရောက်ရှိလာနေပါပြီ 💪</string>
+    <string name="home_download_instructions_download_button_toast_4">ရောက်မလာသေးဘူး... ရောက်မလာသေးဘူး... 🙈</string>
+    <string name="home_download_instructions_download_button_toast_5">ဟုတ်ပြီ၊ ခင်ဗျားရဲ့ ဇွဲကို ကျွန်တော် လေးစားပါတယ် 🫡</string>
+    <string name="home_download_instructions_download_button_toast_6">သင်ဟာ အခုဆိုရင် တရားဝင် Morphe ခလုတ်စမ်းသပ်သူတစ်ယောက် ဖြစ်သွားပါပြီ 🏅</string>
+    <string name="home_download_instructions_step3">ဒေါင်းလုဒ်ပြီးသည်အထိ စောင့်ပါ၊ ပြီးလျှင် APK ကို &lt;b&gt;မတင်ပါနှင့်&lt;/b&gt;</string>
+    <string name="home_download_instructions_step3_mount">ဒေါင်းလုဒ်ပြီးသည်အထိ စောင့်ပါ၊ ပြီးလျှင် &lt;b&gt;APK ကို တင်ပါ&lt;/b&gt;</string>
+    <string name="home_download_instructions_step4">ဒေါင်းလုဒ်ပြီးနောက် Morphe သို့ ပြန်သွားပါ</string>
+    <string name="home_download_instructions_step4_mount">မူရင်း APK ကို install လုပ်ပြီးနောက် Morphe သို့ ပြန်လာပါ</string>
+    <string name="home_download_instructions_continue_to">%s သို့ ဆက်သွားရန်</string>
+    <string name="home_download_instructions_destination">ဒေါင်းလုဒ်စာမျက်နှာ</string>
+    <string name="home_download_instructions_copy_link">လင့်ခ်ကို ကူးယူပါ</string>
+    <string name="home_download_instructions_link_copied">လင့်ခ်ကို ကူးယူပြီးပါပြီ</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">%s APK ကို ရွေးချယ်ပါ</string>
+    <string name="home_file_picker_prompt_where">ဘရောက်ဇာများသည် ပုံမှန်အားဖြင့် Download ဖိုလ်ဒါတွင် သိမ်းဆည်းလေ့ရှိသည်</string>
+    <string name="home_file_picker_prompt_open_apk">APK ဖိုင်ကို ဖွင့်ပါ</string>
+    <string name="home_recommended_version">အကြံပြုထားသောဗားရှင်း</string>
+    <string name="home_selected_version">ရွေးချယ်ထားသော ဗားရှင်း</string>
+    <string name="home_select_apk_title">APK ကို ရွေးချယ်ပါ</string>
+    <string name="home_select_apk_description">"Universal patches များသည် မည်သည့်အက်ပ်နှင့်မဆို အလုပ်လုပ်သည်
+
+၎င်း၏ APK ကို မည်သည့်နေရာမှ ရယူမည်ကို ရွေးချယ်ပါ"</string>
+    <string name="home_use_installed_app">တပ်ဆင်ထားသော အက်ပ်ကို အသုံးပြုပါ</string>
+    <string name="home_use_installed_app_description">ဤစက်တွင်ရှိပြီးသား အက်ပ်တစ်ခုကို ရွေးချယ်ပါ</string>
+    <string name="home_open_apk_file_description">Storage မှ APK၊ APKM၊ APKS သို့မဟုတ် XAPK ဖိုင်တစ်ခုကို ရွေးချယ်ပါ</string>
+    <string name="home_installed_app_picker_title">ထည့်သွင်းထားသော အက်ပ်များ</string>
+    <string name="home_installed_app_picker_empty">အက်ပ်များ မတွေ့ရှိပါ</string>
+    <string name="home_installed_app_picker_filter_user">အသုံးပြုသူ အက်ပ်များသာ</string>
+    <string name="home_installed_app_picker_filter_system">စနစ်အက်ပ်များသာ</string>
+    <string name="home_invalid_apk_unreadable">ဖိုင်ကို ဖတ်၍မရပါ။ \'External Storage\' သည် ဘက်ထရီကန့်သတ်ချက်ရှိမရှိ စစ်ဆေးပါ</string>
+    <string name="home_invalid_apk_not_an_apk">ရွေးချယ်ထားသောဖိုင်သည် မှန်ကန်သော APK ဖိုင်မဟုတ်ပါ</string>
+    <string name="home_invalid_apk_already_patched">ရွေးချယ်ထားသော APK သည် patch လုပ်ပြီးသားဖြစ်နေသည်။ မူရင်းအက်ပ်ကိုသာ ရွေးချယ်ပါ</string>
+    <string name="home_invalid_apk_io_error">ဖိုင်ကို ဖွင့်၍မရပါ။ ကျေးဇူးပြု၍ ထပ်မံကြိုးစားပါ</string>
+    <string name="home_external_apk_expert_mode_required">ဤ feature ကို Expert mode တွင်သာ အသုံးပြုနိုင်သည်</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
+    <string name="expert_mode_search">Patch များကို ရှာဖွေပါ</string>
+    <string name="expert_mode_disable_all">အားလုံးကို ပိတ်ပါ</string>
+    <string name="expert_mode_enable_all">အားလုံးကို ဖွင့်ပါ</string>
+    <string name="expert_mode_enable_all_universal_pending">Universal ပက်ချ်များအတွက် ထပ်မံနှိပ်ပါ</string>
+    <string name="expert_mode_universal_all_warning_title">Universal patch အားလုံးကို အသုံးပြုမည်လား?</string>
+    <string name="expert_mode_universal_all_warning_message">Universal patch များကို အတူတကွ စမ်းသပ်ထားခြင်း မရှိပါ။ အားလုံးကို တစ်ပြိုင်နက် အသုံးပြုခြင်းသည် ပဋိပက္ခများဖြစ်ခြင်း၊ patch ပြုလုပ်မှု မအောင်မြင်ခြင်း သို့မဟုတ် app ပျက်သွားခြင်းတို့ ဖြစ်စေနိုင်သည်</string>
+    <string name="expert_mode_reset_to_default">အကြံပြုထားသော patch များကို အသက်သွင်းပါ</string>
+    <string name="expert_mode_reset_to_default_done">အကြံပြုထားသော Patch များကို အသုံးပြုပြီးပြီ</string>
+    <string name="expert_mode_selected_count">%2$s အနက် %1$s ကို ရွေးချယ်ထားသည်</string>
+    <string name="expert_mode_restore_saved">သိမ်းဆည်းထားသော ရွေးချယ်မှုကို ပြန်တင်ပါ</string>
+    <string name="expert_mode_restore_saved_done">သိမ်းဆည်းထားသော ရွေးချယ်မှုများကို ပြန်လည်ရယူပြီးပြီ</string>
+    <string name="expert_mode_copy_from_bundle_no_patches">ဤ bundle တွင် ကိုက်ညီသော patch များ မရှိပါ</string>
+    <string name="expert_mode_no_results">Patch များ မတွေ့ရှိပါ</string>
+    <string name="expert_mode_selected_only">ရွေးချယ်ထားသော patch များသာ</string>
+    <string name="expert_mode_selected_only_on">ရွေးချယ်ထားသော patch များကိုသာ ပြသနေသည်</string>
+    <string name="expert_mode_selected_only_off">Patch အားလုံးကို ပြသနေသည်</string>
+    <string name="expert_mode_universal_patches">Universal patches များ</string>
+    <string name="expert_mode_new_patches">အသစ်</string>
+    <string name="expert_mode_options_customized">စိတ်ကြိုက်ပြုပြင်ထားသည်</string>
+    <string name="expert_mode_patch_required_by_installer">ရွေးချယ်ထားသော install target အတွက် လိုအပ်သည်</string>
+    <string name="expert_mode_patch_unavailable_for_installer">ရွေးချယ်ထားသော install target အတွက် အသုံးမပြုနိုင်ပါ</string>
+    <string name="expert_mode_multiple_sources_warning_title">ပတ်ချ်အရင်းအမြစ် အများအပြားကို ရွေးချယ်ထားသည်</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">မတူညီသော ရင်းမြစ်များမှ Patch များကို အတူတကွ အလုပ်လုပ်ရန် ဖန်တီးထားခြင်း မဟုတ်သောကြောင့် ပဋိပက္ခဖြစ်နိုင်သည် သို့မဟုတ် အက်ပ်ကို ပျက်စီးစေနိုင်သည်</string>
     <!-- Home Screen - Home Sub-Dialogs -->
+    <string name="home_invalid_signature_title">အတည်မပြုထားသော APK</string>
+    <string name="home_invalid_signature_message">&lt;b&gt;%s&lt;/b&gt; အတွက် သင်ရွေးချယ်ထားသော APK သည် မျှော်မှန်းထားသော လက်မှတ် (signing certificate) နှင့် ကိုက်ညီမှုမရှိပါ။ ၎င်းသည် ပြင်ဆင်ထားခြင်း သို့မဟုတ် ယုံကြည်စိတ်ချရမှုမရှိသော ရင်းမြစ်မှ ဖြစ်နိုင်သည်</string>
+    <string name="home_invalid_signature_badge">ဤ APK သည် မူရင်းမဟုတ်နိုင်ပါ</string>
+    <string name="home_split_apk_warning_title">Split APK ကို တွေ့ရှိသည်</string>
+    <string name="home_split_apk_warning_message">"ဤဖိုင်သည် APK bundle
+(&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;) ဖြစ်ပါသည်။
+
+အကောင်းဆုံးရလဒ်များ ရရှိရန်အတွက် ဤအက်ပ်သည် &lt;b&gt;full APK&lt;/b&gt; ကို patch ပြုလုပ်ရန် အကြံပြုပါသည်"</string>
+    <string name="home_split_apk_warning_pick_another">အခြား APK တစ်ခုကို ရွေးချယ်ပါ</string>
+    <string name="home_dialog_unsupported_version_experimental_label">စမ်းသပ်ဆဲ</string>
+    <string name="home_dialog_unsupported_version_experimental_description">ဤဗားရှင်းသည် စမ်းသပ်ဆဲအဆင့်သာဖြစ်ပြီး မတည်ငြိမ်ခြင်း သို့မဟုတ် မပြည့်စုံခြင်းများ ရှိနိုင်သည်</string>
+    <string name="morphe_experimental_app_version_dialog_title">စမ်းသပ်ကြည့်လိုပါသလား? 🧪</string>
+    <string name="morphe_experimental_app_version_dialog_message">"&lt;b&gt;%s&lt;/b&gt; ရဲ့ ဤဗားရှင်းတွင် စမ်းသပ်ဆဲ အစောပိုင်းပံ့ပိုးမှုများ ပါဝင်ပါသည်။
+
+🔧 ဤအက်ပ်ဗားရှင်းအတွက် ပတ်ချ်များကို ပြုပြင်မွမ်းမံနေဆဲဖြစ်သောကြောင့် ပုံမှန်မဟုတ်သော အက်ပ်အပြုအမူများ သို့မဟုတ် အမည်မသိ bug များ ရှိနိုင်သည်"</string>
+    <string name="home_dialog_unsupported_version_dialog_title">မထောက်ပံ့သော ဗားရှင်း</string>
+    <string name="home_dialog_unsupported_version_dialog_description">ဤ APK သည် အကြံပြုထားသော app ဗားရှင်း မဟုတ်ပါ။ ဆက်လက်လုပ်ဆောင်ပါက app အလုပ်မလုပ်ခြင်းများ ဖြစ်နိုင်သည်</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="home_dialog_unsupported_version_dialog_proceed">ဆက်လက်လုပ်ဆောင်မည်</string>
+    <string name="home_dialog_unsupported_version_compatible_versions">ကိုက်ညီသော ဗားရှင်းများ-</string>
+    <string name="home_dialog_unsupported_version_unsupported_label">အထောက်အပံ့မပေးပါ</string>
     <!-- "Build" here refers to a specific compiled version of the app (versionCode) -->
+    <string name="home_dialog_unsupported_version_build">ဘေလ်ဒ် %s</string>
+    <string name="home_dialog_unsupported_version_build_mismatch_description">ဒါက ဗားရှင်းတူပေမဲ့ build မတူတာပါ။ Patch တွေအတွက် သတ်မှတ်ထားတဲ့ build တစ်ခု လိုအပ်ပါတယ်</string>
+    <string name="home_dialog_wrong_package_title">Package မှားယွင်းစွာ ရွေးချယ်ထားပါသည်</string>
+    <string name="home_dialog_wrong_package_description">ရွေးချယ်ထားသော APK သည် သင် patch လုပ်လိုသော application အတွက် မဟုတ်ပါ</string>
+    <string name="home_dialog_expected_package">မျှော်မှန်းထားသော ပက်ကေ့ဂျ်-</string>
+    <string name="home_dialog_selected_package">ရွေးချယ်ထားသော ပက်ကေ့ဂျ်-</string>
+    <string name="home_outdated_patches_dialog_title">Patch များသည် ခေတ်မမီတော့သည်ဖြစ်နိုင်သည်</string>
+    <string name="home_outdated_patches_dialog_message">မိုဘိုင်းဒေတာ ဖွင့်ထားပြီး patch update များကို ပိတ်ထားသည်</string>
+    <string name="home_outdated_patches_dialog_warning">ခေတ်မမီသော patch များဖြင့် patching ပြုလုပ်ခြင်းသည် app ကို ပျက်စီးစေနိုင်သည်</string>
+    <string name="home_outdated_patches_dialog_update_and_patch">Update &amp; patch ပြုလုပ်ပါ</string>
+    <string name="home_low_disk_space_dialog_title">ဒစ်စ်空间 နေရာလွတ်နည်းနေသည်</string>
     <!-- "%1$s" is the free storage and "%2$s" the amount patching needs, both in gigabytes. -->
+    <string name="home_low_disk_space_dialog_message">အားလွတ်သော storage %1$s GB သာရှိပါသည်။ Patching လုပ်ငန်းစဉ် မှန်ကန်စွာ အလုပ်လုပ်နိုင်ရန် အနည်းဆုံး အားလွတ်သော နေရာ %2$s GB လိုအပ်ပါသည်</string>
+    <string name="home_low_disk_space_dialog_warning">ဆက်လက်လုပ်ဆောင်ပါက \"ဖိုင်ရှာမတွေ့ပါ\" အမှား သို့မဟုတ် ပျက်စီးနေသော output APK တစ်ခု ဖြစ်လာနိုင်သည်</string>
+    <string name="home_simple_bundle_select_title">Patch အရင်းအမြစ်ကို ရွေးချယ်ပါ</string>
+    <string name="home_simple_bundle_select_remember">ဤ app အတွက် ဤအရင်းအမြစ်ကို အမြဲသုံးပါ</string>
     <!-- Color picker -->
+    <string name="custom_color">စိတ်ကြိုက်အရောင်</string>
+    <string name="color_picker_shade">ပြည့်ဝမှုနှင့် တောက်ပမှု</string>
+    <string name="color_picker_hue">အရောင်အနုအရင့်</string>
     <!-- Patch Options -->
+    <string name="patch_option_instructions">လမ်းညွှန်ချက်များ</string>
+    <string name="patch_option_enter_value">တန်ဖိုး ထည့်သွင်းပါ</string>
+    <string name="patch_option_enter_number">နံပါတ် ထည့်သွင်းပါ</string>
+    <string name="patch_option_enter_decimal">ဒသမကိန်း ထည့်သွင်းပါ</string>
+    <string name="patch_option_slider_edit">တိကျသောတန်ဖိုးတစ်ခုကို ထည့်သွင်းပါ</string>
+    <string name="patch_option_slider_range_start">မှ</string>
+    <string name="patch_option_slider_range_end">သို့</string>
+    <string name="patch_option_list_duplicate">ဤတန်ဖိုးသည် ရှိပြီးသားဖြစ်သည်</string>
+    <string name="patch_option_list_empty">တန်ဖိုးသည် အလွတ်မဖြစ်စေရ</string>
+    <string name="patch_option_required_missing">%s: လိုအပ်သော ရွေးချယ်မှုအားလုံးကို ဖြည့်စွက်ပါ</string>
     <!-- Badge on a patch option whose value differs from the patch's own, which resets it when tapped -->
+    <string name="patch_option_changed">ပြောင်းလဲထားသည်</string>
     <!-- Badge on a patch option that has to be filled in before patching -->
+    <string name="patch_option_required">လိုအပ်သည်</string>
     <!-- Hint under an image patch option. "%1$s" is the width and "%2$s" the height in pixels -->
+    <string name="patch_option_recommended_size">အကြံပြုချက်- %1$s×%2$s</string>
     <!-- Adaptive Icon Creator -->
+    <string name="adaptive_icon_create">Adaptive icon ဖန်တီးပါ</string>
+    <string name="adaptive_icon_select_image">ပုံရွေးချယ်ပါ</string>
+    <string name="adaptive_icon_change_image">ပုံပြောင်းပါ</string>
+    <string name="image_load_failed">ဤပုံကို တင်ပြ၍မရပါ</string>
     <!-- Card of the adaptive icon creator where the picture is placed on the icon -->
+    <string name="adaptive_icon_launcher">Launcher အိုင်ကွန်</string>
+    <string name="adaptive_icon_gesture_hint">ရွှေ့ရန် ဆွဲပါ၊ အရွယ်အစားပြောင်းရန် ညှစ်ပါ</string>
     <!-- Card of the adaptive icon creator showing the icons as the device draws them -->
+    <string name="adaptive_icon_preview">ကြိုတင်ကြည့်ရှုချက်</string>
     <!-- Caption under the launcher icon in its own colors -->
+    <string name="adaptive_icon_standard">စံနှုန်း</string>
     <!-- Caption under the launcher icon recolored by the system theme -->
+    <string name="adaptive_icon_themed">Theme ပါသော</string>
+    <string name="adaptive_icon_background_color">နောက်ခံအရောင်</string>
+    <string name="adaptive_icon_reset_transform">နေရာနှင့် ပုံစံကို ပြန်လည်သတ်မှတ်ပါ</string>
+    <string name="adaptive_icon_no_transparency_warning">ဤပုံတွင် ပွင့်လင်းသော ပစ်ဇယ်များမရှိသောကြောင့် themed နှင့် အကြောင်းကြားချက် အိုင်ကွန်များသည် Morphe လိုဂိုကိုသာ ဆက်လက်ထိန်းသိမ်းထားမည်ဖြစ်သည်</string>
+    <string name="adaptive_icon_created_success">Adaptive icon ကို အောင်မြင်စွာ ဖန်တီးပြီးပါပြီ</string>
+    <string name="adaptive_icon_creation_failed">Adaptive icon ဖန်တီးရန် ပျက်ကွက်သည်</string>
+    <string name="adaptive_icon_guide">အိုင်ကွန် ဖန်တီးမှု လမ်းညွှန်</string>
+    <string name="adaptive_icon_guide_png_title">နောက်ခံ ပွင့်လင်းသော PNG ဖိုင်ကို အသုံးပြုပါ</string>
+    <string name="adaptive_icon_guide_png_body">နောက်ခံကြည်လင်သော logo တစ်ခုသည် အကောင်းဆုံးဖြစ်ပြီး၊ နောက်ခံအရောင်ကို အောက်တွင် ရွေးချယ်နိုင်ပါသည်။ နောက်ခံမကြည်လင်သော ပုံသည် icon တစ်ခုလုံးကို ဖြည့်ဆည်းမည်ဖြစ်ပြီး၊ themed နှင့် အကြောင်းကြားချက် icon များသည် Morphe logo ကို ဆက်လက်အသုံးပြုမည်ဖြစ်သည်။</string>
+    <string name="adaptive_icon_guide_safe_zones_title">ဘေးကင်းဇုန်များ</string>
+    <string name="adaptive_icon_guide_safe_zones_body">အပြင်ဘောင်သည် သင်၏ launcher ၏ icon ပုံသဏ္ဌာန်ကို ပြသပြီး ၎င်း၏အပြင်ဘက်ရှိ အရာအားလုံးကို ဖြတ်ထုတ်မည်ဖြစ်သည်။ အခြား launcher များသည် အခြားပုံသဏ္ဌာန်များကို အသုံးပြုသောကြောင့် အရေးကြီးသော အသေးစိတ်အချက်အလက်များကို ပုံသဏ္ဌာန်တိုင်းတွင် ပြသသည့် မျဉ်းစက်ဝိုင်းအတွင်း ထားရှိပါ။</string>
+    <string name="adaptive_icon_guide_notification_title">အကြောင်းကြားချက် အိုင်ကွန်</string>
+    <string name="adaptive_icon_guide_notification_body">ဖိုင်တွင် မည်သည့် margin ရှိသည်ဖြစ်စေ ပုံ၏မြင်ရသောအပိုင်းမှ ဖြတ်ယူပြီး အခြား status bar icon များကဲ့သို့ အရွယ်အစားသတ်မှတ်ပါသည်။ ၎င်းကို preview အောက်ရှိ slider ဖြင့် ညှိပါ။ Android တွင် ၎င်းကို အရောင်တစ်ရောင်တည်းဖြင့် ပြသပါသည်။</string>
+    <string name="adaptive_icon_guide_monochrome_title">Theme ပါ အိုင်ကွန်</string>
+    <string name="adaptive_icon_guide_monochrome_body">Launcher icon နှင့် တူညီသော တည်နေရာနှင့် အရွယ်အစားဖြင့် ပုံမှ ဖြတ်ယူထားသည်။ Android 13 နှင့် နောက်ပိုင်းဗားရှင်းများတွင် themed icons ကို ဖွင့်ထားသော launcher များသည် wallpaper မှ အရောင်ကို ယူ၍ ခြယ်သပါမည်။</string>
+    <string name="notification_icon_preview">အကြောင်းကြားချက်</string>
     <!-- Header Creator -->
+    <string name="header_creator_create">စိတ်ကြိုက် header တစ်ခု ဖန်တီးပါ</string>
+    <string name="header_creator_light_theme">Light theme ခေါင်းစဉ်</string>
+    <string name="header_creator_dark_theme">Dark theme ခေါင်းစဉ်</string>
+    <string name="header_creator_success">Header ကို အောင်မြင်စွာ ဖန်တီးပြီးပါသည်</string>
+    <string name="header_creator_failed">Header ဖန်တီး၍ မရပါ</string>
+    <string name="header_creator_guide">Header ဖန်တီးမှုလမ်းညွှန်</string>
+    <string name="header_creator_guide_image_title">ပုံရိပ်ဆိုင်ရာ လိုအပ်ချက်များ</string>
+    <string name="header_creator_guide_image_body">နောက်ခံကြည်လင်သော PNG တစ်ခုသည် app bar နှင့် တစ်သားတည်းဖြစ်သွားမည်ဖြစ်သည်။ ဖိုင်အတွင်းရှိ logo ပတ်လည်ရှိ margin များကို လျစ်လျူရှုမည်ဖြစ်သောကြောင့် ၎င်းသည် မူလ logo ၏ အရွယ်အစားနှင့် နေရာမှ စတင်မည်ဖြစ်သည်။</string>
+    <string name="header_creator_guide_themes_title">Light နှင့် Dark သီမ်းများ</string>
+    <string name="header_creator_guide_themes_body">အက်ပ်အများစုသည် Light နှင့် Dark သီမ်းများအတွက် သီးခြားပုံရိပ်များ လိုအပ်ပါသည်။ အချို့သောအက်ပ်များ (ဥပမာ YouTube Music) သည် Dark သီမ်းကိုသာ အသုံးပြုသောကြောင့် ထိုအပိုင်းကိုသာ ပြသထားပါသည်။</string>
+    <string name="header_creator_guide_positioning_title">နေရာချထားမှုနှင့် အတိုင်းအတာညှိခြင်း</string>
+    <string name="header_creator_guide_positioning_body">Editor ထဲတွင် ပုံကို ဆွဲရွှေ့ခြင်း သို့မဟုတ် ပုံချုံ့ချဲ့ခြင်း ပြုလုပ်ပါ၊ သို့မဟုတ် slider ဖြင့် အရွယ်အစားညှိပါ။ မျဉ်းပြတ်ဘောင်သည် မူလ logo ရှိသည့်နေရာကို ဖော်ပြပြီး ပုံသည် ၎င်းနှင့် တစ်သားတည်းဖြစ်သွားသောအခါ လမ်းညွှန်မျဉ်းများ ပေါ်လာပါမည်။</string>
     <!-- Batch patching -->
+    <string name="batch_patch_action">ရွေးချယ်ထားသည်များကို patch လုပ်မည်</string>
+    <string name="batch_patch_title">အစုလိုက် patch လုပ်ခြင်း</string>
+    <string name="batch_patch_planning">စီတန်းတန်း လုပ်နေသည်...</string>
+    <string name="batch_patch_preparing_next">နောက်ထပ် app တစ်ခုကို ပြင်ဆင်နေသည်...</string>
+    <string name="batch_patch_progress_counter">%2$s အနက် %1$s ကို Patch လုပ်နေသည်</string>
+    <string name="batch_patch_summary">%1$s ခု patch ပြုလုပ်ပြီး၊ %2$s ခု မအောင်မြင်၊ %3$s ခု ကျော်သွားသည်</string>
+    <string name="batch_patch_saved_hint">Patch လုပ်ထားသော app များကို သိမ်းဆည်းပြီးပါပြီ။ ယခုတပ်ဆင်ပါ သို့မဟုတ် နောက်ပိုင်းတွင် settings ရှိ patched APK စာရင်းမှ တပ်ဆင်ပါ</string>
+    <string name="batch_patch_multiple_sources">အချို့သော app များသည် တစ်ခုထက်ပိုသော ရင်းမြစ်များမှ patch များကို ပေါင်းစပ်ထားသဖြင့် ပဋိပက္ခများ ဖြစ်ပေါ်နိုင်သည်</string>
+    <string name="batch_patch_needs_apk">APK မရှိပါ၊ ဖိုင်တစ်ခု ပူးတွဲပေးပါ</string>
+    <string name="batch_patch_wrong_package">ပူးတွဲထားသောဖိုင်သည် %s နှင့် သက်ဆိုင်ပါသည်</string>
+    <string name="batch_patch_version_mismatch">ဗားရှင်း %s ကို patch များမှ အထောက်အပံ့မပေးပါ</string>
+    <string name="batch_patch_source_saved">မူရင်းကို သိမ်းဆည်းပြီးပါပြီ</string>
+    <string name="batch_patch_source_installed">ထည့်သွင်းထားသော အက်ပ်</string>
+    <string name="batch_patch_source_file">ပူးတွဲထားသောဖိုင်</string>
+    <string name="batch_patch_source_unavailable">APK ကို ပြင်ဆင်၍မရနိုင်ပါ</string>
+    <string name="batch_patch_force_version">မည်သို့ပင်ဖြစ်စေ Patch လုပ်မည်</string>
+    <string name="batch_patch_force_version_done">တန်းစီပြီးပါပြီ၊ အက်ပ် ပျက်သွားနိုင်သည်</string>
+    <string name="batch_patch_accept_signature_done">တန်းစီပြီးပါပြီ၊ APK ကို အတည်မပြုရသေးပါ</string>
+    <string name="batch_patch_apk_selected">APK ကို ရွေးချယ်ပြီးပြီ</string>
+    <string name="batch_patch_edit_patches">Patch များ ရွေးချယ်ပါ</string>
+    <string name="batch_patch_state_no_apk">APK မရှိပါ</string>
+    <string name="batch_patch_state_no_patches">ပက်ချ်များမရှိပါ</string>
+    <string name="batch_patch_state_no_selection">မည်သည်ကိုမျှ မရွေးချယ်ထားပါ</string>
+    <string name="batch_patch_no_selection">ရရှိနိုင်သော Patch များထဲမှ မည်သည်ကိုမျှ မရွေးချယ်ထားပါ</string>
+    <string name="batch_patch_policy_install">ပြီးဆုံးပါက ထည့်သွင်းရန်</string>
+    <string name="batch_patch_policy_install_description">ဆင့်တန်းမှုပြီးသည်နှင့် ပက်ချ်လုပ်ထားသော အက်ပ်တိုင်းကို ထည့်သွင်းမည်။ ပိတ်ထားပါက APK များကို နောက်မှအသုံးပြုရန် သိမ်းဆည်းထားမည်ဖြစ်သည်</string>
+    <string name="batch_patch_policy_mount">ပြီးဆုံးပါက Mount လုပ်ပါ</string>
+    <string name="batch_patch_policy_mount_description">Queue ပြီးဆုံးသည်နှင့် patch ပြုလုပ်ထားသော အက်ပ်တိုင်းကို Mount လုပ်ပါမည်။ ပိတ်ထားပါက APK များကို နောက်မှအသုံးပြုရန် သိမ်းဆည်းထားမည်ဖြစ်သည်</string>
+    <string name="batch_patch_policy_install_mount">ပြီးဆုံးပါက Install သို့မဟုတ် mount လုပ်ပါ</string>
+    <string name="batch_patch_policy_install_mount_description">တန်းစီမှုပြီးဆုံးသည်နှင့် ပြင်ဆင်ထားသော အက်ပ်တိုင်းကို Install လုပ်မည် သို့မဟုတ် mount လုပ်မည်။ ပိတ်ထားပါက APK များကို နောက်မှအသုံးပြုရန် သိမ်းဆည်းထားမည်</string>
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="batch_patch_start">စတင်ရန်</string>
+    <string name="batch_patch_stop_title">အစုလိုက်ပက်ချ်လုပ်ခြင်းကို ရပ်တန့်မလား?</string>
+    <string name="batch_patch_stop_description">ယခု patch ပြုလုပ်နေသော app နှင့် တန်းစီစောင့်ဆိုင်းနေသော အရာအားလုံးကို ပယ်ဖျက်ပါမည်</string>
     <!-- Label of a footer button beside "Done". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="batch_patch_install_all">အားလုံးထည့်သွင်းရန်</string>
+    <string name="batch_patch_install_failed">ထည့်သွင်းမှု မအောင်မြင်ပါ</string>
+    <string name="batch_patch_in_progress">အစုလိုက်ပက်ချ်လုပ်နေပြီဖြစ်သည်</string>
+    <string name="batch_patch_nothing_outdated">ပက်ချ်လုပ်ထားသော အက်ပ်အားလုံးသည် နောက်ဆုံးဗားရှင်းဖြစ်သည်</string>
+    <string name="batch_queue_add_action">အစီအစဉ်တွင် ထည့်ရန်</string>
+    <string name="batch_queue_pending_subtitle">ပြန်လည်စစ်ဆေးပြီး စတင်ရန် နှိပ်ပါ</string>
+    <string name="batch_queue_clear_title">အစီအစဉ်ကို ရှင်းလင်းမလား?</string>
+    <string name="batch_queue_clear_description">အက်ပ်အားလုံးကို အစီအစဉ်မှ ဖယ်ရှားမည်ဖြစ်သည်</string>
+    <string name="shortcut_repatch_short">ပြန်လည်ပက်ချ်လုပ်ရန်</string>
+    <string name="shortcut_repatch_long">ဗားရှင်းဟောင်းအက်ပ်များကို ပြန်လည်ပက်ချ်လုပ်ရန်</string>
+    <string name="shortcut_check_updates_short">အပ်ဒိတ်များ စစ်ဆေးပါ</string>
+    <string name="shortcut_check_updates_long">ပက်ချ်အပ်ဒိတ်များ ရှိ၊ မရှိ စစ်ဆေးပါ</string>
+    <string name="shortcut_patch_app">%s ကို ပက်ချ်လုပ်ပါ</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">ဤအက်ပ်ကို ပယ်ဖျက်မလား?</string>
+    <string name="home_app_info_uninstall_removes_data">အက်ပ်နှင့် ၎င်း၏ဒေတာများကို ဤစက်မှ ဖယ်ရှားမည်ဖြစ်သည်</string>
+    <string name="batch_uninstall_confirm_body">ရွေးချယ်ထားသော အက်ပ်များကို သင့်စက်မှ အပြီးတိုင် ဖယ်ရှားမည်ဖြစ်သည်</string>
+    <string name="home_app_info_remove_app_warning">၎င်းသည် အောက်ပါတို့ကို အပြီးတိုင် ဖျက်ပစ်မည်ဖြစ်သည်-</string>
+    <string name="home_app_info_delete_item_database">ဒေတာဘေ့စ် မှတ်တမ်း</string>
+    <string name="home_app_info_delete_item_patched_apk">Patch ပြုလုပ်ထားသော APK ဖိုင်</string>
+    <string name="home_app_info_delete_item_original_apk">မူရင်း APK ဖိုင်</string>
+    <string name="home_app_info_delete_preservation_note">နောင်တွင် Patch ပြုလုပ်ရန်အတွက် သင်ရွေးချယ်ထားသော patch များနှင့် option များကို သိမ်းဆည်းထားမည်ဖြစ်သည်</string>
+    <string name="home_app_info_patches_name_default">Patches များ</string>
+    <string name="home_app_info_patches_name_fallback">အမည်မရှိ</string>
+    <string name="home_app_info_patches_source_removed">Patch အရင်းအမြစ်ကို ဖျက်လိုက်သည်</string>
+    <string name="home_app_info_patches_replace_fail">Patches များကို import လုပ်ရန် ပျက်ကွက်သည်- %s</string>
+    <string name="home_app_info_repatch_no_original_apk">မူရင်း APK ကို ရှာမတွေ့ပါ။ ဤအက်ပ်ကို ပြန်လည် patch လုပ်၍မရပါ</string>
+    <string name="home_app_info_original_package_name">မူရင်း package အမည်</string>
+    <string name="home_app_info_applied_patches">အသုံးပြုထားသော patches များ</string>
+    <string name="home_app_info_patch_source_used">အသုံးပြုထားသော Patch ရင်းမြစ်</string>
+    <string name="home_app_info_install_type_custom_installer">စိတ်ကြိုက် installer</string>
+    <string name="home_app_info_install_type_system_installer">စနစ် installer</string>
+    <string name="home_app_info_install_type_play_store">Play Store မှတစ်ဆင့် install ပြုလုပ်ခြင်း</string>
+    <string name="home_app_info_install_type_root_play_store">Root Play Store မှတစ်ဆင့် install ပြုလုပ်ခြင်း</string>
+    <string name="home_app_info_install_type_shizuku_play_store">Shizuku Play Store မှတစ်ဆင့် install ပြုလုပ်ခြင်း</string>
+    <string name="home_app_info_patch_update_available">Patch update ရရှိနိုင်သည်</string>
+    <string name="home_app_info_patch_update_available_description">ပိုမိုသစ်သော patch version ရှိပါသည်။ နောက်ဆုံးပေါ် တိုးတက်မှုများနှင့် ပြင်ဆင်ချက်များကို ရရှိရန် သင်၏ app ကို ထပ်မံ patch ပြုလုပ်ပါ</string>
+    <string name="home_app_info_app_update_available">အက်ပ် အပ်ဒိတ် ရရှိနိုင်သည်</string>
+    <string name="home_app_info_app_update_available_description">Patch ရင်းမြစ်များသည် ဤအက်ပ်၏ ပိုမိုသစ်သော ဗားရှင်းကို ပံ့ပိုးပေးသည်။ ထိုဗားရှင်းသို့ ပြောင်းရန် Patch ပြန်တင်ပါ</string>
+    <string name="home_app_info_newest_supported_version">နောက်ဆုံး ပံ့ပိုးထားသော ဗားရှင်း</string>
+    <string name="home_app_info_version_move">တပ်ဆင်ထားသည် %1$s၊ နောက်ဆုံး ပံ့ပိုးထားသည် %2$s</string>
+    <string name="home_app_info_version_restore">တပ်ဆင်ထားသည် %1$s၊ ပက်ချ်လုပ်ထားသည် %2$s</string>
+    <string name="home_app_info_app_deleted_warning">အက်ပ်ကို uninstall လုပ်လိုက်ပါပြီ</string>
+    <string name="home_app_info_app_deleted_description">ဤအက်ပ်ကို Morphe ပြင်ပတွင် uninstall လုပ်ခဲ့သည်။ လုပ်ဆောင်ချက်များကို ပြန်လည်ရရှိရန် ၎င်းကို ပြန်လည် patch လုပ်ပါ</string>
+    <string name="home_app_info_not_patched_description">ဤအက်ပ်၏ Patch မလုပ်ထားသော ဗားရှင်းတစ်ခုကို ထည့်သွင်းထားသည်။ Morphe တွင် ယခင် patch မှတ်တမ်းရှိနေသေးသည်</string>
+    <string name="home_app_info_mount_replaced_description">တပ်ဆင်ထားသော အက်ပ်ကို အခြားဗားရှင်းတစ်ခုက အစားထိုးလိုက်သောကြောင့် ပက်ချ်သည် အကျုံးမဝင်တော့ပါ။ Restore လုပ်ခြင်းက ပက်ချ်လုပ်ထားသော ဗားရှင်းကို ပြန်လည်တပ်ဆင်ပေးပါမည်</string>
+    <string name="home_app_info_mount_replaced_by_play_store_description">Google Play မှ တပ်ဆင်ထားသော အက်ပ်ကို အပ်ဒိတ်လုပ်လိုက်သောကြောင့် ပက်ချ်သည် အကျုံးမဝင်တော့ပါ။ Restore လုပ်ခြင်းက ပက်ချ်လုပ်ထားသော ဗားရှင်းကို ပြန်လည်တပ်ဆင်ပေးပါမည်။ ပက်ချ်ကို ဆက်လက်အသုံးပြုနိုင်ရန် Google Play တွင် ၎င်းအတွက် အလိုအလျောက် အပ်ဒိတ်လုပ်ခြင်းကို ပိတ်ထားပါ</string>
+    <string name="app_links_title">ပံ့ပိုးထားသော ဝဘ်လင့်ခ်များ</string>
+    <string name="app_links_description">Android 12 နှင့်အထက်တွင်၊ ခွင့်ပြုချက်မရရှိပါက ပံ့ပိုးထားသော domain များသို့ လင့်ခ်များကို ပုံသေအားဖြင့် သင့်ဘရောက်ဆာတွင် ဖွင့်ပါမည်</string>
+    <string name="app_links_unverified_banner_title">ဝဘ်လင့်ခ်များကို အတည်မပြုရသေးပါ</string>
+    <string name="app_links_unverified_banner_description">လက်ရှိတွင် ထောက်ပံ့ထားသော ဝဘ်လင့်ခ်များကို ဤအက်ပ်အစား သင်၏ဘရောက်ဇာတွင် ဖွင့်ပေးနေပါသည်။</string>
+    <string name="app_links_enable_auto">အလိုအလျောက် အသက်သွင်းပါ</string>
+    <string name="app_links_enable_auto_in_progress">လင့်ခ်များကို အသက်သွင်းနေသည်…</string>
+    <string name="app_links_open_settings">လင့်ခ်ဆက်တင်များကို ဖွင့်ပါ</string>
+    <string name="app_links_repair_success">အက်ပ်လင့်ခ်များကို အောင်မြင်စွာ အသက်သွင်းပြီးပါပြီ</string>
+    <string name="app_links_repair_failed">အက်ပ်လင့်ခ်များကို အလိုအလျောက် အသက်သွင်းရန် မအောင်မြင်ပါ</string>
+    <string name="app_links_all_verified">ပံ့ပိုးထားသော လင့်ခ်အားလုံးကို ဤအက်ပ်တွင် ဖွင့်ရန် သတ်မှတ်ထားသည်</string>
+    <string name="app_links_fix">လင့်ခ်များကို ပြင်ဆင်ရန်</string>
+    <string name="configure">သတ်မှတ်ရန်</string>
+    <string name="patcher_rename_title">ဒါက ပွားယူထားသော အက်ပ်တစ်ခုကို ထည့်သွင်းပါလိမ့်မည်</string>
+    <string name="patcher_rename_description">ဤ patch များသည် ဤအက်ပ်ကို ၎င်းတို့ကိုယ်ပိုင် package name အောက်တွင် တည်ဆောက်ထားသောကြောင့်၊ ၎င်းကို ထည့်သွင်းခြင်းသည် &lt;b&gt;%s&lt;/b&gt; ကို အပ်ဒိတ်လုပ်မည့်အစား ၎င်းနှင့်အတူ clone တစ်ခုကို ထပ်တိုးထည့်သွင်းခြင်း ဖြစ်သည်</string>
+    <string name="patcher_rename_result_package">အဖြစ် ထည့်သွင်းမည်</string>
+    <string name="patcher_rename_replaces">ထိုအမည်ဖြင့် အက်ပ်တစ်ခုကို ထည့်သွင်းထားပြီးဖြစ်သောကြောင့် ၎င်းကို အစားထိုးပါမည်</string>
+    <string name="home_app_info_apk_size">APK အရွယ်အစား</string>
+    <string name="home_app_info_cpu_arch">CPU ဗိသုကာပုံစံ</string>
     <!-- Home Screen - Root Mode -->
+    <string name="root_install_apk_required">Root mode အတွက် patch မလုပ်မီ မူရင်း APK ကို သင့်စက်ပစ္စည်းတွင် တပ်ဆင်ထားရန် လိုအပ်သည်</string>
+    <string name="root_pre_patch_installer_title">Patch မုဒ်ကို ရွေးချယ်ပါ</string>
+    <string name="root_pre_patch_installer_description">သင့်စက်တွင် root access ရှိပါသည်။ ဤအက်ပ်ကို root mount အတွက် patch ပြုလုပ်မည်လား သို့မဟုတ် standard install ပြုလုပ်မည်လား ရွေးချယ်ပါ</string>
+    <string name="root_pre_patch_installer_mount_title">Root mount မုဒ်</string>
+    <string name="root_pre_patch_installer_mount_description">Root mount အတွက် patch ပြုလုပ်ပြီး၊ သက်ဆိုင်ရာ stock အက်ပ်ပေါ်တွင် APK ကို mount ပြုလုပ်သည်။ GmsCore မလိုအပ်ပါ</string>
+    <string name="root_mount_module_unmount_warning">အကယ်၍ KernelSU တွင် \"Unmount modules by default\" ကို ဖွင့်ထားပါက၊ KernelSU &gt; Superuser &gt; သင် mount လုပ်ထားသော app &gt; Profile &gt; Custom သို့သွားပြီး \"Unmount modules\" ကို ပိတ်ပါ။ သို့မဟုတ်ပါက Morphe တွင် mount လုပ်ထားသည်ဟု ပြသနေသော်လည်း mount လုပ်ထားသော patched APK သည် အကျိုးသက်ရောက်မှု မရှိနိုင်ပါ</string>
+    <string name="root_pre_patch_installer_standard_title">Standard install မုဒ်</string>
+    <string name="root_pre_patch_installer_standard_description">GmsCore ပံ့ပိုးမှုရှိသော ပုံမှန် APK တစ်ခုအဖြစ် patch ပြုလုပ်သည်။ patch ပြုလုပ်ပြီးနောက် သင့် installer ဆက်တင်ကို အသုံးပြုမည်ဖြစ်သည်</string>
+    <string name="root_pre_patch_installer_hint">Settings &gt; Patching &gt; Installation &gt; Installer selection prompt ကို ဖွင့်ထားချိန်တွင် မေးမြန်းမည်ဖြစ်သည်။ Patch လုပ်ပြီးနောက် patch mode ကို ပြောင်းလဲ၍မရပါ</string>
     <!-- Patcher Screen -->
+    <string name="patcher_error_copied">အမှားကို clipboard သို့ ကူးယူပြီးပါပြီ</string>
+    <string name="patcher_error_log">အမှားမှတ်တမ်း</string>
+    <string name="patcher_error_technical">နည်းပညာဆိုင်ရာ အသေးစိတ်အချက်အလက်များ</string>
+    <string name="patcher_error_dialog_diagnostics">ရောဂါရှာဖွေခြင်း</string>
     <!-- Titles of the cards the expert log shows in place of the raw start and success log lines -->
+    <string name="patcher_card_started">Patch လုပ်ခြင်း စတင်နေသည်</string>
+    <string name="patcher_card_succeeded">Patch လုပ်ခြင်း အောင်မြင်သည်</string>
     <!-- Field labels, shown in a column beside their values. Keep them short, a long one is cut off rather than wrapped -->
+    <string name="patcher_field_app">အက်ပ်</string>
+    <string name="patcher_field_package">ပက်ကေ့ချ်</string>
+    <string name="patcher_field_failed_patch">Patch လုပ်ခြင်း မအောင်မြင်ပါ</string>
+    <string name="patcher_field_source">ရင်းမြစ်</string>
+    <string name="patcher_field_split">Split APK</string>
+    <string name="patcher_field_manager">မန်နေဂျာ</string>
+    <string name="patcher_field_runtime">Runtime</string>
     <!-- Native code libraries (.so files) packed inside the APK -->
+    <string name="patcher_field_libraries">Library များ</string>
+    <string name="patcher_field_android">Android</string>
+    <string name="patcher_field_device">စက်ပစ္စည်း</string>
     <!-- Free and total RAM of the device, never its storage -->
+    <string name="patcher_field_memory">မှတ်ဉာဏ်</string>
+    <string name="patcher_field_storage">သိုလှောင်မှု</string>
     <!-- Size of the patched APK, once patching finished -->
+    <string name="patcher_field_output_size">Output အရွယ်အစား</string>
     <!-- How long patching took -->
+    <string name="patcher_field_time">ကြာချိန်</string>
     <!-- Average and peak heap the patcher held while it ran -->
+    <string name="patcher_field_memory_average">ပျမ်းမျှမှတ်ဉာဏ်</string>
+    <string name="patcher_field_memory_max">အများဆုံးမှတ်ဉာဏ်</string>
     <!-- Fastest read or write rate reached while patching, in data per second -->
+    <string name="patcher_field_io_peak">Storage I/O အမြင့်ဆုံးနှုန်း</string>
+    <string name="patcher_field_value_unknown">မသိရပါ</string>
     <!-- Value of "Libraries": the libraries this device cannot use were dropped from the patched APK -->
+    <string name="patcher_field_value_stripped">ဖယ်ထုတ်ပြီး</string>
     <!-- Value of "Libraries": every library was left in the patched APK -->
+    <string name="patcher_field_value_kept">ထိန်းသိမ်းထားသည်</string>
+    <string name="patcher_tab_logs">Patcher မှတ်တမ်းများ</string>
+    <string name="patcher_tab_game">ဂိမ်းများ</string>
+    <string name="patcher_logs_waiting">Log output ကို စောင့်ဆိုင်းနေသည်…</string>
+    <string name="patcher_logs_lost">အက်ပ်ကို ပြန်ဖွင့်သည့်အခါ log output များ သိမ်းဆည်းထားမည်မဟုတ်ပါ</string>
+    <string name="patcher_long_step_warning">ဤအဆင့်သည် အချိန်အနည်းငယ် ကြာနိုင်ပါသည်။ ကျေးဇူးပြု၍ စောင့်ပါ…</string>
+    <string name="patcher_installing_subtitle">အဆင်သင့်ဖြစ်ဖို့ နီးစပ်နေပါပြီ! 🎸</string>
+    <string name="patcher_success_title">အားလုံးပြီးပါပြီ! 🎉</string>
+    <string name="patcher_success_subtitle">သင့်အက်ပ်ကို patch လုပ်ပြီး install လုပ်ပြီးပါပြီ!</string>
+    <string name="patcher_mounted_subtitle">သင်၏ app ကို patch လုပ်ပြီး mount လုပ်ပြီးပါပြီ!</string>
+    <string name="patcher_complete_title">Patch လုပ်ခြင်း ပြီးဆုံးပါပြီ! ✨</string>
+    <string name="patcher_failed_title">အိုမိုက်! တစ်ခုခု မှားယွင်းနေပါတယ်</string>
+    <string name="patcher_failed_dialog_title">Patch လုပ်ခြင်း မအောင်မြင်ပါ</string>
+    <string name="patcher_error_details">အမှားအယွင်း အသေးစိတ်</string>
+    <string name="patcher_change_patches">Patch များကို ပြောင်းလဲပါ</string>
+    <string name="patcher_unknown_error">အမည်မသိအမှားတစ်ခု ဖြစ်ပေါ်ခဲ့သည်</string>
+    <string name="patcher_split_step_extracting">ခွဲထုတ်ထားသော APK များကို ထုတ်ယူနေသည်</string>
+    <string name="patcher_split_step_merging">%s ကို ပေါင်းစည်းနေသည်</string>
+    <string name="patcher_split_step_writing">ပေါင်းစည်းထားသော APK ကို ရေးသားနေသည်</string>
+    <string name="patcher_split_step_finalizing">ပေါင်းစည်းထားသော APK ကို အပြီးသတ်နေသည်</string>
+    <string name="patcher_conflict_title">Package ပဋိပက္ခဖြစ်နေသည်</string>
+    <string name="patcher_conflict_subtitle">လက်ရှိဗားရှင်းကို အရင် uninstall လုပ်ရန် လိုအပ်သည်</string>
+    <string name="patcher_conflict_hint">Patch ပြုလုပ်ထားသော အက်ပ်သည် တပ်ဆင်ထားသော ဗားရှင်းနှင့် မတူညီသော လက်မှတ်ကို အသုံးပြုထားသည်။ တပ်ဆင်ထားသည်ကို ဖယ်ရှားပါက အက်ပ်ဒေတာအားလုံး ပျက်သွားမည်ဖြစ်သည်</string>
+    <string name="patcher_installed_conflict_title">တပ်ဆင်ထားသည်ကို ဖယ်ရှားရန် လိုအပ်သည်</string>
+    <string name="patcher_installed_conflict_body">"Morphe သည် patch လုပ်ထားသော app များကို မူရင်းနှင့်မတူသော ၎င်း၏ကိုယ်ပိုင် certificate ဖြင့် လက်မှတ်ရေးထိုးပါသည်။ patched app ကို install မလုပ်မီ လက်ရှိ version ကို ဖယ်ရှားရန် Android မှ လိုအပ်ပါသည်။
+
+Uninstall လုပ်ခြင်းသည် app data အားလုံးကို အပြီးတိုင် ပယ်ဖျက်မည်ဖြစ်သည်"</string>
+    <string name="patcher_install_error_title">Installation အမှား</string>
+    <string name="patcher_mount_error_title">Mount လုပ်ရာတွင် အမှားရှိနေသည်</string>
+    <string name="patcher_install_error_subtitle">Uninstall လုပ်ပြီး ပြန်လည် install လုပ်ကြည့်ပါ</string>
+    <string name="patcher_ready_to_mount_subtitle">Mount လုပ်ရန် အောက်ပါခလုတ်ကို နှိပ်ပါ</string>
+    <string name="patcher_patches_excluded_for_installer">ဤ install method အတွက် အသုံးမပြုနိုင်ပါ သို့မဟုတ် ဖယ်ထုတ်ထားသည်- %s</string>
+    <string name="patcher_back_to_game_hint">သင့်ဂိမ်းသို့ ပြန်သွားရန် %1$s ကို နှိပ်ပါ</string>
+    <string name="patcher_storage_permission_dialog_title">Storage path သို့ ဝင်ရောက်၍မရပါ</string>
+    <string name="patcher_incompatible_patcher_title">အပ်ဒိတ်ပြုလုပ်ရန် လိုအပ်သည်</string>
+    <string name="patcher_incompatible_patcher_description">ရင်းမြစ် &lt;b&gt;%1$s&lt;/b&gt; အတွက် patcher &lt;b&gt;%2$s&lt;/b&gt; သို့မဟုတ် ပိုမိုသစ်သော ဗားရှင်း လိုအပ်ပါသည်။ ၎င်းကို အသုံးပြုရန် Morphe ကို အပ်ဒိတ်လုပ်ပါ</string>
+    <string name="patcher_storage_permission_description_api30">ပက်ချ်ရွေးချယ်စရာ တစ်ခု သို့မဟုတ် တစ်ခုထက်ပိုသော ရွေးချယ်စရာများသည် Morphe ဖတ်၍မရသော လမ်းကြောင်းများသို့ ညွှန်းထားပါသည်။ သိုလှောင်မှုဝင်ရောက်ခွင့်ကို ခွင့်ပြုပြီး ခလုတ်ကို နှိပ်ပါ၊ ထို့နောက် ပက်ချ်ပြုလုပ်ခြင်းသည် အလိုအလျောက် စတင်မည်ဖြစ်သည်</string>
+    <string name="patcher_storage_permission_description_legacy">Patch ရွေးချယ်မှုတစ်ခု သို့မဟုတ် တစ်ခုထက်ပိုသော ရွေးချယ်မှုများသည် ဝင်ရောက်၍မရသော path များသို့ ညွှန်းထားပါသည်။ Patch ရွေးချယ်မှုရှိ path များကို အပ်ဒိတ်လုပ်ပြီး ပြန်ကြိုးစားပါ</string>
+    <string name="patcher_storage_permission_grant">Storage ခွင့်ပြုချက် ပေးပါ</string>
+    <string name="patcher_storage_permission_denied_warning">Storage ခွင့်ပြုချက် ငြင်းပယ်ခံခဲ့ရသည်။ ဤ path ကို အသုံးပြုရန် ခွင့်ပြုချက်ပေးပါ သို့မဟုတ် ဖိုင်များကို app ၏ ပုဂ္ဂလိက directory သို့ ရွှေ့ပါ</string>
+    <string name="patcher_storage_permission_open_settings">Storage ဆက်တင်များကို ဖွင့်ပါ</string>
+    <string name="patcher_storage_badge_denied">ခွင့်ပြုချက် ငြင်းပယ်ထားသည်</string>
+    <string name="patcher_storage_badge_missing">ရှာမတွေ့ပါ</string>
+    <string name="patcher_storage_badge_rejected">အသုံးပြု၍မရပါ</string>
+    <string name="batch_patch_option_paths_skipped">Patch option ဖိုင်များ ပျောက်ဆုံးနေသောကြောင့် ကျော်သွားမည်ဖြစ်သည်- %1$s</string>
+    <string name="patcher_missing_patches_title">အချို့သော patch များ ပျောက်ဆုံးနေသည်</string>
+    <string name="patcher_missing_patches_description">ဤ app အတွက် သိမ်းဆည်းထားသော ရွေးချယ်မှုတွင် လက်ရှိ enable ဖြစ်နေသော source များမှ မပေးတော့သော patches များ ပါဝင်နေပါသည်။ ဆက်လက်လုပ်ဆောင်ပါက ၎င်း patches များမပါဘဲ app ကို patch လုပ်မည်ဖြစ်သည်</string>
+    <string name="patcher_missing_patches_label">မရရှိတော့ပါ</string>
+    <string name="patcher_option_paths_gone_title">Patch option ဖိုင်များ ပျောက်ဆုံးနေသည်</string>
+    <string name="patcher_option_paths_gone_description">Patch option တစ်ခု သို့မဟုတ် တစ်ခုထက်ပိုသော ဖိုင်များ ပျောက်ဆုံးနေပါသည်။ ၎င်းတို့မပါဘဲ patch လုပ်ရန် လမ်းကြောင်းများကို ဖယ်ရှားပါ သို့မဟုတ် ဖိုင်များကို ပြန်ထည့်ပြီး ထပ်မံကြိုးစားပါ</string>
+    <string name="patcher_option_paths_rejected_title">Patch option ဖိုင်များကို အသုံးပြု၍မရနိုင်ပါ</string>
+    <string name="patcher_option_paths_rejected_description">Patch option တစ်ခု သို့မဟုတ် တစ်ခုထက်ပိုသော option များသည် ပျောက်ဆုံးနေသော ဖိုင်များ သို့မဟုတ် patch မှ တောင်းဆိုထားသည်များကို မရှိသော ဖိုင်များကို ညွှန်ပြနေပါသည်။ ၎င်းတို့မပါသော patch လမ်းကြောင်းများကို ဖယ်ရှားပါ သို့မဟုတ် option ညွှန်ကြားချက်များတွင် ဖော်ပြထားသည့်အတိုင်း ဖိုင်များကို ပြင်ဆင်ပြီး ထပ်မံကြိုးစားပါ</string>
+    <string name="patcher_option_paths_clear">လမ်းကြောင်းများကို ဖယ်ရှားပြီး ဆက်လက်လုပ်ဆောင်မည်</string>
+    <string name="patcher_storage_permission_hint">အကြံပြုချက်- ဖိုင်များကို /Android/data/app.morphe.manager/files/ သို့ ရွှေ့ပါ - အပိုခွင့်ပြုချက်များ မလိုအပ်ပါ</string>
     <!-- Patcher Screen - Patcher Steps -->
+    <string name="patcher_step_group_preparing">ပြင်ဆင်နေသည်</string>
+    <string name="patcher_step_load_patches">Patch များအား Load လုပ်နေသည်</string>
+    <string name="patcher_step_prepare_split_apk">Split APK ကို ပေါင်းစည်းနေသည်</string>
+    <string name="patcher_step_unpack">APK ဖိုင်ကိုဖတ်နေသည်</string>
+    <string name="patcher_step_group_saving">သိမ်းဆည်းနေသည်</string>
+    <string name="patcher_step_write_patched">Patch လုပ်ထားသော APK ဖိုင်ကို ရေးသားနေသည်</string>
+    <string name="patcher_step_sign_apk">ပြုပြင်ထားသော APK ဖိုင်ကို လက်မှတ်ရေးထိုးနေသည်</string>
     <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">နောက်ခံ patch လုပ်ခြင်းဆိုင်ရာ အကာအကွယ်</string>
+    <string name="battery_optimization_dialog_description">အချို့သော device များသည် app ကို minimize လုပ်လိုက်သောအခါ patcher ကို ရပ်တန့်စေနိုင်ပါသည်။ patching လုပ်ငန်းစဉ် စိတ်ချယုံကြည်စွာ ပြီးမြောက်စေရန် Morphe ကို ဘက်ထရီကန့်သတ်ချက်များမရှိဘဲ run ခွင့်ပြုပါ</string>
+    <string name="battery_optimization_not_now">အခုမဟုတ်သေးပါ</string>
     <!-- Patcher Screen - Patcher Worker -->
+    <string name="patcher_notification_title">ပြုပြင်နေသည်…</string>
+    <string name="patcher_notification_text">ပြုပြင်သူထံ ပြန်သွားရန် နှိပ်ပါ</string>
+    <string name="patcher_stop_title">Patch လုပ်ခြင်းကို ရပ်တန့်မလား?</string>
+    <string name="patcher_stop_discards">ယခုအချိန်အထိ လုပ်ဆောင်ထားမှုများကို ပယ်ဖျက်လိုက်ပြီး မည်သည့်အရာကိုမျှ ထည့်သွင်းထားခြင်းမရှိပါ</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Patch လုပ်ခြင်းကို ဆက်လုပ်မည်</string>
     <!-- Patcher Screen - Patcher Messages -->
+    <string name="patcher_message_1">သင့်အက်ပ်ကို အမိုက်စားတစ်ခုအဖြစ် ပြောင်းလဲပေးနေသည်... 🏆</string>
+    <string name="patcher_message_2">အက်ပ်ဟောင်းတွေကို နည်းလမ်းသစ်တွေ သင်ပေးနေသည်... 🎩</string>
+    <string name="patcher_message_3">သင့်အက်ပ်ကို ဒစ်ဂျစ်တယ်စနစ်ဖြင့် ပြုပြင်ထိန်းသိမ်းပေးနေသည်… 🔧</string>
+    <string name="patcher_message_4">ဒစ်ဂျစ်တယ်မှော်အတတ်များကို ဖော်ဆောင်နေသည်… ☕</string>
+    <string name="patcher_message_5">ကော်ဖီခေတ္တနားချိန် ယူရန် အကြံပြုလိုသည်… ☕</string>
+    <string name="patcher_message_6">အပြင်ဘက်ကို ကြည့်လိုက်ပါ၊ ရာသီဥတု သာယာနေသည်… 🌤️</string>
+    <string name="patcher_message_7">1 များနှင့် 0 များကို ညှိပေးနေသည်… 🤖</string>
+    <string name="patcher_message_8">ရှုပ်ထွေးနေသော ဒစ်ဂျစ်တယ်ကုတ်များကို ဖြေရှင်းနေသည်… 🍝</string>
     <!-- Morphe patches fix YouTube bugs that Google still has not fixed. -->
+    <string name="patcher_message_9">Patch မလုပ်ရသေးသော app ရှိ bug များကို ပြင်ဆင်နေသည်… 🪲</string>
+    <string name="patcher_message_10">ကောင်းမွန်သော patch များသည် စောင့်ရကျိုးနပ်သည်… ⏳</string>
+    <string name="patcher_message_11">ပစ်ဆယ်လ်များကို တောက်ပလာသည်အထိ ပွတ်တိုက်ပေးနေသည်… 💎</string>
+    <string name="patcher_message_12">ကပ္ပတိန်က \"Patching in progress\" အချက်ပြဆိုင်းဘုတ်ကို ပိတ်လိုက်သည်အထိ ကျေးဇူးပြု၍ ထိုင်ခုံတွင် ဆက်လက်ရှိနေပေးပါ… 💺✈️</string>
+    <string name="patcher_message_13">ပြင်ဆင်ပြီးသော သင့်အက်ပ်ကို လတ်လတ်ဆတ်ဆတ် ပြင်ဆင်ပေးနေသည်… 🍳</string>
     <!-- "bytecode" can be translated from "the app code" -->
+    <string name="patcher_message_14">အက်ပ်ကုတ်များနှင့် ယဉ်ကျေးစွာ ညှိနှိုင်းနေသည်… 🤝</string>
     <!-- Space flight communications callout. -->
+    <string name="patcher_message_15">စနစ်အားလုံး ပုံမှန်ဖြစ်သည်… လမ်းကြောင်းညှိခြင်း တည်ငြိမ်သည်… 🚀</string>
+    <string name="patcher_message_16">ဒစ်ဂျစ်တယ်သံပရာသီးမှ ဖျော်ရည်ညှစ်သကဲ့သို့ အပိုစွမ်းအင်များကို ညှစ်ထုတ်နေသည်… 🍋</string>
+    <string name="patcher_message_17">အက်ပ်ကို ပိုမိုကောင်းမွန်သော ပုံစံအသစ်သို့ ပြောင်းလဲရန် တိုက်တွန်းနေသည်… 🌱</string>
     <!-- Quantum physics (box emoji is a reference to Schrödinger's cat). -->
+    <string name="patcher_message_18">အက်ပ်၏ အခြေအနေကို ပက်ချ်မတင်ထားခြင်းမှ ပက်ချ်တင်ပြီးသား အခြေအနေသို့ ပြောင်းလဲနေသည်… 📦⚛️</string>
     <!-- Throw away reference to a Saturday Night Live sketch. "fever" means sickness or the flu. "prescription" means medical treatment or can be translated from "cure" -->
+    <string name="patcher_message_19">သင့်အက်ပ်သည် ဖျားနာနေပြီး တစ်ခုတည်းသော ကုသမှုမှာ ပက်ချ်များ ပိုမိုတင်ပေးရန်ဖြစ်သည်… 🩺🔔</string>
+    <string name="patcher_message_20">အသုံးမဝင်သည်များကို ဖယ်ရှားနေပါသည်။ ခေတ္တစောင့်ဆိုင်းပေးပါ… 🗑️</string>
     <!-- Expert patcher Screen -->
+    <string name="patching_app">App ကို patching ပြုလုပ်နေသည်</string>
+    <string name="memory_usage">Memory အသုံးပြုမှု</string>
+    <string name="cpu_usage">CPU အသုံးပြုမှု</string>
+    <string name="storage_io_usage">Storage I/O အသုံးပြုမှု</string>
     <!-- Patcher Screen - Other hidden strings -->
+    <string name="applying_patches">ပြုပြင်ချက်များကို အသုံးချနေသည်</string>
+    <string name="failed_to_execute_patch">%s ကို အသုံးချ၍ မရပါ</string>
+    <string name="patched_app_save_failed_toast">ပြုပြင်ထားသော app ကို သိမ်းဆည်း၍ မရပါ</string>
+    <string name="plugin_activity_dialog_body">ဤ plugin ကို ဆက်လက်အသုံးပြုရန် အသုံးပြုသူ၏ တုံ့ပြန်မှု လိုအပ်သည်</string>
+    <string name="patcher_process_killed_message">စနစ်သည် patcher အပြီးမသတ်မီ ရပ်တန့်လိုက်ပါသည်။ အများအားဖြင့် memory နေရာလွတ်ရန်အတွက် ဖြစ်ပါသည်။ အခြားအက်ပ်များကို ပိတ်ပြီး ပြန်ကြိုးစားပါ</string>
+    <string name="patcher_process_crashed_message">Patcher သည် မပြီးဆုံးမီ crash ဖြစ်သွားသည်။ ၎င်းသည် ထပ်မံဖြစ်ပွားပါက settings တွင် \"Use embedded VM\" ကို ပိတ်ပြီး log နှင့်အတူ ပြဿနာကို အကြောင်းကြားပါ</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
+    <string name="patcher_out_of_memory_message">%1$s MB heap ရှိသော patcher တွင် memory ကုန်သွားပါသည်။ ဤအက်ပ်သည် ရွေးချယ်ထားသော patches များအတွက် အလွန်ကြီးမားနေပါသည်။ patch source အရေအတွက် လျှော့ချ၍ patch ပြုလုပ်ရန် သို့မဟုတ် patches အရေအတွက် လျှော့ချ၍ ရွေးချယ်ရန် ကြိုးစားပါ</string>
+    <string name="install_app_success">အောင်မြင်စွာ တပ်ဆင်ပြီးပါသည်</string>
+    <string name="install_app_fail">အက်ပ်တပ်ဆင်၍မရပါ: %s</string>
+    <string name="install_ignore_signature">မည်သို့ပင်ဖြစ်စေ တပ်ဆင်မည်</string>
+    <string name="install_ignore_signature_description">အက်ပ်ဒေတာများကို သိမ်းဆည်းထားမည်ဖြစ်သော်လည်း root module တစ်ခုက Android ၏ signature verification ကို ပိတ်ထားမှသာ အလုပ်လုပ်မည်ဖြစ်သည်</string>
+    <string name="uninstall_app_fail">အက်ပ်ကို ပယ်ဖျက်၍မရပါ: %s</string>
+    <string name="uninstall_app_unverified">မူလအတိုင်းထားခဲ့သည်- တပ်ဆင်ထားသော အက်ပ်သည် Morphe patch လုပ်ခဲ့သော build ဖြစ်ကြောင်း အတည်မပြုနိုင်ပါ</string>
+    <string name="launch_app_unverified">တပ်ဆင်ထားသော အက်ပ်သည် Morphe patch လုပ်ခဲ့သော build ဖြစ်ကြောင်း အတည်မပြုနိုင်ပါ</string>
+    <string name="uninstall_timeout">ပယ်ဖျက်မှု အချိန်ကုန်ဆုံးသွားပါသည်</string>
+    <string name="save_apk_success">APK ကို သိမ်းဆည်းပြီးပါသည်</string>
+    <string name="saved_app_export_failed">Patch လုပ်ထားသော အက်ပ်ကို Export ပြုလုပ်၍မရပါ</string>
+    <string name="saved_app_removed_toast">သိမ်းဆည်းထားသော Patch လုပ်ထားသော အက်ပ်ကို ဖယ်ရှားပြီးပါသည်</string>
+    <string name="saved_app_launch_unavailable">အက်ပ်ကို မဖွင့်မီ တပ်ဆင်ပါ</string>
+    <string name="package_name">Package အမည်</string>
+    <string name="failed_to_mount">ချိတ်ဆက်ရန် ပျက်ကွက်သည်- %s</string>
+    <string name="failed_to_unmount">ချိတ်ဆက်မှုဖြတ်တောက်ရန် ပျက်ကွက်သည်- %s</string>
     <!-- Patcher Screen - Mini-games -->
+    <string name="mini_game_score">ရမှတ် %s</string>
+    <string name="mini_game_best">အကောင်းဆုံး %s</string>
+    <string name="mini_game_new_record">စံချိန်သစ်!</string>
+    <string name="mini_game_game_over">ဂိမ်းပြီးဆုံးပြီ</string>
+    <string name="mini_game_try_again">ထပ်မံကြိုးစားပါ</string>
+    <string name="mini_game_paused">ခေတ္တရပ်နားထားသည်</string>
+    <string name="mini_game_resume">ဆက်လက်ကစားမည်</string>
+    <string name="mini_game_restart">အစမှပြန်စပါ</string>
+    <string name="mini_game_change">အခြားဂိမ်းတစ်ခုကို ရွေးချယ်ပါ</string>
+    <string name="mini_game_2048_picker_subtitle">ပေါင်းစပ်ရန် အကွက်များကို ရွှေ့ပါ</string>
+    <string name="mini_game_flappy_picker_subtitle">ပိုက်များကို ဖြတ်ပျံသန်းရန် နှိပ်ပါ</string>
+    <string name="mini_game_flappy_tap_to_start">ပျံသန်းရန် နှိပ်ပါ</string>
+    <string name="mini_game_snake_picker_subtitle">အစားအစာများကို စားပါ၊ မိမိကိုယ်ကိုယ် ပြန်မတိုက်ပါစေနှင့်</string>
+    <string name="mini_game_snake_swipe_to_start">စတင်ရန် ပွတ်ဆွဲပါ</string>
+    <string name="mini_game_dino_picker_subtitle">ရှားစောင်းပင်များကို ကျော်ခုန်ရန် နှိပ်ပါ</string>
+    <string name="mini_game_dino_tap_to_start">ပြေးရန် နှိပ်ပါ</string>
+    <string name="mini_game_blocks_picker_subtitle">ပုံသဏ္ဍာန်များကို ဖြည့်ပြီး လိုင်းများကို ရှင်းလင်းပါ</string>
+    <string name="mini_game_blocks_tap_to_start">လှည့်ရန် နှိပ်ပါ၊ ရွှေ့ရန် ပွတ်ဆွဲပါ၊ ချရန် အောက်သို့ ပွတ်ဆွဲပါ</string>
+    <string name="mini_game_bricks_picker_subtitle">ဘောလုံးကို ရိုက်ထုတ်ပြီး နံရံကို ရှင်းလင်းပါ</string>
+    <string name="mini_game_bricks_tap_to_start">ချိန်ရွယ်ရန် ဆွဲပါ၊ ပစ်လွှတ်ရန် နှိပ်ပါ</string>
+    <string name="mini_game_miner_picker_subtitle">ဖွင့်ရန် နှိပ်ပါ၊ အမှတ်အသားပြုရန် ဖိထားပါ</string>
+    <string name="mini_game_pairs_picker_subtitle">ကတ်များကိုလှန်ပြီး တူညီသည်များကို ရှာပါ</string>
     <!-- Settings -->
+    <string name="appearance">အသွင်အပြင်</string>
+    <string name="system">စနစ်</string>
     <!-- Settings - Appearance Tab - Background animation -->
+    <string name="settings_appearance_background">နောက်ခံ animation</string>
+    <string name="settings_appearance_background_description">အက်ပ်၏ screen များနောက်ကွယ်တွင် ပြသသည့် animation ဖြစ်သည်</string>
+    <string name="settings_appearance_background_circles">စက်ဝိုင်းများ</string>
+    <string name="settings_appearance_background_rings">ကွင်းများ</string>
+    <string name="settings_appearance_background_mesh">မက်ရှ် (Mesh)</string>
+    <string name="settings_appearance_background_space">အာကာသ</string>
+    <string name="settings_appearance_background_shapes">ပုံသဏ္ဌာန်များ</string>
+    <string name="settings_appearance_background_snow">နှင်း</string>
+    <string name="settings_appearance_background_grid">ဂရစ်</string>
+    <string name="settings_appearance_background_particles">Particles များ</string>
+    <string name="settings_appearance_background_lava">လာဗာမီးအိမ်</string>
+    <string name="settings_appearance_background_halloween">ဟောလိုးဝင်း</string>
+    <string name="settings_appearance_background_fireworks">မီးရှူးမီးပန်းများ</string>
+    <string name="settings_appearance_background_none">မရှိပါ</string>
+    <string name="settings_appearance_background_random">ကျပန်း</string>
+    <string name="settings_appearance_background_random_interval_launch">စတင်ဖွင့်ချိန်တွင်</string>
+    <string name="settings_appearance_background_random_interval_daily">နေ့စဉ်</string>
+    <string name="settings_appearance_background_random_interval_3days">၃ ရက်တစ်ကြိမ်</string>
+    <string name="settings_appearance_parallax_effect">Parallax အကျိုးသက်ရောက်မှု</string>
+    <string name="settings_appearance_parallax_effect_description">စက်ပစ္စည်းကို စောင်းလိုက်သောအခါ နောက်ခံပုံ ပျော့ပျောင်းစွာ ရွေ့လျားခြင်း</string>
+    <string name="settings_appearance_seasonal_themes">ရာသီအလိုက် သက်ဆိုင်သော သီမ်များ</string>
+    <string name="settings_appearance_seasonal_themes_description">အားလပ်ရက်များအတွင်း ပျော်ပွဲရွှင်ပွဲ နောက်ခံများနှင့် နှုတ်ဆက်စကားများ</string>
     <!-- %1$s is a holiday background name, such as Halloween. %2$s is a date, such as November 1 -->
+    <string name="settings_appearance_seasonal_background_notice">ရာသီအလိုက် သီမ်များကို ဖွင့်ထားစဉ် %1$s နောက်ခံကို %2$s အထိ အသုံးပြုနိုင်မည် ဖြစ်သည်</string>
     <!-- Settings - Appearance Tab - Theme -->
+    <string name="settings_appearance_display">ပြသမှု</string>
+    <string name="settings_appearance_effects">အကျိုးသက်ရောက်မှုများ</string>
+    <string name="settings_appearance_theme">သီမ်</string>
+    <string name="settings_appearance_theme_mode">Theme ပုံစံ</string>
+    <string name="settings_appearance_system">စနစ်</string>
+    <string name="settings_appearance_light">အလင်း</string>
+    <string name="settings_appearance_dark">အမှောင်</string>
+    <string name="settings_appearance_dynamic">Material You</string>
+    <string name="settings_appearance_monochrome">အရောင်တစ်မျိုးတည်း</string>
+    <string name="settings_appearance_color_style">အရောင်စတိုင်</string>
+    <string name="settings_appearance_accent_color">Accent အရောင်</string>
+    <string name="settings_appearance_pure_black">အနက်ရောင်စစ်စစ်</string>
+    <string name="settings_appearance_pure_black_description">အစစ်အမှန် အမည်းရောင် နောက်ခံများကို အသုံးပြုသည်</string>
+    <string name="settings_appearance_color_accents">အက်ပ်နှင့် ရင်းမြစ်အရောင်များ</string>
+    <string name="settings_appearance_color_accents_description">Accent အရောင်အစား အက်ပ်တစ်ခုချင်းစီနှင့် ရင်းမြစ်၏ အရောင်များကို အသုံးပြုသည်</string>
+    <string name="settings_appearance_outlines">အနားသတ်မျဉ်းများ</string>
+    <string name="settings_appearance_outlines_description">ကတ်များ၊ ပန်နယ်များနှင့် ခလုတ်များ၏ ပတ်ပတ်လည်တွင် အနားသတ်မျဉ်းပါးလေးတစ်ခု ဆွဲပေးပါသည်</string>
+    <string name="settings_appearance_blur">ဝါးတားမှု</string>
+    <string name="settings_appearance_blur_description">Header များ၊ bar များနှင့် panel များအောက်တွင် scroll လုပ်သော အရာများကို ဝါးတားပေးသည်</string>
     <!-- Settings - Appearance Tab - Language Selector -->
+    <string name="settings_appearance_app_language">အက်ပ်ဘာသာစကား</string>
+    <string name="settings_appearance_app_language_current">လက်ရှိဘာသာစကား</string>
+    <string name="settings_appearance_translate">Morphe ကို ဘာသာပြန်ရန် ကူညီပါ</string>
+    <string name="settings_appearance_translations_info_title">အချို့သော ဘာသာစကားများအတွက် ဘာသာပြန်ဆိုချက်များ ပျောက်ဆုံးနေခြင်း သို့မဟုတ် မပြည့်စုံခြင်းများ ရှိနိုင်သည်</string>
     <!-- Settings - Appearance Tab - Interface Scale -->
+    <string name="settings_appearance_ui_scale">Interface စကေး</string>
     <!-- Settings - Appearance Tab - Home Screen Section -->
+    <string name="settings_appearance_home_screen">ပင်မမျက်နှာပြင်</string>
+    <string name="settings_appearance_greeting_phrases">နှုတ်ဆက်စကားစုများ</string>
+    <string name="settings_appearance_greeting_phrases_subtitle">နှုတ်ခွန်းဆက်စာတိုကို ပြသသည်</string>
+    <string name="settings_appearance_repatch_notice">ပြန်လည် patch ပြုလုပ်ခြင်း အသိပေးချက်</string>
+    <string name="settings_appearance_repatch_notice_description">Patched လုပ်ထားသော အက်ပ်များကို ပြန်လည် patch လုပ်နိုင်သောအခါ banner တစ်ခုကို ပြသသည်</string>
+    <string name="settings_appearance_more_apps_card">အခြားအက်ပ်များကတ်</string>
+    <string name="settings_appearance_more_apps_card_description">အသိုင်းအဝိုင်းမှ ပြင်ဆင်မှုများဆီသို့ ဦးတည်သော ကတ်တစ်ခုကို အက်ပ်များအောက်တွင် ပြသပေးမည်</string>
+    <string name="settings_appearance_app_card_colors">ကတ်အရောင်များ</string>
+    <string name="settings_appearance_app_card_colors_default">ပုံသေ</string>
+    <string name="settings_appearance_app_card_colors_default_description">အက်ပ်တစ်ခုစီနှင့် ပင်မအရင်းအမြစ်တစ်ခုစီအတွက် သီးခြားအရောင် သတ်မှတ်ပေးပါ</string>
+    <string name="settings_appearance_app_card_colors_accent">Accent</string>
+    <string name="settings_appearance_app_card_colors_accent_description">အက်ပ်နှင့် ပင်မအရင်းအမြစ်ကတ်များအတွက် အက်ပ်၏ accent color ကို အသုံးပြုပါ</string>
+    <string name="settings_appearance_app_card_colors_gradient">Gradient</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">အက်ပ်ကတ်များအတွက် စိတ်ကြိုက် gradient တစ်ခုကို အသုံးပြုပြီး၊ ပင်မအရင်းအမြစ်ကတ်များအတွက် အရောင်တစ်ခုတည်းအဖြစ် ပေါင်းစပ်အသုံးပြုပါ</string>
+    <string name="settings_appearance_app_card_colors_solid">Solid</string>
+    <string name="settings_appearance_app_card_colors_solid_description">အက်ပ်နှင့် ပင်မအရင်းအမြစ်ကတ်များအတွက် စိတ်ကြိုက်အရောင်တစ်ခုတည်းကို အသုံးပြုပါ</string>
+    <string name="settings_appearance_app_card_colors_start">စတင်သည့်အရောင်</string>
+    <string name="settings_appearance_app_card_colors_middle">အလယ်အရောင်</string>
+    <string name="settings_appearance_app_card_colors_end">အဆုံးသတ်အရောင်</string>
+    <string name="settings_appearance_app_card_colors_solid_color">အရောင်တစ်မျိုးတည်း</string>
+    <string name="settings_appearance_app_card_colors_bundle">App bundle အရောင်</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">အက်ပ်တစ်ခုစီ သို့မဟုတ် ပင်မအရင်းအမြစ်တစ်ခုစီ၏ ကိုယ်ပိုင်အရောင်ကို ဤနေရာတွင် အသုံးပြုပြီး၊ သင့်လျော်စေရန် အလိုအလျောက် အရိပ်ဖျန်းပေးမည်ဖြစ်သည်</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
+    <string name="settings_appearance_app_icon_selector_title">အက်ပ်အိုင်ကွန်</string>
+    <string name="settings_appearance_app_icon_selector_description">Morphe သည် သင်၏ home screen နှင့် app drawer တွင် မည်သို့ပေါ်မည်နည်း</string>
+    <string name="settings_appearance_app_icon_default">မူလ</string>
+    <string name="settings_appearance_app_icon_light_2">ကောင်းကင်ပြာ</string>
+    <string name="settings_appearance_app_icon_light_3">နေဝင်ချိန်</string>
+    <string name="settings_appearance_app_icon_light_4">လာဗင်ဒါရောင်</string>
+    <string name="settings_appearance_app_icon_light_5">ရေခဲတောင်ရောင်</string>
+    <string name="settings_appearance_app_icon_light_6">နှင်းမြူရောင်</string>
+    <string name="settings_appearance_app_icon_light_7">သဲရောင်</string>
+    <string name="settings_appearance_app_icon_dark_1">စိမ်းပြာရောင်</string>
+    <string name="settings_appearance_app_icon_dark_2">ဟာလာဟင်းလင်း</string>
+    <string name="settings_appearance_app_icon_dark_3">အနီရင့်ရောင်</string>
+    <string name="settings_appearance_app_icon_dark_4">သန်းခေါင်ယံပြာရောင်</string>
+    <string name="settings_appearance_app_icon_dark_5">ကျောက်ပြာရောင်</string>
+    <string name="settings_appearance_app_icon_accent_1">အာရိုရာရောင်</string>
+    <string name="settings_appearance_app_icon_accent_2">မှင်ရောင်</string>
+    <string name="settings_appearance_app_icon_accent_3">စက္ကူရောင်</string>
+    <string name="settings_appearance_app_icon_accent_4">ဆည်းဆာရောင်</string>
+    <string name="settings_appearance_app_icon_background">နောက်ခံ</string>
+    <string name="settings_appearance_app_icon_mark">လိုဂို</string>
+    <string name="settings_appearance_app_icon_mark_color">အရောင်</string>
+    <string name="settings_appearance_app_icon_mark_white">အဖြူရောင်</string>
+    <string name="settings_appearance_app_icon_mark_black">အမည်းရောင်</string>
+    <string name="settings_appearance_app_icon_change_dialog_title">အက်ပ်အိုင်ကွန်ကို ပြောင်းလဲလိုပါသလား?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">&lt;b&gt;%s&lt;/b&gt; သို့ ပြောင်းလဲရန် Morphe ကို ပြန်လည်စတင်ပါမည်</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="settings_appearance_app_icon_change_dialog_confirm">အိုင်ကွန်ပြောင်းရန်</string>
     <!-- Settings - Advanced Tab - Updates Section -->
+    <string name="settings_advanced_updates_manager_prereleases">Pre-release update များ</string>
     <!-- "Morphe" here is the app itself, not the patches. Do not translate this as pre-release patches -->
+    <string name="settings_advanced_updates_manager_prereleases_description">Morphe ဗားရှင်းအသစ်များကို စောစောစီးစီး အသုံးပြုနိုင်ခြင်း</string>
+    <string name="settings_advanced_updates_prerelease_warning_title">Pre-release update များကို ဖွင့်မလား?</string>
     <!-- Shown before pre-release updates are turned on for the app itself. Patches have their own toggle in each patch source -->
+    <string name="settings_advanced_updates_prerelease_warning_message">"Morphe ၏ Pre-release ဗားရှင်းများသည် ဖွံ့ဖြိုးတိုးတက်ဆဲအဆင့်တွင်ရှိပြီး တည်ငြိမ်မှုမရှိနိုင်ပါ။
+
+Patch များကို သက်ရောက်မှုမရှိပါ - patch source စာရင်းရှိ source တစ်ခုချင်းစီအတွက် pre-release patch များကို ဖွင့်ပေးပါ"</string>
+    <string name="settings_advanced_updates_allow_metered">မိုဘိုင်းဒေတာဖြင့် အပ်ဒိတ်ပြုလုပ်ခြင်း</string>
+    <string name="settings_advanced_updates_allow_metered_description">မိုဘိုင်းဒေတာအသုံးပြု၍ Morphe နှင့် patch update များကို ဒေါင်းလုဒ်ဆွဲသည်</string>
+    <string name="settings_advanced_updates_background_notifications">နောက်ခံအပ်ဒိတ် အကြောင်းကြားချက်များ</string>
+    <string name="settings_advanced_updates_background_notifications_description">နောက်ကွယ်တွင် အပ်ဒိတ်များ ရှိမရှိ အခါအားလျော်စွာ စစ်ဆေးပြီး ရရှိနိုင်ပါက အကြောင်းကြားပေးမည်</string>
+    <string name="settings_advanced_updates_background_notifications_description_fcm">အက်ပ်ပိတ်ထားချိန်တွင်ပင် ဗားရှင်းအသစ်များအတွက် Push အကြောင်းကြားချက်များကို ရရှိမည်</string>
+    <string name="settings_system_notifications_categories">အကြောင်းကြားချက် အမျိုးအစားများ</string>
+    <string name="settings_system_notifications_categories_description">မည်သည့် အပ်ဒိတ်များကို အကြောင်းကြားစေမည်ကို စနစ်ဆက်တင်များတွင် ရွေးချယ်ပါ</string>
+    <string name="settings_advanced_update_interval">စစ်ဆေးရမည့် အကြိမ်အရေအတွက်</string>
+    <string name="settings_advanced_update_interval_hourly">နာရီအလိုက်</string>
+    <string name="settings_advanced_update_interval_daily">နေ့စဉ်</string>
+    <string name="settings_advanced_update_interval_weekly">အပတ်စဉ်</string>
+    <string name="settings_advanced_update_interval_monthly">လစဉ်</string>
+    <string name="settings_advanced_update_interval_battery_warning">Xiaomi၊ Huawei၊ Samsung နှင့် OnePlus ကဲ့သို့သော နောက်ခံအက်ပ်များကို ကန့်သတ်ထားသည့် စက်ပစ္စည်းများတွင် နောက်ခံစစ်ဆေးမှုများ စိတ်ချရစွာ အလုပ်မလုပ်နိုင်ပါ</string>
+    <string name="settings_advanced_external_batch_patch">ပြင်ပမှ နှိုးဆော်ချက်များကို ခွင့်ပြုရန်</string>
+    <string name="settings_advanced_external_batch_patch_description">အလိုအလျောက်လုပ်ဆောင်သော app များကို batch patching စတင်ခွင့်ပြုသည်</string>
+    <string name="external_batch_patch_title">အုပ်စုလိုက် ပက်ချ်လုပ်ခြင်းကို စတင်မလား?</string>
+    <string name="external_batch_patch_description">%s က Morphe ကို အက်ပ်များ ပက်ချ်လုပ်ပြီး တပ်ဆင်စေလိုသည်</string>
+    <string name="external_batch_patch_trust_caller">ဤအက်ပ်ကို အမြဲခွင့်ပြုပါ</string>
+    <string name="external_batch_patch_unknown_caller">အမည်မသိ အက်ပ်တစ်ခု</string>
     <!-- Notification content -->
+    <string name="notification_bundle_update_title">Patch အသစ်များ ရရှိနိုင်သည်</string>
+    <string name="notification_update_text">ဗားရှင်း %s ကို ဒေါင်းလုဒ်လုပ်ရန် အဆင်သင့်ဖြစ်ပြီ</string>
+    <string name="notification_bundle_update_text_unversioned">Morphe ကို ဖွင့်ပြီး အပ်ဒိတ်လုပ်ရန် နှိပ်ပါ</string>
+    <string name="notification_permission_dialog_title">အကြောင်းကြားချက်များကို ခွင့်ပြုပါ</string>
+    <string name="notification_permission_dialog_description">နောက်ကွယ်တွင် အပ်ဒိတ်များ ရရှိနိုင်သောအခါ သင့်ကို အသိပေးနိုင်ရန် Morphe အတွက် အကြောင်းကြားချက်ခွင့်ပြုချက် လိုအပ်ပါသည်</string>
+    <string name="notification_post_patch_dialog_title">အပ်ဒိတ်များ ရရှိနိုင်သည့်အခါ အကြောင်းကြားချက် ရယူလိုပါသလား?</string>
+    <string name="notification_channel_manager_updates">Morphe အပ်ဒိတ်များ</string>
+    <string name="notification_channel_manager_updates_description">Morphe ဗားရှင်းအသစ်များ ထွက်ရှိမှုဆိုင်ရာ အကြောင်းကြားချက်များ</string>
+    <string name="notification_channel_patch_updates">Patch အပ်ဒိတ်များ</string>
+    <string name="notification_channel_patch_updates_description">Patch ဗားရှင်းအသစ်များ ထွက်ရှိမှုဆိုင်ရာ အကြောင်းကြားချက်များ</string>
+    <string name="notification_channel_patcher_description">Morphe မှ app တစ်ခုကို နောက်ခံတွင် patch လုပ်နေစဉ် ပြသပေးမည်</string>
+    <string name="notification_channel_mounted_apps">တပ်ဆင်ထားသော အက်ပ်များ</string>
+    <string name="notification_channel_mounted_apps_description">တပ်ဆင်ထားသော အက်ပ်တစ်ခုကို အခြားဗားရှင်းတစ်ခုက အစားထိုးလိုက်ပြီး ၎င်း၏ပက်ချ်သည် အကျုံးမဝင်တော့သည့်အခါ</string>
+    <string name="notification_mount_replaced_title">%1$s ကို ပက်ချ်မလုပ်ထားတော့ပါ</string>
+    <string name="notification_mount_replaced_text">v%1$s က patch လုပ်ထားသော v%2$s ကို အစားထိုးလိုက်ပါသည်။ ၎င်းကို ပြန်လည်ရယူရန် Morphe ကို ဖွင့်ပါ</string>
     <!-- Settings - Advanced Tab - Expert settings Section -->
+    <string name="settings_advanced_expert_mode">ကျွမ်းကျင်သူမုဒ်</string>
+    <string name="settings_advanced_expert_mode_description">အဆင့်မြင့် patching ဆက်တင်များနှင့် patch ရွေးချယ်စရာများကို ဖွင့်ပေးသည်</string>
+    <string name="settings_advanced_expert_mode_dialog_title">Expert mode ကို ဖွင့်မလား?</string>
+    <string name="settings_advanced_expert_mode_dialog_message">Expert mode သည် ပတ်ချ်များ မည်သို့ အသုံးချမည်ကို ပိုမိုထိန်းချုပ်နိုင်စေပါသည်။ သို့သော် Expert mode တွင် ဆက်တင်များကို မှားယွင်းစွာ သတ်မှတ်ပါက အက်ပ် အလုပ်မလုပ်တော့ခြင်း ဖြစ်နိုင်သည်</string>
+    <string name="settings_advanced_strip_unused_libs">စက်၏ architecture အတွက် အကောင်းဆုံးဖြစ်အောင် ပြုပြင်ရန်</string>
+    <string name="settings_advanced_strip_unused_libs_description">အသုံးမပြုသော native libraries များနှင့် APK splits များကို ဖယ်ရှားသည်</string>
     <!-- Settings - Advanced Tab - GitHub PAT Settings -->
+    <string name="settings_advanced_github_pat_summary">pull request အရင်းအမြစ်များနှင့် ပုဂ္ဂလိက repository များကို ဖွင့်ပေးပါသည်</string>
+    <string name="settings_advanced_github_pat_description">pull request အရင်းအမြစ်များ၊ ပုဂ္ဂလိက repository များနှင့် ပိုမိုမြင့်မားသော GitHub rate limit အတွက်</string>
+    <string name="settings_advanced_github_pat_configured">Token ကို သတ်မှတ်ပြီးပါပြီ</string>
+    <string name="settings_advanced_github_pat_create">GitHub တွင် token တစ်ခု ဖန်တီးပါ</string>
     <!-- "%s" is the GitHub scope name, keep it as is -->
+    <string name="settings_advanced_github_pat_create_description">%s scope ကို ကြိုတင်ရွေးချယ်ပြီး GitHub ကို ဖွင့်ပါမည်</string>
+    <string name="settings_advanced_github_pat_checking">GitHub နှင့် စစ်ဆေးနေသည်…</string>
     <!-- "%s" is the GitHub account name -->
+    <string name="settings_advanced_github_pat_account">GitHub တွင် %s အဖြစ် ဝင်ရောက်ထားသည်</string>
+    <string name="settings_advanced_github_pat_rejected">GitHub မှ ဤတိုကင်ကို ပယ်ချခဲ့သည်။ ၎င်းသည် သက်တမ်းကုန်ဆုံးသွားခြင်း သို့မဟုတ် ပယ်ဖျက်ခံရခြင်း ဖြစ်နိုင်သည်</string>
+    <string name="settings_advanced_github_pat_unreachable">ဤတိုကင်ကို စစ်ဆေးရန် GitHub သို့ ချိတ်ဆက်၍မရပါ</string>
+    <string name="settings_advanced_github_pat_export_include_label">Settings export တွင် ထည့်သွင်းပါ</string>
     <!-- "PAT" is a GitHub Personal Access Token, keep it in English because GitHub has no localized UI -->
+    <string name="settings_advanced_github_pat_export_include_supporting">ဤ PAT ကို ပို့ထုတ်ထားသော Morphe ဆက်တင်များတွင် ထည့်သွင်းသည်</string>
     <!-- "PAT" is a GitHub Personal Access Token, keep it in English because GitHub has no localized UI -->
+    <string name="settings_advanced_github_pat_export_warning">သင်၏ PAT ကို မျှဝေခြင်းမပြုပါနှင့်။ အကယ်၍ ၎င်းကို settings export တွင် ထည့်သွင်းပါက၊ ၎င်းတွင် token ပါဝင်သောကြောင့် ထိုဖိုင်ကို လျှို့ဝှက်ထားပါ</string>
     <!-- Settings - Advanced Tab - Patch Options Section -->
+    <string name="settings_advanced_patch_options">Patch ရွေးချယ်မှုများ</string>
+    <string name="settings_advanced_patch_options_restart_message">Patch ရွေးချယ်မှုများကို ပြောင်းလဲခြင်းသည် အကျိုးသက်ရောက်မှုရှိစေရန် အက်ပ်ကို ပြန်လည် Patch လုပ်ရန် လိုအပ်သည်</string>
+    <string name="settings_advanced_patch_options_expert_mode_notice">Expert mode တွင် patch ပြုလုပ်နေစဉ် patch option များကို အသုံးပြုနိုင်မည် ဖြစ်သည်</string>
+    <string name="settings_advanced_patch_options_loading">Patch option များကို တင်နေသည်…</string>
+    <string name="settings_advanced_patch_options_waiting_for_source">Patch source အပ်ဒိတ်ဖြစ်သည်အထိ စောင့်ပါ</string>
+    <string name="settings_advanced_patch_options_load_error">Patch option များကို တင်ဆောင်၍ မရပါ</string>
+    <string name="settings_advanced_patch_options_no_available">ဤ patch အတွက် ရွေးချယ်စရာ option များ မရှိပါ</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Custom Branding -->
+    <string name="settings_advanced_patch_options_custom_branding">စိတ်ကြိုက် branding ပြုလုပ်ခြင်း</string>
+    <string name="settings_advanced_patch_options_custom_branding_description">အက်ပ်၏ ပြသမည့်အမည်ကို ပြောင်းလဲသည်</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_name">အက်ပ်အမည်</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_name_hint">စိတ်ကြိုက်အမည် ထည့်သွင်းပါ</string>
+    <string name="settings_advanced_patch_options_path_gone">ဤဖိုဒါကို ဖတ်၍မရတော့ပါ။ ၎င်းကို ပြန်ရွေးပါ သို့မဟုတ် ရှင်းလင်းပါ၊ သို့မဟုတ်ပါက patching လုပ်ငန်းစဉ် ရပ်တန့်သွားမည်ဖြစ်ပြီး မေးမြန်းမည်ဖြစ်သည်</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon">အက်ပ်ပုံရိပ်</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">အက်ပ်တွင် ပတ်ချ်လုပ်ထားသော အိုင်ကွန်ဖြစ်ပြီး Android Auto ကဲ့သို့ နောက်ပိုင်းတွင် ပြောင်းလဲ၍မရသော နေရာများတွင်လည်း အသုံးပြုသည်</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">Custom app icon အတွက် ပုံရိပ်များရှိသော ဖိုဒါတစ်ခု လိုအပ်သည်</string>
+    <string name="settings_advanced_patch_options_custom_branding_custom_icon">စိတ်ကြိုက်အိုင်ကွန်</string>
+    <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"စိတ်ကြိုက်အိုင်ကွန်အဖြစ် အသုံးပြုမည့် ပုံများပါဝင်သော ဖိုဒါ။
+
+စက်၏ DPI အပေါ် မူတည်၍ ဖိုဒါတွင် အောက်ပါဖိုဒါတစ်ခု သို့မဟုတ် တစ်ခုထက်ပို၍ ပါဝင်ရမည်- 
+- mipmap-mdpi
+- mipmap-hdpi
+- mipmap-xhdpi
+- mipmap-xxhdpi
+- mipmap-xxxhdpi
+
+ဖိုဒါတစ်ခုစီတွင် အောက်ပါဖိုင်အားလုံး ပါဝင်ရမည်- 
+morphe_adaptive_background_custom.png
+morphe_adaptive_foreground_custom.png
+
+ပုံအရွယ်အစားများသည် အောက်ပါအတိုင်း ဖြစ်ရမည်- 
+- mipmap-mdpi: 108x108 px
+- mipmap-hdpi: 162x162 px
+- mipmap-xhdpi: 216x216 px
+- mipmap-xxhdpi: 324x324 px
+- mipmap-xxxhdpi: 432x432 px
+
+ရွေးချယ်နိုင်သည်အဖြစ်၊ ပတ်လမ်းတွင် monochrome အိုင်ကွန်ဖိုင်ပါရှိသော 'drawable' ဖိုဒါတစ်ခု ပါဝင်နိုင်သည်- 
+morphe_adaptive_monochrome_custom.xml
+
+ရွေးချယ်နိုင်သည်အဖြစ်၊ ပတ်လမ်းတွင် အောက်ပါပုံစံများမှ တစ်ခုခုဖြင့် အကြောင်းကြားချက်အိုင်ကွန် (notification icon) ပါဝင်နိုင်သည်- 
+- 'drawable' ရှိ XML vector drawable:
+  morphe_notification_icon_custom.xml
+- 'drawable-dpi' ဖိုဒါများရှိ PNG raster ပုံများ:
+  drawable-mdpi/morphe_notification_icon_custom.png (24x24 px)
+  drawable-hdpi/morphe_notification_icon_custom.png (36x36 px)
+  drawable-xhdpi/morphe_notification_icon_custom.png (48x48 px)
+  drawable-xxhdpi/morphe_notification_icon_custom.png (72x72 px)
+  drawable-xxxhdpi/morphe_notification_icon_custom.png (96x96 px)"</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Custom Header -->
+    <string name="settings_advanced_patch_options_custom_header">စိတ်ကြိုက် header လိုဂို</string>
+    <string name="settings_advanced_patch_options_custom_header_description">ခေါင်းစီးလိုဂိုကို ပြောင်းလဲသည်</string>
+    <string name="settings_advanced_patch_options_custom_header_instruction">"စိတ်ကြိုက် header လိုဂိုအဖြစ် အသုံးပြုမည့် ပုံများရှိသော ဖိုဒါ။
+
+စက်၏ DPI အပေါ်မူတည်၍ အောက်ပါဖိုဒါများထဲမှ တစ်ခု သို့မဟုတ် တစ်ခုထက်ပို၍ ပါရှိရမည်-
+- drawable-hdpi
+- drawable-xhdpi
+- drawable-xxhdpi
+- drawable-xxxhdpi
+
+ဖိုဒါတစ်ခုစီတွင် အောက်ပါဖိုင်အားလုံး ပါဝင်ရမည်-
+morphe_header_custom_light.png
+morphe_header_custom_dark.png
+
+ပုံ၏ အရွယ်အစားများမှာ အောက်ပါအတိုင်း ဖြစ်ရမည်-
+- drawable-hdpi: 194x72 px
+- drawable-xhdpi: 258x96 px
+- drawable-xxhdpi: 387x144 px
+- drawable-xxxhdpi: 512x192 px"</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Hide Shorts -->
+    <string name="settings_advanced_patch_options_hide_shorts_app_shortcut">Shorts အက်ပ် ဖြတ်လမ်းကို ဖျောက်ထားရန်</string>
+    <string name="settings_advanced_patch_options_hide_shorts_app_shortcut_description">Launcher long-press မီနူးမှ Shorts ကို ဖယ်ရှားသည်</string>
+    <string name="settings_advanced_patch_options_hide_shorts_widget">Shorts widget ကို ဖျောက်ထားရန်</string>
+    <string name="settings_advanced_patch_options_hide_shorts_widget_description">Launcher widget မှ Shorts ခလုတ်ကို ဖယ်ရှားသည်</string>
     <!-- Settings - System Tab - Installer Section -->
+    <string name="installer">တပ်ဆင်သူ</string>
+    <string name="installer_settings_title">မူလ installer</string>
+    <string name="settings_installation">တပ်ဆင်ခြင်း</string>
+    <string name="installer_title">တပ်ဆင်သူကို ရွေးချယ်ပါ</string>
+    <string name="installer_internal_description">Android package installer ကို အသုံးပြုသည်</string>
+    <string name="installer_play_store_description">စနစ်၏ installer ကို အသုံးပြုပြီး Google Play Store ကို install ပြုလုပ်သည့် ရင်းမြစ်အဖြစ် သတ်မှတ်သည်</string>
+    <string name="installer_root_play_store_description">Root ဖြင့် အသံတိတ် install ပြုလုပ်ပြီး Google Play Store ကို install ပြုလုပ်သည့် ရင်းမြစ်အဖြစ် သတ်မှတ်သည်</string>
+    <string name="installer_auto_saved_name">Root mount</string>
+    <string name="installer_auto_saved_description">Root mount မုဒ်တွင် patch ပြုလုပ်ထားသော အက်ပ်များကို mount ပြုလုပ်သည်။ Standard patched APK များသည် အခြား installer တစ်ခုကို အသုံးပြုသည်</string>
+    <string name="installer_shizuku_description">Shizuku သို့မဟုတ် Sui ကို အသုံးပြု၍ တိတ်တဆိတ် ထည့်သွင်းသည်</string>
+    <string name="installer_shizuku_play_store_description">Shizuku သို့မဟုတ် Sui မှတစ်ဆင့် အသံတိတ် install ပြုလုပ်ပြီး Google Play Store ကို install ပြုလုပ်သည့် ရင်းမြစ်အဖြစ် သတ်မှတ်သည်</string>
+    <string name="installer_option_none">အစားထိုးမှုမရှိပါ</string>
+    <string name="installer_none_description">အစားထိုးတပ်ဆင်သူကို သတ်မှတ်မထားပါ</string>
+    <string name="installer_status_requires_root">Root access လိုအပ်သည်</string>
+    <string name="installer_status_not_supported">ဤလုပ်ဆောင်ချက်အတွက် ထောက်ပံ့မှုမရှိပါ</string>
+    <string name="installer_status_shizuku_not_installed">ဤ option ကို အသုံးပြုရန် Shizuku သို့မဟုတ် Sui ကို ထည့်သွင်းပါ</string>
+    <string name="installer_status_shizuku_not_running">Shizuku သို့မဟုတ် Sui ကို စတင်ပြီး ထပ်မံကြိုးစားပါ</string>
+    <string name="installer_status_shizuku_permission">Shizuku app မှတစ်ဆင့် Morphe ကို ခွင့်ပြုချက်ပေးပါ</string>
+    <string name="installer_mount_warning_install">သင့်ရဲ့ အဓိက installer ကို rooted mount installer အဖြစ် သတ်မှတ်ထားပါတယ်။ ဒီသိမ်းဆည်းထားတဲ့ အက်ပ်ကို mount အသုံးပြုပြီး install လုပ်ခဲ့တာ မဟုတ်ပါဘူး</string>
+    <string name="mount_version_mismatch_message">Stock အက်ပ်ဗားရှင်း (%2$s) နှင့် patched အက်ပ်ဗားရှင်း (%1$s) မကိုက်ညီပါ။ ကိုက်ညီသော stock ဗားရှင်းကို mount လုပ်ပြီးမှ ထပ်မံကြိုးစားပါ</string>
+    <string name="mount_stock_restore_failed_message">Android မှ သိမ်းဆည်းထားသော မူရင်း APK ကို ပယ်ချခဲ့ပါသည်။ ကိုက်ညီသော stock version ကို အရင် install လုပ်ပြီး Mount ကို ပြန်ကြိုးစားပါ</string>
+    <string name="installer_status_shizuku_unsupported">Install လုပ်ထားသော Shizuku ဗားရှင်းကို support မလုပ်ပါ</string>
+    <string name="installer_action_open_shizuku">Shizuku ကိုဖွင့်ပါ</string>
+    <string name="installer_hint_generic">Install လုပ်ခြင်း မအောင်မြင်ပါ။ ထပ်မံကြိုးစားပါ သို့မဟုတ် အခြား installer တစ်ခုသို့ ပြောင်းလဲပါ</string>
+    <string name="installer_hint_conflict">ဤ package name ရှိသော အခြားအက်ပ်တစ်ခုသည် install လုပ်ထားပြီးဖြစ်ပါသည်။ ဆက်လက်မလုပ်ဆောင်မီ ၎င်းကို uninstall လုပ်ပါ</string>
+    <string name="installer_confirm_notification_title">တပ်ဆင်မှုကို အတည်ပြုပါ</string>
+    <string name="installer_confirm_notification_text">Patch ပြုလုပ်ထားသော အက်ပ်တပ်ဆင်မှုကို အပြီးသတ်ရန် နှိပ်ပါ</string>
+    <string name="installer_external_launched">%s ကို ဖွင့်နေသည်…</string>
+    <string name="installer_external_timeout">%s မှ တပ်ဆင်မှုကို အတည်မပြုပါ။ အခြားအက်ပ်ကို စစ်ဆေးပြီး ပြန်ကြိုးစားပါ</string>
+    <string name="installer_external_success">%s မှ တပ်ဆင်မှု အောင်မြင်ကြောင်း အကြောင်းကြားသည်</string>
+    <string name="installer_unavailable_title">%s ကို အသုံးမပြုနိုင်ပါ</string>
+    <string name="installer_unavailable_message">သင်နှစ်သက်သော installer (%s) ကို လက်ရှိတွင် အသုံးမပြုနိုင်ပါ။ ပြဿနာကို ဖြေရှင်းပြီး ထပ်မံကြိုးစားနိုင်သည် သို့မဟုတ် standard installer ကို အစားထိုးအသုံးပြုပါ</string>
+    <string name="installer_unavailable_shizuku_hint">Shizuku ပွင့်နေပြီး ဤအက်ပ်အတွက် ခွင့်ပြုချက်ပေးထားကြောင်း သေချာပါစေ</string>
+    <string name="installer_choose_another">အခြား installation ပြုလုပ်သူတစ်ခုကို ရွေးချယ်ပါ</string>
+    <string name="installer_play_store_warning_title">Play Store အဖြစ် install ပြုလုပ်မလား?</string>
+    <string name="installer_play_store_warning_message">Patched app ကို Google Play Store မှ install လုပ်ထားသည်ဟု မှတ်တမ်းတင်မည်ဖြစ်သည်။ ၎င်းသည် Android Auto ကဲ့သို့သော ဝန်ဆောင်မှုများက ၎င်းကို Play Store app တစ်ခုအဖြစ် အသိအမှတ်ပြုရန် ကူညီပေးနိုင်သော်လည်း app သို့မဟုတ် device တိုင်းအတွက် အာမမခံပါ။ လုပ်ဆောင်ချက်များသည် Android version၊ ROM၊ device brand နှင့် app တစ်ခုချင်းစီ၏ စစ်ဆေးမှုများအပေါ် မူတည်၍ ကွဲပြားနိုင်သည်</string>
+    <string name="installer_play_store_warning_risk">Play Store မှ ပြုပြင်ထားသော အက်ပ်အတွက် update များကို ပံ့ပိုးပေးနိုင်ပါသည်။ ထို update ကို install လုပ်ခြင်းသည် ပြုပြင်ထားသော APK ကို မူလဗားရှင်းဖြင့် အစားထိုးမည်ဖြစ်ပြီး patch များကို ဖယ်ရှားမည်ဖြစ်ပါသည်။ update ပြုလုပ်ရန် တောင်းဆိုပါက၊ အက်ပ်၏ Play Store စာမျက်နှာရှိ အစက်သုံးစက်မီနူးကို နှိပ်ပြီး \"Turn off updates\" ကို ရွေးချယ်ပါ</string>
+    <string name="installer_play_store_warning_continue">ကျွန်ုပ်နားလည်ပါသည်၊ ဆက်လက်လုပ်ဆောင်မည်</string>
+    <string name="installer_play_store_mode">Play Store အနေဖြင့် ထည့်သွင်းပါ</string>
+    <string name="installer_play_store_mode_description">Google Play Store ကို install source အဖြစ် သတ်မှတ်သည်</string>
+    <string name="settings_nomount_only">NoMount သာလျှင်</string>
+    <string name="settings_nomount_only_description">အက်ပ်များကို NoMount ဖြင့်သာ Mount လုပ်ပြီး bind mount သို့ ဘယ်တော့မှ ပြန်မပြောင်းပါ၊ ထို့ကြောင့် ၎င်းမရှိဘဲ unmounted အခြေအနေတွင်သာ ရှိနေမည်ဖြစ်သည်</string>
+    <string name="settings_prompt_installer_on_install">Installer ရွေးချယ်မှု တောင်းဆိုချက်</string>
+    <string name="settings_prompt_installer_on_install_description">အက်ပ်တိုင်းကို မည်သို့တပ်ဆင်မည်နည်းဟု မေးမြန်းမည်- patch မလုပ်မီ root ဖြင့် သို့မဟုတ် patch လုပ်ပြီးနောက် တပ်ဆင်မည်</string>
+    <string name="settings_auto_install_with_shizuku">Patch လုပ်ပြီးနောက် အလိုအလျောက် install လုပ်မည်</string>
+    <string name="settings_auto_install_with_shizuku_description">Patch လုပ်ခြင်း ပြီးသည်နှင့် patched APK ကို တပ်ဆင်မည် သို့မဟုတ် mount လုပ်မည်</string>
+    <string name="settings_auto_uninstall_with_shizuku">ပဋိပက္ခဖြစ်ပါက အလိုအလျောက် ပယ်ဖျက်ရန်</string>
+    <string name="settings_auto_uninstall_with_shizuku_description">Signature ပဋိပက္ခဖြစ်ပါက ရှိပြီးသား app ကို uninstall လုပ်မည်။ ၎င်းသည် app data များကို ဖယ်ရှားနိုင်သည်</string>
+    <string name="settings_ignore_install_target_rules">တပ်ဆင်မှု ပစ်မှတ် လိုအပ်ချက်များကို လျစ်လျူရှုရန်</string>
+    <string name="settings_ignore_install_target_rules_description">Install target လိုအပ်သော patches များကို ပိတ်ရန်နှင့် ၎င်းမှ ပယ်ချထားသော patches များကို ဖွင့်ရန် ခွင့်ပြုသည်။ Patch လုပ်ထားသော app သည် အလုပ်မလုပ်နိုင်ပါ</string>
+    <string name="settings_auto_uninstall_warning_title">အလိုအလျောက် ပယ်ဖျက်ခြင်းကို အသုံးပြုမလား?</string>
+    <string name="settings_auto_uninstall_warning_message">Shizuku အလိုအလျောက် install ပြုလုပ်စဉ်အတွင်း Android မှ signature ပဋိပက္ခတစ်ခုကို အကြောင်းကြားပါက၊ Morphe သည် patched APK ကို install မပြုလုပ်မီ ရှိနှင့်ပြီးသား app ကို ပယ်ဖျက်မည်ဖြစ်သည်</string>
+    <string name="settings_auto_uninstall_warning_risk">၎င်းသည် app data များကို ဖယ်ရှားနိုင်ပါသည်။ ပယ်ဖျက်ပြီးနောက် patched APK ကို install ပြုလုပ်၍ မရပါက၊ ယခင် app သည် ပျောက်ဆုံးသွားနိုင်ပါသည်</string>
+    <string name="installer_shizuku_status_action">Shizuku အခြေအနေကို စစ်ဆေးရန်</string>
+    <string name="installer_shizuku_status_title">Shizuku အခြေအနေ</string>
+    <string name="installer_shizuku_status_ready">အဆင်သင့်ဖြစ်ပြီ</string>
+    <string name="installer_shizuku_status_issue">ဂရုပြုရန် လိုအပ်သည်</string>
+    <string name="installer_shizuku_status_supported">ပံ့ပိုးသည်</string>
+    <string name="installer_shizuku_status_running">ပတ်လမ်းလည်ပတ်နေသည်</string>
+    <string name="installer_shizuku_status_permission">ခွင့်ပြုချက်</string>
+    <string name="installer_shizuku_status_mode">မုဒ်</string>
+    <string name="installer_shizuku_status_provider">ပေးသွင်းသူ</string>
+    <string name="installer_shizuku_status_granted">ခွင့်ပြုပြီး</string>
+    <string name="installer_shizuku_status_missing">မရှိပါ</string>
+    <string name="installer_shizuku_request_permission">ခွင့်ပြုချက်တောင်းခံရန်</string>
+    <string name="installer_shizuku_install_fail">Shizuku တပ်ဆင်၍မရပါ: %s</string>
+    <string name="installer_shizuku_install_fail_with_details">"Shizuku တပ်ဆင်၍မရပါ: %1$s
+
+အသေးစိတ်: %2$s"</string>
+    <string name="installer_shizuku_error_permission">Shizuku ခွင့်ပြုချက် မရှိပါ။ Morphe ကို ခွင့်ပြုချက်ပေးပြီး ထပ်မံကြိုးစားပါ</string>
+    <string name="installer_shizuku_error_timeout">Shizuku မှ တပ်ဆင်မှုရလဒ်ကို ပြန်မပေးပါ။ ၎င်းသည် ပုံမှန်လည်ပတ်နေသည်ဖြစ်ကြောင်း သေချာအောင်ပြုလုပ်ပြီး ထပ်မံကြိုးစားပါ</string>
+    <string name="installer_shizuku_error_downgrade">တပ်ဆင်ထားသော အက်ပ်ကို ဗားရှင်းလျှော့ချမည်ဖြစ်သောကြောင့် Android မှ ၎င်းကို ပိတ်ပင်ထားသည်</string>
+    <string name="installer_shizuku_error_signature">တပ်ဆင်ထားသော အက်ပ်တွင် မတူညီသော signature ရှိသောကြောင့် Android မှ ၎င်းကို ပိတ်ပင်ထားသည်</string>
+    <string name="installer_shizuku_error_invalid_apk">Android သည် ဤ APK ကို မဖတ်နိုင်ပါ</string>
+    <string name="installer_shizuku_error_user_profile">စနစ်မှ ဤတပ်ဆင်မှုကို ပိတ်ဆို့ထားသည်။ Xiaomi နှင့် အလားတူစက်ပစ္စည်းများတွင် developer options ရှိ \"Install via USB\" ကို ဖွင့်ပါ။ အလုပ်သုံးပရိုဖိုင်တွင် တပ်ဆင်မှုများကို မူဝါဒဖြင့် ကန့်သတ်ထားနိုင်သည်</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">ဘက်ထရီ အကောင်းဆုံးဖြစ်အောင် ညှိခြင်း</string>
+    <string name="settings_system_battery_optimization_description">အက်ပ်ကို minimized လုပ်ထားချိန်တွင် patcher ကို ဆက်လက်အလုပ်လုပ်စေသည်</string>
+    <string name="settings_system_process_runtime">Patcher runtime</string>
+    <string name="settings_system_jvm_runtime_enable">Embedded VM ကို အသုံးပြုပါ</string>
+    <string name="settings_system_jvm_runtime_description">မှတ်ဉာဏ် ပိုမိုအသုံးပြုနိုင်သည့် Morphe ၏ ကိုယ်ပိုင် Java VM တွင် patches လုပ်သည်။ Android ၏ runtime ကို အသုံးပြုရန် ပိတ်ထားပါ</string>
+    <string name="settings_system_jvm_runtime_unavailable">ARM သို့မဟုတ် 64-bit x86 စက်ပစ္စည်း လိုအပ်သည်</string>
+    <string name="settings_system_patcher_completion_sound">ပြီးဆုံးကြောင်း အသံပေးချက်</string>
+    <string name="settings_system_patcher_completion_sound_description">patch လုပ်ခြင်းပြီးဆုံးသောအခါ အောင်မြင်မှု သို့မဟုတ် ပျက်ကွက်မှုအတွက် သီးခြားအသံတစ်ခုကို ဖွင့်ပေးသည်</string>
     <!-- Settings - System Tab - Notifications Section -->
+    <string name="settings_system_notifications">အကြောင်းကြားချက်များ</string>
+    <string name="settings_system_notifications_description">Morphe က သင့်ကို အသိပေးချက်များ မည်သို့ပေးပို့သည်</string>
+    <string name="settings_system_notifications_success_sound">အောင်မြင်မှုအသံ</string>
+    <string name="settings_system_notifications_error_sound">ကျရှုံးမှုအသံ</string>
+    <string name="settings_system_notifications_sound_default">မူလအတိုင်း</string>
+    <string name="settings_system_notifications_sound_picker_title">အသံအရင်းအမြစ်ကို ရွေးချယ်ပါ</string>
+    <string name="settings_system_notifications_sound_pick_ringtone">စနစ်အသံများ</string>
+    <string name="settings_system_notifications_sound_pick_file">ဖိုင်များမှ ရွေးချယ်ပါ</string>
+    <string name="settings_system_notifications_sound_reset">မူလအတိုင်း ပြန်သတ်မှတ်ပါ</string>
+    <string name="settings_system_notifications_ringtone_picker_title">အသံတစ်ခု ရွေးချယ်ပါ</string>
     <!-- Settings - System Tab - Import and Export Section -->
+    <string name="settings_system_signing_key">လက်မှတ်ထိုးသောကီး</string>
+    <string name="settings_system_signing_key_description">Patched apps များကို လက်မှတ်ရေးထိုးသော key ကို backup ယူသည် သို့မဟုတ် restore လုပ်သည်</string>
+    <string name="settings_system_signing_key_dialog_description">Morphe မှ patch လုပ်ထားသော အက်ပ်တိုင်းကို ဤကီးဖြင့် လက်မှတ်ထိုးထားပါသည်။ ဤကီးကို မိတ္တူတစ်ခု သိမ်းဆည်းထားပါ - ၎င်းမရှိပါက patch လုပ်ထားသော အက်ပ်များကို ဖြုတ်ပြီးမှသာ အပ်ဒိတ်လုပ်နိုင်မည်ဖြစ်သည်</string>
+    <string name="settings_system_signing_key_missing">သင်၏ ပထမဆုံး patch ပြုလုပ်မှုနှင့်အတူ Morphe မှ တစ်ခု ဖန်တီးပေးပါမည်</string>
+    <string name="settings_system_signing_key_created">%s ကို ဖန်တီးပြီးပါသည်</string>
+    <string name="settings_system_signing_key_fingerprint">SHA-256 လက်ဗွေရာ</string>
+    <string name="settings_system_backup_appearance_description">Theme၊ အရောင်များနှင့် ဘာသာစကား</string>
+    <string name="settings_system_backup_home_description">အုပ်စုများ၊ ဖျောက်ထားသော အက်ပ်များ၊ အစီအစဉ်တကျ စီခြင်းနှင့် တုံ့ပြန်ခလုတ်များ</string>
+    <string name="settings_system_backup_patching">Patch ပြုလုပ်ခြင်းနှင့် ထည့်သွင်းခြင်း</string>
+    <string name="settings_system_backup_patching_description">Installer၊ patcher နှင့် သိမ်းဆည်းထားသော APK များ</string>
+    <string name="settings_system_backup_updates_description">ကြိုတင်ထုတ်ဝေမှုများနှင့် အပ်ဒိတ်စစ်ဆေးမှုများ</string>
+    <string name="settings_system_backup_sources_description">စိတ်ကြိုက် source များနှင့် GitHub token</string>
+    <string name="settings_system_backup_patch_selections_description">အက်ပ်တစ်ခုချင်းစီအတွက် ရွေးချယ်ထားသော patch များ</string>
+    <string name="settings_system_backup_signing_key_note">Signing key ကို သီးခြား backup ပြုလုပ်ထားပါသည်</string>
+    <string name="settings_system_import_keystore_dialog_title">Keystore အထောက်အထားများကို ရိုက်ထည့်ပါ</string>
+    <string name="settings_system_import_keystore_dialog_description">၎င်းကို import လုပ်ရန် keystore ၏ အထောက်အထားများကို ထည့်သွင်းရန် လိုအပ်ပါသည်</string>
+    <string name="settings_system_import_keystore_dialog_alias_field">အသုံးပြုသူအမည် (Alias)</string>
+    <string name="settings_system_import_keystore_dialog_password_field">စကားဝှက်</string>
+    <string name="settings_system_import_keystore_dialog_format_field">Keystore ပုံစံ</string>
+    <string name="settings_system_import_keystore_wrong_credentials">Keystore အထောက်အထားများ မမှန်ကန်ပါ</string>
+    <string name="settings_system_import_keystore_success">Keystore ကို ထည့်သွင်းပြီးပါပြီ</string>
+    <string name="settings_system_import_keystore_failed">Keystore ကို ထည့်သွင်း၍ မရပါ</string>
+    <string name="settings_system_export_keystore_success">Keystore ကို ပို့ထုတ်ပြီးပါပြီ</string>
+    <string name="settings_system_export_keystore_failed">Keystore ကို export လုပ်၍မရပါ</string>
+    <string name="settings_system_show_password_field">စကားဝှက်ကို ပြရန်</string>
+    <string name="settings_system_hide_password_field">စကားဝှက်ကို ဖျောက်ရန်</string>
+    <string name="settings_system_morphe_settings">Morphe ဆက်တင်များ</string>
+    <string name="settings_system_import_manager_settings_description">သင်၏ Morphe ဆက်တင်များကို Backup ပြုလုပ်ခြင်းနှင့် ပြန်လည်ရယူခြင်းများ ပြုလုပ်ပေးသည်</string>
+    <string name="settings_system_import_manager_settings_fail">Morphe ဆက်တင်များကို import လုပ်ရန် မအောင်မြင်ပါ- %s</string>
+    <string name="settings_system_import_manager_settings_success">Morphe ဆက်တင်များကို import လုပ်ပြီးပါပြီ</string>
+    <string name="settings_system_import_manager_settings_mode_title">Morphe ဆက်တင်များကို Import လုပ်ပါ</string>
+    <string name="settings_system_import_manager_settings_mode_description">Import လုပ်ထားသော ဆက်တင်များနှင့် ရင်းမြစ်များကို မည်သို့ အသုံးပြုမည်ကို ရွေးချယ်ပါ</string>
+    <string name="settings_system_import_selections_mode_title">Patch ရွေးချယ်မှုများကို Import လုပ်ပါ</string>
+    <string name="settings_system_import_selections_mode_description">Import လုပ်ထားသော ရွေးချယ်မှုများနှင့် patch option များကို မည်သို့ အသုံးပြုမည်ကို ရွေးချယ်ပါ</string>
+    <string name="import_mode_replace_title">ရှိပြီးသားကို အစားထိုးပါ</string>
+    <string name="import_mode_replace_description">Backup နှင့် အတိအကျ တိုက်ဆိုင်စစ်ဆေးပါမည်။ Backup တွင် မပါဝင်သော အရာများကို ဖယ်ရှားပါမည်</string>
+    <string name="import_mode_merge_title">ရှိပြီးသားများနှင့် ပေါင်းစည်းမည်</string>
+    <string name="import_mode_merge_description">Backup မှ လိုအပ်နေသော item များကို ထည့်သွင်းမည်။ ရှိပြီးသား item များကို ပြောင်းလဲမှုမရှိဘဲ ထိန်းသိမ်းထားမည်</string>
+    <string name="settings_system_export_manager_settings_fail">Morphe ဆက်တင်များကို export လုပ်ရန် မအောင်မြင်ပါ- %s</string>
+    <string name="settings_system_export_manager_settings_success">Morphe ဆက်တင်များကို export လုပ်ပြီးပါပြီ</string>
+    <string name="settings_system_export_debug_logs">Debug log များကို Export ထုတ်ရန်</string>
+    <string name="settings_system_export_debug_logs_description">ပြဿနာများကို ဖြေရှင်းရန်အတွက် စနစ်မှတ်တမ်းများကို သိမ်းဆည်းသည်</string>
+    <string name="settings_system_export_debug_logs_export_read_failed">လော့ဂ်များကို ဖတ်ရန် မအောင်မြင်ပါ (exit code %s)</string>
+    <string name="settings_system_export_debug_logs_export_failed">လော့ဂ်များကို ပို့ထုတ်၍ မရပါ</string>
+    <string name="settings_system_export_debug_logs_export_success">လော့ဂ်များကို ပို့ထုတ်ပြီးပါပြီ</string>
     <!-- Settings - System Tab - Files & Storage Section -->
+    <string name="settings_system_apks_size">စုစုပေါင်းအရွယ်အစား: %s</string>
+    <string name="settings_system_apks_delete_all_confirm">ဤသည်သည် ဤနေရာတွင် ပြသထားသော သိမ်းဆည်းထားသော APK ဖိုင်များကို အပြီးတိုင် ဖျက်ပစ်မည်ဖြစ်သည်</string>
+    <string name="settings_system_apks_delete_selected_title">ရွေးချယ်ထားသော APK များကို ဖျက်မည်လား?</string>
+    <string name="settings_system_apks_delete_selected_confirm">ဤသည်သည် ရွေးချယ်ထားသော APK ဖိုင်များကို အပြီးတိုင် ဖျက်ပစ်မည်ဖြစ်သည်</string>
+    <string name="settings_system_apks_deleted_all">APK များကို အောင်မြင်စွာ ဖျက်ပြီးပါပြီ</string>
+    <string name="settings_system_apks_delete_failed">အချို့သော APK ဖိုင်များကို မဖျက်နိုင်ပါ</string>
+    <string name="settings_system_apks_export_zip_success">ရွေးချယ်ထားသော APK များကို ပို့出したပြီးပါပြီ</string>
+    <string name="settings_system_apks_export_zip_failed">ရွေးချယ်ထားသော APK များကို ပို့ထုတ်၍ မရပါ</string>
     <!-- Settings - System Tab - Storage Management screen -->
+    <string name="settings_system_storage_management_title">သိုလှောင်မှု စီမံခန့်ခွဲမှု</string>
+    <string name="settings_system_storage_management_description">Disk အသုံးပြုမှုကို ပြသပြီး cached ဖိုင်များကို ရှင်းလင်းသည်</string>
     <!-- Shown under how much Morphe takes up. "%1$s" is the space still available on the device, already formatted with its unit. "Free" as in unused, not as in free of charge. -->
+    <string name="settings_system_storage_free">%1$s လွတ်နေသည်</string>
+    <string name="settings_system_storage_saved_apks">သိမ်းဆည်းထားသော APK များ</string>
+    <string name="settings_system_storage_caches">Cache များ</string>
+    <string name="settings_system_storage_keystore_title">လက်မှတ်ရေးထိုးသည့် keystore</string>
+    <string name="settings_system_storage_app_data_title">အက်ပ်ဒေတာ</string>
+    <string name="settings_system_storage_patch_bundles_title">Patch bundles</string>
+    <string name="settings_system_storage_http_cache_title">ကွန်ရက် cache</string>
+    <string name="settings_system_storage_http_cache_description">အပ်ဒိတ်များ ပိုမိုမြန်ဆန်စေရန် HTTP တုံ့ပြန်မှုများကို cache လုပ်ထားသည်</string>
+    <string name="settings_system_storage_installer_cache_title">ပြင်ပ installer cache</string>
+    <string name="settings_system_storage_installer_cache_description">တတိယအဖွဲ့အစည်းမှ installer များထံ ပေးပို့ထားသော APK မိတ္တူများ</string>
+    <string name="settings_system_storage_patcher_workspace_title">Patcher လုပ်ငန်းခွင်</string>
+    <string name="settings_system_storage_patcher_workspace_description">Patcher runtime ဖိုင်များနှင့် အသုံးမပြုတော့သော scratch data များ</string>
+    <string name="settings_system_storage_temporary_title">ယာယီဖိုင်များ</string>
+    <string name="settings_system_storage_temporary_description">Patching ပြုလုပ်စဉ်အတွင်း ဖန်တီးထားသော လုပ်ငန်းသုံးဖိုင်များ</string>
+    <string name="settings_system_storage_clear_all">Cache အားလုံးကို ရှင်းလင်းမည်</string>
+    <string name="settings_system_storage_clear_all_description">ပြန်လည်ရယူနိုင်သော cache နေရာအားလုံးကို တစ်ကြိမ်တည်းတွင် ရှင်းလင်းပေးသည်</string>
+    <string name="settings_system_storage_clear_all_confirm">ဤသည်သည် cache လုပ်ထားသော network တုံ့ပြန်မှုများ၊ staged installer မိတ္တူများနှင့် ယာယီဖိုင်များကို ရှင်းလင်းပေးမည် ဖြစ်သည်။ မူရင်းနှင့် patch လုပ်ထားသော APK များကိုတော့ သိမ်းဆည်းထားမည် ဖြစ်သည်</string>
+    <string name="settings_system_storage_cleared">%s ကို ရှင်းလင်းပြီးပါပြီ</string>
+    <string name="settings_system_storage_patch_running_warning">Patch တစ်ခု အလုပ်လုပ်နေပြီး ဤဖိုင်များကို အသုံးပြုနေသည်။ ယခု ဖျက်လိုက်ပါက ပျက်ကွက်သွားမည်ဖြစ်သည်</string>
+    <string name="settings_system_storage_clear_anyway">မည်သို့ပင်ဖြစ်စေ ဖျက်မည်</string>
+    <string name="settings_system_storage_nothing_to_clear">ရှင်းလင်းရန် ဘာမှမရှိပါ</string>
+    <string name="settings_system_storage_open_app_info_title">Android အက်ပ်သိုလှောင်မှုအား ဖွင့်ရန်</string>
+    <string name="settings_system_storage_open_app_info_description">စနစ်ဆက်တင်များမှတစ်ဆင့် Morphe ဒေတာအားလုံးကို စီမံခန့်ခွဲရန် သို့မဟုတ် ရှင်းလင်းရန်</string>
+    <string name="settings_system_save_original_apks_title">မူရင်း APK များကို သိမ်းဆည်းထားပါ</string>
+    <string name="settings_system_save_original_apks_description">ဖိုင်ကို ထပ်မံရွေးချယ်စရာမလိုဘဲ ထပ်မံ patch လုပ်ရန်အတွက် pre-patch APK ကို သိမ်းဆည်းထားပါ</string>
+    <string name="settings_system_save_patched_apks_title">Patched APK များကို သိမ်းဆည်းထားပါ</string>
+    <string name="settings_system_save_patched_apks_description">နောက်ပိုင်းတွင် export လုပ်ရန် သို့မဟုတ် manager မှတစ်ဆင့် ပြန်လည် install လုပ်ရန်အတွက် patched APK ၏ မိတ္တူတစ်ခုကို သိမ်းဆည်းပါ</string>
     <!-- Settings - System Tab - Storage Management - Patched APKs Management -->
+    <string name="settings_system_patched_apks_title">ပြုပြင်ထားသော APK များ</string>
+    <string name="settings_system_patched_apks_empty">ပြုပြင်ထားသော APK များ မသိမ်းဆည်းရသေးပါ</string>
+    <string name="settings_system_patched_apks_delete_title">ပြုပြင်ထားသော APK ကို ဖျက်ရန်လား?</string>
+    <string name="settings_system_patched_apks_deleted">ပြုပြင်ထားသော APK ကို အောင်မြင်စွာ ဖျက်လိုက်ပါပြီ</string>
+    <string name="settings_system_patched_apks_delete_all_title">ပြုပြင်ထားသော APK အားလုံးကို ဖျက်မလား?</string>
     <!-- Settings - System Tab - Storage Management - Original APKs Management -->
+    <string name="settings_system_original_apks_title">မူရင်း APK များ</string>
+    <string name="settings_system_original_apks_empty">မူရင်း APK များ သိမ်းဆည်းထားခြင်းမရှိပါ</string>
+    <string name="settings_system_original_apks_deleted">မူရင်း APK ကို အောင်မြင်စွာ ဖျက်ပြီးပါပြီ</string>
+    <string name="settings_system_original_apks_delete_title">မူရင်း APK ကို ဖျက်မလား?</string>
+    <string name="settings_system_original_apks_delete_notice">APK အသစ်တစ်ခု မပေးဘဲ ပြန်လည် patch လုပ်နိုင်မည်မဟုတ်ပါ</string>
+    <string name="settings_system_original_apks_delete_all_title">မူရင်း APK အားလုံးကို ဖျက်မလား?</string>
     <!-- Settings - System Tab - Storage Management - Patch Selection Management -->
+    <string name="settings_system_patch_selections_title">Patch ရွေးချယ်မှုများ</string>
+    <string name="settings_system_patch_selections_description">အပလီကေးရှင်းကို ဖြုတ်ပြီးနောက်တွင်လည်း သိမ်းဆည်းထားသော patch ရွေးချယ်မှုများကို ဆက်လက်ထိန်းသိမ်းထားမည်</string>
+    <string name="settings_system_patch_selection_reset_all_confirm_title">ရွေးချယ်မှုအားလုံးကို ပြန်လည်သတ်မှတ်မလား?</string>
+    <string name="settings_system_patch_selection_reset_selected_confirm_title">ရွေးချယ်ထားသော ပက်ကေ့ချ်များကို ပြန်လည်သတ်မှတ်မလား?</string>
+    <string name="settings_system_patch_selection_reset_source_confirm_title">Source ရွေးချယ်မှုကို ပြန်လည်သတ်မှတ်မလား?</string>
+    <string name="settings_system_patch_selection_total_summary_format">%2$s တွင် %1$s</string>
+    <string name="settings_system_patch_selection_source_format">အရင်းအမြစ် #%s</string>
+    <string name="settings_system_patch_selection_reset_all_warning">ဤသို့ပြုလုပ်ခြင်းသည် package နှင့် source အားလုံးအတွက် သိမ်းဆည်းထားသော patch ရွေးချယ်မှုအားလုံးကို အပြီးတိုင် ဖျက်ပစ်မည်ဖြစ်သည်</string>
+    <string name="settings_system_patch_selection_reset_source_warning">ဤလုပ်ဆောင်ချက်သည် &lt;b&gt;%2$s&lt;/b&gt; ရှိ &lt;b&gt;%1$s&lt;/b&gt; အတွက် သိမ်းဆည်းထားသော patch ရွေးချယ်မှုများကို အပြီးတိုင် ဖျက်ပစ်မည်ဖြစ်သည်</string>
+    <string name="settings_system_patch_selection_reset_selected_warning">ဤလုပ်ဆောင်ချက်သည် ရွေးချယ်ထားသော ပက်ကေ့ဂျ်များအတွက် သိမ်းဆည်းထားသော patch ရွေးချယ်မှုအားလုံးကို အပြီးတိုင် ဖျက်ပစ်မည်ဖြစ်သည်</string>
+    <string name="settings_system_export_source_data_fail">Source data ကို export ပြုလုပ်၍ မရပါ</string>
+    <string name="settings_system_export_source_data_success">Source data ကို အောင်မြင်စွာ export ပြုလုပ်ပြီးပါပြီ</string>
+    <string name="settings_system_import_source_data_fail">Source data ကို import ပြုလုပ်၍ မရပါ</string>
+    <string name="settings_system_import_source_data_success">Source data ကို အောင်မြင်စွာ import ပြုလုပ်ပြီးပါပြီ</string>
+    <string name="settings_system_selected_patches_section">ရွေးချယ်ထားသော patch များ</string>
+    <string name="settings_system_no_patches_or_options">သိမ်းဆည်းထားသော ပတ်ချ်များ သို့မဟုတ် ရွေးချယ်မှုများ မရှိပါ</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">ရွေးချယ်မှုများ</string>
+    <string name="selection_panel_copy_into">%s ထဲသို့ ကူးယူမည်</string>
+    <string name="selection_sets_title">အစုများ</string>
+    <string name="selection_set_name">အစုအမည်</string>
+    <string name="selection_set_save">အစုအဖြစ် သိမ်းဆည်းမည်</string>
+    <string name="selection_set_replace">အစုကို အစားထိုးမည်</string>
+    <string name="selection_set_saved">%s အဖြစ် သိမ်းဆည်းပြီးပါသည်</string>
+    <string name="selection_set_applied">%s သို့ ပြောင်းလဲလိုက်ပါသည်</string>
+    <string name="selection_set_deleted">%s ကို ဖျက်ပြီးပါသည်</string>
+    <string name="selection_set_renamed">%s သို့ အမည်ပြောင်းလိုက်ပါသည်</string>
+    <string name="selection_set_rename_title">အစုအမည် ပြောင်းရန်</string>
+    <string name="selection_set_delete_title">အစုအဝေးကို ဖျက်ရန်လား?</string>
+    <string name="selection_set_delete_message">ဤလုပ်ဆောင်ချက်သည် အစုအဝေး %s ကို အပြီးတိုင်ဖျက်ပါမည်</string>
+    <string name="copy_selection_empty">ကူးယူရန် အခြားသိမ်းဆည်းထားသော ရွေးချယ်မှုများမရှိပါ</string>
+    <string name="copy_selection_available_format">ရရှိနိုင်သော %2$s ထဲမှ %1$s</string>
     <!-- Settings - System Tab - Custom file picker -->
+    <string name="settings_system_custom_file_picker">စိတ်ကြိုက်ဖိုင်ရွေးချယ်စနစ်</string>
+    <string name="settings_system_custom_file_picker_description">စနစ်၏ ဖိုင်ရွေးချယ်စနစ်အစား Morphe ၏ ပင်ကိုယ်ဖိုင်ရွေးချယ်စနစ်ကို အသုံးပြုသည်</string>
     <!-- Settings - System Tab - APK download helper -->
+    <string name="settings_system_apk_download_helper">APK ဒေါင်းလုဒ်ကူညီပေးသူ</string>
+    <string name="settings_system_apk_download_helper_trusted_count">ယုံကြည်စိတ်ချရမှု: %2$d အနက် %1$d</string>
+    <string name="settings_system_apk_download_helper_dialog_description">Helper အက်ပ်များသည် မူရင်း APK များကို သင့်အတွက် download လုပ်ပေးနိုင်ပါသည်။ ဤနေရာတွင် သင်ယုံကြည်စိတ်ချရသော အက်ပ်များကိုသာ download ညွှန်ကြားချက်များတွင် ဖော်ပြပေးမည်ဖြစ်သည်</string>
+    <string name="settings_system_apk_download_helper_trust_title">ဤအကူအညီပေးအက်ပ်ကို ယုံကြည်ပါသလား?</string>
+    <string name="settings_system_apk_download_helper_warning">APK သည် helper အက်ပ်မှ လာခြင်းဖြစ်သောကြောင့် သင်သိသော အက်ပ်များကိုသာ ယုံကြည်ပါ။ Morphe သည် patch မလုပ်မီ ဖိုင်တိုင်း၏ package၊ version နှင့် signature များကို စစ်ဆေးနေဆဲဖြစ်သည်</string>
+    <string name="settings_system_apk_download_helper_installed_by">%s မှ install လုပ်သည်</string>
+    <string name="settings_system_apk_download_helper_installed_by_unknown">Installer ကို မသိရှိပါ</string>
+    <string name="settings_system_apk_download_helper_open_directly">Helper ကို ချက်ချင်းဖွင့်ရန်</string>
+    <string name="settings_system_apk_download_helper_open_directly_description">ဒေါင်းလုဒ်လမ်းညွှန်ချက်များကို ကျော်ပြီး ယုံကြည်စိတ်ချရသော helper ကို ဖွင့်ပါမည်</string>
     <!-- File Picker -->
+    <string name="file_picker_no_files">ဤနေရာတွင် ဖိုင်များမရှိပါ</string>
+    <string name="file_picker_read_error">ဤလမ်းညွှန်စာတွဲကို ဖတ်၍မရပါ</string>
+    <string name="file_picker_internal_storage">အတွင်းပိုင်းသိုလှောင်မှု</string>
+    <string name="file_picker_sd_card">SD ကတ်</string>
+    <string name="file_picker_root">Root (/)</string>
+    <string name="file_picker_storage_access_unavailable">ဤစက်တွင် ဖိုင်အားလုံးကို ဝင်ရောက်ခွင့်ပြုရန် မျက်နှာပြင်မရှိပါ။ ၎င်းကို ADB မှတစ်ဆင့် adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow ဖြင့် ခွင့်ပြုပေးပါ</string>
+    <string name="file_picker_storages">သိုလှောင်မှုများ</string>
+    <string name="file_saver_downloads_failed">Downloads တွင် ဖိုင်ကို မဖန်တီးနိုင်ပါ</string>
+    <string name="file_saver_saving_to_downloads">ဤစက်တွင် သိမ်းဆည်းရန်မျက်နှာပြင်မရှိပါ၊ ထို့ကြောင့် ဖိုင်ကို Downloads သို့ %1$s အဖြစ် ပို့ပေးပါမည်</string>
+    <string name="file_picker_sort_name_asc">အမည် (A–Z)</string>
+    <string name="file_picker_sort_name_desc">အမည် (Z–A)</string>
+    <string name="file_picker_sort_size_desc">အရွယ်အစား (အကြီးဆုံးမှစ၍)</string>
+    <string name="file_picker_sort_size_asc">အရွယ်အစား (အသေးဆုံးမှစ၍)</string>
+    <string name="file_picker_sort_date_desc">ရက်စွဲ (အသစ်ဆုံးမှစ၍)</string>
+    <string name="file_picker_sort_date_asc">ရက်စွဲ (အဟောင်းဆုံးမှစ၍)</string>
+    <string name="file_picker_show_hidden_files">ဝှက်ထားသော ဖိုင်များကို ပြပါ</string>
     <!-- Settings - System Tab - About Section -->
+    <string name="settings_system_about">အကြောင်းအရာ</string>
+    <string name="settings_system_manager_description">လူကြိုက်များသော Android အက်ပ်များကို ခေတ်မီပြီး စနစ်ကျကျ Patch ပြုလုပ်နိုင်ရန် လူထု၏ တုံ့ပြန်ချက်နှင့် ပံ့ပိုးမှုများဖြင့် ဖော်ဆောင်ထားသော open-source ပရောဂျက်တစ်ခုဖြစ်သည်</string>
+    <string name="credits">ဂုဏ်ပြုမှတ်တမ်း</string>
+    <string name="credits_description">Morphe ၏ နောက်ကွယ်မှ လူပုဂ္ဂိုလ်များ</string>
+    <string name="settings_about_section_project">ပရောဂျက်</string>
+    <string name="settings_about_section_help">အကူအညီ</string>
+    <string name="credits_current_development">လက်ရှိ ဖွံ့ဖြိုးတိုးတက်မှု</string>
+    <string name="credits_prior_development">ယခင် ဖွံ့ဖြိုးတိုးတက်မှု</string>
+    <string name="opensource_licenses">Open-source လိုင်စင်များ</string>
+    <string name="opensource_licenses_description">Morphe ကို တည်ဆောက်ထားသော library များ</string>
     <!-- Easter egg offered after seven taps on the version in the About dialog -->
+    <string name="easter_egg_pill_title">ရွေးချယ်မှုတစ်ခု</string>
+    <string name="easter_egg_pill_message">အပြာရောင်ဆေးတောင့်ကို သောက်ပြီး ကြော်ငြာတွေကို ရှိနေတဲ့နေရာမှာပဲ ထားလိုက်ပါ။ အနီရောင်ဆေးတောင့်ကို သောက်ပြီး bytecode ရဲ့ နက်ရှိုင်းမှုကို ရှာဖွေကြည့်ပါ</string>
+    <string name="easter_egg_pill_red">အနီရောင်ဆေးတောင့်</string>
+    <string name="easter_egg_pill_blue">အပြာရောင်ဆေးတောင့်</string>
+    <string name="easter_egg_pill_red_toast">Matrix နောက်ခံကို ဖွင့်လိုက်ပါပြီ</string>
+    <string name="easter_egg_pill_blue_toast">ကြော်ငြာတွေက သင့်ကို စောင့်နေပါလိမ့်မယ်</string>
+    <string name="easter_egg_pill_message_again">သင်ဟာ Matrix ထဲမှာ ရောက်ရှိနေပြီးသားပါ။ အနီရောင်ဆေးတောင့်က သင့်ကို မိုးထဲပြန်ပို့ပေးမှာဖြစ်ပြီး အပြာရောင်ဆေးတောင့်ကတော့ သင့်ကို နိုးထစေပါလိမ့်မယ်</string>
+    <string name="easter_egg_pill_red_toast_again">မိုးထဲသို့ ပြန်ရောက်သွားပြီ</string>
+    <string name="easter_egg_pill_blue_toast_again">ပလပ်ဖြုတ်လိုက်ပြီ။ ပြန်လမ်းကတော့ အမြဲရှိနေတဲ့နေရာမှာပဲ ရှိပါတယ်</string>
     <!-- Shared strings -->
+    <string name="select_file">ဖိုင်ကို ရွေးချယ်ပါ</string>
+    <string name="select_files">ဖိုင်များကို ရွေးချယ်ပါ</string>
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="select_folder">ဖိုဒါကို ရွေးချယ်ပါ</string>
+    <string name="patches">ပက်ချ်များ</string>
+    <string name="home">ပင်မစာမျက်နှာ</string>
+    <string name="settings">ဆက်တင်များ</string>
+    <string name="apps">အက်ပ်များ</string>
     <!-- Sections the settings page lists, each opening a page of its own. A summary names what the section holds -->
+    <string name="settings_section_patcher">ပါးချာ (Patcher)</string>
+    <string name="settings_section_updates">အပ်ဒိတ်များ</string>
+    <string name="settings_section_patching">ပတ်ချ်လုပ်ခြင်း</string>
+    <string name="settings_section_appearance_summary">Morphe ၏ ပုံပန်းသဏ္ဍာန်</string>
+    <string name="settings_section_patch_options_summary">ရိုးရှင်းသော mode သည် app များကို ဘာဖြင့် patch လုပ်မည်နည်း</string>
+    <string name="settings_section_general">အထွေထွေ</string>
+    <string name="settings_section_patcher_summary">ဤစက်ပစ္စည်းတွင် အက်ပ်များကို မည်သို့ patch လုပ်သည်</string>
+    <string name="settings_section_help_info">အကူအညီ &amp; အချက်အလက်</string>
+    <string name="settings_section_about_summary">Morphe အကြောင်း အသေးစိတ်နှင့် အကူအညီ ရယူခြင်း</string>
+    <string name="settings_section_local_files">ဖိုင်များ</string>
+    <string name="settings_section_backup">အရံသိမ်းဆည်းမှု</string>
+    <string name="settings_search">ဆက်တင်များကို ရှာဖွေပါ</string>
+    <string name="yes">ဟုတ်ကဲ့</string>
+    <string name="no">မဟုတ်ပါ</string>
+    <string name="all">အားလုံး</string>
+    <string name="filter">စစ်ထုတ်မည်</string>
+    <string name="group">အုပ်စု</string>
+    <string name="reset">ပြန်လည်သတ်မှတ်ရန်</string>
+    <string name="reset_all">အားလုံးကို ပြန်စရန်</string>
+    <string name="apply">အသုံးချမည်</string>
+    <string name="confirm">အတည်ပြုပါ</string>
+    <string name="warning">သတိပေးချက်</string>
+    <string name="error_">အမှား</string>
+    <string name="failed">မအောင်မြင်ပါ</string>
+    <string name="canceled">ပယ်ဖျက်လိုက်သည်</string>
+    <string name="ready">အဆင်သင့်ဖြစ်ပြီ</string>
+    <string name="retry">ပြန်ကြိုးစားပါ</string>
+    <string name="refresh">ပြန်လည်ရယူပါ</string>
+    <string name="add">ထည့်ရန်</string>
+    <string name="close">ပိတ်ရန်</string>
+    <string name="back">နောက်သို့</string>
+    <string name="next">ရှေ့သို့</string>
+    <string name="done">ပြီးပြီ</string>
+    <string name="skip">ကျော်သွားမည်</string>
+    <string name="clear">ရှင်းလင်းရန်</string>
+    <string name="paste">ကူးထည့်ပါ</string>
+    <string name="delete">ဖျက်ရန်</string>
+    <string name="delete_all">အားလုံးဖျက်ပါ</string>
+    <string name="remove">ဖယ်ရှားရန်</string>
+    <string name="exclude">ဖယ်ထုတ်ပါ</string>
+    <string name="excluded">ဖယ်ထုတ်ထားသည်</string>
+    <string name="include">ထည့်သွင်းပါ</string>
+    <string name="disable">ပိတ်ပါ</string>
+    <string name="enable">ဖွင့်ပါ</string>
+    <string name="trust">ယုံကြည်သည်</string>
+    <string name="loading">ခေတ္တစောင့်ပါ...</string>
+    <string name="creating">ဖန်တီးနေသည်…</string>
+    <string name="processing_apk">APK ကို လုပ်ဆောင်နေသည်…</string>
+    <string name="exporting_apks">APK များကို ပို့ထုတ်နေသည်…</string>
+    <string name="not_installed">မတပ်ဆင်ထားပါ</string>
+    <string name="view">ကြည့်ရှုရန်</string>
+    <string name="search">ရှာဖွေရန်</string>
+    <string name="search_no_results">ရလဒ်များ မတွေ့ရှိပါ</string>
+    <string name="sort">အစီအစဉ်တကျ စီပါ</string>
+    <string name="any_version">မည်သည့်ဗားရှင်းမဆို</string>
+    <string name="enabled">ဖွင့်ထားသည်</string>
+    <string name="disabled">ပိတ်ထားသည်</string>
+    <string name="state_selected">ရွေးချယ်ပြီး</string>
+    <string name="state_not_selected">မရွေးချယ်ထားပါ</string>
+    <string name="select_all">အားလုံးကို ရွေးချယ်ပါ</string>
+    <string name="deselect_all">အားလုံးကို ပယ်ဖျက်ပါ</string>
+    <string name="reorder_list">စာရင်းကို ပြန်စီပါ</string>
+    <string name="reorder_list_hint">ပြန်စီရန် ဆွဲရွှေ့ပါ</string>
+    <string name="reorder_done">အစီအစဉ်ကို သိမ်းဆည်းပြီးပါပြီ</string>
+    <string name="reset_order">အစီအစဉ်ကို မူလအတိုင်း ပြန်ထားပါ</string>
+    <string name="reset_order_done">အစီအစဉ်ကို မူလအတိုင်း ပြန်ထားပြီးပါပြီ</string>
+    <string name="reset_order_confirm_title">အစီအစဉ်ကို ပြန်လည်သတ်မှတ်မလား?</string>
+    <string name="reset_order_confirm_message">စာရင်းသည် ၎င်း၏ ပုံသေအစီအစဉ်သို့ ပြန်သွားမည်ဖြစ်ပြီး လက်ဖြင့် ဆွဲရွှေ့ထားသော အစီအစဉ်များ ပျောက်ဆုံးသွားမည်ဖြစ်သည်</string>
+    <string name="accessibility_select_app">အက်ပ်ကို ရွေးချယ်ပါ</string>
+    <string name="accessibility_select_source">အရင်းအမြစ်ကို ရွေးချယ်ပါ</string>
+    <string name="accessibility_move_up">အပေါ်သို့ ရွှေ့ပါ</string>
+    <string name="accessibility_move_down">အောက်သို့ ရွှေ့ပါ</string>
+    <string name="accessibility_app_moved_announcement">%1$s ကို နေရာ %3$s အနက် %2$s သို့ ရွှေ့လိုက်သည်</string>
+    <string name="accessibility_scroll_to_top">စာရင်း၏ အပေါ်ဆုံးသို့ ပွတ်ဆွဲပါ</string>
+    <string name="rename">အမည်ပြောင်းရန်</string>
+    <string name="more_options">နောက်ထပ်ရွေးချယ်စရာများ</string>
+    <string name="import_">ထည့်သွင်းရန်</string>
+    <string name="export">အပြင်သို့ထုတ်ယူမည်</string>
+    <string name="copy">ကူးယူပါ</string>
+    <string name="copied_to_clipboard">ကလစ်ဘုတ်သို့ ကူးယူပြီးပါပြီ</string>
+    <string name="download">ဒေါင်းလုဒ်လုပ်မည်</string>
+    <string name="less">လျှော့ချရန်</string>
+    <string name="expand">ချဲ့ပါ</string>
+    <string name="expanded">ချဲ့ထားသည်</string>
+    <string name="collapse">ခေါက်ပါ</string>
+    <string name="collapsed">ခေါက်ထားသည်</string>
+    <string name="continue_">ဆက်လက်လုပ်ဆောင်ရန်</string>
+    <string name="version">ဗားရှင်း</string>
     <!-- Who made a patch source, as a field label -->
+    <string name="author">ရေးသားသူ</string>
     <!-- A file a patch source is added from, as a field label -->
+    <string name="file">ဖိုင်</string>
+    <string name="clone">မိတ္တူပွားရန်</string>
     <!-- Button that starts patching the selected app. A verb, as in "patch this app" -->
+    <string name="patch">ဖာထေးရန်</string>
+    <string name="patching">Patch ပြုလုပ်နေသည်</string>
+    <string name="patched">Patch လုပ်ပြီး</string>
+    <string name="open">ဖွင့်ပါ</string>
+    <string name="mount">ချိတ်ဆက်ရန်</string>
+    <string name="mounted">ချိတ်ဆက်ထားသည်</string>
+    <string name="unmount">Unmount ပြုလုပ်ရန်</string>
+    <string name="unmounted">ချိတ်ဆက်မှုဖြတ်တောက်ထားသည်</string>
+    <string name="remount">Remount ပြုလုပ်ပါ</string>
+    <string name="restore">ပြန်လည်ရယူရန်</string>
+    <string name="share">မျှဝေရန်</string>
+    <string name="install">ထည့်သွင်းပါ</string>
+    <string name="installed">တပ်ဆင်ပြီး</string>
+    <string name="reinstall">ပြန်လည်ထည့်သွင်းမည်</string>
+    <string name="uninstall">ပယ်ဖျက်ရန်</string>
+    <string name="uninstalled">Uninstall လုပ်ပြီးပြီ</string>
+    <string name="save">သိမ်းဆည်းမည်</string>
+    <string name="saved">သိမ်းဆည်းပြီး</string>
+    <string name="update">မွမ်းမံရန်</string>
+    <string name="allow">ခွင့်ပြုသည်</string>
+    <string name="hide">ဖျောက်ထားရန်</string>
+    <string name="hidden">ဝှက်ထားသည်</string>
+    <string name="unhide">ဝှက်ထားမှုမှဖယ်ရှားရန်</string>
+    <string name="show_all">အားလုံးပြရန်</string>
+    <string name="ignore">လျစ်လျူရှုရန်</string>
+    <string name="stop_ignoring">လျစ်လျူရှုခြင်းကို ရပ်တန့်ပါ</string>
+    <string name="stop">ရပ်တန့်ရန်</string>
+    <string name="logs">Logs များ</string>
+    <string name="sources">အရင်းအမြစ်များ</string>
+    <string name="installing_ellipsis">တပ်ဆင်နေသည်…</string>
+    <string name="mounting_ellipsis">တပ်ဆင်နေသည်…</string>
+    <string name="mount_stage_restoring_stock">မူလအခြေအနေသို့ ပြန်လည်ရယူနေသည်…</string>
+    <string name="mount_stage_copying">ကူးယူနေသည်…</string>
+    <string name="unmounting_ellipsis">Unmounting ပြုလုပ်နေသည်…</string>
+    <string name="importing_ellipsis">ထည့်သွင်းနေသည်…</string>
+    <string name="imported_successfully">အောင်မြင်စွာ ထည့်သွင်းပြီးပါပြီ</string>
+    <string name="changelog">ပြောင်းလဲမှုမှတ်တမ်းများကို ကြည့်ရန်</string>
+    <string name="changelog_for_app">%s အတွက် အပြောင်းအလဲများ</string>
+    <string name="changelog_general_changes">ယေဘုယျ အပြောင်းအလဲများ</string>
+    <string name="whats_new">ဘာတွေအသစ်ပါသလဲ</string>
+    <string name="changelog_description">ယခုဗားရှင်းတွင် ဘာများအသစ်ပါသလဲ</string>
+    <string name="changelog_download_fail">ပြောင်းလဲမှုမှတ်တမ်းကို ဒေါင်းလုဒ်လုပ်၍မရပါ: %s</string>
+    <string name="changelog_empty">ပြောင်းလဲမှုမှတ်တမ်း မရှိပါ</string>
+    <string name="changelog_earlier_releases">ယခင်ထုတ်ဝေမှုများ</string>
+    <string name="changelog_patched_with">%s ဖြင့် patch လုပ်ထားသည်</string>
+    <string name="changelog_older_empty">ပြသရန် ယခင်ထွက်ရှိထားသော ဗားရှင်းများ မရှိပါ</string>
+    <string name="changelog_older_failed">ယခင်ထုတ်ဝေမှုများကို မတင်နိုင်ပါ</string>
     <!-- Label of a footer button beside "Translate". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="changelog_release_page">ထုတ်ဝေမှုစာမျက်နှာ</string>
+    <string name="content_translate">ဘာသာပြန်ရန်</string>
     <!-- Label of a footer button beside other buttons, which reads "Translate" until pressed. Keep it as short as "Translate", a longer one moves the buttons onto two rows -->
+    <string name="content_show_original">မူရင်း</string>
+    <string name="content_translation_failed">ဘာသာပြန်၍မရပါ: %s</string>
+    <string name="changelog_section_new">အသစ်</string>
+    <string name="changelog_section_fixes">ပြင်ဆင်ချက်များ</string>
+    <string name="changelog_section_performance">စွမ်းဆောင်ရည်</string>
+    <string name="changelog_section_improvements">တိုးတက်မှုများ</string>
+    <string name="changelog_section_app_support">အက်ပ်ပံ့ပိုးမှု</string>
+    <string name="changelog_section_other">ပြောင်းလဲမှုများ</string>
+    <string name="changelog_badge_latest">နောက်ဆုံးထွက်</string>
     <!-- Marks the version of a patch source downloaded to the manager, which patches with it rather than the one an installed app was patched with -->
+    <string name="changelog_badge_downloaded">ဒေါင်းလုဒ်လုပ်ပြီးပြီ</string>
+    <string name="changelog_badge_prerelease">ကြိုတင်ထုတ်ဝေမှု</string>
     <!-- "%s" is the number of changes in the section -->
+    <string name="changelog_show_all">အားလုံးပြရန် (%s)</string>
+    <string name="changelog_show_less">နည်းနည်းပဲပြရန်</string>
+    <string name="no_network_toast">အင်တာနက် ချိတ်ဆက်မှု မရှိပါ</string>
+    <string name="update_available">အပ်ဒိတ်တစ်ခု ရရှိနိုင်သည်</string>
+    <string name="ready_to_install_update">အပ်ဒိတ်ကို ထည့်သွင်းရန် အသင့်ဖြစ်ပြီ</string>
+    <string name="update_completed">မွမ်းမံမှု ထည့်သွင်းပြီးပါပြီ</string>
+    <string name="install_update_manager_failed">မွမ်းမံမှု ထည့်သွင်း၍ မရပါ</string>
+    <string name="installing_manager_update">မွမ်းမံမှုကို ထည့်သွင်းနေသည်…</string>
+    <string name="installing_manager_update_hint">အပ်ဒိတ်ပြီးဆုံးရန် Morphe ကို ပိတ်ပါမည်</string>
+    <string name="downloading_manager_update">မွမ်းမံမှုကို ဒေါင်းလုဒ်လုပ်နေသည်…</string>
     <!-- Shown while downloading when the server does not report the total size. "%1$s" is the megabytes so far. -->
+    <string name="manager_update_progress_downloaded">%1$s MB ဒေါင်းလုဒ်လုပ်ပြီးပါပြီ</string>
     <!-- Shown under the download percentage. "%1$s" is the megabytes so far, "%2$s" the total. -->
+    <string name="manager_update_progress_size">%1$s / %2$s MB</string>
+    <string name="manager_update_not_ready">ဤ release ကို ထုတ်ဝေဆဲဖြစ်သည်။ မိနစ်အနည်းငယ်အတွင်း ထပ်မံကြိုးစားပါ</string>
+    <string name="update_download_missing">ဒေါင်းလုဒ်လုပ်ထားသော update ကို မရရှိနိုင်တော့ပါ။ ထပ်မံဒေါင်းလုဒ်လုပ်ပါ</string>
+    <string name="failed_to_check_updates">မွမ်းမံမှုများကို စစ်ဆေး၍ မရပါ- %s</string>
+    <string name="failed_to_download_update">မွမ်းမံမှုကို ဒေါင်းလုဒ်လုပ်၍ မရပါ- %s</string>
+    <string name="download_confirmation_metered">"သင်သည် လက်ရှိတွင် အကန့်အသတ်ရှိသော အင်တာနက်ချိတ်ဆက်မှုကို အသုံးပြုနေပြီး၊ ဝန်ဆောင်မှုပေးသူထံမှ ဒေတာအခကြေးငွေများ ပေးဆောင်ရနိုင်ပါသည်။
+
+ဆက်လက်လုပ်ဆောင်လိုပါသလား?"</string>
+    <string name="download_update_confirmation">မွမ်းမံမှုကို ဒေါင်းလုဒ်လုပ်မည်လား?</string>
     <!-- Onboarding coach marks -->
     <!-- %1$s = current step number, %2$s = total number of steps (e.g. "3 of 13") -->
+    <string name="onboarding_step_of">%2$s အနက် %1$s ခုမြောက်</string>
+    <string name="onboarding_sources_desc">သင်၏ patch အရင်းအမြစ်များကို စီမံခန့်ခွဲပါ။ အရင်းအမြစ်တစ်ခုစီသည် သင်၏အက်ပ်များတွင် အသုံးပြုနိုင်သော patch များကို ပံ့ပိုးပေးသည်</string>
+    <string name="onboarding_other_apps_desc">စာရင်းတွင်မပါသော အက်ပ်တစ်ခုကို APK ဖိုင်မှဖြစ်စေ သို့မဟုတ် သင့်စက်တွင် ထည့်သွင်းထားသော အက်ပ်မှဖြစ်စေ patch ပြုလုပ်ပါ</string>
+    <string name="onboarding_add_source_desc">လင့်ခ်တစ်ခု သို့မဟုတ် patch bundle ဖိုင်တစ်ခုမှ patch source ကို ထည့်ပါ</string>
+    <string name="onboarding_signing_key_desc">သင့် patch ပြုလုပ်ထားသော အက်ပ်များကို လက်မှတ်ရေးထိုးသည့် key ကို back up လုပ်ထားပါ။ ၎င်းမရှိဘဲ အက်ပ်များကို uninstall လုပ်ပြီးမှသာ update ပြုလုပ်နိုင်မည်ဖြစ်သည်</string>
+    <string name="onboarding_swipe_title">ဆွဲယူမှု အမူအရာများ</string>
+    <string name="onboarding_swipe_desc">ရရှိနိုင်သော patch များကို ကြည့်ရန် အက်ပ်ကတ်တစ်ခုပေါ်တွင် ညာဘက်သို့ ဆွဲယူပါ။ ပင်မမျက်နှာပြင်မှ ကတ်ကို ဖျောက်ရန် ဘယ်ဘက်သို့ ဆွဲယူပါ</string>
+    <string name="onboarding_settings_desc">Morphe ကို စိတ်ကြိုက်ပြင်ဆင်ပါ- အသွင်အပြင်၊ အဆင့်မြင့်ရွေးချယ်မှုများနှင့် စနစ်ကိရိယာများ</string>
+    <string name="onboarding_sources_patches_desc">ဤအရင်းအမြစ်မှ ရရှိနိုင်သော patch အားလုံးကို ကြည့်ရန် နှိပ်ပါ</string>
+    <string name="onboarding_sources_version_desc">ဤအရင်းအမြစ်အတွက် ပြောင်းလဲမှုမှတ်တမ်း အပြည့်အစုံကို ကြည့်ရန် ဗားရှင်းကို နှိပ်ပါ</string>
+    <string name="onboarding_sources_apps_desc">ဤ source မှ patch ပြုလုပ်နိုင်သော အက်ပ်များကို ကြည့်ရန်နှင့် ၎င်းတို့အနက် မည်သည်တို့ကို patch ပြုလုပ်မည်ကို ရွေးချယ်ရန် နှိပ်ပါ</string>
+    <string name="onboarding_sources_prerelease_desc">ဤအရင်းအမြစ်မှ pre-release patch ဗားရှင်းများကို ရရှိရန် ၎င်းကို အသက်သွင်းပါ</string>
+    <string name="onboarding_appearance_tab_desc">အက်ပ်၏ အသွင်အပြင်ကို စိတ်ကြိုက်ပြင်ဆင်ပါ- သီမ်၊ အသားပေးအရောင်နှင့် နောက်ခံ</string>
+    <string name="onboarding_expert_mode_desc">Patch ရွေးချယ်မှု၊ စိတ်ကြိုက်ရွေးချယ်မှုများနှင့် အခြားအဆင့်မြင့်လုပ်ဆောင်ချက်များကို အသုံးပြုနိုင်ရန် Expert Mode ကို အသက်သွင်းပါ</string>
     <!-- Translate "System" the same way as the System settings tab -->
+    <string name="onboarding_system_installer_desc">Patch လုပ်ထားသော အက်ပ်များကို တပ်ဆင်မည့်နည်းလမ်းကို ရွေးချယ်ပါ- standard၊ root mount သို့မဟုတ် Shizuku</string>
+    <string name="onboarding_system_file_picker_desc">APK များ သို့မဟုတ် keystore များကို ရွေးချယ်ရာတွင် စနစ်၏ picker အစား အစုံအလင်ပါဝင်သော ဖိုင်ဘရောက်ဆာကို အသုံးပြုရန် ဖွင့်ပါ</string>
     <!-- Tour prompt dialog shown after first successful patch install -->
+    <string name="tour_prompt_title">လုပ်ဆောင်ချက်များ အမြန်လမ်းညွှန်</string>
+    <string name="tour_prompt_desc">Morphe ၏ အဓိကလုပ်ဆောင်ချက်များကို အမြန်လမ်းညွှန်ကြည့်လိုပါသလား?</string>
     <!-- Label of a footer button beside "Skip". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="tour_prompt_confirm">လမ်းညွှန်ပေးပါ</string>
+    <string name="onboarding_restart_title">လုပ်ဆောင်ချက်လမ်းညွှန်</string>
+    <string name="onboarding_restart_desc">အဓိကလုပ်ဆောင်ချက်များ၏ လမ်းညွှန်ခရီးစဉ်</string>
 </resources>

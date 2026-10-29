@@ -99,7 +99,9 @@
     <string name="home_category_move_to">Kategóriába helyezés</string>
     <string name="home_category_move_selected_title">Kiválasztott alkalmazások áthelyezése</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">Töröljük a(z) %s kategóriát?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">Alkalmazásai visszakerülnek a(z) &lt;b&gt;%s&lt;/b&gt; kategóriába</string>
     <string name="home_category_actions_unavailable">Ebben a kategóriában nem érhetők el műveletek</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Melyik alkalmazást szeretnéd módosítani?</string>
@@ -262,12 +264,15 @@
     <string name="sources_patch_expert_badge">Szakértő</string>
     <string name="sources_patch_expert_badge_tooltip">A módosítás manuális hozzáadásához engedélyezd a szakértői módot a beállításokban.</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">Segítségre van szükséged az APK megtalálásához?</string>
     <string name="home_apk_availability_dialog_simple">​A(z) &lt;b&gt;%s&lt;/b&gt; módosításához a következő, módosítások nélküli APK-verzióra van szükséged:</string>
     <string name="home_apk_availability_dialog_expert">​A(z) &lt;b&gt;%s&lt;/b&gt; módosításához a következő, módosítások nélküli APK-verziók egyikére van szükséged:</string>
     <string name="home_apk_availability_recommended_label">Javasolt</string>
     <string name="home_apk_availability_unpatched_label">Nem módosított</string>
     <string name="home_apk_availability_incompatible_label">Nem kompatibilis</string>
     <string name="home_apk_availability_installed_version">Ezen az eszközön telepítve: %s</string>
+    <string name="home_apk_availability_find">Igen, segíts megtalálni</string>
+    <string name="home_apk_availability_have">Nem, már megvan</string>
     <string name="home_apk_helper_download">Használj egy segédalkalmazást.</string>
     <string name="home_apk_helper_untrusted">Egy segédalkalmazás telepítve van, de még nem megbízható, így itt nem jelenik meg meg</string>
     <string name="home_apk_helper_untrusted_action">Segédalkalmazások áttekintése</string>
@@ -283,6 +288,8 @@
     <string name="home_apk_helper_wrong_package">A segédalkalmazás másik alkalmazást adott vissza, mint amelyiket éppen foltozzák.</string>
     <string name="home_apk_helper_installed_unavailable">A Morphe nem tudta használni a telepített alkalmazást.</string>
     <string name="home_apk_helper_installed_incompatible">A telepített verzió nem foltozható.</string>
+    <string name="home_apk_use_saved_copy">Mentett másolat használata</string>
+    <string name="home_apk_use_installed_app">Telepített alkalmazás használata</string>
     <string name="home_apk_use_saved_unsupported">A javítások nem támogatják ezt a mentett másolatot. A javítás megerősítést fog kérni, vagy válasszon másik APK-t.</string>
     <string name="home_apk_use_installed_unverified">Nem sikerült ellenőrizni a telepített alkalmazás áláísás állását, ezért lehetséges, hogy már másolták.</string>
     <string name="home_unverified">Nem ellenőrzött</string>
@@ -319,10 +326,15 @@
     <string name="home_download_instructions_link_copied">Link másolva</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">Válassza ki a %s APK fájlt</string>
+    <string name="home_file_picker_prompt_where">A böngészők általában a Letöltések mappába mentik</string>
     <string name="home_file_picker_prompt_open_apk">APK megnyitása</string>
     <string name="home_recommended_version">Ajánlott verzió</string>
     <string name="home_selected_version">Kiválasztott verzió</string>
     <string name="home_select_apk_title">APK kiválasztása</string>
+    <string name="home_select_apk_description">"Az univerzális patchek bármilyen alkalmazással működnek
+
+Válaszd ki, honnan szerezze be az APK-ját"</string>
     <string name="home_use_installed_app">Telepített alkalmazás használata</string>
     <string name="home_use_installed_app_description">Válasszon egy már ezen a készültéken található alkalmazást</string>
     <string name="home_open_apk_file_description">Válasszon egy APK, APKM, APKS vagy XAPK fájlt a tárterületről</string>
@@ -349,6 +361,7 @@
     <string name="expert_mode_restore_saved_done">A mentett kijelölés visszaállítva</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nincs megfelelő patch ehhez a csomaghoz</string>
     <string name="expert_mode_no_results">Nem találhatók módosítások</string>
+    <string name="expert_mode_selected_only">Csak a kiválasztott módosítások</string>
     <string name="expert_mode_selected_only_on">Csak a kiválasztott javítások megjelenítése</string>
     <string name="expert_mode_selected_only_off">Az összes javítás megjelenítése</string>
     <string name="expert_mode_universal_patches">Univerzális módosítások</string>
@@ -357,6 +370,7 @@
     <string name="expert_mode_patch_required_by_installer">Szükséges a kiválasztott telepítési célhoz.</string>
     <string name="expert_mode_patch_unavailable_for_installer">Nem érhető el a kiválasztott telepítési célhoz.</string>
     <string name="expert_mode_multiple_sources_warning_title">Több patchforrás van kiválasztva</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">A különböző forrásból származó kecelek nem működnek együtt, és konfliktusot okozhatnak vagyt moženek meghibásítani az alkalmazást</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Nem ellenőrzött APK</string>
     <string name="home_invalid_signature_message">Az &lt;b&gt;%s&lt;/b&gt; kiválasztott APK nem egyezik a várt aláírási tanúsítvánnyal. Lehetséges, hogy módosították vagy nem megbízható forrásból származik</string>
@@ -509,6 +523,8 @@ A legjobb eredmény érdekében az alkalmazás javasolja a &lt;b&gt;teljes APK&l
     <string name="shortcut_check_updates_long">Javításfrissítések ellenőrzése</string>
     <string name="shortcut_patch_app">%s javítása</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">Törölje ezt az alkalmazást?</string>
+    <string name="home_app_info_uninstall_removes_data">Az alkalmazás és az associated adatai eltávolítva lesznek erről a készülékről</string>
     <string name="batch_uninstall_confirm_body">A kiválasztott alkalmazások véglegesen eltávolításra kerülnek az eszközéről</string>
     <string name="home_app_info_remove_app_warning">Ez véglegesen törli:</string>
     <string name="home_app_info_delete_item_database">Adatbázis rekord</string>
@@ -673,7 +689,10 @@ Az eltávolítás véglegesen törli az alkalmazás összes adatát."</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Módosítás folyamatban…</string>
     <string name="patcher_notification_text">Koppints a módosítóhoz való visszatéréshez</string>
+    <string name="patcher_stop_title">Leállítsuk a módosítást?</string>
+    <string name="patcher_stop_discards">Az eddigi haladás törölödik, és semmi sem kerül telepítve</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Folytassa a módosítást</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Az alkalmazásod átalakítása valami nagyszerűvé… 🏆</string>
     <string name="patcher_message_2">Régi alkalmazások tanítása új trükkökre… 🎩</string>
@@ -856,6 +875,7 @@ Az eltávolítás véglegesen törli az alkalmazás összes adatát."</string>
     <string name="settings_appearance_app_icon_mark_black">Fekete</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Megváltoztatod az alkalmazás ikonját?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">A Morphe újraindul a &lt;b&gt;%s&lt;/b&gt; ikonra való váltáshoz</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Ikon megváltoztatása</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1214,6 +1234,19 @@ Részletek: %2$s"</string>
     <string name="settings_system_selected_patches_section">Kiválasztott módosítások</string>
     <string name="settings_system_no_patches_or_options">Nincsenek mentett módosítások vagy beállítások</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Kiválasztások</string>
+    <string name="selection_panel_copy_into">Másolás a %s elembe</string>
+    <string name="selection_sets_title">Készletek</string>
+    <string name="selection_set_name">Készlet neve</string>
+    <string name="selection_set_save">Készletként mentés</string>
+    <string name="selection_set_replace">Készlet cseréje</string>
+    <string name="selection_set_saved">Mentve mint %s</string>
+    <string name="selection_set_applied">Átváltva a %s elemre</string>
+    <string name="selection_set_deleted">%s törölve</string>
+    <string name="selection_set_renamed">Átnevezve: %s</string>
+    <string name="selection_set_rename_title">Készlet átnevezése</string>
+    <string name="selection_set_delete_title">Készlet törlése?</string>
+    <string name="selection_set_delete_message">Ez véglegesen törli a %s készletet</string>
     <string name="copy_selection_empty">Nincs más mentett kiválasztás, amiből másolhatna</string>
     <string name="copy_selection_available_format">%1$s/%2$s elérhető</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1235,7 +1268,10 @@ Részletek: %2$s"</string>
     <string name="file_picker_internal_storage">Belső tárhely</string>
     <string name="file_picker_sd_card">SD-kártya</string>
     <string name="file_picker_root">Gyökér (/)</string>
+    <string name="file_picker_storage_access_unavailable">Ennek a készülteknek nincs képernyője, amely lehetőzné az összes fájlhoz való hozzáférést. Engedélyezze azt ADB-n keresztül a következő paranccsal: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Tárolók</string>
+    <string name="file_saver_downloads_failed">Nem sikerült létrehozni a fájlt a Letöltések mappában</string>
+    <string name="file_saver_saving_to_downloads">Ennek a készülteknek nincs mentési képernyője, így a fájl a Letöltések mappába kerül %1$s névvel</string>
     <string name="file_picker_sort_name_asc">Név (A–Z)</string>
     <string name="file_picker_sort_name_desc">Név (Z–A)</string>
     <string name="file_picker_sort_size_desc">Méret (a legnagyobbtól kezdve)</string>
@@ -1394,6 +1430,7 @@ Részletek: %2$s"</string>
     <string name="show_all">Összes megjelenítése</string>
     <string name="ignore">Figyelmen kívül hagyás</string>
     <string name="stop_ignoring">Hagyd abba az ignorálást</string>
+    <string name="stop">Leállítás</string>
     <string name="logs">Naplók</string>
     <string name="sources">Források</string>
     <string name="installing_ellipsis">Telepítés…</string>

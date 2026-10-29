@@ -99,7 +99,9 @@
     <string name="home_category_move_to">ወደ ምድብ አዛውር</string>
     <string name="home_category_move_selected_title">የተመረጡትን መተግበሪያዎች አዛውር</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">%sን ያጥፉ?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">መተግበሪያዎቹ ወደ &lt;b&gt;%s&lt;/b&gt; ይመለሳሉ</string>
     <string name="home_category_actions_unavailable">ለዚህ ምድብ ተግባራት አይገኙም</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">የትኛውን መተግበሪያ ነው ማስተካከል የሚፈልጉት?</string>
@@ -262,12 +264,15 @@
     <string name="sources_patch_expert_badge">ባለሙያ</string>
     <string name="sources_patch_expert_badge_tooltip">ይህንን ፓች በእጅ ለማካተት በቅንብሮች ውስጥ የባለሙያ ሁነታን ያብሩ</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">APK-ውን ለማግኘት እርዳታ ይፈልጋሉ?</string>
     <string name="home_apk_availability_dialog_simple">&lt;b&gt;%s&lt;/b&gt;ን ፓች ለማድረግ፣ ያልተፓች APK ስሪት ያስፈልግዎታል፦</string>
     <string name="home_apk_availability_dialog_expert">&lt;b&gt;%s&lt;/b&gt;-ን ለመጠገን፣ ያልተጠገነ የነዚህ ስሪቶች APK ያስፈልግዎታል፦</string>
     <string name="home_apk_availability_recommended_label">የሚመከር</string>
     <string name="home_apk_availability_unpatched_label">ያልተስተካከለ</string>
     <string name="home_apk_availability_incompatible_label">ተኳሃኝ ያልሆነ</string>
     <string name="home_apk_availability_installed_version">በዚህ መሣሪያ ላይ የተጫነው፡ %s</string>
+    <string name="home_apk_availability_find">አዎ፣ እንዳገኘው ይርዱኝ</string>
+    <string name="home_apk_availability_have">አይ፣ ቀድሞውኑ አለኝ</string>
     <string name="home_apk_helper_download">ረዳት መተግበሪያን ይጠቀሙ</string>
     <string name="home_apk_helper_untrusted">ረዳት መተግበሪያ ተጭኗል ነገር ግን ገና አልተመነ፣ ስለዚህ እዚህ አልቀረበም</string>
     <string name="home_apk_helper_untrusted_action">ረዳቶችን ይገምግሙ</string>
@@ -283,6 +288,8 @@
     <string name="home_apk_helper_wrong_package">ረዳት መተግበሪያው እየተስተካከለ ካለው መተግበሪያ የተለየ መተግበሪያ መልሷል</string>
     <string name="home_apk_helper_installed_unavailable">Morphe የተጫነውን መተግበሪያ መጠቀም አልቻለም</string>
     <string name="home_apk_helper_installed_incompatible">የተጫነው ስሪት ፓች ሊደረግ አይችልም</string>
+    <string name="home_apk_use_saved_copy">የተቀመጠውን ኮፒ ይጠቀሙ</string>
+    <string name="home_apk_use_installed_app">የተጫነውን መተግበሪያ ይጠቀሙ</string>
     <string name="home_apk_use_saved_unsupported">ፓቾቹ ይህንን የተቀመጠ ቅጂ አይደግፉም። ፓች ለማድረግ እንዲያረጋግጡ ይጠየቃሉ፣ ወይም ሌላ APK ይምረጡ</string>
     <string name="home_apk_use_installed_unverified">የተጫነው መተግበሪያ ፊርማ ማረጋገጥ አልተቻለም፣ ስለዚህ አስቀድሞ ተስተካክሎ ሊሆን ይችላል</string>
     <string name="home_unverified">ያልተረጋገጠ</string>
@@ -319,10 +326,15 @@
     <string name="home_download_instructions_link_copied">ሊንኩ ተቀድሷል</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">የ %s APKን ይምረጡ</string>
+    <string name="home_file_picker_prompt_where">ብራውዘሮች አብዛኛውን ጊዜ ፋይሉን ወደ Download ፎልደር ያስቀምጡታል</string>
     <string name="home_file_picker_prompt_open_apk">የAPK ፋይል ክፈት</string>
     <string name="home_recommended_version">የሚመከር ስሪት</string>
     <string name="home_selected_version">የተመረጠው ስሪት</string>
     <string name="home_select_apk_title">APK ይምረጡ</string>
+    <string name="home_select_apk_description">"ዩኒቨርሳል ፓቾች ከማንኛውም መተግበሪያ ጋር ይሰራሉ
+
+የAPK ፋይሉን ከየት እንደሚያገኘው ይምረጡ"</string>
     <string name="home_use_installed_app">የተጫነ መተግበሪያን ይጠቀሙ</string>
     <string name="home_use_installed_app_description">በዚህ መሳሪያ ላይ ያለን መተግበሪያ ይምረጡ</string>
     <string name="home_open_apk_file_description">ከማከማቻው ውስጥ የ APK፣ APKM፣ APKS ወይም XAPK ፋይል ይምረጡ</string>
@@ -349,6 +361,7 @@
     <string name="expert_mode_restore_saved_done">የተቀመጠው ምርጫ ተመልሷል</string>
     <string name="expert_mode_copy_from_bundle_no_patches">በዚህ ባንድል ውስጥ የሚዛመዱ ፓቾች የሉም</string>
     <string name="expert_mode_no_results">ምንም ፓቾች አልተገኙም</string>
+    <string name="expert_mode_selected_only">የተመረጡ ፓቾች ብቻ</string>
     <string name="expert_mode_selected_only_on">የተመረጡ ፓቾች ብቻ እየታዩ ነው</string>
     <string name="expert_mode_selected_only_off">ሁሉም ፓቾች እየታዩ ነው</string>
     <string name="expert_mode_universal_patches">ዩኒቨርሳል ፓቾች</string>
@@ -357,6 +370,7 @@
     <string name="expert_mode_patch_required_by_installer">ለተመረጠው የጫን target አስፈላጊ ነው</string>
     <string name="expert_mode_patch_unavailable_for_installer">ለተመረጠው የጫን target አይдоступም</string>
     <string name="expert_mode_multiple_sources_warning_title">በርካታ የፓች ምንጮች ተመርጠዋል</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">ከተለያዩ ምንጮች የተገኙ ፓቾች አብረው እንዲሰሩ ተደርገው አልተሰሩም እና ግጭት ሊፈጥሩ ወይም መተግበሪያውን ሊያበላሹ ይችላሉ</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">ያልተረጋገጠ APK</string>
     <string name="home_invalid_signature_message">ለ&lt;b&gt;%s&lt;/b&gt; የመረጡት APK ከሚጠበቀው የፊርማ ሰርቲፊኬት ጋር አይዛመድም። ተሻሽሎ ሊሆን ይችላል ወይም ካልተረጋገጠ ምንጭ የተገኘ ሊሆን ይችላል</string>
@@ -509,6 +523,8 @@
     <string name="shortcut_check_updates_long">የፓች ማሻሻያዎችን ያረጋግጡ</string>
     <string name="shortcut_patch_app">%sን ፓች ያድርጉ</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">ይህንን መተግበሪያ ያጥፉ?</string>
+    <string name="home_app_info_uninstall_removes_data">መተግበሪያው እና መረጃዎቹ ከዚህ መሳሪያ ላይ ይወገዳሉ</string>
     <string name="batch_uninstall_confirm_body">የተመረጡት አፖች ከመሣሪያዎ ላይ በቋሚነት ይወገዳሉ</string>
     <string name="home_app_info_remove_app_warning">ይህ የሚከተሉትን በቋሚነት ያጠፋል፦</string>
     <string name="home_app_info_delete_item_database">የዳታቤዝ መዝገብ</string>
@@ -673,7 +689,10 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">ማስተካከያ በመከናወን ላይ ነው…</string>
     <string name="patcher_notification_text">ወደ ማስተካከያው ለመመለስ ይጫኑ</string>
+    <string name="patcher_stop_title">ፓቺንግን ያቁሙ?</string>
+    <string name="patcher_stop_discards">እስካሁን የተደረገው ሂደት ይሰረዛል እና ምንም ነገር አይጫንም</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">ፓቺንግን ይቀጥሉ</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">መተግበሪያዎን ወደ አስደናቂ ነገር እየቀየርነው ነው… 🏆</string>
     <string name="patcher_message_2">ለአሮጌ መተግበሪያዎች አዳዲስ ዘዴዎችን እያስተማርን ነው… 🎩</string>
@@ -856,6 +875,7 @@
     <string name="settings_appearance_app_icon_mark_black">ጥቁር</string>
     <string name="settings_appearance_app_icon_change_dialog_title">የመተግበሪያ አዶውን ይቀይሩ?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">ወደ &lt;b&gt;%s&lt;/b&gt; ለመቀየር Morphe እንደገና ይጀምራል</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">አዶውን ቀይር</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1214,6 +1234,19 @@ morphe_header_custom_dark.png
     <string name="settings_system_selected_patches_section">የተመረጡ ፓቾች</string>
     <string name="settings_system_no_patches_or_options">የተቀመጡ ፓቾች ወይም አማራጮች የሉም</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">ምርጫዎች</string>
+    <string name="selection_panel_copy_into">ወደ %s ኮፒ አድርግ</string>
+    <string name="selection_sets_title">ስብስቦች</string>
+    <string name="selection_set_name">የስብስብ ስም</string>
+    <string name="selection_set_save">እንደ ስብስብ አስቀምጥ</string>
+    <string name="selection_set_replace">ስብስቡን ተካ</string>
+    <string name="selection_set_saved">እንደ %s ተቀምጧል</string>
+    <string name="selection_set_applied">ወደ %s ተቀይሯል</string>
+    <string name="selection_set_deleted">%s ተሰርዟል</string>
+    <string name="selection_set_renamed">ወደ %s ተቀይሯል</string>
+    <string name="selection_set_rename_title">ስብስቡን ስም ቀይር</string>
+    <string name="selection_set_delete_title">ስብስቡን ይሰርዙ?</string>
+    <string name="selection_set_delete_message">ይህ ስብስቡን %s በቋሚነት ይሰርዘዋል</string>
     <string name="copy_selection_empty">ለኮፒ የሚሆኑ ሌሎች የተቀመጡ ምርጫዎች የሉም</string>
     <string name="copy_selection_available_format">ከ%2$s ውስጥ %1$s ይገኛሉ</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1235,7 +1268,10 @@ morphe_header_custom_dark.png
     <string name="file_picker_internal_storage">የውስጥ ማከማቻ</string>
     <string name="file_picker_sd_card">የኤስዲ ካርድ</string>
     <string name="file_picker_root">መሰረታዊ (/)</string>
+    <string name="file_picker_storage_access_unavailable">ይህ መሣሪያ ሁሉንም ፋይሎች ለማግኘት የሚፈቅድ ስክሪን የለውም። በ ADB በኩል እንዲፈቅድ በዚህ ትዕዛዝ ያድርጉ፡ adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">ማከማቻዎች</string>
+    <string name="file_saver_downloads_failed">ፋይሉን በDownloads ውስጥ መፍጠር አልተቻለም</string>
+    <string name="file_saver_saving_to_downloads">ይህ መሣሪያ የማስቀመጫ ስክሪን የለውም፣ ስለዚህ ፋይሉ ወደ Downloads እንደ %1$s ይሄዳል</string>
     <string name="file_picker_sort_name_asc">ስም (A–Z)</string>
     <string name="file_picker_sort_name_desc">ስም (Z–A)</string>
     <string name="file_picker_sort_size_desc">መጠን (ትልቁ መጀመሪያ)</string>
@@ -1349,6 +1385,7 @@ morphe_header_custom_dark.png
     <string name="accessibility_app_moved_announcement">%1$s ወደ ቦታ %2$s ከ %3$s ተዛውሯል</string>
     <string name="accessibility_scroll_to_top">ወደ ዝርዝሩ አናት ይሸረሽሩ</string>
     <string name="rename">ስም ቀይር</string>
+    <string name="more_options">ተጨማሪ አማራጮች</string>
     <string name="import_">አስገባ</string>
     <string name="export">ላክ</string>
     <string name="copy">ኮፒ ያድርጉ</string>
@@ -1393,6 +1430,7 @@ morphe_header_custom_dark.png
     <string name="show_all">ሁሉንም አሳይ</string>
     <string name="ignore">ቸል በለው</string>
     <string name="stop_ignoring">ቸል ማለትን አቁም</string>
+    <string name="stop">አቁም</string>
     <string name="logs">ሎጎች</string>
     <string name="sources">ምንጮች</string>
     <string name="installing_ellipsis">በመጫን ላይ…</string>

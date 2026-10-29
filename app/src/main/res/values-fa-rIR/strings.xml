@@ -99,7 +99,9 @@
     <string name="home_category_move_to">انتقال به دسته</string>
     <string name="home_category_move_selected_title">انتقال برنامه‌های انتخاب‌شده</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">حذف %s؟</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">برنامه‌های آن به &lt;b&gt;%s&lt;/b&gt; باز می‌گردند</string>
     <string name="home_category_actions_unavailable">عملیات برای این دسته در دسترس نیست</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">می‌خواهید کدام برنامه را پچ کنید؟</string>
@@ -262,12 +264,15 @@
     <string name="sources_patch_expert_badge">حرفه‌ای</string>
     <string name="sources_patch_expert_badge_tooltip">برای افزودن دستی این پچ، حالت حرفه‌ای را در تنظیمات فعال کنید</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">برای پیدا کردن APK نیاز به کمک دارید؟</string>
     <string name="home_apk_availability_dialog_simple">برای پچ &lt;b&gt;%s&lt;/b&gt;، به نسخه APK بدون پچ نیاز دارید:</string>
     <string name="home_apk_availability_dialog_expert">برای پچ کردن &lt;b&gt;%s&lt;/b&gt;;، به یک APK بدون پچ از نسخه ها نیاز دارید:</string>
     <string name="home_apk_availability_recommended_label">توصیه شده </string>
     <string name="home_apk_availability_unpatched_label">پچ نشده</string>
     <string name="home_apk_availability_incompatible_label">ناسازگار</string>
     <string name="home_apk_availability_installed_version">نصب شده روی این دستگاه: %s</string>
+    <string name="home_apk_availability_find">بله، کمکم کن پیداش کنم</string>
+    <string name="home_apk_availability_have">نه، من قبلاً آن را دارم</string>
     <string name="home_apk_helper_download">استفاده از برنامهٔ کمکی</string>
     <string name="home_apk_helper_untrusted">یک برنامه کمکی نصب شده است اما هنوز قابل اعتماد نیست، بنابراین اینجا پیشنهاد نمی‌شود</string>
     <string name="home_apk_helper_untrusted_action">بررسی کمک‌ها</string>
@@ -283,6 +288,7 @@
     <string name="home_apk_helper_wrong_package">برنامهٔ کمکی برنامه‌ای متفاوت از برنامهٔ در حال پچ را برگرداند</string>
     <string name="home_apk_helper_installed_unavailable">Morphe نتوانست از برنامهٔ نصب‌شده استفاده کند</string>
     <string name="home_apk_helper_installed_incompatible">نسخهٔ نصب‌شده قابل پچ نیست</string>
+    <string name="home_apk_use_saved_copy">استفاده از نسخه ذخیره‌شده</string>
     <string name="home_apk_use_installed_app">استفاده از برنامهٔ نصب‌شده</string>
     <string name="home_apk_use_saved_unsupported">پچ‌ها از این نسخهٔ ذخیره‌شده پشتیبانی نمی‌کنند. پچ‌کردن آن از شما تأیید می‌خواهد؛ یا APK دیگری انتخاب کنید</string>
     <string name="home_apk_use_installed_unverified">امضای برنامهٔ نصب‌شده تأیید نشد؛ بنابراین ممکن است از قبل پچ شده باشد</string>
@@ -320,10 +326,15 @@
     <string name="home_download_instructions_link_copied">پیوند کپی شد</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">APK %s را انتخاب کنید</string>
+    <string name="home_file_picker_prompt_where">مرورگرها معمولاً آن را در پوشه Download ذخیره می‌کنند</string>
     <string name="home_file_picker_prompt_open_apk">فایل APK را باز کنید</string>
     <string name="home_recommended_version">نسخه پیشنهادی</string>
     <string name="home_selected_version">نسخه منتخب</string>
     <string name="home_select_apk_title">انتخاب APK</string>
+    <string name="home_select_apk_description">"پچ‌های جهانی با هر برنامه‌ای کار می‌کنند
+
+انتخاب کنید که APK آن از کجا گرفته شود"</string>
     <string name="home_use_installed_app">استفاده از برنامهٔ نصب‌شده</string>
     <string name="home_use_installed_app_description">یک برنامه که از قبل روی این دستگاه است را انتخاب کنید</string>
     <string name="home_open_apk_file_description">یک فایل APK، APKM، APKS یا XAPK را از حافظه انتخاب کنید</string>
@@ -350,6 +361,7 @@
     <string name="expert_mode_restore_saved_done">انتخاب ذخیره‌شده بازیابی شد</string>
     <string name="expert_mode_copy_from_bundle_no_patches">پچ منطبقی در این بسته وجود ندارد</string>
     <string name="expert_mode_no_results">هیچ پچی یافت نشد</string>
+    <string name="expert_mode_selected_only">فقط پچ‌های انتخاب‌شده</string>
     <string name="expert_mode_selected_only_on">فقط پچ‌های انتخاب‌شده نمایش داده می‌شوند</string>
     <string name="expert_mode_selected_only_off">همهٔ پچ‌ها نمایش داده می‌شوند</string>
     <string name="expert_mode_universal_patches">پچ‌های جهانی</string>
@@ -358,6 +370,7 @@
     <string name="expert_mode_patch_required_by_installer">برای هدف نصب انتخاب‌شده لازم است</string>
     <string name="expert_mode_patch_unavailable_for_installer">برای هدف نصب انتخاب‌شده در دسترس نیست</string>
     <string name="expert_mode_multiple_sources_warning_title">چند منبع پچ انتخاب شده‌اند</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">پچ‌های منابع مختلف برای کار با یکدیگر ساخته نشده‌اند و ممکن است باعث تداخل شوند یا برنامه را خراب کنند</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">تأییدنشده APK</string>
     <string name="home_invalid_signature_message">فایل APK که برای &lt;b&gt;%s&lt;/b&gt; انتخاب کرده‌اید، با گواهی امضای موردانتظار مطابقت ندارد. ممکن است این فایل APK نسخهٔ اصلی نباشد.</string>
@@ -510,6 +523,8 @@
     <string name="shortcut_check_updates_long">بررسی به‌روزرسانی پچ‌ها</string>
     <string name="shortcut_patch_app">پچ‌کردن %s</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">این برنامه حذف شود؟</string>
+    <string name="home_app_info_uninstall_removes_data">برنامه و داده‌های آن از این دستگاه پاک می‌شوند</string>
     <string name="batch_uninstall_confirm_body">برنامه‌های انتخاب‌شده برای همیشه از دستگاه شما حذف می‌شوند</string>
     <string name="home_app_info_remove_app_warning">این موارد برای همیشه حذف می‌شوند:</string>
     <string name="home_app_info_delete_item_database">رکورد پایگاه داده</string>
@@ -674,7 +689,10 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">پچ‌کردن در حال انجام است…</string>
     <string name="patcher_notification_text">برای بازگشت به پچر ضربه بزنید</string>
+    <string name="patcher_stop_title">توقف پچ‌کردن؟</string>
+    <string name="patcher_stop_discards">پیشرفت تا این لحظه نادیده گرفته شده و چیزی نصب نمی‌شود</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">ادامه پچ‌کردن</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">در حال تبدیل برنامه‌تان به چیزی فوق‌العاده… 🏆</string>
     <string name="patcher_message_2">در حال یاد دادن ترفندهای جدید به برنامه‌های قدیمی… 🎩</string>
@@ -816,15 +834,21 @@
     <string name="settings_appearance_repatch_notice_description">نمایش بنر هنگامی که برنامه‌های پچ‌شده را می‌توان دوباره پچ کرد</string>
     <string name="settings_appearance_more_apps_card">کارت برنامه‌های بیشتر</string>
     <string name="settings_appearance_more_apps_card_description">یک کارت را زیر برنامه‌ها نمایش می‌دهد که به وصله‌های جامعه منجر می‌شود</string>
+    <string name="settings_appearance_app_card_colors">رنگ کارت برنامه‌ها</string>
     <string name="settings_appearance_app_card_colors_default">پیش‌فرض</string>
+    <string name="settings_appearance_app_card_colors_default_description">برای هر برنامه و منبع، رنگ مخصوص به خود را تعیین کنید</string>
     <string name="settings_appearance_app_card_colors_accent">تأکیدی</string>
+    <string name="settings_appearance_app_card_colors_accent_description">از رنگ تأکیدی برنامه برای کارت‌های برنامه و منبع استفاده کنید</string>
     <string name="settings_appearance_app_card_colors_gradient">گرادیان</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">از یک گرادینت سفارشی برای کارت‌های برنامه و یک رنگ ترکیبی برای کارت‌های منبع استفاده کنید</string>
     <string name="settings_appearance_app_card_colors_solid">یک‌دست</string>
+    <string name="settings_appearance_app_card_colors_solid_description">از یک رنگ سفارشی برای کارت‌های برنامه و منبع استفاده کنید</string>
     <string name="settings_appearance_app_card_colors_start">رنگ آغازین</string>
     <string name="settings_appearance_app_card_colors_middle">رنگ میانی</string>
     <string name="settings_appearance_app_card_colors_end">رنگ پایانی</string>
     <string name="settings_appearance_app_card_colors_solid_color">رنگ یک‌دست</string>
     <string name="settings_appearance_app_card_colors_bundle">رنگ بستهٔ برنامه</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">رنگ ویژهٔ هر برنامه یا منبع را اینجا استفاده می‌کند و برای هماهنگی، به‌طور خودکار سایه می‌دهد</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">آیکون برنامه</string>
     <string name="settings_appearance_app_icon_selector_description">ظاهر Morphe در صفحه‌ی اصلی و کشوی برنامه‌ها</string>
@@ -851,6 +875,7 @@
     <string name="settings_appearance_app_icon_mark_black">سیاه</string>
     <string name="settings_appearance_app_icon_change_dialog_title">آیکون برنامه تغییر کند؟</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe برای تغییر به &lt;b&gt;%s&lt;/b&gt; ری‌استارت می‌شود</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">تغییر آیکون</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1209,6 +1234,19 @@ morphe_header_custom_dark.png
     <string name="settings_system_selected_patches_section">پچ‌های انتخاب‌شده</string>
     <string name="settings_system_no_patches_or_options">هیچ پچ یا گزینه‌ای ذخیره نشده است</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">انتخاب‌ها</string>
+    <string name="selection_panel_copy_into">کپی در %s</string>
+    <string name="selection_sets_title">مجموعه‌ها</string>
+    <string name="selection_set_name">نام مجموعه</string>
+    <string name="selection_set_save">ذخیره به عنوان مجموعه</string>
+    <string name="selection_set_replace">جایگزینی مجموعه</string>
+    <string name="selection_set_saved">به عنوان %s ذخیره شد</string>
+    <string name="selection_set_applied">تغییر به %s</string>
+    <string name="selection_set_deleted">%s حذف شد</string>
+    <string name="selection_set_renamed">نام به %s تغییر یافت</string>
+    <string name="selection_set_rename_title">تغییر نام مجموعه</string>
+    <string name="selection_set_delete_title">حذف مجموعه؟</string>
+    <string name="selection_set_delete_message">این کار مجموعه %s را برای همیشه حذف می‌کند</string>
     <string name="copy_selection_empty">انتخاب ذخیره‌شدهٔ دیگری برای کپی وجود ندارد</string>
     <string name="copy_selection_available_format">%1$s از %2$s در دسترس است</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1230,7 +1268,12 @@ morphe_header_custom_dark.png
     <string name="file_picker_internal_storage">حافظهٔ داخلی</string>
     <string name="file_picker_sd_card">کارت SD</string>
     <string name="file_picker_root">ریشه (/) </string>
+    <string name="file_picker_storage_access_unavailable">این دستگاه صفحه‌ای برای اجازه دسترسی به همه فایل‌ها ندارد. دسترسی را از طریق ADB با دستور زیر فعال کنید:
+
+adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">حافظه‌ها</string>
+    <string name="file_saver_downloads_failed">امکان ایجاد فایل در پوشه Downloads وجود نداشت</string>
+    <string name="file_saver_saving_to_downloads">این دستگاه صفحه‌ی ذخیره‌سازی ندارد، بنابراین فایل با نام %1$s در پوشه Downloads ذخیره می‌شود</string>
     <string name="file_picker_sort_name_asc">نام (A–Z)</string>
     <string name="file_picker_sort_name_desc">نام (Z–A)</string>
     <string name="file_picker_sort_size_desc">اندازه (بزرگ‌ترین ابتدا)</string>
@@ -1344,6 +1387,7 @@ morphe_header_custom_dark.png
     <string name="accessibility_app_moved_announcement">%1$s به جایگاه %2$s از %3$s منتقل شد</string>
     <string name="accessibility_scroll_to_top">پیمایش به بالای فهرست</string>
     <string name="rename">تغییر نام</string>
+    <string name="more_options">گزینه‌های بیشتر</string>
     <string name="import_">واردکردن</string>
     <string name="export">خروجی‌گرفتن</string>
     <string name="copy">کپی</string>
@@ -1388,6 +1432,7 @@ morphe_header_custom_dark.png
     <string name="show_all">نمایش همه</string>
     <string name="ignore">نادیده‌گرفتن</string>
     <string name="stop_ignoring">نادیده گرفتن را متوقف کن</string>
+    <string name="stop">توقف</string>
     <string name="logs">گزارش‌ها</string>
     <string name="sources">منابع</string>
     <string name="installing_ellipsis">در حال نصب…</string>

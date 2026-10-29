@@ -1,8 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="patch_count">
+        <item quantity="other">ပက်ချ် %s ခု</item>
+    </plurals>
     <!-- Subtitle of the open-source licenses page: how many libraries it lists -->
+    <plurals name="library_count">
+        <item quantity="other">library %s ခု</item>
+    </plurals>
+    <plurals name="option_count">
+        <item quantity="other">ပက်ချ် ရွေးချယ်စရာ %s ခု</item>
+    </plurals>
     <!-- How many files and folders a folder holds, under its name in the file picker -->
+    <plurals name="file_picker_item_count">
+        <item quantity="other">အကြောင်းအရာ %s ခု</item>
+    </plurals>
     <!-- Button that confirms the files checked in the file picker -->
+    <plurals name="file_picker_select_count">
+        <item quantity="other">ဖိုင် %s ခုကို ရွေးချယ်ပါ</item>
+    </plurals>
     <!-- Button that adds every source waiting in the add source dialog -->
+    <plurals name="sources_dialog_add_count">
+        <item quantity="other">ရင်းမြစ် %s ခု ထည့်ပါ</item>
+    </plurals>
+    <plurals name="home_app_patch_sources_title">
+        <item quantity="other">အက်ပ် %s ခုအတွက် Patch sources များ</item>
+    </plurals>
+    <plurals name="home_apk_availability_hidden_sources">
+        <item quantity="other">ဤအက်ပ်အတွက် source %s ခုကို ဝှက်ထားပါသည်။ ၎င်းတို့ကို ပြန်လည်ဖော်ထုတ်ရန် Apps tab တွင် အက်ပ်ကို ရွေးချယ်ပြီး Patch sources ကို ဖွင့်ပါ</item>
+    </plurals>
+    <plurals name="expert_mode_hidden_sources_notice">
+        <item quantity="other">source %s ခုကို ဖျောက်ထားသည်။ ပြသရန် နှိပ်ပါ</item>
+    </plurals>
+    <plurals name="sources_search_patch_matches">
+        <item quantity="other">ကိုက်ညီသော patch %s ခု</item>
+    </plurals>
+    <plurals name="source_count">
+        <item quantity="other">အရင်းအမြစ် %s ခု</item>
+    </plurals>
+    <plurals name="selection_set_count">
+        <item quantity="other">%s အစုံ</item>
+    </plurals>
+    <plurals name="package_count">
+        <item quantity="other">ပက်ကေ့ချ် %s ခု</item>
+    </plurals>
+    <plurals name="patches_executed">
+        <item quantity="other">Patch %s ခုကို လုပ်ဆောင်ပြီးပါသည်</item>
+    </plurals>
+    <plurals name="settings_system_apks_count">
+        <item quantity="other">APK ဖိုင် %s ခု</item>
+    </plurals>
+    <plurals name="batch_install_summary">
+        <item quantity="other">အက်ပ် %s ခုကို ထည့်သွင်းပြီးပါသည်</item>
+    </plurals>
+    <plurals name="batch_mount_summary">
+        <item quantity="other">အက်ပ် %s ခုကို တပ်ဆင်ပြီးပါပြီ</item>
+    </plurals>
+    <plurals name="batch_reinstall_summary">
+        <item quantity="other">အက်ပ် %s ခုကို ပြန်လည်ထည့်သွင်းပြီးပါသည်</item>
+    </plurals>
+    <plurals name="batch_uninstall_summary">
+        <item quantity="other">အက်ပ် %s ခုကို ပယ်ဖျက်ပြီးပါသည်</item>
+    </plurals>
+    <plurals name="batch_uninstall_confirm_title">
+        <item quantity="other">အက်ပ် %s ခုကို ပယ်ဖျက်မလား?</item>
+    </plurals>
+    <plurals name="batch_patch_ready_count">
+        <item quantity="other">patch ပြုလုပ်ရန် အက်ပ် %s အဆင်သင့်ဖြစ်သည်</item>
+    </plurals>
+    <plurals name="batch_queue_pending_count">
+        <item quantity="other">patch လုပ်ရန် အက်ပ် %s ခု စောင့်ဆိုင်းနေသည်</item>
+    </plurals>
+    <plurals name="home_alerts_snoozed_count">
+        <item quantity="other">ဝှက်ထားသော အသိပေးချက် %s ခု ရှိသည်၊ ၎င်းတို့ကို ကြည့်ရှုရန် နှိပ်ပါ</item>
+    </plurals>
+    <plurals name="repatch_available_count">
+        <item quantity="other">အက်ပ် %s ခုကို re-patch ပြုလုပ်နိုင်သည်</item>
+    </plurals>
+    <plurals name="batch_skipped_summary">
+        <item quantity="other">အက်ပ် %s ခုကို ကျော်သွားသည်</item>
+    </plurals>
+    <plurals name="home_app_info_repatch_cleaned_invalid_data">
+        <item quantity="other">သိမ်းဆည်းထားသော ရွေးချယ်မှုများမှ သက်တမ်းကုန်ဆုံးနေသော ပက်ချ် %s ခုကို ဖယ်ရှားလိုက်သည်</item>
+    </plurals>
+    <plurals name="sources_management_subtitle">
+        <item quantity="other">အရင်းအမြစ် %s ခုကို ထည့်သွင်းထားသည်</item>
+    </plurals>
+    <plurals name="home_apps_hidden_count">
+        <item quantity="other">အက်ပ် %s ခုကို ဝှက်ထားသည်</item>
+    </plurals>
+    <plurals name="home_apps_shown_count">
+        <item quantity="other">အက်ပ် %s ခုကို ပြသထားသည်</item>
+    </plurals>
+    <plurals name="home_apps_unhide_title">
+        <item quantity="other">အက်ပ် %s ခုကို ပြန်ဖော်မလား?</item>
+    </plurals>
+    <plurals name="home_app_show_hidden_count">
+        <item quantity="other">ဝှက်ထားသော အက်ပ် %s ခု</item>
+    </plurals>
+    <plurals name="home_category_app_count">
+        <item quantity="other">အက်ပ် %s ခု</item>
+    </plurals>
+    <plurals name="expert_mode_selected_count">
+        <item quantity="other">%s ခုကို ရွေးချယ်ထားသည်</item>
+    </plurals>
+    <plurals name="expert_mode_copy_from_bundle_done">
+        <item quantity="other">ရွေးချယ်ထားသော bundle မှ patch %s ခုကို ကူးယူပြီးပါသည်</item>
+    </plurals>
+    <plurals name="core_count">
+        <item quantity="other">core %s ခု</item>
+    </plurals>
+    <plurals name="changelog_feature_count">
+        <item quantity="other">လုပ်ဆောင်ချက် %s ခု</item>
+    </plurals>
+    <plurals name="changelog_fix_count">
+        <item quantity="other">ပြင်ဆင်ချက် %s ခု</item>
+    </plurals>
+    <plurals name="changelog_performance_count">
+        <item quantity="other">ပိုမိုကောင်းမွန်အောင် ပြင်ဆင်မှု %s ခု</item>
+    </plurals>
+    <plurals name="changelog_change_count">
+        <item quantity="other">ပြောင်းလဲမှု %s ခု</item>
+    </plurals>
     <!-- Value of the Apps row on a source card when apps were left out on arrival, for example "3/232 · 2 new". %1$s is the app count, %2$d the new apps -->
+    <plurals name="sources_apps_count_with_new">
+        <item quantity="other">%1$s · %2$d ခု အသစ်</item>
+    </plurals>
+    <plurals name="changelog_new_releases">
+        <item quantity="other">ထုတ်ပြန်မှုအသစ် %s ခု</item>
+    </plurals>
+    <plurals name="app_links_count_enabled">
+        <item quantity="other">လင့်ခ် %d ခုကို ဖွင့်ထားသည်</item>
+    </plurals>
+    <plurals name="app_links_count_unverified">
+        <item quantity="other">အတည်မပြုရသေးသော လင့်ခ် %d ခု</item>
+    </plurals>
 </resources>

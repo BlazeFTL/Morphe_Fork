@@ -48,6 +48,10 @@
         <item quantity="one">%s ಮೂಲ</item>
         <item quantity="other">%s ಮೂಲಗಳು</item>
     </plurals>
+    <plurals name="selection_set_count">
+        <item quantity="one">%s ಸೆಟ್</item>
+        <item quantity="other">%s ಸೆಟ್‌ಗಳು</item>
+    </plurals>
     <plurals name="package_count">
         <item quantity="one">%s ಪ್ಯಾಕೇಜ್</item>
         <item quantity="other">%s ಪ್ಯಾಕೇಜ್ಗಳು</item>

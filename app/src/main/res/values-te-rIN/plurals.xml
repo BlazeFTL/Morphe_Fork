@@ -48,6 +48,10 @@
         <item quantity="one">%s మూలం</item>
         <item quantity="other">%s మూలాలు</item>
     </plurals>
+    <plurals name="selection_set_count">
+        <item quantity="one">%s సెట్</item>
+        <item quantity="other">%s సెట్లు</item>
+    </plurals>
     <plurals name="package_count">
         <item quantity="one">%s ప్యాకేజీ</item>
         <item quantity="other">%s ప్యాకేజీలు</item>

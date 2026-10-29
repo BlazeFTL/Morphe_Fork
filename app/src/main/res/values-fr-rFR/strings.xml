@@ -363,6 +363,7 @@ Choisissez d'où provient son APK"</string>
     <string name="expert_mode_restore_saved_done">Sélection enregistrée restaurée</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Aucun patch correspondant dans ce bundle</string>
     <string name="expert_mode_no_results">Aucun patch trouvé</string>
+    <string name="expert_mode_selected_only">Patchs sélectionnés uniquement</string>
     <string name="expert_mode_selected_only_on">Affichage des patchs sélectionnés uniquement</string>
     <string name="expert_mode_selected_only_off">Affichage de tous les patchs</string>
     <string name="expert_mode_universal_patches">Patchs universels</string>
@@ -1239,6 +1240,19 @@ Détails : %2$s"</string>
     <string name="settings_system_selected_patches_section">Patchs sélectionnés</string>
     <string name="settings_system_no_patches_or_options">Aucun patch ou option enregistré</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Sélections</string>
+    <string name="selection_panel_copy_into">Copier dans %s</string>
+    <string name="selection_sets_title">Ensembles</string>
+    <string name="selection_set_name">Nom de l\'ensemble</string>
+    <string name="selection_set_save">Enregistrer comme ensemble</string>
+    <string name="selection_set_replace">Remplacer l\'ensemble</string>
+    <string name="selection_set_saved">Enregistré sous %s</string>
+    <string name="selection_set_applied">Basculé vers %s</string>
+    <string name="selection_set_deleted">%s supprimé</string>
+    <string name="selection_set_renamed">Renommé en %s</string>
+    <string name="selection_set_rename_title">Renommer l\'ensemble</string>
+    <string name="selection_set_delete_title">Supprimer l\'ensemble ?</string>
+    <string name="selection_set_delete_message">Cela supprimera définitivement l\'ensemble %s</string>
     <string name="copy_selection_empty">Aucune autre sélection enregistrée à partir de laquelle copier</string>
     <string name="copy_selection_available_format">%1$s sur %2$s disponibles</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1260,7 +1274,10 @@ Détails : %2$s"</string>
     <string name="file_picker_internal_storage">Stockage interne</string>
     <string name="file_picker_sd_card">Carte SD</string>
     <string name="file_picker_root">Root (/)</string>
+    <string name="file_picker_storage_access_unavailable">Cet appareil ne possède pas d\'écran permettant d\'accéder à tous les fichiers. Autorisez-le via ADB avec : adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Stockages</string>
+    <string name="file_saver_downloads_failed">Impossible de créer le fichier dans Downloads</string>
+    <string name="file_saver_saving_to_downloads">Cet appareil ne possède pas d\'écran d\'enregistrement, le fichier est donc enregistré dans Downloads sous le nom %1$s</string>
     <string name="file_picker_sort_name_asc">Nom (A–Z)</string>
     <string name="file_picker_sort_name_desc">Nom (Z–A)</string>
     <string name="file_picker_sort_size_desc">Taille (du plus grand au plus petit)</string>
