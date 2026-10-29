@@ -823,10 +823,17 @@ class PatcherViewModel(
         options: Options,
         bundles: Map<Int, PatchBundleInfo.Scoped>
     ) {
+        // A source the app is kept from was not offered to the run, so what was saved for it
+        // stays unless the run drew from it anyway
+        val offered = patchBundleRepository.offeredBundleInfoFlow(
+            packageName,
+            input.selectedApp.version,
+            input.selectedApp.versionCode
+        ).first().mapTo(mutableSetOf()) { it.uid }
         patchSelectionRepository.updateSelection(
             configurationPackageName,
             selection,
-            scope = bundles.keys
+            scope = offered
         )
         patchOptionsRepository.saveOptions(configurationPackageName, options)
 
