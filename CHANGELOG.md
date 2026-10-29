@@ -1,3 +1,18 @@
+# [2.3.0-dev.11](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.10...v2.3.0-dev.11) (2026-10-29)
+
+
+### Bug Fixes
+
+* Keep the saved selection of a source the app is kept from after patching ([4e173b8](https://github.com/MorpheApp/morphe-manager/commit/4e173b88443832beb2a2ee5e1696e1abe1438edd))
+* Turn off experimental app versions when leaving pre-release patches ([5b62a1c](https://github.com/MorpheApp/morphe-manager/commit/5b62a1c55483427173ed94beba4613fd41f36f91))
+
+
+### Features
+
+* Allow auto-install after patching together with the installer selection prompt ([5405fe1](https://github.com/MorpheApp/morphe-manager/commit/5405fe1e6841b9da80f712881cdd043c6f49878c))
+* Ask about experimental app versions once per app ([d139099](https://github.com/MorpheApp/morphe-manager/commit/d139099395c64f8fa70eae3e2aa1fbc1109223bd))
+* Patch from the source picked for the APK alone, with the others a tap away ([49a896e](https://github.com/MorpheApp/morphe-manager/commit/49a896ee15d2b85a87de0a4448e5b49174f88615))
+
 # [2.3.0-dev.10](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0-dev.9...v2.3.0-dev.10) (2026-10-29)
 
 
