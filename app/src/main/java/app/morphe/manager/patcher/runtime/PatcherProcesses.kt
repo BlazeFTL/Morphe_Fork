@@ -240,6 +240,8 @@ class PatcherProcesses(
         "-Djava.class.path=${installed.hostJar}",
         // The JVM falls back to /tmp, which an app cannot write to
         "-Djava.io.tmpdir=${fs.tempDir}",
+        // Patches that ship a JNI library load it from an unnamed module
+        "--enable-native-access=ALL-UNNAMED",
         // Leaves the signals ART relies on to ART, such as the one that dumps its threads
         "-Xrs",
         // Nothing reads the performance counters, which would otherwise be kept in a file of their own
