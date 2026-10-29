@@ -73,6 +73,12 @@ sealed class PatchBundleSource(
     val error get() = (state as? State.Failed)?.throwable
     val displayTitle get() = displayName?.takeUnless { it.isBlank() } ?: name
 
+    /**
+     * When the installed release came out, kept in [createdAt] by each update. A source whose
+     * releases carry no date, as a local file, holds the time it was added there instead.
+     */
+    val releasedAt get() = createdAt ?: updatedAt
+
     /** Patcher version this bundle was built for, null for bundles built before the attribute existed. */
     val requiredPatcherVersion get() = manifestAttributes?.patcherVersion
 

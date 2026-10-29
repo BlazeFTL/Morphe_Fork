@@ -756,7 +756,7 @@ private fun List<PatchBundleSource>.sortedForSourceSort(
     }
 
     SourceBundleSortMode.LAST_UPDATED -> sortedWith(
-        compareByDescending<PatchBundleSource> { it.updatedAt ?: it.createdAt ?: 0L }
+        compareByDescending<PatchBundleSource> { it.releasedAt ?: 0L }
             .thenBy { it.sourceSortTitle() }
             .thenBy { it.uid }
     )
@@ -1342,7 +1342,7 @@ private fun BundleCardHeader(
     // Version • date
     // When showChevron=false (single bundle): show only date, no version.
     // When showChevron=true (multiple bundles): show version • date.
-    val timestamp = bundle.updatedAt ?: bundle.createdAt
+    val timestamp = bundle.releasedAt
     val versionText = if (showChevron) bundle.version?.normalizeVersion() else null
     val subtitle = remember(versionText, timestamp) {
         listOfNotNull(versionText, timestamp?.let { getRelativeTimeString(it) }).joinToString(" • ")
