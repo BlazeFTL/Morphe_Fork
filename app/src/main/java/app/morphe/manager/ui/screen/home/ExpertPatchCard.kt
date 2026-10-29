@@ -232,43 +232,46 @@ internal fun PatchCard(
 
                 // Options button (only enabled if patch is enabled)
                 if (hasOptions) {
-                    FilledTonalIconButton(
-                        onClick = {
-                            // Prevent click propagation to card
-                            onConfigureOptions()
-                        },
-                        modifier = Modifier
-                            .size(36.dp)
-                            .semantics {
-                                contentDescription = optionsDesc
+                    // The card already names the patch, so the tooltip only says what the button opens
+                    IconTooltip(text = settings) {
+                        FilledTonalIconButton(
+                            onClick = {
+                                // Prevent click propagation to card
+                                onConfigureOptions()
                             },
-                        enabled = isEnabled,
-                        colors = tonalIconColors(
-                            // Changed options take the app's color where the list has one, as its
-                            // other controls do, while missing ones stay in the error palette
-                            container = when {
-                                showMissingRequired -> colors.errorContainer.copy(alpha = 0.8f)
-                                showCustomOptions -> customizedAccent?.copy(alpha = AccentAlpha.LEAD)
-                                    ?: colors.primaryContainer.copy(alpha = 0.7f)
-                                else -> colors.secondaryContainer.copy(alpha = 0.6f)
-                            },
-                            content = when {
-                                showMissingRequired -> colors.error
-                                showCustomOptions -> if (customizedAccent != null) {
-                                    colors.onBackground
-                                } else {
-                                    colors.onPrimaryContainer
-                                }
-                                else -> colors.onSecondaryContainer
-                            },
-                            disabledContent = colors.onSurfaceVariant.copy(alpha = 0.3f)
-                        )
-                    ) {
-                        Icon(
-                            imageVector = MaterialSymbols.Rounded.Settings,
-                            contentDescription = null,
-                            modifier = Modifier.size(18.dp)
-                        )
+                            modifier = Modifier
+                                .size(36.dp)
+                                .semantics {
+                                    contentDescription = optionsDesc
+                                },
+                            enabled = isEnabled,
+                            colors = tonalIconColors(
+                                // Changed options take the app's color where the list has one, as its
+                                // other controls do, while missing ones stay in the error palette
+                                container = when {
+                                    showMissingRequired -> colors.errorContainer.copy(alpha = 0.8f)
+                                    showCustomOptions -> customizedAccent?.copy(alpha = AccentAlpha.LEAD)
+                                        ?: colors.primaryContainer.copy(alpha = 0.7f)
+                                    else -> colors.secondaryContainer.copy(alpha = 0.6f)
+                                },
+                                content = when {
+                                    showMissingRequired -> colors.error
+                                    showCustomOptions -> if (customizedAccent != null) {
+                                        colors.onBackground
+                                    } else {
+                                        colors.onPrimaryContainer
+                                    }
+                                    else -> colors.onSecondaryContainer
+                                },
+                                disabledContent = colors.onSurfaceVariant.copy(alpha = 0.3f)
+                            )
+                        ) {
+                            Icon(
+                                imageVector = MaterialSymbols.Rounded.Settings,
+                                contentDescription = null,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
                     }
                 }
             }

@@ -158,14 +158,13 @@ fun AppDropdownMenuItem(
 fun RowActionsMenu(actions: List<SelectionAction>, modifier: Modifier = Modifier) {
     var expanded by remember { mutableStateOf(false) }
     Box(modifier = modifier) {
-        IconButton(onClick = { expanded = true }) {
+        TooltipIconButton(
+            onClick = { expanded = true },
+            icon = MaterialSymbols.Rounded.More_vert,
+            contentDescription = stringResource(R.string.more_options),
             // As faint as the chevron a row that opens something carries in its place
-            Icon(
-                imageVector = MaterialSymbols.Rounded.More_vert,
-                contentDescription = stringResource(R.string.more_options),
-                tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
-            )
-        }
+            tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+        )
         AppDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
             actions.forEach { action ->
                 AppDropdownMenuItem(

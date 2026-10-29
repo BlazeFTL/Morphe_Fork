@@ -1212,7 +1212,6 @@ private fun BundleManagementCard(
                                         icon = MaterialSymbols.Rounded.Open_in_new.autoMirrored,
                                         contentDescription = openInBrowser + " " + bundle.displayTitle,
                                         label = openInBrowser,
-                                        tooltip = openInBrowser,
                                         shape = ConnectedShapes.Pill.leading
                                     )
 

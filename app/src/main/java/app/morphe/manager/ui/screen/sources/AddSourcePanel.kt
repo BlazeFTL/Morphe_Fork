@@ -15,7 +15,6 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -352,11 +351,13 @@ private fun LinkField(state: RemoteLinksState, showHint: Boolean) {
             placeholder = { Text(REMOTE_URL_PLACEHOLDER) },
             trailingIcon = {
                 if (state.input.isNotEmpty()) {
-                    IconButton(onClick = state::clearInput) {
-                        Icon(MaterialSymbols.Rounded.Close, contentDescription = stringResource(R.string.clear))
-                    }
+                    TooltipIconButton(
+                        onClick = state::clearInput,
+                        icon = MaterialSymbols.Rounded.Close,
+                        contentDescription = stringResource(R.string.clear)
+                    )
                 } else {
-                    IconButton(
+                    TooltipIconButton(
                         onClick = {
                             scope.launch {
                                 val text = clipboard.getClipEntry()?.clipData
@@ -366,10 +367,10 @@ private fun LinkField(state: RemoteLinksState, showHint: Boolean) {
                                     messages.show(noLinksMessage)
                                 }
                             }
-                        }
-                    ) {
-                        Icon(MaterialSymbols.Rounded.Content_paste, contentDescription = stringResource(R.string.paste))
-                    }
+                        },
+                        icon = MaterialSymbols.Rounded.Content_paste,
+                        contentDescription = stringResource(R.string.paste)
+                    )
                 }
             },
             isError = inputCheck is RemoteUrlCheck.Rejected,
@@ -488,12 +489,11 @@ private fun PendingSourceRow(
             }
         }
         CardHeadingText(name = title, description = detail, modifier = Modifier.weight(1f))
-        IconButton(onClick = onRemove) {
-            Icon(
-                imageVector = MaterialSymbols.Rounded.Close,
-                contentDescription = stringResource(R.string.remove),
-                tint = dialogSecondaryTextColor()
-            )
-        }
+        TooltipIconButton(
+            onClick = onRemove,
+            icon = MaterialSymbols.Rounded.Close,
+            contentDescription = stringResource(R.string.remove),
+            tint = dialogSecondaryTextColor()
+        )
     }
 }

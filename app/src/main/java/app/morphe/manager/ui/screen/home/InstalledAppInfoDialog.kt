@@ -1556,7 +1556,6 @@ private fun ActionGroup(actions: List<ActionItem>, modifier: Modifier = Modifier
 }
 
 /** One action of an [ActionGroup], fading in unless the group was [settled] without it. */
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun GroupedAction(
     action: ActionItem,
@@ -1585,7 +1584,8 @@ private fun GroupedAction(
             }
         ) {
             val iconOnly = inRow && action.iconOnly
-            val button = @Composable {
+            // Named by a tooltip once its label is left out, and only then, so the two never repeat
+            IconTooltip(text = action.text.takeIf { iconOnly }) {
                 TileActionButton(
                     action = action,
                     shape = shape,
@@ -1593,17 +1593,6 @@ private fun GroupedAction(
                     iconOnly = iconOnly,
                     interactionSource = interactionSource
                 )
-            }
-            // Named by a tooltip once its label is left out, and only then, so the two never repeat
-            if (iconOnly) {
-                TooltipBox(
-                    positionProvider = TooltipDefaults.rememberTooltipPositionProvider(TooltipAnchorPosition.Above),
-                    tooltip = { PlainTooltip { Text(action.text) } },
-                    state = rememberTooltipState(),
-                    content = button
-                )
-            } else {
-                button()
             }
         }
     }
