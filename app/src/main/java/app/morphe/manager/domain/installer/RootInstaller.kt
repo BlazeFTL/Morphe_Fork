@@ -301,7 +301,7 @@ class RootInstaller(
         val stockModuleApkWritten = !installedStockPath.isNullOrBlank() && stockMountPaths.isNotEmpty()
         // Kept for restoreFromModule alone, as the stock app installed again needs its splits too
         val stockSplitApks = if (stockModuleApkWritten) {
-            installedStockInfo?.applicationInfo?.splitSourceDirs.orEmpty()
+            installedStockInfo.applicationInfo?.splitSourceDirs.orEmpty()
                 .associateWith { "$modulePath/$packageName$STOCK_SPLIT_INFIX${File(it).name}" }
         } else {
             emptyMap()
@@ -451,14 +451,16 @@ class RootInstaller(
 
         try {
             val modules = if (SplitApkPreparer.isSplitArchive(stockApp)) {
-                extractDir.deleteRecursively()
-                extractDir.mkdirs()
-                ZipFile(stockApp).use { zip ->
-                    SplitApkPreparer.splitModuleEntries(zip).map { entry ->
-                        extractDir.resolve(entry.name).also { module ->
-                            zip.getInputStream(entry).use { input -> module.outputStream().use { input.copyTo(it) } }
-                        }
-                    }.toList()
+                withContext(Dispatchers.IO) {
+                    extractDir.deleteRecursively()
+                    extractDir.mkdirs()
+                    ZipFile(stockApp).use { zip ->
+                        SplitApkPreparer.splitModuleEntries(zip).map { entry ->
+                            extractDir.resolve(entry.name).also { module ->
+                                zip.getInputStream(entry).use { input -> module.outputStream().use { input.copyTo(it) } }
+                            }
+                        }.toList()
+                    }
                 }.ifEmpty { error("Split archive does not contain any APK entries") }
             } else {
                 listOf(stockApp)
