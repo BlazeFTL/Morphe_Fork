@@ -1037,6 +1037,9 @@ class PatchBundleRepository(
                 uids.forEach { toggleUid(it, usePrerelease) }
             }
         )
+        // The experimental switch is offered only on the prerelease branch, so leaving it turns
+        // the mode off rather than keeping it on out of reach, see offersExperimentalVersions
+        if (!usePrerelease) setUseExperimentalVersions(uids, false)
 
         dispatchAction("Set prerelease (${uids.joinToString(",")}=$usePrerelease)") { state ->
             val ready = state as? BundleState.Ready ?: return@dispatchAction state
