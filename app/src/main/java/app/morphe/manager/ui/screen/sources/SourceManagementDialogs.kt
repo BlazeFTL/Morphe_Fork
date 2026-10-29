@@ -792,14 +792,21 @@ fun DialogHostScope.SourceAppsDialog(
                             packageInfo = null,
                             displayName = label,
                             subtitle = listOfNotNull(
-                                stringResource(R.string.sources_apps_new).takeIf { packageName in newApps },
                                 pluralStringResource(R.plurals.patch_count, patchCount, patchCount.toString()),
                                 // Left out, it would be gone from the home screen but for its install
                                 stringResource(R.string.sources_apps_stays_patched)
                                     .takeIf { !brought && packageName in patchedApps }
                             ).joinToString(" · "),
                             gradientColors = gradientColors
-                        )
+                        ) {
+                            // Shown until the list is closed once, so it has to catch the eye
+                            if (packageName in newApps) {
+                                StatusBadge(
+                                    text = stringResource(R.string.sources_apps_new),
+                                    tone = SemanticTone.Primary
+                                )
+                            }
+                        }
                     }
                 }
             }
