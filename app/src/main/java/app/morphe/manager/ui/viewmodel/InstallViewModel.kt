@@ -208,13 +208,16 @@ class InstallViewModel(
      *
      * @param allowSignatureMismatch Skips the signature pre-check and lets the platform decide,
      * for rooted devices where a module removes the signature verification.
+     * @param askInstaller Whether the installer prompt may come up, which an install started on
+     * its own after patching skips for the default installer.
      */
     fun install(
         outputFile: File,
         originalPackageName: String,
         onPersistApp: suspend (String, InstallType) -> Boolean,
         autoUninstallOnConflict: Boolean = false,
-        allowSignatureMismatch: Boolean = false
+        allowSignatureMismatch: Boolean = false,
+        askInstaller: Boolean = true
     ) {
         // A second tap lands before the first one's checks report Installing
         if (installState is InstallState.Installing || installStart?.isActive == true) return
@@ -229,7 +232,7 @@ class InstallViewModel(
 
         installStart = launchDetached {
             // Check if we should prompt for installer selection
-            val shouldPrompt = prefs.promptInstallerOnInstall.get()
+            val shouldPrompt = askInstaller && prefs.promptInstallerOnInstall.get()
 
             if (shouldPrompt && oneTimeInstallerToken == null) {
                 // Show installer selection dialog

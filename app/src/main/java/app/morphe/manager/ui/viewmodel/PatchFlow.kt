@@ -1005,12 +1005,12 @@ class PatchFlow(
      * installer. Anywhere else the build is a standard one, its installer asked for after patching.
      */
     private suspend fun startPatchingInPatchMode(selectedApp: SelectedApp, allowIncompatible: Boolean) {
-        val rooted = rootInstaller.isDeviceRooted()
-        if (rooted && prefs.promptInstallerOnInstall.get()) {
+        if (installerManager.promptsBeforePatching()) {
             holdFor(HomeDialog.PrePatchInstaller, selectedApp, allowIncompatible)
             return
         }
-        usingMountInstall = rooted && installerManager.parseToken(prefs.installerPrimary.get()).isRootMount
+        usingMountInstall = rootInstaller.isDeviceRooted() &&
+                installerManager.parseToken(prefs.installerPrimary.get()).isRootMount
         startPatchingWithApp(selectedApp, allowIncompatible)
     }
 

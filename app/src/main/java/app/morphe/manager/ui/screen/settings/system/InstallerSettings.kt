@@ -86,8 +86,9 @@ fun InstallerSettings(settingsViewModel: SettingsViewModel = koinViewModel()) {
             icon = MaterialSymbols.Rounded.Auto_fix_high
         ) {
             SettingsGroup {
-                // Offered only where the install can reach the user on its own
-                FoldingVisibility(visible = primaryToken.supportsAutoInstall) {
+                // Offered only where the install can reach the user on its own, which a mount
+                // picked before patching always does
+                FoldingVisibility(visible = primaryToken.supportsAutoInstall || promptEnabled && rooted) {
                     Column {
                         SettingsSwitchItem(
                             checked = autoInstallEnabled,
