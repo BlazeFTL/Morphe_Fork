@@ -876,23 +876,28 @@ class PatchFlow(
 
         // Experimental check is independent - a version can be experimental AND compatible.
         // If it is, show the appropriate warning for the sources marking it so:
-        // - Experimental mode ON → ExperimentalVersionWarningDialog
+        // - Experimental mode ON → ExperimentalVersionWarningDialog, once per app, since the
+        //   patches warn inside the app about every new experimental version from then on
         // - Experimental mode OFF → UnsupportedVersionWarningDialog
         if (support.isExperimental && !allowIncompatible) {
             val experimentalEnabledUids = prefs.bundleExperimentalVersionsEnabled.getBlocking()
             val isExperimentalModeEnabled = support.experimentalUids.any { uid ->
                 uid.toString() in experimentalEnabledUids
             }
-            val state = unsupportedVersionState(selectedApp, isExperimental = true)
-            holdFor(
-                if (isExperimentalModeEnabled) {
-                    HomeDialog.ExperimentalVersion(state)
-                } else {
-                    HomeDialog.UnsupportedVersion(state)
-                },
-                selectedApp
-            )
-            return
+            val confirmed = isExperimentalModeEnabled &&
+                    selectedApp.packageName in prefs.experimentalVersionsConfirmed.get()
+            if (!confirmed) {
+                val state = unsupportedVersionState(selectedApp, isExperimental = true)
+                holdFor(
+                    if (isExperimentalModeEnabled) {
+                        HomeDialog.ExperimentalVersion(state)
+                    } else {
+                        HomeDialog.UnsupportedVersion(state)
+                    },
+                    selectedApp
+                )
+                return
+            }
         }
 
         // Patches exist and are applicable → proceed.
@@ -963,6 +968,9 @@ class PatchFlow(
      * flagged as such in the patch bundle.
      */
     fun proceedDespiteVersion(dialog: HomeDialog) = resumeHeld { app, _ ->
+        if (dialog is HomeDialog.ExperimentalVersion) {
+            prefs.experimentalVersionsConfirmed.update(prefs.experimentalVersionsConfirmed.get() + app.packageName)
+        }
         startPatchingInPatchMode(app, allowIncompatible = dialog is HomeDialog.UnsupportedVersion)
     }
 

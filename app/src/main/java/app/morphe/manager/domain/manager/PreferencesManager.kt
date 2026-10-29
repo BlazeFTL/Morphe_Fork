@@ -106,6 +106,9 @@ class PreferencesManager(
     /** UIDs of bundles for which experimental app versions are preferred as the recommended target. */
     val bundleExperimentalVersionsEnabled = stringSetPreference("bundle_experimental_versions_enabled", emptySet())
 
+    /** Packages whose experimental version warning was confirmed, which is asked once per app. */
+    val experimentalVersionsConfirmed = stringSetPreference("experimental_versions_confirmed", emptySet())
+
     /**  Whether to send Android system notifications when updates are available in the background. */
     val backgroundUpdateNotifications = booleanPreference("background_update_notifications", false)
 

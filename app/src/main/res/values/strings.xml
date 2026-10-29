@@ -202,8 +202,7 @@
     <string name="sources_management_prerelease_toggle_description">Receives early access to new experimental patch versions</string>
     <string name="sources_prerelease_warning_title">Enable pre-release patches?</string>
     <string name="sources_prerelease_warning_message">Pre-release builds are still in development. Patches may fail or break the app, and features can change without warning</string>
-    <string name="expert_mode_prerelease_notice">This source is on pre-release patches. Patching may fail or behave unexpectedly</string>
-    <string name="expert_mode_experimental_version_notice">This source has only experimental support for this app version. Its patches may be unstable or incomplete</string>
+    <string name="expert_mode_unstable_notice">Pre-release or experimental patches may be unstable</string>
     <string name="sources_management_experimental_versions_toggle">Experimental app versions</string>
     <string name="sources_management_experimental_versions_toggle_description">Shows and patches experimental app targets</string>
     <!-- Actions of the panel for several selected sources at once -->
