@@ -228,14 +228,17 @@ class SettingsViewModel(
 
     // Asking how to install and installing on its own exclude each other, so turning one on turns the other off
 
+    // Without root the installer prompt comes after patching and waits for the user there, so it
+    // excludes installing on its own. With root, it is answered before patching, and they go together
+
     fun setPromptInstallerOnInstall(enabled: Boolean) = viewModelScope.launch {
         prefs.promptInstallerOnInstall.update(enabled)
-        if (enabled) prefs.autoInstallAfterPatching.update(false)
+        if (enabled && !isDeviceRooted()) prefs.autoInstallAfterPatching.update(false)
     }
 
     fun setAutoInstallAfterPatching(enabled: Boolean) = viewModelScope.launch {
         prefs.autoInstallAfterPatching.update(enabled)
-        if (enabled) prefs.promptInstallerOnInstall.update(false)
+        if (enabled && !isDeviceRooted()) prefs.promptInstallerOnInstall.update(false)
     }
 
     fun setNoMountOnly(enabled: Boolean) = viewModelScope.launch {

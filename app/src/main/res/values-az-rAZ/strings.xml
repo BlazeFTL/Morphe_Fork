@@ -361,6 +361,7 @@ APK-nı haradan götürəcəyinizi seçin"</string>
     <string name="expert_mode_restore_saved_done">Saxlanılan seçim bərpa olundu</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Bu paketdəki yamaqlar uyğun deyil</string>
     <string name="expert_mode_no_results">Yamaqlar tapılmadı</string>
+    <string name="expert_mode_selected_only">Yalnız seçilmiş yamaqlar</string>
     <string name="expert_mode_selected_only_on">Yalnız seçilmiş yamaqları göstərir</string>
     <string name="expert_mode_selected_only_off">Bütün yamaqları göstərir</string>
     <string name="expert_mode_universal_patches">Ümumi yamaqlar</string>
@@ -1232,6 +1233,19 @@ Təfərrüatlar: %2$s"</string>
     <string name="settings_system_selected_patches_section">Seçilmiş yamaqlar</string>
     <string name="settings_system_no_patches_or_options">Yamaqlar və ya seçimlər saxlanılmayıb</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Seçimlər</string>
+    <string name="selection_panel_copy_into">%s ə köçür</string>
+    <string name="selection_sets_title">Təyinetmələr</string>
+    <string name="selection_set_name">Adı təyin et</string>
+    <string name="selection_set_save">Təyinetmə kimi saxla</string>
+    <string name="selection_set_replace">Təyinetməni dəyişdir</string>
+    <string name="selection_set_saved">%s kimi saxlanıldı</string>
+    <string name="selection_set_applied">%s-ə keçildi</string>
+    <string name="selection_set_deleted">%s silindi</string>
+    <string name="selection_set_renamed">Adını %s kimi adlandırdı</string>
+    <string name="selection_set_rename_title">Adını yenidən təyin et</string>
+    <string name="selection_set_delete_title">Təyinetməni silsin?</string>
+    <string name="selection_set_delete_message">Bu, %s təyinetməsini həmişəlik silir</string>
     <string name="copy_selection_empty">Köçürmək üçün başqa saxlanılmış seçim yoxdur</string>
     <string name="copy_selection_available_format">%2$s saydan %1$s var</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1253,7 +1267,10 @@ Təfərrüatlar: %2$s"</string>
     <string name="file_picker_internal_storage">Daxili yaddaş yeri</string>
     <string name="file_picker_sd_card">SD kart</string>
     <string name="file_picker_root">Root (/)</string>
+    <string name="file_picker_storage_access_unavailable">Bu cihazın bütün fayllara girişə icazə vermək üçün ekranı yoxdur. Buna ADB vasitəsilə əmrlə icazə verin: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Saxlanclar</string>
+    <string name="file_saver_downloads_failed">Yükləmələrdə fayl yaradıla bilmədi</string>
+    <string name="file_saver_saving_to_downloads">Bu cihazın saxlama ekranı yoxdur, ona görə də fayl %1$s olaraq Yükləmələrə göndərilir</string>
     <string name="file_picker_sort_name_asc">Ad (A–Z)</string>
     <string name="file_picker_sort_name_desc">Ad (Z–A)</string>
     <string name="file_picker_sort_size_desc">Həcm (əvvəlcə ən çox)</string>

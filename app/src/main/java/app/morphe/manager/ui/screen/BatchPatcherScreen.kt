@@ -930,8 +930,7 @@ private fun BatchItemCard(
                         ActionPillButton(
                             onClick = onSelectApk,
                             icon = MaterialSymbols.Rounded.File_open,
-                            contentDescription = selectApkLabel,
-                            tooltip = selectApkLabel
+                            contentDescription = selectApkLabel
                         )
 
                         if (onChooseTarget != null) {
@@ -943,8 +942,7 @@ private fun BatchItemCard(
                                 } else {
                                     MaterialSymbols.Rounded.Install_mobile
                                 },
-                                contentDescription = targetLabel,
-                                tooltip = targetLabel
+                                contentDescription = targetLabel
                             )
                         }
 
@@ -953,8 +951,7 @@ private fun BatchItemCard(
                             ActionPillButton(
                                 onClick = onEditPatches,
                                 icon = MaterialSymbols.Rounded.Tune,
-                                contentDescription = editLabel,
-                                tooltip = editLabel
+                                contentDescription = editLabel
                             )
                         }
 
@@ -964,7 +961,6 @@ private fun BatchItemCard(
                                 onClick = onForceVersion,
                                 icon = MaterialSymbols.Rounded.Warning,
                                 contentDescription = forceLabel,
-                                tooltip = forceLabel,
                                 colors = ActionPillColors.warning()
                             )
                         }
@@ -977,7 +973,6 @@ private fun BatchItemCard(
                                 onClick = onAcceptSignature,
                                 icon = MaterialSymbols.Rounded.Gpp_bad,
                                 contentDescription = acceptLabel,
-                                tooltip = acceptLabel,
                                 colors = ActionPillColors.warning()
                             )
                         }
@@ -989,7 +984,6 @@ private fun BatchItemCard(
                             onClick = onToggleExcluded,
                             icon = if (excluded) MaterialSymbols.Rounded.Add_circle else MaterialSymbols.Rounded.Do_not_disturb_on,
                             contentDescription = toggleLabel,
-                            tooltip = toggleLabel,
                             destructive = !excluded
                         )
                     }
@@ -1011,7 +1005,6 @@ private fun BatchItemCard(
                                 onClick = onShowError,
                                 icon = MaterialSymbols.Rounded.Error,
                                 contentDescription = errorLabel,
-                                tooltip = errorLabel,
                                 destructive = true
                             )
                         }
@@ -1022,7 +1015,6 @@ private fun BatchItemCard(
                                 onClick = onInstall,
                                 icon = MaterialSymbols.Rounded.Install_mobile,
                                 contentDescription = installLabel,
-                                tooltip = installLabel,
                                 colors = ActionPillColors.primary()
                             )
                         }
@@ -1032,8 +1024,7 @@ private fun BatchItemCard(
                             ActionPillButton(
                                 onClick = onExport,
                                 icon = MaterialSymbols.Rounded.Download,
-                                contentDescription = exportLabel,
-                                tooltip = exportLabel
+                                contentDescription = exportLabel
                             )
                         }
 
@@ -1042,8 +1033,7 @@ private fun BatchItemCard(
                             ActionPillButton(
                                 onClick = onShare,
                                 icon = MaterialSymbols.Rounded.Share,
-                                contentDescription = shareLabel,
-                                tooltip = shareLabel
+                                contentDescription = shareLabel
                             )
                         }
 
@@ -1052,8 +1042,7 @@ private fun BatchItemCard(
                             ActionPillButton(
                                 onClick = onOpen,
                                 icon = MaterialSymbols.Rounded.Open_in_new.autoMirrored,
-                                contentDescription = openLabel,
-                                tooltip = openLabel
+                                contentDescription = openLabel
                             )
                         }
                     }

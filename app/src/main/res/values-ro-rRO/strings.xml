@@ -99,7 +99,9 @@
     <string name="home_category_move_to">Mută în categorie</string>
     <string name="home_category_move_selected_title">Mută aplicațiile selectate</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">Șterge %s?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">Aplicațiile sale revin în &lt;b&gt;%s&lt;/b&gt;</string>
     <string name="home_category_actions_unavailable">Acțiuni indisponibile pentru această categorie</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Ce aplicație dorești să patch-uiești?</string>
@@ -262,12 +264,15 @@
     <string name="sources_patch_expert_badge">Expert</string>
     <string name="sources_patch_expert_badge_tooltip">Activează modul Expert în Setări pentru a include manual acest patch</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">Ai nevoie de ajutor pentru a găsi APK-ul?</string>
     <string name="home_apk_availability_dialog_simple">Pentru a patch-ui &lt;b&gt;%s&lt;/b&gt;, ai nevoie de o versiune APK nepatch-uită:</string>
     <string name="home_apk_availability_dialog_expert">Pentru a patch-ui &lt;b&gt;%s&lt;/b&gt;, ai nevoie de un APK de versiuni nepatch-uit:</string>
     <string name="home_apk_availability_recommended_label">Recomandat</string>
     <string name="home_apk_availability_unpatched_label">Nepatch-uit</string>
     <string name="home_apk_availability_incompatible_label">Incompatibil</string>
     <string name="home_apk_availability_installed_version">Instalat pe acest dispozitiv: %s</string>
+    <string name="home_apk_availability_find">Da, ajută-mă să îl găsesc</string>
+    <string name="home_apk_availability_have">Nu, îl am deja</string>
     <string name="home_apk_helper_download">Utilizați o aplicație de asistență</string>
     <string name="home_apk_helper_untrusted">O aplicație auxiliară este instalată, dar nu este încă de încredere, așa că nu este oferită aici</string>
     <string name="home_apk_helper_untrusted_action">Revizuiește asistenții</string>
@@ -283,6 +288,8 @@
     <string name="home_apk_helper_wrong_package">Aplicația de ajutor a returnat o aplicație diferită de cea care este modificată</string>
     <string name="home_apk_helper_installed_unavailable">Morphe nu a putut utiliza aplicația instalată</string>
     <string name="home_apk_helper_installed_incompatible">Versiunea instalată nu poate fi modificată</string>
+    <string name="home_apk_use_saved_copy">Folosește copia salvată</string>
+    <string name="home_apk_use_installed_app">Folosește aplicația instalată</string>
     <string name="home_apk_use_saved_unsupported">The patches do not support this saved copy. Patching it will ask you to confirm, or pick another APK</string>
     <string name="home_apk_use_installed_unverified">Nu s-a putut verifica semnătura aplicației instalate, deci este posibil să fie deja patch-uită</string>
     <string name="home_unverified">Neverificat</string>
@@ -319,10 +326,15 @@
     <string name="home_download_instructions_link_copied">Link copiat</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">Selectează APK-ul %s</string>
+    <string name="home_file_picker_prompt_where">Browserele îl salvează de obicei în folderul Download</string>
     <string name="home_file_picker_prompt_open_apk">Deschide fișierul APK</string>
     <string name="home_recommended_version">Versiune recomandată</string>
     <string name="home_selected_version">Versiune selectată</string>
     <string name="home_select_apk_title">Selectează APK</string>
+    <string name="home_select_apk_description">"Patch-urile universale funcționează cu orice aplicație
+
+Selectați locul de unde să fie preluat fișierul APK"</string>
     <string name="home_use_installed_app">Utilizează aplicația instalată</string>
     <string name="home_use_installed_app_description">Alege o aplicație deja instalată pe acest dispozitiv</string>
     <string name="home_open_apk_file_description">Alege un fișier APK, APKM, APKS sau XAPK din stocare</string>
@@ -344,10 +356,12 @@
     <string name="expert_mode_universal_all_warning_message">Patch-urile universale nu sunt testate împreună. Activarea tuturor simultan poate cauza conflicte, patch-uiri eșuate sau blocări.</string>
     <string name="expert_mode_reset_to_default">Activează patch-urile recomandate</string>
     <string name="expert_mode_reset_to_default_done">Patch-urile recomandate au fost aplicate</string>
+    <string name="expert_mode_selected_count">%1$s din %2$s selectate</string>
     <string name="expert_mode_restore_saved">Restaurarea selecției salvate</string>
     <string name="expert_mode_restore_saved_done">Selecția salvată a fost restabilită</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nu există patch-uri corespunzătoare în acest pachet</string>
     <string name="expert_mode_no_results">Nu au fost găsite patch-uri</string>
+    <string name="expert_mode_selected_only">Doar patch-urile selectate</string>
     <string name="expert_mode_selected_only_on">Se afișează doar patch-urile selectate</string>
     <string name="expert_mode_selected_only_off">Se afișează toate patch-urile</string>
     <string name="expert_mode_universal_patches">Patch-uri universale</string>
@@ -356,6 +370,7 @@
     <string name="expert_mode_patch_required_by_installer">Necesar pentru ținta de instalare selectată</string>
     <string name="expert_mode_patch_unavailable_for_installer">Nu este disponibil pentru ținta de instalare selectată</string>
     <string name="expert_mode_multiple_sources_warning_title">Mai multe surse de patch-uri selectate</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">Patch-urile din surse diferite nu sunt concepute să funcționeze împreună și pot intra în conflict sau pot bloca aplicația</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK neverificat</string>
     <string name="home_invalid_signature_message">Fișierul APK selectat pentru &lt;b&gt;%s&lt;/b&gt; nu corespunde certificatului de semnătură așteptat. Poate fi modificat sau provenit dintr-o sursă nesigură</string>
@@ -508,6 +523,8 @@ Pentru cele mai bune rezultate, această aplicație recomandă patch-uirea unui 
     <string name="shortcut_check_updates_long">Verifică actualizările patch-ului</string>
     <string name="shortcut_patch_app">Aplică patch la %s</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">Dezinstalezi această aplicație?</string>
+    <string name="home_app_info_uninstall_removes_data">Aplicația și datele sale sunt eliminate de pe acest dispozitiv</string>
     <string name="batch_uninstall_confirm_body">Aplicațiile selectate vor fi eliminate permanent de pe dispozitivul dumneavoastră</string>
     <string name="home_app_info_remove_app_warning">Aceasta va șterge permanent:</string>
     <string name="home_app_info_delete_item_database">Intrare în bază de date</string>
@@ -672,7 +689,10 @@ Dezinstalarea va șterge definitiv toate datele aplicației."</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Se aplică modificările…</string>
     <string name="patcher_notification_text">Atinge pentru a reveni la patcher</string>
+    <string name="patcher_stop_title">Oprești patch-uirea?</string>
+    <string name="patcher_stop_discards">Progresul realizat până acum este abandonat și nimic nu este instalat</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Continuă patch-uirea</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Transformăm aplicația ta în ceva grozav… 🏆</string>
     <string name="patcher_message_2">Învățăm aplicațiile vechi trucuri noi… 🎩</string>
@@ -814,15 +834,21 @@ Dezinstalarea va șterge definitiv toate datele aplicației."</string>
     <string name="settings_appearance_repatch_notice_description">Afișează o banderolă când aplicațiile cu patch-uri pot fi repatch-uite</string>
     <string name="settings_appearance_more_apps_card">Cardul Mai multe aplicații</string>
     <string name="settings_appearance_more_apps_card_description">Afișează un card sub aplicații, care conduce către patch-urile comunității</string>
+    <string name="settings_appearance_app_card_colors">Culori carduri</string>
     <string name="settings_appearance_app_card_colors_default">Implicit</string>
+    <string name="settings_appearance_app_card_colors_default_description">Atribuă fiecărei aplicații și surse o culoare proprie</string>
     <string name="settings_appearance_app_card_colors_accent">Accent</string>
+    <string name="settings_appearance_app_card_colors_accent_description">Folosește culoarea de accent a aplicației pentru cardurile de aplicație și sursă</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradient</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">Folosește un gradient personalizat pentru cardurile de aplicație, amestecat într-o singură culoare pentru cardurile de sursă</string>
     <string name="settings_appearance_app_card_colors_solid">Solid</string>
+    <string name="settings_appearance_app_card_colors_solid_description">Folosește o singură culoare personalizată pentru cardurile de aplicație și sursă</string>
     <string name="settings_appearance_app_card_colors_start">Start color</string>
     <string name="settings_appearance_app_card_colors_middle">Middle color</string>
     <string name="settings_appearance_app_card_colors_end">End color</string>
     <string name="settings_appearance_app_card_colors_solid_color">Solid color</string>
     <string name="settings_appearance_app_card_colors_bundle">Culoare pachet aplicație</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">Folosește aici culoarea proprie a fiecărei aplicații sau surse, nuanțată automat pentru a se potrivi</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Pictogramă aplicație</string>
     <string name="settings_appearance_app_icon_selector_description">Cum arată Morphe pe ecranul de pornire și în sertarul de aplicații</string>
@@ -849,6 +875,7 @@ Dezinstalarea va șterge definitiv toate datele aplicației."</string>
     <string name="settings_appearance_app_icon_mark_black">Negru</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Schimbi pictograma aplicației?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe repornește pentru a comuta la &lt;b&gt;%s&lt;/b&gt;</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Schimbă pictograma</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1207,6 +1234,19 @@ Detalii: %2$s"</string>
     <string name="settings_system_selected_patches_section">Patch-uri selectate</string>
     <string name="settings_system_no_patches_or_options">Nicio pachet sau opțiune salvată</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Selecții</string>
+    <string name="selection_panel_copy_into">Copiază în %s</string>
+    <string name="selection_sets_title">Seturi</string>
+    <string name="selection_set_name">Nume set</string>
+    <string name="selection_set_save">Salvează ca set</string>
+    <string name="selection_set_replace">Înlocuiește setul</string>
+    <string name="selection_set_saved">Salvat ca %s</string>
+    <string name="selection_set_applied">Comutat la %s</string>
+    <string name="selection_set_deleted">%s a fost șters</string>
+    <string name="selection_set_renamed">Redenumit în %s</string>
+    <string name="selection_set_rename_title">Redenumește setul</string>
+    <string name="selection_set_delete_title">Șterge setul?</string>
+    <string name="selection_set_delete_message">Această acțiune șterge definitiv setul %s</string>
     <string name="copy_selection_empty">Nu există alte selecții salvate de copiat</string>
     <string name="copy_selection_available_format">%1$s din %2$s disponibile</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1228,7 +1268,10 @@ Detalii: %2$s"</string>
     <string name="file_picker_internal_storage">Stocare internă</string>
     <string name="file_picker_sd_card">Card SD</string>
     <string name="file_picker_root">Rădăcină (/)</string>
+    <string name="file_picker_storage_access_unavailable">Acest dispozitiv nu are un ecran care să permită accesul la toate fișierele. Permite accesul prin ADB cu: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Stocări</string>
+    <string name="file_saver_downloads_failed">Nu s-a putut crea fișierul în Descărcări</string>
+    <string name="file_saver_saving_to_downloads">Acest dispozitiv nu are un ecran de salvare, deci fișierul este salvat în Descărcări ca %1$s</string>
     <string name="file_picker_sort_name_asc">Nume (A–Z)</string>
     <string name="file_picker_sort_name_desc">Nume (Z–A)</string>
     <string name="file_picker_sort_size_desc">Dimensiune (cea mai mare prima)</string>
@@ -1342,6 +1385,7 @@ Detalii: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s a fost mutat pe poziția %2$s din %3$s</string>
     <string name="accessibility_scroll_to_top">Derulează până în partea de sus a listei</string>
     <string name="rename">Redenumește</string>
+    <string name="more_options">Mai multe opțiuni</string>
     <string name="import_">Importă</string>
     <string name="export">Exportă</string>
     <string name="copy">Copiere</string>
@@ -1386,6 +1430,7 @@ Detalii: %2$s"</string>
     <string name="show_all">Arată toate</string>
     <string name="ignore">Ignoră</string>
     <string name="stop_ignoring">Nu mai ignora</string>
+    <string name="stop">Oprire</string>
     <string name="logs">Jurnale</string>
     <string name="sources">Surse</string>
     <string name="installing_ellipsis">Se instalează…</string>

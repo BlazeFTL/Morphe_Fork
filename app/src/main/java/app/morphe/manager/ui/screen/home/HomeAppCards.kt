@@ -57,6 +57,7 @@ private const val INSTALL_VERIFICATION_BADGE_DELAY_MS = 400L
  * @param subtitle       Secondary line shown below [displayName]; null → not rendered.
  * @param gradientColors Gradient palette forwarded to [AppIcon] placeholder, unless the user
  *   picked fixed card colors in the appearance settings.
+ * @param subtitleBadges Badges following [subtitle] on its line, for marks meant to stand out of it.
  */
 @Composable
 internal fun RowScope.AppCardContent(
@@ -64,12 +65,14 @@ internal fun RowScope.AppCardContent(
     packageInfo: PackageInfo?,
     displayName: String,
     subtitle: String?,
-    gradientColors: List<Color>
+    gradientColors: List<Color>,
+    subtitleBadges: @Composable RowScope.() -> Unit = {}
 ) {
     AppCardContent(
         displayName = displayName,
         subtitle = subtitle,
-        gradientColors = gradientColors
+        gradientColors = gradientColors,
+        subtitleBadges = subtitleBadges
     ) { placeholderColors ->
         AppIcon(
             packageInfo = packageInfo,
@@ -91,6 +94,7 @@ internal fun RowScope.AppCardContent(
     displayName: String,
     subtitle: String?,
     gradientColors: List<Color>,
+    subtitleBadges: @Composable RowScope.() -> Unit = {},
     icon: @Composable (placeholderColors: List<Color>) -> Unit
 ) {
     val cardStyle = glassCardStyle().onCard(gradientColors)
@@ -114,19 +118,25 @@ internal fun RowScope.AppCardContent(
         )
 
         if (subtitle != null) {
-            Text(
+            Row(
                 // Matches the badge-height subtitle row of the installed cards, so names line up
                 // across every card in the list
-                modifier = Modifier
-                    .height(statusBadgeHeight)
-                    .wrapContentHeight(Alignment.CenterVertically),
-                text = subtitle,
-                style = cardStyle.subtitleStyle,
-                color = cardStyle.subtitleColor,
-                // The row is one badge tall, so a subtitle that wraps would be cut in half
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
+                modifier = Modifier.height(statusBadgeHeight),
+                horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    // Gives way to the badges, which keep their words whole
+                    modifier = Modifier.weight(1f, fill = false),
+                    text = subtitle,
+                    style = cardStyle.subtitleStyle,
+                    color = cardStyle.subtitleColor,
+                    // The row is one badge tall, so a subtitle that wraps would be cut in half
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+                subtitleBadges()
+            }
         }
     }
 }

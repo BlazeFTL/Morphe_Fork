@@ -99,7 +99,9 @@
     <string name="home_category_move_to">Di chuyển đến danh mục</string>
     <string name="home_category_move_selected_title">Di chuyển ứng dụng đã chọn</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">Xóa %s?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">Các ứng dụng của nó sẽ quay trở lại &lt;b&gt;%s&lt;/b&gt;</string>
     <string name="home_category_actions_unavailable">Không khả dụng cho danh mục này</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Bạn muốn vá ứng dụng nào?</string>
@@ -242,6 +244,7 @@
     <string name="sources_dialog_url_invalid">URL phải trỏ đến kho lưu trữ GitHub/GitLab hoặc tệp .json</string>
     <string name="sources_dialog_preinstalled">Được cài đặt sẵn</string>
     <string name="sources_dialog_community">Các bản vá cộng đồng</string>
+    <string name="sources_dialog_choose_apps">Chọn ứng dụng</string>
     <string name="sources_dialog_choose_apps_description">Chọn ứng dụng nào của nguồn này để giữ lại sau khi nguồn đã được tải.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Nguồn vá bên thứ ba</string>
@@ -261,12 +264,15 @@
     <string name="sources_patch_expert_badge">Chuyên gia</string>
     <string name="sources_patch_expert_badge_tooltip">Bật chế độ Chuyên gia trong Cài đặt để có thể tự thêm bản vá này</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">Cần trợ giúp tìm APK?</string>
     <string name="home_apk_availability_dialog_simple">Để vá &lt;b&gt;%s&lt;/b&gt;, bạn cần APK chưa vá với phiên bản:</string>
     <string name="home_apk_availability_dialog_expert">Để vá &lt;b&gt;%s&lt;/b&gt;, bạn cần APK chưa vá thuộc một trong các phiên bản:</string>
     <string name="home_apk_availability_recommended_label">Khuyên dùng</string>
     <string name="home_apk_availability_unpatched_label">Chưa vá</string>
     <string name="home_apk_availability_incompatible_label">Không tương thích</string>
     <string name="home_apk_availability_installed_version">Đã cài đặt trên thiết bị này: %s</string>
+    <string name="home_apk_availability_find">Có, hãy giúp tôi tìm nó</string>
+    <string name="home_apk_availability_have">Không, tôi có rồi</string>
     <string name="home_apk_helper_download">Dùng ứng dụng hỗ trợ</string>
     <string name="home_apk_helper_untrusted">Một ứng dụng trợ lý đã được cài đặt nhưng chưa được tin tưởng, vì vậy nó không được hiển thị ở đây</string>
     <string name="home_apk_helper_untrusted_action">Xem lại các ứng dụng trợ lý</string>
@@ -282,6 +288,7 @@
     <string name="home_apk_helper_wrong_package">Ứng dụng hỗ trợ đã trả về một ứng dụng khác với ứng dụng đang được vá</string>
     <string name="home_apk_helper_installed_unavailable">Morphe không thể sử dụng ứng dụng đã cài đặt</string>
     <string name="home_apk_helper_installed_incompatible">Phiên bản đã cài đặt không thể vá được</string>
+    <string name="home_apk_use_saved_copy">Sử dụng bản sao đã lưu</string>
     <string name="home_apk_use_installed_app">Dùng ứng dụng đã cài</string>
     <string name="home_apk_use_saved_unsupported">Các bản vá không hỗ trợ bản sao đã lưu này. Việc vá sẽ yêu cầu bạn xác nhận, hoặc chọn một APK khác.</string>
     <string name="home_apk_use_installed_unverified">Không thể xác minh chữ ký của ứng dụng đã cài đặt, vì vậy ứng dụng có thể đã được vá</string>
@@ -319,10 +326,15 @@
     <string name="home_download_instructions_link_copied">Đã sao chép liên kết</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">Chọn APK của %s</string>
+    <string name="home_file_picker_prompt_where">Trình duyệt thường lưu vào thư mục Tải về</string>
     <string name="home_file_picker_prompt_open_apk">Mở tệp APK</string>
     <string name="home_recommended_version">Phiên bản đề xuất</string>
     <string name="home_selected_version">Phiên bản đã chọn</string>
     <string name="home_select_apk_title">Chọn APK</string>
+    <string name="home_select_apk_description">"Các bản vá phổ quát hoạt động với bất kỳ ứng dụng nào
+
+Chọn nơi lấy tệp APK của nó"</string>
     <string name="home_use_installed_app">Dùng ứng dụng đã cài</string>
     <string name="home_use_installed_app_description">Chọn một ứng dụng đã có trên thiết bị này</string>
     <string name="home_open_apk_file_description">Chọn tệp APK, APKM, APKS hoặc XAPK từ bộ nhớ</string>
@@ -349,6 +361,7 @@
     <string name="expert_mode_restore_saved_done">Đã khôi phục bản vá đã chọn</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Không tìm thấy bản vá phù hợp trong gói này</string>
     <string name="expert_mode_no_results">Không tìm thấy bản vá nào</string>
+    <string name="expert_mode_selected_only">Chỉ các bản vá đã chọn</string>
     <string name="expert_mode_selected_only_on">Chỉ hiển thị các bản vá đã chọn</string>
     <string name="expert_mode_selected_only_off">Hiển thị tất cả các bản vá</string>
     <string name="expert_mode_universal_patches">Bản vá phổ quát</string>
@@ -357,6 +370,7 @@
     <string name="expert_mode_patch_required_by_installer">Bắt buộc đối với đích cài đặt đã chọn</string>
     <string name="expert_mode_patch_unavailable_for_installer">Không khả dụng với đích cài đặt đã chọn</string>
     <string name="expert_mode_multiple_sources_warning_title">Đã chọn nhiều nguồn vá</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">Các bản vá từ các nguồn khác nhau không được thiết kế để hoạt động cùng nhau và có thể xung đột hoặc làm hỏng ứng dụng</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK chưa xác minh</string>
     <string name="home_invalid_signature_message">Tệp APK bạn chọn cho &lt;b&gt;%s&lt;/b&gt; không khớp với chữ ký dự kiến. Nó có thể đã bị chỉnh sửa hoặc đến từ một nguồn không đáng tin</string>
@@ -509,6 +523,8 @@ Tốt nhất bạn nên chuyển sang &lt;b&gt;APK đầy đủ&lt;/b&gt; để 
     <string name="shortcut_check_updates_long">Kiểm tra cập nhật bản vá</string>
     <string name="shortcut_patch_app">Vá %s</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">Gỡ cài đặt ứng dụng này?</string>
+    <string name="home_app_info_uninstall_removes_data">Ứng dụng và dữ liệu của nó sẽ bị xóa khỏi thiết bị này</string>
     <string name="batch_uninstall_confirm_body">Các ứng dụng đã chọn sẽ bị xóa vĩnh viễn khỏi thiết bị của bạn</string>
     <string name="home_app_info_remove_app_warning">Thao tác này sẽ xóa vĩnh viễn:</string>
     <string name="home_app_info_delete_item_database">Nhật ký cơ sở dữ liệu</string>
@@ -673,7 +689,10 @@ Gỡ cài đặt sẽ xóa vĩnh viễn toàn bộ dữ liệu ứng dụng"</st
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Đang vá…</string>
     <string name="patcher_notification_text">Bấm để quay trở lại trình vá</string>
+    <string name="patcher_stop_title">Dừng vá?</string>
+    <string name="patcher_stop_discards">Tiến độ cho đến nay sẽ bị hủy bỏ và không có gì được cài đặt</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Tiếp tục vá</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Biến ứng dụng của bạn trở nên xịn hơn… 🏆</string>
     <string name="patcher_message_2">Dạy ứng dụng cũ chiêu mới… 🎩</string>
@@ -815,15 +834,21 @@ Gỡ cài đặt sẽ xóa vĩnh viễn toàn bộ dữ liệu ứng dụng"</st
     <string name="settings_appearance_repatch_notice_description">Hiển thị banner khi các ứng dụng đã vá có thể được vá lại</string>
     <string name="settings_appearance_more_apps_card">Thẻ Thêm ứng dụng</string>
     <string name="settings_appearance_more_apps_card_description">Hiển thị một thẻ bên dưới các ứng dụng dẫn đến các bản vá cộng đồng</string>
+    <string name="settings_appearance_app_card_colors">Màu thẻ</string>
     <string name="settings_appearance_app_card_colors_default">Mặc định</string>
+    <string name="settings_appearance_app_card_colors_default_description">Gán cho mỗi ứng dụng và nguồn một màu riêng</string>
     <string name="settings_appearance_app_card_colors_accent">Nổi bật</string>
+    <string name="settings_appearance_app_card_colors_accent_description">Sử dụng màu nhấn của ứng dụng cho các thẻ ứng dụng và nguồn</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradient</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">Sử dụng một dải màu tùy chỉnh cho thẻ ứng dụng, hòa trộn thành một màu cho thẻ nguồn</string>
     <string name="settings_appearance_app_card_colors_solid">Solid</string>
+    <string name="settings_appearance_app_card_colors_solid_description">Sử dụng một màu tùy chỉnh chung cho thẻ ứng dụng và nguồn</string>
     <string name="settings_appearance_app_card_colors_start">Màu bắt đầu</string>
     <string name="settings_appearance_app_card_colors_middle">Màu giữa</string>
     <string name="settings_appearance_app_card_colors_end">Màu kết thúc</string>
     <string name="settings_appearance_app_card_colors_solid_color">Màu đồng nhất</string>
     <string name="settings_appearance_app_card_colors_bundle">Màu ứng dụng</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">Sử dụng màu riêng của từng ứng dụng hoặc nguồn tại đây, tự động điều chỉnh sắc độ cho phù hợp</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Biểu tượng</string>
     <string name="settings_appearance_app_icon_selector_description">Cách Morphe hiển thị trên màn hình chính và trong ngăn kéo ứng dụng</string>
@@ -850,6 +875,7 @@ Gỡ cài đặt sẽ xóa vĩnh viễn toàn bộ dữ liệu ứng dụng"</st
     <string name="settings_appearance_app_icon_mark_black">Đen</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Đổi biểu tượng?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe khởi động lại để chuyển sang &lt;b&gt;%s&lt;/b&gt;</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Chốt</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1211,6 +1237,19 @@ Chi tiết: %2$s"</string>
     <string name="settings_system_selected_patches_section">Số bản vá đã chọn</string>
     <string name="settings_system_no_patches_or_options">Không có bản vá hoặc tùy chỉnh được lưu</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Các mục chọn</string>
+    <string name="selection_panel_copy_into">Sao chép vào %s</string>
+    <string name="selection_sets_title">Bộ</string>
+    <string name="selection_set_name">Tên bộ</string>
+    <string name="selection_set_save">Lưu thành bộ</string>
+    <string name="selection_set_replace">Thay thế bộ</string>
+    <string name="selection_set_saved">Đã lưu thành %s</string>
+    <string name="selection_set_applied">Đã chuyển sang %s</string>
+    <string name="selection_set_deleted">%s đã bị xóa</string>
+    <string name="selection_set_renamed">Đã đổi tên thành %s</string>
+    <string name="selection_set_rename_title">Đổi tên bộ</string>
+    <string name="selection_set_delete_title">Xóa bộ?</string>
+    <string name="selection_set_delete_message">Thao tác này sẽ xóa vĩnh viễn bộ %s</string>
     <string name="copy_selection_empty">Không có lựa chọn đã lưu nào khác để sao chép</string>
     <string name="copy_selection_available_format">%1$s/%2$s khả dụng</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1232,7 +1271,10 @@ Chi tiết: %2$s"</string>
     <string name="file_picker_internal_storage">Bộ nhớ trong</string>
     <string name="file_picker_sd_card">Thẻ SD</string>
     <string name="file_picker_root">Root (/)</string>
+    <string name="file_picker_storage_access_unavailable">Thiết bị này không có màn hình để cho phép truy cập vào tất cả các tệp. Hãy cho phép qua ADB bằng lệnh: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Bộ nhớ</string>
+    <string name="file_saver_downloads_failed">Không thể tạo tệp trong mục Tải xuống</string>
+    <string name="file_saver_saving_to_downloads">Thiết bị này không có màn hình lưu, vì vậy tệp sẽ được lưu vào mục Tải xuống với tên %1$s</string>
     <string name="file_picker_sort_name_asc">Tên (A–Z)</string>
     <string name="file_picker_sort_name_desc">Tên (Z–A)</string>
     <string name="file_picker_sort_size_desc">Kích thước (lớn nhất trước)</string>
@@ -1391,6 +1433,7 @@ Chi tiết: %2$s"</string>
     <string name="show_all">Xem tất cả</string>
     <string name="ignore">Bỏ qua</string>
     <string name="stop_ignoring">Dừng bỏ qua</string>
+    <string name="stop">Dừng</string>
     <string name="logs">Nhật ký</string>
     <string name="sources">Nguồn</string>
     <string name="installing_ellipsis">Đang cài đặt…</string>

@@ -13,6 +13,7 @@
     <string name="home_more_apps_hide_message">Դուք կարող եք վերականգնել այն ցանկացած պահի՝ Կարգավորումներ &gt; Արտաքին տեսք &gt; Գլխավոր էկրան</string>
     <string name="home_app_hide_message">Այս հավելվածը կթաքցվի գլխավոր էկրանից: Դուք կարող եք վերականգնել այն ավելի ուշ թաքցված հավելվածների բաժնից՝ օգտագործելով ցուցակի ներքևի կոճակը</string>
     <string name="home_app_will_be_hidden">Այս հավելվածը կթաքցվի</string>
+    <string name="home_app_hidden_named">%s-ը թաքցված է</string>
     <string name="home_app_shown_named">Ցուցադրված է %s</string>
     <string name="home_app_no_hidden">Թաքցված հավելվածներ չկան</string>
     <string name="home_app_hidden_apps_title">Թաքցված հավելվածներ</string>
@@ -355,10 +356,12 @@
     <string name="expert_mode_universal_all_warning_message">Համընդհանուր պատչերը միասին չեն թեստավորվել: Բոլորը միաժամանակ ակտիվացնելը կարող է առաջացնել կոնֆլիկտներ, պատչիଂի ձախողում կամ հավելվածի անկումներ</string>
     <string name="expert_mode_reset_to_default">Ակտիվացնել නිර්දේශվող փեթչերը</string>
     <string name="expert_mode_reset_to_default_done">Հանձնարարված փեթչերը կիրառված են</string>
+    <string name="expert_mode_selected_count">ընտրված է %1$s-ը %2$s-ից</string>
     <string name="expert_mode_restore_saved">Վերականգնել պահպանված ընտրությունը</string>
     <string name="expert_mode_restore_saved_done">Պահպանված ընտրությունը վերականգնված է</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Այս փաթեթում չկան համապատասխան փոփոխություններ</string>
     <string name="expert_mode_no_results">Փաթեթներ չեն գտնվել</string>
+    <string name="expert_mode_selected_only">Միայն ընտրված փաթեթները</string>
     <string name="expert_mode_selected_only_on">Ցուցադրվում են միայն ընտրված փեթչերը</string>
     <string name="expert_mode_selected_only_off">Ցուցադրվում են բոլոր փեթչերը</string>
     <string name="expert_mode_universal_patches">Ունիվերսալ փաթեթներ</string>
@@ -660,12 +663,15 @@
     <string name="patcher_storage_permission_open_settings">Բացել պահպանման կարգավորումները</string>
     <string name="patcher_storage_badge_denied">Թույլտվությունը մերժված է</string>
     <string name="patcher_storage_badge_missing">Չի գտնվել</string>
+    <string name="patcher_storage_badge_rejected">Չի կարելի օգտագործել</string>
     <string name="batch_patch_option_paths_skipped">Թարմացման տարբերակների ֆայլերը բացակայում են և կբաց թողնվեն. %1$s</string>
     <string name="patcher_missing_patches_title">Որոշ թարմացումներ բացակայում են</string>
     <string name="patcher_missing_patches_description">Այս հավելվածի համար պահպանված ընտրությունը ներառում է այնպիսի փոփոխություններ, որոնք այլևս չկան ոչ մի ակտիվ աղբյուրում: Շարունակելը կփոփոխի հավելվածն առանց դրանց</string>
     <string name="patcher_missing_patches_label">Այլևս չի առաջարկվում</string>
     <string name="patcher_option_paths_gone_title">Փաչի օպցիայի ֆայլերը բացակայում են</string>
     <string name="patcher_option_paths_gone_description">Մեկ կամ ավելի փաթեթավորման տարբերակներ հղվում են ֆայլերի, որոնք այլևս գոյություն չունեն: Հեռացրեք այդ ուղիները կամ վերադարձրեք ֆայլերը և փորձեք նորից</string>
+    <string name="patcher_option_paths_rejected_title">Փաթեթի տարբերակի ֆայլերը չեն կարող օգտագործվել</string>
+    <string name="patcher_option_paths_rejected_description">Մեկ կամ մի քանի փաթեթի տարբերակներ հղվում են ֆայլերի, որոնք բացակայում են կամ չունեն այն, ինչ պահանջում է փաթեթը: Հեռացրեք այդ ուղիները, որպեսզի փաթեթավորումը կատարվի առանց դրանց, կամ ուղղեք ֆայլերը՝ ըստ տարբերակի հրահանգների, և փորձեք նորից</string>
     <string name="patcher_option_paths_clear">Հեռացնել ուղիները և շարունակել</string>
     <string name="patcher_storage_permission_hint">Հուշում. Տեղափոխեք ֆայլերը /Android/data/app.morphe.manager/files/ թղթապանակ՝ լրացուցիչ թույլտվությունների կարիք չունենալու համար</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1228,6 +1234,19 @@ morphe_header_custom_dark.png
     <string name="settings_system_selected_patches_section">Ընտրված փաթեթներ</string>
     <string name="settings_system_no_patches_or_options">Պահպանված փեթչեր կամ տարբերակներ չկան</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Ընտրություններ</string>
+    <string name="selection_panel_copy_into">Պատճենել %s-ի մեջ</string>
+    <string name="selection_sets_title">Հավաքածուներ</string>
+    <string name="selection_set_name">Սահմանել անվանումը</string>
+    <string name="selection_set_save">Պահպանել որպես հավաքածու</string>
+    <string name="selection_set_replace">Փոխարինել հավաքածուն</string>
+    <string name="selection_set_saved">Պահպանվեց որպես %s</string>
+    <string name="selection_set_applied">Անցում կատարվեց %s-ին</string>
+    <string name="selection_set_deleted">%s-ը ջնջվեց</string>
+    <string name="selection_set_renamed">Վերանվանվեց %s-ի</string>
+    <string name="selection_set_rename_title">Վերանվանել հավաքածուն</string>
+    <string name="selection_set_delete_title">Ջնջե՞լ հավաքածուն։</string>
+    <string name="selection_set_delete_message">Սա մնայուն կերպով կջնջի %s հավաքածուն</string>
     <string name="copy_selection_empty">Չկան այլ պահպանված ընտրություններ պատճենելու համար</string>
     <string name="copy_selection_available_format">Հասանելի է %1$s-ը %2$s-ից</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1249,7 +1268,10 @@ morphe_header_custom_dark.png
     <string name="file_picker_internal_storage">Ներքին հիշողություն</string>
     <string name="file_picker_sd_card">SD քարտ</string>
     <string name="file_picker_root">Արմատ (/)</string>
+    <string name="file_picker_storage_access_unavailable">Այս սարքը չունի էկրան՝ բոլոր ֆայլերի հասանելիություն թույլ տալու համար: Թույլ տվեք այն ADB-ի միջոցով՝ adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Պահոցներ</string>
+    <string name="file_saver_downloads_failed">Չհաջողվեց ստեղծել ֆայլը «Ներբեռնումներ» թղթապանակում</string>
+    <string name="file_saver_saving_to_downloads">Այս սարքը չունի պահպանման էկրան, ուստի ֆայլը պահպանվում է «Ներբեռնումներ» թղթապանակում որպես %1$s</string>
     <string name="file_picker_sort_name_asc">Անուն (Ա–Զ)</string>
     <string name="file_picker_sort_name_desc">Անուն (Զ–Ա)</string>
     <string name="file_picker_sort_size_desc">Չափս (ամենամեծից սկսած)</string>
@@ -1354,6 +1376,8 @@ morphe_header_custom_dark.png
     <string name="reorder_done">Հերթականությունը պահպանված է</string>
     <string name="reset_order">Վերականգնել հերթականությունը</string>
     <string name="reset_order_done">Հերթականությունը վերականգնված է</string>
+    <string name="reset_order_confirm_title">Վերականգնել հերթականությունը:</string>
+    <string name="reset_order_confirm_message">Ցուցակը կվերադառնա լռելյայն հերթականության, իսկ ձեռքով փոփոխված հերթականությունը կկորչի</string>
     <string name="accessibility_select_app">Ընտրեք հավելվածը</string>
     <string name="accessibility_select_source">Ընտրել աղբյուրը</string>
     <string name="accessibility_move_up">Տեղափոխել վերև</string>
@@ -1361,6 +1385,7 @@ morphe_header_custom_dark.png
     <string name="accessibility_app_moved_announcement">%1$s-ը տեղափոխվեց %3$s-ից %2$s-րդ դիրքի</string>
     <string name="accessibility_scroll_to_top">Թերթել դեպի ցուցակի վերև</string>
     <string name="rename">Վերանվանել</string>
+    <string name="more_options">Լրացուցիչ տարբերակներ</string>
     <string name="import_">Ներմուծել</string>
     <string name="export">Արտահանել</string>
     <string name="copy">Պատճենել</string>

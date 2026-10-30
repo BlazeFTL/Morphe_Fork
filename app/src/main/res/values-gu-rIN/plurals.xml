@@ -5,24 +5,104 @@
         <item quantity="other">%s પેચો</item>
     </plurals>
     <!-- Subtitle of the open-source licenses page: how many libraries it lists -->
+    <plurals name="library_count">
+        <item quantity="one">%s લાઈબ્રેરી</item>
+        <item quantity="other">%s લાઈબ્રેરીઓ</item>
+    </plurals>
     <plurals name="option_count">
         <item quantity="one">%s પેચ વિકલ્પ</item>
         <item quantity="other">%s પેચ વિકલ્પો</item>
     </plurals>
     <!-- How many files and folders a folder holds, under its name in the file picker -->
+    <plurals name="file_picker_item_count">
+        <item quantity="one">%s આઇટમ</item>
+        <item quantity="other">%s આઇટમ્સ</item>
+    </plurals>
     <!-- Button that confirms the files checked in the file picker -->
+    <plurals name="file_picker_select_count">
+        <item quantity="one">%s ફાઇલ પસંદ કરો</item>
+        <item quantity="other">%s ફાઇલો પસંદ કરો</item>
+    </plurals>
     <!-- Button that adds every source waiting in the add source dialog -->
+    <plurals name="sources_dialog_add_count">
+        <item quantity="one">%s સ્ત્રોત ઉમેરો</item>
+        <item quantity="other">%s સ્ત્રોત ઉમેરો</item>
+    </plurals>
+    <plurals name="home_app_patch_sources_title">
+        <item quantity="one">%s એપ માટે પેચ સ્ત્રોતો</item>
+        <item quantity="other">%s એપ્સ માટે પેચ સ્ત્રોતો</item>
+    </plurals>
+    <plurals name="home_apk_availability_hidden_sources">
+        <item quantity="one">આ એપ માટે %s સોર્સ છુપાયેલ છે. તેને પાછા લાવવા માટે Apps ટેબ પર એપ પસંદ કરો અને Patch sources ખોલો</item>
+        <item quantity="other">આ એપ માટે %s સોર્સ છુપાયેલા છે. તેમને પાછા લાવવા માટે Apps ટેબ પર એપ પસંદ કરો અને Patch sources ખોલો</item>
+    </plurals>
+    <plurals name="expert_mode_hidden_sources_notice">
+        <item quantity="one">%s સ્ત્રોત છુપાયેલ છે. જોવા માટે ટેપ કરો</item>
+        <item quantity="other">%s સ્ત્રોતો છુપાયેલ છે. જોવા માટે ટેપ કરો</item>
+    </plurals>
+    <plurals name="sources_search_patch_matches">
+        <item quantity="one">%s મેચિંગ પેચ</item>
+        <item quantity="other">%s મેચિંગ પેચ</item>
+    </plurals>
     <plurals name="source_count">
         <item quantity="one">%s સ્ત્રોત</item>
         <item quantity="other">%s સ્ત્રોતો</item>
+    </plurals>
+    <plurals name="selection_set_count">
+        <item quantity="one">%s સેટ</item>
+        <item quantity="other">%s સેટ્સ</item>
     </plurals>
     <plurals name="package_count">
         <item quantity="one">%s પેકેજ</item>
         <item quantity="other">%s પેકેજો</item>
     </plurals>
+    <plurals name="patches_executed">
+        <item quantity="one">%s પેચ એક્ઝિક્યુટ કર્યો</item>
+        <item quantity="other">%s પેચો એક્ઝિક્યુટ કર્યા</item>
+    </plurals>
     <plurals name="settings_system_apks_count">
         <item quantity="one">%s APK ફાઇલ</item>
         <item quantity="other">%s APK ફાઇલો</item>
+    </plurals>
+    <plurals name="batch_install_summary">
+        <item quantity="one">%s એપ ઇન્સ્ટોલ કરી</item>
+        <item quantity="other">%s એપ્સ ઇન્સ્ટોલ કરી</item>
+    </plurals>
+    <plurals name="batch_mount_summary">
+        <item quantity="one">%s એપ માઉન્ટ કરવામાં આવી</item>
+        <item quantity="other">%s એપ્સ માઉન્ટ કરવામાં આવી</item>
+    </plurals>
+    <plurals name="batch_reinstall_summary">
+        <item quantity="one">%s એપ ફરીથી ઇન્સ્ટોલ કરી</item>
+        <item quantity="other">%s એપ્સ ફરીથી ઇન્સ્ટોલ કરી</item>
+    </plurals>
+    <plurals name="batch_uninstall_summary">
+        <item quantity="one">%s એપ અનઇન્સ્ટોલ કરી</item>
+        <item quantity="other">%s એપ્સ અનઇન્સ્ટોલ કરી</item>
+    </plurals>
+    <plurals name="batch_uninstall_confirm_title">
+        <item quantity="one">%s એપ અનઇન્સ્ટોલ કરવી છે?</item>
+        <item quantity="other">%s એપ્સ અનઇન્સ્ટોલ કરવી છે?</item>
+    </plurals>
+    <plurals name="batch_patch_ready_count">
+        <item quantity="one">%s એપ પેચ કરવા માટે તૈયાર છે</item>
+        <item quantity="other">%s એપ્સ પેચ કરવા માટે તૈયાર છે</item>
+    </plurals>
+    <plurals name="batch_queue_pending_count">
+        <item quantity="one">%s એપ પેચિંગ માટે કતારમાં છે</item>
+        <item quantity="other">%s એપ્સ પેચિંગ માટે કતારમાં છે</item>
+    </plurals>
+    <plurals name="home_alerts_snoozed_count">
+        <item quantity="one">%s છુપાયેલ નોટિફિકેશન, તેને જોવા માટે ટેપ કરો</item>
+        <item quantity="other">%s છુપાયેલા નોટિફિકેશન, તેમને જોવા માટે ટેપ કરો</item>
+    </plurals>
+    <plurals name="repatch_available_count">
+        <item quantity="one">%s એપ ફરીથી પેચ કરી શકાય છે</item>
+        <item quantity="other">%s એપ્સ ફરીથી પેચ કરી શકાય છે</item>
+    </plurals>
+    <plurals name="batch_skipped_summary">
+        <item quantity="one">%s એપ છોડી દેવામાં આવી</item>
+        <item quantity="other">%s એપ્સ છોડી દેવામાં આવી</item>
     </plurals>
     <plurals name="home_app_info_repatch_cleaned_invalid_data">
         <item quantity="one">સાચવેલી પસંદગીમાંથી %s જૂની પેચ દૂર કરી</item>
@@ -32,9 +112,69 @@
         <item quantity="one">%s સ્રોત ઇન્સ્ટોલ કરેલ છે</item>
         <item quantity="other">%s સ્ત્રોતો ઇન્સ્ટોલ કરેલ છે</item>
     </plurals>
+    <plurals name="home_apps_hidden_count">
+        <item quantity="one">%s એપ છુપાયેલ છે</item>
+        <item quantity="other">%s એપ્સ છુપાયેલ છે</item>
+    </plurals>
+    <plurals name="home_apps_shown_count">
+        <item quantity="one">%s એપ બતાવવામાં આવી છે</item>
+        <item quantity="other">%s એપ્સ બતાવવામાં આવી છે</item>
+    </plurals>
+    <plurals name="home_apps_unhide_title">
+        <item quantity="one">%s એપ અનહાઈડ કરવી છે?</item>
+        <item quantity="other">%s એપ્સ અનહાઈડ કરવી છે?</item>
+    </plurals>
+    <plurals name="home_app_show_hidden_count">
+        <item quantity="one">%s છુપાવેલી એપ</item>
+        <item quantity="other">%s છુપાવેલી એપ્લિકેશનો</item>
+    </plurals>
+    <plurals name="home_category_app_count">
+        <item quantity="one">%s એપ</item>
+        <item quantity="other">%s એપ્સ</item>
+    </plurals>
     <plurals name="expert_mode_selected_count">
         <item quantity="one">%s પસંદ કરેલ</item>
         <item quantity="other">%s પસંદ કરેલ</item>
     </plurals>
+    <plurals name="expert_mode_copy_from_bundle_done">
+        <item quantity="one">પસંદ કરેલ બંડલમાંથી %s પેચ કોપી કર્યો</item>
+        <item quantity="other">પસંદ કરેલ બંડલમાંથી %s પેચ કોપી કર્યા</item>
+    </plurals>
+    <plurals name="core_count">
+        <item quantity="one">%s કોર</item>
+        <item quantity="other">%s કોર્સ</item>
+    </plurals>
+    <plurals name="changelog_feature_count">
+        <item quantity="one">%s ફીચર</item>
+        <item quantity="other">%s ફીચર્સ</item>
+    </plurals>
+    <plurals name="changelog_fix_count">
+        <item quantity="one">%s ફિક્સ</item>
+        <item quantity="other">%s સુધારા</item>
+    </plurals>
+    <plurals name="changelog_performance_count">
+        <item quantity="one">%s ઓપ્ટિમાઇઝેશન</item>
+        <item quantity="other">%s ઓપ્ટિમાઇઝેશન્સ</item>
+    </plurals>
+    <plurals name="changelog_change_count">
+        <item quantity="one">%s ફેરફાર</item>
+        <item quantity="other">%s ફેરફારો</item>
+    </plurals>
     <!-- Value of the Apps row on a source card when apps were left out on arrival, for example "3/232 · 2 new". %1$s is the app count, %2$d the new apps -->
+    <plurals name="sources_apps_count_with_new">
+        <item quantity="one">%1$s · %2$d નવા</item>
+        <item quantity="other">%1$s · %2$d નવા</item>
+    </plurals>
+    <plurals name="changelog_new_releases">
+        <item quantity="one">%s નવું રિલીઝ</item>
+        <item quantity="other">%s નવા રિલીઝ</item>
+    </plurals>
+    <plurals name="app_links_count_enabled">
+        <item quantity="one">%d લિંક સક્ષમ છે</item>
+        <item quantity="other">%d લિંક્સ સક્ષમ છે</item>
+    </plurals>
+    <plurals name="app_links_count_unverified">
+        <item quantity="one">%d બિન-ચકાસાયેલ લિંક</item>
+        <item quantity="other">%d બિન-ચકાસાયેલ લિંક્સ</item>
+    </plurals>
 </resources>

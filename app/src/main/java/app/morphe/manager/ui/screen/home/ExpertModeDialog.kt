@@ -162,7 +162,7 @@ fun DialogHostScope.ExpertModeDialog(
     proceedText: String = stringResource(R.string.patch),
     /** Off where mixing sources is the norm rather than something the user just did. */
     warnOnMultipleBundles: Boolean = true,
-    /** Whether a source receives pre-release patch versions, which its tab warns about. */
+    /** Whether a source receives pre-release patch versions, which its page warns about. */
     usesPrerelease: (bundleUid: Int) -> Boolean = { false },
     /** Sources this app is being kept from, which the notice above the list offers back. */
     hiddenSourceCount: Int = 0,
@@ -174,13 +174,11 @@ fun DialogHostScope.ExpertModeDialog(
     val (allPatchesInfo, options, totalSelectedCount, newPatches, lockStateOf, holdsUniversalPatches) =
         selection
     val totalPatchesCount = allPatchesInfo.sumOf { (_, patches) -> patches.size }
-    val prereleaseBundleUids = allPatchesInfo.mapNotNullTo(mutableSetOf()) { (bundle, _) ->
-        bundle.uid.takeIf(usesPrerelease)
-    }
-    // Sources marking the APK's version experimental. A run leaves out the ones whose experimental
-    // versions are off, so a source added back by hand says what its patches are applied to
-    val experimentalBundleUids = allPatchesInfo.mapNotNullTo(mutableSetOf()) { (bundle, _) ->
-        bundle.uid.takeIf { bundle.isVersionExperimental }
+    // Sources on pre-release patches or marking the APK's version experimental. A run leaves out
+    // the ones whose experimental versions are off, so one added back by hand still says what its
+    // patches are applied to
+    val unstableBundleUids = allPatchesInfo.mapNotNullTo(mutableSetOf()) { (bundle, _) ->
+        bundle.uid.takeIf { usesPrerelease(it) || bundle.isVersionExperimental }
     }
     val selectedPatchForOptions = remember { mutableStateOf<Pair<Int, PatchInfo>?>(null) }
     val search = rememberSearchFieldState()
@@ -203,13 +201,10 @@ fun DialogHostScope.ExpertModeDialog(
 
     val patchSections = rememberPatchSectionState()
 
-    // The pre-release warning is worth a glance, not a permanent strip on top of the list. It
-    // retires per source, so a source the user has not opened yet still gets its turn, and the
-    // state lives for this dialog only: the next open warns again
+    // The unstable warning is worth a glance, not a permanent strip on top of the list. It retires
+    // per source, so a source the user has not opened yet still gets its turn, and the state lives
+    // for this dialog only: the next open warns again
     val retiredNotices = remember { mutableStateOf(emptySet<Int>()) }
-    fun retireNotice(bundleUid: Int) {
-        retiredNotices.value += bundleUid
-    }
 
     // Names the filter holds on to, or null while it is off. A snapshot rather than a live read,
     // so a patch unticked under the filter keeps its place instead of vanishing mid-edit
@@ -261,16 +256,14 @@ fun DialogHostScope.ExpertModeDialog(
         newPatches,
         patchesWithMissingRequired,
         patchesWithCustomOptions,
-        prereleaseBundleUids,
-        experimentalBundleUids,
+        unstableBundleUids,
         retiredNotices.value
     ) {
         PatchMarkers(
             newPatches = newPatches,
             missingRequiredOptions = patchesWithMissingRequired,
             customOptions = patchesWithCustomOptions,
-            prereleaseNotices = prereleaseBundleUids - retiredNotices.value,
-            experimentalNotices = experimentalBundleUids
+            unstableNotices = unstableBundleUids - retiredNotices.value
         )
     }
 
@@ -472,9 +465,9 @@ fun DialogHostScope.ExpertModeDialog(
         // Back unwinds the filter before the dialog itself, the way the search field does
         BackHandler(enabled = isSelectedOnly) { selectedOnly.value = null }
 
-        RetirePrereleaseNotice(
-            bundleUid = headBundle?.uid?.takeIf { it in prereleaseBundleUids },
-            onRetire = { retireNotice(it) }
+        RetireUnstableNotice(
+            bundleUid = headBundle?.uid?.takeIf { it in markers.unstableNotices },
+            onRetire = { retiredNotices.value += it }
         )
 
         // Above every source's patches rather than inside one: what it counts is the sources that
@@ -690,58 +683,42 @@ private data class PatchMarkers(
     val newPatches: Map<Int, Set<String>>,
     val missingRequiredOptions: Map<Int, Set<String>>,
     val customOptions: Map<Int, Set<String>>,
-    val prereleaseNotices: Set<Int>,
-    val experimentalNotices: Set<Int>
+    val unstableNotices: Set<Int>
 )
 
-/** How long a pre-release warning holds its place, long enough to read it once. */
-private val PrereleaseNoticeDuration = 8.seconds
+/** How long the unstable warning holds its place, long enough to read it once. */
+private val UnstableNoticeDuration = 8.seconds
 
 /**
- * Retires the pre-release warning of [bundleUid] once it has had its seconds on screen. Null while
+ * Retires the unstable warning of [bundleUid] once it has had its seconds on screen. Null while
  * the source in view carries no warning, and keyed on the bundle, so switching tabs hands the
  * countdown to whichever source the user just opened rather than expiring one never seen.
  */
 @Composable
-private fun RetirePrereleaseNotice(bundleUid: Int?, onRetire: (Int) -> Unit) {
+private fun RetireUnstableNotice(bundleUid: Int?, onRetire: (Int) -> Unit) {
     LaunchedEffect(bundleUid) {
         if (bundleUid == null) return@LaunchedEffect
-        delay(PrereleaseNoticeDuration)
+        delay(UnstableNoticeDuration)
         onRetire(bundleUid)
     }
 }
 
 /**
- * Warning header for a source on the dev branch. It scrolls with the patches it belongs to
- * rather than holding a fixed strip, which also keeps the tabs from shifting as pages change.
+ * One line heading a source whose patches may be unstable, pre-release or experimental alike. It
+ * scrolls with the patches it belongs to rather than holding a fixed strip, which also keeps the
+ * tabs from shifting as pages change.
  *
  * It animates its own placement like the rows below it, so the list closes the gap when the
  * warning retires instead of snapping shut.
  */
-private fun LazyListScope.prereleaseNotice() = item(key = "prerelease-notice") {
+private fun LazyListScope.unstableNotice() = item(key = "unstable-notice") {
     Notice(
-        text = stringResource(R.string.expert_mode_prerelease_notice),
+        text = stringResource(R.string.expert_mode_unstable_notice),
         modifier = Modifier
             .animatedListItem(this)
             .endsBlock(),
         icon = MaterialSymbols.Rounded.Warning,
         tone = SemanticTone.Warning,
-        density = NoticeDensity.Compact
-    )
-}
-
-/**
- * Header for a source marking the APK's version experimental. Unlike the pre-release warning it
- * stays, since it matters for as long as the source's patches can be switched on.
- */
-private fun LazyListScope.experimentalVersionNotice() = item(key = "experimental-version-notice") {
-    Notice(
-        text = stringResource(R.string.expert_mode_experimental_version_notice),
-        modifier = Modifier
-            .animatedListItem(this)
-            .endsBlock(),
-        icon = VersionTag.Experimental.icon,
-        tone = VersionTag.Experimental.tone,
         density = NoticeDensity.Compact
     )
 }
@@ -797,9 +774,9 @@ private fun BundleControls(
 }
 
 /**
- * One bundle's scrolling list: its pre-release warning, then the patches block by block, each
- * behind a collapsible header of its own. Every row animates its own placement, so search
- * results and the fold settle instead of jumping.
+ * One bundle's scrolling list: its unstable warning, then the patches block by block, each behind
+ * a collapsible header of its own. Every row animates its own placement, so search results and the
+ * fold settle instead of jumping.
  *
  * The scrollbar stays with the caller, since the tabbed layout draws a single overlay for the
  * whole pager rather than one per page.
@@ -848,8 +825,7 @@ private fun BundlePatchList(
         verticalArrangement = Arrangement.spacedBy(SegmentGap)
     ) {
         leadingRows()
-        if (bundle.uid in markers.prereleaseNotices) prereleaseNotice()
-        if (bundle.uid in markers.experimentalNotices) experimentalVersionNotice()
+        if (bundle.uid in markers.unstableNotices) unstableNotice()
 
         // Kept in the list rather than laid over it, so the message holds its place under a notice
         // and an opening keyboard shortens the surrounding page instead of moving it

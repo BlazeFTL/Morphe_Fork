@@ -826,7 +826,7 @@ class PatcherViewModel(
         patchSelectionRepository.updateSelection(
             configurationPackageName,
             selection,
-            scope = bundles.keys
+            scope = input.sourceScope
         )
         patchOptionsRepository.saveOptions(configurationPackageName, options)
 

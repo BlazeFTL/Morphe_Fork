@@ -28,6 +28,7 @@ import app.morphe.manager.domain.bundles.PatchBundleSource.Extensions.usesPrerel
 import app.morphe.manager.domain.bundles.RemotePatchBundle
 import app.morphe.manager.domain.repository.InstalledAppRepository
 import app.morphe.manager.domain.repository.PatchBundleRepository
+import app.morphe.manager.domain.repository.PatchBundleRepository.RemoteUrlCheck
 import app.morphe.manager.domain.repository.SourceMuteRepository
 import app.morphe.manager.domain.repository.appsBrought
 import app.morphe.manager.patcher.patch.PatchInfo
@@ -164,6 +165,65 @@ fun DialogHostScope.RenameBundleDialog(
                     }
                 )
             )
+        }
+    }
+}
+
+/**
+ * Dialog for changing the link a source downloads from, checked as it is typed the way adding a
+ * source checks it, see [PatchBundleRepository.changeRemoteLink].
+ */
+@Composable
+fun DialogHostScope.ChangeSourceLinkDialog(
+    initialValue: String,
+    onCheckUrl: (String) -> RemoteUrlCheck,
+    onDismissRequest: () -> Unit,
+    onConfirm: (String) -> Unit
+) {
+    var textValue by remember { mutableStateOf(initialValue) }
+    val check = remember(textValue) { textValue.trim().takeIf { it.isNotEmpty() }?.let(onCheckUrl) }
+    val keyboardController = LocalSoftwareKeyboardController.current
+    val confirm = {
+        if (check is RemoteUrlCheck.Accepted) {
+            keyboardController?.hide()
+            onConfirm(textValue.trim())
+        }
+    }
+
+    AppDialog(
+        onDismissRequest = onDismissRequest,
+        title = stringResource(R.string.sources_dialog_remote_url),
+        description = stringResource(R.string.sources_dialog_change_url),
+        footer = {
+            AppDialogButtonRow(
+                primaryText = stringResource(android.R.string.ok),
+                onPrimaryClick = confirm,
+                primaryEnabled = check is RemoteUrlCheck.Accepted,
+                secondaryText = stringResource(android.R.string.cancel),
+                onSecondaryClick = {
+                    keyboardController?.hide()
+                    onDismissRequest()
+                }
+            )
+        }
+    ) {
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall)
+        ) {
+            AppDialogTextField(
+                value = textValue,
+                onValueChange = { textValue = it },
+                placeholder = { Text(REMOTE_URL_PLACEHOLDER) },
+                leadingIcon = {
+                    Icon(imageVector = MaterialSymbols.Rounded.Link, contentDescription = null)
+                },
+                singleLine = true,
+                isError = check is RemoteUrlCheck.Rejected,
+                keyboardOptions = RemoteUrlKeyboardOptions,
+                keyboardActions = KeyboardActions(onDone = { confirm() })
+            )
+            RemoteUrlCheckHint(check = check, showHint = false)
         }
     }
 }
@@ -792,14 +852,21 @@ fun DialogHostScope.SourceAppsDialog(
                             packageInfo = null,
                             displayName = label,
                             subtitle = listOfNotNull(
-                                stringResource(R.string.sources_apps_new).takeIf { packageName in newApps },
                                 pluralStringResource(R.plurals.patch_count, patchCount, patchCount.toString()),
                                 // Left out, it would be gone from the home screen but for its install
                                 stringResource(R.string.sources_apps_stays_patched)
                                     .takeIf { !brought && packageName in patchedApps }
                             ).joinToString(" · "),
                             gradientColors = gradientColors
-                        )
+                        ) {
+                            // Shown until the list is closed once, so it has to catch the eye
+                            if (packageName in newApps) {
+                                StatusBadge(
+                                    text = stringResource(R.string.sources_apps_new),
+                                    tone = SemanticTone.Primary
+                                )
+                            }
+                        }
                     }
                 }
             }

@@ -20,13 +20,16 @@ const val SOURCE_REPO_URL = "https://github.com/MorpheApp/morphe-patches"
 const val MORPHE_API_URL = "https://api.morphe.software"
 
 /** Sent on every request to [MORPHE_API_URL]. */
-val MORPHE_USER_AGENT = "Morphe-Manager/${BuildConfig.VERSION_CODE}"
+const val MORPHE_USER_AGENT ="Morphe-Manager/${BuildConfig.VERSION_CODE}"
 const val MORPHE_WEBSITE_URL = "https://morphe.software"
 const val COMMUNITY_PATCHES_URL = "https://morphe-patches.software"
 const val BLOCKED_SOURCES_URL = "$MORPHE_API_URL/v2/blocked-sources"
 
 /** Website page behind add-source links: ?github|gitlab=owner/repo(&name=...) */
 const val ADD_SOURCE_PATH = "/add-source"
+
+/** What a source link looks like, shown in a field waiting for one. */
+const val REMOTE_URL_PLACEHOLDER = "github.com/owner/repo"
 
 /** Raw GitHub URL for the stable manager release JSON (main branch) */
 const val MANAGER_RELEASE_JSON_URL = "https://raw.githubusercontent.com/MorpheApp/morphe-manager/refs/heads/main/app-release.json"

@@ -99,7 +99,9 @@
     <string name="home_category_move_to">Sposta in categoria</string>
     <string name="home_category_move_selected_title">Sposta app selezionate</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">Eliminare %s? </string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">Le sue app tornano a &lt;b&gt;%s&lt;/b&gt; </string>
     <string name="home_category_actions_unavailable">Azioni non disponibili per questa categoria</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Quale app vuoi patchare?</string>
@@ -262,12 +264,15 @@
     <string name="sources_patch_expert_badge">Esperto</string>
     <string name="sources_patch_expert_badge_tooltip">Abilita la modalità Esperto in Impostazioni per includere questa patch manualmente</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">Hai bisogno di aiuto per trovare l\'APK?</string>
     <string name="home_apk_availability_dialog_simple">Per patchare &lt;b&gt;%s&lt;/b&gt;, è necessario un APK non patchato con la versione:</string>
     <string name="home_apk_availability_dialog_expert">Per patchare &lt;b&gt;%s&lt;/b&gt;, è necessario un APK non patchato con le versioni:</string>
     <string name="home_apk_availability_recommended_label">Consigliata</string>
     <string name="home_apk_availability_unpatched_label">Non patchato</string>
     <string name="home_apk_availability_incompatible_label">Incompatibile</string>
     <string name="home_apk_availability_installed_version">Installato su questo dispositivo: %s</string>
+    <string name="home_apk_availability_find">Sì, aiutami a trovarla</string>
+    <string name="home_apk_availability_have">No, ce l\'ho già</string>
     <string name="home_apk_helper_download">Usa un\'applicazione di supporto</string>
     <string name="home_apk_helper_untrusted">Un\'app di supporto è installata ma non ancora attendibile, quindi non viene offerta qui</string>
     <string name="home_apk_helper_untrusted_action">Verifica helper</string>
@@ -283,6 +288,8 @@
     <string name="home_apk_helper_wrong_package">L\'app helper ha restituito un\'app diversa da quella in fase di patch</string>
     <string name="home_apk_helper_installed_unavailable">Morphe non ha potuto utilizzare l\'app installata</string>
     <string name="home_apk_helper_installed_incompatible">La versione installata non può essere patchata</string>
+    <string name="home_apk_use_saved_copy">Usa la copia salvata</string>
+    <string name="home_apk_use_installed_app">Usa l\'app installata</string>
     <string name="home_apk_use_saved_unsupported">Le patch non supportano questa copia salvata. Applicarla richiederà una conferma, oppure scegli un altro APK</string>
     <string name="home_apk_use_installed_unverified">Impossibile verificare la firma dell\'app installata, pertanto potrebbe essere già stata modificata</string>
     <string name="home_unverified">Non verificata</string>
@@ -319,10 +326,15 @@
     <string name="home_download_instructions_link_copied">Link copiato</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">Seleziona l\'APK %s</string>
+    <string name="home_file_picker_prompt_where">Di solito i browser la salvano nella cartella Download</string>
     <string name="home_file_picker_prompt_open_apk">Apri il file APK</string>
     <string name="home_recommended_version">Versione consigliata</string>
     <string name="home_selected_version">Versione selezionata</string>
     <string name="home_select_apk_title">Seleziona l\'APK</string>
+    <string name="home_select_apk_description">"Le patch universali funzionano con qualsiasi app.
+
+Scegli da dove scaricare l'APK."</string>
     <string name="home_use_installed_app">Usa app installata</string>
     <string name="home_use_installed_app_description">Scegli un\'app già presente su questo dispositivo</string>
     <string name="home_open_apk_file_description">Scegli un file APK, APKM, APKS o XAPK dalla memoria</string>
@@ -349,6 +361,7 @@
     <string name="expert_mode_restore_saved_done">Selezione salvata ripristinata</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nessuna patch corrispondente in questo pacchetto</string>
     <string name="expert_mode_no_results">Nessuna patch trovata</string>
+    <string name="expert_mode_selected_only">Solo patch selezionate</string>
     <string name="expert_mode_selected_only_on">Mostra solo le patch selezionate</string>
     <string name="expert_mode_selected_only_off">Mostra tutte le patch</string>
     <string name="expert_mode_universal_patches">Patch universali</string>
@@ -357,6 +370,7 @@
     <string name="expert_mode_patch_required_by_installer">Necessario per la destinazione di installazione selezionata</string>
     <string name="expert_mode_patch_unavailable_for_installer">Non disponibile per la destinazione di installazione selezionata</string>
     <string name="expert_mode_multiple_sources_warning_title">Molteplici fonti delle patch selezionate</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">Le patch provenienti da fonti diverse non sono progettate per funzionare insieme e potrebbero entrare in conflitto o compromettere l\'app</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK non verificato</string>
     <string name="home_invalid_signature_message">L\'APK selezionato per &lt;b&gt;%s&lt;/b&gt; non corrisponde al certificato di firma previsto. Potrebbe essere stato modificato o provenire da una fonte non attendibile</string>
@@ -509,6 +523,8 @@ Per ottenere i risultati migliori, questa app raccomanda di applicare una patch 
     <string name="shortcut_check_updates_long">Verifica aggiornamenti patch</string>
     <string name="shortcut_patch_app">Modifica %s</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">Disinstallare quest\'app?</string>
+    <string name="home_app_info_uninstall_removes_data">L\'app e i relativi dati vengono rimossi da questo dispositivo</string>
     <string name="batch_uninstall_confirm_body">Le app selezionate saranno rimosse permanentemente dal tuo dispositivo</string>
     <string name="home_app_info_remove_app_warning">Questo eliminerà in modo permanente:</string>
     <string name="home_app_info_delete_item_database">Voce del database</string>
@@ -673,7 +689,10 @@ La disinstallazione cancellerà definitivamente tutti i dati dell'app."</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patching in corso…</string>
     <string name="patcher_notification_text">Tocca per tornare al patcher</string>
+    <string name="patcher_stop_title">Interrompi la procedura di patch?</string>
+    <string name="patcher_stop_discards">I progressi compiuti finora vengono scartati e non viene installato nulla</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Continua la procedura di patch</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Trasformazione della tua app in qualcosa di fantastico… 🏆</string>
     <string name="patcher_message_2">Insegnando alle app vecchie trucchi nuovi… 🎩</string>
@@ -815,15 +834,21 @@ La disinstallazione cancellerà definitivamente tutti i dati dell'app."</string>
     <string name="settings_appearance_repatch_notice_description">Mostra un banner quando le applicazioni modificate possono essere rimodificate</string>
     <string name="settings_appearance_more_apps_card">Scheda Altre applicazioni</string>
     <string name="settings_appearance_more_apps_card_description">Mostra una scheda sotto le app che conduce alle patch della community</string>
+    <string name="settings_appearance_app_card_colors">Colori della scheda</string>
     <string name="settings_appearance_app_card_colors_default">Predefinita</string>
+    <string name="settings_appearance_app_card_colors_default_description">Assegna a ogni app e fonte un colore specifico</string>
     <string name="settings_appearance_app_card_colors_accent">Accento</string>
+    <string name="settings_appearance_app_card_colors_accent_description">Utilizza il colore principale dell\'app per le schede dell\'app e delle sorgenti</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradiente</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">Utilizza un gradiente personalizzato per le schede delle app, che sfuma in un colore unico per le schede delle fonti.</string>
     <string name="settings_appearance_app_card_colors_solid">Solido</string>
+    <string name="settings_appearance_app_card_colors_solid_description">Utilizza un colore personalizzato per le schede delle app e delle fonti</string>
     <string name="settings_appearance_app_card_colors_start">Colore di partenza</string>
     <string name="settings_appearance_app_card_colors_middle">Colore intermedio</string>
     <string name="settings_appearance_app_card_colors_end">Colore finale</string>
     <string name="settings_appearance_app_card_colors_solid_color">Colore solido</string>
     <string name="settings_appearance_app_card_colors_bundle">Colore del pacchetto app</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">Utilizza il colore specifico di ciascuna app o fonte, sfumato automaticamente per adattarsi</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Icona dell\'app</string>
     <string name="settings_appearance_app_icon_selector_description">Come appare Morphe sulla schermata Home e nel cassetto delle app</string>
@@ -850,6 +875,7 @@ La disinstallazione cancellerà definitivamente tutti i dati dell'app."</string>
     <string name="settings_appearance_app_icon_mark_black">Nero</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Cambiare l’icona dell’app?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe si riavvia per passare a &lt;b&gt;%s&lt;/b&gt;</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Cambia icona</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1208,6 +1234,19 @@ Dettagli: %2$s"</string>
     <string name="settings_system_selected_patches_section">Patch selezionate</string>
     <string name="settings_system_no_patches_or_options">Nessuna patch o opzione salvata</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Selezioni</string>
+    <string name="selection_panel_copy_into">Copia in %s</string>
+    <string name="selection_sets_title">Impostazioni</string>
+    <string name="selection_set_name">Nome impostazione</string>
+    <string name="selection_set_save">Salva come impostazione</string>
+    <string name="selection_set_replace">Sostituisci impostazione</string>
+    <string name="selection_set_saved">Salvato come %s</string>
+    <string name="selection_set_applied">Passato a %s</string>
+    <string name="selection_set_deleted">%s eliminato</string>
+    <string name="selection_set_renamed">Rinominato in %s</string>
+    <string name="selection_set_rename_title">Rinomina gruppo</string>
+    <string name="selection_set_delete_title">Eliminare gruppo?</string>
+    <string name="selection_set_delete_message">Ciò eliminerà definitivamente il gruppo %s</string>
     <string name="copy_selection_empty">Non ci sono altre selezioni salvate da cui copiare</string>
     <string name="copy_selection_available_format">%1$s di %2$s disponibili</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1229,7 +1268,10 @@ Dettagli: %2$s"</string>
     <string name="file_picker_internal_storage">Memoria interna</string>
     <string name="file_picker_sd_card">Scheda SD</string>
     <string name="file_picker_root">Radice (/)</string>
+    <string name="file_picker_storage_access_unavailable">Questo dispositivo non dispone di uno schermo per consentire l\'accesso a tutti i file. Consentilo tramite ADB con: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Archiviazione</string>
+    <string name="file_saver_downloads_failed">Impossibile creare il file in Download</string>
+    <string name="file_saver_saving_to_downloads">Questo dispositivo non dispone di una schermata di salvataggio, quindi il file viene salvato in Download come %1$s</string>
     <string name="file_picker_sort_name_asc">Nome (A–Z)</string>
     <string name="file_picker_sort_name_desc">Nome (Z–A)</string>
     <string name="file_picker_sort_size_desc">Dimensione (la più grande prima)</string>
@@ -1343,6 +1385,7 @@ Dettagli: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s spostato nella posizione %2$s di %3$s</string>
     <string name="accessibility_scroll_to_top">Vai in cima alla lista</string>
     <string name="rename">Rinomina</string>
+    <string name="more_options">Opzioni aggiuntive</string>
     <string name="import_">Importa</string>
     <string name="export">Esporta</string>
     <string name="copy">Copia</string>
@@ -1387,6 +1430,7 @@ Dettagli: %2$s"</string>
     <string name="show_all">Mostra tutto</string>
     <string name="ignore">Ignora</string>
     <string name="stop_ignoring">Smetti di ignorare</string>
+    <string name="stop">Interrompi</string>
     <string name="logs">Tracciati</string>
     <string name="sources">Fonti</string>
     <string name="installing_ellipsis">Installazione in corso…</string>

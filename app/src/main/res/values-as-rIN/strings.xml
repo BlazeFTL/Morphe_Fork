@@ -356,10 +356,12 @@
     <string name="expert_mode_universal_all_warning_message">ইউনিভাৰ্চেল পেচবোৰ একেলগে পৰীক্ষা কৰা হোৱা নাই। এই সকলোবোৰ একেলগে সক্ৰিয় কৰিলে সংঘাত, পেচিংত বিফলতা বা ক্ৰেশ হ\'ব পাৰে</string>
     <string name="expert_mode_reset_to_default">সুপৰিশ কৰা পেচসমূহ সক্ৰিয় কৰক</string>
     <string name="expert_mode_reset_to_default_done">সুপৰিশ কৰা patch সমূহ প্ৰয়োগ কৰা হৈছে</string>
+    <string name="expert_mode_selected_count">%2$s ৰ ভিতৰত %1$s টা চয়ন কৰা হৈছে</string>
     <string name="expert_mode_restore_saved">সংৰক্ষিত নিৰ্বাচন পুনৰুদ্ধাৰ কৰক</string>
     <string name="expert_mode_restore_saved_done">সংৰক্ষিত নিৰ্বাচন পুনৰুদ্ধাৰ কৰা হৈছে</string>
     <string name="expert_mode_copy_from_bundle_no_patches">এই বান্ডেলটোত কোনো মিল থকা পেচ নাই</string>
     <string name="expert_mode_no_results">কোনো পেচ পতা যোৱা নাই</string>
+    <string name="expert_mode_selected_only">চয়ন কৰা প্যাচসমূহহে</string>
     <string name="expert_mode_selected_only_on">নিৰ্বাচিত পেচসমূহহে দেখুওৱা হৈছে</string>
     <string name="expert_mode_selected_only_off">সকলো পেচ দেখুওৱা হৈছে</string>
     <string name="expert_mode_universal_patches">ইউনিভাৰ্চেল পেচচ</string>
@@ -661,12 +663,15 @@
     <string name="patcher_storage_permission_open_settings">ষ্টৰেজ ছেটিংছ খোলক</string>
     <string name="patcher_storage_badge_denied">অনুমতি অস্বীকাৰ কৰা হৈছে</string>
     <string name="patcher_storage_badge_missing">পাৰা নাই</string>
+    <string name="patcher_storage_badge_rejected">ব্যৱহাৰ কৰিব নোৱাৰি</string>
     <string name="batch_patch_option_paths_skipped">প্ৰেচ অপচন ফাইলবোৰ নাই আৰু সেইবোৰ বাদ দিয়া হ\'ব: %1$s</string>
     <string name="patcher_missing_patches_title">কিছুমান প্ৰেচ নাই</string>
     <string name="patcher_missing_patches_description">এই এপটোৰ বাবে সংৰক্ষিত নিৰ্বাচনত এনে কিছুমান প্যাচৰ নাম আছে যিবোৰ কোনো সক্ৰিয় উৎসে আৰু আগবঢ়াইছে। আগবাঢ়িলে সেইবোৰ অবিহনে এপটো প্যাচ কৰা হ\'ব</string>
     <string name="patcher_missing_patches_label">এতিয়া আৰু উপলব্ধ নহয়</string>
     <string name="patcher_option_paths_gone_title">প্ৰেচ অপচন ফাইলবোৰ নাই</string>
     <string name="patcher_option_paths_gone_description">এটা বা ততোধিক প্ৰেচ অপচনে এনেকুৱা ফাইলৰ দিশত আঙুলিয়াইছে যিবোৰ এতিয়া তাত নাই। সেইবোৰ অবিহনে প্ৰেচ কৰিবলৈ পথবোৰ আঁতৰ কৰক, অথবা ফাইলবোৰ পুনৰ স্থাপন কৰি চেষ্টা কৰক</string>
+    <string name="patcher_option_paths_rejected_title">প্যাচ অপচন ফাইলসমূহ ব্যৱহাৰ কৰিব নোৱাৰি</string>
+    <string name="patcher_option_paths_rejected_description">এক বা ততোধিক প্যাচ অপচনে এনে ফাইলৰ ফালে ইংগিত কৰে যিবোৰ নাই অথবা প্যাচটোৰ বাবে যাৰ প্ৰয়োজন সেইবোৰ তাত নাই। সেইবোৰ অবিহনে প্যাচ কৰিবলৈ পথসমূহ আঁতৰাওক, অথবা অপচন নিৰ্দেশনাসমূহত বৰ্ণনা কৰা ধৰণে ফাইলসমূহ ঠিক কৰি পুনৰ চেষ্টা কৰক</string>
     <string name="patcher_option_paths_clear">পথবোৰ আঁতৰ কৰক আৰু আগবাঢ়ক</string>
     <string name="patcher_storage_permission_hint">টিপছ: ফাইলবোৰ /Android/data/app.morphe.manager/files/ লৈ স্থানান্তৰ কৰক - কোনো অতিৰিক্ত অনুমতিৰ প্ৰয়োজন নাই</string>
     <!-- Patcher Screen - Patcher Steps -->
@@ -1229,6 +1234,19 @@ morphe_header_custom_dark.png
     <string name="settings_system_selected_patches_section">নিৰ্বাচিত প্যাচসমূহ</string>
     <string name="settings_system_no_patches_or_options">কোনো পেচ বা বিকল্প সংৰক্ষণ কৰা হোৱা নাই</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">চয়নসমূহ</string>
+    <string name="selection_panel_copy_into">%s লৈ কপি কৰক</string>
+    <string name="selection_sets_title">ছেটসমূহ</string>
+    <string name="selection_set_name">নাম নিৰ্ধাৰণ কৰক</string>
+    <string name="selection_set_save">ছেট হিচাপে সংৰক্ষণ কৰক</string>
+    <string name="selection_set_replace">ছেটটো প্রতিস্থাপন কৰক</string>
+    <string name="selection_set_saved">%s হিচাপে সংৰক্ষণ কৰা হৈছে</string>
+    <string name="selection_set_applied">%s লৈ সলনি কৰা হৈছে</string>
+    <string name="selection_set_deleted">%s মচি পেলোৱা হৈছে</string>
+    <string name="selection_set_renamed">%s লৈ নাম সলনি কৰা হৈছে</string>
+    <string name="selection_set_rename_title">ছেটটোৰ নাম সলনি কৰক</string>
+    <string name="selection_set_delete_title">ছেটটো মচি পেলাব নেকি?</string>
+    <string name="selection_set_delete_message">ইয়াৰ দ্বাৰা %s ছেটটো স্থায়ীভাৱে মচি পেলোৱা হ\'ব</string>
     <string name="copy_selection_empty">কপি কৰিবলৈ আন কোনো সংৰক্ষিত নিৰ্বাচন নাই</string>
     <string name="copy_selection_available_format">%2$s ৰ ভিতৰত %1$s উপলব্ধ</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1250,7 +1268,10 @@ morphe_header_custom_dark.png
     <string name="file_picker_internal_storage">আৰুন্তৰ ষ্টোৰেজ</string>
     <string name="file_picker_sd_card">SD কাৰ্ড</string>
     <string name="file_picker_root">ৰুট (/)</string>
+    <string name="file_picker_storage_access_unavailable">এই ডিভাইচটোত সকলো ফাইলৰ প্ৰৱেশ অনুমতি দিব পৰা কোনো স্ক্ৰীন নাই। ADB ৰ জৰিয়তে ইয়াক অনুমতি দিয়ক: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">ষ্টোৰেজসমূহ</string>
+    <string name="file_saver_downloads_failed">Downloads-ত ফাইলটো সৃষ্টি কৰিব নোৱাৰিল</string>
+    <string name="file_saver_saving_to_downloads">এই ডিভাইচটোত কোনো ছেভ স্ক্ৰীন নাই, সেয়েহে ফাইলটো Downloads-লৈ %1$s হিচাপে যাব</string>
     <string name="file_picker_sort_name_asc">নাম (A–Z)</string>
     <string name="file_picker_sort_name_desc">নাম (Z–A)</string>
     <string name="file_picker_sort_size_desc">আকাৰ (আটাইতকৈ ডাঙৰটো আগত)</string>
@@ -1355,6 +1376,8 @@ morphe_header_custom_dark.png
     <string name="reorder_done">ক্ৰম সংৰক্ষিত হৈছে</string>
     <string name="reset_order">ক্ৰম ৰিছেট কৰক</string>
     <string name="reset_order_done">ক্ৰম ৰিছেট কৰা হৈছে</string>
+    <string name="reset_order_confirm_title">ক্ৰমটো ৰিছেট কৰিবনে?</string>
+    <string name="reset_order_confirm_message">তালিকাত ইয়াৰ ডিফল্ট ক্ৰমটো উভতি আহিব আৰু হাতেৰে টানি সলোৱা ক্ৰমটো হেৰাই যাব</string>
     <string name="accessibility_select_app">এপ সিলেক্ট কৰক</string>
     <string name="accessibility_select_source">উৎস বাছনি কৰক</string>
     <string name="accessibility_move_up">ওপৰলৈ সৰক</string>
@@ -1362,6 +1385,7 @@ morphe_header_custom_dark.png
     <string name="accessibility_app_moved_announcement">%1$s-ক %3$s-ৰ ভিতৰত %2$s স্থানলৈ স্থানান্তৰ কৰা হৈছে</string>
     <string name="accessibility_scroll_to_top">তালিকালৈ ওপৰত গৈ স্ক্ৰল কৰক</string>
     <string name="rename">নাম সলনি কৰক</string>
+    <string name="more_options">অধিক বিকল্প</string>
     <string name="import_">আমদানি কৰক</string>
     <string name="export">ৰপ্তানি কৰক</string>
     <string name="copy">কপি কৰক</string>

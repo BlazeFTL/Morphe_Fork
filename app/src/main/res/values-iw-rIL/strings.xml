@@ -100,7 +100,9 @@
     <string name="home_category_move_to">העבר לקטגוריה</string>
     <string name="home_category_move_selected_title">העבר אפליקציות נבחרות</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">למחוק את %s?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">האפליקציות שלה יעברו חזרה ל-&lt;b&gt;%s&lt;/b&gt;</string>
     <string name="home_category_actions_unavailable">פעולות לא זמינות עבור קטגוריה זו</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">איזה אפליקציה אתה רוצה לתקן?</string>
@@ -263,12 +265,15 @@
     <string name="sources_patch_expert_badge">מומחה</string>
     <string name="sources_patch_expert_badge_tooltip">הפעל מצב מומחה בהגדרות כדי לכלול תיקון זה באופן ידני</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">צריך עזרה במציאת ה-APK?</string>
     <string name="home_apk_availability_dialog_simple">להתקן &lt;b&gt;%s&lt;/b&gt;, צריך את הגרסה הלא מתוקנת של APK:</string>
     <string name="home_apk_availability_dialog_expert">לעדכן &lt;b&gt;%s&lt;/b&gt;, צריך APK לא מעודכן של הגרסאות:</string>
     <string name="home_apk_availability_recommended_label">מומלץ</string>
     <string name="home_apk_availability_unpatched_label">לא מתקן</string>
     <string name="home_apk_availability_incompatible_label">לא תואם</string>
     <string name="home_apk_availability_installed_version">מותקן במכשיר זה: %s</string>
+    <string name="home_apk_availability_find">כן, עזור לי למצוא אותו</string>
+    <string name="home_apk_availability_have">לא, הוא כבר נמצא אצלי</string>
     <string name="home_apk_helper_download">השתמש באפליקציה מסייעת</string>
     <string name="home_apk_helper_untrusted">אפליקציית עזר מותקנת אך עדיין לא אמינה, ולכן אינה מוצגת כאן</string>
     <string name="home_apk_helper_untrusted_action">סקור את אפליקציות העזר</string>
@@ -284,6 +289,8 @@
     <string name="home_apk_helper_wrong_package">אפליקציית העזר החזירה אפליקציה שונה מזו שמתוקנת</string>
     <string name="home_apk_helper_installed_unavailable">Morphe לא הצליח להשתמש באפליקציה המותקנת</string>
     <string name="home_apk_helper_installed_incompatible">לא ניתן לתקן את הגרסה המותקנת</string>
+    <string name="home_apk_use_saved_copy">השתמש בעותק שמור</string>
+    <string name="home_apk_use_installed_app">השתמש באפליקציה מותקנת</string>
     <string name="home_apk_use_saved_unsupported">הטלאים אינם תומכים בעותק השמור הזה. תיקונו ידרוש ממך אישור, או בחר APK אחר.</string>
     <string name="home_apk_use_installed_unverified">לא ניתן לאמת את החתימה של האפליקציה המותקנת, כך שהיא עשויה להיות כבר מטופלת</string>
     <string name="home_unverified">לא מאומת</string>
@@ -320,10 +327,15 @@
     <string name="home_download_instructions_link_copied">הקישור הועתק</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">בחר את ה-APK של %s</string>
+    <string name="home_file_picker_prompt_where">דפדפנים שומרים זאת בדרך כלל בתיקיית ההורדות</string>
     <string name="home_file_picker_prompt_open_apk">פתח קובץ APK</string>
     <string name="home_recommended_version">גרסה מומלצת</string>
     <string name="home_selected_version">גרסה נבחרת</string>
     <string name="home_select_apk_title">בחר APK</string>
+    <string name="home_select_apk_description">"תיקונים אוניברסליים עובדים עם כל אפליקציה
+
+בחר מאיפה לקחת את ה-APK שלה"</string>
     <string name="home_use_installed_app">השתמש באפליקציה מותקנת</string>
     <string name="home_use_installed_app_description">בחר אפליקציה שכבר נמצאת במכשיר זה</string>
     <string name="home_open_apk_file_description">בחר קובץ APK, APKM, APKS או XAPK מהאחסון</string>
@@ -350,6 +362,7 @@
     <string name="expert_mode_restore_saved_done">שחזור הבחירה השמורה הסתיים</string>
     <string name="expert_mode_copy_from_bundle_no_patches">לא נמצאו התאמות מדבקות בחבילה זו</string>
     <string name="expert_mode_no_results">לא נמצאו תיקונים</string>
+    <string name="expert_mode_selected_only">תיקונים נבחרים בלבד</string>
     <string name="expert_mode_selected_only_on">מציג רק טלאים נבחרים</string>
     <string name="expert_mode_selected_only_off">מציג את כל הטלאים</string>
     <string name="expert_mode_universal_patches">עדכונים אוניברסליים</string>
@@ -358,6 +371,7 @@
     <string name="expert_mode_patch_required_by_installer">נדרש עבור יעד ההתקנה הנבחר</string>
     <string name="expert_mode_patch_unavailable_for_installer">לא זמין עבור יעד ההתקנה הנבחר</string>
     <string name="expert_mode_multiple_sources_warning_title">נבחרו מקורות ציורים מרובים</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">תיקונים ממקורות שונים אינם מיועדים לעבוד יחד ועלולים להתנגש או לשבור את האפליקציה</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">APK לא מאומת</string>
     <string name="home_invalid_signature_message">ה-APK שבחרת עבור &lt;b&gt;%s&lt;/b&gt; אינו תואם לתעודת החתימה הצפויה. ייתכן שהוא שונה או ממקור לא מהימן</string>
@@ -510,6 +524,8 @@
     <string name="shortcut_check_updates_long">בדוק עדכוני טלאים</string>
     <string name="shortcut_patch_app">טלא %s</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">להסיר את האפליקציה הזו?</string>
+    <string name="home_app_info_uninstall_removes_data">האפליקציה והנתונים שלה מוסרים ממכשיר זה</string>
     <string name="batch_uninstall_confirm_body">האפליקציות שנבחרו יוסרו מהמכשיר שלך לצמיתות</string>
     <string name="home_app_info_remove_app_warning">זוהי תהליך מחיקה קבוע:</string>
     <string name="home_app_info_delete_item_database">עדכון בסיס נתונים</string>
@@ -674,7 +690,10 @@
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">התיקון מתבצע…</string>
     <string name="patcher_notification_text">הקש כדי לחזור למתקן</string>
+    <string name="patcher_stop_title">להפסיק את התיקון?</string>
+    <string name="patcher_stop_discards">ההתקדמות עד כה תימחק ושום דבר לא יותקן</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">המשך בתיקון</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">ממפים את האפליקציה שלך למשהו מדהים… 🏆</string>
     <string name="patcher_message_2">מלמדים אפליקציות ישנות טריקים חדשים… 🎩</string>
@@ -857,6 +876,7 @@
     <string name="settings_appearance_app_icon_mark_black">שחור</string>
     <string name="settings_appearance_app_icon_change_dialog_title">שנה את סמל האפליקציה? </string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe מפעיל מחדש כדי לעבור ל-&lt;b&gt;%s&lt;/b&gt;</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">שנה סמל</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1225,6 +1245,19 @@ drawable-xxhdpi: 387x144 פיקסלים
     <string name="settings_system_selected_patches_section">תיקונים נבחרים</string>
     <string name="settings_system_no_patches_or_options">אין תיקונים או אפשרויות שמורות</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">בחירות</string>
+    <string name="selection_panel_copy_into">העתק אל %s</string>
+    <string name="selection_sets_title">סטים</string>
+    <string name="selection_set_name">שם הסט</string>
+    <string name="selection_set_save">שמור כסט</string>
+    <string name="selection_set_replace">החלף סט</string>
+    <string name="selection_set_saved">נשמר כ-%s</string>
+    <string name="selection_set_applied">הוחלף ל-%s</string>
+    <string name="selection_set_deleted">%s נמחק</string>
+    <string name="selection_set_renamed">שונה ל-%s</string>
+    <string name="selection_set_rename_title">שנה שם של סט</string>
+    <string name="selection_set_delete_title">מחק סט?</string>
+    <string name="selection_set_delete_message">פעולה זו תמחק לצמיתות את הסט %s</string>
     <string name="copy_selection_empty">אין בחירות שמורות אחרות להעתקה מהן</string>
     <string name="copy_selection_available_format">%1$s מתוך %2$s זמינים</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1246,7 +1279,10 @@ drawable-xxhdpi: 387x144 פיקסלים
     <string name="file_picker_internal_storage">אחסון פנימי</string>
     <string name="file_picker_sd_card">כרטיס SD</string>
     <string name="file_picker_root">שורש (/)</string>
+    <string name="file_picker_storage_access_unavailable">במכשיר זה אין מסך המאפשר גישה לכל הקבצים. אפשרו זאת דרך ADB באמצעות: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">אחסון</string>
+    <string name="file_saver_downloads_failed">לא ניתן היה ליצור את הקובץ בתיקיית ההורדות</string>
+    <string name="file_saver_saving_to_downloads">במכשיר זה אין מסך שמירה, לכן הקובץ נשמר בתיקיית ההורדות כ-%1$s</string>
     <string name="file_picker_sort_name_asc">שם (A–Z)</string>
     <string name="file_picker_sort_name_desc">שם (Z–A)</string>
     <string name="file_picker_sort_size_desc">גודל (מהגדול לקטן)</string>
@@ -1360,6 +1396,7 @@ drawable-xxhdpi: 387x144 פיקסלים
     <string name="accessibility_app_moved_announcement">%1$s הועבר למקום %2$s מתוך %3$s</string>
     <string name="accessibility_scroll_to_top">גלול אל ראש הרשימה</string>
     <string name="rename">שנה שם</string>
+    <string name="more_options">אפשרויות נוספות</string>
     <string name="import_">ייבוא</string>
     <string name="export">ייצוא</string>
     <string name="copy">העתק</string>
@@ -1404,6 +1441,7 @@ drawable-xxhdpi: 387x144 פיקסלים
     <string name="show_all">הצג את כולם</string>
     <string name="ignore">התעלם</string>
     <string name="stop_ignoring">הפסק להתעלם</string>
+    <string name="stop">עצור</string>
     <string name="logs">יומן</string>
     <string name="sources">מקורות</string>
     <string name="installing_ellipsis">מתקין…</string>

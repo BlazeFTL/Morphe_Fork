@@ -99,7 +99,9 @@
     <string name="home_category_move_to">Přesunout do kategorie</string>
     <string name="home_category_move_selected_title">Přesunout vybrané aplikace</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">Smazat %s?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">Její aplikace se přesunou zpět do &lt;b&gt;%s&lt;/b&gt;</string>
     <string name="home_category_actions_unavailable">Pro tuto kategorii nejsou k dispozici žádné akce</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Kterou aplikaci chcete záplatovat?</string>
@@ -262,12 +264,15 @@
     <string name="sources_patch_expert_badge">Expert</string>
     <string name="sources_patch_expert_badge_tooltip">Povolte Expert režim v Nastavení, abyste mohli tuto záplatu ručně přidat</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">Potřebujete pomoct s nalezením APK?</string>
     <string name="home_apk_availability_dialog_simple">Pro záplatu &lt;b&gt;%s&lt;/b&gt; je potřeba nezáplatovaná APK verze:</string>
     <string name="home_apk_availability_dialog_expert">Pro záplatu &lt;b&gt;%s&lt;/b&gt; je potřeba některá nezáplatovaná APK z verzí:</string>
     <string name="home_apk_availability_recommended_label">Doporučené</string>
     <string name="home_apk_availability_unpatched_label">Nezáplatované</string>
     <string name="home_apk_availability_incompatible_label">Nekompatibilní</string>
     <string name="home_apk_availability_installed_version">Nainstalováno v tomto zařízení: %s</string>
+    <string name="home_apk_availability_find">Ano, pomozte mi najít APK</string>
+    <string name="home_apk_availability_have">Ne, už ho mám</string>
     <string name="home_apk_helper_download">Použít pomocnou aplikaci</string>
     <string name="home_apk_helper_untrusted">Aplikace helper je nainstalována, ale ještě není důvěryhodná, takže není zde nabízena</string>
     <string name="home_apk_helper_untrusted_action">Zkontrolovat assistenty</string>
@@ -283,6 +288,8 @@
     <string name="home_apk_helper_wrong_package">Pomocná aplikace vrátila jinou aplikaci, než která je patchovaná</string>
     <string name="home_apk_helper_installed_unavailable">Morphe nemohl použít nainstalovanou aplikaci</string>
     <string name="home_apk_helper_installed_incompatible">Nainstalovanou verzi nelze patchovat</string>
+    <string name="home_apk_use_saved_copy">Použít uloženou kopii</string>
+    <string name="home_apk_use_installed_app">Použít nainstalovanou aplikaci</string>
     <string name="home_apk_use_saved_unsupported">Tyto záplaty nepodporují tuto uloženou kopii. Při patchování budete požádáni o potvrzení, nebo si vyberte jiný APK</string>
     <string name="home_apk_use_installed_unverified">Nepodařilo se ověřit podpis nainstalované aplikace, takže může být již opravená</string>
     <string name="home_unverified">Neověřené</string>
@@ -319,10 +326,15 @@
     <string name="home_download_instructions_link_copied">Odkaz zkopírován</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">Vyberte APK %s</string>
+    <string name="home_file_picker_prompt_where">Prohlížeče ji obvykle ukládají do složky Stažené soubory</string>
     <string name="home_file_picker_prompt_open_apk">Otevřít APK soubor</string>
     <string name="home_recommended_version">Doporučená verze</string>
     <string name="home_selected_version">Vybraná verze</string>
     <string name="home_select_apk_title">Vybrat APK</string>
+    <string name="home_select_apk_description">"Univerzální záplaty fungují s jakoukoli aplikací
+
+Vyberte, odkud vzít její APK"</string>
     <string name="home_use_installed_app">Použít nainstalovanou aplikaci</string>
     <string name="home_use_installed_app_description">Vyberte aplikaci, která je již v tomto zařízení</string>
     <string name="home_open_apk_file_description">Vyberte soubor APK, APKM, APKS nebo XAPK z úložiště</string>
@@ -348,6 +360,7 @@
     <string name="expert_mode_restore_saved_done">Obnovená uložená volba</string>
     <string name="expert_mode_copy_from_bundle_no_patches">V tomto balíčku nebyly nalezeny žádné odpovídající záplaty</string>
     <string name="expert_mode_no_results">Nebyly nalezeny žádné záplaty</string>
+    <string name="expert_mode_selected_only">Pouze vybrané záplaty</string>
     <string name="expert_mode_selected_only_on">Zobrazují se pouze vybrané záplaty</string>
     <string name="expert_mode_selected_only_off">Zobrazují se všechny záplaty</string>
     <string name="expert_mode_universal_patches">Univerzální záplaty</string>
@@ -356,6 +369,7 @@
     <string name="expert_mode_patch_required_by_installer">Vyžadováno pro vybraný cíl instalace</string>
     <string name="expert_mode_patch_unavailable_for_installer">Není k dispozici pro vybraný cíl instalace</string>
     <string name="expert_mode_multiple_sources_warning_title">Vybráno více zdrojů záplat</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">Patche z různých zdrojů nejsou navrženy tak, aby spolu fungovaly, a mohou do sebe zasahovat nebo aplikaci poškodit</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Neověřené APK</string>
     <string name="home_invalid_signature_message">APK, který jste vybrali pro &lt;b&gt;%s&lt;/b&gt;, neodpovídá očekávanému podpisovému certifikátu. Může být upravený nebo z nedůvěryhodného zdroje</string>
@@ -508,6 +522,8 @@ Pro nejlepší výsledky doporučujeme záplatovat &lt;b&gt;úplný APK&lt;/b&gt
     <string name="shortcut_check_updates_long">Zkontrolovat aktualizace záplat</string>
     <string name="shortcut_patch_app">Záplatovat %s</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">Odinstalovat tuto aplikaci?</string>
+    <string name="home_app_info_uninstall_removes_data">Aplikace a její data budou z tohoto zařízení odstraněny</string>
     <string name="batch_uninstall_confirm_body">Vybrané aplikace budou trvale odstraněny z vašeho zařízení</string>
     <string name="home_app_info_remove_app_warning">Tím trvale smažete:</string>
     <string name="home_app_info_delete_item_database">Záznam v databázi</string>
@@ -672,7 +688,10 @@ Odinstalace trvale smaže všechna data aplikace"</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Záplatování probíhá…</string>
     <string name="patcher_notification_text">Klepněte pro návrat k patcheru</string>
+    <string name="patcher_stop_title">Zastavit patchování?</string>
+    <string name="patcher_stop_discards">Dosavadní průběh bude zahozen a nic nebude nainstalováno</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Pokračovat v patchování</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Morphuji vaši aplikaci v něco úžasného… 🏆</string>
     <string name="patcher_message_2">Učím staré aplikace novým kouskům… 🐕</string>
@@ -855,6 +874,7 @@ Odinstalace trvale smaže všechna data aplikace"</string>
     <string name="settings_appearance_app_icon_mark_black">Černá</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Změnit ikonu aplikace?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe se restartuje, aby přešlo na &lt;b&gt;%s&lt;/b&gt;</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Změnit ikonu</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1213,6 +1233,19 @@ Podrobnosti: %2$s"</string>
     <string name="settings_system_selected_patches_section">Vybrané záplaty</string>
     <string name="settings_system_no_patches_or_options">Žádné uložené záplaty nebo nastavení</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Výběry</string>
+    <string name="selection_panel_copy_into">Kopírovat do %s</string>
+    <string name="selection_sets_title">Sady</string>
+    <string name="selection_set_name">Název sady</string>
+    <string name="selection_set_save">Uložit jako sadu</string>
+    <string name="selection_set_replace">Nahradit sadu</string>
+    <string name="selection_set_saved">Uloženo jako %s</string>
+    <string name="selection_set_applied">Přepnuto na %s</string>
+    <string name="selection_set_deleted">%s smazáno</string>
+    <string name="selection_set_renamed">Přejmenováno na %s</string>
+    <string name="selection_set_rename_title">Přejmenovat sadu</string>
+    <string name="selection_set_delete_title">Smazat sadu?</string>
+    <string name="selection_set_delete_message">Tímto bude sada %s trvale smazána</string>
     <string name="copy_selection_empty">Není k dispozici žádný další uložený výběr ke kopírování</string>
     <string name="copy_selection_available_format">%1$s z %2$s dostupných</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1234,7 +1267,10 @@ Podrobnosti: %2$s"</string>
     <string name="file_picker_internal_storage">Interní úložiště</string>
     <string name="file_picker_sd_card">SD karta</string>
     <string name="file_picker_root">Kořeď (/)</string>
+    <string name="file_picker_storage_access_unavailable">Toto zařízení nemá obrazovku, která by umožnila přístup ke všem souborům. Povolte jej přes ADB pomocí: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Úložiště</string>
+    <string name="file_saver_downloads_failed">Nepodařilo se vytvořit soubor ve složce Stahované soubory</string>
+    <string name="file_saver_saving_to_downloads">Toto zařízení nemá obrazovku pro ukládání, soubor bude tedy uložen do složky Stahované soubory jako %1$s</string>
     <string name="file_picker_sort_name_asc">Název (A–Z)</string>
     <string name="file_picker_sort_name_desc">Název (Z–A)</string>
     <string name="file_picker_sort_size_desc">Velikost (od největší)</string>
@@ -1348,6 +1384,7 @@ Podrobnosti: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s bylo přesunuto na pozici %2$s z %3$s</string>
     <string name="accessibility_scroll_to_top">Přejít na začátek seznamu</string>
     <string name="rename">Přejmenovat</string>
+    <string name="more_options">Více možností</string>
     <string name="import_">Importovat</string>
     <string name="export">Exportovat</string>
     <string name="copy">Kopírovat</string>
@@ -1392,6 +1429,7 @@ Podrobnosti: %2$s"</string>
     <string name="show_all">Zobrazit vše</string>
     <string name="ignore">Ignorovat</string>
     <string name="stop_ignoring">Přestat ignorovat</string>
+    <string name="stop">Zastavit</string>
     <string name="logs">Protokoly</string>
     <string name="sources">Zdroje</string>
     <string name="installing_ellipsis">Instaluje se…</string>

@@ -99,7 +99,9 @@
     <string name="home_category_move_to">Premesti u kategoriju</string>
     <string name="home_category_move_selected_title">Premesti izabrane aplikacije</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">Izbriši %s?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">Njegove aplikacije se vraćaju u &lt;b&gt;%s&lt;/b&gt;</string>
     <string name="home_category_actions_unavailable">Akcije nisu dostupne za ovu kategoriju</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Koju aplikaciju želite da zakrpite?</string>
@@ -242,6 +244,7 @@
     <string name="sources_dialog_url_invalid">URL mora da pokazuje na GitHub/GitLab repozitorijum ili .json fajl</string>
     <string name="sources_dialog_preinstalled">Preinstalirano</string>
     <string name="sources_dialog_community">Zakrpe zajednice</string>
+    <string name="sources_dialog_choose_apps">Izaberite aplikacije</string>
     <string name="sources_dialog_choose_apps_description">Izaberite koje od njegovih aplikacija da zadržite nakon što se izvor učita.</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <string name="sources_dialog_community_notice_title">Izvori zakrpa trećih strana</string>
@@ -261,12 +264,15 @@
     <string name="sources_patch_expert_badge">Експерт</string>
     <string name="sources_patch_expert_badge_tooltip">Омогућите Експерт режим у Подешавањима да бисте ручно укључили овај патч</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">Potrebna pomoć pri pronalaženju APK-a?</string>
     <string name="home_apk_availability_dialog_simple">Da biste patchovali &lt;b&gt;%s&lt;/b&gt;, potrebna je nepatirana APK verzija:</string>
     <string name="home_apk_availability_dialog_expert">Da bi popravili &lt;b&gt;%s&lt;/b&gt;, potrebno je nepokvarenog APK verzija:</string>
     <string name="home_apk_availability_recommended_label">Preporučeno</string>
     <string name="home_apk_availability_unpatched_label">Neopterećeno</string>
     <string name="home_apk_availability_incompatible_label">Nekompatibilan</string>
     <string name="home_apk_availability_installed_version">Instalirano na ovom uređaju: %s</string>
+    <string name="home_apk_availability_find">Da, pomozi mi da ga pronađem</string>
+    <string name="home_apk_availability_have">Ne, već ga imam</string>
     <string name="home_apk_helper_download">Koristite pomoćnu aplikaciju</string>
     <string name="home_apk_helper_untrusted">Aplikacija za pomoć je instalirana, ali još uvek nije poverljiva, pa se ne nudi ovde</string>
     <string name="home_apk_helper_untrusted_action">Pregledajte pomoćne aplikacije</string>
@@ -282,6 +288,8 @@
     <string name="home_apk_helper_wrong_package">Pomoćna aplikacija je vratila drugu aplikaciju od one koja se zakrpljuje</string>
     <string name="home_apk_helper_installed_unavailable">Morphe nije mogao da koristi instaliranu aplikaciju</string>
     <string name="home_apk_helper_installed_incompatible">Instalirana verzija ne može da se zakrpi</string>
+    <string name="home_apk_use_saved_copy">Koristi sačuvanu kopiju</string>
+    <string name="home_apk_use_installed_app">Koristi instaliranu aplikaciju</string>
     <string name="home_apk_use_saved_unsupported">Zakrpe ne podržavaju ovu sačuvanu kopiju. Primena zakrpe će tražiti da potvrdiš ili izaberi drugi APK.</string>
     <string name="home_apk_use_installed_unverified">Nije bilo moguće da se potvrdi potpis instalirane aplikacije, tako da je možda već ispravljena</string>
     <string name="home_unverified">Neverifikovano</string>
@@ -318,10 +326,15 @@
     <string name="home_download_instructions_link_copied">Link kopiran</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">Izaberite %s APK</string>
+    <string name="home_file_picker_prompt_where">Pretraživači ga obično čuvaju u folder Preuzimanja</string>
     <string name="home_file_picker_prompt_open_apk">Otvori APK datoteku</string>
     <string name="home_recommended_version">Preporučena verzija</string>
     <string name="home_selected_version">Izabrana verzija</string>
     <string name="home_select_apk_title">Izaberi APK</string>
+    <string name="home_select_apk_description">"Univerzalni zakrpe rade sa bilo kojom aplikacijom
+
+Izaberite odakle da uzme njen APK"</string>
     <string name="home_use_installed_app">Koristi instaliranu aplikaciju</string>
     <string name="home_use_installed_app_description">Izaberite aplikaciju koja je već na ovom uređaju</string>
     <string name="home_open_apk_file_description">Izaberite APK, APKM, APKS ili XAPK datoteku iz memorije</string>
@@ -347,6 +360,7 @@
     <string name="expert_mode_restore_saved_done">Vraćena sačuvana selekcija</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nema odgovarajućih zakrpa u ovom paketu</string>
     <string name="expert_mode_no_results">Nema pronađenih zakrpa</string>
+    <string name="expert_mode_selected_only">Samo izabrani zakrpe</string>
     <string name="expert_mode_selected_only_on">Prikazuju se samo odabrane zakrpe</string>
     <string name="expert_mode_selected_only_off">Prikazuju se sve zakrpe</string>
     <string name="expert_mode_universal_patches">Univerzalne zakrpe </string>
@@ -355,6 +369,7 @@
     <string name="expert_mode_patch_required_by_installer">Potrebno za izabrani cilj instalacije</string>
     <string name="expert_mode_patch_unavailable_for_installer">Nije dostupno za izabrani cilj instalacije</string>
     <string name="expert_mode_multiple_sources_warning_title">Izabrali ste patch-ove izvišnje izvora</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">Zakrpe iz različitih izvora nisu napravljene da rade zajedno i mogu izazvati konflikt ili pokvariti aplikaciju</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Nepoveren APK</string>
     <string name="home_invalid_signature_message">APK dat ste izabrali za &lt;b&gt;%s&lt;/b&gt; ne odgovara očekivanom sertifikatu za potpisivanje. Može biti izmenjen ili sa nepouzdanog izvora</string>
@@ -507,6 +522,8 @@
     <string name="shortcut_check_updates_long">Proveri da li ima ažuriranja za zakrpe</string>
     <string name="shortcut_patch_app">Zakrpi %s</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">Deinstalirati ovu aplikaciju?</string>
+    <string name="home_app_info_uninstall_removes_data">Aplikacija i njeni podaci biće uklonjeni sa ovog uređaja</string>
     <string name="batch_uninstall_confirm_body">Izabrane aplikacije biće trajno uklonjene sa tvog ureāaja</string>
     <string name="home_app_info_remove_app_warning">Ovo će trajno obrisati:</string>
     <string name="home_app_info_delete_item_database">Unos u bazu podataka</string>
@@ -671,7 +688,10 @@ Deinstalacija će trajno obrisati sve podatke aplikacije"</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Zakrpljivanje je u toku…</string>
     <string name="patcher_notification_text">Dodirnite za povratak na zakrpu</string>
+    <string name="patcher_stop_title">Prekinuti zakrpljivanje?</string>
+    <string name="patcher_stop_discards">Dosadašnji napredak će biti odbačen i ništa neće biti instalirano</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Nastavi zakrpljivanje</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Transformišemo vašu aplikaciju u nešto sjajno… 🏆</string>
     <string name="patcher_message_2">Učenje starih aplikacija novim trikovima… 🎩</string>
@@ -813,15 +833,21 @@ Deinstalacija će trajno obrisati sve podatke aplikacije"</string>
     <string name="settings_appearance_repatch_notice_description">Prikazuje baner kada se zakomplicirane aplikacije mogu ponovo zakomplicirati</string>
     <string name="settings_appearance_more_apps_card">Kartica \"Više aplikacija\"</string>
     <string name="settings_appearance_more_apps_card_description">Prikazuje karticu ispod aplikacija koja vodi do zakrpa zajednice</string>
+    <string name="settings_appearance_app_card_colors">Boje kartica</string>
     <string name="settings_appearance_app_card_colors_default">Podrazumevana</string>
+    <string name="settings_appearance_app_card_colors_default_description">Dodelite svakoj aplikaciji i izvoru sopstvenu boju</string>
     <string name="settings_appearance_app_card_colors_accent">Akcent</string>
+    <string name="settings_appearance_app_card_colors_accent_description">Koristite akcentnu boju aplikacije za kartice aplikacija i izvora</string>
     <string name="settings_appearance_app_card_colors_gradient">Gradient</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">Koristite jedan prilagođeni gradijent za kartice aplikacija, stopljen u jednu boju za kartice izvora</string>
     <string name="settings_appearance_app_card_colors_solid">Puno</string>
+    <string name="settings_appearance_app_card_colors_solid_description">Koristite jednu prilagođenu boju za kartice aplikacija i izvora</string>
     <string name="settings_appearance_app_card_colors_start">Početna boja</string>
     <string name="settings_appearance_app_card_colors_middle">Srednja boja</string>
     <string name="settings_appearance_app_card_colors_end">Završna boja</string>
     <string name="settings_appearance_app_card_colors_solid_color">Puna boja</string>
     <string name="settings_appearance_app_card_colors_bundle">Boja paketa aplikacije</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">Ovde koristite sopstvenu boju svake aplikacije ili izvora, automatski nijansiranu kako bi odgovarala</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
     <string name="settings_appearance_app_icon_selector_title">Ikonica aplikacije</string>
     <string name="settings_appearance_app_icon_selector_description">Kako Morphe izgleda na vašem početnom ekranu i u fioci aplikacija</string>
@@ -848,6 +874,7 @@ Deinstalacija će trajno obrisati sve podatke aplikacije"</string>
     <string name="settings_appearance_app_icon_mark_black">Crna</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Promeni ikonu aplikacije? </string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe se ponovo pokreće kako bi prešao na &lt;b&gt;%s&lt;/b&gt;</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Promeni ikonu</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1190,6 +1217,19 @@ Detalji: %2$s"</string>
     <string name="settings_system_selected_patches_section">Izabrane zakrpe</string>
     <string name="settings_system_no_patches_or_options">Nema sačuvanih patch-ova ili opcija</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Selekcije</string>
+    <string name="selection_panel_copy_into">Kopiraj u %s</string>
+    <string name="selection_sets_title">Setovi</string>
+    <string name="selection_set_name">Naziv seta</string>
+    <string name="selection_set_save">Sačuvaj kao set</string>
+    <string name="selection_set_replace">Zameni set</string>
+    <string name="selection_set_saved">Sačuvano kao %s</string>
+    <string name="selection_set_applied">Prebačeno na %s</string>
+    <string name="selection_set_deleted">%s je obrisano</string>
+    <string name="selection_set_renamed">Preimenovano u %s</string>
+    <string name="selection_set_rename_title">Preimenuj skup</string>
+    <string name="selection_set_delete_title">Izbriši skup?</string>
+    <string name="selection_set_delete_message">Ovo trajno briše skup %s</string>
     <string name="copy_selection_empty">Nema drugih sačuvanih selekcija za kopiranje</string>
     <string name="copy_selection_available_format">%1$s od %2$s dostupno</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1211,7 +1251,10 @@ Detalji: %2$s"</string>
     <string name="file_picker_internal_storage">Interna memorija</string>
     <string name="file_picker_sd_card">SD kartica</string>
     <string name="file_picker_root">Koren (/)</string>
+    <string name="file_picker_storage_access_unavailable">Ovaj uređaj nema ekran koji omogućava pristup svim datotekama. Dozvolite pristup putem ADB-a pomoću: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Memorije</string>
+    <string name="file_saver_downloads_failed">Nije bilo moguće kreirati datoteku u folderu Downloads</string>
+    <string name="file_saver_saving_to_downloads">Ovaj uređaj nema ekran za čuvanje, pa se datoteka čuva u Downloads kao %1$s</string>
     <string name="file_picker_sort_name_asc">Naziv (A–Š)</string>
     <string name="file_picker_sort_name_desc">Naziv (Š–A)</string>
     <string name="file_picker_sort_size_desc">Veličina (od najveće)</string>
@@ -1325,6 +1368,7 @@ Detalji: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s je pomeren/a na poziciju %2$s od %3$s</string>
     <string name="accessibility_scroll_to_top">Skrolujte do vrha liste</string>
     <string name="rename">Preimenovanje</string>
+    <string name="more_options">Više opcija</string>
     <string name="import_">Uvoz</string>
     <string name="export">Izvezi</string>
     <string name="copy">Kopiraj</string>
@@ -1369,6 +1413,7 @@ Detalji: %2$s"</string>
     <string name="show_all">Prikaži sve</string>
     <string name="ignore">Ignoriši</string>
     <string name="stop_ignoring">Prestani da ignorišeš</string>
+    <string name="stop">Zaustavi</string>
     <string name="logs">Dnevnici</string>
     <string name="sources">Izvori</string>
     <string name="installing_ellipsis">Instaliranje…</string>

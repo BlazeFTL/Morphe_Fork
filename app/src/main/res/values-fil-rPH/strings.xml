@@ -99,7 +99,9 @@
     <string name="home_category_move_to">Ilipat sa kategorya</string>
     <string name="home_category_move_selected_title">Ilipat ang mga napiling app</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">Burahin ang %s?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">Ang mga app nito ay babalik sa &lt;b&gt;%s&lt;/b&gt;</string>
     <string name="home_category_actions_unavailable">Hindi magagamit ang mga aksyon para sa kategoryang ito</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Anong app ang gusto mong i-patch?</string>
@@ -262,12 +264,15 @@
     <string name="sources_patch_expert_badge">Eksperto</string>
     <string name="sources_patch_expert_badge_tooltip">I-enable ang Expert mode sa Settings upang isama ang patch na ito nang manu-mano</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">Kailangan ng tulong sa paghahanap ng APK?</string>
     <string name="home_apk_availability_dialog_simple">Upang ma-patch ang &lt;b&gt;%s&lt;/b&gt;, kailangan mo ng hindi pa napa-patch na APK na may bersyong:</string>
     <string name="home_apk_availability_dialog_expert">Upang ma-patch ang &lt;b&gt;%s&lt;/b&gt;, kailangan mo ng hindi pa napa-patch na APK na may mga bersyong:</string>
     <string name="home_apk_availability_recommended_label">Inirerekomenda</string>
     <string name="home_apk_availability_unpatched_label">Hindi na-patch</string>
     <string name="home_apk_availability_incompatible_label">Hindi tugma</string>
     <string name="home_apk_availability_installed_version">Naka-install sa device na ito: %s</string>
+    <string name="home_apk_availability_find">Oo, tulungan mo akong hanapin ito</string>
+    <string name="home_apk_availability_have">Hindi, mayroon na ako nito</string>
     <string name="home_apk_helper_download">Gumamit ng helper app</string>
     <string name="home_apk_helper_untrusted">May nakainstall na helper app ngunit hindi pa itinuturing, kaya hindi ito inaalok dito</string>
     <string name="home_apk_helper_untrusted_action">Tingnan ang mga helper</string>
@@ -283,6 +288,8 @@
     <string name="home_apk_helper_wrong_package">Ang helper app ay nagbalik ng ibang app kaysa sa pinapa-patch</string>
     <string name="home_apk_helper_installed_unavailable">Hindi magamit ni Morphe ang naka-install na app</string>
     <string name="home_apk_helper_installed_incompatible">Ang naka-install na bersyon ay hindi maaaring i-patch</string>
+    <string name="home_apk_use_saved_copy">Gamitin ang naka-save na kopya</string>
+    <string name="home_apk_use_installed_app">Gamitin ang naka-install na app</string>
     <string name="home_apk_use_saved_unsupported">Ang mga patch ay hindi sumusuporta sa naka-save na kopyang ito. Ang pag-patch dito ay hihingi sa iyo ng kumpirmasyon, o pumili ng ibang APK.</string>
     <string name="home_apk_use_installed_unverified">Hindi mapatunayan ang lagda ng naka-install na app, kaya maaaring na-patch na ito</string>
     <string name="home_unverified">Hindi na-verify</string>
@@ -319,10 +326,15 @@
     <string name="home_download_instructions_link_copied">Nakopya ang link</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">Piliin ang %s APK</string>
+    <string name="home_file_picker_prompt_where">Kadalasan itong sine-save ng mga browser sa Download folder</string>
     <string name="home_file_picker_prompt_open_apk">Buksan ang APK file</string>
     <string name="home_recommended_version">Inirerekomendang bersyon</string>
     <string name="home_selected_version">Piniling bersyon</string>
     <string name="home_select_apk_title">Piliin ang APK</string>
+    <string name="home_select_apk_description">"Gumagana ang mga universal patch sa kahit anong app
+
+Pumili kung saan kukunin ang APK nito"</string>
     <string name="home_use_installed_app">Gamitin ang naka-install na app</string>
     <string name="home_use_installed_app_description">Pumili ng app na nasa device na ito na</string>
     <string name="home_open_apk_file_description">Pumili ng APK, APKM, APKS o XAPK file mula sa storage</string>
@@ -349,6 +361,7 @@
     <string name="expert_mode_restore_saved_done">Naibalik ang nakasave na pagpili</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Walang katugmang mga patch sa bundle na ito</string>
     <string name="expert_mode_no_results">Walang nakita na patch</string>
+    <string name="expert_mode_selected_only">Piniling mga patch lamang</string>
     <string name="expert_mode_selected_only_on">Ipinapakita lamang ang mga napiling patch</string>
     <string name="expert_mode_selected_only_off">Ipinapakita ang lahat ng mga patch</string>
     <string name="expert_mode_universal_patches">Mga unibersal na patch</string>
@@ -357,6 +370,7 @@
     <string name="expert_mode_patch_required_by_installer">Kinakailangan para sa napiling target ng pag-install</string>
     <string name="expert_mode_patch_unavailable_for_installer">Hindi magagamit para sa napiling target ng pag-install</string>
     <string name="expert_mode_multiple_sources_warning_title">Maramihang mga mapagkukunang patch ang napili</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">Ang mga patch mula sa iba\'t ibang source ay hindi ginawa para gumana nang magkasama at maaaring magkaroon ng conflict o makasira sa app</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Hindi beripikadong APK</string>
     <string name="home_invalid_signature_message">Ang APK na pinili mo para sa &lt;b&gt;%s&lt;/b&gt; ay hindi tumutugma sa inaasahang certificate ng paglagda. Maaaring ito ay binago o mula sa hindi pinagkakatiwalaang pinagmulan</string>
@@ -509,6 +523,8 @@ Para sa pinakamahusay na resulta, nirerekomenda ng app na ito na i-patch ang isa
     <string name="shortcut_check_updates_long">Suriin para sa mga patch update</string>
     <string name="shortcut_patch_app">I-patch ang %s</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">I-uninstall ang app na ito?</string>
+    <string name="home_app_info_uninstall_removes_data">Ang app at ang mga data nito ay tatanggalin mula sa device na ito</string>
     <string name="batch_uninstall_confirm_body">Ang mga piling app ay permanenteng tatanggalin sa iyong device</string>
     <string name="home_app_info_remove_app_warning">Permanenteng buburahin ang:</string>
     <string name="home_app_info_delete_item_database">Database entry</string>
@@ -673,7 +689,10 @@ Ang pag-uninstall ay permanenteng bubura sa lahat ng data ng app."</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Pinoproseso ang pagpa-patch…</string>
     <string name="patcher_notification_text">Pindutin upang bumalik sa patcher</string>
+    <string name="patcher_stop_title">Ihinto ang pag-patch?</string>
+    <string name="patcher_stop_discards">Ang pag-unlad hanggang ngayon ay itatapon at walang mai-i-install</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Ituloy ang pag-patch</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Minomorph ang iyong aplikasyon sa isang kahanga-hangang bagay… 🏆</string>
     <string name="patcher_message_2">Tinuturuan ang mga lumang aplikasyon ng mga bagong salamangka… 🎩</string>
@@ -856,6 +875,7 @@ Ang pag-uninstall ay permanenteng bubura sa lahat ng data ng app."</string>
     <string name="settings_appearance_app_icon_mark_black">Itim</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Baguhin ang icon ng aplikasyon?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Magre-restart ang Morphe para lumipat sa &lt;b&gt;%s&lt;/b&gt;</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Baguhin ang icon</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1214,6 +1234,19 @@ Mga Detalye: %2$s"</string>
     <string name="settings_system_selected_patches_section">Piniling mga patch</string>
     <string name="settings_system_no_patches_or_options">Walang naka-save na mga patch o pagpipilian</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Mga Pinili</string>
+    <string name="selection_panel_copy_into">Kopyahin sa %s</string>
+    <string name="selection_sets_title">Mga Set</string>
+    <string name="selection_set_name">Pangalan ng set</string>
+    <string name="selection_set_save">I-save bilang set</string>
+    <string name="selection_set_replace">Palitan ang set</string>
+    <string name="selection_set_saved">Na-save bilang %s</string>
+    <string name="selection_set_applied">Lumipat sa %s</string>
+    <string name="selection_set_deleted">Binura ang %s</string>
+    <string name="selection_set_renamed">Pinangalanang muli bilang %s</string>
+    <string name="selection_set_rename_title">Palitan ang pangalan ng set</string>
+    <string name="selection_set_delete_title">Burahin ang set?</string>
+    <string name="selection_set_delete_message">Permanenteng buburahin nito ang set na %s</string>
     <string name="copy_selection_empty">Walang iba pang mga pagpiling naka-save para kopyahin</string>
     <string name="copy_selection_available_format">%1$s sa %2$s ang magagamit</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1235,7 +1268,10 @@ Mga Detalye: %2$s"</string>
     <string name="file_picker_internal_storage">Imbakan ng telepono</string>
     <string name="file_picker_sd_card">SD card</string>
     <string name="file_picker_root">Root (/)</string>
+    <string name="file_picker_storage_access_unavailable">Ang device na ito ay walang screen upang payagan ang access sa lahat ng file. Payagan ito sa pamamagitan ng ADB gamit ang: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Mga imbakan</string>
+    <string name="file_saver_downloads_failed">Hindi makagawa ng file sa Downloads</string>
+    <string name="file_saver_saving_to_downloads">Ang device na ito ay walang save screen, kaya ang file ay pupunta sa Downloads bilang %1$s</string>
     <string name="file_picker_sort_name_asc">Pangalan (A–Z)</string>
     <string name="file_picker_sort_name_desc">Pangalan (Z–A)</string>
     <string name="file_picker_sort_size_desc">Laki (pinakamalaki muna)</string>
@@ -1349,6 +1385,7 @@ Mga Detalye: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s ay inilipat sa posisyon %2$s ng %3$s</string>
     <string name="accessibility_scroll_to_top">Mag-scroll sa tuktok ng listahan</string>
     <string name="rename">Palitan</string>
+    <string name="more_options">Higit pang mga pagpipilian</string>
     <string name="import_">I-import</string>
     <string name="export">I-export</string>
     <string name="copy">Kopyahin</string>
@@ -1393,6 +1430,7 @@ Mga Detalye: %2$s"</string>
     <string name="show_all">Ipakita lahat</string>
     <string name="ignore">Huwag pansinin</string>
     <string name="stop_ignoring">Itigil ang pagwawalang-bahala</string>
+    <string name="stop">Itigil</string>
     <string name="logs">Mga log</string>
     <string name="sources">Mga mapagkukunan</string>
     <string name="installing_ellipsis">Ini-install…</string>

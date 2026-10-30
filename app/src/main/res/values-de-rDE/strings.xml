@@ -100,7 +100,9 @@ Diese App aus der vorhandenen Quelle hinzufügen?</string>
     <string name="home_category_move_to">In Kategorie verschieben</string>
     <string name="home_category_move_selected_title">Ausgewählte Apps verschieben</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">%s löschen?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">Die Apps werden zu &lt;b&gt;%s&lt;/b&gt; zurückverschoben</string>
     <string name="home_category_actions_unavailable">Keine Optionen für diese Kategorie verfügbar</string>
     <!-- Home Screen - Home Greetings -->
     <string name="home_greeting_1">Welche App möchten Sie patchen?</string>
@@ -263,12 +265,15 @@ Diese App aus der vorhandenen Quelle hinzufügen?</string>
     <string name="sources_patch_expert_badge">Experte</string>
     <string name="sources_patch_expert_badge_tooltip">Expertenmodus in den Einstellungen aktivieren, um diesen Patch manuell einzuschließen</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">Hilfe beim Finden der APK benötigt?</string>
     <string name="home_apk_availability_dialog_simple">Um &lt;b&gt;%s&lt;/b&gt; zu patchen, benötigst du die ungepatchte APK-Version:</string>
     <string name="home_apk_availability_dialog_expert">Um &lt;b&gt;%s&lt;/b&gt; zu patchen, benötigen Sie eine nicht gepatchte APK der Versionen:</string>
     <string name="home_apk_availability_recommended_label">Empfohlen</string>
     <string name="home_apk_availability_unpatched_label">Nicht gepatcht</string>
     <string name="home_apk_availability_incompatible_label">Inkompatibel</string>
     <string name="home_apk_availability_installed_version">Auf diesem Gerät installiert: %s</string>
+    <string name="home_apk_availability_find">Ja, hilf mir, sie zu finden</string>
+    <string name="home_apk_availability_have">Nein, ich habe sie bereits</string>
     <string name="home_apk_helper_download">Eine Hilfs-App verwenden</string>
     <string name="home_apk_helper_untrusted">Eine Hilfs-App ist installiert, wurde aber noch nicht vertraut, daher wird sie hier nicht angeboten</string>
     <string name="home_apk_helper_untrusted_action">Hilfs-Apps überprüfen</string>
@@ -284,6 +289,7 @@ Diese App aus der vorhandenen Quelle hinzufügen?</string>
     <string name="home_apk_helper_wrong_package">Die Hilfs-App hat eine andere App zurückgegeben als jene, die gepatcht wird</string>
     <string name="home_apk_helper_installed_unavailable">Morphe konnte die installierte App nicht verwenden</string>
     <string name="home_apk_helper_installed_incompatible">Die installierte Version kann nicht gepatcht werden</string>
+    <string name="home_apk_use_saved_copy">Gespeicherte Kopie verwenden</string>
     <string name="home_apk_use_installed_app">Installierte App verwenden</string>
     <string name="home_apk_use_saved_unsupported">Die Patches unterstützen diese gespeicherte Kopie nicht. Das Patchen wird dich zur Bestätigung auffordern, oder wähle eine andere APK</string>
     <string name="home_apk_use_installed_unverified">Die Signatur der installierten App konnte nicht verifiziert werden. Sie ist möglicherweise bereits gepatcht.</string>
@@ -321,10 +327,15 @@ Diese App aus der vorhandenen Quelle hinzufügen?</string>
     <string name="home_download_instructions_link_copied">Link kopiert</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">Wählen Sie die %s APK aus</string>
+    <string name="home_file_picker_prompt_where">Browser speichern diese normalerweise im Download-Ordner</string>
     <string name="home_file_picker_prompt_open_apk">APK-Datei öffnen</string>
     <string name="home_recommended_version">Empfohlene Version</string>
     <string name="home_selected_version">Ausgewählte Version</string>
     <string name="home_select_apk_title">APK auswählen</string>
+    <string name="home_select_apk_description">"Universelle Patches funktionieren mit jeder App
+
+Wähle aus, woher die APK bezogen werden soll"</string>
     <string name="home_use_installed_app">Installierte App verwenden</string>
     <string name="home_use_installed_app_description">Wähle eine App aus, die sich bereits auf diesem Gerät befindet</string>
     <string name="home_open_apk_file_description">Wähle eine APK-, APKM-, APKS- oder XAPK-Datei aus dem Speicher aus</string>
@@ -346,10 +357,12 @@ Diese App aus der vorhandenen Quelle hinzufügen?</string>
     <string name="expert_mode_universal_all_warning_message">Universelle Patches werden nicht gemeinsam getestet. Wenn sie alle auf einmal aktiviert werden, kann dies zu Konflikten, fehlgeschlagenen Patches oder Abstürzen führen.</string>
     <string name="expert_mode_reset_to_default">Empfohlene Patches aktivieren</string>
     <string name="expert_mode_reset_to_default_done">Empfohlene Patches angewendet</string>
+    <string name="expert_mode_selected_count">%1$s von %2$s ausgewählt</string>
     <string name="expert_mode_restore_saved">Gespeicherte Auswahl wiederherstellen</string>
     <string name="expert_mode_restore_saved_done">Gespeicherte Auswahl wiederhergestellt</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Keine übereinstimmenden Patches in diesem Bundle</string>
     <string name="expert_mode_no_results">Keine Patches gefunden</string>
+    <string name="expert_mode_selected_only">Nur ausgewählte Patches</string>
     <string name="expert_mode_selected_only_on">Nur ausgewählte Patches anzeigen</string>
     <string name="expert_mode_selected_only_off">Alle Patches anzeigen</string>
     <string name="expert_mode_universal_patches">Universelle Patches</string>
@@ -358,6 +371,7 @@ Diese App aus der vorhandenen Quelle hinzufügen?</string>
     <string name="expert_mode_patch_required_by_installer">Für das ausgewählte Installationsziel erforderlich</string>
     <string name="expert_mode_patch_unavailable_for_installer">Nicht verfügbar für das ausgewählte Installationsziel</string>
     <string name="expert_mode_multiple_sources_warning_title">Mehrere Patch-Quellen ausgewählt</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">Patches aus verschiedenen Quellen sind nicht dafür ausgelegt, zusammenzuarbeiten, und können zu Konflikten führen oder die App beschädigen</string>
     <!-- Home Screen - Home Sub-Dialogs -->
     <string name="home_invalid_signature_title">Unverifizierte APK</string>
     <string name="home_invalid_signature_message">Die ausgewählte APK für &lt;b&gt;%s&lt;/b&gt; passt nicht zu dem erwarteten Signaturzertifikat. Möglicherweise wurde sie modifiziert oder stammt aus einer nicht vertrauenswürdigen Quelle</string>
@@ -510,6 +524,8 @@ Für optimale Ergebnisse empfiehlt diese App, eine &lt;b&gt;vollständige APK&lt
     <string name="shortcut_check_updates_long">Nach Patch-Updates suchen</string>
     <string name="shortcut_patch_app">%s patchen</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">Diese App deinstallieren?</string>
+    <string name="home_app_info_uninstall_removes_data">Die App und ihre Daten werden von diesem Gerät entfernt</string>
     <string name="batch_uninstall_confirm_body">Die ausgewählten Apps werden dauerhaft von Ihrem Gerät entfernt.</string>
     <string name="home_app_info_remove_app_warning">Dies löscht dauerhaft:</string>
     <string name="home_app_info_delete_item_database">Datenbankeintrag</string>
@@ -675,7 +691,10 @@ Durch die Deinstallation werden alle App-Daten dauerhaft gelöscht"</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patch-Vorgang läuft…</string>
     <string name="patcher_notification_text">Zum Patcher zurückkehren</string>
+    <string name="patcher_stop_title">Patchen stoppen?</string>
+    <string name="patcher_stop_discards">Der bisherige Fortschritt wird verworfen und es wird nichts installiert</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">Weiter patchen</string>
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_1">Wir verwandeln Ihre App in etwas Großartiges… 🏆</string>
     <string name="patcher_message_2">Wir bringen alten Apps neue Tricks bei… 🎩</string>
@@ -858,6 +877,7 @@ Durch die Deinstallation werden alle App-Daten dauerhaft gelöscht"</string>
     <string name="settings_appearance_app_icon_mark_black">Schwarz</string>
     <string name="settings_appearance_app_icon_change_dialog_title">App-Icon ändern?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">Morphe startet neu, um zu &lt;b&gt;%s&lt;/b&gt; zu wechseln</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
     <string name="settings_appearance_app_icon_change_dialog_confirm">Icon ändern</string>
     <!-- Settings - Advanced Tab - Updates Section -->
@@ -1216,6 +1236,19 @@ Details: %2$s"</string>
     <string name="settings_system_selected_patches_section">Ausgewählte Patches</string>
     <string name="settings_system_no_patches_or_options">Keine Patches oder Optionen gespeichert</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Auswahlen</string>
+    <string name="selection_panel_copy_into">Kopieren nach %s</string>
+    <string name="selection_sets_title">Sets</string>
+    <string name="selection_set_name">Set-Name</string>
+    <string name="selection_set_save">Als Set speichern</string>
+    <string name="selection_set_replace">Set ersetzen</string>
+    <string name="selection_set_saved">Gespeichert als %s</string>
+    <string name="selection_set_applied">Gewechselt zu %s</string>
+    <string name="selection_set_deleted">%s gelöscht</string>
+    <string name="selection_set_renamed">Umbenannt in %s</string>
+    <string name="selection_set_rename_title">Set umbenennen</string>
+    <string name="selection_set_delete_title">Set löschen?</string>
+    <string name="selection_set_delete_message">Dies löscht das Set %s dauerhaft</string>
     <string name="copy_selection_empty">Es gibt keine weiteren gespeicherten Auswahlen zum Kopieren</string>
     <string name="copy_selection_available_format">%1$s von %2$s verfügbar</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1237,7 +1270,10 @@ Details: %2$s"</string>
     <string name="file_picker_internal_storage">Interner Speicher</string>
     <string name="file_picker_sd_card">SD-Karte</string>
     <string name="file_picker_root">Stammverzeichnis (/)</string>
+    <string name="file_picker_storage_access_unavailable">Dieses Gerät verfügt über keinen Bildschirm, um den Zugriff auf alle Dateien zu erlauben. Erlauben Sie dies über ADB mit: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Speicherorte</string>
+    <string name="file_saver_downloads_failed">Die Datei konnte nicht in Downloads erstellt werden</string>
+    <string name="file_saver_saving_to_downloads">Dieses Gerät verfügt über keinen Speicherbildschirm, daher wird die Datei als %1$s in Downloads gespeichert</string>
     <string name="file_picker_sort_name_asc">Name (A–Z)</string>
     <string name="file_picker_sort_name_desc">Name (Z–A)</string>
     <string name="file_picker_sort_size_desc">Größe (größte zuerst)</string>
@@ -1351,6 +1387,7 @@ Details: %2$s"</string>
     <string name="accessibility_app_moved_announcement">%1$s wurde an Position %2$s von %3$s verschoben</string>
     <string name="accessibility_scroll_to_top">Zum Anfang der Liste scrollen</string>
     <string name="rename">Umbenennen</string>
+    <string name="more_options">Weitere Optionen</string>
     <string name="import_">Importieren</string>
     <string name="export">Exportieren</string>
     <string name="copy">Kopieren</string>
@@ -1395,6 +1432,7 @@ Details: %2$s"</string>
     <string name="show_all">Alle anzeigen</string>
     <string name="ignore">Ignorieren</string>
     <string name="stop_ignoring">Nicht mehr ignorieren</string>
+    <string name="stop">Stoppen</string>
     <string name="logs">Protokolle</string>
     <string name="sources">Quellen</string>
     <string name="installing_ellipsis">Wird installiert…</string>

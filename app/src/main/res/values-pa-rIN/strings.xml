@@ -1,151 +1,1519 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Home Screen -->
+    <string name="home_other_apps">ਹੋਰ ਐਪਸ</string>
+    <string name="home_other_apps_action">ਹੋਰ ਐਪਸ ਚੁਣੋ</string>
+    <string name="home_not_patched_yet">ਅਜੇ ਪੈਚ ਨਹੀਂ ਕੀਤਾ ਗਿਆ</string>
+    <string name="home_unpatched_version_installed">ਬਿਨਾਂ ਪੈਚ ਵਾਲਾ ਵਰਜ਼ਨ ਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ ਹੈ</string>
+    <string name="home_unpatched_badge">ਪੈਚ ਨਹੀਂ ਕੀਤਾ ਗਿਆ</string>
+    <string name="home_no_patches_available">ਕੋਈ ਪੈਚ ਉਪਲਬਧ ਨਹੀਂ ਹਨ</string>
+    <string name="home_app_hide_title">ਇਸ ਐਪ ਨੂੰ ਲੁਕਾਓ?</string>
+    <string name="home_more_apps_title">ਹੋਰ ਐਪਸ</string>
+    <string name="home_more_apps_hide_title">ਇਸ ਕਾਰਡ ਨੂੰ ਛੁਪਾਉਣਾ ਹੈ?</string>
+    <string name="home_more_apps_hide_message">ਤੁਸੀਂ ਇਸਨੂੰ ਕਿਸੇ ਵੀ ਸਮੇਂ ਸੈਟਿੰਗਾਂ &gt; ਦਿੱਖ &gt; ਹੋਮ ਸਕ੍ਰੀਨ ਵਿੱਚ ਵਾਪਸ ਲਿਆ ਸਕਦੇ ਹੋ</string>
+    <string name="home_app_hide_message">ਇਹ ਐਪ ਹੋਮ ਸਕ੍ਰੀਨ ਤੋਂ ਲੁਕਾ ਦਿੱਤੀ ਜਾਵੇਗੀ। ਤੁਸੀਂ ਬਾਅਦ ਵਿੱਚ ਲੁਕਾਈਆਂ ਹੋਈਆਂ ਐਪਸ ਵਿੱਚੋਂ ਸੂਚੀ ਦੇ ਹੇਠਾਂ ਦਿੱਤੇ ਬਟਨ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਇਸਨੂੰ ਬਹਾਲ ਕਰ ਸਕਦੇ ਹੋ</string>
+    <string name="home_app_will_be_hidden">ਇਹ ਐਪ ਲੁਕਾ ਦਿੱਤੀ ਜਾਵੇਗੀ</string>
+    <string name="home_app_hidden_named">%s ਲੁਕੇ ਹੋਏ</string>
+    <string name="home_app_shown_named">%s ਦਿਖਾਇਆ ਗਿਆ</string>
+    <string name="home_app_no_hidden">ਕੋਈ ਲੁਕਾਈਆਂ ਹੋਈਆਂ ਐਪਸ ਨਹੀਂ ਹਨ</string>
+    <string name="home_app_hidden_apps_title">ਲੁਕਾਈਆਂ ਗਈਆਂ ਐਪਸ</string>
+    <string name="home_app_hidden_apps_hint">ਅਣ-ਛੁਪਾਉਣ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="home_apps_unhide_message">ਅਣ-ਲੁਕਾਈਆਂ ਐਪਸ ਹੋਮ ਸਕ੍ਰੀਨ \'ਤੇ ਵਾਪਸ ਆ ਜਾਂਦੀਆਂ ਹਨ</string>
+    <string name="home_app_patch_sources_description">ਬਿਨਾਂ ਟਿਕ ਕੀਤੇ ਸੋਰਸ ਤਾਂ ਪੇਸ਼ ਨਹੀਂ ਕੀਤੇ ਜਾਂਦੇ ਜਦੋਂ ਇਹ ਐਪਸ ਪੈਚ ਕੀਤੀਆਂ ਜਾਂਦੀਆਂ ਹਨ, ਅਤੇ ਉਹਨਾਂ ਦੇ ਪੈਚ ਕਦੇ ਵੀ ਆਪਣੇ ਆਪ ਚੋਣ ਵਿੱਚ ਸ਼ਾਮਲ ਨਹੀਂ ਹੁੰਦੇ। ਹਰੇਕ ਸੋਰਸ ਬਾਕੀ ਸਾਰੀਆਂ ਐਪਸ ਲਈ ਚਾਲੂ ਰਹਿੰਦਾ ਹੈ</string>
+    <string name="home_app_patch_sources_mixed">%2$s ਵਿੱਚੋਂ %1$s ਨੂੰ ਪੇਸ਼ ਕੀਤਾ ਗਿਆ</string>
+    <string name="home_app_patch_sources_covers">%2$s ਵਿੱਚੋਂ %1$s ਲਈ ਪੈਚ ਹਨ</string>
+    <string name="home_app_patch_sources_last">ਹਰ ਐਪ ਨੂੰ ਪੈਚ ਕਰਨ ਲਈ ਇੱਕ ਸੋਰਸ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ</string>
+    <string name="android_11_bug_dialog_title">Android 11 ਬੱਗ</string>
+    <string name="android_11_bug_dialog_description">ਐਪ ਇੰਸਟਾਲੇਸ਼ਨ ਦੀ ਇਜਾਜ਼ਤ ਪਹਿਲਾਂ ਤੋਂ ਦਿੱਤੀ ਜਾਣੀ ਚਾਹੀਦੀ ਹੈ ਤਾਂ ਜੋ ਐਂਡਰੌਇਡ 11 ਸਿਸਟਮ ਵਿੱਚ ਇੱਕ ਬੱਗ ਤੋਂ ਬਚਿਆ ਜਾ ਸਕੇ ਜੋ ਉਪਭੋਗਤਾ ਦੇ ਅਨੁਭਵ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰੇਗਾ</string>
+    <string name="deep_link_add_source_title">ਸੋਰਸ ਜੋੜੋ</string>
+    <string name="deep_link_add_source_message">ਕੀ ਤੁਸੀਂ ਇਸ ਪੈਚ ਸਰੋਤ ਨੂੰ Morphe ਵਿੱਚ ਜੋੜਨਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
+    <string name="deep_link_add_source_warning">ਸਿਰਫ਼ ਉਹ ਸਰੋਤ ਜੋੜੋ ਜਿਨ੍ਹਾਂ \'ਤੇ ਤੁਸੀਂ ਭਰੋਸਾ ਕਰਦੇ ਹੋ</string>
     <!-- Shown under the app a link was opened for -->
+    <string name="deep_link_add_source_only_app">ਸਿਰਫ ਇਹ ਐਪ ਜੋੜੀ ਗਈ ਹੈ। ਤੁਸੀਂ ਸਰੋਤ ਦੀ ਐਪ ਸੂਚੀ ਤੋਂ ਹੋਰ ਐਪਸ ਜੋੜ ਸਕਦੇ ਹੋ</string>
     <!-- Shown when the link was opened for the universal patches of a source, which no app is added with -->
+    <string name="deep_link_add_source_only_universal">ਸਿਰਫ ਯੂਨੀਵਰਸਲ ਪੈਚ ਜੋੜੇ ਗਏ ਹਨ। ਤੁਸੀਂ ਸੋਰਸ ਦੀ ਐਪ ਸੂਚੀ ਤੋਂ ਐਪਸ ਜੋੜ ਸਕਦੇ ਹੋ</string>
     <!-- Asked when the link names an app of a source that is already added -->
+    <string name="deep_link_add_source_app_back">ਇਹ ਸਰੋਤ ਪਹਿਲਾਂ ਹੀ ਜੋੜਿਆ ਜਾ ਚੁੱਕਾ ਹੈ। ਕੀ ਮੌਜੂਦ ਸਰੋਤ ਤੋਂ ਇਸ ਐਪ ਨੂੰ ਜੋੜਨਾ ਹੈ?</string>
     <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
+    <string name="mpp_import_update_message">ਇਹ %s ਦਾ ਇੱਕ ਨਵਾਂ ਵਰਜ਼ਨ ਹੈ। ਕੀ ਤੁਸੀਂ ਇਸਨੂੰ ਅਪਡੇਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
+    <string name="mpp_import_unreadable">ਇਸ ਫਾਈਲ ਨੂੰ ਪੜ੍ਹਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ</string>
     <!-- Home Screen - Update Notifications -->
+    <string name="home_update_available">Morphe ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ</string>
+    <string name="home_update_available_subtitle">ਨਵਾਂ ਵਰਜ਼ਨ ਇੰਸਟਾਲ ਕਰਨ ਲਈ ਤਿਆਰ ਹੈ</string>
+    <string name="home_blocked_source_title">ਬਲੌਕ ਕੀਤਾ ਪੈਚ ਸੋਰਸ ਮਿਲਿਆ ਹੈ</string>
+    <string name="home_blocked_source_subtitle">ਸਮੀਖਿਆ ਕਰਨ ਅਤੇ ਹਟਾਉਣ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="home_metadata_errors_title">ਕੁਝ ਪੈਚ ਸੋਰਸ ਉਪਲਬਧ ਨਹੀਂ ਹਨ</string>
+    <string name="home_metadata_errors_subtitle">ਸੋਰਸ ਦੀ ਸਮੀਖਿਆ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="home_outdated_manager_title">Morphe ਪੁਰਾਣਾ ਹੋ ਗਿਆ ਹੈ</string>
+    <string name="home_outdated_manager_subtitle">ਕੁਝ ਪੈਚ ਸਰੋਤਾਂ ਨੂੰ ਨਵੇਂ ਵਰਜ਼ਨ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="home_held_back_title">ਇੱਕ ਪੈਚ ਸਰੋਤ ਨੇ Morphe ਨੂੰ ਕਰੈਸ਼ ਕਰ ਦਿੱਤਾ</string>
+    <string name="home_held_back_subtitle">ਇਸਨੂੰ ਛੱਡ ਦਿੱਤਾ ਗਿਆ ਸੀ ਤਾਂ ਜੋ ਐਪ ਸ਼ੁਰੂ ਹੋ ਸਕੇ। ਸਮੀਖਿਆ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="home_metered_skipped_title">ਮੋਬਾਈਲ ਡੇਟਾ \'ਤੇ ਅਪਡੇਟਸ ਰੁਕੇ ਹੋਏ ਹਨ</string>
+    <string name="home_metered_skipped_subtitle">ਮੋਬਾਈਲ ਡੇਟਾ \'ਤੇ ਅਪਡੇਟਸ ਦੀ ਇਜਾਜ਼ਤ ਦੇਣ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="home_repatch_available_subtitle">ਸਾਰਿਆਂ ਨੂੰ ਕਿਊ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="home_update_error">ਅੱਪਡੇਟ ਫੇਲ੍ਹ ਹੋ ਗਿਆ</string>
+    <string name="home_update_error_subtitle">ਸੋਰਸਾਂ ਨੂੰ ਅਪਡੇਟ ਕਰਦੇ ਸਮੇਂ ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ</string>
+    <string name="home_update_skipped_metered">ਅਪਡੇਟਸ ਛੱਟ ਦਿੱਤੇ ਗਏ</string>
+    <string name="home_update_skipped_metered_subtitle">ਮੋਬਾਈਲ ਡਾਟਾ ਸਰਗਰਮ ਹੈ</string>
+    <string name="home_updating_sources">ਸੋਰਸ ਅਪਡੇਟ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ…</string>
+    <string name="home_update_success">ਸੋਰਸ ਅਪਡੇਟ ਪੂਰੇ ਹੋਏ</string>
+    <string name="home_update_success_subtitle">ਤੁਹਾਡੇ ਸੋਰਸ ਅਪ-ਟੂ-ਡੇਟ ਹਨ</string>
+    <string name="home_sources_are_loading">ਸੋਰਸ ਲੋਡ ਹੋ ਰਹੇ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਇੰਤਜ਼ਾਰ ਕਰੋ…</string>
+    <string name="home_search_apps">ਐਪਸ ਖੋਜੋ</string>
+    <string name="list_options_title">ਛਾਂਟੋ ਅਤੇ ਫਿਲਟਰ ਕਰੋ</string>
+    <string name="list_options_state_description">%1$s ਦੁਆਰਾ ਛਾਂਟਿਆ ਗਿਆ, %2$s ਦੁਆਰਾ ਫਿਲਟਰ ਕੀਤਾ ਗਿਆ</string>
+    <string name="home_app_filter_all_description">ਹੋਮ ਸਕ੍ਰੀਨ \'ਤੇ ਹਰ ਇੱਕ ਐਪ</string>
+    <string name="home_app_filter_patched_description">ਉਹ ਐਪਸ ਜਿਨ੍ਹਾਂ ਨੂੰ ਤੁਸੀਂ Morphe ਨਾਲ ਪੈਚ ਜਾਂ ਸੇਵ ਕੀਤਾ ਹੈ</string>
+    <string name="home_app_filter_not_patched_description">ਉਹ ਐਪਸ ਜਿਨ੍ਹਾਂ ਨੂੰ ਤੁਸੀਂ ਅਜੇ ਤੱਕ Morphe ਵਿੱਚ ਪੈਚ ਨਹੀਂ ਕੀਤਾ ਹੈ</string>
+    <string name="home_app_filter_installed_description">ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਵਰਤਮਾਨ ਵਿੱਚ ਇੰਸਟਾਲ ਕੀਤੀਆਂ ਐਪਸ</string>
+    <string name="home_app_filter_uninstalled_description">Morphe ਨਾਲ ਪੈਚ ਕੀਤੀਆਂ ਐਪਸ ਜੋ ਹੁਣ ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਨਹੀਂ ਹਨ</string>
+    <string name="home_app_filter_clones">ਕਲੋਨ</string>
+    <string name="home_app_filter_clones_description">ਆਪਣੇ ਪੈਕੇਜ ਨਾਮ ਦੇ ਤਹਿਤ ਬਣਾਈਆਂ ਗਈਆਂ ਐਪਸ, ਜੋ ਮੂਲ ਐਪ ਦੇ ਨਾਲ ਇੰਸਟਾਲ ਕੀਤੀਆਂ ਗਈਆਂ ਹਨ</string>
+    <string name="home_app_grouping_none">ਕੋਈ ਨਹੀਂ</string>
+    <string name="home_app_grouping_all_apps_description">ਹਰ ਐਪ ਦੇ ਨਾਲ ਇੱਕ ਸੂਚੀ</string>
+    <string name="home_app_grouping_sources_description">ਪੈਚ ਸਰੋਤ ਦੇ ਅਧੀਨ ਐਪਸ ਜੋ ਉਹਨਾਂ ਨੂੰ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹਨ</string>
+    <string name="home_app_grouping_custom_description">ਤੁਹਾਡੇ ਦੁਆਰਾ ਬਣਾਈਆਂ ਗਈਆਂ ਸ਼੍ਰੇਣੀਆਂ ਵਿੱਚ ਐਪਸ</string>
+    <string name="home_app_sort_manual_description">ਕਿਸੇ ਐਪ ਨੂੰ ਲੰਬੇ ਸਮੇਂ ਤੱਕ ਦਬਾਓ, ਫਿਰ ਰੀਓਰਡਰ ਬਟਨ \'ਤੇ ਟੈਪ ਕਰੋ</string>
+    <string name="home_app_sort_recommended">ਸਿਫਾਰਸ਼ ਕੀਤੀ ਗਈ ਕ੍ਰਮ</string>
+    <string name="home_app_sort_recommended_description">ਇੰਸਟਾਲ ਕੀਤੀਆਂ ਅਤੇ ਪਿੰਨ ਕੀਤੀਆਂ ਐਪਸ ਪਹਿਲਾਂ</string>
+    <string name="home_app_sort_name_asc_description">ਵਰਣਮਾਲਾ ਅਨੁਸਾਰ, A ਤੋਂ Z</string>
+    <string name="home_app_sort_name_desc_description">ਉਲਟ ਵਰਣਮਾਲਾ, Z ਤੋਂ A ਤੱਕ</string>
+    <string name="home_app_sort_updates_first">ਪੈਚ ਅਪਡੇਟਸ ਪਹਿਲਾਂ</string>
+    <string name="home_app_sort_updates_first_description">ਨਵੇਂ ਪੈਚਾਂ ਵਾਲੀਆਂ ਐਪਸ ਪਹਿਲਾਂ, ਫਿਰ ਸਿਫਾਰਸ਼ ਕੀਤਾ ਗਿਆ ਕ੍ਰਮ</string>
+    <string name="home_app_sort_recently_patched">ਹਾਲ ਹੀ ਵਿੱਚ ਪੈਚ ਕੀਤੇ ਗਏ</string>
+    <string name="home_app_sort_recently_patched_description">ਸਭ ਤੋਂ ਹਾਲ ਹੀ ਵਿੱਚ ਪੈਚ ਕੀਤੀਆਂ ਐਪਾਂ ਪਹਿਲਾਂ</string>
+    <string name="home_no_apps_title">ਕੋਈ ਐਪਸ ਉਪਲਬਧ ਨਹੀਂ ਹਨ</string>
+    <string name="home_no_apps_subtitle">%s ਵਿੱਚ ਇੱਕ ਪੈਚ ਸਰੋਤ ਜੋੜੋ ਜਾਂ ਮੌਜੂਦਾ ਨੂੰ ਸਮਰੱਥ ਕਰੋ</string>
+    <string name="home_no_apps_search_subtitle">ਕੋਈ ਵੀ ਐਪ \"%s\" ਨਾਲ ਮੇਲ ਨਹੀਂ ਖਾਂਦੀ</string>
+    <string name="home_all_apps_hidden_title">ਸਾਰੀਆਂ ਐਪਸ ਛੁਪੀਆਂ ਹੋਈਆਂ ਹਨ</string>
+    <string name="home_all_apps_hidden_subtitle">ਤੁਸੀਂ ਹੋਮ ਸਕ੍ਰੀਨ ਤੋਂ ਸਾਰੀਆਂ ਐਪਸ ਨੂੰ ਛੁਪਾ ਦਿੱਤਾ ਹੈ</string>
+    <string name="home_no_apps_filter_title">ਕੋਈ ਵੀ ਐਪ ਇਸ ਫਿਲਟਰ ਨਾਲ ਮੇਲ ਨਹੀਂ ਖਾਂਦੀ</string>
+    <string name="home_no_apps_filter_subtitle">ਕੁਝ ਵੀ %s ਨਾਲ ਮੇਲ ਨਹੀਂ ਖਾਧਾ</string>
+    <string name="home_category_add">ਸ਼੍ਰੇਣੀ ਜੋੜੋ</string>
+    <string name="home_category_all_apps">ਸਾਰੀਆਂ ਐਪਸ</string>
+    <string name="home_category_custom">ਕਸਟਮ</string>
+    <string name="home_category_uncategorized">ਬਿਨਾਂ ਸ਼੍ਰੇਣੀ ਦੇ</string>
+    <string name="home_category_new_title">ਨਵੀਂ ਸ਼੍ਰੇਣੀ</string>
+    <string name="home_category_rename_title">ਸ਼੍ਰੇਣੀ ਦਾ ਨਾਮ ਬਦਲੋ</string>
+    <string name="home_category_name">ਸ਼੍ਰੇਣੀ ਦਾ ਨਾਮ</string>
+    <string name="home_category_move_to">ਸ਼੍ਰੇਣੀ ਵਿੱਚ ਟ੍ਰਾਂਸਫਰ ਕਰੋ</string>
+    <string name="home_category_move_selected_title">ਚੁਣੀਆਂ ਹੋਈਆਂ ਐਪਸ ਨੂੰ ਟ੍ਰਾਂਸਫਰ ਕਰੋ</string>
     <!-- %s is the name of the category -->
+    <string name="home_category_delete_title">%s ਨੂੰ ਮਿਟਾਉਣਾ ਹੈ?</string>
     <!-- %s is the name of the category the apps fall back to -->
+    <string name="home_category_delete_moves_apps">ਇਸ ਦੀਆਂ ਐਪਸ ਵਾਪਸ &lt;b&gt;%s&lt;/b&gt; ਵਿੱਚ ਚਲੀਆਂ ਜਾਣਗੀਆਂ</string>
+    <string name="home_category_actions_unavailable">ਇਸ ਸ਼੍ਰੇਣੀ ਲਈ ਕਾਰਵਾਈਆਂ ਉਪਲਬਧ ਨਹੀਂ ਹਨ</string>
     <!-- Home Screen - Home Greetings -->
+    <string name="home_greeting_1">ਤੁਸੀਂ ਕਿਸ ਐਪ ਨੂੰ ਪੈਚ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
     <!-- Humorous hype message with light nostalgia -->
+    <string name="home_greeting_2">ਕੀ ਤੁਸੀਂ ਐਪਸ ਨੂੰ ਦੁਬਾਰਾ ਲਿਜੰਡਰੀ ਬਣਾਉਣ ਲਈ ਤਿਆਰ ਹੋ?</string>
     <!-- "Buckle up" referring to fastening your vehicle seat belt. A light-hearted joke to build excitement -->
+    <string name="home_greeting_3">ਤਿਆਰ ਹੋ ਜਾਓ, ਇਹ ਪੈਚਿੰਗ ਦਾ ਸਮਾਂ ਹੈ</string>
     <!-- Sarcastic joke about blocking ads, intentionally over-the-top -->
+    <string name="home_greeting_4">ਇੱਕ ਹੋਰ ਦਿਨ, ਇੱਕ ਹੋਰ ਐਡ-ਬਲੌਕਡ ਮਾਸਟਰਪੀਸ</string>
     <!-- "Watch ads" refers to watching video ads in unpatched apps -->
+    <string name="home_greeting_5">ਇਸ਼ਤਿਹਾਰ ਦੇਖਣੇ ਚਾਹੁੰਦੇ ਹੋ? ਮੈਂ ਵੀ ਨਹੀਂ</string>
     <!-- Friendly, slightly mischievous joke about controlling app behavior -->
+    <string name="home_greeting_6">ਆਓ ਤੁਹਾਡੀਆਂ ਐਪਸ ਨੂੰ ਸਹੀ ਤਰੀਕੇ ਨਾਲ ਚਲਾਉਂਦੇ ਹਾਂ</string>
     <!-- Whimsical forecast-style joke, not meant literally -->
+    <string name="home_greeting_7" formatted="false">ਅੱਜ ਦੀ ਭਵਿੱਖਬਾਣੀ: ਪੈਚਿੰਗ ਦੀ 100% ਸੰਭਾਵਨਾ ਹੈ</string>
     <!-- From mediocrity to amazing -->
+    <string name="home_greeting_8">ਕੀ ਤੁਸੀਂ ਆਮ ਚੀਜ਼ਾਂ ਨੂੰ ਸ਼ਾਨਦਾਰ ਬਣਾਉਣ ਲਈ ਤਿਆਰ ਹੋ?</string>
     <!-- Playful exaggeration, making patching feel heroic -->
+    <string name="home_greeting_9">ਅੱਜ ਤੋਂ ਐਪਸ ਨੂੰ ਉਨ੍ਹਾਂ ਦੀਆਂ ਆਪਣੀਆਂ ਖ਼ਾਮੀਆਂ ਤੋਂ ਬਚਾਉਣਾ</string>
     <!-- Light sarcasm, casual and tech-savvy humor -->
+    <string name="home_greeting_10">ਕੈਫੀਨ ਅਤੇ ਵਧੀਆ ਪੈਚਾਂ ਦੁਆਰਾ ਸੰਚਾਲਿਤ</string>
     <!-- Morning greetings (5:00–11:59) -->
+    <string name="home_greeting_morning_1">ਜਾਗੋ ਅਤੇ ਪੈਚ ਕਰੋ</string>
+    <string name="home_greeting_morning_2">ਸ਼ੁਭ ਸਵੇਰ! ਐਪਸ ਆਪਣੇ ਆਪ ਪੈਚ ਨਹੀਂ ਹੋਣਗੀਆਂ</string>
     <!-- Afternoon greetings (12:00–16:59) -->
+    <string name="home_greeting_afternoon_1">ਦੁਪਹਿਰ ਦੀ ਸਸਤਤਾ? ਕੁਝ ਪੈਚ ਕਰੋ</string>
+    <string name="home_greeting_afternoon_2">ਦੁਪਹਿਰ ਦੇ ਖਾਣੇ ਤੋਂ ਬਾਅਦ ਪੈਚਿੰਗ ਵੱਖਰੀ ਹੀ ਹੁੰਦੀ ਹੈ</string>
+    <string name="home_greeting_afternoon_3">ਦੁਪਹਿਰ ਦੀ ਸ਼ਿਫਟ: ਪੈਚ ਐਡੀਸ਼ਨ</string>
     <!-- Evening greetings (17:00–21:59) -->
+    <string name="home_greeting_evening_1">ਸ਼ੁਭ ਸ਼ਾਮ! ਸ਼ਾਮ ਦੇ ਪੈਚਾਂ ਦਾ ਮਜ਼ਾ ਹੀ ਵੱਖਰਾ ਹੁੰਦਾ ਹੈ</string>
+    <string name="home_greeting_evening_2">ਆਰਾਮ ਕਰ ਰਹੇ ਹੋ? ਪਹਿਲਾਂ ਕਿਸੇ ਐਪ ਨੂੰ ਪੈਚ ਕਰੋ</string>
+    <string name="home_greeting_evening_3">ਕੰਮ ਖਤਮ ਕਰ ਰਹੇ ਹੋ? ਪਹਿਲਾਂ ਕੁਝ ਪੈਚ ਕਰੋ</string>
     <!-- Late night greetings (22:00–23:59) -->
+    <string name="home_greeting_late_night_1">ਅਜੇ ਵੀ ਜਾਗ ਰਹੇ ਹੋ? ਉਹ ਐਪਸ ਵੀ ਜਾਗ ਰਹੀਆਂ ਹਨ ਜਿਨ੍ਹਾਂ ਨੂੰ ਪੈਚ ਕਰਨ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="home_greeting_late_night_2">ਦੇਰ ਰਾਤ ਪੈਚਿੰਗ ਸੈਸ਼ਨ? ਕਮਾਲ ਹੈ</string>
+    <string name="home_greeting_late_night_3">ਨਾਈਟ ਆਊਲ ਮੋਡ: ਐਕਟੀਵੇਟ ਹੋ ਗਿਆ</string>
     <!-- Super late night greetings (0:00–4:59) -->
+    <string name="home_greeting_super_late_1">ਪੈਚਿੰਗ ਦੇ ਸਭ ਤੋਂ ਵਧੀਆ ਘੰਟੇ... ਕਥਿਤ ਤੌਰ \'ਤੇ</string>
+    <string name="home_greeting_super_late_2">ਨੀਂਦ ਨਹੀਂ ਆ ਰਹੀ? ਕੁਝ ਪੈਚ ਕਰੋ</string>
+    <string name="home_greeting_super_late_3">ਇਸ ਮੋੜ \'ਤੇ, ਬਸ ਜਾਗਦੇ ਰਹੋ ਅਤੇ ਪੈਚ ਕਰੋ</string>
+    <string name="home_greeting_super_late_4">ਤੁਸੀਂ ਅਤੇ ਸਰਵਰ, ਦੋਵੇਂ ਜਾਗ ਰਹੇ ਹੋ</string>
+    <string name="home_greeting_super_late_5">ਰਾਤ ਦੇ ਜਾਗਣ ਵਾਲੇ ਅਤੇ ਉਤਪਾਦਕ</string>
     <!-- Halloween greetings, shown instead of the ones above around October 31 -->
     <!-- Pun on "Trick or treat" -->
+    <string name="home_greeting_halloween_1">ਟਰਿਕ ਜਾਂ ਪੈਚ?</string>
+    <string name="home_greeting_halloween_2">ਇਨ੍ਹਾਂ APKs ਵਿੱਚ ਕੋਈ ਭੂਤ ਨਹੀਂ ਹਨ, ਅਸੀਂ ਚੈੱਕ ਕਰ ਲਿਆ ਹੈ</string>
+    <string name="home_greeting_halloween_3">ਡਰਾਉਣੇ ਸੀਜ਼ਨ, ਤਾਜ਼ੇ ਪੈਚ</string>
     <!-- Pun on "Something wicked this way comes", a line from Shakespeare's Macbeth -->
+    <string name="home_greeting_halloween_4">ਕੁਝ ਸ਼ਰਾਰਤੀ ਪੈਚ ਇੱਧਰ ਆ ਰਹੇ ਹਨ</string>
     <!-- Winter holiday greetings, shown instead of the ones above from late December to early January -->
+    <string name="home_greeting_winter_1">ਛੁੱਟੀਆਂ ਮੁਬਾਰਕ, ਤਾਜ਼ੇ ਪੈਚ</string>
     <!-- Pun on the song "Let It Snow! Let It Snow! Let It Snow!" -->
+    <string name="home_greeting_winter_2">ਬਰਫ਼ ਪੈਣ ਦਿਓ, ਪੈਚ ਹੋਣ ਦਿਓ</string>
+    <string name="home_greeting_winter_3">ਨਵਾਂ ਸਾਲ, ਨਵੇਂ ਪੈਚ</string>
     <!-- Pun on "Dashing through the snow", the opening line of "Jingle Bells" -->
+    <string name="home_greeting_winter_4">ਬਰਫ਼ ਵਿੱਚ ਪੈਚਿੰਗ ਕਰਦੇ ਹੋਏ</string>
     <!-- New Year greetings, shown instead of the ones above on December 31 and January 1 -->
+    <string name="home_greeting_new_year_1">ਨਵਾਂ ਸਾਲ ਮੁਬਾਰਕ!</string>
+    <string name="home_greeting_new_year_2">ਤਾਜ਼ੇ ਪੈਚਾਂ ਦੀ ਉਡੀਕ ਵਿੱਚ</string>
+    <string name="home_greeting_new_year_3">ਨਵਾਂ ਸਾਲ, ਉਹੀ ਇਸ਼ਤਿਹਾਰ-ਮੁਕਤ ਐਪਸ</string>
     <!-- Pun on the saying "Out with the old, in with the new" -->
+    <string name="home_greeting_new_year_4">ਪੁਰਾਣੇ ਵਰਜ਼ਨਾਂ ਨੂੰ ਕਰੋ ਬਾਹਰ, ਨਵੇਂ ਦਾ ਕਰੋ ਸਵਾਗਤ</string>
     <!-- Home Screen - Sources Management -->
+    <string name="sources_management_title">ਪੈਚ ਸਰੋਤ</string>
+    <string name="sources_search">ਸੋਰਸ ਅਤੇ ਪੈਚਾਂ ਦੀ ਖੋਜ ਕਰੋ</string>
     <!-- Which sources the sources page lists, each with what it keeps -->
+    <string name="sources_filter_all_description">ਹਰ ਸਰੋਤ</string>
+    <string name="sources_filter_enabled_description">ਸਰੋਤ ਜਿੱਥੋਂ ਪੈਚ ਲਏ ਜਾਂਦੇ ਹਨ</string>
+    <string name="sources_filter_disabled_description">ਸਰੋਤ ਬੰਦ ਕੀਤੇ ਗਏ</string>
+    <string name="sources_filter_issues">ਧਿਆਨ ਦੇਣ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="sources_filter_issues_description">ਉਹ ਸਰੋਤ ਜੋ ਬਲਾਕ ਕੀਤੇ ਗਏ ਹਨ, ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਰਹੇ ਜਾਂ ਜਿਨ੍ਹਾਂ ਨੂੰ ਨਵੇਂ Morphe ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="sources_sort_manual">ਮੈਨੂਅਲ ਕ੍ਰਮ</string>
+    <string name="sources_sort_manual_hint">ਮੁੜ ਕ੍ਰਮਬੱਧ ਕਰਨ ਲਈ ਕਿਸੇ ਸੋਰਸ ਨੂੰ ਲੰਬੇ ਸਮੇਂ ਤੱਕ ਦਬਾਓ</string>
+    <string name="sources_sort_last_updated">ਆਖਰੀ ਵਾਰ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ</string>
+    <string name="sources_sort_last_updated_description">ਨਵੇਂ ਸੋਰਸ ਅਪਡੇਟਸ ਪਹਿਲਾਂ</string>
+    <string name="sources_sort_enabled_first">ਸਮਰਥਿਤ ਪਹਿਲਾਂ</string>
+    <string name="sources_sort_enabled_first_description">ਅਸਮਰਥਿਤ ਸੋਰਸਾਂ ਤੋਂ ਪਹਿਲਾਂ ਸਰਗਰਮ ਸੋਰਸ ਦਿਖਾਓ</string>
+    <string name="sources_patches_source_disabled_hint">ਇਹ ਸੋਰਸ ਅਸਮਰੱਥ ਹੈ। ਇਸਦੇ ਪੈਚ ਹਵਾਲੇ ਲਈ ਸੂਚੀਬੱਧ ਹਨ ਅਤੇ ਲਾਗੂ ਨਹੀਂ ਕੀਤੇ ਗਏ ਹਨ</string>
+    <string name="sources_management_open_in_browser">ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਖੋਲ੍ਹੋ</string>
+    <string name="sources_management_report_issue">ਸਮੱਸਿਆ ਦੀ ਰਿਪੋਰਟ ਕਰੋ</string>
+    <string name="sources_management_failed_to_open_url">URL ਖੋਲ੍ਹਣ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="sources_apps">ਐਪਸ</string>
+    <string name="sources_apps_description">ਟਿੱਕ ਕੀਤੇ ਐਪਸ ਇਸ ਸਰੋਤ ਤੋਂ ਆਉਂਦੇ ਹਨ। ਕਿਸੇ ਐਪ ਨੂੰ ਬਾਹਰ ਕੱਢਣ ਜਾਂ ਵਾਪਸ ਲਿਆਉਣ ਲਈ ਉਸ \'ਤੇ ਟੈਪ ਕਰੋ। ਇੱਕ ਐਪ ਹੋਮ ਸਕ੍ਰੀਨ ਤੋਂ ਉਦੋਂ ਹਟ ਜਾਂਦੀ ਹੈ ਜਦੋਂ ਕੋਈ ਵੀ ਸਰੋਤ ਇਸਨੂੰ ਨਹੀਂ ਲਿਆਉਂਦਾ, ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ ਇਸਨੂੰ ਪੈਚ ਨਹੀਂ ਕੀਤਾ ਹੁੰਦਾ</string>
+    <string name="sources_apps_brought">ਇਸ ਸੋਰਸ ਦੁਆਰਾ ਲਿਆਂਦਾ ਗਿਆ</string>
+    <string name="sources_apps_left_out">ਇਸ ਸੋਰਸ ਤੋਂ ਬਾਹਰ ਰਹਿ ਗਿਆ</string>
     <!-- Under an app left out of a source that keeps its home screen card because the user has patched it -->
+    <string name="sources_apps_stays_patched">ਪੈਚ ਕੀਤੇ ਵਜੋਂ ਰੱਖਿਆ ਗਿਆ</string>
     <!-- Marks an app (not a patch) the source started supporting since its app list was last opened -->
+    <string name="sources_apps_new">ਨਵਾਂ</string>
+    <string name="sources_apps_new_apps">ਨਵੀਆਂ ਐਪਸ ਲਿਆਓ</string>
     <!-- Under the Bring new apps switch in a source's app list, whichever way it is set. "It" is the patch source -->
+    <string name="sources_apps_new_apps_description">ਇਸ ਦੁਆਰਾ ਬਾਅਦ ਵਿੱਚ ਜੋੜੇ ਗਏ ਐਪਸ ਹੋਮ ਸਕ੍ਰੀਨ \'ਤੇ ਦਿਖਾਈ ਦਿੰਦੇ ਹਨ</string>
+    <string name="sources_management_prerelease_toggle">ਪ੍ਰੀ-ਰਿਲੀਜ਼ ਪੈਚ</string>
+    <string name="sources_management_prerelease_toggle_description">ਨਵੇਂ ਪ੍ਰਯੋਗਿਕ ਪੈਚ ਵਰਜਨਾਂ ਤੱਕ ਜਲਦੀ ਪਹੁੰਚ ਪ੍ਰਾਪਤ ਕਰੋ</string>
+    <string name="sources_prerelease_warning_title">ਪ੍ਰੀ-ਰਿਲੀਜ਼ ਪੈਚਾਂ ਨੂੰ ਇਨੇਬਲ ਕਰੋ?</string>
+    <string name="sources_prerelease_warning_message">ਪ੍ਰੀ-ਰਿਲੀਜ਼ ਬਿਲਡ ਅਜੇ ਵੀ ਵਿਕਾਸ ਦੇ ਪੜਾਅ ਵਿੱਚ ਹਨ। ਪੈਚ ਫੇਲ ਹੋ ਸਕਦੇ ਹਨ ਜਾਂ ਐਪ ਨੂੰ ਖਰਾਬ ਕਰ ਸਕਦੇ ਹਨ, ਅਤੇ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਬਿਨਾਂ ਕਿਸੇ ਚੇਤਾਵਣੀ ਦੇ ਬਦਲ ਸਕਦੀਆਂ ਹਨ</string>
+    <string name="expert_mode_prerelease_notice">ਇਹ ਸਰੋਤ ਪ੍ਰੀ-ਰਿਲੀਜ਼ ਪੈਚਾਂ \'ਤੇ ਹੈ। ਪੈਚਿੰਗ ਫੇਲ ਹੋ ਸਕਦੀ ਹੈ ਜਾਂ ਅਣਪਛਾਤੀ ਵਿਵਹਾਰ ਕਰ ਸਕਦੀ ਹੈ</string>
+    <string name="expert_mode_experimental_version_notice">ਇਸ ਸੋਰਸ ਵਿੱਚ ਇਸ ਐਪ ਵਰਜ਼ਨ ਲਈ ਸਿਰਫ਼ ਪ੍ਰਯੋਗਾਤਮਕ ਸਪੋਰਟ ਹੈ। ਇਸਦੇ ਪੈਚ ਅਸਥਿਰ ਜਾਂ ਅਧੂਰੇ ਹੋ ਸਕਦੇ ਹਨ</string>
+    <string name="sources_management_experimental_versions_toggle">ਐਕਸਪੇਰੀਮੈਂਟਲ ਐਪ ਵਰਜ਼ਨ</string>
+    <string name="sources_management_experimental_versions_toggle_description">ਪ੍ਰਯੋਗਿਕ ਐਪ ਟਾਰਗੇਟਸ ਨੂੰ ਦਿਖਾਉਂਦਾ ਹੈ ਅਤੇ ਪੈਚ ਕਰਦਾ ਹੈ</string>
     <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_prerelease_enable">ਪ੍ਰੀ-ਰਿਲੀਜ਼ ਪੈਚਾਂ ਨੂੰ ਸਮਰੱਥ ਕਰੋ</string>
+    <string name="sources_management_prerelease_disable">ਪ੍ਰੀ-ਰਿਲੀਜ਼ ਪੈਚਾਂ ਨੂੰ ਅਸਮਰੱਥ ਕਰੋ</string>
+    <string name="sources_management_experimental_versions_enable">ਪ੍ਰਯੋਗਿਕ ਐਪ ਵਰਜ਼ਨਾਂ ਨੂੰ ਸਮਰੱਥ ਕਰੋ</string>
+    <string name="sources_management_experimental_versions_disable">ਪ੍ਰਯੋਗਿਕ ਐਪ ਵਰਜ਼ਨਾਂ ਨੂੰ ਅਸਮਰੱਥ ਕਰੋ</string>
+    <string name="sources_management_already_exists">ਇਹ ਸਰੋਤ ਪਹਿਲਾਂ ਹੀ ਜੋੜਿਆ ਜਾ ਚੁੱਕਾ ਹੈ</string>
+    <string name="sources_management_invalid_url">ਅਵੈਧ ਸਰੋਤ URL। ਕਿਰਪਾ ਕਰਕੇ ਪਤੇ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="sources_management_blocked">ਇਹ ਪੈਚ ਸੋਰਸ ਬਲੌਕ ਹੈ ਅਤੇ ਇਸਨੂੰ ਜੋੜਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ</string>
+    <string name="sources_management_source_blocked_badge">ਬਲੌਕ ਕੀਤਾ ਗਿਆ</string>
+    <string name="sources_management_metadata_unavailable">ਮੈਟਾਡੇਟਾ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
+    <string name="sources_management_metadata_unavailable_hint">ਰਿਮੋਟ ਮੈਟਾਡੇਟਾ ਫਾਈਲ ਉਪਲਬਧ ਨਹੀਂ ਹੈ। ਇੰਸਟਾਲ ਕੀਤੇ ਬੰਡਲ ਨਾਲ ਪੈਚ ਕਰਨਾ ਅਜੇ ਵੀ ਕੰਮ ਕਰਦਾ ਹੈ, ਪਰ ਇਸ ਸਰੋਤ ਲਈ ਆਟੋ-ਅਪਡੇਟ ਅਯੋਗ ਹੈ</string>
+    <string name="sources_management_metadata_unavailable_hint_missing">ਪੈਚ ਬੰਡਲ ਡਾਊਨਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ। ਸਰੋਤ URL ਗਲਤ ਹੋ ਸਕਦਾ ਹੈ ਜਾਂ ਫਾਈਲ ਮੌਜੂਦ ਨਹੀਂ ਹੈ</string>
+    <string name="sources_management_outdated_manager_badge">Morphe ਨੂੰ ਅਪਡੇਟ ਕਰੋ</string>
+    <string name="sources_management_outdated_manager_hint">ਇਹ ਸੋਰਸ ਪੈਚਰ %1$s ਲਈ ਬਣਾਇਆ ਗਿਆ ਹੈ, ਪਰ Morphe %2$s ਵਿੱਚ ਪੈਚਰ %3$s ਸ਼ਾਮਲ ਹੈ। ਇਸਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ Morphe ਨੂੰ ਅਪਡੇਟ ਕਰੋ</string>
+    <string name="sources_management_held_back_badge">ਕਰੈਸ਼ ਹੋਇਆ</string>
+    <string name="sources_management_held_back_hint">ਇਸ ਸਰੋਤ ਨੇ ਲੋਡ ਹੋਣ ਦੌਰਾਨ Morphe ਨੂੰ ਕਰੈਸ਼ ਕਰ ਦਿੱਤਾ, ਇਸ ਲਈ ਇਸਨੂੰ ਛੱਡਿਆ ਜਾ ਰਿਹਾ ਹੈ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰਨ ਲਈ ਇਸਨੂੰ ਅਪਡੇਟ ਕਰੋ ਜਾਂ ਮੁੜ-ਇੰਪੋਰਟ ਕਰੋ</string>
+    <string name="sources_management_signed_by">ਦੁਆਰਾ ਹਸਤਾਖਰ ਕੀਤੇ ਗਏ</string>
+    <string name="sources_management_signing_key_changed_badge">ਕੁੰਜੀ ਬਦਲ ਗਈ</string>
+    <string name="sources_management_signing_key_changed_hint">नवीनਤਮ ਰਿਲੀਜ਼ ਉਸ ਕੁੰਜੀ ਦੁਆਰਾ ਹਸਤਾਖਰ ਨਹੀਂ ਕੀਤੀ ਗਈ ਹੈ ਜੋ ਇਸ ਸੋਰਸ ਨੇ ਪਹਿਲਾਂ ਵਰਤੀ ਸੀ, ਇਸ ਲਈ ਇਹ ਇੰਸਟਾਲ ਨਹੀਂ ਕੀਤੀ ਗਈ ਸੀ। ਇਸ ਦੀ ਸਮੀਖਿਆ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="sources_management_source_enabled">ਸਰੋਤ ਸਮਰੱਥ ਹੈ</string>
+    <string name="sources_management_source_disabled">ਸਰੋਤ ਅਯੋਗ ਹੈ</string>
+    <string name="sources_management_source_updating">ਸੋਰਸ ਨੂੰ ਅਪਡੇਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</string>
     <!-- Home Screen - Sources Dialogs -->
+    <string name="sources_dialog_display_name">ਪ੍ਰਦਰਸ਼ਿਤ ਨਾਮ</string>
+    <string name="sources_dialog_rename">ਪੈਚ ਸਰੋਤ ਦਾ ਨਾਮ ਬਦਲੋ</string>
+    <string name="sources_dialog_duplicate_name_error">ਇਸ ਨਾਮ ਵਾਲਾ ਇੱਕ ਪੈਚ ਸਰੋਤ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ</string>
+    <string name="sources_dialog_missing_error">ਇਸ ਪੈਚ ਸਰੋਤ ਨੂੰ ਅਪਡੇਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ</string>
+    <string name="sources_dialog_add_source">ਪੈਚ ਸਰੋਤ ਜੋੜੋ</string>
+    <string name="sources_dialog_delete_confirm_body">ਇਸ ਨੂੰ ਉਲਟਾਇਆ ਨਹੀਂ ਜਾ ਸਕਦਾ</string>
+    <string name="sources_dialog_remote">ਰਿਮੋਟ</string>
+    <string name="sources_dialog_remote_url">ਸੋਰਸ URL</string>
+    <string name="sources_dialog_remote_url_hint">ਇੱਕ ਰਿਪੋਜ਼ਿਟਰੀ ਜਾਂ ਪੈਚ ਬੰਡਲ .json ਦਾ ਲਿੰਕ। ਸਾਰਿਆਂ ਨੂੰ ਜੋੜਨ ਲਈ ਇੱਕੋ ਵਾਰ ਵਿੱਚ ਕਈ ਪੇਸਟ ਕਰੋ</string>
+    <string name="sources_dialog_paste_no_links">ਕਲਿਪਬੋਰਡ \'ਤੇ ਕੋਈ ਲਿੰਕ ਨਹੀਂ ਮਿਲੇ</string>
+    <string name="sources_dialog_local">ਸਥਾਨਕ</string>
+    <string name="sources_dialog_local_files">ਪੈਚ ਸਰੋਤ ਫਾਈਲਾਂ ਚੁਣੋ</string>
+    <string name="sources_dialog_local_invalid_extension">ਫਾਈਲ ਦਾ ਐਕਸਟੈਂਸ਼ਨ .mpp ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
+    <string name="sources_dialog_local_updates">%s ਨੂੰ ਅਪਡੇਟ ਕਰਦਾ ਹੈ</string>
+    <string name="sources_dialog_url_valid">ਵਾਇਦ ਰਿਪੋਜ਼ਿਟਰੀ ਜਾਂ JSON URL</string>
+    <string name="sources_dialog_url_invalid">URL ਇੱਕ GitHub/GitLab ਰੀਪੋ ਜਾਂ .json ਫਾਈਲ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ</string>
+    <string name="sources_dialog_preinstalled">ਪਹਿਲਾਂ ਤੋਂ ਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ</string>
+    <string name="sources_dialog_community">ਕਮਿਊਨਿਟੀ ਪੈਚ</string>
+    <string name="sources_dialog_choose_apps">ਐਪਸ ਚੁਣੋ</string>
+    <string name="sources_dialog_choose_apps_description">ਚੁਣੋ ਕਿ ਸੋਰਸ ਲੋਡ ਹੋਣ ਤੋਂ ਬਾਅਦ ਇਸ ਦੀਆਂ ਕਿਹੜੀਆਂ ਐਪਸ ਨੂੰ ਰੱਖਣਾ ਹੈ</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
+    <string name="sources_dialog_community_notice_title">ਤੀਜੀ-ਪਾਰਟੀ ਪੈਚ ਸਰੋਤ</string>
+    <string name="sources_dialog_community_notice_message">"ਕਮਿਊਨਿਟੀ ਪੈਚ ਸੋਰਸ ਉਨ੍ਹਾਂ ਦੇ ਆਪਣੇ ਲੇਖਕਾਂ ਦੁਆਰਾ ਬਣਾਏ ਅਤੇ ਬਣਾਈ ਰੱਖੇ ਜਾਂਦੇ ਹਨ। Morphe ਤੀਜੀ-ਪਾਰਟੀ ਦੇ ਪੈਚਾਂ ਦੀ ਸਮੀਖਿਆ ਜਾਂ ਤਸਦੀਕ ਨਹੀਂ ਕਰਦਾ ਹੈ, ਅਤੇ ਉਨ੍ਹਾਂ ਦੀ ਸਮੱਗਰੀ ਜਾਂ ਤੁਹਾਡੇ ਡਿਵਾਈਸ 'ਤੇ ਉਹ ਕੀ ਕਰਦੇ ਹਨ, ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹੈ"</string>
+    <string name="sources_update_success">ਅਪਡੇਟ ਸਫਲ ਰਿਹਾ</string>
+    <string name="sources_update_unavailable">ਕੋਈ ਅਪਡੇਟ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
+    <string name="sources_download_fail">ਸੋਰਸ ਡਾਊਨਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s</string>
+    <string name="sources_download_fail_named">\'%s\' ਨੂੰ ਅਪਡੇਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ। ਆਪਣਾ ਇੰਟਰਨੈਟ ਕਨੈਕਸ਼ਨ ਚੈੱਕ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="sources_download_endpoint_not_found">\'%s\': ਪੈਚ ਮੈਟਾਡਾਟਾ ਨਹੀਂ ਮਿਲਿਆ</string>
+    <string name="sources_signing_key_changed_named">\'%s\' ਨੂੰ ਅਪਡੇਟ ਨਹੀਂ ਕੀਤਾ ਗਿਆ ਕਿਉਂਕਿ ਇਸਦੀ ਨਵੀਨਤਮ ਰਿਲੀਜ਼ ਉਸ ਕੀ ਨਾਲ ਸਾਈਨ ਨਹੀਂ ਕੀਤੀ ਗਈ ਹੈ ਜੋ ਇਸਨੇ ਪਹਿਲਾਂ ਵਰਤੀ ਸੀ</string>
+    <string name="sources_signing_key_changed_local">ਫਾਈਲ ਉਸ ਕੀ ਨਾਲ ਸਾਈਨ ਨਹੀਂ ਕੀਤੀ ਗਈ ਹੈ ਜੋ ਇਸ ਸਰੋਤ ਨੇ ਪਹਿਲਾਂ ਵਰਤੀ ਸੀ। ਇਸ \'ਤੇ ਭਰੋਸਾ ਕਰਨ ਲਈ, ਸਰੋਤ ਨੂੰ ਮਿਟਾਓ ਅਤੇ ਫਾਈਲ ਨੂੰ ਦੁਬਾਰਾ ਜੋੜੋ</string>
+    <string name="sources_signing_key_trust_title">ਨਵੀਂ ਕੀ \'ਤੇ ਭਰੋਸਾ ਕਰੋ?</string>
+    <string name="sources_signing_key_trust_message">ਨਵੀਨਤਮ ਰਿਲੀਜ਼ ਇੱਕ ਵੱਖਰੀ ਕੀ ਦੁਆਰਾ ਸਾਈਨ ਕੀਤੀ ਗਈ ਹੈ। ਜਾਂ ਤਾਂ ਡਿਵੈਲਪਰ ਨੇ ਆਪਣੀ ਕੀ ਬਦਲ ਦਿੱਤੀ ਹੈ, ਜਾਂ ਕਿਸੇ ਹੋਰ ਨੇ ਇਹ ਰਿਲੀਜ਼ ਪ੍ਰਕਾਸ਼ਿਤ ਕੀਤੀ ਹੈ। ਇਸ \'ਤੇ ਸਿਰਫ ਉਦੋਂ ਹੀ ਭਰੋਸਾ ਕਰੋ ਜੇਕਰ ਡਿਵੈਲਪਰ ਨੇ ਨਵੀਂ ਕੀ ਦੀ ਘੋਸ਼ਣਾ ਕੀਤੀ ਹੈ</string>
+    <string name="sources_signing_key_trust_message_unsigned">ਨਵੀਨਤਮ ਰਿਲੀਜ਼ ਸਾਈਨ ਨਹੀਂ ਕੀਤੀ ਗਈ ਹੈ। ਜਾਂ ਤਾਂ ਡਿਵੈਲਪਰ ਨੇ ਰਿਲੀਜ਼ਾਂ ਨੂੰ ਸਾਈਨ ਕਰਨਾ ਬੰਦ ਕਰ ਦਿੱਤਾ ਹੈ, ਜਾਂ ਕਿਸੇ ਹੋਰ ਨੇ ਇਹ ਰਿਲੀਜ਼ ਪ੍ਰਕਾਸ਼ਿਤ ਕੀਤੀ ਹੈ। ਇਸ \'ਤੇ ਸਿਰਫ ਉਦੋਂ ਹੀ ਭਰੋਸਾ ਕਰੋ ਜੇਕਰ ਡਿਵੈਲਪਰ ਨੇ ਇਸਦੀ ਘੋਸ਼ਣਾ ਕੀਤੀ ਹੈ</string>
+    <string name="sources_signing_key_trusted">ਭਰੋਸੇਮੰਦ ਕੀ</string>
+    <string name="sources_signing_key_new">ਨਵੀਂ ਕੁੰਜੀ</string>
+    <string name="sources_patch_expert_badge">ਐਕਸਪਰਟ</string>
+    <string name="sources_patch_expert_badge_tooltip">ਇਸ ਪੈਚ ਨੂੰ ਮੈਨੁਅਲੀ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਐਕਸਪਰਟ ਮੋਡ ਨੂੰ ਸਮਰੱਥ ਕਰੋ</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
+    <string name="home_apk_availability_title">APK ਲੱਭਣ ਵਿੱਚ ਮਦਦ ਚਾਹੀਦੀ ਹੈ?</string>
+    <string name="home_apk_availability_dialog_simple">&lt;b&gt;%s&lt;/b&gt; ਨੂੰ ਪੈਚ ਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ ਅਨਪੈਚਡ APK ਵਰਜ਼ਨ ਦੀ ਲੋੜ ਹੈ:</string>
+    <string name="home_apk_availability_dialog_expert">&lt;b&gt;%s&lt;/b&gt; ਨੂੰ ਪੈਚ ਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ ਇਹਨਾਂ ਵਰਜ਼ਨਾਂ ਦੇ ਅਣ-ਪੈਚ ਕੀਤੇ APK ਦੀ ਲੋੜ ਹੈ:</string>
+    <string name="home_apk_availability_recommended_label">ਸਿਫ਼ਾਰਸ਼ ਕੀਤੀ ਗਈ</string>
+    <string name="home_apk_availability_unpatched_label">ਅਨਪੈਚਡ</string>
+    <string name="home_apk_availability_incompatible_label">ਅਸੰਗਤ</string>
+    <string name="home_apk_availability_installed_version">ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ: %s</string>
+    <string name="home_apk_availability_find">ਹਾਂ, ਇਸਨੂੰ ਲੱਭਣ ਵਿੱਚ ਮੇਰੀ ਮਦਦ ਕਰੋ</string>
+    <string name="home_apk_availability_have">ਨਹੀਂ, ਇਹ ਮੇਰੇ ਕੋਲ ਪਹਿਲਾਂ ਹੀ ਹੈ</string>
+    <string name="home_apk_helper_download">ਹੈਲਪਰ ਐਪ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
+    <string name="home_apk_helper_untrusted">ਇੱਕ ਸਹਾਇਕ ਐਪ ਇੰਸਟਾਲ ਕੀਤੀ ਗਈ ਹੈ ਪਰ ਅਜੇ ਤੱਕ ਭਰੋਸੇਯੋਗ ਨਹੀਂ ਹੈ, ਇਸ ਲਈ ਇਸਨੂੰ ਇੱਥੇ ਪੇਸ਼ ਨਹੀਂ ਕੀਤਾ ਗਿਆ ਹੈ</string>
+    <string name="home_apk_helper_untrusted_action">ਸਹਾਇਕਾਂ ਦੀ ਸਮੀਖਿਆ ਕਰੋ</string>
+    <string name="home_apk_helper_title">ਹੈਲਪਰ ਐਪ ਨਾਲ ਡਾਊਨਲੋਡ ਕਰੋ</string>
+    <string name="home_apk_helper_description">Morphe ਹੇਠਾਂ ਦਿੱਤੀ ਹੈਲਪਰ ਐਪ ਨੂੰ ਅਸਲੀ APK ਡਾਊਨਲੋਡ ਕਰਨ ਅਤੇ ਫਾਈਲ ਵਾਪਸ ਸੌਂਪਣ ਲਈ ਕਹੇਗਾ</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="home_apk_helper_continue">ਹੈਲਪਰ ਖੋਲ੍ਹੋ</string>
+    <string name="home_apk_helper_warning">ਸਿਰਫ਼ ਉਦੋਂ ਹੀ ਜਾਰੀ ਰੱਖੋ ਜੇਕਰ ਤੁਸੀਂ ਇਸ ਹੈਲਪਰ ਐਪ \'ਤੇ ਭਰੋਸਾ ਕਰਦੇ ਹੋ। Morphe ਪੈਚਿੰਗ ਤੋਂ ਪਹਿਲਾਂ ਜੋ ਵੀ ਪ੍ਰਾਪਤ ਹੁੰਦਾ ਹੈ ਉਸਦੇ ਪੈਕੇਜ, ਵਰਜ਼ਨ ਅਤੇ ਸਿਗਨੇਚਰ ਦੀ ਜਾਂਚ ਕਰਦਾ ਹੈ</string>
+    <string name="home_apk_helper_warning_unverified">ਸਿਰਫ਼ ਉਦੋਂ ਹੀ ਜਾਰੀ ਰੱਖੋ ਜੇਕਰ ਤੁਸੀਂ ਇਸ ਹੈਲਪਰ ਐਪ \'ਤੇ ਭਰੋਸਾ ਕਰਦੇ ਹੋ। Morphe ਇਸ APK ਦੇ ਸਿਗਨੇਚਰ ਦੀ ਤਸਦੀਕ ਨਹੀਂ ਕਰ ਸਕਦਾ, ਇਸ ਲਈ ਕਿਸੇ ਸੋਧੇ ਹੋਏ ਫਾਈਲ ਦਾ ਪਤਾ ਨਹੀਂ ਲੱਗੇਗਾ</string>
+    <string name="home_apk_helper_no_result">ਹੈਲਪਰ ਐਪ ਨੇ ਕੋਈ APK ਵਾਪਸ ਨਹੀਂ ਕੀਤਾ</string>
+    <string name="home_apk_helper_no_access">ਹੈਲਪਰ ਐਪ ਨੇ ਉਸ APK ਤੱਕ ਪਹੁੰਚ ਪ੍ਰਦਾਨ ਨਹੀਂ ਕੀਤੀ ਜੋ ਉਸਨੇ ਵਾਪਸ ਕੀਤਾ ਸੀ</string>
+    <string name="home_apk_helper_no_package">ਹੈਲਪਰ ਐਪ ਨੇ ਇਹ ਨਹੀਂ ਦੱਸਿਆ ਕਿ ਕਿਹੜੀ ਇੰਸਟਾਲ ਕੀਤੀ ਐਪ ਦੀ ਵਰਤੋਂ ਕਰਨੀ ਹੈ</string>
+    <string name="home_apk_helper_wrong_package">ਹੈਲਪਰ ਐਪ ਨੇ ਪੈਚ ਕੀਤੀ ਜਾ ਰਹੀ ਐਪ ਨਾਲੋਂ ਵੱਖਰੀ ਐਪ ਵਾਪਸ ਕੀਤੀ ਹੈ</string>
+    <string name="home_apk_helper_installed_unavailable">Morphe ਇੰਸਟਾਲ ਕੀਤੀ ਐਪ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰ ਸਕਿਆ</string>
+    <string name="home_apk_helper_installed_incompatible">ਇੰਸਟਾਲ ਕੀਤੇ ਵਰਜ਼ਨ ਨੂੰ ਪੈਚ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ</string>
+    <string name="home_apk_use_saved_copy">ਸੇਵ ਕੀਤੀ ਕਾਪੀ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
+    <string name="home_apk_use_installed_app">ਇੰਸਟਾਲ ਕੀਤੀ ਐਪ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
+    <string name="home_apk_use_saved_unsupported">ਪੈਚ ਇਸ ਸੇਵ ਕੀਤੇ ਕਾਪੀ ਨੂੰ ਸਪੋਰਟ ਨਹੀਂ ਕਰਦੇ। ਇਸਨੂੰ ਪੈਚ ਕਰਨ \'ਤੇ ਤੁਹਾਨੂੰ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਕਿਹਾ ਜਾਵੇਗਾ, ਜਾਂ ਕੋਈ ਹੋਰ APK ਚੁਣੋ</string>
+    <string name="home_apk_use_installed_unverified">ਇੰਸਟਾਲ ਕੀਤੀ ਐਪ ਦੇ ਹਸਤਾਖਰਾਂ ਦੀ ਪੁਸ਼ਟੀ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ, ਇਸ ਲਈ ਇਹ ਪਹਿਲਾਂ ਹੀ ਪੈਚ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ</string>
+    <string name="home_unverified">ਅਣ-ਪੁਸ਼ਟੀ ਕੀਤਾ ਗਿਆ</string>
+    <string name="home_install_verification_pending">ਇੰਸਟਾਲੇਸ਼ਨ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ…</string>
+    <string name="home_app_info_install_unverified">Morphe ਇਸ ਗੱਲ ਦੀ ਪੁਸ਼ਟੀ ਨਹੀਂ ਕਰ ਸਕਦਾ ਕਿ ਇੰਸਟਾਲ ਕੀਤੀ ਐਪ ਉਹੀ ਬਿਲਡ ਹੈ ਜਿਸ ਨੂੰ ਇਸਨੇ ਪੈਚ ਕੀਤਾ ਸੀ। ਇਸਦੇ ਕੰਮਾਂ ਨੂੰ ਬਹਾਲ ਕਰਨ ਲਈ ਇਸਨੂੰ ਦੁਬਾਰਾ ਪੈਚ ਕਰੋ ਜਾਂ ਸੇਵ ਕੀਤੇ APK ਤੋਂ ਦੁਬਾਰਾ ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="home_app_info_no_saved_apk">ਕੋਈ ਸੇਵ ਕੀਤਾ APK ਨਹੀਂ ਹੈ। ਪੈਚਿੰਗ ਲਈ APK ਫਾਈਲ ਨੂੰ ਦੁਬਾਰਾ ਚੁਣਨ ਦੀ ਲੋੜ ਹੋਵੇਗੀ</string>
+    <string name="home_version_requires_android">Android %s+ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="home_apk_no_compatible_versions_title">ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ</string>
+    <string name="home_apk_no_compatible_versions_message">&lt;b&gt;%1$s&lt;/b&gt; ਕੋਲ Android %2$s (API %3$s) ਲਈ ਕੋਈ ਸਮਰਥਿਤ ਵਰਜ਼ਨ ਨਹੀਂ ਹਨ। ਸਾਰੇ ਘੋਸ਼ਿਤ ਵਰਜ਼ਨਾਂ ਲਈ ਉੱਚੇ Android ਵਰਜ਼ਨ ਦੀ ਲੋੜ ਹੈ</string>
     <!-- Home Screen - Dialog 2: Download Instructions -->
+    <string name="home_download_instructions_title">ਅਸਲ APK ਡਾਊਨਲੋਡ ਕਰੋ</string>
+    <string name="home_download_instructions_finding">ਡਾਊਨਲੋਡ ਪੇਜ ਲੱਭਿਆ ਜਾ ਰਿਹਾ ਹੈ…</string>
+    <string name="home_download_instructions_step1">ਹੇਠਾਂ ਦਿੱਤੇ \'%s\' ਬਟਨ ਨੂੰ ਦਬਾਓ</string>
+    <string name="home_download_instructions_step2_part1">ਵੈੱਬਪੇਜ ਨੂੰ ਹੇਠਾਂ ਸਕ੍ਰੋਲ ਕਰੋ ਅਤੇ ਦਬਾਓ</string>
+    <string name="home_download_instructions_step2_generic">ਵੈਬਪੇਜ ਨੂੰ ਹੇਠਾਂ ਸਕ੍ਰੋਲ ਕਰੋ ਅਤੇ ਇਸਦੇ ਡਾਊਨਲੋਡ ਬਟਨ ਨੂੰ ਦਬਾਓ</string>
+    <string name="home_download_instructions_step2_variant">ਵੈਬਪੇਜ ਨੂੰ ਹੇਠਾਂ ਸਕ੍ਰੋਲ ਕਰੋ ਅਤੇ ਸਭ ਤੋਂ ਉੱਪਰਲੇ &lt;b&gt;APK ਵੇਰੀਐਂਟ&lt;/b&gt; ਦੇ ਡਾਊਨਲੋਡ ਬਟਨ ਨੂੰ ਦਬਾਓ</string>
+    <string name="home_download_instructions_step2_search">ਕਿਸੇ ਅਜਿਹੀ ਵੈੱਬਸਾਈਟ ਤੋਂ ਖੋਜ ਨਤੀਜਾ ਖੋਲ੍ਹੋ ਜਿਸ \'ਤੇ ਤੁਸੀਂ ਭਰੋਸਾ ਕਰਦੇ ਹੋ</string>
+    <string name="home_download_instructions_step2_search_note">Morphe ਇਹਨਾਂ ਵੈੱਬਸਾਈਟਾਂ ਦੀ ਗਰੰਟੀ ਨਹੀਂ ਦੇ ਸਕਦਾ। ਉਹਨਾਂ ਨੂੰ ਛੱਡ ਦਿਓ ਜੋ APK ਫਾਈਲ ਦੀ ਬਜਾਏ ਆਪਣੇ ਐਪ ਸਟੋਰ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦੇ ਹਨ</string>
+    <string name="home_download_instructions_step3_search">ਉਸ ਵੈੱਬਸਾਈਟ \'ਤੇ, ਵਰਜ਼ਨ &lt;b&gt;%s&lt;/b&gt; ਦਾ APK ਡਾਊਨਲੋਡ ਕਰੋ, ਸਭ ਤੋਂ ਨਵਾਂ ਨਹੀਂ</string>
+    <string name="home_download_instructions_step3_search_any">ਉਸ ਵੈੱਬਸਾਈਟ \'ਤੇ, ਐਪ ਦਾ APK ਡਾਊਨਲੋਡ ਕਰੋ। &lt;b&gt;ਕੋਈ ਵੀ ਵਰਜ਼ਨ&lt;/b&gt; ਪੈਚ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ</string>
+    <string name="home_download_instructions_download_button_toast">ਵੈੱਬਸਾਈਟ \'ਤੇ ਡਾਊਨਲੋਡ ਦਬਾਓ, ਇੱਥੇ ਨਹੀਂ 😊</string>
+    <string name="home_download_instructions_download_button_toast_2">ਬਹੁਤ ਵਧੀਆ! ਹੁਣ ਕੰਟੀਨਿਊ \'ਤੇ ਕਲਿੱਕ ਕਰੋ ਅਤੇ ਵੈੱਬਸਾਈਟ \'ਤੇ ਜਾਓ 👆</string>
+    <string name="home_download_instructions_download_button_toast_3">ਅਭਿਆਸ ਇਨਸਾਨ ਨੂੰ ਪਰਿਪੱਕ ਬਣਾਉਂਦਾ ਹੈ ਅਤੇ ਤੁਸੀਂ ਉੱਥੇ ਪਹੁੰਚ ਰਹੇ ਹੋ 💪</string>
+    <string name="home_download_instructions_download_button_toast_4">ਅਜੇ ਵੀ ਨਹੀਂ ਆਇਆ… ਅਜੇ ਵੀ ਨਹੀਂ ਆਇਆ… 🙈</string>
+    <string name="home_download_instructions_download_button_toast_5">ਠੀਕ ਹੈ, ਮੈਂ ਤੁਹਾਡੇ ਜਨੂੰਨ ਦੀ ਕਦਰ ਕਰਦਾ ਹਾਂ 🫡</string>
+    <string name="home_download_instructions_download_button_toast_6">ਹੁਣ ਤੁਸੀਂ ਇੱਕ ਅਧਿਕਾਰਤ Morphe ਬਟਨ ਟੈਸਟਰ ਹੋ 🏅</string>
+    <string name="home_download_instructions_step3">ਡਾਊਨਲੋਡ ਪੂਰਾ ਹੋਣ ਦੀ ਉਡੀਕ ਕਰੋ, ਅਤੇ APK ਨੂੰ &lt;b&gt;ਇੰਸਟਾਲ ਨਾ ਕਰੋ&lt;/b&gt;</string>
+    <string name="home_download_instructions_step3_mount">ਡਾਊਨਲੋਡ ਪੂਰਾ ਹੋਣ ਦੀ ਉਡੀਕ ਕਰੋ, ਫਿਰ &lt;b&gt;APK ਇੰਸਟਾਲ ਕਰੋ&lt;/b&gt;</string>
+    <string name="home_download_instructions_step4">ਡਾਊਨਲੋਡ ਖਤਮ ਹੋਣ ਤੋਂ ਬਾਅਦ, Morphe \'ਤੇ ਵਾਪਸ ਜਾਓ</string>
+    <string name="home_download_instructions_step4_mount">ਅਸਲੀ APK ਇੰਸਟਾਲ ਕਰਨ ਤੋਂ ਬਾਅਦ, Morphe \'ਤੇ ਵਾਪਸ ਜਾਓ</string>
+    <string name="home_download_instructions_continue_to">%s \'ਤੇ ਜਾਓ</string>
+    <string name="home_download_instructions_destination">ਡਾਊਨਲੋਡ ਪੇਜ</string>
+    <string name="home_download_instructions_copy_link">ਲਿੰਕ ਕਾਪੀ ਕਰੋ</string>
+    <string name="home_download_instructions_link_copied">ਲਿੰਕ ਕਾਪੀ ਹੋ ਗਿਆ</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
+    <string name="home_file_picker_prompt_app_title">%s APK ਚੁਣੋ</string>
+    <string name="home_file_picker_prompt_where">ਬ੍ਰਾਊਜ਼ਰ ਆਮ ਤੌਰ \'ਤੇ ਇਸਨੂੰ Download ਫੋਲਡਰ ਵਿੱਚ ਸੇਵ ਕਰਦੇ ਹਨ</string>
+    <string name="home_file_picker_prompt_open_apk">APK ਫਾਈਲ ਖੋਲ੍ਹੋ</string>
+    <string name="home_recommended_version">ਸਿਫ਼ਾਰਸ਼ ਕੀਤਾ ਗਿਆ ਵਰਜ਼ਨ</string>
+    <string name="home_selected_version">ਚੁਣਿਆ ਹੋਇਆ ਵਰਜ਼ਨ</string>
+    <string name="home_select_apk_title">APK ਚੁਣੋ</string>
+    <string name="home_select_apk_description">"ਯੂਨੀਵਰਸਲ ਪੈਚ ਕਿਸੇ ਵੀ ਐਪ ਨਾਲ ਕੰਮ ਕਰਦੇ ਹਨ
+
+ਚੁਣੋ ਕਿ ਇਸਦਾ APK ਕਿੱਥੋਂ ਲੈਣਾ ਹੈ"</string>
+    <string name="home_use_installed_app">ਇੰਸਟਾਲ ਕੀਤੀ ਐਪ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
+    <string name="home_use_installed_app_description">ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਪਹਿਲਾਂ ਤੋਂ ਮੌਜੂਦ ਕਿਸੇ ਐਪ ਨੂੰ ਚੁਣੋ</string>
+    <string name="home_open_apk_file_description">ਸਟੋਰੇਜ ਵਿੱਚੋਂ ਕੋਈ APK, APKM, APKS ਜਾਂ XAPK ਫਾਈਲ ਚੁਣੋ</string>
+    <string name="home_installed_app_picker_title">ਇੰਸਟਾਲ ਕੀਤੀਆਂ ਐਪਸ</string>
+    <string name="home_installed_app_picker_empty">ਕੋਈ ਐਪ ਨਹੀਂ ਮਿਲੀ</string>
+    <string name="home_installed_app_picker_filter_user">ਸਿਰਫ ਯੂਜ਼ਰ ਐਪਸ</string>
+    <string name="home_installed_app_picker_filter_system">ਸਿਰਫ ਸਿਸਟਮ ਐਪਸ</string>
+    <string name="home_invalid_apk_unreadable">ਫਾਈਲ ਨਹੀਂ ਪੜ੍ਹੀ ਜਾ ਸਕੀ। ਜਾਂਚ ਕਰੋ ਕਿ \'External Storage\' ਬੈਟਰੀ ਪ੍ਰਤਿਬੰਧਿਤ ਨਹੀਂ ਹੈ</string>
+    <string name="home_invalid_apk_not_an_apk">ਚੁਣਿਆ ਗਿਆ ਫਾਈਲ ਇੱਕ ਵੈਲਿਡ APK ਨਹੀਂ ਹੈ</string>
+    <string name="home_invalid_apk_already_patched">ਚੁਣਿਆ ਗਿਆ APK ਪਹਿਲਾਂ ਹੀ ਪੈਚ ਕੀਤਾ ਜਾ ਚੁੱਕਾ ਹੈ। ਇਸ ਦੀ ਬਜਾਏ ਅਸਲੀ ਐਪ ਚੁਣੋ</string>
+    <string name="home_invalid_apk_io_error">ਫਾਈਲ ਖੋਲ੍ਹਣ ਵਿੱਚ ਅਸਫਲ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="home_external_apk_expert_mode_required">ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਸਿਰਫ਼ ਐਕਸਪਰਟ ਮੋਡ ਵਿੱਚ ਉਪਲਬਧ ਹੈ</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
+    <string name="expert_mode_search">ਪੈਚਾਂ ਦੀ ਖੋਜ ਕਰੋ</string>
+    <string name="expert_mode_disable_all">ਸਾਰੇ ਅਯੋਗ ਕਰੋ</string>
+    <string name="expert_mode_enable_all">ਸਾਰੇ ਸਮਰੱਥ ਕਰੋ</string>
+    <string name="expert_mode_enable_all_universal_pending">ਯੂਨੀਵਰਸਲ ਪੈਚਾਂ ਲਈ ਦੁਬਾਰਾ ਟੈਪ ਕਰੋ</string>
+    <string name="expert_mode_universal_all_warning_title">ਕੀ ਸਾਰੇ ਯੂਨੀਵਰਸਲ ਪੈਚਾਂ ਨੂੰ ਇਨੇਬਲ ਕੀਤਾ ਜਾਵੇ?</string>
+    <string name="expert_mode_universal_all_warning_message">ਯੂਨੀਵਰਸਲ ਪੈਚਾਂ ਦੀ ਇਕੱਠੇ ਜਾਂਚ ਨਹੀਂ ਕੀਤੀ ਗਈ ਹੈ। ਉਨ੍ਹਾਂ ਸਾਰਿਆਂ ਨੂੰ ਇੱਕੋ ਸਮੇਂ ਇਨੇਬਲ ਕਰਨ ਨਾਲ ਟਕਰਾਅ, ਪੈਚਿੰਗ ਫੇਲ ਹੋਣ, ਜਾਂ ਕਰੈਸ਼ ਹੋ ਸਕਦੇ ਹਨ</string>
+    <string name="expert_mode_reset_to_default">ਸਿਫਾਰਸ਼ ਕੀਤੇ ਪੈਚਾਂ ਨੂੰ ਸਮਰੱਥ ਕਰੋ</string>
+    <string name="expert_mode_reset_to_default_done">ਸਿਫਾਰਸ਼ ਕੀਤੇ ਪੈਚ ਲਾਗੂ ਕੀਤੇ ਗਏ</string>
+    <string name="expert_mode_selected_count">%2$s ਵਿੱਚੋਂ %1$s ਚੁਣੇ ਗਏ</string>
+    <string name="expert_mode_restore_saved">ਸੇਵ ਕੀਤੀ ਚੋਣ ਨੂੰ ਬਹਾਲ ਕਰੋ</string>
+    <string name="expert_mode_restore_saved_done">ਸੇਵ ਕੀਤੀ ਚੋਣ ਬਹਾਲ ਕੀਤੀ ਗਈ</string>
+    <string name="expert_mode_copy_from_bundle_no_patches">ਇਸ ਬੰਡਲ ਵਿੱਚ ਕੋਈ ਮਿਲਦੇ-ਜੁਲਦੇ ਪੈਚ ਨਹੀਂ ਹਨ</string>
+    <string name="expert_mode_no_results">ਕੋਈ ਪੈਚ ਨਹੀਂ ਮਿਲਿਆ</string>
+    <string name="expert_mode_selected_only">ਸਿਰਫ਼ ਚੁਣੇ ਗਏ ਪੈਚ</string>
+    <string name="expert_mode_selected_only_on">ਸਿਰਫ਼ ਚੁਣੇ ਹੋਏ ਪੈਚ ਦਿਖਾ ਰਹੇ ਹਨ</string>
+    <string name="expert_mode_selected_only_off">ਸਾਰੇ ਪੈਚ ਦਿਖਾ ਰਹੇ ਹਨ</string>
+    <string name="expert_mode_universal_patches">ਯੂਨੀਵਰਸਲ ਪੈਚ</string>
+    <string name="expert_mode_new_patches">ਨਵੇਂ</string>
+    <string name="expert_mode_options_customized">ਕਸਟਮਾਈਜ਼ਡ</string>
+    <string name="expert_mode_patch_required_by_installer">ਚੁਣੇ ਹੋਏ ਇੰਸਟਾਲ ਟਾਰਗੇਟ ਲਈ ਲੋੜੀਂਦਾ ਹੈ</string>
+    <string name="expert_mode_patch_unavailable_for_installer">ਚੁਣੇ ਹੋਏ ਇੰਸਟਾਲ ਟਾਰਗੇਟ ਲਈ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
+    <string name="expert_mode_multiple_sources_warning_title">ਕਈ ਪੈਚ ਸਰੋਤ ਚੁਣੇ ਗਏ ਹਨ</string>
+    <string name="expert_mode_multiple_sources_warning_conflict">ਵੱਖ-ਵੱਖ ਸਰੋਤਾਂ ਤੋਂ ਪੈਚਾਂ ਨੂੰ ਇਕੱਠੇ ਕੰਮ ਕਰਨ ਲਈ ਨਹੀਂ ਬਣਾਇਆ ਗਿਆ ਹੈ ਅਤੇ ਇਹ ਆਪਸ ਵਿੱਚ ਟਕਰਾ ਸਕਦੇ ਹਨ ਜਾਂ ਐਪ ਨੂੰ ਖਰਾਬ ਕਰ ਸਕਦੇ ਹਨ</string>
     <!-- Home Screen - Home Sub-Dialogs -->
+    <string name="home_invalid_signature_title">ਅਣਪਛਾਣ APK</string>
+    <string name="home_invalid_signature_message">ਤੁਹਾਡੇ ਵੱਲੋਂ &lt;b&gt;%s&lt;/b&gt; ਲਈ ਚੁਣਿਆ ਗਿਆ APK പ്രതീক্ষিত ਸਾਈਨਿੰਗ ਸਰਟੀਫਿਕੇਟ ਨਾਲ ਮੇਲ ਨਹੀਂ ਖਾਂਦਾ। ਇਹ ਸੋਧਿਆ ਗਿਆ ਹੋ ਸਕਦਾ ਹੈ ਜਾਂ ਕਿਸੇ ਅਣਜਾਣ ਸਰੋਤ ਤੋਂ ਹੋ ਸਕਦਾ ਹੈ</string>
+    <string name="home_invalid_signature_badge">ਇਹ APK ਅਸਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ</string>
+    <string name="home_split_apk_warning_title">ਸਪਲਿਟ APK ਦਾ ਪਤਾ ਲੱਗਿਆ</string>
+    <string name="home_split_apk_warning_message">"ਇਹ ਫਾਈਲ ਇੱਕ APK ਬੰਡਲ
+(&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;) ਹੈ।
+
+ਸਭ ਤੋਂ ਵਧੀਆ ਨਤੀਜਿਆਂ ਲਈ, ਇਹ ਐਪ &lt;b&gt;ਪੂਰੇ APK&lt;/b&gt; ਨੂੰ ਪੈਚ ਕਰਨ ਦੀ ਸਿਫ਼ਾਰਸ਼ ਕਰਦੀ ਹੈ"</string>
+    <string name="home_split_apk_warning_pick_another">ਦੂਜਾ APK ਚੁਣੋ</string>
+    <string name="home_dialog_unsupported_version_experimental_label">ਪ੍ਰਯੋਗਿਕ</string>
+    <string name="home_dialog_unsupported_version_experimental_description">ਇਸ ਵਰਜ਼ਨ ਵਿੱਚ ਪ੍ਰਯੋਗਿਕ ਸਹਾਇਤਾ ਹੈ ਅਤੇ ਇਹ ਅਸਥਿਰ ਜਾਂ ਅਧੂਰਾ ਹੋ ਸਕਦਾ ਹੈ</string>
+    <string name="morphe_experimental_app_version_dialog_title">ਕੀ ਤੁਸੀਂ ਪ੍ਰਯੋਗ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ? 🧪</string>
+    <string name="morphe_experimental_app_version_dialog_message">"&lt;b&gt;%s&lt;/b&gt; ਦੇ ਇਸ ਵਰਜ਼ਨ ਵਿੱਚ ਸ਼ੁਰੂਆਤੀ ਪ੍ਰਯੋਗਿਕ ਸਹਾਇਤਾ ਹੈ।
+
+🔧 ਜਿਵੇਂ-ਜਿਵੇਂ ਇਸ ਐਪ ਵਰਜ਼ਨ ਲਈ ਪੈਚਾਂ ਨੂੰ ਸੁਧਾਰਿਆ ਜਾਵੇਗਾ, ਐਪ ਦੇ ਅਜੀਬ ਵਿਵਹਾਰ ਜਾਂ ਅਣਪਛਾਤੇ ਬੱਗਾਂ ਦੀ ਉਮੀਦ ਕਰੋ"</string>
+    <string name="home_dialog_unsupported_version_dialog_title">ਅਸਮਰਥਿਤ ਵਰਜ਼ਨ</string>
+    <string name="home_dialog_unsupported_version_dialog_description">ਇਹ APK ਇੱਕ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਐਪ ਵਰਜ਼ਨ ਨਹੀਂ ਹੈ। ਅੱਗੇ ਵਧਣ ਨਾਲ ਐਪ ਕੰਮ ਨਾ ਕਰ ਸਕੇ</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="home_dialog_unsupported_version_dialog_proceed">ਫਿਰ ਵੀ ਅੱਗੇ ਵਧੋ</string>
+    <string name="home_dialog_unsupported_version_compatible_versions">ਸੰਗਤ ਸੰਸਕਰਣ:</string>
+    <string name="home_dialog_unsupported_version_unsupported_label">ਅਸਮਰਥਿਤ</string>
     <!-- "Build" here refers to a specific compiled version of the app (versionCode) -->
+    <string name="home_dialog_unsupported_version_build">ਬਿਲਡ %s</string>
+    <string name="home_dialog_unsupported_version_build_mismatch_description">ਇਹ ਉਸੇ ਵਰਜ਼ਨ ਦਾ ਇੱਕ ਵੱਖਰਾ ਬਿਲਡ ਹੈ। ਪੈਚਾਂ ਲਈ ਇੱਕ ਖਾਸ ਬਿਲਡ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ</string>
+    <string name="home_dialog_wrong_package_title">ਗਲਤ ਪੈਕੇਜ ਚੁਣਿਆ ਗਿਆ</string>
+    <string name="home_dialog_wrong_package_description">ਚੁਣਿਆ ਹੋਇਆ APK ਉਸ ਐਪਲੀਕੇਸ਼ਨ ਲਈ ਨਹੀਂ ਹੈ ਜਿਸਨੂੰ ਤੁਸੀਂ ਪੈਚ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ</string>
+    <string name="home_dialog_expected_package">ਉਮੀਦ ਕੀਤਾ ਗਿਆ ਪੈਕੇਜ:</string>
+    <string name="home_dialog_selected_package">ਚੁਣਿਆ ਗਿਆ ਪੈਕੇਜ:</string>
+    <string name="home_outdated_patches_dialog_title">ਪੈਚ ਪੁਰਾਣੇ ਹੋ ਸਕਦੇ ਹਨ</string>
+    <string name="home_outdated_patches_dialog_message">ਮੋਬਾਈਲ ਡਾਟਾ ਸਰਗਰਮ ਹੈ ਅਤੇ ਪੈਚ ਅਪਡੇਟਸ ਅਸਮਰੱਥ ਹਨ</string>
+    <string name="home_outdated_patches_dialog_warning">ਪੁਰਾਣੇ ਪੈਚਾਂ ਨਾਲ ਪੈਚ ਕਰਨ ਨਾਲ ਐਪ ਖਰਾਬ ਹੋ ਸਕਦੀ ਹੈ</string>
+    <string name="home_outdated_patches_dialog_update_and_patch">ਅਪਡੇਟ ਅਤੇ ਪੈਚ ਕਰੋ</string>
+    <string name="home_low_disk_space_dialog_title">ਡਿਸਕ ਸਪੇਸ ਘੱਟ ਹੈ</string>
     <!-- "%1$s" is the free storage and "%2$s" the amount patching needs, both in gigabytes. -->
+    <string name="home_low_disk_space_dialog_message">ਸਿਰਫ਼ %1$s GB ਮੁਫ਼ਤ ਸਟੋਰੇਜ ਉਪਲਬਧ ਹੈ। ਪੈਚਿੰਗ ਨੂੰ ਸਹੀ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰਨ ਲਈ ਘੱਟੋ-ਘੱਟ %2$s GB ਮੁਫ਼ਤ ਸਪੇਸ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="home_low_disk_space_dialog_warning">ਅੱਗੇ ਵਧਣ ਨਾਲ \"ਫਾਈਲ ਨਹੀਂ ਮਿਲੀ\" ਦੀ ਗਲਤੀ ਆ ਸਕਦੀ ਹੈ ਜਾਂ ਇੱਕ ਖਰਾਬ ਆਊਟਪੁੱਟ APK ਮਿਲ ਸਕਦਾ ਹੈ</string>
+    <string name="home_simple_bundle_select_title">ਪੈਚ ਸਰੋਤ ਚੁਣੋ</string>
+    <string name="home_simple_bundle_select_remember">ਇਸ ਐਪ ਲਈ ਹਮੇਸ਼ਾ ਇਸ ਸਰੋਤ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
     <!-- Color picker -->
+    <string name="custom_color">ਕਸਟਮ ਰੰਗ</string>
+    <string name="color_picker_shade">ਸੰਤ੍ਰਿਪਤੀ ਅਤੇ ਚਮਕ</string>
+    <string name="color_picker_hue">ਹਿਊ</string>
     <!-- Patch Options -->
+    <string name="patch_option_instructions">ਹਦਾਇਤਾਂ</string>
+    <string name="patch_option_enter_value">ਮੁੱਲ ਦਰਜ ਕਰੋ</string>
+    <string name="patch_option_enter_number">ਨੰਬਰ ਦਰਜ ਕਰੋ</string>
+    <string name="patch_option_enter_decimal">ਦਸ਼ਮਲਵ ਦਰਜ ਕਰੋ</string>
+    <string name="patch_option_slider_edit">ਇੱਕ ਸਹੀ ਮੁੱਲ ਦਰਜ ਕਰੋ</string>
+    <string name="patch_option_slider_range_start">ਤੋਂ</string>
+    <string name="patch_option_slider_range_end">ਤੱਕ</string>
+    <string name="patch_option_list_duplicate">ਇਹ ਮੁੱਲ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ</string>
+    <string name="patch_option_list_empty">ਮੁੱਲ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ</string>
+    <string name="patch_option_required_missing">%s: ਸਾਰੇ ਲੋੜੀਂਦੇ ਵਿਕਲਪ ਭਰੋ</string>
     <!-- Badge on a patch option whose value differs from the patch's own, which resets it when tapped -->
+    <string name="patch_option_changed">ਬਦਲਿਆ ਗਿਆ</string>
     <!-- Badge on a patch option that has to be filled in before patching -->
+    <string name="patch_option_required">ਲਾਜ਼ਮੀ</string>
     <!-- Hint under an image patch option. "%1$s" is the width and "%2$s" the height in pixels -->
+    <string name="patch_option_recommended_size">ਸਿਫਾਰਸ਼ ਕੀਤੀ ਗਈ: %1$s×%2$s</string>
     <!-- Adaptive Icon Creator -->
+    <string name="adaptive_icon_create">ਐਡਾਪਟਿਵ ਆਈਕਨ ਬਣਾਓ</string>
+    <string name="adaptive_icon_select_image">ਤਸਵੀਰ ਚੁਣੋ</string>
+    <string name="adaptive_icon_change_image">ਤਸਵੀਰ ਬਦਲੋ</string>
+    <string name="image_load_failed">ਇਸ ਤਸਵੀਰ ਨੂੰ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ</string>
     <!-- Card of the adaptive icon creator where the picture is placed on the icon -->
+    <string name="adaptive_icon_launcher">ਲੌਂਚਰ ਆਈਕਨ</string>
+    <string name="adaptive_icon_gesture_hint">ਹਿਲਾਉਣ ਲਈ ਖਿੱਚੋ, ਰੀਸਾਈਜ਼ ਕਰਨ ਲਈ ਪਿੰਚ ਕਰੋ</string>
     <!-- Card of the adaptive icon creator showing the icons as the device draws them -->
+    <string name="adaptive_icon_preview">ਪੂਰਵਝਲਕ</string>
     <!-- Caption under the launcher icon in its own colors -->
+    <string name="adaptive_icon_standard">ਮਿਆਰੀ</string>
     <!-- Caption under the launcher icon recolored by the system theme -->
+    <string name="adaptive_icon_themed">ਥੀਮਡ</string>
+    <string name="adaptive_icon_background_color">ਬੈਕਗ੍ਰਾਊਂਡ ਰੰਗ</string>
+    <string name="adaptive_icon_reset_transform">ਸਥਿਤੀ ਅਤੇ ਪੈਮਾਨੇ ਨੂੰ ਰੀਸੈਟ ਕਰੋ</string>
+    <string name="adaptive_icon_no_transparency_warning">ਇਸ ਚਿੱਤਰ ਵਿੱਚ ਕੋਈ ਪਾਰਦਰਸ਼ੀ ਪਿਕਸਲ ਨਹੀਂ ਹਨ, ਇਸ ਲਈ ਥੀਮਡ ਅਤੇ ਨੋਟੀਫਿਕੇਸ਼ਨ ਆਈਕਨ Morphe ਲੋਗੋ ਨੂੰ ਬਣਾਈ ਰੱਖਦੇ ਹਨ</string>
+    <string name="adaptive_icon_created_success">ਅਡਾਪਟਿਵ ਆਈਕਨ ਸਫਲਤਾਪੂਰਵਕ ਬਣਾਇਆ ਗਿਆ</string>
+    <string name="adaptive_icon_creation_failed">ਅਡਾਪਟਿਵ ਆਈਕਨ ਬਣਾਉਣ ਵਿੱਚ ਅਸਫਲ ਰਿਹਾ</string>
+    <string name="adaptive_icon_guide">ਆਈਕਨ ਬਣਾਉਣ ਦੀ ਗਾਈਡ</string>
+    <string name="adaptive_icon_guide_png_title">ਪਾਰਦਰਸ਼ੀ ਬੈਕਗ੍ਰਾਊਂਡ ਵਾਲੇ PNG ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
+    <string name="adaptive_icon_guide_png_body">ਪਾਰਦਰਸ਼ੀ ਬੈਕਗ੍ਰਾਊਂਡ ਵਾਲਾ ਲੋਗੋ ਸਭ ਤੋਂ ਵਧੀਆ ਕੰਮ ਕਰਦਾ ਹੈ, ਜਿਸਦਾ ਬੈਕਗ੍ਰਾਊਂਡ ਰੰਗ ਹੇਠਾਂ ਚੁਣਿਆ ਗਿਆ ਹੈ। ਪਾਰਦਰਸ਼ੀਤਾ ਤੋਂ ਬਿਨਾਂ ਤਸਵੀਰ ਇਸਦੇ ਬਜਾਏ ਪੂਰੇ ਆਈਕਨ ਨੂੰ ਭਰਦੀ ਹੈ, ਅਤੇ ਥੀਮਡ ਅਤੇ ਨੋਟੀਫਿਕੇਸ਼ਨ ਆਈਕਨ ਫਿਰ Morphe ਲੋਗੋ ਨੂੰ ਬਰਕਰਾਰ ਰੱਖਦੇ ਹਨ।</string>
+    <string name="adaptive_icon_guide_safe_zones_title">ਸੁਰੱਖਿਅਤ ਜ਼ੋਨ</string>
+    <string name="adaptive_icon_guide_safe_zones_body">ਆਊਟਲਾਈਨ ਤੁਹਾਡੇ ਲਾਂਚਰ ਦੇ ਆਈਕਨ ਦਾ ਆਕਾਰ ਦਿਖਾਉਂਦੀ ਹੈ, ਅਤੇ ਇਸਦੇ ਬਾਹਰ ਸਭ ਕੁਝ ਕੱਟ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ। ਹੋਰ ਲਾਂਚਰ ਹੋਰ ਆਕਾਰਾਂ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹਨ, ਇਸ ਲਈ ਮਹੱਤਵਪੂਰਨ ਵੇਰਵਿਆਂ ਨੂੰ ਡੈਸ਼ਡ ਸਰਕਲ ਦੇ ਅੰਦਰ ਰੱਖੋ, ਜੋ ਹਰ ਆਕਾਰ ਦਿਖਾਉਂਦਾ ਹੈ।</string>
+    <string name="adaptive_icon_guide_notification_title">ਨੋਟੀਫਿਕੇਸ਼ਨ ਆਈਕਨ</string>
+    <string name="adaptive_icon_guide_notification_body">ਤਸਵੀਰ ਦੇ ਦਿਖਾਈ ਦੇਣ ਵਾਲੇ ਹਿੱਸੇ ਤੋਂ ਕੱਟਿਆ ਗਿਆ ਅਤੇ ਹੋਰ ਸਟੇਟਸ ਬਾਰ ਆਈਕਨਾਂ ਵਾਂਗ ਸਾਈਜ਼ ਕੀਤਾ ਗਿਆ, ਚਾਹੇ ਫਾਈਲ ਦਾ ਮਾਰਜਿਨ ਕੁਝ ਵੀ ਹੋਵੇ। ਪ੍ਰੀਵਿਊ ਦੇ ਹੇਠਾਂ ਸਲਾਈਡਰ ਨਾਲ ਇਸਨੂੰ ਐਡਜਸਟ ਕਰੋ। Android ਇਸਨੂੰ ਇੱਕ ਸਿੰਗਲ ਰੰਗ ਵਿੱਚ ਦਿਖਾਉਂਦਾ ਹੈ।</string>
+    <string name="adaptive_icon_guide_monochrome_title">ਥੀਮਡ ਆਈਕਨ</string>
+    <string name="adaptive_icon_guide_monochrome_body">ਤਸਵੀਰ ਤੋਂ ਕੱਟਿਆ ਗਿਆ ਜਿਸਦੀ ਸਥਿਤੀ ਅਤੇ ਸਾਈਜ਼ ਲਾਂਚਰ ਆਈਕਨ ਵਰਗਾ ਹੀ ਹੈ। Android 13 ਅਤੇ ਉਸ ਤੋਂ ਬਾਅਦ ਦੇ ਵਰਜਨਾਂ ਵਿੱਚ, ਥੀਮਡ ਆਈਕਨਾਂ ਵਾਲੇ ਲਾਂਚਰ ਇਸਨੂੰ ਵਾਲਪੇਪਰ ਤੋਂ ਰੰਗ ਕਰਦੇ ਹਨ।</string>
+    <string name="notification_icon_preview">ਨੋਟੀਫਿਕੇਸ਼ਨ</string>
     <!-- Header Creator -->
+    <string name="header_creator_create">ਕਸਟਮ ਹੈਡਰ ਬਣਾਓ</string>
+    <string name="header_creator_light_theme">ਲਾਈਟ ਥੀਮ ਹੈਡਰ</string>
+    <string name="header_creator_dark_theme">ਡਾਰਕ ਥੀਮ ਹੈਡਰ</string>
+    <string name="header_creator_success">ਹੈਡਰ ਸਫਲਤਾਪੂਰਵਕ ਬਣਾਇਆ ਗਿਆ</string>
+    <string name="header_creator_failed">ਹੈਡਰ ਬਣਾਉਣ ਵਿੱਚ ਅਸਫਲ ਰਿਹਾ</string>
+    <string name="header_creator_guide">ਹੈਡਰ ਬਣਾਉਣ ਦੀ ਗਾਈਡ</string>
+    <string name="header_creator_guide_image_title">ਤਸਵੀਰ ਦੀਆਂ ਲੋੜਾਂ</string>
+    <string name="header_creator_guide_image_body">ਪਾਰਦਰਸ਼ੀ ਬੈਕਗ੍ਰਾਊਂਡ ਵਾਲਾ PNG ਐਪ ਬਾਰ ਵਿੱਚ ਮਿਲ ਜਾਂਦਾ ਹੈ। ਫਾਈਲ ਵਿੱਚ ਲੋਗੋ ਦੇ ਆਲੇ-ਦੁਆਲੇ ਦੇ ਮਾਰਜਿਨ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਇਸ ਲਈ ਇਹ ਸਟਾਕ ਲੋਗੋ ਦੇ ਸਾਈਜ਼ ਅਤੇ ਸਥਾਨ ਤੋਂ ਸ਼ੁਰੂ ਹੁੰਦਾ ਹੈ।</string>
+    <string name="header_creator_guide_themes_title">ਲਾਈਟ ਅਤੇ ਡਾਰਕ ਥੀਮਾਂ</string>
+    <string name="header_creator_guide_themes_body">ਜ਼ਿਆਦਾਤਰ ਐਪਾਂ ਨੂੰ ਲਾਈਟ ਅਤੇ ਡਾਰਕ ਥੀਮਾਂ ਲਈ ਵੱਖਰੀਆਂ ਤਸਵੀਰਾਂ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ। ਕੁਝ ਐਪਾਂ (ਜਿਵੇਂ ਕਿ YouTube Music) ਸਿਰਫ਼ ਡਾਰਕ ਥੀਮ ਦੀ ਵਰਤੋਂ ਕਰਦੀਆਂ ਹਨ, ਇਸ ਲਈ ਸਿਰਫ਼ ਉਹੀ ਸੈਕਸ਼ਨ ਦਿਖਾਈ ਦਿੰਦਾ ਹੈ।</string>
+    <string name="header_creator_guide_positioning_title">ਪੋਜੀਸ਼ਨਿੰਗ ਅਤੇ ਸਕੇਲਿੰਗ</string>
+    <string name="header_creator_guide_positioning_body">ਐਡਿਟਰ ਵਿੱਚ ਚਿੱਤਰ ਨੂੰ ਡਰੈਗ ਅਤੇ ਪਿੰਚ ਕਰੋ, ਜਾਂ ਸਲਾਈਡਰ ਨਾਲ ਇਸਦਾ ਸਾਈਜ਼ ਬਦਲੋ। ਡੈਸ਼ਡ ਬਾਕਸ ਇਹ ਦਰਸਾਉਂਦਾ ਹੈ ਕਿ ਸਟਾਕ ਲੋਗੋ ਕਿੱਥੇ ਸਥਿਤ ਹੈ, ਅਤੇ ਜਦੋਂ ਚਿੱਤਰ ਇਸਦੇ ਨਾਲ ਇਕਸਾਰ ਹੁੰਦਾ ਹੈ ਤਾਂ ਗਾਈਡ ਦਿਖਾਈ ਦਿੰਦੇ ਹਨ।</string>
     <!-- Batch patching -->
+    <string name="batch_patch_action">ਪੈਚ ਚੁਣਿਆ ਗਿਆ</string>
+    <string name="batch_patch_title">ਬੈਚ ਪੈਚਿੰਗ</string>
+    <string name="batch_patch_planning">ਕਤਾਰ ਤਿਆਰ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ…</string>
+    <string name="batch_patch_preparing_next">ਅਗਲੀ ਐਪ ਤਿਆਰ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ…</string>
+    <string name="batch_patch_progress_counter">%2$s ਵਿੱਚੋਂ %1$s ਨੂੰ ਪੈਚ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</string>
+    <string name="batch_patch_summary">%1$s ਪੈਚ ਕੀਤੇ ਗਏ, %2$s ਅਸਫਲ, %3$s ਛੱਟੇ ਗਏ</string>
+    <string name="batch_patch_saved_hint">ਪੈਚ ਕੀਤੀਆਂ ਐਪਸ ਸੇਵ ਕਰ ਲਈਆਂ ਗਈਆਂ ਹਨ। ਉਹਨਾਂ ਨੂੰ ਹੁਣ ਇੰਸਟਾਲ ਕਰੋ, ਜਾਂ ਬਾਅਦ ਵਿੱਚ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਪੈਚ ਕੀਤੇ APK ਲਿਸਟ ਤੋਂ ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="batch_patch_multiple_sources">ਕੁਝ ਐਪਸ ਇੱਕ ਤੋਂ ਵੱਧ ਸਰੋਤਾਂ ਤੋਂ ਪੈਚਾਂ ਨੂੰ ਜੋੜਦੀਆਂ ਹਨ, ਜਿਸ ਕਾਰਨ ਟਕਰਾਅ ਹੋ ਸਕਦਾ ਹੈ</string>
+    <string name="batch_patch_needs_apk">ਕੋਈ APK ਉਪਲਬਧ ਨਹੀਂ ਹੈ, ਇੱਕ ਫਾਈਲ ਅਟੈਚ ਕਰੋ</string>
+    <string name="batch_patch_wrong_package">ਅਟੈਚ ਕੀਤੀ ਫਾਈਲ %s ਨਾਲ ਸਬੰਧਤ ਹੈ</string>
+    <string name="batch_patch_version_mismatch">ਵਰਜ਼ਨ %s ਪੈਚਾਂ ਦੁਆਰਾ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ</string>
+    <string name="batch_patch_source_saved">ਅਸਲ ਸੇਵ ਕੀਤਾ ਗਿਆ</string>
+    <string name="batch_patch_source_installed">ਇੰਸਟਾਲ ਕੀਤੀ ਐਪ</string>
+    <string name="batch_patch_source_file">ਅਟੈਚ ਕੀਤੀ ਫਾਈਲ</string>
+    <string name="batch_patch_source_unavailable">APK ਤਿਆਰ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ</string>
+    <string name="batch_patch_force_version">ਫਿਰ ਵੀ ਪੈਚ ਕਰੋ</string>
+    <string name="batch_patch_force_version_done">ਫਿਰ ਵੀ ਕਿਊ ਵਿੱਚ ਰੱਖਿਆ ਗਿਆ, ਐਪ ਖਰਾਬ ਹੋ ਸਕਦੀ ਹੈ</string>
+    <string name="batch_patch_accept_signature_done">ਫਿਰ ਵੀ ਕਿਊ ਵਿੱਚ ਰੱਖਿਆ ਗਿਆ, APK ਦੀ ਤਸਦੀਕ ਨਹੀਂ ਹੋਈ</string>
+    <string name="batch_patch_apk_selected">APK ਚੁਣਿਆ ਗਿਆ</string>
+    <string name="batch_patch_edit_patches">ਪੈਚ ਚੁਣੋ</string>
+    <string name="batch_patch_state_no_apk">ਕੋਈ APK ਨਹੀਂ</string>
+    <string name="batch_patch_state_no_patches">ਕੋਈ ਪੈਚ ਨਹੀਂ</string>
+    <string name="batch_patch_state_no_selection">ਕੋਈ ਨਹੀਂ ਚੁਣਿਆ ਗਿਆ</string>
+    <string name="batch_patch_no_selection">ਉਪਲਬਧ ਪੈਚਾਂ ਵਿੱਚੋਂ ਕੋਈ ਵੀ ਚੁਣਿਆ ਨਹੀਂ ਗਿਆ ਹੈ</string>
+    <string name="batch_patch_policy_install">ਪੂਰਾ ਹੋਣ ਤੇ ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="batch_patch_policy_install_description">ਕਤਾਰ ਖਤਮ ਹੋਣ ਤੋਂ ਤੁਰੰਤ ਬਾਅਦ ਹਰੇਕ ਪੈਚ ਕੀਤੀ ਐਪ ਨੂੰ ਇੰਸਟਾਲ ਕਰਦਾ ਹੈ। ਬੰਦ ਰੱਖਣ ਨਾਲ APKs ਬਾਅਦ ਲਈ ਸੁਰੱਖਿਅਤ ਰਹਿੰਦੇ ਹਨ</string>
+    <string name="batch_patch_policy_mount">ਪੂਰਾ ਹੋਣ \'ਤੇ ਮਾਊਂਟ ਕਰੋ</string>
+    <string name="batch_patch_policy_mount_description">ਕਿਊ ਖਤਮ ਹੋਣ ਤੋਂ ਬਾਅਦ ਹਰ ਪੈਚ ਕੀਤੇ ਐਪ ਨੂੰ ਮਾਊਂਟ ਕਰਦਾ ਹੈ। ਬੰਦ ਰੱਖਣ ਨਾਲ APKs ਬਾਅਦ ਲਈ ਸੁਰੱਖਿਅਤ ਰਹਿੰਦੇ ਹਨ</string>
+    <string name="batch_patch_policy_install_mount">ਪੂਰਾ ਹੋਣ \'ਤੇ ਇੰਸਟਾਲ ਜਾਂ ਮਾਊਂਟ ਕਰੋ</string>
+    <string name="batch_patch_policy_install_mount_description">ਕਿਊ ਖਤਮ ਹੋਣ ਤੋਂ ਬਾਅਦ ਹਰ ਪੈਚ ਕੀਤੇ ਐਪ ਨੂੰ ਇੰਸਟਾਲ ਜਾਂ ਮਾਊਂਟ ਕਰਦਾ ਹੈ। ਬੰਦ ਰੱਖਣ ਨਾਲ APKs ਬਾਅਦ ਲਈ ਸੁਰੱਖਿਅਤ ਰਹਿੰਦੇ ਹਨ</string>
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="batch_patch_start">ਸ਼ੁਰੂ ਕਰੋ</string>
+    <string name="batch_patch_stop_title">ਬੈਚ ਪੈਚਿੰਗ ਰੋਕੋ?</string>
+    <string name="batch_patch_stop_description">ਜਿਸ ਐਪ ਨੂੰ ਇਸ ਸਮੇਂ ਪੈਚ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ ਅਤੇ ਜੋ ਕੁਝ ਵੀ ਅਜੇ ਕਿਊ ਵਿੱਚ ਹੈ, ਉਹ ਰੱਦ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ</string>
     <!-- Label of a footer button beside "Done". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="batch_patch_install_all">ਸਾਰੀਆਂ ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="batch_patch_install_failed">ਇੰਸਟਾਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="batch_patch_in_progress">ਬੈਚ ਪੈਚਿੰਗ ਪਹਿਲਾਂ ਹੀ ਚੱਲ ਰਹੀ ਹੈ</string>
+    <string name="batch_patch_nothing_outdated">ਹਰ ਪੈਚ ਕੀਤੀ ਐਪ ਅੱਪ-ਟੂ-ਡੇਟ ਹੈ</string>
+    <string name="batch_queue_add_action">ਕਿਊ ਵਿੱਚ ਜੋੜੋ</string>
+    <string name="batch_queue_pending_subtitle">ਸਮੀਖਿਆ ਕਰਨ ਅਤੇ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="batch_queue_clear_title">ਕਿਊ ਨੂੰ ਸਾਫ਼ ਕਰੋ?</string>
+    <string name="batch_queue_clear_description">ਸਾਰੀਆਂ ਐਪਸ ਕਿਊ ਵਿੱਚੋਂ ਹਟਾ ਦਿੱਤੀਆਂ ਜਾਣਗੀਆਂ</string>
+    <string name="shortcut_repatch_short">ਦੁਬਾਰਾ-ਪੈਚ ਕਰੋ</string>
+    <string name="shortcut_repatch_long">ਪੁਰਾਣੀਆਂ ਐਪਸ ਨੂੰ ਦੁਬਾਰਾ-ਪੈਚ ਕਰੋ</string>
+    <string name="shortcut_check_updates_short">ਅੱਪਡੇਟਸ ਦੀ ਜਾਂਚ ਕਰੋ</string>
+    <string name="shortcut_check_updates_long">ਪੈਚ ਅੱਪਡੇਟਸ ਲਈ ਜਾਂਚ ਕਰੋ</string>
+    <string name="shortcut_patch_app">%s ਨੂੰ ਪੈਚ ਕਰੋ</string>
     <!-- Home Screen - App Info Screen -->
+    <string name="home_app_info_uninstall_title">ਇਸ ਐਪ ਨੂੰ ਅਨ-ਇੰਸਟਾਲ ਕਰੋ?</string>
+    <string name="home_app_info_uninstall_removes_data">ਐਪ ਅਤੇ ਇਸਦਾ ਡਾਟਾ ਇਸ ਡਿਵਾਈਸ ਤੋਂ ਹਟਾ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ</string>
+    <string name="batch_uninstall_confirm_body">ਚੁਣੀਆਂ ਗਈਆਂ ਐਪਸ ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਤੋਂ ਸਥਾਈ ਤੌਰ \'ਤੇ ਹਟਾ ਦਿੱਤੀਆਂ ਜਾਣਗੀਆਂ</string>
+    <string name="home_app_info_remove_app_warning">ਇਹ ਸਥਾਈ ਤੌਰ \'ਤੇ ਮਿਟਾ ਦੇਵੇਗਾ:</string>
+    <string name="home_app_info_delete_item_database">ਡੇਟਾਬੇਸ ਐਂਟਰੀ</string>
+    <string name="home_app_info_delete_item_patched_apk">ਪੈਚ ਕੀਤੀ APK ਫਾਈਲ</string>
+    <string name="home_app_info_delete_item_original_apk">ਮੂਲ APK ਫਾਈਲ</string>
+    <string name="home_app_info_delete_preservation_note">ਤੁਹਾਡੀ ਪੈਚ ਚੋਣ ਅਤੇ ਵਿਕਲਪ ਭਵਿੱਖ ਦੇ ਪੈਚਿੰਗ ਲਈ ਸੁਰੱਖਿਅਤ ਰੱਖੇ ਜਾਣਗੇ</string>
+    <string name="home_app_info_patches_name_default">ਪੈਚ</string>
+    <string name="home_app_info_patches_name_fallback">ਬਿਨਾਂ ਨਾਮ ਦਾ</string>
+    <string name="home_app_info_patches_source_removed">ਮਿਟਾਇਆ ਗਿਆ ਪੈਚ ਸਰੋਤ</string>
+    <string name="home_app_info_patches_replace_fail">ਪੈਚਾਂ ਨੂੰ ਇੰਪੋਰਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s</string>
+    <string name="home_app_info_repatch_no_original_apk">ਅਸਲ APK ਨਹੀਂ ਮਿਲਿਆ। ਇਸ ਐਪ ਨੂੰ ਦੁਬਾਰਾ ਪੈਚ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ</string>
+    <string name="home_app_info_original_package_name">ਅਸਲ ਪੈਕੇਜ ਦਾ ਨਾਮ</string>
+    <string name="home_app_info_applied_patches">ਲਾਗੂ ਕੀਤੇ ਪੈਚ</string>
+    <string name="home_app_info_patch_source_used">ਪੈਚ ਸਰੋਤ ਵਰਤਿਆ ਗਿਆ</string>
+    <string name="home_app_info_install_type_custom_installer">ਕਸਟਮ ਇੰਸਟਾਲਰ</string>
+    <string name="home_app_info_install_type_system_installer">ਸਿਸਟਮ ਇੰਸਟਾਲਰ</string>
+    <string name="home_app_info_install_type_play_store">Play Store ਇੰਸਟਾਲ</string>
+    <string name="home_app_info_install_type_root_play_store">Root Play Store ਇੰਸਟਾਲ</string>
+    <string name="home_app_info_install_type_shizuku_play_store">Shizuku Play Store ਇੰਸਟਾਲ</string>
+    <string name="home_app_info_patch_update_available">ਪੈਚ ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ</string>
+    <string name="home_app_info_patch_update_available_description">ਪੈਚਾਂ ਦਾ ਇੱਕ ਨਵਾਂ ਵਰਜ਼ਨ ਉਪਲਬਧ ਹੈ। ਨਵੀਨਤਮ ਸੁਧਾਰਾਂ ਅਤੇ ਫਿਕਸਾਂ ਨੂੰ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਆਪਣੇ ਐਪ ਨੂੰ ਦੁਬਾਰਾ ਪੈਚ ਕਰੋ</string>
+    <string name="home_app_info_app_update_available">ਐਪ ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ</string>
+    <string name="home_app_info_app_update_available_description">ਪੈਚ ਸਰੋਤ ਇਸ ਐਪ ਦੇ ਨਵੇਂ ਵਰਜ਼ਨ ਦਾ ਸਮਰਥਨ ਕਰਦੇ ਹਨ। ਉਸ ਵਰਜ਼ਨ \'ਤੇ ਜਾਣ ਲਈ ਇਸਨੂੰ ਦੁਬਾਰਾ ਪੈਚ ਕਰੋ</string>
+    <string name="home_app_info_newest_supported_version">ਨਵੀਨਤਮ ਸਮਰਥਿਤ</string>
+    <string name="home_app_info_version_move">ਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ %1$s, ਸਭ ਤੋਂ ਨਵਾਂ ਸਮਰਥਿਤ %2$s</string>
+    <string name="home_app_info_version_restore">ਇੰਸਟਾਲ ਕੀਤਾ %1$s, ਪੈਚ ਕੀਤਾ %2$s</string>
+    <string name="home_app_info_app_deleted_warning">ਐਪ ਨੂੰ ਅਨਇੰਸਟਾਲ ਕਰ ਦਿੱਤਾ ਗਿਆ ਸੀ</string>
+    <string name="home_app_info_app_deleted_description">ਇਸ ਐਪ ਨੂੰ Morphe ਦੇ ਬਾਹਰ ਅਨਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ ਸੀ। ਕਾਰਜਸ਼ੀਲਤਾ ਨੂੰ ਬਹਾਲ ਕਰਨ ਲਈ ਇਸਨੂੰ ਦੁਬਾਰਾ ਪੈਚ ਕਰੋ</string>
+    <string name="home_app_info_not_patched_description">ਇਸ ਐਪ ਦਾ ਇੱਕ ਬਿਨਾਂ ਪੈਚ ਵਾਲਾ ਵਰਜ਼ਨ ਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ ਹੈ। Morphe ਕੋਲ ਅਜੇ ਵੀ ਇਸਦਾ ਪਿਛਲਾ ਪੈਚ ਰਿਕਾਰਡ ਹੈ</string>
+    <string name="home_app_info_mount_replaced_description">ਇੱਕ ਹੋਰ ਵਰਜ਼ਨ ਨੇ ਮਾਊਂਟ ਕੀਤੇ ਐਪ ਦੀ ਜਗ੍ਹਾ ਲੈ ਲਈ ਹੈ, ਇਸ ਲਈ ਪੈਚ ਹੁਣ ਲਾਗੂ ਨਹੀਂ ਹੁੰਦਾ। ਰੀਸਟੋਰ ਪੈਚ ਕੀਤੇ ਵਰਜ਼ਨ ਨੂੰ ਵਾਪਸ ਲਿਆਉਂਦਾ ਹੈ</string>
+    <string name="home_app_info_mount_replaced_by_play_store_description">Google Play ਨੇ ਮਾਊਂਟ ਕੀਤੇ ਐਪ ਨੂੰ ਅਪਡੇਟ ਕਰ ਦਿੱਤਾ ਹੈ, ਇਸ ਲਈ ਪੈਚ ਹੁਣ ਲਾਗੂ ਨਹੀਂ ਹੁੰਦਾ। ਰੀਸਟੋਰ ਪੈਚ ਕੀਤੇ ਵਰਜ਼ਨ ਨੂੰ ਵਾਪਸ ਲਿਆਉਂਦਾ ਹੈ। ਇਸਨੂੰ ਪੈਚ ਰੱਖਣ ਲਈ Google Play ਵਿੱਚ ਇਸਦੇ ਲਈ ਆਟੋ-ਅਪਡੇਟ ਬੰਦ ਕਰੋ</string>
+    <string name="app_links_title">ਸਮਰਥਿਤ ਵੈੱਬ ਲਿੰਕ</string>
+    <string name="app_links_description">Android 12+ \'ਤੇ, ਸਮਰਥਿਤ ਡੋਮੇਨਾਂ ਦੇ ਲਿੰਕ ਡਿਫੌਲਟ ਤੌਰ \'ਤੇ ਤੁਹਾਡੇ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਖੁੱਲ੍ਹਦੇ ਹਨ ਜਦੋਂ ਤੱਕ ਕਿ ਉਹਨਾਂ ਨੂੰ ਮਨਜ਼ੂਰੀ ਨਹੀਂ ਮਿਲ ਜਾਂਦੀ</string>
+    <string name="app_links_unverified_banner_title">ਵੈੱਬ ਲਿੰਕਾਂ ਦੀ ਪੁਸ਼ਟੀ ਨਹੀਂ ਕੀਤੀ ਗਈ</string>
+    <string name="app_links_unverified_banner_description">ਸਮਰਥਿਤ ਵੈੱਬ ਲਿੰਕ ਇਸ ਐਪ ਦੀ ਬਜਾਏ ਵਰਤਮਾਨ ਵਿੱਚ ਤੁਹਾਡੇ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਖੁੱਲ੍ਹਦੇ ਹਨ</string>
+    <string name="app_links_enable_auto">ਆਟੋਮੈਟਿਕ ਤੌਰ \'ਤੇ ਸਮਰੱਥ ਕਰੋ</string>
+    <string name="app_links_enable_auto_in_progress">ਲਿੰਕ ਸਮਰੱਥ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ…</string>
+    <string name="app_links_open_settings">ਲਿੰਕ ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ</string>
+    <string name="app_links_repair_success">ਐਪ ਲਿੰਕ ਸਫਲਤਾਪੂਰਵਕ ਸਮਰੱਥ ਕੀਤੇ ਗਏ</string>
+    <string name="app_links_repair_failed">ਐਪ ਲਿੰਕਾਂ ਨੂੰ ਆਟੋਮੈਟਿਕ ਤੌਰ \'ਤੇ ਸਮਰੱਥ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="app_links_all_verified">ਸਾਰੇ ਸਮਰਥਿਤ ਲਿੰਕ ਇਸ ਐਪ ਵਿੱਚ ਖੋਲ੍ਹਣ ਲਈ ਕੌਂਫਿਗਰ ਕੀਤੇ ਗਏ ਹਨ</string>
+    <string name="app_links_fix">ਲਿੰਕ ਠੀਕ ਕਰੋ</string>
+    <string name="configure">ਕੌਂਫਿਗਰ ਕਰੋ</string>
+    <string name="patcher_rename_title">ਇਹ ਇੱਕ ਕਲੋਨ ਇੰਸਟਾਲ ਕਰੇਗਾ</string>
+    <string name="patcher_rename_description">ਪੈਚਾਂ ਨੇ ਇਸ ਐਪ ਨੂੰ ਆਪਣੇ ਪੈਕੇਜ ਨਾਮ ਦੇ ਤਹਿਤ ਬਣਾਇਆ ਹੈ, ਇਸ ਲਈ ਇਸਨੂੰ ਇੰਸਟਾਲ ਕਰਨ ਨਾਲ &lt;b&gt;%s&lt;/b&gt; ਨੂੰ ਅਪਡੇਟ ਕਰਨ ਦੀ ਬਜਾਏ ਇਸਦੇ ਨਾਲ ਇੱਕ ਕਲੋਨ ਜੁੜ ਜਾਵੇਗਾ</string>
+    <string name="patcher_rename_result_package">ਇਸ ਤਰ੍ਹਾਂ ਇੰਸਟਾਲ ਹੋਵੇਗਾ</string>
+    <string name="patcher_rename_replaces">ਇਸ ਨਾਮ ਦੇ ਤਹਿਤ ਇੱਕ ਐਪ ਪਹਿਲਾਂ ਹੀ ਇੰਸਟਾਲ ਹੈ ਅਤੇ ਇਸਨੂੰ ਬਦਲ ਦਿੱਤਾ ਜਾਵੇਗਾ</string>
+    <string name="home_app_info_apk_size">APK ਦਾ ਸਾਈਜ਼</string>
+    <string name="home_app_info_cpu_arch">CPU ਆਰਕੀਟੈਕਚਰ</string>
     <!-- Home Screen - Root Mode -->
+    <string name="root_install_apk_required">ਰੂਟ ਮੋਡ ਲਈ ਪੈਚਿੰਗ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਡੇ ਡਿਵਾਈਸ \'ਤੇ ਅਸਲ APK ਦਾ ਇੰਸਟਾਲ ਹੋਣਾ ਜ਼ਰੂਰੀ ਹੈ</string>
+    <string name="root_pre_patch_installer_title">ਪੈਚ ਮੋਡ ਚੁਣੋ</string>
+    <string name="root_pre_patch_installer_description">ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਕੋਲ ਰੂਟ ਐਕਸੈਸ ਹੈ। ਚੁਣੋ ਕਿ ਕੀ ਇਸ ਐਪ ਨੂੰ ਰੂਟ ਮਾਊਂਟ ਜਾਂ ਸਟੈਂਡਰਡ ਇੰਸਟਾਲ ਲਈ ਪੈਚ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ</string>
+    <string name="root_pre_patch_installer_mount_title">ਰੂਟ ਮਾਊਂਟ ਮੋਡ</string>
+    <string name="root_pre_patch_installer_mount_description">ਰੂਟ ਮਾਊਂਟ ਲਈ ਪੈਚ ਕਰਦਾ ਹੈ, ਫਿਰ ਮਿਲਦੇ-ਜੁਲਦੇ ਸਟਾਕ ਐਪ ਦੇ ਉੱਪਰ APK ਨੂੰ ਮਾਊਂਟ ਕਰਦਾ ਹੈ। GmsCore ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ</string>
+    <string name="root_mount_module_unmount_warning">ਜੇਕਰ KernelSU ਵਿੱਚ \"Unmount modules by default\" ਚਾਲੂ ਹੈ, ਤਾਂ KernelSU &gt; Superuser &gt; ਉਹ ਐਪ ਜਿਸਨੂੰ ਤੁਸੀਂ ਮਾਊਂਟ ਕੀਤਾ ਹੈ &gt; Profile &gt; Custom ਖੋਲ੍ਹੋ ਅਤੇ \"Unmount modules\" ਨੂੰ ਬੰਦ ਕਰੋ। ਨਹੀਂ ਤਾਂ, ਮਾਊਂਟ ਕੀਤਾ ਗਿਆ ਪੈਚਡ APK ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ, ਭਾਵੇਂ Morphe ਇਸਨੂੰ ਮਾਊਂਟ ਵਜੋਂ ਦਿਖਾਉਂਦਾ ਹੋਵੇ</string>
+    <string name="root_pre_patch_installer_standard_title">ਸਟੈਂਡਰਡ ਇੰਸਟਾਲ ਮੋਡ</string>
+    <string name="root_pre_patch_installer_standard_description">GmsCore ਸਪੋਰਟ ਦੇ ਨਾਲ ਇੱਕ ਸਧਾਰਨ APK ਵਜੋਂ ਪੈਚ ਕਰਦਾ ਹੈ। ਪੈਚਿੰਗ ਤੋਂ ਬਾਅਦ ਤੁਹਾਡੀ ਇੰਸਟਾਲਰ ਸੈਟਿੰਗ ਦੀ ਵਰਤੋਂ ਕੀਤੀ ਜਾਂਦੀ ਹੈ</string>
+    <string name="root_pre_patch_installer_hint">ਤਦ ਪੁੱਛਿਆ ਜਾਂਦਾ ਹੈ ਜਦੋਂ Settings &gt; Patching &gt; Installation &gt; Installer selection prompt ਚਾਲੂ ਹੁੰਦਾ ਹੈ। ਪੈਚਿੰਗ ਤੋਂ ਬਾਅਦ ਪੈਚ ਮੋਡ ਨੂੰ ਬਦਲਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ</string>
     <!-- Patcher Screen -->
+    <string name="patcher_error_copied">ਗਲਤੀ ਕਲਿੱਪਬੋਰਡ \'ਤੇ ਕਾਪੀ ਕੀਤੀ ਗਈ</string>
+    <string name="patcher_error_log">ਗਲਤੀ ਲੌਗ</string>
+    <string name="patcher_error_technical">ਤਕਨੀਕੀ ਵੇਰਵੇ</string>
+    <string name="patcher_error_dialog_diagnostics">ਡਾਇਗਨੋਸਟਿਕਸ</string>
     <!-- Titles of the cards the expert log shows in place of the raw start and success log lines -->
+    <string name="patcher_card_started">ਪੈਚਿੰਗ ਸ਼ੁਰੂ ਹੋ ਗਈ</string>
+    <string name="patcher_card_succeeded">ਪੈਚਿੰਗ ਸਫਲ ਰਹੀ</string>
     <!-- Field labels, shown in a column beside their values. Keep them short, a long one is cut off rather than wrapped -->
+    <string name="patcher_field_app">ਐਪ</string>
+    <string name="patcher_field_package">ਪੈਕੇਜ</string>
+    <string name="patcher_field_failed_patch">ਪੈਚ ਅਸਫਲ ਰਿਹਾ</string>
+    <string name="patcher_field_source">ਸੋਰਸ</string>
+    <string name="patcher_field_split">ਸਪਲਿਟ APK</string>
+    <string name="patcher_field_manager">ਮੈਨੇਜਰ</string>
+    <string name="patcher_field_runtime">ਰਨਟਾਈਮ</string>
     <!-- Native code libraries (.so files) packed inside the APK -->
+    <string name="patcher_field_libraries">ਲਾਇਬ੍ਰੇਰੀਆਂ</string>
+    <string name="patcher_field_android">ਐਂਡਰੌਇਡ</string>
+    <string name="patcher_field_device">ਡਿਵਾਈਸ</string>
     <!-- Free and total RAM of the device, never its storage -->
+    <string name="patcher_field_memory">ਮੈਮੋਰੀ</string>
+    <string name="patcher_field_storage">ਸਟੋਰੇਜ</string>
     <!-- Size of the patched APK, once patching finished -->
+    <string name="patcher_field_output_size">ਆਊਟਪੁੱਟ ਸਾਈਜ਼</string>
     <!-- How long patching took -->
+    <string name="patcher_field_time">ਸਮਾਂ</string>
     <!-- Average and peak heap the patcher held while it ran -->
+    <string name="patcher_field_memory_average">ਔਸਤ ਮੈਮੋਰੀ</string>
+    <string name="patcher_field_memory_max">अधिकਤਮ ਮੈਮੋਰੀ</string>
     <!-- Fastest read or write rate reached while patching, in data per second -->
+    <string name="patcher_field_io_peak">ਸਟੋਰੇਜ I/O ਪੀਕ</string>
+    <string name="patcher_field_value_unknown">ਅਣਜਾਣ</string>
     <!-- Value of "Libraries": the libraries this device cannot use were dropped from the patched APK -->
+    <string name="patcher_field_value_stripped">ਹਟਾਇਆ ਗਿਆ</string>
     <!-- Value of "Libraries": every library was left in the patched APK -->
+    <string name="patcher_field_value_kept">ਰੱਖਿਆ ਗਿਆ</string>
+    <string name="patcher_tab_logs">ਪੈਚਰ ਲੌਗਸ</string>
+    <string name="patcher_tab_game">ਗੇਮਾਂ</string>
+    <string name="patcher_logs_waiting">ਲੌਗ ਆਉਟਪੁੱਟ ਦੀ ਉਡੀਕ ਕਰ ਰਹੇ ਹਾਂ…</string>
+    <string name="patcher_logs_lost">ਐਪ ਰੀਸਟਾਰਟ ਹੋਣ \'ਤੇ ਲੌਗ ਆਉਟਪੁੱਟ ਸੁਰੱਖਿਅਤ ਨਹੀਂ ਰਹਿੰਦਾ</string>
+    <string name="patcher_long_step_warning">ਇਸ ਕਦਮ ਵਿੱਚ ਕੁਝ ਸਮਾਂ ਲੱਗ ਸਕਦਾ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ…</string>
+    <string name="patcher_installing_subtitle">ਲਗਭਗ ਤਿਆਰ ਹੈ! 🎸</string>
+    <string name="patcher_success_title">ਸਭ ਕੁਝ ਹੋ ਗਿਆ! 🎉</string>
+    <string name="patcher_success_subtitle">ਤੁਹਾਡੀ ਐਪ ਪੈਚ ਅਤੇ ਇੰਸਟਾਲ ਹੋ ਗਈ ਹੈ!</string>
+    <string name="patcher_mounted_subtitle">ਤੁਹਾਡੀ ਐਪ ਪੈਚ ਕੀਤੀ ਗਈ ਹੈ ਅਤੇ ਮਾਊਂਟ ਹੋ ਗਈ ਹੈ!</string>
+    <string name="patcher_complete_title">ਪੈਚਿੰਗ ਪੂਰੀ ਹੋ ਗਈ! ✨</string>
+    <string name="patcher_failed_title">ਓਹ! ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ</string>
+    <string name="patcher_failed_dialog_title">ਪੈਚਿੰਗ ਅਸਫਲ ਰਹੀ</string>
+    <string name="patcher_error_details">ਗਲਤੀ ਦਾ ਵੇਰਵਾ</string>
+    <string name="patcher_change_patches">ਪੈਚ ਬਦਲੋ</string>
+    <string name="patcher_unknown_error">ਅਣਪਛਾਤੀ ਗਲਤੀ ਹੋਈ ਹੈ</string>
+    <string name="patcher_split_step_extracting">ਸਪਲਿਟ APKs ਕੱਢ ਰਹੇ ਹਾਂ</string>
+    <string name="patcher_split_step_merging">%s ਨੂੰ ਮਿਲਾ ਰਹੇ ਹਾਂ</string>
+    <string name="patcher_split_step_writing">ਮਿਲਾਇਆ ਹੋਇਆ APK ਲਿਖ ਰਹੇ ਹਾਂ</string>
+    <string name="patcher_split_step_finalizing">ਮਿਲਾਇਆ ਹੋਇਆ APK ਫਾਈਨਲਾਈਜ਼ ਕਰ ਰਹੇ ਹਾਂ</string>
+    <string name="patcher_conflict_title">ਪੈਕੇਜ ਟਕਰਾਅ</string>
+    <string name="patcher_conflict_subtitle">ਤੁਹਾਨੂੰ ਮੌਜੂਦਾ ਵਰਜ਼ਨ ਨੂੰ ਅਨਇੰਸਟਾਲ ਕਰਨ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="patcher_conflict_hint">ਪੈਚ ਕੀਤੀ ਐਪ ਇੰਸਟਾਲ ਕੀਤੇ ਵਰਜ਼ਨ ਨਾਲੋਂ ਵੱਖਰੇ ਸਰਟੀਫਿਕੇਟ ਦੀ ਵਰਤੋਂ ਕਰਦੀ ਹੈ। ਅਨ-ਇੰਸਟਾਲ ਕਰਨ ਨਾਲ ਐਪ ਦਾ ਸਾਰਾ ਡਾਟਾ ਮਿਟ ਜਾਵੇਗਾ</string>
+    <string name="patcher_installed_conflict_title">ਅਨ-ਇੰਸਟਾਲ ਕਰਨਾ ਲੋੜੀਂਦਾ ਹੈ</string>
+    <string name="patcher_installed_conflict_body">"Morphe ਪੈਚ ਕੀਤੇ ਐਪਸ ਨੂੰ ਆਪਣੇ ਸਰਟੀਫਿਕੇਟ ਨਾਲ ਸਾਈਨ ਕਰਦਾ ਹੈ, ਜੋ ਕਿ ਅਸਲ ਤੋਂ ਵੱਖਰਾ ਹੁੰਦਾ ਹੈ। ਐਂਡਰਾਇਡ ਨੂੰ ਪੈਚ ਕੀਤੇ ਐਪ ਨੂੰ ਇੰਸਟਾਲ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਮੌਜੂਦਾ ਵਰਜ਼ਨ ਨੂੰ ਹਟਾਉਣ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ।
+
+ਅਨ-ਇੰਸਟਾਲ ਕਰਨ ਨਾਲ ਐਪ ਦਾ ਸਾਰਾ ਡਾਟਾ ਸਥਾਈ ਤੌਰ 'ਤੇ ਮਿਟ ਜਾਵੇਗਾ"</string>
+    <string name="patcher_install_error_title">ਇੰਸਟਾਲੇਸ਼ਨ ਗਲਤੀ</string>
+    <string name="patcher_mount_error_title">ਮਾਊਂਟ त्रुटੀ</string>
+    <string name="patcher_install_error_subtitle">ਅਨਇੰਸਟਾਲ ਕਰਕੇ ਦੁਬਾਰਾ ਇੰਸਟਾਲ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="patcher_ready_to_mount_subtitle">ਮਾਊਂਟ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਬਟਨ ਨੂੰ ਦਬਾਓ</string>
+    <string name="patcher_patches_excluded_for_installer">ਇਸ ਇੰਸਟਾਲ ਵਿਧੀ ਲਈ ਉਪਲਬਧ ਨਹੀਂ ਹੈ ਅਤੇ ਬਾਹਰ ਕੀਤਾ ਗਿਆ ਹੈ: %s</string>
+    <string name="patcher_back_to_game_hint">ਆਪਣੀ ਗੇਮ ਵਿੱਚ ਵਾਪਸ ਜਾਣ ਲਈ %1$s ਟੈਪ ਕਰੋ</string>
+    <string name="patcher_storage_permission_dialog_title">ਸਟੋਰੇਜ ਪਾਥ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕਦੀ</string>
+    <string name="patcher_incompatible_patcher_title">ਅੱਪਡੇਟ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="patcher_incompatible_patcher_description">ਸੋਰਸ &lt;b&gt;%1$s&lt;/b&gt; ਨੂੰ ਪੈਚਰ &lt;b&gt;%2$s&lt;/b&gt; ਜਾਂ ਨਵੇਂ ਵਰਜ਼ਨ ਦੀ ਲੋੜ ਹੈ। ਇਸਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ Morphe ਨੂੰ ਅਪਡੇਟ ਕਰੋ</string>
+    <string name="patcher_storage_permission_description_api30">ਇੱਕ ਜਾਂ ਇੱਕ ਤੋਂ ਵੱਧ ਪੈਚ ਵਿਕਲਪ ਅਜਿਹੇ ਰਸਤਿਆਂ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦੇ ਹਨ ਜੋ Morphe ਨਹੀਂ ਪੜ੍ਹ ਸਕਦਾ। ਸਟੋਰੇਜ ਸ অ্যাকਸਸ ਪ੍ਰਦਾਨ ਕਰੋ ਅਤੇ ਬਟਨ \'ਤੇ ਟੈਪ ਕਰੋ ਫਿਰ ਪੈਚਿੰਗ ਆਪਣੇ ਆਪ ਸ਼ੁਰੂ ਹੋ ਜਾਵੇਗੀ</string>
+    <string name="patcher_storage_permission_description_legacy">ਇੱਕ ਜਾਂ ਇੱਕ ਤੋਂ ਵੱਧ ਪੈਚ ਵਿਕਲਪ ਅਜਿਹੇ ਪਾਥਾਂ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦੇ ਹਨ ਜਿਨ੍ਹਾਂ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕਦੀ। ਪੈਚ ਵਿਕਲਪਾਂ ਵਿੱਚ ਪਾਥਾਂ ਨੂੰ ਅਪਡੇਟ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="patcher_storage_permission_grant">ਸਟੋਰੇਜ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ</string>
+    <string name="patcher_storage_permission_denied_warning">ਸਟੋਰੇਜ ਦੀ ਇਜਾਜ਼ਤ ਤੋਂ ਇਨਕਾਰ ਕਰ ਦਿੱਤਾ ਗਿਆ ਸੀ। ਇਸ ਪਾਥ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਇਜਾਜ਼ਤ ਦਿਓ, ਜਾਂ ਫਾਈਲਾਂ ਨੂੰ ਐਪ ਦੀ ਪ੍ਰਾਈਵੇਟ ਡਾਇਰੈਕਟਰੀ ਵਿੱਚ ਲਗਾਓ</string>
+    <string name="patcher_storage_permission_open_settings">ਸਟੋਰੇਜ ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ</string>
+    <string name="patcher_storage_badge_denied">ਇਜਾਜ਼ਤ ਤੋਂ ਇਨਕਾਰ ਕੀਤਾ ਗਿਆ</string>
+    <string name="patcher_storage_badge_missing">ਮਿਲਿਆ ਨਹੀਂ</string>
+    <string name="patcher_storage_badge_rejected">ਵਰਤਣ ਯੋਗ ਨਹੀਂ</string>
+    <string name="batch_patch_option_paths_skipped">ਪੈਚ ਵਿਕਲਪ ਫਾਈਲਾਂ ਗੁੰਮ ਹਨ ਅਤੇ ਉਨ੍ਹਾਂ ਨੂੰ ਛੱਟਿਆ ਜਾਵੇਗਾ: %1$s</string>
+    <string name="patcher_missing_patches_title">ਕੁਝ ਪੈਚ ਚਲੇ ਗਏ ਹਨ</string>
+    <string name="patcher_missing_patches_description">ਇਸ ਐਪ ਲਈ ਸੇਵ ਕੀਤੀ ਚੋਣ ਉਨ੍ਹਾਂ ਪੈਚਾਂ ਦੇ ਨਾਮ ਦਿੰਦੀ ਹੈ ਜੋ ਹੁਣ ਕੋਈ ਵੀ ਇਨੇਬਲਡ ਸੋਰਸ ਪੇਸ਼ ਨਹੀਂ ਕਰਦਾ। ਜਾਰੀ ਰੱਖਣ ਨਾਲ ਐਪ ਨੂੰ ਉਨ੍ਹਾਂ ਤੋਂ ਬਿਨਾਂ ਪੈਚ ਕੀਤਾ ਜਾਵੇਗਾ</string>
+    <string name="patcher_missing_patches_label">ਹੁਣ ਪੇਸ਼ ਨਹੀਂ ਕੀਤਾ ਜਾਂਦਾ</string>
+    <string name="patcher_option_paths_gone_title">ਪੈਚ ਵਿਕਲਪ ਫਾਈਲਾਂ ਗੁੰਮ ਹਨ</string>
+    <string name="patcher_option_paths_gone_description">ਇੱਕ ਜਾਂ ਇੱਕ ਤੋਂ ਵੱਧ ਪੈਚ ਵਿਕਲਪ ਉਨ੍ਹਾਂ ਫਾਈਲਾਂ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦੇ ਹਨ ਜੋ ਹੁਣ ਉੱਥੇ ਨਹੀਂ ਹਨ। ਉਨ੍ਹਾਂ ਤੋਂ ਬਿਨਾਂ ਪੈਚ ਕਰਨ ਲਈ ਰਸਤੇ ਹਟਾਓ, ਜਾਂ ਫਾਈਲਾਂ ਨੂੰ ਵਾਪਸ ਰੱਖੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="patcher_option_paths_rejected_title">ਪੈਚ ਵਿਕਲਪ ਫਾਈਲਾਂ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕਦੀ</string>
+    <string name="patcher_option_paths_rejected_description">ਇੱਕ ਜਾਂ ਇੱਕ ਤੋਂ ਵੱਧ ਪੈਚ ਵਿਕਲਪ ਅਜਿਹੀਆਂ ਫਾਈਲਾਂ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦੇ ਹਨ ਜੋ ਗੁੰਮ ਹਨ ਜਾਂ ਉਹਨਾਂ ਵਿੱਚ ਉਹ ਨਹੀਂ ਹੈ ਜੋ ਪੈਚ ਮੰਗਦਾ ਹੈ। ਉਹਨਾਂ ਤੋਂ ਬਿਨਾਂ ਪੈਚ ਦੇ ਰਸਤੇ ਹਟਾਓ, ਜਾਂ ਵਿਕਲਪ ਨਿਰਦੇਸ਼ਾਂ ਦੇ ਅਨੁਸਾਰ ਫਾਈਲਾਂ ਨੂੰ ਠੀਕ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="patcher_option_paths_clear">ਰਸਤੇ ਹਟਾਓ ਅਤੇ ਜਾਰੀ ਰੱਖੋ</string>
+    <string name="patcher_storage_permission_hint">ਸੁਝਾਅ: ਫਾਈਲਾਂ ਨੂੰ /Android/data/app.morphe.manager/files/ ਵਿੱਚ ਲਗਾਓ - ਕਿਸੇ ਵਾਧੂ ਇਜਾਜ਼ਤ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ</string>
     <!-- Patcher Screen - Patcher Steps -->
+    <string name="patcher_step_group_preparing">ਤਿਆਰੀ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ</string>
+    <string name="patcher_step_load_patches">ਪੈਚ ਲੋਡ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ</string>
+    <string name="patcher_step_prepare_split_apk">ਸਪਲਿਟ APK ਨੂੰ ਮਿਲਾਇਆ ਜਾ ਰਿਹਾ ਹੈ</string>
+    <string name="patcher_step_unpack">APK ਫਾਈਲ ਪੜ੍ਹੋ</string>
+    <string name="patcher_step_group_saving">ਸੇਵ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</string>
+    <string name="patcher_step_write_patched">ਪੈਚ ਕੀਤੀ APK ਫਾਈਲ ਲਿਖੀ ਜਾ ਰਹੀ ਹੈ</string>
+    <string name="patcher_step_sign_apk">ਪੈਚ ਕੀਤੀ APK ਫਾਈਲ ਨੂੰ ਸਾਈਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</string>
     <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">ਬੈਕਗ੍ਰਾਊਂਡ ਪੈਚਿੰਗ ਸੁਰੱਖਿਆ</string>
+    <string name="battery_optimization_dialog_description">ਕੁਝ ਡਿਵਾਈਸਾਂ ਐਪ ਨੂੰ ਮਿਨੀਮਾਈਜ਼ ਕਰਨ ਵੇਲੇ ਪੈਚਰ ਨੂੰ ਰੋਕ ਸਕਦੇ ਹਨ। ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਕਿ ਪੈਚਿੰਗ ਭਰੋਸੇਮੰਦ ਤਰੀਕੇ ਨਾਲ ਪੂਰੀ ਹੋਵੇ, Morphe ਨੂੰ ਬੈਟਰੀ ਪਾਬੰਦੀਆਂ ਤੋਂ ਬਿਨਾਂ ਚੱਲਣ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ</string>
+    <string name="battery_optimization_not_now">ਹੁਣ ਨਹੀਂ</string>
     <!-- Patcher Screen - Patcher Worker -->
+    <string name="patcher_notification_title">ਪੈਚਿੰਗ ਚੱਲ ਰਹੀ ਹੈ…</string>
+    <string name="patcher_notification_text">ਪੈਚਰ ਤੇ ਵਾਪਸ ਜਾਣ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="patcher_stop_title">ਪੈਚਿੰਗ ਰੋਕੋ?</string>
+    <string name="patcher_stop_discards">ਹੁਣ ਤੱਕ ਦੀ ਪ੍ਰਗਤੀ ਨੂੰ ਰੱਦ ਕਰ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ ਅਤੇ ਕੁਝ ਵੀ ਇੰਸਟਾਲ ਨਹੀਂ ਹੁੰਦਾ</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
+    <string name="patcher_keep_patching">ਪੈਚਿੰਗ ਜਾਰੀ ਰੱਖੋ</string>
     <!-- Patcher Screen - Patcher Messages -->
+    <string name="patcher_message_1">ਤੁਹਾਡੀ ਐਪ ਨੂੰ ਕੁਝ ਸ਼ਾਨਦਾਰ ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ… 🏆</string>
+    <string name="patcher_message_2">ਪੁਰਾਣੀਆਂ ਐਪਸ ਨੂੰ ਨਵੀਆਂ ਤਰਕੀਬਾਂ ਸਿਖਾਈਆਂ ਜਾ ਰਹੀਆਂ ਹਨ… 🎩</string>
+    <string name="patcher_message_3">ਤੁਹਾਡੀ ਐਪ ਨੂੰ ਡਿਜੀਟਲ ਟਿਊਨ-ਅੱਪ ਦਿੱਤਾ ਜਾ ਰਿਹਾ ਹੈ… 🔧</string>
+    <string name="patcher_message_4">ਡਿਜੀਟਲ ਜਾਦੂ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ… ☕</string>
+    <string name="patcher_message_5">ਕੌਫੀ ਬ੍ਰੇਕ ਲੈਣ ਦੀ ਸਲਾਹ ਦਿੱਤੀ ਜਾਂਦੀ ਹੈ… ☕</string>
+    <string name="patcher_message_6">ਬਾਹਰ ਦੇਖੋ, ਬਾਹਰ ਮੌਸਮ ਬਹੁਤ ਵਧੀਆ ਹੈ… 🌤️</string>
+    <string name="patcher_message_7">1 ਅਤੇ 0 ਨੂੰ ਐਡਜਸਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ… 🤖</string>
+    <string name="patcher_message_8">ਡਿਜੀਟਲ ਉਲਝਣਾਂ ਨੂੰ ਸੁਲਝਾਇਆ ਜਾ ਰਿਹਾ ਹੈ… 🍝</string>
     <!-- Morphe patches fix YouTube bugs that Google still has not fixed. -->
+    <string name="patcher_message_9">ਅਨਪੈਚਡ ਐਪ ਵਿੱਚ ਬੱਗਸ ਨੂੰ ਠੀਕ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ… 🪲</string>
+    <string name="patcher_message_10">ਵਧੀਆ ਪੈਚਾਂ ਲਈ ਇੰਤਜ਼ਾਰ ਕਰਨਾ ਫਾਇਦੇਮੰਦ ਹੁੰਦਾ ਹੈ… ⏳</string>
+    <string name="patcher_message_11">ਪਿਕਸਲਸ ਨੂੰ ਉਦੋਂ ਤੱਕ ਚਮਕਾਇਆ ਜਾ ਰਿਹਾ ਹੈ ਜਦੋਂ ਤੱਕ ਉਹ ਚਮਕਣ ਨਾ ਲੱਗ ਜਾਣ… 💎</string>
+    <string name="patcher_message_12">ਕਿਰਪਾ ਕਰਕੇ ਉਦੋਂ ਤੱਕ ਆਪਣੀ ਸੀਟ \'ਤੇ ਬੈਠੇ ਰਹੋ ਜਦੋਂ ਤੱਕ ਕੈਪਟਨ \"ਪੈਚਿੰਗ ਚਾਲੂ ਹੈ\" ਦਾ ਸਾਈਨ ਬੰਦ ਨਹੀਂ ਕਰ ਦਿੰਦਾ… 💺✈️</string>
+    <string name="patcher_message_13">ਤੁਹਾਡੀ ਪੈਚ ਕੀਤੀ ਐਪ ਨੂੰ ਗਰਮ ਅਤੇ ਤਾਜ਼ਾ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ… 🍳</string>
     <!-- "bytecode" can be translated from "the app code" -->
+    <string name="patcher_message_14">ਐਪ ਕੋਡ ਨਾਲ ਨਿਮਰਤਾ ਨਾਲ ਗੱਲਬਾਤ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ… 🤝</string>
     <!-- Space flight communications callout. -->
+    <string name="patcher_message_15">ਸਾਰੇ ਸਿਸਟਮ ਨਾਮੀਨਲ ਹਨ… ਟ੍ਰੈਜੈਕਟਰੀ ਪੈਚਿੰਗ ਸਥਿਰ ਹੈ… 🚀</string>
+    <string name="patcher_message_16">ਵਾਧੂ ਪਾਵਰ ਨਿਕਾਲ ਰਹੇ ਹਾਂ, ਜਿਵੇਂ ਕਿਸੇ ਡਿਜੀਟਲ ਨਿੰਬੂ ਤੋਂ ਰਸ ਨਿਕਾਲਣਾ… 🍋</string>
+    <string name="patcher_message_17">ਐਪ ਨੂੰ ਆਪਣੇ ਨਵੇਂ, ਬਿਹਤਰ ਰੂਪ ਨੂੰ ਸਵੀਕਾਰ ਕਰਨ ਲਈ ਉਤਸ਼ਾਹਿਤ ਕਰ ਰਹੇ ਹਾਂ… 🌱</string>
     <!-- Quantum physics (box emoji is a reference to Schrödinger's cat). -->
+    <string name="patcher_message_18">ਐਪ ਸੁਪਰਪੋਜੀਸ਼ਨ ਨੂੰ ਅਣ-ਪੈਚਡ ਤੋਂ ਪੈਚਡ ਵਿੱਚ ਬਦਲ ਰਹੇ ਹਾਂ… 📦⚛️</string>
     <!-- Throw away reference to a Saturday Night Live sketch. "fever" means sickness or the flu. "prescription" means medical treatment or can be translated from "cure" -->
+    <string name="patcher_message_19">ਤੁਹਾਡੀ ਐਪ ਨੂੰ ਬੁਖਾਰ ਹੈ, ਅਤੇ ਇਸਦਾ ਇੱਕੋ ਇੱਕ ਇਲਾਜ ਹੋਰ ਪੈਚ ਹਨ… 🩺🔔</string>
+    <string name="patcher_message_20">ਬੇਮਤਲਬ ਦੀਆਂ ਚੀਜ਼ਾਂ ਹਟਾਈਆਂ ਜਾ ਰਹੀਆਂ ਹਨ। ਕਿਰਪਾ ਕਰਕੇ ਇੰਤਜ਼ਾਰ ਕਰੋ… 🗑️</string>
     <!-- Expert patcher Screen -->
+    <string name="patching_app">ਐਪ ਨੂੰ ਪੈਚ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</string>
+    <string name="memory_usage">ਮੈਮੋਰੀ ਦੀ ਵਰਤੋਂ</string>
+    <string name="cpu_usage">CPU ਦੀ ਵਰਤੋਂ</string>
+    <string name="storage_io_usage">ਸਟੋਰੇਜ I/O</string>
     <!-- Patcher Screen - Other hidden strings -->
+    <string name="applying_patches">ਪੈਚ ਲਗਾ ਰਹੇ ਹਨ</string>
+    <string name="failed_to_execute_patch">%s ਲਗਾਉਣ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="patched_app_save_failed_toast">ਪੈਚ ਕੀਤੇ ਐਪ ਨੂੰ ਸੇਵ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="plugin_activity_dialog_body">ਇਸ ਪਲੱਗਇਨ ਦੇ ਨਾਲ ਅੱਗੇ ਵਧਣ ਲਈ ਉਪਭੋਗਤਾ ਦੀ ਪਰਸਪਰ ਕਿਰਿਆ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="patcher_process_killed_message">ਸਿਸਟਮ ਨੇ ਪੈਚਰ ਨੂੰ ਖਤਮ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਹੀ ਰੋਕ ਦਿੱਤਾ, ਆਮ ਤੌਰ \'ਤੇ ਮੈਮੋਰੀ ਖਾਲੀ ਕਰਨ ਲਈ। ਹੋਰ ਐਪਸ ਨੂੰ ਬੰਦ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="patcher_process_crashed_message">ਪੈਚਰ ਖਤਮ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਕਰੈਸ਼ ਹੋ ਗਿਆ। ਜੇਕਰ ਇਹ ਦੁਬਾਰਾ ਹੁੰਦਾ ਹੈ, ਤਾਂ ਸੈਟਿੰਗਾਂ ਵਿੱਚ \"Use embedded VM\" ਨੂੰ ਬੰਦ ਕਰੋ ਅਤੇ ਲੌਗ ਦੇ ਨਾਲ ਮਸਲੇ ਦੀ ਰਿਪੋਰਟ ਕਰੋ</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
+    <string name="patcher_out_of_memory_message">%1$s MB ਹੀਪ ਦੇ ਨਾਲ ਪੈਚਰ ਦੀ ਮੈਮੋਰੀ ਖਤਮ ਹੋ ਗਈ। ਇਹ ਐਪ ਚੁਣੇ ਗਏ ਪੈਚਾਂ ਲਈ ਬਹੁਤ ਵੱਡੀ ਹੈ। ਘੱਟ ਪੈਚ ਸਰੋਤਾਂ ਨਾਲ ਪੈਚ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ, ਜਾਂ ਘੱਟ ਪੈਚ ਚੁਣੋ</string>
+    <string name="install_app_success">ਸਫਲਤਾਪੂਰਵਕ ਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ</string>
+    <string name="install_app_fail">ਐਪ ਇੰਸਟਾਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s</string>
+    <string name="install_ignore_signature">ਫਿਰ ਵੀ ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="install_ignore_signature_description">ਐਪ ਡੇਟਾ ਨੂੰ ਬਰਕਰਾਰ ਰੱਖਦਾ ਹੈ, ਪਰ ਇਹ ਸਿਰਫ ਉਦੋਂ ਹੀ ਕੰਮ ਕਰਦਾ ਹੈ ਜੇਕਰ ਰੂਟ ਮੋਡੀਊਲ ਐਂਡਰਾਇਡ ਦੀ ਸਿਗਨੇਚਰ ਵੈਰੀਫਿਕੇਸ਼ਨ ਨੂੰ ਅਯੋਗ ਕਰਦਾ ਹੈ</string>
+    <string name="uninstall_app_fail">ਐਪ ਨੂੰ ਅਨਇੰਸਟਾਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s</string>
+    <string name="uninstall_app_unverified">ਉਸੇ ਸਥਾਨ \'ਤੇ ਛੱਡਿਆ ਗਿਆ: Morphe ਇਹ ਪੁਸ਼ਟੀ ਨਹੀਂ ਕਰ ਸਕਿਆ ਕਿ ਇੰਸਟਾਲ ਕੀਤੀ ਗਈ ਐਪ ਉਹੀ ਬਿਲਡ ਹੈ ਜਿਸ ਨੂੰ ਇਸਨੇ ਪੈਚ ਕੀਤਾ ਸੀ</string>
+    <string name="launch_app_unverified">Morphe ਇਹ ਤਸਦੀਕ ਨਹੀਂ ਕਰ ਸਕਿਆ ਕਿ ਸਥਾਪਿਤ ਐਪ ਉਹੀ ਬਿਲਡ ਹੈ ਜਿਸ ਨੂੰ ਇਸਨੇ ਪੈਚ ਕੀਤਾ ਸੀ</string>
+    <string name="uninstall_timeout">ਅਨਇੰਸਟਾਲ ਦਾ ਸਮਾਂ ਖਤਮ ਹੋ ਗਿਆ</string>
+    <string name="save_apk_success">APK ਸੇਵ ਕੀਤਾ ਗਿਆ</string>
+    <string name="saved_app_export_failed">ਪੈਚ ਕੀਤੇ ਐਪ ਨੂੰ ਐਕਸਪੋਰਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="saved_app_removed_toast">ਸੇਵ ਕੀਤਾ ਪੈਚ ਕੀਤਾ ਐਪ ਹਟਾ ਦਿੱਤਾ ਗਿਆ</string>
+    <string name="saved_app_launch_unavailable">ਐਪ ਨੂੰ ਖੋਲ੍ਹਣ ਤੋਂ ਪਹਿਲਾਂ ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="package_name">ਪੈਕੇਜ ਦਾ ਨਾਮ</string>
+    <string name="failed_to_mount">ਮਾਊਂਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s</string>
+    <string name="failed_to_unmount">ਅਨਮਾਊਂਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s</string>
     <!-- Patcher Screen - Mini-games -->
+    <string name="mini_game_score">ਸਕੋਰ %s</string>
+    <string name="mini_game_best">ਸਭ ਤੋਂ ਵਧੀਆ %s</string>
+    <string name="mini_game_new_record">ਨਵਾਂ ਰਿਕਾਰਡ!</string>
+    <string name="mini_game_game_over">ਗੇਮ ਖਤਮ</string>
+    <string name="mini_game_try_again">ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="mini_game_paused">ਰੁਕਿਆ ਹੋਇਆ ਹੈ</string>
+    <string name="mini_game_resume">ਜਾਰੀ ਰੱਖੋ</string>
+    <string name="mini_game_restart">ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੋ</string>
+    <string name="mini_game_change">ਕੋਈ ਹੋਰ ਗੇਮ ਚੁਣੋ</string>
+    <string name="mini_game_2048_picker_subtitle">ਮਿਲਾਉਣ ਲਈ ਟਾਈਲਸ ਨੂੰ ਸਰਕਾਓ</string>
+    <string name="mini_game_flappy_picker_subtitle">ਪਾਈਪਾਂ ਵਿੱਚੋਂ ਉੱਡਣ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="mini_game_flappy_tap_to_start">ਉੱਡਣ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="mini_game_snake_picker_subtitle">ਖਾਣਾ ਖਾਓ, ਆਪਣੇ ਆਪ ਨੂੰ ਨਾ ਮਾਰੋ</string>
+    <string name="mini_game_snake_swipe_to_start">ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਸਵਾਈਪ ਕਰੋ</string>
+    <string name="mini_game_dino_picker_subtitle">ਕੈਕਟਸ ਦੇ ਉੱਪਰ ਛਾਲ ਮਾਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="mini_game_dino_tap_to_start">ਦੌੜਨ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="mini_game_blocks_picker_subtitle">ਆਕਾਰਾਂ ਨੂੰ ਫਿੱਟ ਕਰੋ, ਲਾਈਨਾਂ ਨੂੰ ਸਾਫ਼ ਕਰੋ</string>
+    <string name="mini_game_blocks_tap_to_start">ਘੁਮਾਉਣ ਲਈ ਟੈਪ ਕਰੋ, ਹਿਲਾਉਣ ਲਈ ਸਵਾਈਪ ਕਰੋ, ਡਰਾਪ ਕਰਨ ਲਈ ਹੇਠਾਂ ਸਵਾਈਪ ਕਰੋ</string>
+    <string name="mini_game_bricks_picker_subtitle">ਗੇਂਦ ਨੂੰ ਉਛਾਲੋ, ਕੰਧ ਨੂੰ ਸਾਫ਼ ਕਰੋ</string>
+    <string name="mini_game_bricks_tap_to_start">ਨਿਸ਼ਾਨਾ ਲਗਾਉਣ ਲਈ ਡਰੈਗ ਕਰੋ, ਲਾਂਚ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="mini_game_miner_picker_subtitle">ਖੋਲ੍ਹਣ ਲਈ ਟੈਪ ਕਰੋ, ਫਲੈਗ ਕਰਨ ਲਈ ਹੋਲਡ ਕਰੋ</string>
+    <string name="mini_game_pairs_picker_subtitle">ਕਾਰਡਾਂ ਨੂੰ ਪਲਟੋ, ਮੈਚ ਲੱਭੋ</string>
     <!-- Settings -->
+    <string name="appearance">ਦਿੱਖ</string>
+    <string name="system">ਸਿਸਟਮ</string>
     <!-- Settings - Appearance Tab - Background animation -->
+    <string name="settings_appearance_background">ਬੈਕਗ੍ਰਾਊਂਡ ਐਨੀਮੇਸ਼ਨ</string>
+    <string name="settings_appearance_background_description">ਐਨੀਮੇਸ਼ਨ ਜੋ ਐਪ ਦੀਆਂ ਸਕ੍ਰੀਨਾਂ ਦੇ ਪਿੱਛੇ ਚੱਲਦੀ ਹੈ</string>
+    <string name="settings_appearance_background_circles">ਗੋਲੇ</string>
+    <string name="settings_appearance_background_rings">ਛੱਲੇ</string>
+    <string name="settings_appearance_background_mesh">ਮੈਸ਼</string>
+    <string name="settings_appearance_background_space">ਸਪੇਸ</string>
+    <string name="settings_appearance_background_shapes">ਆਕਾਰ</string>
+    <string name="settings_appearance_background_snow">ਬਰਫ਼</string>
+    <string name="settings_appearance_background_grid">ਗਰਿੱਡ</string>
+    <string name="settings_appearance_background_particles">ਕਣ</string>
+    <string name="settings_appearance_background_lava">ਲਾਵਾ ਲੈਂਪ</string>
+    <string name="settings_appearance_background_halloween">ਹੈਲੋਵੀਨ</string>
+    <string name="settings_appearance_background_fireworks">ਪਟਾਕੇ</string>
+    <string name="settings_appearance_background_none">ਕੋਈ ਨਹੀਂ</string>
+    <string name="settings_appearance_background_random">ਰੈਂਡਮ</string>
+    <string name="settings_appearance_background_random_interval_launch">ਲੌਂਚ ਹੋਣ \'ਤੇ</string>
+    <string name="settings_appearance_background_random_interval_daily">ਰੋਜ਼ਾਨਾ</string>
+    <string name="settings_appearance_background_random_interval_3days">ਹਰ 3 ਦਿਨਾਂ ਬਾਅਦ</string>
+    <string name="settings_appearance_parallax_effect">ਪੈਰਾਲੈਕਸ ਪ੍ਰਭਾਵ</string>
+    <string name="settings_appearance_parallax_effect_description">ਡਿਵਾਈਸ ਨੂੰ ਝੁਕਾਉਣ ਵੇਲੇ ਬੈਕਗ੍ਰਾਊਂਡ ਦਾ ਸੁਮੂਥ ਤਰੀਕੇ ਨਾਲ ਬਦਲਣਾ</string>
+    <string name="settings_appearance_seasonal_themes">ਮੌਸਮੀ ਥੀਮਾਂ</string>
+    <string name="settings_appearance_seasonal_themes_description">ਛੁੱਟੀਆਂ ਦੌਰਾਨ ਉਤਸਵਮਈ ਬੈਕਗ੍ਰਾਊਂਡ ਅਤੇ ਵਧਾਈ ਸੰਦੇਸ਼</string>
     <!-- %1$s is a holiday background name, such as Halloween. %2$s is a date, such as November 1 -->
+    <string name="settings_appearance_seasonal_background_notice">ਜਦੋਂ ਮੌਸਮੀ ਥੀਮਾਂ ਚਾਲੂ ਹੁੰਦੀਆਂ ਹਨ, ਤਾਂ %1$s ਬੈਕਗ੍ਰਾਊਂਡ %2$s ਤੱਕ ਰਹੇਗੀ</string>
     <!-- Settings - Appearance Tab - Theme -->
+    <string name="settings_appearance_display">ਪ੍ਰਦਰਸ਼ਨ</string>
+    <string name="settings_appearance_effects">ਪ੍ਰਭਾਵ</string>
+    <string name="settings_appearance_theme">ਥੀਮ</string>
+    <string name="settings_appearance_theme_mode">ਥੀਮ ਮੋਡ</string>
+    <string name="settings_appearance_system">ਸਿਸਟਮ</string>
+    <string name="settings_appearance_light">ਲਾਈਟ</string>
+    <string name="settings_appearance_dark">ਡਾਰਕ</string>
+    <string name="settings_appearance_dynamic">ਮਟੀਰੀਅਲ ਯੂ</string>
+    <string name="settings_appearance_monochrome">ਮੋਨੋਕਰੋਮ</string>
+    <string name="settings_appearance_color_style">ਰੰਗ ਦੀ ਸ਼ੈਲੀ</string>
+    <string name="settings_appearance_accent_color">ਐਕਸੈਂਟ ਰੰਗ</string>
+    <string name="settings_appearance_pure_black">ਸ਼ੁੱਧ ਕਾਲਾ</string>
+    <string name="settings_appearance_pure_black_description">ਸੱਚੇ ਕਾਲੇ ਪਿਛੋਕੜਾਂ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ</string>
+    <string name="settings_appearance_color_accents">ਐਪ ਅਤੇ ਸੋਰਸ ਦੇ ਰੰਗ</string>
+    <string name="settings_appearance_color_accents_description">ਐਕਸੈਂਟ ਦੀ ਬਜਾਏ ਹਰੇਕ ਐਪ ਅਤੇ ਸਰੋਤ ਦੇ ਰੰਗ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ</string>
+    <string name="settings_appearance_outlines">ਆਊਟਲਾਈਨਸ</string>
+    <string name="settings_appearance_outlines_description">ਕਾਰਡਾਂ, ਪੈਨਲਾਂ ਅਤੇ ਬਟਨਾਂ ਦੇ ਚਾਰੋਂ ਇੱਕ ਪਤਲੀ ਕਿਨਾਰੀ ਬਣਾਉਂਦਾ ਹੈ</string>
+    <string name="settings_appearance_blur">ਧੁੰਦਲਾ</string>
+    <string name="settings_appearance_blur_description">ਹੈਡਰਾਂ, ਬਾਰਾਂ ਅਤੇ ਪੈਨਲਾਂ ਦੇ ਹੇਠਾਂ ਜੋ ਸਕ੍ਰੋਲ ਹੁੰਦਾ ਹੈ ਉਸਨੂੰ ਧੁੰਦਲਾ ਕਰਦਾ ਹੈ</string>
     <!-- Settings - Appearance Tab - Language Selector -->
+    <string name="settings_appearance_app_language">ਐਪ ਭਾਸ਼ਾ</string>
+    <string name="settings_appearance_app_language_current">ਮੌਜੂਦਾ ਭਾਸ਼ਾ</string>
+    <string name="settings_appearance_translate">Morphe ਦਾ ਅਨੁਵਾਦ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰੋ</string>
+    <string name="settings_appearance_translations_info_title">ਕੁਝ ਭਾਸ਼ਾਵਾਂ ਲਈ ਅਨੁਵਾਦ ਗਾਇਬ ਜਾਂ ਅਧੂਰੇ ਹੋ ਸਕਦੇ ਹਨ</string>
     <!-- Settings - Appearance Tab - Interface Scale -->
+    <string name="settings_appearance_ui_scale">ਇੰਟਰਫੇਸ ਸਕੇਲ</string>
     <!-- Settings - Appearance Tab - Home Screen Section -->
+    <string name="settings_appearance_home_screen">ਹੋਮ ਸਕ੍ਰੀਨ</string>
+    <string name="settings_appearance_greeting_phrases">ਸਵਾਗਤ ਵਾਕੰਸ਼</string>
+    <string name="settings_appearance_greeting_phrases_subtitle">ਸਵਾਗਤ ਸੰਦੇਸ਼ ਦਿਖਾਉਂਦਾ ਹੈ</string>
+    <string name="settings_appearance_repatch_notice">ਰੀ-ਪੈਚ ਨੋਟਿਸ</string>
+    <string name="settings_appearance_repatch_notice_description">ਜਦੋਂ ਪੈਚ ਕੀਤੇ ਐਪਸ ਨੂੰ ਦੁਬਾਰਾ ਪੈਚ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ ਤਾਂ ਬੈਨਰ ਦਿਖਾਉਂਦਾ ਹੈ</string>
+    <string name="settings_appearance_more_apps_card">ਹੋਰ ਐਪਸ ਕਾਰਡ</string>
+    <string name="settings_appearance_more_apps_card_description">ਐਪਸ ਦੇ ਹੇਠਾਂ ਇੱਕ ਕਾਰਡ ਦਿਖਾਉਂਦਾ ਹੈ ਜੋ ਕਮਿਊਨਿਟੀ ਪੈਚਾਂ ਵੱਲ ਲੈ ਜਾਂਦਾ ਹੈ</string>
+    <string name="settings_appearance_app_card_colors">ਕਾਰਡ ਦੇ ਰੰਗ</string>
+    <string name="settings_appearance_app_card_colors_default">ਡਿਫਾਲਟ</string>
+    <string name="settings_appearance_app_card_colors_default_description">ਹਰੇਕ ਐਪ ਅਤੇ ਸੋਰਸ ਨੂੰ ਆਪਣਾ ਵੱਖਰਾ ਰੰਗ ਦਿਓ</string>
+    <string name="settings_appearance_app_card_colors_accent">ਐਕਸੈਂਟ</string>
+    <string name="settings_appearance_app_card_colors_accent_description">ਐਪ ਅਤੇ ਸੋਰਸ ਕਾਰਡਾਂ ਲਈ ਐਪ ਦੇ ਐਕਸੈਂਟ ਰੰਗ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
+    <string name="settings_appearance_app_card_colors_gradient">ਗ੍ਰੇਡੀਐਂਟ</string>
+    <string name="settings_appearance_app_card_colors_gradient_description">ਐਪ ਕਾਰਡਾਂ ਲਈ ਇੱਕ ਕਸਟਮ ਗ੍ਰੇਡੀਐਂਟ ਦੀ ਵਰਤੋਂ ਕਰੋ, ਜੋ ਸੋਰਸ ਕਾਰਡਾਂ ਲਈ ਇੱਕ ਰੰਗ ਵਿੱਚ ਮਿਲਾਇਆ ਗਿਆ ਹੋਵੇ</string>
+    <string name="settings_appearance_app_card_colors_solid">ਸੋਲਿਡ</string>
+    <string name="settings_appearance_app_card_colors_solid_description">ਐਪ ਅਤੇ ਸੋਰਸ ਕਾਰਡਾਂ ਲਈ ਇੱਕ ਕਸਟਮ ਰੰਗ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
+    <string name="settings_appearance_app_card_colors_start">ਸ਼ੁਰੂਆਤੀ ਰੰਗ</string>
+    <string name="settings_appearance_app_card_colors_middle">ਵਿਚਕਾਰਲਾ ਰੰਗ</string>
+    <string name="settings_appearance_app_card_colors_end">ਅੰਤਿਮ ਰੰਗ</string>
+    <string name="settings_appearance_app_card_colors_solid_color">ਠੋਸ ਰੰਗ</string>
+    <string name="settings_appearance_app_card_colors_bundle">ਐਪ ਬੰਡਲ ਰੰਗ</string>
+    <string name="settings_appearance_app_card_colors_bundle_description">ਇੱਥੇ ਹਰੇਕ ਐਪ ਜਾਂ ਸੋਰਸ ਦੇ ਆਪਣੇ ਰੰਗ ਦੀ ਵਰਤੋਂ ਕਰੋ, ਜੋ ਫਿੱਟ ਹੋਣ ਲਈ ਆਪਣੇ ਆਪ ਸ਼ੇਡ ਹੋ ਜਾਣਗੇ</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
+    <string name="settings_appearance_app_icon_selector_title">ਐਪ ਆਈਕਨ</string>
+    <string name="settings_appearance_app_icon_selector_description">Morphe ਤੁਹਾਡੀ ਹੋਮ ਸਕ੍ਰੀਨ ਅਤੇ ਐਪ ਡਰਾਇਰ ਵਿੱਚ ਕਿਵੇਂ ਦਿਖਾਈ ਦਿੰਦਾ ਹੈ</string>
+    <string name="settings_appearance_app_icon_default">ਡਿਫੌਲਟ</string>
+    <string name="settings_appearance_app_icon_light_2">ਸਕਾਈ</string>
+    <string name="settings_appearance_app_icon_light_3">ਸਨਸੈੱਟ</string>
+    <string name="settings_appearance_app_icon_light_4">ਲੈਵੈਂਡਰ</string>
+    <string name="settings_appearance_app_icon_light_5">ਗਲੇਸ਼ੀਅਰ</string>
+    <string name="settings_appearance_app_icon_light_6">ਧੁੰਦ</string>
+    <string name="settings_appearance_app_icon_light_7">ਰੇਤ</string>
+    <string name="settings_appearance_app_icon_dark_1">ਟੀਲ</string>
+    <string name="settings_appearance_app_icon_dark_2">ਵੋਇਡ</string>
+    <string name="settings_appearance_app_icon_dark_3">ਪਲਮ</string>
+    <string name="settings_appearance_app_icon_dark_4">ਮਿਡਨਾਈਟ</string>
+    <string name="settings_appearance_app_icon_dark_5">ਸਲੇਟ</string>
+    <string name="settings_appearance_app_icon_accent_1">ਓਰੋਰਾ</string>
+    <string name="settings_appearance_app_icon_accent_2">ਸਿਆਹੀ</string>
+    <string name="settings_appearance_app_icon_accent_3">ਕਾਗਜ਼</string>
+    <string name="settings_appearance_app_icon_accent_4">ਸਾਕਰ</string>
+    <string name="settings_appearance_app_icon_background">ਬੈਕਗ੍ਰਾਊਂਡ</string>
+    <string name="settings_appearance_app_icon_mark">ਲੋਗੋ</string>
+    <string name="settings_appearance_app_icon_mark_color">ਰੰਗ</string>
+    <string name="settings_appearance_app_icon_mark_white">ਚਿੱਟਾ</string>
+    <string name="settings_appearance_app_icon_mark_black">ਕਾਲਾ</string>
+    <string name="settings_appearance_app_icon_change_dialog_title">ਐਪ ਆਈਕਨ ਬਦਲੋ?</string>
     <!-- %s is the name of the icon picked -->
+    <string name="settings_appearance_app_icon_change_restarts">&lt;b&gt;%s&lt;/b&gt; ਵਿੱਚ ਬਦਲਣ ਲਈ Morphe ਮੁੜ ਸ਼ੁਰੂ ਹੁੰਦਾ ਹੈ</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="settings_appearance_app_icon_change_dialog_confirm">ਆਈਕਨ ਬਦਲੋ</string>
     <!-- Settings - Advanced Tab - Updates Section -->
+    <string name="settings_advanced_updates_manager_prereleases">ਪ੍ਰੀ-ਰਿਲੀਜ਼ ਅਪਡੇਟਸ</string>
     <!-- "Morphe" here is the app itself, not the patches. Do not translate this as pre-release patches -->
+    <string name="settings_advanced_updates_manager_prereleases_description">Morphe ਦੇ ਨਵੇਂ ਵਰਜ਼ਨਾਂ ਤੱਕ ਜਲਦੀ ਪਹੁੰਚ</string>
+    <string name="settings_advanced_updates_prerelease_warning_title">ਕੀ ਪ੍ਰੀ-ਰਿਲੀਜ਼ ਅਪਡੇਟਸ ਨੂੰ ਇਨੇਬਲ ਕੀਤਾ ਜਾਵੇ?</string>
     <!-- Shown before pre-release updates are turned on for the app itself. Patches have their own toggle in each patch source -->
+    <string name="settings_advanced_updates_prerelease_warning_message">"Morphe ਦੇ ਪ੍ਰੀ-ਰਿਲੀਜ਼ ਵਰਜ਼ਨ ਅਜੇ ਵੀ ਵਿਕਾਸ ਅਧੀਨ ਹਨ ਅਤੇ ਅਸਥਿਰ ਹੋ ਸਕਦੇ ਹਨ।
+
+ਪੈਚ ਪ੍ਰਭਾਵਿਤ ਨਹੀਂ ਹੁੰਦੇ: ਪੈਚ ਸਰੋਤਾਂ ਦੀ ਸੂਚੀ ਵਿੱਚ ਹਰੇਕ ਸਰੋਤ ਲਈ ਪ੍ਰੀ-ਰਿਲੀਜ਼ ਪੈਚ ਸਮਰੱਥ ਕਰੋ"</string>
+    <string name="settings_advanced_updates_allow_metered">ਮੋਬਾਈਲ ਡੇਟਾ ਅਪਡੇਟਸ</string>
+    <string name="settings_advanced_updates_allow_metered_description">ਮੋਬਾਈਲ ਡਾਟਾ ਰਾਹੀਂ Morphe ਅਤੇ ਪੈਚ ਅਪਡੇਟਸ ਡਾਊਨਲੋਡ ਕਰਦਾ ਹੈ</string>
+    <string name="settings_advanced_updates_background_notifications">ਬੈਕਗਰਾਊਂਡ ਅਪਡੇਟ ਨੋਟੀਫਿਕੇਸ਼ਨਾਂ</string>
+    <string name="settings_advanced_updates_background_notifications_description">ਪਿਛੋਕੜ ਵਿੱਚ ਸਮੇਂ-ਸਮੇਂ \'ਤੇ ਅਪਡੇਟਸ ਲਈ ਚੈੱਕ ਕਰੋ ਅਤੇ ਉਪਲਬਧ ਹੋਣ \'ਤੇ ਸੂਚਿਤ ਕਰੋ</string>
+    <string name="settings_advanced_updates_background_notifications_description_fcm">ਨਵੀਆਂ ਰਿਲੀਜ਼ਾਂ ਲਈ ਪੁਸ਼ ਨੋਟੀਫਿਕੇਸ਼ਨਾਂ, ਭਾਵੇਂ ਐਪ ਬੰਦ ਹੋਵੇ</string>
+    <string name="settings_system_notifications_categories">ਨੋਟੀਫਿਕੇਸ਼ਨ ਸ਼੍ਰੇਣੀਆਂ</string>
+    <string name="settings_system_notifications_categories_description">ਸਿਸਟਮ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਚੁਣੋ ਕਿ ਕਿਹੜੇ ਅੱਪਡੇਟ ਤੁਹਾਨੂੰ ਨੋਟੀਫਾਈ ਕਰਨ</string>
+    <string name="settings_advanced_update_interval">ਚੈੱਕ ਕਰਨ ਦੀ ਫ੍ਰੀਕੁਐਂਸੀ</string>
+    <string name="settings_advanced_update_interval_hourly">ਘੰਟਾਵਾਰ</string>
+    <string name="settings_advanced_update_interval_daily">ਰੋਜ਼ਾਨਾ</string>
+    <string name="settings_advanced_update_interval_weekly">ਸਾਪਤਾਹਿਕ</string>
+    <string name="settings_advanced_update_interval_monthly">ਮਾਸਿਕ</string>
+    <string name="settings_advanced_update_interval_battery_warning">ਬੈਕਗ੍ਰਾਊਂਡ ਚੈੱਕ ਉਹਨਾਂ ਡਿਵਾਈਸਾਂ \'ਤੇ ਭਰੋਸੇਮੰਦ ਤਰੀਕੇ ਨਾਲ ਨਹੀਂ ਚੱਲ ਸਕਦੇ ਜੋ ਬੈਕਗ੍ਰਾਊਂਡ ਐਪਸ ਨੂੰ ਪ੍ਰਤਿਬੰਧਿਤ ਕਰਦੇ ਹਨ, ਜਿਵੇਂ ਕਿ Xiaomi, Huawei, Samsung ਅਤੇ OnePlus</string>
+    <string name="settings_advanced_external_batch_patch">ਬਾਹਰੀ ਟ੍ਰਿਗਰਸ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ</string>
+    <string name="settings_advanced_external_batch_patch_description">ਆਟੋਮੇਸ਼ਨ ਐਪਸ ਨੂੰ ਬੈਚ ਪੈਚਿੰਗ ਸ਼ੁਰੂ ਕਰਨ ਦਿੰਦਾ ਹੈ</string>
+    <string name="external_batch_patch_title">ਬੈਚ ਪੈਚਿੰਗ ਸ਼ੁਰੂ ਕਰੋ?</string>
+    <string name="external_batch_patch_description">%s ਚਾਹੁੰਦਾ ਹੈ ਕਿ Morphe ਐਪਸ ਨੂੰ ਪੈਚ ਅਤੇ ਇੰਸਟਾਲ ਕਰੇ</string>
+    <string name="external_batch_patch_trust_caller">ਹਮੇਸ਼ਾ ਇਸ ਐਪ ਨੂੰ ਇਜਾਜ਼ਤ ਦਿਓ</string>
+    <string name="external_batch_patch_unknown_caller">ਇੱਕ ਅਣਜਾਣ ਐਪ</string>
     <!-- Notification content -->
+    <string name="notification_bundle_update_title">ਨਵੇਂ ਪੈਚ ਉਪਲਬਧ ਹਨ</string>
+    <string name="notification_update_text">ਵਰਜ਼ਨ %s ਡਾਊਨਲੋਡ ਕਰਨ ਲਈ ਤਿਆਰ ਹੈ</string>
+    <string name="notification_bundle_update_text_unversioned">Morphe ਨੂੰ ਖੋਲ੍ਹਣ ਅਤੇ ਅਪਡੇਟ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="notification_permission_dialog_title">ਨੋਟੀਫਿਕੇਸ਼ਨਾਂ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ</string>
+    <string name="notification_permission_dialog_description">ਬੈਕਗ੍ਰਾਉਂਡ ਵਿੱਚ ਅਪਡੇਟ ਉਪਲਬਧ ਹੋਣ \'ਤੇ ਤੁਹਾਨੂੰ ਸੂਚਿਤ ਕਰਨ ਲਈ Morphe ਨੂੰ ਨੋਟੀਫਿਕੇਸ਼ਨ ਇਜਾਜ਼ਤ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="notification_post_patch_dialog_title">ਕੀ ਤੁਸੀਂ ਚਾਹੋਗੇ ਕਿ ਜਦੋਂ ਅਪਡੇਟਸ ਉਪਲਬਧ ਹੋਣ ਤਾਂ ਤੁਹਾਨੂੰ ਸੂਚਿਤ ਕੀਤਾ ਜਾਵੇ?</string>
+    <string name="notification_channel_manager_updates">Morphe ਅੱਪਡੇਟ</string>
+    <string name="notification_channel_manager_updates_description">ਨਵੇਂ Morphe ਰਿਲੀਜ਼ਾਂ ਬਾਰੇ ਨੋਟੀਫਿਕੇਸ਼ਨ</string>
+    <string name="notification_channel_patch_updates">ਪੈਚ ਅੱਪਡੇਟ</string>
+    <string name="notification_channel_patch_updates_description">ਨਵੇਂ ਪੈਚ ਰਿਲੀਜ਼ਾਂ ਬਾਰੇ ਨੋਟੀਫਿਕੇਸ਼ਨ</string>
+    <string name="notification_channel_patcher_description">ਜਦੋਂ Morphe ਬੈਕਗ੍ਰਾਊਂਡ ਵਿੱਚ ਕਿਸੇ ਐਪ ਨੂੰ ਪੈਚ ਕਰ ਰਿਹਾ ਹੁੰਦਾ ਹੈ ਤਾਂ ਦਿਖਾਇਆ ਜਾਂਦਾ ਹੈ</string>
+    <string name="notification_channel_mounted_apps">ਮਾਊਂਟ ਕੀਤੇ ਐਪਸ</string>
+    <string name="notification_channel_mounted_apps_description">ਜਦੋਂ ਕਿਸੇ ਹੋਰ ਵਰਜ਼ਨ ਨੇ ਮਾਊਂਟ ਕੀਤੇ ਐਪ ਦੀ ਜਗ੍ਹਾ ਲੈ ਲਈ ਹੋਵੇ ਅਤੇ ਇਸਦਾ ਪੈਚ ਹੁਣ ਲਾਗੂ ਨਾ ਹੁੰਦਾ ਹੋਵੇ</string>
+    <string name="notification_mount_replaced_title">%1$s ਹੁਣ ਪੈਚ ਨਹੀਂ ਹੈ</string>
+    <string name="notification_mount_replaced_text">v%1$s ਨੇ ਪੈਚ ਕੀਤੇ v%2$s ਨੂੰ ਬਦਲ ਦਿੱਤਾ ਹੈ। ਇਸਨੂੰ ਬਹਾਲ ਕਰਨ ਲਈ Morphe ਖੋਲ੍ਹੋ</string>
     <!-- Settings - Advanced Tab - Expert settings Section -->
+    <string name="settings_advanced_expert_mode">ਐਕਸਪਰਟ ਮੋਡ</string>
+    <string name="settings_advanced_expert_mode_description">ਉੱਨਤ ਪੈਚਿੰਗ ਸੈਟਿੰਗਾਂ ਅਤੇ ਪੈਚ ਵਿਕਲਪਾਂ ਨੂੰ ਅਨਲੌਕ ਕਰਦਾ ਹੈ</string>
+    <string name="settings_advanced_expert_mode_dialog_title">ਐਕਸਪਰਟ ਮੋਡ ਨੂੰ ਸਮਰੱਥ ਕਰੋ?</string>
+    <string name="settings_advanced_expert_mode_dialog_message">ਐਕਸਪਰਟ ਮੋਡ ਇਹ ਕੰਟਰੋਲ ਦਿੰਦਾ ਹੈ ਕਿ ਪੈਚ ਕਿਵੇਂ ਲਗਾਏ ਜਾਣ, ਪਰ ਐਕਸਪਰਟ ਮੋਡ ਵਿੱਚ ਸੈਟਿੰਗਾਂ ਨੂੰ ਗਲਤ ਤਰੀਕੇ ਨਾਲ ਕੌਂਫਿਗਰ ਕਰਨ ਨਾਲ ਐਪ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਸਕਦੀ ਹੈ</string>
+    <string name="settings_advanced_strip_unused_libs">ਡਿਵਾਈਸ ਆਰਕੀਟੈਕਚਰ ਲਈ ਓਪਟੀਮਾਈਜ਼ ਕਰੋ</string>
+    <string name="settings_advanced_strip_unused_libs_description">ਵਰਤੋਂ ਵਿੱਚ ਨਾ ਆਉਣ ਵਾਲੀਆਂ ਨੇਟਿਵ ਲਾਇਬ੍ਰੇਰੀਆਂ ਅਤੇ APK ਸਪਲਿਟਸ ਨੂੰ ਹਟਾਉਂਦਾ ਹੈ</string>
     <!-- Settings - Advanced Tab - GitHub PAT Settings -->
+    <string name="settings_advanced_github_pat_summary">ਪੁੱਲ ਰਿਕੁਏਸਟ ਸਰੋਤਾਂ ਅਤੇ ਨਿੱਜੀ ਰਿਪੋਜ਼ਿਟਰੀਆਂ ਨੂੰ ਅਨਲੌਕ ਕਰਦਾ ਹੈ</string>
+    <string name="settings_advanced_github_pat_description">ਪੁੱਲ ਰਿਕੁਏਸਟ ਸਰੋਤਾਂ, ਨਿੱਜੀ ਰਿਪੋਜ਼ਿਟਰੀਆਂ ਅਤੇ ਉੱਚੀ GitHub ਦਰ ਸੀਮਾ ਲਈ</string>
+    <string name="settings_advanced_github_pat_configured">ਟੋਕਨ ਕੌਂਫਿਗਰ ਕੀਤਾ ਗਿਆ</string>
+    <string name="settings_advanced_github_pat_create">GitHub \'ਤੇ ਇੱਕ ਟੋਕਨ ਬਣਾਓ</string>
     <!-- "%s" is the GitHub scope name, keep it as is -->
+    <string name="settings_advanced_github_pat_create_description">GitHub ਨੂੰ ਖੋਲ੍ਹਦਾ ਹੈ ਜਿਸ ਵਿੱਚ %s ਸਕੋਪ ਪਹਿਲਾਂ ਤੋਂ ਹੀ ਚੁਣਿਆ ਹੁੰਦਾ ਹੈ</string>
+    <string name="settings_advanced_github_pat_checking">GitHub ਨਾਲ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ…</string>
     <!-- "%s" is the GitHub account name -->
+    <string name="settings_advanced_github_pat_account">GitHub ਵਿੱਚ %s ਵਜੋਂ ਸਾਈਨ ਇਨ ਕੀਤਾ ਗਿਆ</string>
+    <string name="settings_advanced_github_pat_rejected">GitHub ਨੇ ਇਸ ਟੋਕਨ ਨੂੰ ਰੱਦ ਕਰ ਦਿੱਤਾ ਹੈ। ਇਹ ਸ਼ਾਇਦ ਖਤਮ ਹੋ ਗਿਆ ਹੈ ਜਾਂ ਵਾਪਸ ਲੈ ਲਿਆ ਗਿਆ ਹੈ</string>
+    <string name="settings_advanced_github_pat_unreachable">ਇਸ ਟੋਕਨ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ GitHub ਨਾਲ ਸੰਪਰਕ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ</string>
+    <string name="settings_advanced_github_pat_export_include_label">ਸੈਟਿੰਗਜ਼ ਐਕਸਪੋਰਟ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</string>
     <!-- "PAT" is a GitHub Personal Access Token, keep it in English because GitHub has no localized UI -->
+    <string name="settings_advanced_github_pat_export_include_supporting">ਇਸ PAT ਨੂੰ ਨਿਰਯਾਤ ਕੀਤੇ Morphe ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਜੋੜਦਾ ਹੈ</string>
     <!-- "PAT" is a GitHub Personal Access Token, keep it in English because GitHub has no localized UI -->
+    <string name="settings_advanced_github_pat_export_warning">ਆਪਣਾ PAT ਸਾਂਝਾ ਨਾ ਕਰੋ। ਜੇਕਰ ਤੁਸੀਂ ਇਸਨੂੰ ਸੈਟਿੰਗਜ਼ ਐਕਸਪੋਰਟ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਦੇ ਹੋ, ਤਾਂ ਉਸ ਫਾਈਲ ਨੂੰ ਨਿੱਜੀ ਰੱਖੋ ਕਿਉਂਕਿ ਇਸ ਵਿੱਚ ਟੋਕਨ ਸ਼ਾਮਲ ਹੈ</string>
     <!-- Settings - Advanced Tab - Patch Options Section -->
+    <string name="settings_advanced_patch_options">ਪੈਚ ਵਿਕਲਪ</string>
+    <string name="settings_advanced_patch_options_restart_message">ਪੈਚ ਵਿਕਲਪਾਂ ਨੂੰ ਬਦਲਣ ਲਈ ਪ੍ਰਭਾਵ ਪਾਉਣ ਲਈ ਐਪ ਨੂੰ ਦੁਬਾਰਾ ਪੈਚ ਕਰਨ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="settings_advanced_patch_options_expert_mode_notice">ਐਕਸਪਰਟ ਮੋਡ ਵਿੱਚ ਪੈਚ ਵਿਕਲਪ ਪੈਚਿੰਗ ਪ੍ਰਕਿਰਿਆ ਦੌਰਾਨ ਉਪਲਬਧ ਹੋਣਗੇ</string>
+    <string name="settings_advanced_patch_options_loading">ਪੈਚ ਵਿਕਲਪ ਲੋਡ ਹੋ ਰਹੇ ਹਨ…</string>
+    <string name="settings_advanced_patch_options_waiting_for_source">ਉਡੀਕ ਕਰੋ ਜਦੋਂ ਤੱਕ ਪੈਚ ਸਰੋਤ ਅਪਡੇਟ ਨਹੀਂ ਹੋ ਜਾਂਦਾ</string>
+    <string name="settings_advanced_patch_options_load_error">ਪੈਚ ਵਿਕਲਪ ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="settings_advanced_patch_options_no_available">ਇਸ ਪੈਚ ਲਈ ਕੋਈ ਵਿਕਲਪ ਉਪਲਬਧ ਨਹੀਂ ਹਨ</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Custom Branding -->
+    <string name="settings_advanced_patch_options_custom_branding">ਕਸਟਮ ਬ੍ਰੈਂਡਿੰਗ</string>
+    <string name="settings_advanced_patch_options_custom_branding_description">ਐਪ ਦਾ ਪ੍ਰਦਰਸ਼ਨ ਨਾਮ ਬਦਲਦਾ ਹੈ</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_name">ਐਪ ਦਾ ਨਾਮ</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_name_hint">ਕਸਟਮ ਨਾਮ ਦਰਜ ਕਰੋ</string>
+    <string name="settings_advanced_patch_options_path_gone">ਇਸ ਫੋਲਡਰ ਨੂੰ ਹੁਣ ਪੜ੍ਹਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ। ਇਸਨੂੰ ਦੁਬਾਰਾ ਚੁਣੋ ਜਾਂ ਇਸਨੂੰ ਸਾਫ਼ ਕਰੋ, ਨਹੀਂ ਤਾਂ ਪੈਚਿੰਗ ਰੁਕ ਜਾਵੇਗੀ ਅਤੇ ਇਸ ਬਾਰੇ ਪੁੱਛੇਗੀ</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon">ਐਪ ਆਈਕਨ</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">ਉਹ ਆਈਕਨ ਜਿਸ ਨਾਲ ਐਪ ਨੂੰ ਪੈਚ ਕੀਤਾ ਗਿਆ ਹੈ, ਇਸਦੀ ਵਰਤੋਂ ਉੱਥੇ ਵੀ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਜਿੱਥੇ ਇਸਨੂੰ ਬਾਅਦ ਵਿੱਚ ਨਹੀਂ ਬਦਲਿਆ ਜਾ ਸਕਦਾ, ਜਿਵੇਂ ਕਿ Android Auto</string>
+    <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">ਕਸਟਮ ਐਪ ਆਈਕਨ ਲਈ ਆਈਕਨ ਚਿੱਤਰਾਂ ਵਾਲੇ ਫੋਲਡਰ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="settings_advanced_patch_options_custom_branding_custom_icon">ਕਸਟਮ ਆਈਕਨ</string>
+    <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"ਉਹ ਫੋਲਡਰ ਜਿਸ ਵਿੱਚ ਕਸਟਮ ਆਈਕਨ ਵਜੋਂ ਵਰਤਣ ਲਈ ਚਿੱਤਰ ਹਨ।
+
+ਡਿਵਾਈਸ ਦੇ DPI ਦੇ ਆਧਾਰ 'ਤੇ, ਫੋਲਡਰ ਵਿੱਚ ਹੇਠ ਲਿਖੇ ਫੋਲਡਰਾਂ ਵਿੱਚੋਂ ਇੱਕ ਜਾਂ ਵੱਧ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ:
+- mipmap-mdpi
+- mipmap-hdpi
+- mipmap-xhdpi
+- mipmap-xxhdpi
+- mipmap-xxxhdpi
+
+ਹਰੇਕ ਫੋਲਡਰ ਵਿੱਚ ਹੇਠ ਲਿਖੀਆਂ ਸਾਰੀਆਂ ਫਾਈਲਾਂ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ:
+morphe_adaptive_background_custom.png
+morphe_adaptive_foreground_custom.png
+
+ਚਿੱਤਰਾਂ ਦਾ ਆਕਾਰ ਇਸ ਪ੍ਰਕਾਰ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ:
+- mipmap-mdpi: 108x108 px
+- mipmap-hdpi: 162x162 px
+- mipmap-xhdpi: 216x216 px
+- mipmap-xxhdpi: 324x324 px
+- mipmap-xxxhdpi: 432x432 px
+
+ਵਿਕਲਪਿਕ ਤੌਰ 'ਤੇ, ਪਾਥ ਵਿੱਚ ਇੱਕ 'drawable' ਫੋਲਡਰ ਹੁੰਦਾ ਹੈ ਜਿਸ ਵਿੱਚ ਮੋਨੋਕ੍ਰੋਮ ਆਈਕਨ ਫਾਈਲ ਹੁੰਦੀ ਹੈ:
+morphe_adaptive_monochrome_custom.xml
+
+ਵਿਕਲਪਿਕ ਤੌਰ 'ਤੇ, ਪਾਥ ਵਿੱਚ ਹੇਠ ਲਿਖੇ ਫਾਰਮੈਟਾਂ ਵਿੱਚੋਂ ਇੱਕ ਵਿੱਚ ਨੋਟੀਫਿਕੇਸ਼ਨ ਆਈਕਨ ਹੁੰਦਾ ਹੈ:
+- 'drawable' ਵਿੱਚ XML ਵੈਕਟਰ ਡਰੋਏਬਲ:
+  morphe_notification_icon_custom.xml
+- 'drawable-dpi' ਫੋਲਡਰਾਂ ਵਿੱਚ PNG ਰਾਸਟਰ ਚਿੱਤਰ:
+  drawable-mdpi/morphe_notification_icon_custom.png (24x24 px)
+  drawable-hdpi/morphe_notification_icon_custom.png (36x36 px)
+  drawable-xhdpi/morphe_notification_icon_custom.png (48x48 px)
+  drawable-xxhdpi/morphe_notification_icon_custom.png (72x72 px)
+  drawable-xxxhdpi/morphe_notification_icon_custom.png (96x96 px)"</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Custom Header -->
+    <string name="settings_advanced_patch_options_custom_header">ਕਸਟਮ ਹੈਡਰ ਲੋਗੋ</string>
+    <string name="settings_advanced_patch_options_custom_header_description">ਹੈਡਰ ਲੋਗੋ ਬਦਲਦਾ ਹੈ</string>
+    <string name="settings_advanced_patch_options_custom_header_instruction">"ਕਸਟਮ ਹੈਡਰ ਲੋਗੋ ਵਜੋਂ ਵਰਤਣ ਲਈ ਚਿੱਤਰਾਂ ਵਾਲਾ ਫੋਲਡਰ।
+
+ਡਿਵਾਈਸ ਦੇ DPI ਦੇ ਆਧਾਰ 'ਤੇ, ਫੋਲਡਰ ਵਿੱਚ ਹੇਠਾਂ ਦਿੱਤੇ ਫੋਲਡਰਾਂ ਵਿੱਚੋਂ ਇੱਕ ਜਾਂ ਵੱਧ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ:
+- drawable-hdpi
+- drawable-xhdpi
+- drawable-xxhdpi
+- drawable-xxxhdpi
+
+ਹਰੇਕ ਫੋਲਡਰ ਵਿੱਚ ਹੇਠਾਂ ਦਿੱਤੀਆਂ ਸਾਰੀਆਂ ਫਾਈਲਾਂ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ:
+morphe_header_custom_light.png
+morphe_header_custom_dark.png
+
+ਚਿੱਤਰਾਂ ਦਾ ਆਕਾਰ ਇਸ ਪ੍ਰਕਾਰ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ:
+- drawable-hdpi: 194x72 px
+- drawable-xhdpi: 258x96 px
+- drawable-xxhdpi: 387x144 px
+- drawable-xxxhdpi: 512x192 px"</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Hide Shorts -->
+    <string name="settings_advanced_patch_options_hide_shorts_app_shortcut">Shorts ਐਪ ਸ਼ਾਰਟਕੱਟ ਲੁਕਾਓ</string>
+    <string name="settings_advanced_patch_options_hide_shorts_app_shortcut_description">ਲੌਂਚਰ ਲੋਂਗ-ਪ੍ਰੈਸ ਮੀਨੂ ਤੋਂ Shorts ਨੂੰ ਹਟਾਉਂਦਾ ਹੈ</string>
+    <string name="settings_advanced_patch_options_hide_shorts_widget">Shorts ਵਿਜੇਟ ਲੁਕਾਓ</string>
+    <string name="settings_advanced_patch_options_hide_shorts_widget_description">ਲੌਂਚਰ ਵਿਜੇਟ ਤੋਂ Shorts ਬਟਨ ਨੂੰ ਹਟਾਉਂਦਾ ਹੈ</string>
     <!-- Settings - System Tab - Installer Section -->
+    <string name="installer">ਇੰਸਟਾਲਰ</string>
+    <string name="installer_settings_title">ਡਿਫੌਲਟ ਇੰਸਟਾਲਰ</string>
+    <string name="settings_installation">ਇੰਸਟਾਲੇਸ਼ਨ</string>
+    <string name="installer_title">ਇੰਸਟਾਲਰ ਚੁਣੋ</string>
+    <string name="installer_internal_description">Android ਪੈਕੇਜ ਇੰਸਟਾਲਰ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ</string>
+    <string name="installer_play_store_description">ਸਿਸਟਮ ਇੰਸਟਾਲਰ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ ਅਤੇ Google Play Store ਨੂੰ ਇੰਸਟਾਲ ਸਰੋਤ ਵਜੋਂ ਸੈੱਟ ਕਰਦਾ ਹੈ</string>
+    <string name="installer_root_play_store_description">ਰੂਟ ਨਾਲ ਚੁੱਪਚਾਪ ਇੰਸਟਾਲ ਕਰਦਾ ਹੈ ਅਤੇ Google Play Store ਨੂੰ ਇੰਸਟਾਲ ਸਰੋਤ ਵਜੋਂ ਸੈੱਟ ਕਰਦਾ ਹੈ</string>
+    <string name="installer_auto_saved_name">ਰੂਟ ਮਾਊਂਟ</string>
+    <string name="installer_auto_saved_description">ਉਹ ਐਪਸ ਮਾਊਂਟ ਕਰਦਾ ਹੈ ਜੋ ਰੂਟ ਮਾਊਂਟ ਮੋਡ ਵਿੱਚ ਪੈਚ ਕੀਤੇ ਗਏ ਸਨ। ਸਟੈਂਡਰਡ ਪੈਚ ਕੀਤੇ APKs ਕਿਸੇ ਹੋਰ ਇੰਸਟਾਲਰ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹਨ</string>
+    <string name="installer_shizuku_description">Shizuku ਜਾਂ Sui ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਚੁੱਪਚਾਪ ਇੰਸਟਾਲ ਕਰਦਾ ਹੈ</string>
+    <string name="installer_shizuku_play_store_description">Shizuku ਜਾਂ Sui ਰਾਹੀਂ ਚੁੱਪਚਾਪ ਇੰਸਟਾਲ ਕਰਦਾ ਹੈ ਅਤੇ Google Play Store ਨੂੰ ਇੰਸਟਾਲ ਸਰੋਤ ਵਜੋਂ ਸੈੱਟ ਕਰਦਾ ਹੈ</string>
+    <string name="installer_option_none">ਕੋਈ ਫਾਲਬੈਕ ਨਹੀਂ</string>
+    <string name="installer_none_description">ਕੋਈ ਫਾਲਬੈਕ ਇੰਸਟਾਲਰ ਕੌਂਫਿਗਰ ਨਹੀਂ ਕੀਤਾ ਗਿਆ ਹੈ</string>
+    <string name="installer_status_requires_root">ਰੂਟ ਐਕਸੈਸ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="installer_status_not_supported">ਇਸ ਕਾਰਵਾਈ ਲਈ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ</string>
+    <string name="installer_status_shizuku_not_installed">ਇਸ ਵਿਕਲਪ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ Shizuku ਜਾਂ Sui ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="installer_status_shizuku_not_running">Shizuku ਜਾਂ Sui ਸ਼ੁਰੂ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="installer_status_shizuku_permission">Shizuku ਐਪ ਤੋਂ Morphe ਨੂੰ ਇਜਾਜ਼ਤ ਦਿਓ</string>
+    <string name="installer_mount_warning_install">ਤੁਹਾਡਾ ਪ੍ਰਾਇਮਰੀ ਇੰਸਟਾਲਰ ਰੂਟਡ ਮਾਊਂਟ ਇੰਸਟਾਲਰ \'ਤੇ ਸੈੱਟ ਹੈ। ਇਹ ਸੇਵ ਕੀਤੀ ਐਪ ਮਾਊਂਟ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਇੰਸਟਾਲ ਨਹੀਂ ਕੀਤੀ ਗਈ ਸੀ</string>
+    <string name="mount_version_mismatch_message">ਸਟਾਕ ਐਪ ਵਰਜ਼ਨ (%2$s) ਪੈਚ ਕੀਤੇ ਐਪ ਵਰਜ਼ਨ (%1$s) ਨਾਲ ਮੇਲ ਨਹੀਂ ਖਾਂਦਾ। ਮੇਲ ਖਾਂਦਾ ਸਟਾਕ ਵਰਜ਼ਨ ਮਾਊਂਟ ਕਰੋ, ਫਿਰ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="mount_stock_restore_failed_message">Android ਨੇ ਸੇਵ ਕੀਤੇ ਅਸਲ APK ਨੂੰ ਰੱਦ ਕਰ ਦਿੱਤਾ ਹੈ। ਮਿਲਦੇ-ਜੁਲਦੇ ਸਟਾਕ ਵਰਜ਼ਨ ਨੂੰ ਇੰਸਟਾਲ ਕਰੋ, ਫਿਰ ਦੁਬਾਰਾ Mount ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="installer_status_shizuku_unsupported">ਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ Shizuku ਵਰਜ਼ਨ ਸਪੋਰਟ ਨਹੀਂ ਕੀਤਾ ਜਾਂਦਾ</string>
+    <string name="installer_action_open_shizuku">Shizuku ਖੋਲ੍ਹੋ</string>
+    <string name="installer_hint_generic">ਇੰਸਟਾਲੇਸ਼ਨ ਫੇਲ ਹੋ ਗਈ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜਾਂ ਕਿਸੇ ਹੋਰ ਇੰਸਟਾਲਰ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
+    <string name="installer_hint_conflict">ਇਸ ਪੈਕੇਜ ਨਾਮ ਵਾਲੀ ਇੱਕ ਹੋਰ ਐਪ ਪਹਿਲਾਂ ਹੀ ਇੰਸਟਾਲ ਹੈ। ਜਾਰੀ ਰੱਖਣ ਤੋਂ ਪਹਿਲਾਂ ਇਸਨੂੰ ਅਨ-ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="installer_confirm_notification_title">ਇੰਸਟਾਲੇਸ਼ਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ</string>
+    <string name="installer_confirm_notification_text">ਪੈਚ ਕੀਤੇ ਐਪ ਨੂੰ ਇੰਸਟਾਲ ਕਰਨਾ ਪੂਰਾ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="installer_external_launched">%s ਖੋਲ੍ਹ ਰਿਹਾ ਹੈ…</string>
+    <string name="installer_external_timeout">%s ਨੇ ਇੰਸਟਾਲੇਸ਼ਨ ਦੀ ਪੁਸ਼ਟੀ ਨਹੀਂ ਕੀਤੀ। ਦੂਜੀ ਐਪ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="installer_external_success">%s ਨੇ ਸਫਲ ਇੰਸਟਾਲੇਸ਼ਨ ਦੀ ਰਿਪੋਰਟ ਕੀਤੀ ਹੈ</string>
+    <string name="installer_unavailable_title">%s ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
+    <string name="installer_unavailable_message">ਤੁਹਾਡਾ ਪਸੰਦੀਦਾ ਇੰਸਟਾਲਰ (%s) ਇਸ ਸਮੇਂ ਉਪਲਬਧ ਨਹੀਂ ਹੈ। ਤੁਸੀਂ ਸਮੱਸਿਆ ਨੂੰ ਠੀਕ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰ ਸਕਦੇ ਹੋ, ਜਾਂ ਇਸਦੀ ਬਜਾਏ ਸਟੈਂਡਰਡ ਇੰਸਟਾਲਰ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
+    <string name="installer_unavailable_shizuku_hint">ਯਕੀਨੀ ਬਣਾਓ ਕਿ Shizuku ਚੱਲ ਰਿਹਾ ਹੈ ਅਤੇ ਇਸ ਐਪ ਨੂੰ ਇਜਾਜ਼ਤ ਦਿੱਤੀ ਗਈ ਹੈ</string>
+    <string name="installer_choose_another">ਦੂਜਾ ਇੰਸਟਾਲਰ ਚੁਣੋ</string>
+    <string name="installer_play_store_warning_title">Play Store ਵਜੋਂ ਇੰਸਟਾਲ ਕਰੋ?</string>
+    <string name="installer_play_store_warning_message">ਪੈਚ ਕੀਤੀ ਐਪ ਨੂੰ Google Play Store ਤੋਂ ਇੰਸਟਾਲ ਕੀਤੇ ਵਜੋਂ ਰਿਕਾਰਡ ਕੀਤਾ ਜਾਵੇਗਾ। ਇਹ Android Auto ਵਰਗੀਆਂ ਸੇਵਾਵਾਂ ਨੂੰ ਇਸਨੂੰ Play Store ਐਪ ਵਜੋਂ ਪਛਾਣਨ ਵਿੱਚ ਮਦਦ ਕਰ ਸਕਦਾ ਹੈ, ਪਰ ਇਹ ਹਰ ਐਪ ਜਾਂ ਡਿਵਾਈਸ ਲਈ ਗਾਰੰਟੀ ਨਹੀਂ ਹੈ। ਵਿਵਹਾਰ Android ਵਰਜ਼ਨ, ROM, ਡਿਵਾਈਸ ਬ੍ਰਾਂਡ, ਅਤੇ ਐਪ-ਵਿਸ਼ਿਸ਼ਟ ਜਾਂਚਾਂ ਦੇ ਅਨੁਸਾਰ ਵੱਖਰਾ ਹੋ ਸਕਦਾ ਹੈ</string>
+    <string name="installer_play_store_warning_risk">Play Store ਪੈਚ ਕੀਤੇ ਐਪ ਲਈ ਅਪਡੇਟ ਪੇਸ਼ ਕਰ ਸਕਦਾ ਹੈ। ਉਸ ਅਪਡੇਟ ਨੂੰ ਇੰਸਟਾਲ ਕਰਨ ਨਾਲ ਪੈਚ ਕੀਤੇ APK ਨੂੰ ਮੂਲ ਵਰਜ਼ਨ ਨਾਲ ਬਦਲ ਦਿੱਤਾ ਜਾਵੇਗਾ ਅਤੇ ਪੈਚ ਹਟਾ ਦਿੱਤੇ ਜਾਣਗੇ। ਜੇਕਰ ਅਪਡੇਟ ਕਰਨ ਲਈ ਕਿਹਾ ਜਾਵੇ, ਤਾਂ ਐਪ ਦੇ Play Store ਪੇਜ \'ਤੇ ਤਿੰਨ-ਬਿੰਦੂ ਮੀਨੂ \'ਤੇ ਟੈਪ ਕਰੋ ਅਤੇ \"ਅਪਡੇਟ ਬੰਦ ਕਰੋ\" ਚੁਣੋ</string>
+    <string name="installer_play_store_warning_continue">ਮੈਂ ਸਮਝ ਗਿਆ/ਗਈ ਹਾਂ, ਜਾਰੀ ਰੱਖੋ</string>
+    <string name="installer_play_store_mode">Play Store ਵਾਂਗ ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="installer_play_store_mode_description">ਗੂਗਲ ਪਲੇ ਸਟੋਰ ਨੂੰ ਇੰਸਟਾਲ ਸੋਰਸ ਵਜੋਂ ਮਾਰਕ ਕਰਦਾ ਹੈ</string>
+    <string name="settings_nomount_only">ਸਿਰਫ਼ NoMount</string>
+    <string name="settings_nomount_only_description">ਐਪਸ ਨੂੰ ਸਿਰਫ਼ NoMount ਨਾਲ ਮਾਊਂਟ ਕਰਦਾ ਹੈ ਅਤੇ ਕਦੇ ਵੀ ਬਾਈਂਡ ਮਾਊਂਟ \'ਤੇ ਵਾਪਸ ਨਹੀਂ ਜਾਂਦਾ, ਤਾਂ ਜੋ ਉਹ ਇਸ ਤੋਂ ਬਿਨਾਂ ਅਨ-ਮਾਊਂਟ ਰਹਿਣ</string>
+    <string name="settings_prompt_installer_on_install">ਇੰਸਟਾਲਰ ਚੁਣਨ ਦਾ ਪ੍ਰੋਂਪਟ</string>
+    <string name="settings_prompt_installer_on_install_description">ਪੁੱਛਦਾ ਹੈ ਕਿ ਹਰ ਐਪ ਨੂੰ ਕਿਵੇਂ ਇੰਸਟਾਲ ਕਰਨਾ ਹੈ: ਪੈਚਿੰਗ ਤੋਂ ਪਹਿਲਾਂ ਰੂਟ ਦੇ ਨਾਲ, ਨਹੀਂ ਤਾਂ ਇਸ ਤੋਂ ਬਾਅਦ</string>
+    <string name="settings_auto_install_with_shizuku">ਪੈਚਿੰਗ ਤੋਂ ਬਾਅਦ ਆਟੋ-ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="settings_auto_install_with_shizuku_description">ਪੈਚਿੰਗ ਪੂਰੀ ਹੁੰਦੇ ਹੀ ਪੈਚ ਕੀਤੇ APK ਨੂੰ ਇੰਸਟਾਲ ਜਾਂ ਮਾਊਂਟ ਕਰਦਾ ਹੈ</string>
+    <string name="settings_auto_uninstall_with_shizuku">ਟਕਰਾਅ ਹੋਣ \'ਤੇ ਆਟੋ-ਅਨਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="settings_auto_uninstall_with_shizuku_description">ਸਿਗਨੇਚਰ ਸੰਘਰਸ਼ ਹੋਣ \'ਤੇ ਮੌਜੂਦਾ ਐਪ ਨੂੰ ਅਨਇੰਸਟਾਲ ਕਰਦਾ ਹੈ। ਇਹ ਐਪ ਡਾਟਾ ਨੂੰ ਹਟਾ ਸਕਦਾ ਹੈ</string>
+    <string name="settings_ignore_install_target_rules">ਇੰਸਟਾਲ ਟਾਰਗੇਟ ਦੀਆਂ ਲੋੜਾਂ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ</string>
+    <string name="settings_ignore_install_target_rules_description">ਇਸਨੂੰ ਉਹਨਾਂ ਪੈਚਾਂ ਨੂੰ ਬੰਦ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਦਿੰਦਾ ਹੈ ਜਿਨ੍ਹਾਂ ਦੀ ਇੰਸਟਾਲ ਟਾਰਗੇਟ ਨੂੰ ਲੋੜ ਹੁੰਦੀ ਹੈ ਅਤੇ ਉਹਨਾਂ ਨੂੰ ਚਾਲੂ ਕਰਨ ਦੀ ਜੋ ਇਹ ਨਕਾਰਦਾ ਹੈ। ਪੈਚ ਕੀਤੀ ਐਪ ਸ਼ਾਇਦ ਕੰਮ ਨਾ ਕਰੇ</string>
+    <string name="settings_auto_uninstall_warning_title">ਆਟੋ-ਅਨਇੰਸਟਾਲ ਨੂੰ ਸਮਰੱਥ ਕਰੋ?</string>
+    <string name="settings_auto_uninstall_warning_message">ਜੇਕਰ Shizuku ਆਟੋ-ਇੰਸਟਾਲ ਦੌਰਾਨ Android ਇੱਕ ਸਿਗਨੇਚਰ ਟਕਰਾਅ ਦੀ ਰਿਪੋਰਟ ਕਰਦਾ ਹੈ, ਤਾਂ Morphe ਪੈਚ ਕੀਤੇ APK ਨੂੰ ਇੰਸਟਾਲ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਮੌਜੂਦਾ ਐਪ ਨੂੰ ਅਨਇੰਸਟਾਲ ਕਰ ਦੇਵੇਗਾ</string>
+    <string name="settings_auto_uninstall_warning_risk">ਇਹ ਐਪ ਡੇਟਾ ਨੂੰ ਹਟਾ ਸਕਦਾ ਹੈ। ਜੇਕਰ ਅਨਇੰਸਟਾਲ ਕਰਨ ਤੋਂ ਬਾਅਦ ਪੈਚ ਕੀਤਾ APK ਇੰਸਟਾਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਰਹਿੰਦਾ ਹੈ, ਤਾਂ ਪਿਛਲੀ ਐਪ ਪਹਿਲਾਂ ਹੀ ਖਤਮ ਹੋ ਚੁੱਕੀ ਹੋ ਸਕਦੀ ਹੈ</string>
+    <string name="installer_shizuku_status_action">Shizuku ਸਥਿਤੀ ਦੀ ਜਾਂਚ ਕਰੋ</string>
+    <string name="installer_shizuku_status_title">Shizuku ਸਥਿਤੀ</string>
+    <string name="installer_shizuku_status_ready">ਤਿਆਰ ਹੈ</string>
+    <string name="installer_shizuku_status_issue">ਧਿਆਨ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="installer_shizuku_status_supported">ਸਮਰਥਿਤ</string>
+    <string name="installer_shizuku_status_running">ਚੱਲ ਰਿਹਾ ਹੈ</string>
+    <string name="installer_shizuku_status_permission">ਇਜਾਜ਼ਤ</string>
+    <string name="installer_shizuku_status_mode">ਮੋਡ</string>
+    <string name="installer_shizuku_status_provider">ਪ੍ਰੋਵਾਈਡਰ</string>
+    <string name="installer_shizuku_status_granted">ਮਿਲ ਗਈ</string>
+    <string name="installer_shizuku_status_missing">ਗਾਇਬ ਹੈ</string>
+    <string name="installer_shizuku_request_permission">ਇਜਾਜ਼ਤ ਦੀ ਬੇਨਤੀ ਕਰੋ</string>
+    <string name="installer_shizuku_install_fail">Shizuku ਇੰਸਟਾਲੇਸ਼ਨ ਫੇਲ ਹੋ ਗਈ: %s</string>
+    <string name="installer_shizuku_install_fail_with_details">"Shizuku ਇੰਸਟਾਲੇਸ਼ਨ ਫੇਲ ਹੋ ਗਈ: %1$s
+
+ਵੇਰਵੇ: %2$s"</string>
+    <string name="installer_shizuku_error_permission">Shizuku ਦੀ ਇਜਾਜ਼ਤ ਗਾਇਬ ਹੈ। Morphe ਨੂੰ ਇਜਾਜ਼ਤ ਦਿਓ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="installer_shizuku_error_timeout">Shizuku ਨੇ ਇੰਸਟਾਲੇਸ਼ਨ ਦਾ ਨਤੀਜਾ ਨਹੀਂ ਦਿੱਤਾ। ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਇਹ ਅਜੇ ਵੀ ਚੱਲ ਰਿਹਾ ਹੈ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="installer_shizuku_error_downgrade">Android ਨੇ ਇਸਨੂੰ ਬਲਾਕ ਕਰ ਦਿੱਤਾ ਹੈ ਕਿਉਂਕਿ ਇਹ ਇੰਸਟਾਲ ਕੀਤੀ ਐਪ ਨੂੰ ਡਾਊਨਗ੍ਰੇਡ ਕਰ ਦੇਵੇਗਾ</string>
+    <string name="installer_shizuku_error_signature">Android ਨੇ ਇਸਨੂੰ ਬਲਾਕ ਕਰ ਦਿੱਤਾ ਹੈ ਕਿਉਂਕਿ ਇੰਸਟਾਲ ਕੀਤੀ ਐਪ ਦਾ ਸਿਗਨੇਚਰ ਵੱਖਰਾ ਹੈ</string>
+    <string name="installer_shizuku_error_invalid_apk">Android ਇਸ APK ਨੂੰ ਪੜ੍ਹ ਨਹੀਂ ਸਕਿਆ</string>
+    <string name="installer_shizuku_error_user_profile">ਸਿਸਟਮ ਨੇ ਇਸ ਇੰਸਟਾਲੇਸ਼ਨ ਨੂੰ ਬਲਾਕ ਕਰ ਦਿੱਤਾ ਹੈ। Xiaomi ਅਤੇ ਸਮਾਨ ਡਿਵਾਈਸਾਂ \'ਤੇ, ਡਿਵੈਲਪਰ ਵਿਕਲਪਾਂ ਵਿੱਚ \"Install via USB\" ਚਾਲੂ ਕਰੋ। ਵਰਕ ਪ੍ਰੋਫਾਈਲ \'ਤੇ, ਇੰਸਟਾਲੇਸ਼ਨਾਂ ਨੂੰ ਪਾਲਿਸੀ ਦੁਆਰਾ ਸੀਮਤ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">ਬੈਟਰੀ ਆਪਟੀਮਾਈਜ਼ੇਸ਼ਨ</string>
+    <string name="settings_system_battery_optimization_description">ਜਦੋਂ ਐਪ ਮਿਨੀਮਾਈਜ਼ ਹੁੰਦੀ ਹੈ ਤਾਂ ਪੈਚਰ ਨੂੰ ਚਲਦਾ ਰੱਖਦਾ ਹੈ</string>
+    <string name="settings_system_process_runtime">ਪੈਚਰ ਰਨਟਾਈਮ</string>
+    <string name="settings_system_jvm_runtime_enable">ਐਂਬੈਡਡ VM ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
+    <string name="settings_system_jvm_runtime_description">Morphe ਦੇ ਆਪਣੇ Java VM ਵਿੱਚ ਪੈਚ, ਜੋ ਵਧੇਰੇ ਮੈਮੋਰੀ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦੇ ਹਨ। Android ਦੇ ਰਨਟਾਈਮ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਇਸਨੂੰ ਬੰਦ ਕਰੋ</string>
+    <string name="settings_system_jvm_runtime_unavailable">ਇਸ ਲਈ ARM ਜਾਂ 64-ਬਿਟ x86 ਡਿਵਾਈਸ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="settings_system_patcher_completion_sound">ਪੂਰਾ ਹੋਣ ਦੀ ਆਵਾਜ਼</string>
+    <string name="settings_system_patcher_completion_sound_description">ਪੈਚਿੰਗ ਖਤਮ ਹੋਣ \'ਤੇ ਸਫਲਤਾ ਜਾਂ ਅਸਫਲਤਾ ਲਈ ਇੱਕ ਵੱਖਰੀ ਟੋਨ ਵਜਾਉਂਦਾ ਹੈ</string>
     <!-- Settings - System Tab - Notifications Section -->
+    <string name="settings_system_notifications">ਨੋਟੀਫਿਕੇਸ਼ਨਾਂ</string>
+    <string name="settings_system_notifications_description">Morphe ਤੁਹਾਨੂੰ ਕਿਵੇਂ ਸੂਚਿਤ ਰੱਖਦਾ ਹੈ</string>
+    <string name="settings_system_notifications_success_sound">ਸਫਲਤਾ ਦੀ ਆਵਾਜ਼</string>
+    <string name="settings_system_notifications_error_sound">ਅਸਫਲਤਾ ਦੀ ਆਵਾਜ਼</string>
+    <string name="settings_system_notifications_sound_default">ਡਿਫਾਲਟ</string>
+    <string name="settings_system_notifications_sound_picker_title">ਆਵਾਜ਼ ਦਾ ਸਰੋਤ ਚੁਣੋ</string>
+    <string name="settings_system_notifications_sound_pick_ringtone">ਸਿਸਟਮ ਦੀਆਂ ਆਵਾਜ਼ਾਂ</string>
+    <string name="settings_system_notifications_sound_pick_file">ਫਾਈਲਾਂ ਵਿੱਚੋਂ ਚੁਣੋ</string>
+    <string name="settings_system_notifications_sound_reset">ਡਿਫਾਲਟ \'ਤੇ ਰੀਸੈਟ ਕਰੋ</string>
+    <string name="settings_system_notifications_ringtone_picker_title">ਇੱਕ ਟੋਨ ਚੁਣੋ</string>
     <!-- Settings - System Tab - Import and Export Section -->
+    <string name="settings_system_signing_key">ਸਾਈਨਿੰਗ ਕੀ</string>
+    <string name="settings_system_signing_key_description">ਉਸ ਕੀ ਦਾ ਬੈਕਅਪ ਲੈਂਦਾ ਹੈ ਜਾਂ ਰੀਸਟੋਰ ਕਰਦਾ ਹੈ ਜੋ ਪੈਚ ਕੀਤੇ ਐਪਸ ਨੂੰ ਸਾਈਨ ਕਰਦੀ ਹੈ</string>
+    <string name="settings_system_signing_key_dialog_description">ਹਰ ਉਹ ਐਪ ਜਿਸ ਨੂੰ Morphe ਪੈਚ ਕਰਦਾ ਹੈ, ਇਸ ਕੀ ਨਾਲ ਸਾਈਨ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇੱਕ ਕਾਪੀ ਰੱਖੋ: ਇਸ ਤੋਂ ਬਿਨਾਂ, ਪੈਚ ਕੀਤੇ ਐਪਸ ਨੂੰ ਸਿਰਫ਼ ਅਨ-ਇੰਸਟਾਲ ਕਰਨ ਤੋਂ ਬਾਅਦ ਹੀ ਅੱਪਡੇਟ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ</string>
+    <string name="settings_system_signing_key_missing">Morphe ਤੁਹਾਡੇ ਪਹਿਲੇ ਪੈਚ ਦੇ ਨਾਲ ਇੱਕ ਬਣਾਏਗਾ</string>
+    <string name="settings_system_signing_key_created">%s ਬਣਾਇਆ ਗਿਆ</string>
+    <string name="settings_system_signing_key_fingerprint">SHA-256 ਫਿੰਗਰਪ੍ਰਿੰਟ</string>
+    <string name="settings_system_backup_appearance_description">ਥੀਮ, ਰੰਗ ਅਤੇ ਭਾਸ਼ਾ</string>
+    <string name="settings_system_backup_home_description">ਗਰੁੱਪ, ਲੁਕਾਈਆਂ ਗਈਆਂ ਐਪਾਂ, ਸੌਰਟਿੰਗ ਅਤੇ ਟੋਗਲਸ</string>
+    <string name="settings_system_backup_patching">ਪੈਚਿੰਗ ਅਤੇ ਇੰਸਟਾਲੇਸ਼ਨ</string>
+    <string name="settings_system_backup_patching_description">ਇੰਸਟਾਲਰ, ਪੈਚਰ ਅਤੇ ਸੇਵ ਕੀਤੇ APK</string>
+    <string name="settings_system_backup_updates_description">ਪ੍ਰੀ-ਰਿਲੀਜ਼ ਅਤੇ ਅਪਡੇਟ ਜਾਂਚ</string>
+    <string name="settings_system_backup_sources_description">ਕਸਟਮ ਸਰੋਤ ਅਤੇ GitHub ਟੋਕਨ</string>
+    <string name="settings_system_backup_patch_selections_description">ਹਰ ਐਪ ਲਈ ਚੁਣੇ ਗਏ ਪੈਚ</string>
+    <string name="settings_system_backup_signing_key_note">ਸਾਈਨਿੰਗ ਕੀ ਦਾ ਬੈਕਅੱਪ ਵੱਖਰੇ ਤੌਰ \'ਤੇ ਲਿਆ ਜਾਂਦਾ ਹੈ</string>
+    <string name="settings_system_import_keystore_dialog_title">ਕੀਸਟੋਰ ਕ੍ਰੇਡੈਂਸ਼ੀਅਲ ਦਰਜ ਕਰੋ</string>
+    <string name="settings_system_import_keystore_dialog_description">ਇਸਨੂੰ ਇੰਪੋਰਟ ਕਰਨ ਲਈ ਤੁਹਾਨੂੰ ਕੀਸਟੋਰ ਦੇ ਕ੍ਰੇਡੈਂਸ਼ੀਅਲ ਦਰਜ ਕਰਨ ਦੀ ਲੋੜ ਹੋਵੇਗੀ</string>
+    <string name="settings_system_import_keystore_dialog_alias_field">ਯੂਜ਼ਰਨੇਮ (Alias)</string>
+    <string name="settings_system_import_keystore_dialog_password_field">ਪਾਸਵਰਡ</string>
+    <string name="settings_system_import_keystore_dialog_format_field">ਕੀਸਟੋਰ ਫਾਰਮੈਟ</string>
+    <string name="settings_system_import_keystore_wrong_credentials">ਗਲਤ ਕੀਸਟੋਰ ਕ੍ਰੇਡੈਂਸ਼ੀਅਲਜ਼</string>
+    <string name="settings_system_import_keystore_success">ਕੀਸਟੋਰ ਇੰਪੋਰਟ ਕੀਤਾ ਗਿਆ</string>
+    <string name="settings_system_import_keystore_failed">ਕੀਸਟੋਰ ਇੰਪੋਰਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="settings_system_export_keystore_success">ਕੀਸਟੋਰ ਐਕਸਪੋਰਟ ਕੀਤਾ ਗਿਆ</string>
+    <string name="settings_system_export_keystore_failed">ਕੀਸਟੋਰ ਐਕਸਪੋਰਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="settings_system_show_password_field">ਪਾਸਵਰਡ ਦਿਖਾਓ</string>
+    <string name="settings_system_hide_password_field">ਪਾਸਵਰਡ ਲੁਕਾਓ</string>
+    <string name="settings_system_morphe_settings">Morphe ਸੈਟਿੰਗਾਂ</string>
+    <string name="settings_system_import_manager_settings_description">ਤੁਹਾਡੀਆਂ Morphe ਸੈਟਿੰਗਾਂ ਦਾ ਬੈਕਅੱਪ ਲੈਂਦਾ ਹੈ ਅਤੇ ਉਹਨਾਂ ਨੂੰ ਰੀਸਟੋਰ ਕਰਦਾ ਹੈ</string>
+    <string name="settings_system_import_manager_settings_fail">Morphe ਸੈਟਿੰਗਾਂ ਨੂੰ ਇੰਪੋਰਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s</string>
+    <string name="settings_system_import_manager_settings_success">Morphe ਸੈਟਿੰਗਾਂ ਇੰਪੋਰਟ ਕੀਤੀਆਂ ਗਈਆਂ</string>
+    <string name="settings_system_import_manager_settings_mode_title">Morphe ਸੈਟਿੰਗਾਂ ਇੰਪੋਰਟ ਕਰੋ</string>
+    <string name="settings_system_import_manager_settings_mode_description">ਚੁਣੋ ਕਿ ਇੰਪੋਰਟ ਕੀਤੀਆਂ ਸੈਟਿੰਗਾਂ ਅਤੇ ਸਰੋਤ ਕਿਵੇਂ ਲਾਗੂ ਕੀਤੇ ਜਾਣੇ ਚਾਹੀਦੇ ਹਨ</string>
+    <string name="settings_system_import_selections_mode_title">ਪੈਚ ਚੋਣਾਂ ਇੰਪੋਰਟ ਕਰੋ</string>
+    <string name="settings_system_import_selections_mode_description">ਚੁਣੋ ਕਿ ਇੰਪੋਰਟ ਕੀਤੀਆਂ ਚੋਣਾਂ ਅਤੇ ਪੈਚ ਵਿਕਲਪ ਕਿਵੇਂ ਲਾਗੂ ਕੀਤੇ ਜਾਣੇ ਚਾਹੀਦੇ ਹਨ</string>
+    <string name="import_mode_replace_title">ਮੌਜੂਦਾ ਨੂੰ ਬਦਲੋ</string>
+    <string name="import_mode_replace_description">ਬੈਕਅੱਪ ਨਾਲ ਬਿਲਕੁਲ ਮੇਲ ਖਾਓ। ਬੈਕਅੱਪ ਵਿੱਚੋਂ ਗੁੰਮ ਹੋਈਆਂ ਚੀਜ਼ਾਂ ਨੂੰ ਹਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ</string>
+    <string name="import_mode_merge_title">ਮੌਜੂਦਾ ਨਾਲ ਮਿਲਾਓ</string>
+    <string name="import_mode_merge_description">ਬੈਕਅੱਪ ਤੋਂ ਗੁੰਮ ਹੋਈਆਂ ਆਈਟਮਾਂ ਨੂੰ ਜੋੜੋ। ਮੌਜੂਦਾ ਆਈਟਮਾਂ ਨੂੰ ਬਿਨਾਂ ਕਿਸੇ ਬਦਲਾਅ ਦੇ ਰੱਖਿਆ ਜਾਂਦਾ ਹੈ</string>
+    <string name="settings_system_export_manager_settings_fail">Morphe ਸੈਟਿੰਗਾਂ ਨੂੰ ਨਿਰਯਾਤ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s</string>
+    <string name="settings_system_export_manager_settings_success">Morphe ਸੈਟਿੰਗਾਂ ਨਿਰਯਾਤ ਕੀਤੀਆਂ ਗਈਆਂ</string>
+    <string name="settings_system_export_debug_logs">ਡੀਬੱਗ ਲੌਗਸ ਐਕਸਪੋਰਟ ਕਰੋ</string>
+    <string name="settings_system_export_debug_logs_description">ਟਰਬਲਸ਼ੂਟਿੰਗ ਲਈ ਸਿਸਟਮ ਲੌਗਸ ਨੂੰ ਸੇਵ ਕਰਦਾ ਹੈ</string>
+    <string name="settings_system_export_debug_logs_export_read_failed">ਲੌਗਸ ਪੜ੍ਹਨ ਵਿੱਚ ਅਸਫਲ (ਐਗਜ਼ਿਟ ਕੋਡ %s)</string>
+    <string name="settings_system_export_debug_logs_export_failed">ਲੌਗਸ ਐਕਸਪੋਰਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="settings_system_export_debug_logs_export_success">ਲੌਗਸ ਐਕਸਪੋਰਟ ਕੀਤੇ ਗਏ</string>
     <!-- Settings - System Tab - Files & Storage Section -->
+    <string name="settings_system_apks_size">ਕੁੱਲ ਆਕਾਰ: %s</string>
+    <string name="settings_system_apks_delete_all_confirm">ਇਹ ਇੱਥੇ ਦਿਖਾਈਆਂ ਗਈਆਂ ਸੇਵ ਕੀਤੀਆਂ APK ਫਾਈਲਾਂ ਨੂੰ ਸਥਾਈ ਤੌਰ \'ਤੇ ਮਿਟਾ ਦੇਵੇਗਾ</string>
+    <string name="settings_system_apks_delete_selected_title">ਚੁਣੀਆਂ ਹੋਈਆਂ APKs ਨੂੰ ਮਿਟਾਇਆ ਜਾਵੇ?</string>
+    <string name="settings_system_apks_delete_selected_confirm">ਇਹ ਚੁਣੀਆਂ ਹੋਈਆਂ APK ਫਾਈਲਾਂ ਨੂੰ ਸਥਾਈ ਤੌਰ \'ਤੇ ਮਿਟਾ ਦੇਵੇਗਾ</string>
+    <string name="settings_system_apks_deleted_all">APKs ਸਫਲਤਾਪੂਰਵਕ ਮਿਟਾ ਦਿੱਤੀਆਂ ਗਈਆਂ</string>
+    <string name="settings_system_apks_delete_failed">ਕੁਝ APK ਫਾਈਲਾਂ ਮਿਟਾਈਆਂ ਨਹੀਂ ਜਾ ਸਕੀਆਂ</string>
+    <string name="settings_system_apks_export_zip_success">ਚੁਣੀਆਂ ਹੋਈਆਂ APKs ਐਕਸਪੋਰਟ ਕੀਤੀਆਂ ਗਈਆਂ</string>
+    <string name="settings_system_apks_export_zip_failed">ਚੁਣੇ ਹੋਏ APKs ਨੂੰ ਐਕਸਪੋਰਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਰਿਹਾ</string>
     <!-- Settings - System Tab - Storage Management screen -->
+    <string name="settings_system_storage_management_title">ਸਟੋਰੇਜ ਪ੍ਰਬੰਧਨ</string>
+    <string name="settings_system_storage_management_description">ਡਿਸਕ ਦੀ ਵਰਤੋਂ ਦਿਖਾਉਂਦਾ ਹੈ ਅਤੇ ਕੈਸ਼ਡ ਫਾਈਲਾਂ ਨੂੰ ਸਾਫ਼ ਕਰਦਾ ਹੈ</string>
     <!-- Shown under how much Morphe takes up. "%1$s" is the space still available on the device, already formatted with its unit. "Free" as in unused, not as in free of charge. -->
+    <string name="settings_system_storage_free">%1$s ਖਾਲੀ</string>
+    <string name="settings_system_storage_saved_apks">ਸੇਵ ਕੀਤੇ APK</string>
+    <string name="settings_system_storage_caches">ਕੈਸ਼</string>
+    <string name="settings_system_storage_keystore_title">ਸਾਈਨਿੰਗ ਕੀਸਟੋਰ</string>
+    <string name="settings_system_storage_app_data_title">ਐਪ ਡੇਟਾ</string>
+    <string name="settings_system_storage_patch_bundles_title">ਪੈਚ ਬੰਡਲ</string>
+    <string name="settings_system_storage_http_cache_title">ਨੈੱਟਵਰਕ ਕੈਸ਼</string>
+    <string name="settings_system_storage_http_cache_description">ਅਪਡੇਟਸ ਨੂੰ ਤੇਜ਼ ਕਰਨ ਲਈ ਕੈਸ਼ ਕੀਤੇ HTTP ਰਿਸਪਾਂਸ</string>
+    <string name="settings_system_storage_installer_cache_title">ਬਾਹਰੀ ਇੰਸਟਾਲਰ ਕੈਸ਼</string>
+    <string name="settings_system_storage_installer_cache_description">ਤੀਜੀ-ਪਾਰਟੀ ਇੰਸਟਾਲਰਾਂ ਨੂੰ ਭੇਜੀਆਂ ਗਈਆਂ APK ਕਾਪੀਆਂ</string>
+    <string name="settings_system_storage_patcher_workspace_title">ਪੈਚਰ ਵਰਕਸਪੇਸ</string>
+    <string name="settings_system_storage_patcher_workspace_description">ਪੈਚਰ ਰਨਟਾਈਮ ਫਾਈਲਾਂ ਅਤੇ ਅਨਾਥ ਸਕ੍ਰੈਚ ਡੇਟਾ</string>
+    <string name="settings_system_storage_temporary_title">ਆਰਜ਼ੀ ਫਾਈਲਾਂ</string>
+    <string name="settings_system_storage_temporary_description">ਪੈਚਿੰਗ ਦੌਰਾਨ ਬਣਾਈਆਂ ਗਈਆਂ ਵਰਕਿੰਗ ਫਾਈਲਾਂ</string>
+    <string name="settings_system_storage_clear_all">ਸਾਰੇ ਕੈਸ਼ ਸਾਫ਼ ਕਰੋ</string>
+    <string name="settings_system_storage_clear_all_description">ਇੱਕੋ ਵਾਰ ਵਿੱਚ ਸਾਰੇ ਵਾਪਸ ਪ੍ਰਾਪਤ ਕੀਤੇ ਜਾ ਸਕਣ ਵਾਲੇ ਕੈਸ਼ ਸਪੇਸ ਨੂੰ ਖਾਲੀ ਕਰਦਾ ਹੈ</string>
+    <string name="settings_system_storage_clear_all_confirm">ਇਹ ਕੈਸ਼ ਕੀਤੇ ਨੈਟਵਰਕ ਰਿਸਪਾਂਸ, ਸਟੇਜਡ ਇੰਸਟਾਲਰ ਕਾਪੀਆਂ, ਅਤੇ ਆਰਜ਼ੀ ਫਾਈਲਾਂ ਨੂੰ ਸਾਫ਼ ਕਰਦਾ ਹੈ। ਅਸਲ ਅਤੇ ਪੈਚ ਕੀਤੇ APK ਰੱਖੇ ਜਾਂਦੇ ਹਨ</string>
+    <string name="settings_system_storage_cleared">%s ਖਾਲੀ ਕੀਤਾ ਗਿਆ</string>
+    <string name="settings_system_storage_patch_running_warning">ਇੱਕ ਪੈਚ ਚੱਲ ਰਿਹਾ ਹੈ ਅਤੇ ਇਹਨਾਂ ਫਾਈਲਾਂ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ। ਉਹਨਾਂ ਨੂੰ ਹੁਣ ਸਾਫ਼ ਕਰਨ ਨਾਲ ਇਹ ਫੇਲ ਹੋ ਜਾਵੇਗਾ</string>
+    <string name="settings_system_storage_clear_anyway">ਫਿਰ ਵੀ ਸਾਫ਼ ਕਰੋ</string>
+    <string name="settings_system_storage_nothing_to_clear">ਸਾਫ਼ ਕਰਨ ਲਈ ਕੁਝ ਨਹੀਂ ਹੈ</string>
+    <string name="settings_system_storage_open_app_info_title">Android ਐਪ ਸਟੋਰੇਜ ਖੋਲ੍ਹੋ</string>
+    <string name="settings_system_storage_open_app_info_description">ਸਿਸਟਮ ਸੈਟਿੰਗਾਂ ਰਾਹੀਂ ਸਾਰੇ Morphe ਡੇਟਾ ਨੂੰ ਮੈਨੇਜ ਜਾਂ ਸਾਫ਼ ਕਰੋ</string>
+    <string name="settings_system_save_original_apks_title">ਮੂਲ APKs ਰੱਖੋ</string>
+    <string name="settings_system_save_original_apks_description">ਪ੍ਰੀ-ਪੈਚ APK ਨੂੰ ਸੇਵ ਕਰੋ ਤਾਂ ਜੋ ਇਸਨੂੰ ਫਾਈਲ ਨੂੰ ਦੁਬਾਰਾ ਚੁਣੇ ਬਿਨਾਂ ਰੀ-ਪੈਚਿੰਗ ਲਈ ਵਰਤਿਆ ਜਾ ਸਕੇ</string>
+    <string name="settings_system_save_patched_apks_title">ਪੈਚ ਕੀਤੇ APK ਰੱਖੋ</string>
+    <string name="settings_system_save_patched_apks_description">ਬਾਅਦ ਵਿੱਚ ਐਕਸਪੋਰਟ ਕਰਨ ਜਾਂ ਮੈਨੇਜਰ ਤੋਂ ਦੁਬਾਰਾ ਇੰਸਟਾਲ ਕਰਨ ਲਈ ਪੈਚ ਕੀਤੇ APK ਦੀ ਇੱਕ ਕਾਪੀ ਸੇਵ ਕਰੋ</string>
     <!-- Settings - System Tab - Storage Management - Patched APKs Management -->
+    <string name="settings_system_patched_apks_title">ਪੈਚ ਕੀਤੇ APKs</string>
+    <string name="settings_system_patched_apks_empty">ਅਜੇ ਤੱਕ ਕੋਈ ਪੈਚ ਕੀਤੇ APK ਸੇਵ ਨਹੀਂ ਕੀਤੇ ਗਏ</string>
+    <string name="settings_system_patched_apks_delete_title">ਪੈਚ ਕੀਤਾ APK ਡਿਲੀਟ ਕਰੀਏ?</string>
+    <string name="settings_system_patched_apks_deleted">ਪੈਚ ਕੀਤਾ APK ਸਫਲਤਾਪੂਰਵਕ ਡਿਲੀਟ ਕਰ ਦਿੱਤਾ ਗਿਆ</string>
+    <string name="settings_system_patched_apks_delete_all_title">ਸਾਰੇ ਪੈਚ ਕੀਤੇ APKs ਨੂੰ ਡਿਲੀਟ ਕਰੀਏ?</string>
     <!-- Settings - System Tab - Storage Management - Original APKs Management -->
+    <string name="settings_system_original_apks_title">ਮੂਲ APKs</string>
+    <string name="settings_system_original_apks_empty">ਕੋਈ ਮੂਲ APK ਸਟੋਰ ਨਹੀਂ ਕੀਤੇ ਗਏ</string>
+    <string name="settings_system_original_apks_deleted">ਮੂਲ APK ਸਫਲਤਾਪੂਰਵਕ ਡਿਲੀਟ ਕਰ ਦਿੱਤਾ ਗਿਆ</string>
+    <string name="settings_system_original_apks_delete_title">ਮੂਲ APK ਡਿਲੀਟ ਕਰੀਏ?</string>
+    <string name="settings_system_original_apks_delete_notice">ਨਵਾਂ APK ਪ੍ਰਦਾਨ ਕੀਤੇ ਬਿਨਾਂ ਤੁਸੀਂ ਦੁਬਾਰਾ ਪੈਚ ਨਹੀਂ ਕਰ ਸਕੋਗੇ</string>
+    <string name="settings_system_original_apks_delete_all_title">ਸਾਰੇ ਅਸਲ APKs ਨੂੰ ਡਿਲੀਟ ਕਰੀਏ?</string>
     <!-- Settings - System Tab - Storage Management - Patch Selection Management -->
+    <string name="settings_system_patch_selections_title">ਪੈਚ ਚੋਣਾਂ</string>
+    <string name="settings_system_patch_selections_description">ਸੇਵ ਕੀਤੀਆਂ ਪੈਚ ਚੋਣਾਂ, 언ਇੰਸਟਾਲ ਤੋਂ ਬਾਅਦ ਬਰਕਰਾਰ ਰਹਿੰਗੀਆਂ</string>
+    <string name="settings_system_patch_selection_reset_all_confirm_title">ਸਾਰੇ ਚੋਣਾਂ ਨੂੰ ਰੀਸੈਟ ਕਰੋ?</string>
+    <string name="settings_system_patch_selection_reset_selected_confirm_title">ਚੁਣੇ ਹੋਏ ਪੈਕੇਜਾਂ ਨੂੰ ਰੀਸੈਟ ਕਰੀਏ?</string>
+    <string name="settings_system_patch_selection_reset_source_confirm_title">ਸੋਰਸ ਚੋਣ ਨੂੰ ਰੀਸੈਟ ਕਰਨਾ ਹੈ?</string>
+    <string name="settings_system_patch_selection_total_summary_format">%2$s ਵਿੱਚੋਂ %1$s</string>
+    <string name="settings_system_patch_selection_source_format">ਸੋਰਸ #%s</string>
+    <string name="settings_system_patch_selection_reset_all_warning">ਇਹ ਸਾਰੇ ਪੈਕੇਜਾਂ ਅਤੇ ਸਰੋਤਾਂ ਲਈ ਸਾਰੇ ਸੇਵ ਕੀਤੇ ਪੈਚ ਚੋਣਾਂ ਨੂੰ ਸਥਾਈ ਤੌਰ \'ਤੇ ਡਿਲੀਟ ਕਰ ਦੇਵੇਗਾ</string>
+    <string name="settings_system_patch_selection_reset_source_warning">ਇਹ &lt;b&gt;%2$s&lt;/b&gt; ਵਿੱਚ &lt;b&gt;%1$s&lt;/b&gt; ਲਈ ਸੇਵ ਕੀਤੇ ਪੈਚ ਸਿਲੈਕਸ਼ਨਾਂ ਨੂੰ ਸਥਾਈ ਤੌਰ \'ਤੇ ਡਿਲੀਟ ਕਰ ਦੇਵੇਗਾ</string>
+    <string name="settings_system_patch_selection_reset_selected_warning">ਇਹ ਚੁਣੇ ਗਏ ਪੈਕੇਜਾਂ ਲਈ ਸਾਰੀਆਂ ਸੇਵ ਕੀਤੀਆਂ ਪੈਚ ਸਿਲੈਕਸ਼ਨਾਂ ਨੂੰ ਸਥਾਈ ਤੌਰ \'ਤੇ ਡਿਲੀਟ ਕਰ ਦੇਵੇਗਾ</string>
+    <string name="settings_system_export_source_data_fail">ਸਰੋਤ ਡੇਟਾ ਐਕਸਪੋਰਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="settings_system_export_source_data_success">ਸਰੋਤ ਡੇਟਾ ਸਫਲਤਾਪੂਰਵਕ ਐਕਸਪੋਰਟ ਕੀਤਾ ਗਿਆ</string>
+    <string name="settings_system_import_source_data_fail">ਸਰੋਤ ਡੇਟਾ ਇੰਪੋਰਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="settings_system_import_source_data_success">ਸਰੋਤ ਡੇਟਾ ਸਫਲਤਾਪੂਰਵਕ ਇੰਪੋਰਟ ਕੀਤਾ ਗਿਆ</string>
+    <string name="settings_system_selected_patches_section">ਚੁਣੇ ਹੋਏ ਪੈਚ</string>
+    <string name="settings_system_no_patches_or_options">ਕੋਈ ਪੈਚ ਜਾਂ ਵਿਕਲਪ ਸੇਵ ਨਹੀਂ ਕੀਤੇ ਗਏ</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">ਚੋਣਾਂ</string>
+    <string name="selection_panel_copy_into">%s ਵਿੱਚ ਕਾਪੀ ਕਰੋ</string>
+    <string name="selection_sets_title">ਸੈੱਟਸ</string>
+    <string name="selection_set_name">ਸੈੱਟ ਦਾ ਨਾਮ</string>
+    <string name="selection_set_save">ਸੈੱਟ ਵਜੋਂ ਸੇਵ ਕਰੋ</string>
+    <string name="selection_set_replace">ਸੈੱਟ ਬਦਲੋ</string>
+    <string name="selection_set_saved">%s ਵਜੋਂ ਸੇਵ ਕੀਤਾ ਗਿਆ</string>
+    <string name="selection_set_applied">%s ਤੇ ਸਵਿੱਚ ਕੀਤਾ ਗਿਆ</string>
+    <string name="selection_set_deleted">%s ਮਿਟਾ ਦਿੱਤਾ ਗਿਆ</string>
+    <string name="selection_set_renamed">ਨਾਮ ਬਦਲ ਕੇ %s ਕਰ ਦਿੱਤਾ ਗਿਆ</string>
+    <string name="selection_set_rename_title">ਸੈੱਟ ਦਾ ਨਾਮ ਬਦਲੋ</string>
+    <string name="selection_set_delete_title">ਸੈੱਟ ਮਿਟਾਓ?</string>
+    <string name="selection_set_delete_message">ਇਹ ਸੈੱਟ %s ਨੂੰ ਸਥਾਈ ਤੌਰ ਤੇ ਮਿਟਾ ਦਿੰਦਾ ਹੈ</string>
+    <string name="copy_selection_empty">ਕਾਪੀ ਕਰਨ ਲਈ ਕੋਈ ਹੋਰ ਸੇਵ ਕੀਤੇ ਸਿਲੈਕਸ਼ਨ ਨਹੀਂ ਹਨ</string>
+    <string name="copy_selection_available_format">%2$s ਵਿੱਚੋਂ %1$s ਉਪਲਬਧ ਹਨ</string>
     <!-- Settings - System Tab - Custom file picker -->
+    <string name="settings_system_custom_file_picker">ਕਸਟਮ ਫਾਈਲ ਪਿਕਰ</string>
+    <string name="settings_system_custom_file_picker_description">ਸਿਸਟਮ ਫਾਈਲ ਪਿਕਰ ਦੀ ਬਜਾਏ Morphe ਦੇ ਬਿਲਟ-ਇਨ ਫਾਈਲ ਪਿਕਰ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
     <!-- Settings - System Tab - APK download helper -->
+    <string name="settings_system_apk_download_helper">APK ਡਾਊਨਲੋਡ ਹੈਲਪਰ</string>
+    <string name="settings_system_apk_download_helper_trusted_count">ਭਰੋਸੇਮੰਦ: %2$d ਵਿੱਚੋਂ %1$d</string>
+    <string name="settings_system_apk_download_helper_dialog_description">ਹੈਲਪਰ ਐਪਸ ਤੁਹਾਡੇ ਲਈ ਅਸਲੀ APK ਡਾਊਨਲੋਡ ਕਰ ਸਕਦੇ ਹਨ। ਡਾਊਨਲੋਡ ਨਿਰਦੇਸ਼ਾਂ ਵਿੱਚ ਸਿਰਫ ਉਹਨਾਂ ਦੀ ਪੇਸ਼ਕਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਜਿਨ੍ਹਾਂ \'ਤੇ ਤੁਸੀਂ ਇੱਥੇ ਭਰੋਸਾ ਕਰਦੇ ਹੋ</string>
+    <string name="settings_system_apk_download_helper_trust_title">ਕੀ ਇਸ ਸਹਾਇਕ \'ਤੇ ਭਰੋਸਾ ਕਰਨਾ ਹੈ?</string>
+    <string name="settings_system_apk_download_helper_warning">APK ਹੈਲਪਰ ਐਪ ਤੋਂ ਆਉਂਦਾ ਹੈ, ਇਸ ਲਈ ਸਿਰਫ ਉਨ੍ਹਾਂ ਐਪਸ \'ਤੇ ਭਰੋਸਾ ਕਰੋ ਜਿਨ੍ਹਾਂ ਨੂੰ ਤੁਸੀਂ ਜਾਣਦੇ ਹੋ। Morphe ਪੈਚ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਹਰ ਫਾਈਲ ਦੇ ਪੈਕੇਜ, ਵਰਜ਼ਨ ਅਤੇ ਸਿਗਨੇਚਰ ਦੀ ਜਾਂਚ ਕਰਦਾ ਹੈ</string>
+    <string name="settings_system_apk_download_helper_installed_by">%s ਦੁਆਰਾ ਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ</string>
+    <string name="settings_system_apk_download_helper_installed_by_unknown">ਇੰਸਟਾਲਰ ਅਣਜਾਣ ਹੈ</string>
+    <string name="settings_system_apk_download_helper_open_directly">ਹੈਲਪਰ ਨੂੰ ਤੁਰੰਤ ਖੋਲ੍ਹੋ</string>
+    <string name="settings_system_apk_download_helper_open_directly_description">ਡਾਊਨਲੋਡ ਨਿਰਦੇਸ਼ਾਂ ਨੂੰ ਛੱਡਦਾ ਹੈ ਅਤੇ ਭਰੋਸੇਮੰਦ ਹੈਲਪਰ ਨੂੰ ਖੋਲ੍ਹਦਾ ਹੈ</string>
     <!-- File Picker -->
+    <string name="file_picker_no_files">ਇੱਥੇ ਕੋਈ ਫਾਈਲਾਂ ਨਹੀਂ ਹਨ</string>
+    <string name="file_picker_read_error">ਇਸ ਡਾਇਰੈਕਟਰੀ ਨੂੰ ਨਹੀਂ ਪੜ੍ਹਿਆ ਜਾ ਸਕਦਾ</string>
+    <string name="file_picker_internal_storage">ਅੰਦਰੂਨੀ ਸਟੋਰੇਜ</string>
+    <string name="file_picker_sd_card">SD ਕਾਰਡ</string>
+    <string name="file_picker_root">ਰੂਟ (/)</string>
+    <string name="file_picker_storage_access_unavailable">ਇਸ ਡਿਵਾਈਸ ਵਿੱਚ ਸਾਰੀਆਂ ਫਾਈਲਾਂ ਤੱਕ ਪਹੁੰਚ ਦੀ ਇਜਾਜ਼ਤ ਦੇਣ ਲਈ ਕੋਈ ਸਕ੍ਰੀਨ ਨਹੀਂ ਹੈ। ਇਸਨੂੰ ADB ਰਾਹੀਂ ਇਜਾਜ਼ਤ ਦਿਓ: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
+    <string name="file_picker_storages">ਸਟੋਰੇਜ</string>
+    <string name="file_saver_downloads_failed">Downloads ਵਿੱਚ ਫਾਈਲ ਨਹੀਂ ਬਣਾਈ ਜਾ ਸਕੀ</string>
+    <string name="file_saver_saving_to_downloads">ਇਸ ਡਿਵਾਈਸ ਵਿੱਚ ਕੋਈ ਸੇਵ ਸਕ੍ਰੀਨ ਨਹੀਂ ਹੈ, ਇਸ ਲਈ ਫਾਈਲ Downloads ਵਿੱਚ %1$s ਵਜੋਂ ਜਾਵੇਗੀ</string>
+    <string name="file_picker_sort_name_asc">ਨਾਮ (A–Z)</string>
+    <string name="file_picker_sort_name_desc">ਨਾਮ (Z–A)</string>
+    <string name="file_picker_sort_size_desc">ਸਾਈਜ਼ (ਸਭ ਤੋਂ ਵੱਡ ਪਹਿਲਾਂ)</string>
+    <string name="file_picker_sort_size_asc">ਸਾਈਜ਼ (ਸਭ ਤੋਂ ਛੋਟਾ ਪਹਿਲਾਂ)</string>
+    <string name="file_picker_sort_date_desc">ਤਾਰੀਖ (ਨਵੀਆਂ ਪਹਿਲਾਂ)</string>
+    <string name="file_picker_sort_date_asc">ਤਾਰੀਖ (ਪੁਰਾਣੀਆਂ ਪਹਿਲਾਂ)</string>
+    <string name="file_picker_show_hidden_files">ਲੁਕੋਈਆਂ ਫਾਈਲਾਂ ਦਿਖਾਓ</string>
     <!-- Settings - System Tab - About Section -->
+    <string name="settings_system_about">ਬਾਰੇ</string>
+    <string name="settings_system_manager_description">ਲੋਕਪ੍ਰਿਯ ਐਂਡਰੌਇਡ ਐਪਸ ਦੀ ਆਧੁਨਿਕ, ਸੁਚਾਰੂ ਪੈਚਿੰਗ ਲਈ ਇੱਕ ਓਪਨ-ਸੋਰਸ ਪ੍ਰੋਜੈਕਟ, ਜੋ ਕਿ ਕਮਿਊਨਿਟੀ ਫੀਡਬੈਕ ਅਤੇ ਯੋਗਦਾਨਾਂ ਦੁਆਰਾ ਚਲਾਇਆ ਜਾਂਦਾ ਹੈ</string>
+    <string name="credits">ਕ੍ਰੈਡਿਟਸ</string>
+    <string name="credits_description">Morphe ਦੇ ਪਿੱਛੇ ਦੇ ਲੋਕ</string>
+    <string name="settings_about_section_project">ਪ੍ਰੋਜੈਕਟ</string>
+    <string name="settings_about_section_help">ਸਹਾਇਤਾ</string>
+    <string name="credits_current_development">ਮੌਜੂਦਾ ਵਿਕਾਸ</string>
+    <string name="credits_prior_development">ਪਿਛਲਾ ਵਿਕਾਸ</string>
+    <string name="opensource_licenses">ਓਪਨ-ਸੋਰਸ ਲਾਇਸੈਂਸ</string>
+    <string name="opensource_licenses_description">ਉਹ ਲਾਇਬ੍ਰੇਰੀਆਂ ਜਿਨ੍ਹਾਂ \'ਤੇ Morphe ਬਣਿਆ ਹੈ</string>
     <!-- Easter egg offered after seven taps on the version in the About dialog -->
+    <string name="easter_egg_pill_title">ਇੱਕ ਚੋਣ</string>
+    <string name="easter_egg_pill_message">ਨੀਲੀ ਗੋਲੀ ਲਓ ਅਤੇ ਵਿਗਿਆਪਨ ਬਿਲਕੁਲ ਉੱਥੇ ਹੀ ਰਹਿਣਗੇ ਜਿੱਥੇ ਉਹ ਹਨ। ਲਾਲ ਗੋਲੀ ਲਓ ਅਤੇ ਦੇਖੋ ਕਿ ਬਾਈਟਕੋਡ ਕਿੰਨਾ ਡੂੰਘਾ ਜਾਂਦਾ ਹੈ</string>
+    <string name="easter_egg_pill_red">ਲਾਲ ਗੋਲੀ</string>
+    <string name="easter_egg_pill_blue">ਨੀਲੀ ਗੋਲੀ</string>
+    <string name="easter_egg_pill_red_toast">ਮੈਟ੍ਰਿਕਸ ਬੈਕਗ੍ਰਾਊਂਡ ਅਨਲੌਕ ਹੋ ਗਿਆ</string>
+    <string name="easter_egg_pill_blue_toast">ਵਿਗਿਆਪਨ ਤੁਹਾਡਾ ਇੰਤਜ਼ਾਰ ਕਰਨਗੇ</string>
+    <string name="easter_egg_pill_message_again">ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਮੈਟ੍ਰਿਕਸ ਵਿੱਚ ਹੋ। ਲਾਲ ਗੋਲੀ ਤੁਹਾਨੂੰ ਵਾਪਸ ਮੀਂਹ ਵਿੱਚ ਸੁੱਟ ਦਿੰਦੀ ਹੈ, ਨੀਲੀ ਗੋਲੀ ਤੁਹਾਨੂੰ ਜਗਾ ਦਿੰਦੀ ਹੈ</string>
+    <string name="easter_egg_pill_red_toast_again">ਮੀਂਹ ਵਿੱਚ ਵਾਪਸ</string>
+    <string name="easter_egg_pill_blue_toast_again">ਅਨਪਲੱਗਡ। ਵਾਪਸ ਜਾਣ ਦਾ ਰਸਤਾ ਉੱਥੇ ਹੀ ਹੈ ਜਿੱਥੇ ਹਮੇਸ਼ਾ ਸੀ</string>
     <!-- Shared strings -->
+    <string name="select_file">ਫਾਈਲ ਚੁਣੋ</string>
+    <string name="select_files">ਫਾਈਲਾਂ ਚੁਣੋ</string>
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="select_folder">ਫੋਲਡਰ ਚੁਣੋ</string>
+    <string name="patches">ਪੈਚ</string>
+    <string name="home">ਹੋਮ</string>
+    <string name="settings">ਸੈਟਿੰਗਾਂ</string>
+    <string name="apps">ਐਪਸ</string>
     <!-- Sections the settings page lists, each opening a page of its own. A summary names what the section holds -->
+    <string name="settings_section_patcher">ਪੈਚਰ</string>
+    <string name="settings_section_updates">ਅਪਡੇਟਸ</string>
+    <string name="settings_section_patching">ਪੈਚਿੰਗ</string>
+    <string name="settings_section_appearance_summary">Morphe ਕਿਵੇਂ ਦਿਖਦਾ ਹੈ</string>
+    <string name="settings_section_patch_options_summary">ਸਧਾਰਨ ਮੋਡ ਐਪਸ ਨੂੰ ਕਿਸ ਨਾਲ ਪੈਚ ਕਰਦਾ ਹੈ</string>
+    <string name="settings_section_general">ਆਮ</string>
+    <string name="settings_section_patcher_summary">ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਐਪਸ ਕਿਵੇਂ ਪੈਚ ਕੀਤੇ ਜਾਂਦੇ ਹਨ</string>
+    <string name="settings_section_help_info">ਸਹਾਇਤਾ &amp; ਜਾਣਕਾਰੀ</string>
+    <string name="settings_section_about_summary">Morphe ਬਾਰੇ ਹੋਰ ਅਤੇ ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਕਰਨਾ</string>
+    <string name="settings_section_local_files">ਫਾਈਲਾਂ</string>
+    <string name="settings_section_backup">ਬੈਕਅੱਪ</string>
+    <string name="settings_search">ਸੈਟਿੰਗਾਂ ਖੋਜੋ</string>
+    <string name="yes">ਹਾਂ</string>
+    <string name="no">ਨਹੀਂ</string>
+    <string name="all">ਸਾਰੇ</string>
+    <string name="filter">ਫਿਲਟਰ</string>
+    <string name="group">ਗਰੁੱਪ</string>
+    <string name="reset">ਰੀਸੈਟ</string>
+    <string name="reset_all">ਸਭ ਰੀਸੈਟ ਕਰੋ</string>
+    <string name="apply">ਲਾਗੂ ਕਰੋ</string>
+    <string name="confirm">ਪੁਸ਼ਟੀ ਕਰੋ</string>
+    <string name="warning">ਚੇਤਾਵਨੀ</string>
+    <string name="error_">ਗਲਤੀ</string>
+    <string name="failed">ਨਾਕਾਮ</string>
+    <string name="canceled">ਰੱਦ ਕੀਤਾ ਗਿਆ</string>
+    <string name="ready">ਤਿਆਰ</string>
+    <string name="retry">ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="refresh">ਰਿਫ੍ਰੈਸ਼ ਕਰੋ</string>
+    <string name="add">ਜੋੜੋ</string>
+    <string name="close">ਬੰਦ ਕਰੋ</string>
+    <string name="back">ਪਿਛੇ</string>
+    <string name="next">ਅੱਗੇ</string>
+    <string name="done">ਪੂਰਾ ਹੋਇਆ</string>
+    <string name="skip">ਛੱਟੋ</string>
+    <string name="clear">ਸਾਫ਼ ਕਰੋ</string>
+    <string name="paste">ਚਿਪਕਾਓ</string>
+    <string name="delete">ਮਿਟਾਓ</string>
+    <string name="delete_all">ਸਭ ਕੁਝ ਡਿਲੀਟ ਕਰੋ</string>
+    <string name="remove">ਹਟਾਓ</string>
+    <string name="exclude">ਬਾਹਰ ਰੱਖੋ</string>
+    <string name="excluded">ਬਾਹਰ ਰੱਖਿਆ ਗਿਆ</string>
+    <string name="include">ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="disable">ਅਸਮਰੱਥ ਕਰੋ</string>
+    <string name="enable">ਸਮਰੱਥ ਕਰੋ</string>
+    <string name="trust">ਭਰੋਸਾ ਕਰੋ</string>
+    <string name="loading">ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ…</string>
+    <string name="creating">ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ…</string>
+    <string name="processing_apk">APK ਪ੍ਰੋਸੈਸ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ…</string>
+    <string name="exporting_apks">APKs ਐਕਸਪੋਰਟ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ…</string>
+    <string name="not_installed">ਇੰਸਟਾਲ ਨਹੀਂ ਕੀਤਾ ਗਿਆ</string>
+    <string name="view">ਵੇਖੋ</string>
+    <string name="search">ਖੋਜੋ</string>
+    <string name="search_no_results">ਕੋਈ ਨਤੀਜਾ ਨਹੀਂ ਮਿਲਿਆ</string>
+    <string name="sort">ਛਾਂਟੋ</string>
+    <string name="any_version">ਕੋਈ ਵੀ</string>
+    <string name="enabled">ਸਮਰਥਿਤ</string>
+    <string name="disabled">ਅਸਮਰਥਿਤ</string>
+    <string name="state_selected">ਚੁਣਿਆ ਗਿਆ</string>
+    <string name="state_not_selected">ਚੁਣਿਆ ਨਹੀਂ ਗਿਆ</string>
+    <string name="select_all">ਸਾਰੀਆਂ ਚੁਣੋ</string>
+    <string name="deselect_all">ਸਾਰੀਆਂ ਨੂੰt ਡੀਸਿਲੈਕਟ ਕਰੋ</string>
+    <string name="reorder_list">ਸੂਚੀ ਨੂੰ ਮੁੜ-ਵਿਵਸਥਿਤ ਕਰੋ</string>
+    <string name="reorder_list_hint">ਮੁੜ-ਵਿਵਸਥਿਤ ਕਰਨ ਲਈ ਖਿੱਚੋ</string>
+    <string name="reorder_done">ਕ੍ਰਮ ਸੁਰੱਖਿਅਤ ਕੀਤਾ ਗਿਆ</string>
+    <string name="reset_order">ਕ੍ਰਮ ਰੀਸੈਟ ਕਰੋ</string>
+    <string name="reset_order_done">ਕ੍ਰਮ ਰੀਸੈਟ ਕੀਤਾ ਗਿਆ</string>
+    <string name="reset_order_confirm_title">ਕੀ ਕ੍ਰਮ ਨੂੰ ਰੀਸੈਟ ਕਰਨਾ ਹੈ?</string>
+    <string name="reset_order_confirm_message">ਸੂਚੀ ਆਪਣੇ ਡਿਫੌਲਟ ਕ੍ਰਮ ਵਿੱਚ ਵਾਪਸ ਚਲੀ ਜਾਂਦੀ ਹੈ ਅਤੇ ਹੱਥ ਨਾਲ ਖਿੱਚਿਆ ਗਿਆ ਕ੍ਰਮ ਖਤਮ ਹੋ ਜਾਂਦਾ ਹੈ</string>
+    <string name="accessibility_select_app">ਐਪ ਚੁਣੋ</string>
+    <string name="accessibility_select_source">ਸਰੋਤ ਚੁਣੋ</string>
+    <string name="accessibility_move_up">ਉੱਪਰ ਲੈ ਜਾਓ</string>
+    <string name="accessibility_move_down">ਹੇਠਾਂ ਲੈ ਜਾਓ</string>
+    <string name="accessibility_app_moved_announcement">%1$s ਨੂੰ %3$s ਵਿੱਚੋਂ ਸਥਿਤੀ %2$s ਤੇ ਲਿਜਾਇਆ ਗਿਆ</string>
+    <string name="accessibility_scroll_to_top">ਸੂਚੀ ਦੇ ਸਿਖਰ ਤੇ ਜਾਓ</string>
+    <string name="rename">ਨਾਮ ਬਦਲੋ</string>
+    <string name="more_options">ਹੋਰ ਵਿਕਲਪ</string>
+    <string name="import_">ਇੰਪੋਰਟ</string>
+    <string name="export">ਐਕਸਪੋਰਟ</string>
+    <string name="copy">ਕਾਪੀ ਕਰੋ</string>
+    <string name="copied_to_clipboard">ਕਲਿੱਪਬੋਰਡ \'ਤੇ ਕਾਪੀ ਕੀਤਾ ਗਿਆ</string>
+    <string name="download">ਡਾਊਨਲੋਡ</string>
+    <string name="less">ਘੱਟ</string>
+    <string name="expand">ਵਿਸਤਾਰ ਕਰੋ</string>
+    <string name="expanded">ਵਿਸਤ੍ਰਿਤ</string>
+    <string name="collapse">ਸਮੇਟੋ</string>
+    <string name="collapsed">ਸਮੇਟਿਆ ਹੋਇਆ</string>
+    <string name="continue_">ਜਾਰੀ ਰੱਖੋ</string>
+    <string name="version">ਵਰਜ਼ਨ</string>
     <!-- Who made a patch source, as a field label -->
+    <string name="author">ਲੇਖਕ</string>
     <!-- A file a patch source is added from, as a field label -->
+    <string name="file">ਫਾਈਲ</string>
+    <string name="clone">ਕਲੋਨ</string>
     <!-- Button that starts patching the selected app. A verb, as in "patch this app" -->
+    <string name="patch">ਪੈਚ</string>
+    <string name="patching">ਪੈਚਿੰਗ</string>
+    <string name="patched">ਪੈਚ ਕੀਤਾ ਗਿਆ</string>
+    <string name="open">ਖੋਲ੍ਹੋ</string>
+    <string name="mount">ਮਾਊਂਟ ਕਰੋ</string>
+    <string name="mounted">ਮਾਊਂਟ ਕੀਤਾ ਗਿਆ</string>
+    <string name="unmount">ਅਨਮਾਊਂਟ ਕਰੋ</string>
+    <string name="unmounted">ਅਨਮਾਊਂਟ ਕੀਤਾ ਗਿਆ</string>
+    <string name="remount">ਦੁਬਾਰਾ ਮਾਊਂਟ ਕਰੋ</string>
+    <string name="restore">ਬਹਾਲ ਕਰੋ</string>
+    <string name="share">ਸਾਂਝਾ ਕਰੋ</string>
+    <string name="install">ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="installed">ਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ</string>
+    <string name="reinstall">ਦੁਬਾਰਾ ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="uninstall">ਅਨ-ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="uninstalled">ਅਨ-ਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ</string>
+    <string name="save">ਸੇਵ ਕਰੋ</string>
+    <string name="saved">ਸੇਵ ਕੀਤਾ ਗਿਆ</string>
+    <string name="update">ਅਪਡੇਟ</string>
+    <string name="allow">ਇਜਾਜ਼ਤ ਦਿਓ</string>
+    <string name="hide">ਲੁਕਾਓ</string>
+    <string name="hidden">ਲੁਕੋਇਆ ਹੋਇਆ</string>
+    <string name="unhide">ਲੁਕੋਇਆ ਹਟਾਓ</string>
+    <string name="show_all">ਸਾਰੇ ਦਿਖਾਓ</string>
+    <string name="ignore">ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ</string>
+    <string name="stop_ignoring">ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰਨਾ ਬੰਦ ਕਰੋ</string>
+    <string name="stop">ਰੋਕੋ</string>
+    <string name="logs">ਲੌਗਸ</string>
+    <string name="sources">ਸਰੋਤ</string>
+    <string name="installing_ellipsis">ਇੰਸਟਾਲ ਕਰ ਰਿਹਾ ਹੈ…</string>
+    <string name="mounting_ellipsis">ਮਾਊਂਟ ਕਰ ਰਿਹਾ ਹੈ…</string>
+    <string name="mount_stage_restoring_stock">ਅਸਲ ਨੂੰ ਬਹਾਲ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ…</string>
+    <string name="mount_stage_copying">ਕਾਪੀ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ…</string>
+    <string name="unmounting_ellipsis">ਅਨਮਾਊਂਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ…</string>
+    <string name="importing_ellipsis">ਇੰਪੋਰਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ…</string>
+    <string name="imported_successfully">ਸਫਲਤਾਪੂਰਵਕ ਇੰਪੋਰਟ ਕੀਤਾ ਗਿਆ</string>
+    <string name="changelog">ਚੇਂਜਲੌਗ ਦੇਖੋ</string>
+    <string name="changelog_for_app">%s ਲਈ ਬਦਲਾਅ</string>
+    <string name="changelog_general_changes">ਆਮ ਬਦਲਾਅ</string>
+    <string name="whats_new">ਕੀ ਨਵਾਂ ਹੈ</string>
+    <string name="changelog_description">ਇਸ ਵਰਜ਼ਨ ਵਿੱਚ ਨਵਾਂ ਕੀ ਹੈ</string>
+    <string name="changelog_download_fail">ਚੇਂਜਲੌਗ ਡਾਊਨਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s</string>
+    <string name="changelog_empty">ਕੋਈ ਚੇਂਜਲੌਗ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
+    <string name="changelog_earlier_releases">ਪੁਰਾਣੀਆਂ ਰਿਲੀਜ਼ਾਂ</string>
+    <string name="changelog_patched_with">%s ਨਾਲ ਪੈਚ ਕੀਤਾ ਗਿਆ</string>
+    <string name="changelog_older_empty">ਦਿਖਾਉਣ ਲਈ ਕੋਈ ਪੁਰਾਣੀਆਂ ਰਿਲੀਜ਼ਾਂ ਨਹੀਂ ਹਨ</string>
+    <string name="changelog_older_failed">ਪੁਰਾਣੀਆਂ ਰਿਲੀਜ਼ਾਂ ਲੋਡ ਨਹੀਂ ਕੀਤੇ ਜਾ ਸਕੇ</string>
     <!-- Label of a footer button beside "Translate". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="changelog_release_page">ਰਿਲੀਜ਼ ਪੇਜ</string>
+    <string name="content_translate">ਅਨੁਵਾਦ ਕਰੋ</string>
     <!-- Label of a footer button beside other buttons, which reads "Translate" until pressed. Keep it as short as "Translate", a longer one moves the buttons onto two rows -->
+    <string name="content_show_original">ਮੂਲ</string>
+    <string name="content_translation_failed">ਅਨੁਵਾਦ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s</string>
+    <string name="changelog_section_new">ਨਵਾਂ</string>
+    <string name="changelog_section_fixes">ਠੀਕੀਆਂ ਗਈਆਂ ਗਲਤੀਆਂ</string>
+    <string name="changelog_section_performance">ਪਰਫਾਰਮੈਂਸ</string>
+    <string name="changelog_section_improvements">ਸੁਧਾਰ</string>
+    <string name="changelog_section_app_support">ਐਪ ਸਪੋਰਟ</string>
+    <string name="changelog_section_other">ਬਦਲਾਅ</string>
+    <string name="changelog_badge_latest">ਤਾਜ਼ਾ</string>
     <!-- Marks the version of a patch source downloaded to the manager, which patches with it rather than the one an installed app was patched with -->
+    <string name="changelog_badge_downloaded">ਡਾਊਨਲੋਡ ਕੀਤਾ ਗਿਆ</string>
+    <string name="changelog_badge_prerelease">ਪ੍ਰੀ-ਰਿਲੀਜ਼</string>
     <!-- "%s" is the number of changes in the section -->
+    <string name="changelog_show_all">ਸਾਰੇ ਦਿਖਾਓ (%s)</string>
+    <string name="changelog_show_less">ਘਟ ਦਿਖਾਓ</string>
+    <string name="no_network_toast">ਕੋਈ ਇੰਟਰਨੈੱਟ ਕਨੈਕਸ਼ਨ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
+    <string name="update_available">ਇੱਕ ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ</string>
+    <string name="ready_to_install_update">ਅਪਡੇਟ ਇੰਸਟਾਲ ਕਰਨ ਲਈ ਤਿਆਰ ਹੈ</string>
+    <string name="update_completed">ਅਪਡੇਟ ਇੰਸਟਾਲ ਹੋ ਗਿਆ</string>
+    <string name="install_update_manager_failed">ਅਪਡੇਟ ਇੰਸਟਾਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="installing_manager_update">ਅਪਡੇਟ ਇੰਸਟਾਲ ਹੋ ਰਿਹਾ ਹੈ…</string>
+    <string name="installing_manager_update_hint">ਅਪਡੇਟ ਨੂੰ ਪੂਰਾ ਕਰਨ ਲਈ Morphe ਬੰਦ ਹੋ ਜਾਵੇਗਾ</string>
+    <string name="downloading_manager_update">ਅਪਡੇਟ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ…</string>
     <!-- Shown while downloading when the server does not report the total size. "%1$s" is the megabytes so far. -->
+    <string name="manager_update_progress_downloaded">%1$s MB ਡਾਊਨਲੋਡ ਹੋਏ</string>
     <!-- Shown under the download percentage. "%1$s" is the megabytes so far, "%2$s" the total. -->
+    <string name="manager_update_progress_size">%1$s / %2$s MB</string>
+    <string name="manager_update_not_ready">ਇਹ ਰਿਲੀਜ਼ ਅਜੇ ਵੀ ਪ੍ਰਕਾਸ਼ਿਤ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ। ਕੁਝ ਮਿੰਟਾਂ ਬਾਅਦ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="update_download_missing">ਡਾਊਨਲੋਡ ਕੀਤੀ ਅਪਡੇਟ ਹੁਣ ਉਪਲਬਧ ਨਹੀਂ ਹੈ। ਇਸਨੂੰ ਦੁਬਾਰਾ ਡਾਊਨਲੋਡ ਕਰੋ</string>
+    <string name="failed_to_check_updates">ਅਪਡੇਟਸ ਦੀ ਜਾਂਚ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s</string>
+    <string name="failed_to_download_update">ਅਪਡੇਟ ਡਾਊਨਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ: %s</string>
+    <string name="download_confirmation_metered">"ਤੁਸੀਂ ਇਸ ਸਮੇਂ ਇੱਕ ਮੀਟਰਡ ਕਨੈਕਸ਼ਨ 'ਤੇ ਹੋ, ਅਤੇ ਤੁਹਾਡੇ ਸੇਵਾ ਪ੍ਰਦਾਤਾ ਦੁਆਰਾ ਡਾਟਾ ਚਾਰਜ ਲਗਾਏ ਜਾ ਸਕਦੇ ਹਨ।
+
+ਕੀ ਤੁਸੀਂ ਫਿਰ ਵੀ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"</string>
+    <string name="download_update_confirmation">ਅਪਡੇਟ ਡਾਊਨਲੋਡ ਕਰਨਾ ਹੈ?</string>
     <!-- Onboarding coach marks -->
     <!-- %1$s = current step number, %2$s = total number of steps (e.g. "3 of 13") -->
+    <string name="onboarding_step_of">%2$s ਵਿੱਚੋਂ %1$s</string>
+    <string name="onboarding_sources_desc">ਆਪਣੇ ਪੈਚ ਸਰੋਤਾਂ ਦਾ ਪ੍ਰਬੰਧ ਕਰੋ। ਹਰੇਕ ਸਰੋਤ ਪੈਚ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ ਜੋ ਤੁਹਾਡੀ ਐਪਸ \'ਤੇ ਲਾਗੂ ਕੀਤੇ ਜਾ ਸਕਦੇ ਹਨ</string>
+    <string name="onboarding_other_apps_desc">ਇੱਕ ਅਜਿਹੀ ਐਪ ਨੂੰ ਪੈਚ ਕਰੋ ਜੋ ਸੂਚੀ ਵਿੱਚ ਨਹੀਂ ਹੈ, ਕਿਸੇ APK ਫਾਈਲ ਜਾਂ ਤੁਹਾਡੇ ਡਿਵਾਈਸ \'ਤੇ ਇੰਸਟਾਲ ਕੀਤੀ ਐਪ ਤੋਂ</string>
+    <string name="onboarding_add_source_desc">ਲਿੰਕ ਜਾਂ ਪੈਚ ਬੰਡਲ ਫਾਈਲ ਤੋਂ ਇੱਕ ਪੈਚ ਸਰੋਤ ਜੋੜੋ</string>
+    <string name="onboarding_signing_key_desc">ਉਸ ਕੀ ਦਾ ਬੈਕਅੱਪ ਲਓ ਜੋ ਤੁਹਾਡੀਆਂ ਪੈਚ ਕੀਤੀਆਂ ਐਪਸ ਨੂੰ ਸਾਈਨ ਕਰਦੀ ਹੈ। ਇਸ ਤੋਂ ਬਿਨਾਂ, ਉਹਨਾਂ ਨੂੰ ਸਿਰਫ ਅਨ-ਇੰਸਟਾਲ ਕਰਨ ਤੋਂ ਬਾਅਦ ਹੀ ਅਪਡੇਟ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ</string>
+    <string name="onboarding_swipe_title">ਸਵਾਈਪ ਇਸ਼ਾਰੇ</string>
+    <string name="onboarding_swipe_desc">ਇਸਦੇ ਉਪਲਬਧ ਪੈਚ ਦੇਖਣ ਲਈ ਐਪ ਕਾਰਡ \'ਤੇ ਸੱਜੇ ਪਾਸੇ ਸਵਾਈਪ ਕਰੋ। ਹੋਮ ਸਕ੍ਰੀਨ ਤੋਂ ਕਾਰਡ ਨੂੰ ਲੁਕਾਉਣ ਲਈ ਖੱਬੇ ਪਾਸੇ ਸਵਾਈਪ ਕਰੋ</string>
+    <string name="onboarding_settings_desc">Morphe ਨੂੰ ਕਸਟਮਾਈਜ਼ ਕਰੋ: ਦਿੱਖ, ਉੱਨਤ ਵਿਕਲਪ, ਅਤੇ ਸਿਸਟਮ ਟੂਲ</string>
+    <string name="onboarding_sources_patches_desc">ਇਸ ਸਰੋਤ ਤੋਂ ਉਪਲਬਧ ਸਾਰੇ ਪੈਚ ਦੇਖਣ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="onboarding_sources_version_desc">ਇਸ ਸਰੋਤ ਲਈ ਪੂਰੀ ਚੇਂਜਲੌਗ ਦੇਖਣ ਲਈ ਵਰਜ਼ਨ \'ਤੇ ਟੈਪ ਕਰੋ</string>
+    <string name="onboarding_sources_apps_desc">ਇਹ ਦੇਖਣ ਲਈ ਟੈਪ ਕਰੋ ਕਿ ਇਹ ਸਰੋਤ ਕਿਹੜੀਆਂ ਐਪਸ ਨੂੰ ਪੈਚ ਕਰਦਾ ਹੈ ਅਤੇ ਚੁਣੋ ਕਿ ਇਹ ਉਹਨਾਂ ਵਿੱਚੋਂ ਕਿਸ ਲਈ ਪੈਚ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ</string>
+    <string name="onboarding_sources_prerelease_desc">ਇਸ ਸਰੋਤ ਤੋਂ ਪ੍ਰੀ-ਰਿਲੀਜ਼ ਪੈਚ ਵਰਜ਼ਨ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਇਸਨੂੰ ਸਮਰੱਥ ਕਰੋ</string>
+    <string name="onboarding_appearance_tab_desc">ਐਪ ਦੀ ਦਿੱਖ ਨੂੰ ਕਸਟਮਾਈਜ਼ ਕਰੋ: ਥੀਮ, ਐਕਸੈਂਟ ਰੰਗ, ਅਤੇ ਬੈਕਗ੍ਰਾਊਂਡ</string>
+    <string name="onboarding_expert_mode_desc">ਪੈਚ ਚੋਣ, ਕਸਟਮ ਵਿਕਲਪਾਂ, ਅਤੇ ਹੋਰ ਉੱਨਤ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਨੂੰ ਅਨਲੌਕ ਕਰਨ ਲਈ ਐਕਸਪਰਟ ਮੋਡ ਨੂੰ ਸਮਰੱਥ ਕਰੋ</string>
     <!-- Translate "System" the same way as the System settings tab -->
+    <string name="onboarding_system_installer_desc">ਚੁਣੋ ਕਿ ਪੈਚ ਕੀਤੇ ਐਪਸ ਕਿਵੇਂ ਇੰਸਟਾਲ ਕੀਤੇ ਜਾਣ: ਸਟੈਂਡਰਡ, ਰੂਟ ਮਾਊਂਟ, ਜਾਂ Shizuku</string>
+    <string name="onboarding_system_file_picker_desc">APK ਜਾਂ ਕੀਸਟੋਰਸ ਦੀ ਚੋਣ ਕਰਦੇ ਸਮੇਂ ਸਿਸਟਮ ਪਿਕਰ ਦੀ ਬਜਾਏ ਬਿਲਟ-ਇਨ ਫਾਈਲ ਬ੍ਰਾਊਜ਼ਰ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਸਮਰੱਥ ਕਰੋ</string>
     <!-- Tour prompt dialog shown after first successful patch install -->
+    <string name="tour_prompt_title">ਫੀਚਰ ਦਾ ਤੇਜ਼ ਟੂਰ</string>
+    <string name="tour_prompt_desc">ਕੀ ਤੁਸੀਂ Morphe ਦੇ ਮੁੱਖ ਫੀਚਰਸ ਦਾ ਇੱਕ ਤੇਜ਼ ਟੂਰ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
     <!-- Label of a footer button beside "Skip". Keep it short, a longer one moves the buttons onto two rows -->
+    <string name="tour_prompt_confirm">ਮੈਨੂੰ ਦਿਖਾਓ</string>
+    <string name="onboarding_restart_title">ਫੀਚਰ ਟੂਰ</string>
+    <string name="onboarding_restart_desc">ਮੁੱਖ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਦਾ ਇੱਕ ਮਾਰਗਦਰਸ਼ਕ ਦੌਰਾ</string>
 </resources>

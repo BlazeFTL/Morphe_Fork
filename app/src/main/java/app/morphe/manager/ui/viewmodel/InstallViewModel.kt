@@ -208,13 +208,16 @@ class InstallViewModel(
      *
      * @param allowSignatureMismatch Skips the signature pre-check and lets the platform decide,
      * for rooted devices where a module removes the signature verification.
+     * @param askInstaller Whether the installer prompt may come up, which an install started on
+     * its own after patching skips for the default installer.
      */
     fun install(
         outputFile: File,
         originalPackageName: String,
         onPersistApp: suspend (String, InstallType) -> Boolean,
         autoUninstallOnConflict: Boolean = false,
-        allowSignatureMismatch: Boolean = false
+        allowSignatureMismatch: Boolean = false,
+        askInstaller: Boolean = true
     ) {
         // A second tap lands before the first one's checks report Installing
         if (installState is InstallState.Installing || installStart?.isActive == true) return
@@ -229,7 +232,7 @@ class InstallViewModel(
 
         installStart = launchDetached {
             // Check if we should prompt for installer selection
-            val shouldPrompt = prefs.promptInstallerOnInstall.get()
+            val shouldPrompt = askInstaller && prefs.promptInstallerOnInstall.get()
 
             if (shouldPrompt && oneTimeInstallerToken == null) {
                 // Show installer selection dialog
@@ -882,15 +885,7 @@ class InstallViewModel(
 
             } catch (e: Exception) {
                 Log.e(TAG, "Mount install failed", e)
-                val message = if (e is StockAppInstallException) {
-                    app.getString(R.string.mount_stock_restore_failed_message)
-                } else {
-                    app.getString(
-                        R.string.install_app_fail,
-                        e.simpleMessage() ?: e.javaClass.simpleName
-                    )
-                }
-                handleInstallError(message)
+                handleInstallError(mountFailureMessage(e))
 
                 // Cleanup on failure
                 try {
@@ -913,6 +908,36 @@ class InstallViewModel(
     /**
      * Mount a saved patched APK, restoring the matching original APK first when Morphe has it.
      */
+    /**
+     * Puts a mount another version replaced back from the copies its root module keeps, for an app
+     * whose saved builds are gone, see [RootInstaller.restoreFromModule].
+     */
+    fun restoreMountFromModule(packageName: String, version: String) {
+        if (installState is InstallState.Installing) return
+
+        launchDetached {
+            currentInstallType = InstallType.MOUNT
+            installState = InstallState.Installing()
+            try {
+                rootInstaller.restoreFromModule(packageName, version) { installState = InstallState.Installing(it) }
+                installState = InstallState.Installing(MountStage.MOUNTING)
+                rootInstaller.mount(packageName)
+                handleInstallSuccess(packageName)
+            } catch (e: Exception) {
+                // The module is kept, as it holds the only copies to try again from
+                Log.e(TAG, "Mount restore failed", e)
+                handleInstallError(mountFailureMessage(e))
+            }
+        }
+    }
+
+    private fun mountFailureMessage(e: Exception): String =
+        if (e is StockAppInstallException) {
+            app.getString(R.string.mount_stock_restore_failed_message)
+        } else {
+            app.getString(R.string.install_app_fail, e.simpleMessage() ?: e.javaClass.simpleName)
+        }
+
     fun installSavedMount(
         outputFile: File,
         packageName: String,

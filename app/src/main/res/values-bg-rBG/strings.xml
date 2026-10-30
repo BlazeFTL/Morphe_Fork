@@ -362,6 +362,7 @@
     <string name="expert_mode_restore_saved_done">Възстановената запазена селекция</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Няма съвпадащи поправки в този пакет</string>
     <string name="expert_mode_no_results">Няма намерени пачове</string>
+    <string name="expert_mode_selected_only">Само избраните заплатки</string>
     <string name="expert_mode_selected_only_on">Показване само на избраните кръпки</string>
     <string name="expert_mode_selected_only_off">Показване на всички кръпки</string>
     <string name="expert_mode_universal_patches">Универсални пачове</string>
@@ -1234,6 +1235,19 @@ morphe_header_custom_dark.png
     <string name="settings_system_selected_patches_section">Избрани пачове</string>
     <string name="settings_system_no_patches_or_options">Няма запазени пакети или опции</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Селекции</string>
+    <string name="selection_panel_copy_into">Копиране в %s</string>
+    <string name="selection_sets_title">Комплекти</string>
+    <string name="selection_set_name">Име на комплекта</string>
+    <string name="selection_set_save">Запазване като комплект</string>
+    <string name="selection_set_replace">Замяна на комплект</string>
+    <string name="selection_set_saved">Запазено като %s</string>
+    <string name="selection_set_applied">Превключено към %s</string>
+    <string name="selection_set_deleted">%s е изтрит</string>
+    <string name="selection_set_renamed">Преименувано на %s</string>
+    <string name="selection_set_rename_title">Преименувай комплект</string>
+    <string name="selection_set_delete_title">Изтриване на комплект?</string>
+    <string name="selection_set_delete_message">Това ще изтрие окончателно комплекта %s</string>
     <string name="copy_selection_empty">Няма други запазени селекции за копиране</string>
     <string name="copy_selection_available_format">%1$s от %2$s налични</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1255,7 +1269,10 @@ morphe_header_custom_dark.png
     <string name="file_picker_internal_storage">Вътрешна памет</string>
     <string name="file_picker_sd_card">SD карта</string>
     <string name="file_picker_root">Корен (/)</string>
+    <string name="file_picker_storage_access_unavailable">Това устройство няма екран, който да позволи достъп до всички файлове. Разрешете го чрез ADB с: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Хранилища</string>
+    <string name="file_saver_downloads_failed">Не успяхме да създадем файла в Изтеглени</string>
+    <string name="file_saver_saving_to_downloads">Това устройство няма екран за запис, така че файлът отива в Изтеглени като %1$s</string>
     <string name="file_picker_sort_name_asc">Име (А–Я)</string>
     <string name="file_picker_sort_name_desc">Име (Я–А)</string>
     <string name="file_picker_sort_size_desc">Размер (от най-голям към най-малък)</string>
@@ -1369,6 +1386,7 @@ morphe_header_custom_dark.png
     <string name="accessibility_app_moved_announcement">%1$s преместен на позиция %2$s от %3$s</string>
     <string name="accessibility_scroll_to_top">Превъртете до началото на списъка</string>
     <string name="rename">Преименуване</string>
+    <string name="more_options">Още опции</string>
     <string name="import_">Импортиране</string>
     <string name="export">Експорт</string>
     <string name="copy">Копиране</string>

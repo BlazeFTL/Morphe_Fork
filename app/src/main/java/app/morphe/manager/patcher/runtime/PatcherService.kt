@@ -12,6 +12,7 @@ import android.content.Intent
 import android.os.ParcelFileDescriptor
 import android.os.Parcelable
 import android.os.Process
+import android.util.Log
 import androidx.core.app.ServiceCompat
 import androidx.core.content.IntentCompat
 import androidx.work.ForegroundInfo
@@ -19,6 +20,7 @@ import app.morphe.manager.patcher.host.serveRun
 import app.morphe.manager.patcher.patch.PatchBundle
 import app.morphe.manager.patcher.runtime.jvm.EmbeddedJvm
 import app.morphe.manager.patcher.runtime.jvm.JvmLaunch
+import app.morphe.manager.util.tag
 import kotlinx.parcelize.Parcelize
 import kotlin.concurrent.thread
 
@@ -91,13 +93,23 @@ class PatcherService : Service() {
     // of its own as soon as the app leaves the screen, whichever process it is busy for
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if (intent != null) {
-            val notification = IntentCompat.getParcelableExtra(intent, EXTRA_NOTIFICATION, Notification::class.java)
-            ServiceCompat.startForeground(
-                this,
-                intent.getIntExtra(EXTRA_NOTIFICATION_ID, 0),
-                requireNotNull(notification),
-                intent.getIntExtra(EXTRA_SERVICE_TYPE, 0)
+            val notification = requireNotNull(
+                IntentCompat.getParcelableExtra(intent, EXTRA_NOTIFICATION, Notification::class.java)
             )
+            try {
+                ServiceCompat.startForeground(
+                    this,
+                    intent.getIntExtra(EXTRA_NOTIFICATION_ID, 0),
+                    notification,
+                    intent.getIntExtra(EXTRA_SERVICE_TYPE, 0)
+                )
+            } catch (e: RuntimeException) {
+                // Refused where the system withholds the service type's permission or a start from
+                // the background, as it does for the app's own foreground service then. The run goes
+                // on bound alone, and the start is dropped so the system does not wait for the foreground
+                Log.w(tag, "Could not hold the patcher process in the foreground", e)
+                stopSelf(startId)
+            }
         }
         return START_NOT_STICKY
     }

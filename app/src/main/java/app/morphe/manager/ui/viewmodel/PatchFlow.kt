@@ -876,23 +876,28 @@ class PatchFlow(
 
         // Experimental check is independent - a version can be experimental AND compatible.
         // If it is, show the appropriate warning for the sources marking it so:
-        // - Experimental mode ON → ExperimentalVersionWarningDialog
+        // - Experimental mode ON → ExperimentalVersionWarningDialog, once per app, since the
+        //   patches warn inside the app about every new experimental version from then on
         // - Experimental mode OFF → UnsupportedVersionWarningDialog
         if (support.isExperimental && !allowIncompatible) {
             val experimentalEnabledUids = prefs.bundleExperimentalVersionsEnabled.getBlocking()
             val isExperimentalModeEnabled = support.experimentalUids.any { uid ->
                 uid.toString() in experimentalEnabledUids
             }
-            val state = unsupportedVersionState(selectedApp, isExperimental = true)
-            holdFor(
-                if (isExperimentalModeEnabled) {
-                    HomeDialog.ExperimentalVersion(state)
-                } else {
-                    HomeDialog.UnsupportedVersion(state)
-                },
-                selectedApp
-            )
-            return
+            val confirmed = isExperimentalModeEnabled &&
+                    selectedApp.packageName in prefs.experimentalVersionsConfirmed.get()
+            if (!confirmed) {
+                val state = unsupportedVersionState(selectedApp, isExperimental = true)
+                holdFor(
+                    if (isExperimentalModeEnabled) {
+                        HomeDialog.ExperimentalVersion(state)
+                    } else {
+                        HomeDialog.UnsupportedVersion(state)
+                    },
+                    selectedApp
+                )
+                return
+            }
         }
 
         // Patches exist and are applicable → proceed.
@@ -963,6 +968,9 @@ class PatchFlow(
      * flagged as such in the patch bundle.
      */
     fun proceedDespiteVersion(dialog: HomeDialog) = resumeHeld { app, _ ->
+        if (dialog is HomeDialog.ExperimentalVersion) {
+            prefs.experimentalVersionsConfirmed.update(prefs.experimentalVersionsConfirmed.get() + app.packageName)
+        }
         startPatchingInPatchMode(app, allowIncompatible = dialog is HomeDialog.UnsupportedVersion)
     }
 
@@ -1005,20 +1013,20 @@ class PatchFlow(
      * installer. Anywhere else the build is a standard one, its installer asked for after patching.
      */
     private suspend fun startPatchingInPatchMode(selectedApp: SelectedApp, allowIncompatible: Boolean) {
-        val rooted = rootInstaller.isDeviceRooted()
-        if (rooted && prefs.promptInstallerOnInstall.get()) {
+        if (installerManager.promptsBeforePatching()) {
             holdFor(HomeDialog.PrePatchInstaller, selectedApp, allowIncompatible)
             return
         }
-        usingMountInstall = rooted && installerManager.parseToken(prefs.installerPrimary.get()).isRootMount
+        usingMountInstall = rootInstaller.isDeviceRooted() &&
+                installerManager.parseToken(prefs.installerPrimary.get()).isRootMount
         startPatchingWithApp(selectedApp, allowIncompatible)
     }
 
     /**
      * Start patching flow.
      *
-     * @param bundleUid The source chosen for the APK, see [chosenBundleUidFor]. Simple mode
-     *   patches from it alone, and expert mode opens on it.
+     * @param bundleUid The source chosen for the APK, see [chosenBundleUidFor]. The run patches
+     *   from it alone, unless the others are shown again in the expert dialog.
      */
     private suspend fun startPatchingWithApp(
         selectedApp: SelectedApp,
@@ -1050,12 +1058,17 @@ class PatchFlow(
             return
         }
 
-        val mutedSources = withContext(Dispatchers.IO) {
+        // A source chosen for the APK answers for the run alone, so the others are held back the
+        // way the sources the app is kept from are, for this run only. The expert dialog offers
+        // them back, which is how a run mixes sources
+        val heldBackSources = if (bundleUid != null) {
+            availableBundles.mapTo(mutableSetOf()) { it.uid } - bundleUid
+        } else withContext(Dispatchers.IO) {
             sourceMuteRepository.getMutedFor(selectedApp.packageName)
         }
-        // Every rule below reads this rather than the full list, so a source the app is kept from
-        // contributes no defaults, no new-patch badges and no tab
-        val allBundles = availableBundles.withoutMutedSources(mutedSources) { it.uid }
+        // Every rule below reads this rather than the full list, so a hidden source contributes
+        // no defaults, no new-patch badges and no tab
+        val allBundles = availableBundles.withoutMutedSources(heldBackSources) { it.uid }
 
         // Spans every source, hidden ones included: what the user saved for a hidden one has to
         // survive validation. Offering the source back would otherwise hand the run an empty
@@ -1093,7 +1106,7 @@ class PatchFlow(
             expertMode.open(
                 app = selectedApp,
                 allBundles = availableBundles,
-                mutedSources = mutedSources,
+                mutedSources = heldBackSources,
                 // The dialog opens on the source answering for the APK, or on the first one
                 // contributing when the others were left out
                 leadingBundleUid = bundleUid ?: contributingBundles
@@ -1110,7 +1123,15 @@ class PatchFlow(
 
         if (isExpertMode()) {
             val contributingUids = contributingBundles.mapTo(mutableSetOf()) { it.uid }
-            val savedSelections = savedSelections().filterKeys { it in contributingUids }
+            val allSavedSelections = savedSelections()
+            val savedSelections = allSavedSelections.filterKeys { it in contributingUids }
+            // A hidden source keeps what was saved for it, so offering it back brings that along.
+            // Set apart, since the run does not reach it: what it holds decides nothing about the
+            // patches of the sources the run starts with
+            val heldBackSelections = validatePatchSelection(
+                allSavedSelections.filterKeys { it in heldBackSources },
+                bundlesMap
+            )
             val savedOptions = savedOptions()
 
             // The seen-patch snapshot is what tells a genuinely new patch from one the user
@@ -1170,7 +1191,7 @@ class PatchFlow(
                 }
             }
 
-            openExpertMode(patches, validatedOptions, newPatchesMap)
+            openExpertMode(heldBackSelections + patches, validatedOptions, newPatchesMap)
             return
         }
 
@@ -1188,6 +1209,7 @@ class PatchFlow(
                 bundle to patchNames
             }
             .filter { (_, patches) -> patches.isNotEmpty() }
+        val runScope = allBundles.mapTo(mutableSetOf()) { it.uid }
 
         if (bundleWithPatches.isEmpty()) {
             // No patches have include=true (use=true in the bundle JSON).
@@ -1211,7 +1233,7 @@ class PatchFlow(
                 .mapTo(mutableSetOf()) { it.name }
             if (patchNames.isNotEmpty()) {
                 val patches = target.applyTo(mapOf(bundle.uid to patchNames), allBundles)
-                proceedWithPatching(selectedApp, patches, emptyMap(), allowIncompatible = true)
+                proceedWithPatching(selectedApp, patches, emptyMap(), allowIncompatible = true, runScope)
                 return
             }
             // Pre-selected bundle has no patches at all - fall through
@@ -1229,7 +1251,7 @@ class PatchFlow(
             allBundles
         )
 
-        proceedWithPatching(selectedApp, patches, emptyMap(), allowIncompatible)
+        proceedWithPatching(selectedApp, patches, emptyMap(), allowIncompatible, runScope)
     }
 
     /**
@@ -1243,18 +1265,24 @@ class PatchFlow(
     private suspend fun configurationKeyFor(originalPackageName: String): String =
         patchSelectionRepository.configurationKeyFor(originalPackageName, session?.repatchPackageName)
 
-    /** Hands the run to the patcher, which takes it from here. */
+    /**
+     * Hands the run to the patcher, which takes it from here.
+     *
+     * @param scope The sources the run was offered, see [Patcher.ViewModelParams.sourceScope].
+     */
     private fun proceedWithPatching(
         selectedApp: SelectedApp,
         patches: PatchSelection,
         options: Options,
-        allowIncompatible: Boolean
+        allowIncompatible: Boolean,
+        scope: Set<Int>
     ) {
         onStartQuickPatch?.invoke(
             Patcher.ViewModelParams(
                 selectedApp = selectedApp,
                 selectedPatches = patches,
                 options = options,
+                sourceScope = scope,
                 // Handed over before the run is let go of below, since the patcher has no other
                 // way to learn which install it was started for
                 targetPackageName = session?.repatchPackageName,
@@ -1293,6 +1321,7 @@ class PatchFlow(
     fun proceedExpertMode() = moveOn {
         val selectedApp = expertMode.app ?: return@moveOn
         val bundles = expertMode.bundles
+        val scope = bundles.mapTo(mutableSetOf()) { it.uid }
         val finalPatches = expertMode.runSelection
         val finalOptions = expertMode.options
         val allowIncompatible = expertMode.allowIncompatible
@@ -1317,12 +1346,13 @@ class PatchFlow(
                 // Saved before patching runs so a long selection survives a failed run. It lands
                 // on the install being rebuilt, and follows it from there if patching renames it.
                 // Only the bundles offered by the dialog are covered by this selection, so bundles
-                // that were disabled at patch time keep whatever the user saved for them earlier
+                // that were disabled or held back at patch time keep whatever the user saved for
+                // them earlier
                 val configurationKey = configurationKeyFor(selectedApp.packageName)
                 patchSelectionRepository.updateSelection(
                     packageName = configurationKey,
                     selection = finalPatches,
-                    scope = bundles.mapTo(mutableSetOf()) { it.uid }
+                    scope = scope
                 )
                 optionsRepository.saveOptions(configurationKey, finalOptions)
                 // Snapshot all bundle patch names so next open can detect genuinely new patches
@@ -1335,7 +1365,7 @@ class PatchFlow(
                 }
             }
 
-        proceedWithPatching(selectedApp, finalPatches, patcherOptions, allowIncompatible)
+        proceedWithPatching(selectedApp, finalPatches, patcherOptions, allowIncompatible, scope)
         expertMode.clear()
     }
 

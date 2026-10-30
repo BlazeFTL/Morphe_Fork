@@ -37,6 +37,9 @@
     <plurals name="source_count">
         <item quantity="other">ប្រភព %s</item>
     </plurals>
+    <plurals name="selection_set_count">
+        <item quantity="other">%s ឈុត</item>
+    </plurals>
     <plurals name="package_count">
         <item quantity="other">កញ្ចប់ %s</item>
     </plurals>

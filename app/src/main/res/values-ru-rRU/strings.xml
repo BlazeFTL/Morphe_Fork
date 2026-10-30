@@ -361,6 +361,7 @@
     <string name="expert_mode_restore_saved_done">Восстановленный сохраненный выбор</string>
     <string name="expert_mode_copy_from_bundle_no_patches">В этом пакете нет подходящих патчей</string>
     <string name="expert_mode_no_results">Патчи не найдены</string>
+    <string name="expert_mode_selected_only">Только выбранные патчи</string>
     <string name="expert_mode_selected_only_on">Показываются только выбранные патчи</string>
     <string name="expert_mode_selected_only_off">Показываются все патчи</string>
     <string name="expert_mode_universal_patches">Универсальные патчи</string>
@@ -1233,6 +1234,19 @@ morphe_header_custom_dark.png
     <string name="settings_system_selected_patches_section">Выбранные патчи</string>
     <string name="settings_system_no_patches_or_options">Нет сохраненных патчей или параметров</string>
     <!-- Selection panel: saved selection, sets and copies -->
+    <string name="selection_panel_title">Выбор</string>
+    <string name="selection_panel_copy_into">Копировать в %s</string>
+    <string name="selection_sets_title">Наборы</string>
+    <string name="selection_set_name">Имя набора</string>
+    <string name="selection_set_save">Сохранить как набор</string>
+    <string name="selection_set_replace">Заменить набор</string>
+    <string name="selection_set_saved">Сохранено как %s</string>
+    <string name="selection_set_applied">Переключено на %s</string>
+    <string name="selection_set_deleted">%s удалено</string>
+    <string name="selection_set_renamed">Переименовано в %s</string>
+    <string name="selection_set_rename_title">Переименовать набор</string>
+    <string name="selection_set_delete_title">Удалить набор?</string>
+    <string name="selection_set_delete_message">Это навсегда удалит набор %s</string>
     <string name="copy_selection_empty">Нет других сохраненных выделенных фрагментов для копирования</string>
     <string name="copy_selection_available_format">%1$s из %2$s доступно</string>
     <!-- Settings - System Tab - Custom file picker -->
@@ -1254,7 +1268,10 @@ morphe_header_custom_dark.png
     <string name="file_picker_internal_storage">Внутренняя память</string>
     <string name="file_picker_sd_card">SD-карта</string>
     <string name="file_picker_root">Корень (/)</string>
+    <string name="file_picker_storage_access_unavailable">У этого устройства нет экрана для предоставления доступа ко всем файлам. Разрешите его через ADB с помощью: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="file_picker_storages">Хранилища</string>
+    <string name="file_saver_downloads_failed">Не удалось создать файл в папке «Загрузки»</string>
+    <string name="file_saver_saving_to_downloads">У этого устройства нет экрана сохранения, поэтому файл будет сохранен в «Загрузки» как %1$s</string>
     <string name="file_picker_sort_name_asc">Имя (A–Z)</string>
     <string name="file_picker_sort_name_desc">Имя (Z–A)</string>
     <string name="file_picker_sort_size_desc">Размер (от большего к меньшему)</string>
@@ -1368,6 +1385,7 @@ morphe_header_custom_dark.png
     <string name="accessibility_app_moved_announcement">%1$s перемещен(а) на позицию %2$s из %3$s</string>
     <string name="accessibility_scroll_to_top">Прокрутить к началу списка</string>
     <string name="rename">Переименовать</string>
+    <string name="more_options">Дополнительные параметры</string>
     <string name="import_">Импортировать</string>
     <string name="export">Экспорт</string>
     <string name="copy">Копировать</string>
