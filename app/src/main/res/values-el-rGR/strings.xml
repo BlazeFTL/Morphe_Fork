@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Λάβετε πρόωρη πρόσβαση σε νέες πειραματικές εκδόσεις τροποποιήσεων</string>
     <string name="sources_prerelease_warning_title">Ενεργοποίηση επιδιορθώσεων προ-έκδοσης;</string>
     <string name="sources_prerelease_warning_message">Οι εκδόσεις προ-έκδοσης είναι ακόμη υπό ανάπτυξη. Οι επιδιορθώσεις ενδέχεται να αποτύχουν ή να χαλάσουν την εφαρμογή, και οι λειτουργίες μπορεί να αλλάξουν χωρίς προειδοποίηση</string>
-    <string name="expert_mode_prerelease_notice">Αυτή η πηγή είναι σε επιδιορθώσεις προ-έκδοσης. Η επιδιόρθωση μπορεί να αποτύχει ή να συμπεριφερθεί απροσδόκητα</string>
-    <string name="expert_mode_experimental_version_notice">Αυτή η πηγή έχει μόνο πειραματική υποστήριξη για αυτήν την έκδοση της εφαρμογής. Τα patches της ενδέχεται να είναι ασταθή ή ελλιπή</string>
+    <string name="expert_mode_unstable_notice">Οι διορθώσεις προ-κυκλοφορίας ή οι πειραματικές ενδέχεται να είναι ασταθείς</string>
     <string name="sources_management_experimental_versions_toggle">Πειραματικές εκδόσεις εφαρμογών</string>
     <string name="sources_management_experimental_versions_toggle_description">Εμφανίζει και επιδιορθώνει πειραματικούς στόχους εφαρμογής</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Μεταδεδομένα μη διαθέσιμα</string>
     <string name="sources_management_metadata_unavailable_hint">Το απομακρυσμένο αρχείο μεταδεδομένων δεν είναι διαθέσιμο. Η επιδιόρθωση με το εγκατεστημένο πακέτο εξακολουθεί να λειτουργεί, αλλά η αυτόματη ενημέρωση είναι απενεργοποιημένη για αυτήν την πηγή</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Το πακέτο επιδιόρθωσης δεν κατέβηκε. Η διεύθυνση URL της πηγής ενδέχεται να είναι λανθασμένη ή το αρχείο να μην υπάρχει</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Το πακέτο διορθώσεων δεν μπορούσε να ληφθεί. Η διεύθυνση URL της πηγής ενδέχεται να είναι λανθασμένη ή το αρχείο δεν υπάρχει. Πατήστε για να την αλλάξετε</string>
     <string name="sources_management_outdated_manager_badge">Ενημέρωση Morphe</string>
     <string name="sources_management_outdated_manager_hint">Αυτή η πηγή είναι κατασκευασμένη για το patcher %1$s, αλλά η Morphe %2$s περιλαμβάνει το patcher %3$s. Ενημερώστε την Morphe για να το χρησιμοποιήσετε</string>
     <string name="sources_management_held_back_badge">Σφάλμα</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Εμφανιζόμενο όνομα</string>
     <string name="sources_dialog_rename">Αλλαγή ονόματος πηγής τροποποίησης</string>
+    <string name="sources_dialog_change_url">Αλλαγή της πηγής λήψης των διορθώσεων</string>
     <string name="sources_dialog_duplicate_name_error">Μια πηγή τροποποίησης με το ίδιο όνομα υπάρχει ήδη</string>
     <string name="sources_dialog_missing_error">Ανεπιτυχής ενημέρωση της πηγής τροποποίησης</string>
     <string name="sources_dialog_add_source">Προσθήκη πηγής τροποποίησης</string>
@@ -354,10 +355,10 @@
     <string name="expert_mode_enable_all_universal_pending">Πατήστε ξανά για καθολικά patches</string>
     <string name="expert_mode_universal_all_warning_title">Ενεργοποίηση όλων των καθολικών επιδιορθώσεων;</string>
     <string name="expert_mode_universal_all_warning_message">Οι καθολικές επιδιορθώσεις δεν δοκιμάζονται μαζί. Η ενεργοποίηση όλων ταυτόχρονα μπορεί να προκαλέσει συγκρούσεις, αποτυχία επιδιόρθωσης ή σφάλματα</string>
-    <string name="expert_mode_reset_to_default">Ενεργοποίηση συνιστώμενων διορθώσεων</string>
+    <string name="expert_mode_recommended">Συνιστώμενες τροποποιήσεις</string>
     <string name="expert_mode_reset_to_default_done">Εφαρμόστηκαν οι προτεινόμενες διορθώσεις</string>
     <string name="expert_mode_selected_count">%1$s από τα %2$s επιλέχθηκαν</string>
-    <string name="expert_mode_restore_saved">Επαναφορά αποθηκευμένης επιλογής</string>
+    <string name="expert_mode_saved_selection">Αποθηκευμένη επιλογή</string>
     <string name="expert_mode_restore_saved_done">Επαναφορά επιλεγμένων αποθηκευμένων στοιχείων</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Δεν βρέθηκαν αντίστοιχα διορθωτικά σε αυτό το πακέτο</string>
     <string name="expert_mode_no_results">Δε βρέθηκαν τροποποιήσεις </string>

@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Menerima akses dini ke versi eksperimental tambalan baru</string>
     <string name="sources_prerelease_warning_title">Aktifkan tambalan pra-rilis?</string>
     <string name="sources_prerelease_warning_message">Build pra-rilis masih tahap pengembangan. Tambalan mungkin gagal atau merusak aplikasi, dan fitur dapat berubah tanpa pemberitahuan</string>
-    <string name="expert_mode_prerelease_notice">Sumber ini menggunakan tambalan pra-rilis. Proses penambalan mungkin gagal atau berjalan tidak sesuai harapan</string>
-    <string name="expert_mode_experimental_version_notice">Sumber ini hanya memiliki dukungan eksperimental untuk versi aplikasi ini. Tambalannya mungkin tidak stabil atau tidak lengkap</string>
+    <string name="expert_mode_unstable_notice">Tambalan pra-rilis atau eksperimental mungkin tidak stabil</string>
     <string name="sources_management_experimental_versions_toggle">Versi aplikasi eksperimental</string>
     <string name="sources_management_experimental_versions_toggle_description">Menampilkan dan menambal target aplikasi eksperimental</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadata Tidak Tersedia</string>
     <string name="sources_management_metadata_unavailable_hint">Berkas metadata jarak jauh tidak tersedia. Penambalan dengan paket terpasang masih berfungsi, tetapi pembaruan otomatis dinonaktifkan untuk sumber ini</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Paket tambalan tidak dapat diunduh. Sumber URL mungkin salah atau berkas tidak ada</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Paket tambalan tidak dapat diunduh. Sumber URL mungkin salah atau berkas tidak ada. Ketuk untuk mengubahnya</string>
     <string name="sources_management_outdated_manager_badge">Perbarui Morphe</string>
     <string name="sources_management_outdated_manager_hint">Sumber ini dibuat untuk penambal %1$s, tetapi Morphe %2$s menyertakan penambal %3$s. Perbarui Morphe untuk menggunakannya</string>
     <string name="sources_management_held_back_badge">Crash</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Nama tampilan</string>
     <string name="sources_dialog_rename">Ubah nama sumber tambalan</string>
+    <string name="sources_dialog_change_url">Ubah lokasi pengunduhan sumber tambalan</string>
     <string name="sources_dialog_duplicate_name_error">Sumber tambalan dengan nama ini sudah ada</string>
     <string name="sources_dialog_missing_error">Tidak dapat memperbarui sumber tambalan ini</string>
     <string name="sources_dialog_add_source">Tambah sumber tambalan</string>
@@ -354,10 +355,10 @@ Pilih dari mana Anda ingin mengambil APK-nya"</string>
     <string name="expert_mode_enable_all_universal_pending">Ketuk lagi untuk tambalan universal</string>
     <string name="expert_mode_universal_all_warning_title">Aktifkan semua tambalan universal?</string>
     <string name="expert_mode_universal_all_warning_message">Tambalan universal tidak diuji secara bersamaan. Mengaktifkan semuanya sekaligus dapat menyebabkan konflik, kegagalan dalam penambalan, atau crash</string>
-    <string name="expert_mode_reset_to_default">Aktifkan tambalan yang direkomendasikan</string>
+    <string name="expert_mode_recommended">Tambalan yang direkomendasikan</string>
     <string name="expert_mode_reset_to_default_done">Tambalan yang direkomendasikan diterapkan</string>
     <string name="expert_mode_selected_count">%1$s dari %2$s dipilih</string>
-    <string name="expert_mode_restore_saved">Kembalikan pilihan yang disimpan</string>
+    <string name="expert_mode_saved_selection">Pilihan yang disimpan</string>
     <string name="expert_mode_restore_saved_done">Pilihan yang disimpan dikembalikan</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Tidak ada tambalan yang cocok dalam paket ini</string>
     <string name="expert_mode_no_results">Tambalan tidak ditemukan</string>

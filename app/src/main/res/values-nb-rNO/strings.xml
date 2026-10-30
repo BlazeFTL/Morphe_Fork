@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Mottar tidlig tilgang til nye eksperimentelle patchversjoner</string>
     <string name="sources_prerelease_warning_title">Aktiver forhåndsutgitte patcher?</string>
     <string name="sources_prerelease_warning_message">Forhåndsutgitte build\'er er fortsatt under utvikling. Patcher kan mislykkes eller ødelegge appen, og funksjoner kan endres uten forvarsel.</string>
-    <string name="expert_mode_prerelease_notice">Denne kilden bruker forhåndsutgitte patcher. Patchingen kan mislykkes eller oppføre seg uventet.</string>
-    <string name="expert_mode_experimental_version_notice">Denne kilden har kun eksperimentell støtte for denne app-versjonen. Oppdateringene kan være ustabile eller ufullstendige</string>
+    <string name="expert_mode_unstable_notice">Forhåndsvisninger eller eksperimentelle oppdateringer kan være ustabile</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentelle appversjoner</string>
     <string name="sources_management_experimental_versions_toggle_description">Viser og patcher eksperimentelle app-mål</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadata ikke tilgjengelig</string>
     <string name="sources_management_metadata_unavailable_hint">Den eksterne metadatafilen er ikke tilgjengelig. Patching med den installerte pakken fungerer fortsatt, men automatisk oppdatering er deaktivert for denne kilden</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Patch-pakken kunne ikke lastes ned. Kilde-URL-en kan være feil eller filen finnes ikke</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Oppdateringspakken kunne ikke lastes ned. Kilde-URL-en kan være feil, eller filen eksisterer ikke. Trykk for å endre den</string>
     <string name="sources_management_outdated_manager_badge">Oppdater Morphe</string>
     <string name="sources_management_outdated_manager_hint">Denne kilden er bygget for patcher %1$s, men Morphe %2$s inkluderer patcher %3$s. Oppdater Morphe for å bruke den</string>
     <string name="sources_management_held_back_badge">Krasjet</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Visningsnavn</string>
     <string name="sources_dialog_rename">Gi nytt navn til patchkilde</string>
+    <string name="sources_dialog_change_url">Endre hvor oppdateringskilden lastes ned fra</string>
     <string name="sources_dialog_duplicate_name_error">En patchkilde med dette navnet finnes allerede</string>
     <string name="sources_dialog_missing_error">Kunne ikke oppdatere denne patch-kilden</string>
     <string name="sources_dialog_add_source">Legg til patchkilde</string>
@@ -354,10 +355,10 @@ Velg hvor APK-filen skal hentes fra"</string>
     <string name="expert_mode_enable_all_universal_pending">Trykk igjen for universelle oppdateringer</string>
     <string name="expert_mode_universal_all_warning_title">Aktiver alle universelle patcher?</string>
     <string name="expert_mode_universal_all_warning_message">Universelle patcher er ikke testet sammen. Å aktivere alle på en gang kan forårsake konflikter, mislykket patching eller krasj.</string>
-    <string name="expert_mode_reset_to_default">Aktiver anbefalte patches</string>
+    <string name="expert_mode_recommended">Anbefalte patcher</string>
     <string name="expert_mode_reset_to_default_done">Anbefalte patcher er brukt</string>
     <string name="expert_mode_selected_count">%1$s av %2$s valgt</string>
-    <string name="expert_mode_restore_saved">Gjenopprett lagret valg</string>
+    <string name="expert_mode_saved_selection">Lagret valg</string>
     <string name="expert_mode_restore_saved_done">Lagret utvalg gjenopprettet</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Ingen matchede patcher i denne pakken</string>
     <string name="expert_mode_no_results">Ingen patcher funnet</string>

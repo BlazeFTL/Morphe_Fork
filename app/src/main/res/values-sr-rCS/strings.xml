@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Dobija rani pristup novim eksperimentalnim verzijama zakrpa</string>
     <string name="sources_prerelease_warning_title">Omogući zakrpe za predizdanje?</string>
     <string name="sources_prerelease_warning_message">Predizdanja su još u razvoju. Zakrpe mogu da ne uspeju ili da pokvare aplikaciju, a funkcije se mogu promeniti bez upozorenja.</string>
-    <string name="expert_mode_prerelease_notice">Ovaj izvor je na zakrpama za predizdanje. Zakrpljivanje može da ne uspe ili da se ponaša neočekivano.</string>
-    <string name="expert_mode_experimental_version_notice">Ovaj izvor ima samo eksperimentalnu podršku za ovu verziju aplikacije. Njegovi zakrpe mogu biti nestabilne ili nepotpune</string>
+    <string name="expert_mode_unstable_notice">Pre-release ili eksperimentalne zakrpe mogu biti nestabilne</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentalne verzije aplikacije</string>
     <string name="sources_management_experimental_versions_toggle_description">Prikazuje i zakrpava eksperimentalne ciljne aplikacije</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadata N/A</string>
     <string name="sources_management_metadata_unavailable_hint">Datoteka sa daljinskim metapodacima nije dostupna. Primena instaliranog paketa i dalje funkcioniše, ali automatsko ažuriranje je onemogućeno za ovaj izvor.</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Paket zakrpa nije uspeo da se preuzme. URL adresa izvora može biti netačna ili datoteka ne postoji.</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Paket zakrpa nije mogao biti preuzet. Izvorni URL je možda neispravan ili datoteka ne postoji. Dodirnite da biste ga promenili</string>
     <string name="sources_management_outdated_manager_badge">Ažuriraj Morphe</string>
     <string name="sources_management_outdated_manager_hint">Ovaj izvor je napravljen za patcher %1$s, ali Morphe %2$s uključuje patcher %3$s. Ažuriraj Morphe da bi ga koristio</string>
     <string name="sources_management_held_back_badge">Srušio se</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Prikaži ime</string>
     <string name="sources_dialog_rename">Preimenuj izvor zakrpe</string>
+    <string name="sources_dialog_change_url">Promenite mesto sa kojeg se preuzima izvor zakrpa</string>
     <string name="sources_dialog_duplicate_name_error">Izvor zakrpe sa ovim imenom već postoji</string>
     <string name="sources_dialog_missing_error">Nije moguće ažurirati ovaj izvor zakrpe </string>
     <string name="sources_dialog_add_source">Dodaj izvor zakrpe</string>
@@ -354,9 +355,10 @@ Izaberite odakle da uzme njen APK"</string>
     <string name="expert_mode_enable_all_universal_pending">Dodirnite ponovo za univerzalne zakrpe</string>
     <string name="expert_mode_universal_all_warning_title">Omogući sve univerzalne zakrpe?</string>
     <string name="expert_mode_universal_all_warning_message">Univerzalne zakrpe nisu testirane zajedno. Omogućavanje svih odjednom može izazvati sukobe, neuspešno zakrpljivanje ili padove.</string>
-    <string name="expert_mode_reset_to_default">Омогући препоручене пакете</string>
+    <string name="expert_mode_recommended">Preporučeni zakrpe</string>
     <string name="expert_mode_reset_to_default_done">Preporučene zakrpe su primenjene</string>
-    <string name="expert_mode_restore_saved">Ponovi poslednji izbor</string>
+    <string name="expert_mode_selected_count">%1$s od %2$s izabrano</string>
+    <string name="expert_mode_saved_selection">Sačuvani izbor</string>
     <string name="expert_mode_restore_saved_done">Vraćena sačuvana selekcija</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nema odgovarajućih zakrpa u ovom paketu</string>
     <string name="expert_mode_no_results">Nema pronađenih zakrpa</string>

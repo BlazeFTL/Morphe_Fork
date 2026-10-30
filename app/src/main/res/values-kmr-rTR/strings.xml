@@ -198,8 +198,6 @@
     <string name="sources_management_prerelease_toggle_description">Bi destê pêşîn bigihîje guhertoyên nû yên ceribandinê</string>
     <string name="sources_prerelease_warning_title">Patchên pêş-berdanê çalak bike?</string>
     <string name="sources_prerelease_warning_message">Nusxeyên pêş-berdanê hê jî di pêşveçûnê de ne. Patch dibe ku têk biçin an sepanê bişkînin, û taybetmendî dikarin bê hişyarî biguherin.</string>
-    <string name="expert_mode_prerelease_notice">Ev çavkanî li ser patchên pêş-berdanê ye. Patchkirin dibe ku têk biçe an bi awayekî neçaverêkirî tevbigere.</string>
-    <string name="expert_mode_experimental_version_notice">Ev çavkanî tenê piştgiriya eksperîmental ji bo vê versiyona appê xwedan e. Patchên wê dibe ku naestikr bin an jî kêm bin</string>
     <string name="sources_management_experimental_versions_toggle">Werzîyonên sepanê yên eksperîmental</string>
     <string name="sources_management_experimental_versions_toggle_description">Armancên sepanê yên ceribandinî nîşan dide û patch dike</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -354,10 +352,8 @@ Hilbijêre ku APK ya wê ji ku derê bê"</string>
     <string name="expert_mode_enable_all_universal_pending">Dîsa bikirtîne ji bo pêçekên gerdûnî</string>
     <string name="expert_mode_universal_all_warning_title">Hemû patchên gerdûnî çalak bike?</string>
     <string name="expert_mode_universal_all_warning_message">Patchên gerdûnî bi hev re nehatine ceribandin. Çalakkirina hemûyan bi carekê dikare bibe sedema nakokî, patchkirina têkçûyî, an jî hilweşînan.</string>
-    <string name="expert_mode_reset_to_default">Pêşdixeşinên pêşniyar kirî çêbêje</string>
     <string name="expert_mode_reset_to_default_done">Pelîkên ku hatine pêşniyar kirin hatin çêkirin</string>
     <string name="expert_mode_selected_count">%1$s ji %2$s hatin hilbijartin</string>
-    <string name="expert_mode_restore_saved">Şêvikî serdest vegerîne</string>
     <string name="expert_mode_restore_saved_done">Hilbijartina ku hatî parastin</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Di vê pakêtê de tu parçe nehatine dîtin</string>
     <string name="expert_mode_no_results">Paqejiyê ne hebin</string>

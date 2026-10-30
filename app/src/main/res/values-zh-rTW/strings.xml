@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">搶先取得新實驗性修補程式版本</string>
     <string name="sources_prerelease_warning_title">啟用預發佈修補程式？</string>
     <string name="sources_prerelease_warning_message">預發佈版本仍在開發中。修補程式可能失敗或導致應用程式損壞，功能也可能在未經警告的情況下變更</string>
-    <string name="expert_mode_prerelease_notice">此來源使用預發佈修補程式。修補可能失敗或產生非預期行為</string>
-    <string name="expert_mode_experimental_version_notice">此來源對此應用程式版本僅提供實驗性支援。其補丁可能不穩定或不完整</string>
+    <string name="expert_mode_unstable_notice">預發行版或實驗性修補程式可能不穩定</string>
     <string name="sources_management_experimental_versions_toggle">實驗性應用程式版本</string>
     <string name="sources_management_experimental_versions_toggle_description">顯示和修補實驗性應用程式目標</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">中繼資料無法使用</string>
     <string name="sources_management_metadata_unavailable_hint">遠端中繼資料檔案無法使用。您仍可使用已安裝的套件進行修補，但此來源的自動更新已停用</string>
     <string name="sources_management_metadata_unavailable_hint_missing">無法下載修補套件。來源 URL 可能不正確，或檔案不存在</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">無法下載修補套件。來源 URL 可能不正確，或檔案不存在。點擊以變更</string>
     <string name="sources_management_outdated_manager_badge">更新 Morphe</string>
     <string name="sources_management_outdated_manager_hint">此來源是為修補程式 %1$s 建置的，但 Morphe %2$s 包含修補程式 %3$s。更新 Morphe 以使用它。</string>
     <string name="sources_management_held_back_badge">已當機</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">顯示名稱</string>
     <string name="sources_dialog_rename">重新命名修補來源</string>
+    <string name="sources_dialog_change_url">變更修補程式來源的下載路徑</string>
     <string name="sources_dialog_duplicate_name_error">已存在同名的修補程式來源</string>
     <string name="sources_dialog_missing_error">無法更新此修補來源</string>
     <string name="sources_dialog_add_source">新增修補程式來源</string>
@@ -354,10 +355,10 @@
     <string name="expert_mode_enable_all_universal_pending">再點按一次以套用通用修補程式</string>
     <string name="expert_mode_universal_all_warning_title">啟用所有通用修補程式？</string>
     <string name="expert_mode_universal_all_warning_message">通用修補程式未經過共同測試。同時啟用所有修補程式可能導致衝突、修補失敗或當機</string>
-    <string name="expert_mode_reset_to_default">啟用推薦的修補程式</string>
+    <string name="expert_mode_recommended">已套用推薦的修補程式</string>
     <string name="expert_mode_reset_to_default_done">已套用推薦的修補程式</string>
     <string name="expert_mode_selected_count">已選擇 %1$s / %2$s</string>
-    <string name="expert_mode_restore_saved">還原儲存的選取範圍</string>
+    <string name="expert_mode_saved_selection">項儲存的選配</string>
     <string name="expert_mode_restore_saved_done">已儲存的選取已還原</string>
     <string name="expert_mode_copy_from_bundle_no_patches">此套件中沒有相符的修補程式</string>
     <string name="expert_mode_no_results">找不到修補程式</string>

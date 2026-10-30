@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Recibe acceso anticipado a novas versións experimentais dos parches</string>
     <string name="sources_prerelease_warning_title">Activar parches preliminares?</string>
     <string name="sources_prerelease_warning_message">As versións preliminares aínda están en desenvolvemento. Os parches poden fallar ou danar a aplicación, e as funcións poden cambiar sen aviso previo</string>
-    <string name="expert_mode_prerelease_notice">Esta fonte ten parches preliminares. O parcheado pode fallar ou comportarse de xeito inesperado</string>
-    <string name="expert_mode_experimental_version_notice">Esta fonte ten nuramente soporte experimental para esta versión da app. Os seus parches poden ser inestables ou incompletos</string>
+    <string name="expert_mode_unstable_notice">Os parches de preestrea ou experimentais poden ser inestables</string>
     <string name="sources_management_experimental_versions_toggle">Versións experimentais da aplicación</string>
     <string name="sources_management_experimental_versions_toggle_description">Mostra e aplica parches a obxectivos experimentais da aplicación</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadatos N/A</string>
     <string name="sources_management_metadata_unavailable_hint">O arquivo de metadatos remoto está dispoñible. O parcheado cos datos instalados segue funcionando, pero a actualización automática está desactivada para esta fonte</string>
     <string name="sources_management_metadata_unavailable_hint_missing">O paquete de parches non se puido descargar. A URL de orixe pode ser incorrecta ou o ficheiro non existe</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">O paquete de parches non se puido descargar. A URL de orixe pode ser incorrecta ou o ficheiro non existe. Toca para cambiala</string>
     <string name="sources_management_outdated_manager_badge">Actualizar Morphe</string>
     <string name="sources_management_outdated_manager_hint">Esta fonte está construída para o patcher %1$s, pero Morphe %2$s inclúe o patcher %3$s. Actualiza Morphe para usala</string>
     <string name="sources_management_held_back_badge">Fixo</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Nome a amosar</string>
     <string name="sources_dialog_rename">Renomear fonte do parche</string>
+    <string name="sources_dialog_change_url">Cambia a orixe de descarga do paquete de parches</string>
     <string name="sources_dialog_duplicate_name_error">Unha fonte de parches con este nome xa existe</string>
     <string name="sources_dialog_missing_error">Non se puido actualizar esta fonte de parches</string>
     <string name="sources_dialog_add_source">Engadir fonte de parche</string>
@@ -354,10 +355,8 @@ Escolle de onde collegar o seu APK"</string>
     <string name="expert_mode_enable_all_universal_pending">Toca de novo para os parches universais</string>
     <string name="expert_mode_universal_all_warning_title">Activar todos os parches universais?</string>
     <string name="expert_mode_universal_all_warning_message">Os parches universais non foron probados xuntos. Activalos todos a veza pode causar conflitos, fallos no parcheo ou erros do sistema</string>
-    <string name="expert_mode_reset_to_default">Activar parches recomendados</string>
     <string name="expert_mode_reset_to_default_done">Aplicáronse os parches recomendados</string>
     <string name="expert_mode_selected_count">%1$s de %2$s seleccionado</string>
-    <string name="expert_mode_restore_saved">Restaurar selección gardada</string>
     <string name="expert_mode_restore_saved_done">Restaurouse a selección gardada </string>
     <string name="expert_mode_copy_from_bundle_no_patches">Non hai parches correspondentes neste paquete</string>
     <string name="expert_mode_no_results">Non se atoparon parches</string>

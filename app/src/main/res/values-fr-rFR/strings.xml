@@ -198,9 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Reçoit un accès anticipé aux nouvelles versions expérimentales des patchs</string>
     <string name="sources_prerelease_warning_title">Activer les patchs en préversion ?</string>
     <string name="sources_prerelease_warning_message">Les builds en préversion sont encore en cours de développement. Les patchs peuvent échouer ou entraîner un dysfonctionnement de l\'application, et les fonctionnalités peuvent changer sans avertissement</string>
-    <string name="expert_mode_prerelease_notice">Cette source utilise des patchs en préversion. Le patching peut échouer ou entraîner un comportement inattendu.
-</string>
-    <string name="expert_mode_experimental_version_notice">Cette source ne prend en charge cette version de l\'application qu\'à titre expérimental. Ses patchs peuvent être instables ou incomplets</string>
+    <string name="expert_mode_unstable_notice">Les patchs en préversion ou expérimentaux peuvent être instables</string>
     <string name="sources_management_experimental_versions_toggle">Versions expérimentales de l\'application</string>
     <string name="sources_management_experimental_versions_toggle_description">Affiche et patche les cibles d\'applications expérimentales</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -215,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Métadonnées ND</string>
     <string name="sources_management_metadata_unavailable_hint">Le fichier de métadonnées distant est indisponible. Le patching avec le bundle installé fonctionne toujours, mais la mise à jour automatique est désactivée pour cette source</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Le bundle de patchs n\'a pas pu être téléchargé. L\'URL de la source est peut-être incorrecte ou le fichier n\'existe pas</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Le bundle de patchs n\'a pas pu être téléchargé. L\'URL de la source est peut-être incorrecte ou le fichier n\'existe pas. Appuyez pour la modifier</string>
     <string name="sources_management_outdated_manager_badge">Mettre à jour Morphe</string>
     <string name="sources_management_outdated_manager_hint">Cette source est conçue pour le patcheur %1$s, mais Morphe %2$s inclut le patcheur %3$s. Mettez Morphe à jour pour l\'utiliser</string>
     <string name="sources_management_held_back_badge">A plantée</string>
@@ -228,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Nom d\'affichage</string>
     <string name="sources_dialog_rename">Renommer la source de patchs</string>
+    <string name="sources_dialog_change_url">Modifier l\'emplacement depuis lequel la source de patchs est téléchargée</string>
     <string name="sources_dialog_duplicate_name_error">Une source de patchs portant ce nom existe déjà</string>
     <string name="sources_dialog_missing_error">Impossible de mettre à jour cette source de patchs</string>
     <string name="sources_dialog_add_source">Ajouter une source de patchs</string>
@@ -356,10 +356,10 @@ Choisissez d'où provient son APK"</string>
     <string name="expert_mode_enable_all_universal_pending">Appuyez à nouveau pour les patchs universels</string>
     <string name="expert_mode_universal_all_warning_title">Activer tous les patchs universels ?</string>
     <string name="expert_mode_universal_all_warning_message">Les patchs universels ne sont pas testés ensemble. Les activer tous en même temps peut entraîner des conflits, un échec du patching ou des plantages</string>
-    <string name="expert_mode_reset_to_default">Activer les patchs recommandés</string>
+    <string name="expert_mode_recommended">Patchs recommandés</string>
     <string name="expert_mode_reset_to_default_done">Patchs recommandés appliqués</string>
     <string name="expert_mode_selected_count">%1$s sur %2$s sélectionnés</string>
-    <string name="expert_mode_restore_saved">Restaurer la sélection enregistrée</string>
+    <string name="expert_mode_saved_selection">Sélection enregistrée</string>
     <string name="expert_mode_restore_saved_done">Sélection enregistrée restaurée</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Aucun patch correspondant dans ce bundle</string>
     <string name="expert_mode_no_results">Aucun patch trouvé</string>

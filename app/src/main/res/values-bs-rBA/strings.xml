@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Prima rani pristup novim eksperimentalnim verzijama zakrpa</string>
     <string name="sources_prerelease_warning_title">Omogući pre-release zakrpe?</string>
     <string name="sources_prerelease_warning_message">Pre-release verzije su još uvijek u razvoju. Zakrpe mogu propasti ili pokvariti aplikaciju, a funkcije se mogu promijeniti bez prethodne najave</string>
-    <string name="expert_mode_prerelease_notice">Ovaj izvor koristi pre-release zakrpe. Zakrpljivanje može propasti ili se ponašati neočekivano</string>
-    <string name="expert_mode_experimental_version_notice">Ovaj izvor ima samo eksperimentalnu podršku za ovu verziju aplikacije. Njegove zakrpe mogu biti nestabilne ili nepotpune</string>
+    <string name="expert_mode_unstable_notice">Pred-izdanja ili eksperimentalne zakrpe mogu biti nestabilne</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentalne verzije aplikacije</string>
     <string name="sources_management_experimental_versions_toggle_description">Prikazuje i zakrpljuje eksperimentalne ciljeve aplikacije</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metapodaci nisu dostupni</string>
     <string name="sources_management_metadata_unavailable_hint">udaljeni fajl metapodataka nije dostupan. Zakrpljivanje sa instaliranim paketom i dalje radi, ali je automatsko ažuriranje onemogućeno za ovaj izvor</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Paket zakrpa nije mogao biti preuzet. URL izvora je možda neispravan ili fajl ne postoji</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Paket zakrpa nije mogao biti preuzet. Izvorni URL je možda neispravan ili datoteka ne postoji. Dodirnite da ga promijenite</string>
     <string name="sources_management_outdated_manager_badge">Ažuriraj Morphe</string>
     <string name="sources_management_outdated_manager_hint">Ovaj izvor je napravljen za patcher %1$s, ali Morphe %2$s uključuje patcher %3$s. Ažurirajte Morphe da biste ga koristili</string>
     <string name="sources_management_held_back_badge">Srušeno</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Naziv za prikaz</string>
     <string name="sources_dialog_rename">Preimenuj izvor patch-a</string>
+    <string name="sources_dialog_change_url">Promijenite mjesto s kojeg se preuzima izvor zakrpa</string>
     <string name="sources_dialog_duplicate_name_error">Izvor patch-a sa ovim nazivom već postoji</string>
     <string name="sources_dialog_missing_error">Nije bilo moguće ažurirati ovaj izvor zakrpa</string>
     <string name="sources_dialog_add_source">Dodaj izvor patch-a</string>
@@ -354,9 +355,8 @@ Izaberite odakle preuzeti njen APK"</string>
     <string name="expert_mode_enable_all_universal_pending">Dodirnite ponovo za univerzalne zakrpe</string>
     <string name="expert_mode_universal_all_warning_title">Omogući sve univerzalne zakrpe?</string>
     <string name="expert_mode_universal_all_warning_message">Univerzalne zakrpe nisu testirane zajedno. Omogućavanje svih odjednom može uzrokovati konflikte, neuspješno zakrpljivanje ili rušenje aplikacije</string>
-    <string name="expert_mode_reset_to_default">Omogući preporučene zakrpe</string>
     <string name="expert_mode_reset_to_default_done">Preporučene zakrpe primijenjene</string>
-    <string name="expert_mode_restore_saved">Vrati sačuvani odabir</string>
+    <string name="expert_mode_selected_count">%1$s od %2$s odabrano</string>
     <string name="expert_mode_restore_saved_done">Sačuvani izbor vraćen</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nema odgovarajućih zakrpa u ovom bundle-u</string>
     <string name="expert_mode_no_results">Nijedna zakrpa nije pronađena</string>
@@ -1247,6 +1247,7 @@ Detalji: %2$s"</string>
     <string name="selection_set_delete_title">Izbriši skup?</string>
     <string name="selection_set_delete_message">Ovo trajno briše skup %s</string>
     <string name="copy_selection_empty">Nema drugih sačuvanih selekcija za kopiranje</string>
+    <string name="copy_selection_available_format">%1$s od %2$s dostupno</string>
     <!-- Settings - System Tab - Custom file picker -->
     <string name="settings_system_custom_file_picker">Prilagođeni birač datoteka</string>
     <string name="settings_system_custom_file_picker_description">Koristi Morphe ugrađeni birač datoteka umjesto sistemskog</string>

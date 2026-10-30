@@ -13,7 +13,7 @@
     <string name="home_more_apps_hide_message">[設定] &gt; [外観] &gt; [ホーム画面] からいつでも戻せます</string>
     <string name="home_app_hide_message">このアプリはホーム画面から非表示になります。リスト下部のボタンから再表示できます</string>
     <string name="home_app_will_be_hidden">このアプリは非表示になります</string>
-    <string name="home_app_hidden_named">%s 個非表示</string>
+    <string name="home_app_hidden_named">%s が非表示になります</string>
     <string name="home_app_shown_named">%s が表示されます</string>
     <string name="home_app_no_hidden">非表示のアプリはありません</string>
     <string name="home_app_hidden_apps_title">非表示のアプリ</string>
@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">実験的なバージョンのパッチを取得します</string>
     <string name="sources_prerelease_warning_title">プレリリース版パッチを有効にしますか？</string>
     <string name="sources_prerelease_warning_message">プレリリース版は現在開発中です。パッチに失敗したり、アプリが正常に動作しなくなったりする可能性があります。また、予告なく機能が変更される場合があります</string>
-    <string name="expert_mode_prerelease_notice">このソースはプレリリース版パッチを使用しています。パッチ適用が失敗したり、予期しない動作が発生したりする可能性があります</string>
-    <string name="expert_mode_experimental_version_notice">このアプリのバージョンは、このソースでは試験的にのみサポートされています。パッチが不安定であったり、不完全な場合があります</string>
+    <string name="expert_mode_unstable_notice">プレリリースまたは実験的なパッチは不安定な場合があります</string>
     <string name="sources_management_experimental_versions_toggle">実験的なバージョンのアプリ</string>
     <string name="sources_management_experimental_versions_toggle_description">実験的なパッチ対象アプリを表示し、パッチを適用できるようにします</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">メタデータがありません</string>
     <string name="sources_management_metadata_unavailable_hint">接続先のメタデータファイルを取得できません。インストール済みのバンドルでのパッチ適用は引き続き可能ですが、このソースの自動更新は無効になります</string>
     <string name="sources_management_metadata_unavailable_hint_missing">パッチバンドルをダウンロードできませんでした。ソース URL が正しくないか、ファイルが存在しない可能性があります</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">パッチバンドルをダウンロードできませんでした。ソース URL が正しくないか、ファイルが存在しない可能性があります。タップして変更してください</string>
     <string name="sources_management_outdated_manager_badge">Morphe を更新</string>
     <string name="sources_management_outdated_manager_hint">このソースはパッチャー %1$s 用に作成されていますが、Morphe %2$s にはパッチャー %3$s が含まれています。Morphe を更新して使用してください</string>
     <string name="sources_management_held_back_badge">クラッシュしました</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">表示名</string>
     <string name="sources_dialog_rename">パッチソースの名前を変更</string>
+    <string name="sources_dialog_change_url">パッチソースのダウンロード元を変更</string>
     <string name="sources_dialog_duplicate_name_error">同じ名前のパッチソースが既に存在します</string>
     <string name="sources_dialog_missing_error">このパッチソースを更新できませんでした</string>
     <string name="sources_dialog_add_source">パッチソースの追加</string>
@@ -354,10 +355,10 @@ APK ファイルの取得元を選択してください"</string>
     <string name="expert_mode_enable_all_universal_pending">ユニバーサル パッチを有効にするには、もう一度タップしてください</string>
     <string name="expert_mode_universal_all_warning_title">すべてのユニバーサル パッチを有効にしますか？</string>
     <string name="expert_mode_universal_all_warning_message">ユニバーサル パッチは、すべてを同時に使用した場合の動作をテストしていません。すべてを一度に有効にすると、競合やパッチの失敗、クラッシュが発生する可能性があります</string>
-    <string name="expert_mode_reset_to_default">推奨パッチを有効化</string>
+    <string name="expert_mode_recommended">推奨パッチ</string>
     <string name="expert_mode_reset_to_default_done">推奨パッチを適用しました</string>
     <string name="expert_mode_selected_count">%1$s / %2$s を選択中</string>
-    <string name="expert_mode_restore_saved">保存済みのパッチ セレクションの復元</string>
+    <string name="expert_mode_saved_selection">保存された選択</string>
     <string name="expert_mode_restore_saved_done">保存したセレクションを復元しました</string>
     <string name="expert_mode_copy_from_bundle_no_patches">このバンドルに一致するパッチはありません</string>
     <string name="expert_mode_no_results">パッチが見つかりません</string>

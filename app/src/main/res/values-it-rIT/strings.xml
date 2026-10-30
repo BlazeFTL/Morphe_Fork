@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Ottieni l\'accesso anticipato alle nuove versioni sperimentali delle patch.</string>
     <string name="sources_prerelease_warning_title">Abilitare le patch pre-release?</string>
     <string name="sources_prerelease_warning_message">Le build pre-release sono ancora in sviluppo. Le patch potrebbero fallire o danneggiare l\'app e le funzionalità possono cambiare senza preavviso.</string>
-    <string name="expert_mode_prerelease_notice">Questa sorgente è su pre-release. L\'installazione delle patch potrebbe fallire o comportarsi in modo imprevisto.</string>
-    <string name="expert_mode_experimental_version_notice">Questa sorgente ha solo un supporto sperimentale per questa versione dell\'app. Le sue patch potrebbero essere instabili o incomplete</string>
+    <string name="expert_mode_unstable_notice">Le patch pre-release o sperimentali potrebbero essere instabili</string>
     <string name="sources_management_experimental_versions_toggle">Versioni sperimentali delle app</string>
     <string name="sources_management_experimental_versions_toggle_description">Mostra e applica patch ai target di app sperimentali</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadati non disponibili</string>
     <string name="sources_management_metadata_unavailable_hint">Il file dei metadati remoti non è disponibile. L\'applicazione della patch con il bundle installato funziona ancora, ma l\'aggiornamento automatico è disabilitato per questa sorgente</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Impossibile scaricare il bundle di patch. L\'URL di origine potrebbe essere errato oppure il file inesistente </string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Impossibile scaricare il bundle di patch. L\'URL di origine potrebbe essere errato oppure il file inesistente. Tocca per modificarlo</string>
     <string name="sources_management_outdated_manager_badge">Aggiorna Morphe</string>
     <string name="sources_management_outdated_manager_hint">Questa sorgente è stata creata per patcher %1$s, ma Morphe %2$s include patcher %3$s. Aggiorna Morphe per utilizzarlo</string>
     <string name="sources_management_held_back_badge">Arresto anomalo</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Nome visualizzato</string>
     <string name="sources_dialog_rename">Rinomina la fonte</string>
+    <string name="sources_dialog_change_url">Cambia l\'indirizzo di download della sorgente della patch</string>
     <string name="sources_dialog_duplicate_name_error">Esiste già una fonte delle patch con questo nome</string>
     <string name="sources_dialog_missing_error">Impossibile aggiornare questa fonte delle patch</string>
     <string name="sources_dialog_add_source">Aggiungi fonte delle patch</string>
@@ -354,10 +355,10 @@ Scegli da dove scaricare l'APK."</string>
     <string name="expert_mode_enable_all_universal_pending">Tocca di nuovo per le patch universali</string>
     <string name="expert_mode_universal_all_warning_title">Abilitare tutte le patch universali?</string>
     <string name="expert_mode_universal_all_warning_message">Le patch universali non sono testate insieme. Abilitarle tutte contemporaneamente può causare conflitti, errori di patch o arresti anomali.</string>
-    <string name="expert_mode_reset_to_default">Abilitare patch consigliate</string>
+    <string name="expert_mode_recommended">Patch consigliate</string>
     <string name="expert_mode_reset_to_default_done">Patch consigliate applicate</string>
     <string name="expert_mode_selected_count">%1$s su %2$s selezionati</string>
-    <string name="expert_mode_restore_saved">Ripristinare la selezione salvata</string>
+    <string name="expert_mode_saved_selection">Selezione salvata</string>
     <string name="expert_mode_restore_saved_done">Selezione salvata ripristinata</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nessuna patch corrispondente in questo pacchetto</string>
     <string name="expert_mode_no_results">Nessuna patch trovata</string>

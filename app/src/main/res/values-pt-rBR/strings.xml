@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Recebe acesso antecipado a novas versões experimentais de patches</string>
     <string name="sources_prerelease_warning_title">Ativar patches de pré-lançamento?</string>
     <string name="sources_prerelease_warning_message">Compilações de pré-lançamento ainda estão em desenvolvimento. Os patches podem falhar ou corromper o aplicativo, e os recursos podem mudar sem aviso prévio</string>
-    <string name="expert_mode_prerelease_notice">Esta fonte está em patches de pré-lançamento. Patchear pode falhar ou ter comportamento inesperado</string>
-    <string name="expert_mode_experimental_version_notice">Esta fonte possui apenas suporte experimental para esta versão do aplicativo. Seus patches podem estar instáveis ou incompletos</string>
+    <string name="expert_mode_unstable_notice">Patches de pré-lançamento ou experimentais podem ser instáveis</string>
     <string name="sources_management_experimental_versions_toggle">Versões experimentais do aplicativo</string>
     <string name="sources_management_experimental_versions_toggle_description">Mostra e corrige alvos de aplicativos experimentais</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadados N/A</string>
     <string name="sources_management_metadata_unavailable_hint">O arquivo de metadados remoto não está disponível. A aplicação de patches com o pacote instalado ainda funciona, mas a atualização automática está desativada para esta fonte.</string>
     <string name="sources_management_metadata_unavailable_hint_missing">O pacote de patches não pôde ser baixado. A URL de origem pode estar incorreta ou o arquivo não existir.</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">O pacote de patches não pôde ser baixado. A URL de origem pode estar incorreta ou o arquivo não existir. Toque para alterá-la</string>
     <string name="sources_management_outdated_manager_badge">Atualize o Morphe</string>
     <string name="sources_management_outdated_manager_hint">Esta fonte foi criada para o patcher %1$s, mas o Morphe %2$s já inclui o patcher %3$s. Atualize o Morphe para usá-la</string>
     <string name="sources_management_held_back_badge">Falhou</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Nome de exibição</string>
     <string name="sources_dialog_rename">Renomear fonte de patches</string>
+    <string name="sources_dialog_change_url">Altere a origem do download do patch</string>
     <string name="sources_dialog_duplicate_name_error">Já existe uma fonte de patches com esse nome</string>
     <string name="sources_dialog_missing_error">Não foi possível atualizar esta fonte de patches.</string>
     <string name="sources_dialog_add_source">Adicionar fonte de patches</string>
@@ -352,10 +353,10 @@
     <string name="expert_mode_enable_all_universal_pending">Toque novamente para patches universais</string>
     <string name="expert_mode_universal_all_warning_title">Ativar todos os patches universais?</string>
     <string name="expert_mode_universal_all_warning_message">Patches universais não são testados juntos. Ativar todos de uma vez pode causar conflitos, falhas ao patchear ou travamentos</string>
-    <string name="expert_mode_reset_to_default">Ativar patches recomendados</string>
+    <string name="expert_mode_recommended">Patches recomendados</string>
     <string name="expert_mode_reset_to_default_done">Patches recomendados aplicados</string>
     <string name="expert_mode_selected_count">%1$s de %2$s selecionados</string>
-    <string name="expert_mode_restore_saved">Restaurar seleção salva</string>
+    <string name="expert_mode_saved_selection">Seleção salva</string>
     <string name="expert_mode_restore_saved_done">Seleção salva restaurada</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nenhum patch correspondente neste pacote</string>
     <string name="expert_mode_no_results">Nenhum patch encontrado</string>

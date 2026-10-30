@@ -198,8 +198,6 @@
     <string name="sources_management_prerelease_toggle_description">Hupata ufikiaji wa mapema wa matoleo mapya ya majaribio ya viraka</string>
     <string name="sources_prerelease_warning_title">Wezesha patch za kabla ya toleo rasmi?</string>
     <string name="sources_prerelease_warning_message">Build za kabla ya toleo rasmi bado zipo katika hatua ya uundaji. Patch zinaweza kushindwa au kuharibu programu, na vipengele vinaweza kubadilika bila taarifa</string>
-    <string name="expert_mode_prerelease_notice">Chanzo hiki kiko kwenye patch za kabla ya toleo rasmi. Patching inaweza kufeli au kufanya kazi isivyotarajiwa</string>
-    <string name="expert_mode_experimental_version_notice">Chanzo hiki kina usaidizi wa majaribio pekee kwa toleo hili la programu. Rakaa zake zinaweza kuwa hazitabiriki au hazijakamilika</string>
     <string name="sources_management_experimental_versions_toggle">Matoleo ya majaribio ya programu</string>
     <string name="sources_management_experimental_versions_toggle_description">Inaonyesha na kurekebisha malengo ya programu ya majaribio</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -354,9 +352,7 @@ Chagua mahali pa kuchukulia APK yake"</string>
     <string name="expert_mode_enable_all_universal_pending">Gusa tena kwa ajili ya marekebisho ya ulimwengu</string>
     <string name="expert_mode_universal_all_warning_title">Washa viraka vyote vya ulimwengu?</string>
     <string name="expert_mode_universal_all_warning_message">Viraka vya ulimwengu havijajaribiwa pamoja. Kuwashwa kwa vyote kwa wakati mmoja kunaweza kusababisha migongano, kushindwa kwa viraka, au programu kufungwa ghafla</string>
-    <string name="expert_mode_reset_to_default">Wezesha patch zinazopendekezwa</string>
     <string name="expert_mode_reset_to_default_done">Viraka vinavyopendekezwa vimeidhinishwa</string>
-    <string name="expert_mode_restore_saved">Rejesha uteuzi ulihifadhiwa</string>
     <string name="expert_mode_restore_saved_done">Uchaguzi ulihifadhiwa ume rudishwa</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Hakuna patch zinazolingana katika kifurushi hiki</string>
     <string name="expert_mode_no_results">Hakuna viraka vilivyopatikana</string>

@@ -198,8 +198,6 @@
     <string name="sources_management_prerelease_toggle_description">Жаңа эксперименттік патч нұсқаларына ерте қолжетімділік алады</string>
     <string name="sources_prerelease_warning_title">Алдын ала шығарылған патчтарды қосу керек пе?</string>
     <string name="sources_prerelease_warning_message">Алдын ала шығарылған нұсқалар әлі де әзірленуде. Патчтар сәтсіз болуы немесе қолданбаны бұзуы мүмкін, сондай-ақ функциялар ескертусіз өзгеруі мүмкін</string>
-    <string name="expert_mode_prerelease_notice">Бұл дереккөз алдын ала шығарылған патчтарда. Патчтеу сәтсіз болуы немесе күтпеген жерден жұмыс істеуі мүмкін</string>
-    <string name="expert_mode_experimental_version_notice">Бұл дереккөзде қолданбаның осы нұсқасы үшін тек эксперименттік қолдау бар. Оның патчтары тұрақсыз немесе толық емес болуы мүмкін</string>
     <string name="sources_management_experimental_versions_toggle">Қосымшаның эксперименттік нұсқалары</string>
     <string name="sources_management_experimental_versions_toggle_description">Эксперименталды қолданба нысаналарын көрсетеді және патчтейді</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -354,9 +352,7 @@
     <string name="expert_mode_enable_all_universal_pending">Универсал патчтар үшін қайта түктіңіз</string>
     <string name="expert_mode_universal_all_warning_title">Барлық әмбебап патчтарды қосу керек пе?</string>
     <string name="expert_mode_universal_all_warning_message">Универсалды патчтар бірге тестіленбеген. Барлығын бірден қосу қақтығыстарға, патчтаудың сәтсіз болуына немесе қосымшаның жабылуына әкелуі мүмкін</string>
-    <string name="expert_mode_reset_to_default">Ұсынылған патчтарды қосу</string>
     <string name="expert_mode_reset_to_default_done">Ұсынылған патчтер қолданылды</string>
-    <string name="expert_mode_restore_saved">Сақталған таңдауды қалпына келтіру</string>
     <string name="expert_mode_restore_saved_done">Сақталған таңдау қалпына келтірілді</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Бұл жиынтықта сәйкес келетін патчтар жоқ</string>
     <string name="expert_mode_no_results">Патчтар табылмады</string>

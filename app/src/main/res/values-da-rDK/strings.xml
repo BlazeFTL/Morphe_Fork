@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Få tidlig adgang til nye eksperimentelle patch versioner</string>
     <string name="sources_prerelease_warning_title">Aktivér præ-release-patcher?</string>
     <string name="sources_prerelease_warning_message">Præ-release-versioner er stadig under udvikling. Patcher kan mislykkes eller ødelægge appen, og funktioner kan ændres uden advarsel</string>
-    <string name="expert_mode_prerelease_notice">Denne kilde er på præ-release-patcher. Patchning kan mislykkes eller opføre sig uventet</string>
-    <string name="expert_mode_experimental_version_notice">Denne kilde har kun eksperimentel understøttelse for denne app-version. Dens patches kan være ustabile eller ufuldstændige</string>
+    <string name="expert_mode_unstable_notice">Pre-release eller eksperimentelle patches kan være ustabile</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentelle app-versioner</string>
     <string name="sources_management_experimental_versions_toggle_description">Viser og retter eksperimentelle app-mål</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadata ikke tilgængelig</string>
     <string name="sources_management_metadata_unavailable_hint">Den eksterne metadatafil er ikke tilgængelig. Opdatering med den installerede pakke fungerer stadig, men automatisk opdatering er deaktiveret for denne kilde</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Opdateringspakken kunne ikke hentes. Kilde-URL\'en kan være forkert, eller filen findes ikke</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Patch-pakken kunne ikke downloades. Kilde-URL\'en er muligvis forkert, eller filen findes ikke. Tryk for at ændre den</string>
     <string name="sources_management_outdated_manager_badge">Opdater Morphe</string>
     <string name="sources_management_outdated_manager_hint">Denne kilde er bygget til patcher %1$s, men Morphe %2$s indeholder patcher %3$s. Opdater Morphe for at bruge den</string>
     <string name="sources_management_held_back_badge">Crashet</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Visningsnavn</string>
     <string name="sources_dialog_rename">Omdøb navnet på patchkilde</string>
+    <string name="sources_dialog_change_url">Skift, hvor patch-kilden downloades fra</string>
     <string name="sources_dialog_duplicate_name_error">En patchkilde med dette navn findes allerede</string>
     <string name="sources_dialog_missing_error">Kunne ikke opdatere denne patchkilde</string>
     <string name="sources_dialog_add_source">Tilføj patchkilde</string>
@@ -354,10 +355,10 @@ Vælg, hvor dens APK skal hentes fra"</string>
     <string name="expert_mode_enable_all_universal_pending">Tryk igen for universelle patches</string>
     <string name="expert_mode_universal_all_warning_title">Aktivér alle universelle patcher?</string>
     <string name="expert_mode_universal_all_warning_message">Universelle patcher er ikke testet sammen. Aktivering af alle på én gang kan forårsage konflikter, mislykket patchning eller nedbrud</string>
-    <string name="expert_mode_reset_to_default">Aktivér anbefalede patches</string>
+    <string name="expert_mode_recommended">Anbefalede patches</string>
     <string name="expert_mode_reset_to_default_done">Anbefalede patches anvendt</string>
     <string name="expert_mode_selected_count">%1$s ud af %2$s valgt</string>
-    <string name="expert_mode_restore_saved">Gendan gemt valg</string>
+    <string name="expert_mode_saved_selection">Gemt valg</string>
     <string name="expert_mode_restore_saved_done">Gemt valg er gendannet</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Ingen matchende patches i denne pakke</string>
     <string name="expert_mode_no_results">Ingen patches fundet</string>

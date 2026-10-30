@@ -198,8 +198,6 @@
     <string name="sources_management_prerelease_toggle_description">Шинэ туршилтын патчийн хувилбаруудыг эртээр авах</string>
     <string name="sources_prerelease_warning_title">Урьдчилсан хувилбарын патчуудыг идэвхжүүлэх үү?</string>
     <string name="sources_prerelease_warning_message">Урьдчилсан хувилбарын билдүүд хөгжүүлэлтийн шатандаа байна. Патлах үед алдаа гарч апп ажиллахгүй болох эсвэл функцууд урьдчилсан анхааруулгагүйгээр өөрчлөгдөж болно</string>
-    <string name="expert_mode_prerelease_notice">Энэ эх сурвалж урьдчилсан хувилбарын патчууд дээр байна. Патлах үед алдаа гарч эсвэл гэнэтийн үйлдэл үзүүлж болно</string>
-    <string name="expert_mode_experimental_version_notice">Энэ эх сурвалж нь апп-ны энэ хувилбарт зөвхөн туршилтын дэмжлэгтэй. Үүний нөхцөлүүд нь тогтворгүй эсвэл дутуу байж болзошгүй</string>
     <string name="sources_management_experimental_versions_toggle">Аппликейшний туршилтын хувилбарууд</string>
     <string name="sources_management_experimental_versions_toggle_description">Туршилтын апп зорилтуудыг харуулах болон патчлах</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -354,10 +352,8 @@ APK-г хаанаас авахыг сонгоно уу"</string>
     <string name="expert_mode_enable_all_universal_pending">Универсал патчуудыг идэвхжүүлэхийн тулд дахин дарна уу</string>
     <string name="expert_mode_universal_all_warning_title">Бүх универсал патчуудыг идэвхжүүлэх үү?</string>
     <string name="expert_mode_universal_all_warning_message">Төвлөрсөн патчуудыг хамтдаа туршиж үзээгүй. Бүгдийг нь нэгэн зэрэг идэвхжүүлбэл зөрчил үүсэх, патчлах үйлдэл амжилтгүй болох эсвэл програм гацаж магадгүй</string>
-    <string name="expert_mode_reset_to_default">Зөвлөмж патчуудыг идэвхжүүлэх</string>
     <string name="expert_mode_reset_to_default_done">Зөвлөмжтэй патчуудыг хэрэглээд дууслаа</string>
     <string name="expert_mode_selected_count">%2$s-аас %1$s сонгогдсон</string>
-    <string name="expert_mode_restore_saved">Хадгалагдсан сонголтыг сэргээх</string>
     <string name="expert_mode_restore_saved_done">Хадгалагдсан сонголтыг сэргээлээ</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Энэ багцад тохирох патч байхгүй байна</string>
     <string name="expert_mode_no_results">Патч олдсонгүй</string>

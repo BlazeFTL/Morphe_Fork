@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">รับสิทธิ์เข้าถึงแพตช์ใหม่เวอร์ชันทดลองแต่เนิ่นๆ</string>
     <string name="sources_prerelease_warning_title">เปิดใช้แพตช์ก่อนเผยแพร่หรือไม่?</string>
     <string name="sources_prerelease_warning_message">บิลด์ก่อนเผยแพร่ยังอยู่ระหว่างการพัฒนา แพตช์อาจล้มเหลวหรือทำให้แอปเสียหาย และฟีเจอร์อาจเปลี่ยนแปลงได้โดยไม่มีการแจ้งเตือน</string>
-    <string name="expert_mode_prerelease_notice">แหล่งที่มานี้อยู่ในแพตช์ก่อนเผยแพร่ การแพตช์อาจล้มเหลวหรือทำงานผิดปกติ</string>
-    <string name="expert_mode_experimental_version_notice">แหล่งที่มานี้มีการรองรับแบบทดลองสำหรับแอปเวอร์ชันนี้เท่านั้น แพตช์ต่างๆ อาจไม่เสถียรหรือไม่สมบูรณ์</string>
+    <string name="expert_mode_unstable_notice">แพตช์รุ่น Pre-release หรือรุ่นทดลองอาจไม่เสถียร</string>
     <string name="sources_management_experimental_versions_toggle">ใช้แอปเวอร์ชันทดลอง</string>
     <string name="sources_management_experimental_versions_toggle_description">แสดงและแพตช์เป้าหมายแอปทดลอง</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">ไม่มีข้อมูล Metadata</string>
     <string name="sources_management_metadata_unavailable_hint">ไฟล์ Metadata ระยะไกลไม่พร้อมใช้งาน การแพตช์ด้วยชุดที่ติดตั้งยังคงทำงานได้ แต่การอัปเดตอัตโนมัติถูกปิดใช้งานสำหรับแหล่งที่มานี้</string>
     <string name="sources_management_metadata_unavailable_hint_missing">ไม่สามารถดาวน์โหลดชุดแพตช์ได้ URL แหล่งที่มาอาจไม่ถูกต้อง หรือไฟล์ไม่มีอยู่</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">ไม่สามารถดาวน์โหลดชุดแพตช์ได้ URL แหล่งที่มาอาจไม่ถูกต้อง หรือไฟล์ไม่มีอยู่ แตะเพื่อเปลี่ยน</string>
     <string name="sources_management_outdated_manager_badge">อัปเดต Morphe</string>
     <string name="sources_management_outdated_manager_hint">แหล่งที่มานี้สร้างขึ้นสำหรับตัวแพตช์ %1$s แต่ Morphe %2$s มีตัวแพตช์ %3$s อัปเดต Morphe เพื่อใช้งาน</string>
     <string name="sources_management_held_back_badge">ขัดข้อง</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">ชื่อที่แสดง</string>
     <string name="sources_dialog_rename">เปลี่ยนชื่อแหล่งที่มา</string>
+    <string name="sources_dialog_change_url">เปลี่ยนตำแหน่งที่ดาวน์โหลดแหล่งที่มาของแพตช์</string>
     <string name="sources_dialog_duplicate_name_error">มีแหล่งที่มาที่ชื่อนี้อยู่แล้ว</string>
     <string name="sources_dialog_missing_error">ไม่สามารถอัปเดตแหล่งที่มานี้</string>
     <string name="sources_dialog_add_source">เพิ่มแหล่งที่มา</string>
@@ -354,10 +355,10 @@
     <string name="expert_mode_enable_all_universal_pending">แตะอีกครั้งสำหรับแพตช์สากล</string>
     <string name="expert_mode_universal_all_warning_title">เปิดใช้แพตช์สากลทั้งหมดหรือไม่?</string>
     <string name="expert_mode_universal_all_warning_message">แพตช์สากลไม่ได้ทดสอบร่วมกัน การเปิดใช้ทั้งหมดพร้อมกันอาจทำให้เกิดความขัดแย้ง การแพตช์ล้มเหลว หรือการขัดข้อง</string>
-    <string name="expert_mode_reset_to_default">เปิดใช้งานแพตช์ที่แนะนำ</string>
+    <string name="expert_mode_recommended">แพตช์ที่แนะนำ</string>
     <string name="expert_mode_reset_to_default_done">ใช้แพตช์ที่แนะนำแล้ว</string>
     <string name="expert_mode_selected_count">เลือกแล้ว %1$s จาก %2$s</string>
-    <string name="expert_mode_restore_saved">คืนการเลือกที่บันทึกไว้</string>
+    <string name="expert_mode_saved_selection">การเลือกที่บันทึกไว้</string>
     <string name="expert_mode_restore_saved_done">การเลือกที่บันทึกไว้ได้รับการกู้คืนแล้ว</string>
     <string name="expert_mode_copy_from_bundle_no_patches">ไม่พบแพตช์ที่ตรงกันในบันเดิลนี้</string>
     <string name="expert_mode_no_results">ไม่พบแพตช์</string>

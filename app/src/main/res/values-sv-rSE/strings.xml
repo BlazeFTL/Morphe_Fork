@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Får tidig åtkomst till nya experimentella tilläggsversioner</string>
     <string name="sources_prerelease_warning_title">Aktivera förhandsversioner av tillägg?</string>
     <string name="sources_prerelease_warning_message">Förhandsversioner är fortfarande under utveckling. Tilläggen kan misslyckas eller få appen att sluta fungera, och funktioner kan ändras utan förvarning</string>
-    <string name="expert_mode_prerelease_notice">Den här källan använder förhandsversioner av tillägg. Modifiering kan misslyckas eller bete sig på oväntade sätt</string>
-    <string name="expert_mode_experimental_version_notice">Den här källan har endast experimentellt stöd för den här appversionen. Dess tillägg kan vara instabila eller ofullständiga</string>
+    <string name="expert_mode_unstable_notice">Förhandsversioner eller experimentella tillägg kan vara instabila</string>
     <string name="sources_management_experimental_versions_toggle">Experimentella appversioner</string>
     <string name="sources_management_experimental_versions_toggle_description">Visar och modifierar experimentella appmål</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadata är inte tillgängliga</string>
     <string name="sources_management_metadata_unavailable_hint">Fjärrfilen för metadata är inte tillgänglig. Modifiering med det installerade arkivet fungerar fortfarande, men automatisk uppdatering är inaktiverad för den här källan</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Det gick inte att ladda ned tilläggsarkivet. Källadressen kan vara felaktig eller så finns inte filen</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Det gick inte att ladda ned tilläggsarkivet. Källadressen kan vara felaktig eller så finns inte filen. Tryck för att ändra den</string>
     <string name="sources_management_outdated_manager_badge">Uppdatera Morphe</string>
     <string name="sources_management_outdated_manager_hint">Den här källan är avsedd för modifieringsverktyg %1$s, men i Morphe %2$s ingår modifieringsverktyg %3$s. Uppdatera Morphe om du vill använda den</string>
     <string name="sources_management_held_back_badge">Kraschade</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Visningsnamn</string>
     <string name="sources_dialog_rename">Byt namn på tilläggskällan</string>
+    <string name="sources_dialog_change_url">Ändra var tilläggskällan laddas ned ifrån</string>
     <string name="sources_dialog_duplicate_name_error">Det finns redan en tilläggskälla med det här namnet</string>
     <string name="sources_dialog_missing_error">Det gick inte att uppdatera den här tilläggskällan</string>
     <string name="sources_dialog_add_source">Lägg till tilläggskälla</string>
@@ -354,10 +355,10 @@ Välj var dess APK ska hämtas ifrån"</string>
     <string name="expert_mode_enable_all_universal_pending">Tryck igen för universella tillägg</string>
     <string name="expert_mode_universal_all_warning_title">Aktivera alla universella tillägg?</string>
     <string name="expert_mode_universal_all_warning_message">Universella tillägg testas inte tillsammans. Om du aktiverar alla på en gång kan det orsaka konflikter, misslyckad modifiering eller krascher</string>
-    <string name="expert_mode_reset_to_default">Aktivera rekommenderade tillägg</string>
+    <string name="expert_mode_recommended">Rekommenderade korrigeringar</string>
     <string name="expert_mode_reset_to_default_done">Rekommenderade tillägg har tillämpats</string>
     <string name="expert_mode_selected_count">%1$s av %2$s har valts</string>
-    <string name="expert_mode_restore_saved">Återställ sparat urval</string>
+    <string name="expert_mode_saved_selection">Sparat urval</string>
     <string name="expert_mode_restore_saved_done">Det sparade urvalet har återställts</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Inga matchande tillägg i det här paketet</string>
     <string name="expert_mode_no_results">Inga tillägg hittades</string>

@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Tumatanggap ng maagang pag-access sa mga bagong bersyon ng patch na pang-eksperimento</string>
     <string name="sources_prerelease_warning_title">Paganahin ang mga pre-release na patch?</string>
     <string name="sources_prerelease_warning_message">Ang mga pre-release na build ay nasa development pa. Maaaring mabigo o makasira ng app ang mga patch, at maaaring magbago ang mga feature nang walang babala.</string>
-    <string name="expert_mode_prerelease_notice">Ang source na ito ay nasa pre-release na mga patch. Maaaring mabigo o kumilos nang hindi inaasahan ang pag-patch.</string>
-    <string name="expert_mode_experimental_version_notice">Ang source na ito ay may experimental support lamang para sa bersyong ito ng app. Maaaring hindi stable o hindi kumpleto ang mga patch nito</string>
+    <string name="expert_mode_unstable_notice">Ang mga pre-release o experimental na patch ay maaaring hindi stable</string>
     <string name="sources_management_experimental_versions_toggle">Mga bersyon ng app na pang-eksperimento</string>
     <string name="sources_management_experimental_versions_toggle_description">Nagpapakita at nag-aayos ng mga eksperimentong target ng app</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Hindi available ang Metadata</string>
     <string name="sources_management_metadata_unavailable_hint">Hindi available ang remote metadata file. Gumagana pa rin ang pag-patch gamit ang naka-install na bundle, ngunit hindi pinagana ang auto-update para sa source na ito.</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Hindi ma-download ang patch bundle. Maaaring mali ang source URL o hindi umiiral ang file.</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Hindi ma-download ang patch bundle. Maaaring mali ang source URL o hindi umiiral ang file. I-tap para baguhin ito</string>
     <string name="sources_management_outdated_manager_badge">I-update ang Morphe</string>
     <string name="sources_management_outdated_manager_hint">Ang mapagkukunang ito ay binuo para sa patcher %1$s, ngunit ang Morphe %2$s ay may kasamang patcher %3$s. I-update ang Morphe para gamitin ito</string>
     <string name="sources_management_held_back_badge">Nag-crash</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Pangalan na ipapakita</string>
     <string name="sources_dialog_rename">Baguhin ang mapagkukunan ng patch</string>
+    <string name="sources_dialog_change_url">Baguhin kung saan i-da-download ang patch source</string>
     <string name="sources_dialog_duplicate_name_error">Mayroon na isang mapagkukunan ng patch na may ganitong pangalan</string>
     <string name="sources_dialog_missing_error">Hindi ma-update ang mapagkukunang patch na ito</string>
     <string name="sources_dialog_add_source">Idagdag ang mapagkukunan ng patch</string>
@@ -354,10 +355,10 @@ Pumili kung saan kukunin ang APK nito"</string>
     <string name="expert_mode_enable_all_universal_pending">I-tap muli para sa mga unibersal na patch</string>
     <string name="expert_mode_universal_all_warning_title">Paganahin ang lahat ng universal patches?</string>
     <string name="expert_mode_universal_all_warning_message">Ang mga universal patch ay hindi nasusubok nang sabay. Ang pag-enable ng lahat ng ito nang sabay ay maaaring magdulot ng mga salungatan, pagkabigo ng pag-patch, o pag-crash.</string>
-    <string name="expert_mode_reset_to_default">Paganahin ang inirekumendang mga patch</string>
+    <string name="expert_mode_recommended">Mga inirerekomendang patch</string>
     <string name="expert_mode_reset_to_default_done">Na-apply ang mga inirerekomendang patch</string>
     <string name="expert_mode_selected_count">%1$s sa %2$s ang napili</string>
-    <string name="expert_mode_restore_saved">Ibalik ang nakaimbak na pagpili</string>
+    <string name="expert_mode_saved_selection">Naka-save na pagpili</string>
     <string name="expert_mode_restore_saved_done">Naibalik ang nakasave na pagpili</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Walang katugmang mga patch sa bundle na ito</string>
     <string name="expert_mode_no_results">Walang nakita na patch</string>

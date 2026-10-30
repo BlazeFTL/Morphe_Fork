@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Získajte skorší prístup k novým experimentálnym verziám záplat</string>
     <string name="sources_prerelease_warning_title">Povoliť predbežné opravy?</string>
     <string name="sources_prerelease_warning_message">Predbežné verzie sú stále vo vývoji. Opravy môžu zlyhať alebo poškodiť aplikáciu a funkcie sa môžu bez upozornenia zmeniť.</string>
-    <string name="expert_mode_prerelease_notice">Tento zdroj je na predbežných opravách. Opravovanie môže zlyhať alebo sa správať neočakávane.</string>
-    <string name="expert_mode_experimental_version_notice">Tento zdroj má pre túto verziu aplikácie len experimentálnu podporu. Jeho záplaty môžu byť nestabilné alebo neúplné</string>
+    <string name="expert_mode_unstable_notice">Predprodukčné alebo experimentálne záplaty môžu byť nestabilné</string>
     <string name="sources_management_experimental_versions_toggle">Experimentálne verzie aplikácie</string>
     <string name="sources_management_experimental_versions_toggle_description">Zobrazuje a opravuje experimentálne ciele aplikácií</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadáta N/A</string>
     <string name="sources_management_metadata_unavailable_hint">Diaľkový metaúdajový súbor nie je dostupný. Oprava pomocou nainštalovaného balíka stále funguje, ale automatická aktualizácia je pre tento zdroj zakázaná</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Balík opráv sa nepodarilo stiahnuť. URL adresa zdroja môže byť nesprávna alebo súbor neexistuje</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Balík záplat sa nepodarilo stiahnuť. Zdrojová URL môže byť nesprávna alebo súbor neexistuje. Klepnutím ju zmeňte</string>
     <string name="sources_management_outdated_manager_badge">Aktualizovať Morphe</string>
     <string name="sources_management_outdated_manager_hint">Tento zdroj je vytvorený pre patcher %1$s, ale Morphe %2$s obsahuje patcher %3$s. Aktualizujte Morphe, aby ste ho mohli použiť</string>
     <string name="sources_management_held_back_badge">Zlyhal</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Zobrazovaný názov</string>
     <string name="sources_dialog_rename">Premenovať zdroj záplaty</string>
+    <string name="sources_dialog_change_url">Zmeňte miesto, z ktorého sa sťahujú zdroje záplat</string>
     <string name="sources_dialog_duplicate_name_error">Zdroj záplat s týmto názvom už existuje</string>
     <string name="sources_dialog_missing_error">Nebolo možné aktualizovať tento zdroj záplaty</string>
     <string name="sources_dialog_add_source">Pridať zdroj záplat</string>
@@ -354,9 +355,10 @@ Vyberte, odkiaľ má aplikácia stiahnuť APK"</string>
     <string name="expert_mode_enable_all_universal_pending">Klepnite znova pre univerzálne záplaty</string>
     <string name="expert_mode_universal_all_warning_title">Povoliť všetky univerzálne opravy?</string>
     <string name="expert_mode_universal_all_warning_message">Univerzálne opravy nie sú testované spoločne. Povolenie všetkých naraz môže spôsobiť konflikty, zlyhanie opravy alebo pády.</string>
-    <string name="expert_mode_reset_to_default">Povoľte odporúčané záplaty</string>
+    <string name="expert_mode_recommended">Odporúčané záplaty</string>
     <string name="expert_mode_reset_to_default_done">Odporúčané záplaty boli použité</string>
-    <string name="expert_mode_restore_saved">Obnoviť uloženú voľbu</string>
+    <string name="expert_mode_selected_count">%1$s z %2$s vybraných</string>
+    <string name="expert_mode_saved_selection">Uložený výber</string>
     <string name="expert_mode_restore_saved_done">Obnovená uložená voľba</string>
     <string name="expert_mode_copy_from_bundle_no_patches">V tomto balíku sa nenašli žiadne zhodné záplaty</string>
     <string name="expert_mode_no_results">Neboli nájdené žiadne záplaty</string>

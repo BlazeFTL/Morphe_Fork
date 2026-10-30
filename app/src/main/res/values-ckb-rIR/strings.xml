@@ -198,8 +198,6 @@
     <string name="sources_management_prerelease_toggle_description">وەرگرتنی دەستگەیشتنی پێشوەخت بۆ وەشانی نوێی پینەی ئەزموونی</string>
     <string name="sources_prerelease_warning_title">چالاککردنی پاتچەکانی پێش بڵاوکرندەوە؟</string>
     <string name="sources_prerelease_warning_message">بڵاوکراوەکانی پێش بڵاوکرندەوە هێشتا لە قۆناغی گەشەپێداندان. ڕەنگە پاتچەکان سەرکەوتوو نەبن یان ئەپڵیکەیشنەکە تێکبدەن، هەروەها تایبەتمەندییەکان دەکرێت بەبێ ئاگادارکردنەوە بگۆڕدرێن</string>
-    <string name="expert_mode_prerelease_notice">ئەم سەرچاوەیە لەسەر پاتچەکانی پێش بڵاوکرندەوەیە. ڕەنگە پاتچکردن سەرکەوتوو نەبێت یان بە شێوەیەکی چاوەڕواننەکراو ڕەفتار بکات</string>
-    <string name="expert_mode_experimental_version_notice">ئەم سەرچاوەیە تەنها پاڵپشتی تاقیکاری بۆ ئەم وەشانەی بەرنامەکە هەیە. پاتچەکانی ڕەنگە جێگیر نەبن یان تەواو نەبن</string>
     <string name="sources_management_experimental_versions_toggle">وەشانە تاقیکارییەکانی ئەپ</string>
     <string name="sources_management_experimental_versions_toggle_description">ئامانجە تاقیکارییەکانی ئەپ پیشان دەدات و پاتچ دەکات</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -355,10 +353,8 @@
     <string name="expert_mode_enable_all_universal_pending">دووبارە کلیک بکە بۆ پاتچەکانی گشتگیر</string>
     <string name="expert_mode_universal_all_warning_title">چالاککردنی هەموو پاتچە گشتگییەکان؟</string>
     <string name="expert_mode_universal_all_warning_message">پاتچە گشتگییەکان پێکەوە تاقیکراوەنەوە. چالاککردنی هەموویان بە یەکجار دەکرێت ببێتە هۆی دژایەتی، سەرنەکەوتنی پاتچکردن، یان داخستنی کتوپڕی ئەپەکە</string>
-    <string name="expert_mode_reset_to_default">چالاککردنی پینە پێشنیارکراوەکان</string>
     <string name="expert_mode_reset_to_default_done">پینە پێشنیارکراوەکان جێبەجێ کراون</string>
     <string name="expert_mode_selected_count">%1$s لە %2$s هەڵبژێردراوە</string>
-    <string name="expert_mode_restore_saved">گەڕاندنەوەی دیاریکردنی هەڵگیراو</string>
     <string name="expert_mode_restore_saved_done">دەستنیشانکردنی هەڵگیراو گەڕێندرایەوە</string>
     <string name="expert_mode_copy_from_bundle_no_patches">هیچ پاتچێکی گونجاو لەم باندڵەدا نییە</string>
     <string name="expert_mode_no_results">هیچ پینەیەک نەدۆزرایەوە</string>

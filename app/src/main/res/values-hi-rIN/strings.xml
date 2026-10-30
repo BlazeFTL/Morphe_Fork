@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">नए प्रायोगिक पैच संस्करणों तक जल्दी पहुँच प्राप्त करता है</string>
     <string name="sources_prerelease_warning_title">क्या प्री-रिलीज़ पैच सक्षम करें?</string>
     <string name="sources_prerelease_warning_message">प्री-रिलीज़ बिल्ड अभी भी विकास में हैं। पैच विफल हो सकते हैं या ऐप को तोड़ सकते हैं, और सुविधाएं बिना चेतावनी के बदल सकती हैं</string>
-    <string name="expert_mode_prerelease_notice">यह स्रोत प्री-रिलीज़ पैच पर है। पैचिंग विफल हो सकती है या अप्रत्याशित व्यवहार कर सकती है</string>
-    <string name="expert_mode_experimental_version_notice">इस स्रोत में इस ऐप वर्ज़न के लिए केवल प्रायोगिक समर्थन है। इसके पैच अस्थिर या अधूरे हो सकते हैं</string>
+    <string name="expert_mode_unstable_notice">प्री-रिलीज़ या प्रयोगात्मक पैच अस्थिर हो सकते हैं</string>
     <string name="sources_management_experimental_versions_toggle">प्रायोगिक ऐप संस्करण</string>
     <string name="sources_management_experimental_versions_toggle_description">प्रयोगात्मक ऐप टारगेट्स को दिखाता और पैच करता है</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">मेटाडेटा उपलब्ध नहीं है</string>
     <string name="sources_management_metadata_unavailable_hint">रिमोट मेटाडेटा फ़ाइल अनुपलब्ध है। स्थापित बंडल के साथ पैचिंग अभी भी काम करती है, लेकिन इस स्रोत के लिए ऑटो-अपडेट अक्षम कर दिया गया है</string>
     <string name="sources_management_metadata_unavailable_hint_missing">पैच बंडल डाउनलोड नहीं किया जा सका। स्रोत URL गलत हो सकता है या फ़ाइल मौजूद नहीं है</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">पैच बंडल डाउनलोड नहीं किया जा सका। स्रोत URL गलत हो सकता है या फ़ाइल मौजूद नहीं है। इसे बदलने के लिए टैप करें</string>
     <string name="sources_management_outdated_manager_badge">Morphe को अपडेट करें</string>
     <string name="sources_management_outdated_manager_hint">यह स्रोत पैचर %1$s के लिए बनाया गया है, लेकिन Morphe %2$s में पैचर %3$s शामिल है। इसका उपयोग करने के लिए Morphe को अपडेट करें</string>
     <string name="sources_management_held_back_badge">क्रैश हो गया</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">नाम दर्जा करें</string>
     <string name="sources_dialog_rename">पैच स्रोत का नाम बदलें</string>
+    <string name="sources_dialog_change_url">वह स्थान बदलें जहाँ से पैच स्रोत डाउनलोड होता है</string>
     <string name="sources_dialog_duplicate_name_error">इस नाम के साथ पहले से एक पैच स्रोत मौजूद है</string>
     <string name="sources_dialog_missing_error">यह पैच स्रोत अपडेट नहीं हो सका</string>
     <string name="sources_dialog_add_source">पैच स्रोत जोड़ें</string>
@@ -354,10 +355,10 @@
     <string name="expert_mode_enable_all_universal_pending">यूनिवर्सल पैच के लिए फिर से टैप करें</string>
     <string name="expert_mode_universal_all_warning_title">क्या सभी यूनिवर्सल पैच सक्षम करें?</string>
     <string name="expert_mode_universal_all_warning_message">यूनिवर्सल पैच एक साथ परीक्षण नहीं किए गए हैं। उन सभी को एक साथ सक्षम करने से टकराव, विफल पैचिंग या क्रैश हो सकते हैं</string>
-    <string name="expert_mode_reset_to_default">अनुशंसित पैच सक्षम करें</string>
+    <string name="expert_mode_recommended">अनुशंसित पैच</string>
     <string name="expert_mode_reset_to_default_done">अनुशंसित पैच लागू किए गए</string>
     <string name="expert_mode_selected_count">%2$s में से %1$s चुने गए</string>
-    <string name="expert_mode_restore_saved">चयन पुनर्स्थापित करें</string>
+    <string name="expert_mode_saved_selection">सुरक्षित चयन</string>
     <string name="expert_mode_restore_saved_done">सहेजे गए चयन को पुनर्स्थापित किया गया</string>
     <string name="expert_mode_copy_from_bundle_no_patches">इस बंडल में कोई मिलान करने वाला पैच नहीं है</string>
     <string name="expert_mode_no_results">कोई पैच नहीं मिला</string>

@@ -1,1519 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Home Screen -->
-    <string name="home_other_apps">இதர செயலிகள்</string>
-    <string name="home_other_apps_action">பிற செயலிகளைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="home_not_patched_yet">இன்னும் பேட்ச் செய்யப்படவில்லை</string>
-    <string name="home_unpatched_version_installed">பேட்ச் செய்யப்படாத பதிப்பு நிறுவப்பட்டுள்ளது</string>
-    <string name="home_unpatched_badge">பேட்ச் செய்யப்படவில்லை</string>
-    <string name="home_no_patches_available">பேட்ச்கள் எதுவும் கிடைக்கவில்லை</string>
-    <string name="home_app_hide_title">இந்தச் செயலியை மறைக்க வேண்டுமா?</string>
-    <string name="home_more_apps_title">கூடுதல் ஆப்ஸ்கள்</string>
-    <string name="home_more_apps_hide_title">இந்த கார்டை மறைக்க வேண்டுமா?</string>
-    <string name="home_more_apps_hide_message">இதை நீங்கள் எப்போது வேண்டுமானாலும் Settings &gt; Appearance &gt; Home screen மூலம் மீண்டும் கொண்டு வரலாம்</string>
-    <string name="home_app_hide_message">இந்தச் செயலி முகப்புத் திரையில் மறைக்கப்படும். பட்டியலின் கீழே உள்ள பொத்தானைப் பயன்படுத்தி மறைக்கப்பட்ட செயலிகளிலிருந்து நீங்கள் பின்னர் மீட்டெடுக்கலாம்</string>
-    <string name="home_app_will_be_hidden">இந்த ஆப் மறைக்கப்படும்</string>
-    <string name="home_app_hidden_named">%s மறைக்கப்பட்டது</string>
-    <string name="home_app_shown_named">%s காட்டப்பட்டது</string>
-    <string name="home_app_no_hidden">மறைக்கப்பட்ட செயலிகள் இல்லை</string>
-    <string name="home_app_hidden_apps_title">மறைக்கப்பட்ட செயலிகள்</string>
-    <string name="home_app_hidden_apps_hint">மறைக்கப்படாத நிலைக்குக் கொண்டுவரத் தட்டவும்</string>
-    <string name="home_apps_unhide_message">மறைக்கப்படாத செயலிகள் முகப்புத் திரைக்குத் திரும்பும்</string>
-    <string name="home_app_patch_sources_description">டிக் செய்யப்படாத மூலங்கள் இந்த செயலிகள் பேட்ச் செய்யப்படும்போது வழங்கப்படாது, மேலும் அவற்றின் பேட்ச்கள் தானாகவே ஒரு தேர்வில் சேராது. ஒவ்வொரு மூலமும் மற்ற அனைத்து செயலிகளுக்கும் செயல்பாட்டில் இருக்கும்</string>
-    <string name="home_app_patch_sources_mixed">%2$s இல் %1$s க்கு வழங்கப்பட்டது</string>
-    <string name="home_app_patch_sources_covers">%2$s இல் %1$s க்கான பேட்ச்கள் உள்ளன</string>
-    <string name="home_app_patch_sources_last">ஒவ்வொரு செயலிக்கும் பேட்ச் செய்ய ஒரு மூலம் செயல்பாட்டில் இருக்க வேண்டும்</string>
-    <string name="android_11_bug_dialog_title">Android 11 பிழை</string>
-    <string name="android_11_bug_dialog_description">ஆண்ட்ராய்டு 11 கணினியில் பயனர் அனுபவத்தைப் பாதிக்கும் பிழையைத் தவிர்க்க, செயலி நிறுவல் அனுமதி முன்கூட்டியே வழங்கப்பட வேண்டும்</string>
-    <string name="deep_link_add_source_title">மூலத்தைச் சேர்க்கவும்</string>
-    <string name="deep_link_add_source_message">இந்த பேட்ச் மூலத்தை Morphe-இல் சேர்க்க விரும்புகிறீர்களா?</string>
-    <string name="deep_link_add_source_warning">நீங்கள் நம்பும் ஆதாரங்களை மட்டுமே சேர்க்கவும்</string>
     <!-- Shown under the app a link was opened for -->
-    <string name="deep_link_add_source_only_app">இந்த ஆப் மட்டுமே சேர்க்கப்பட்டது. மூலத்தின் ஆப் பட்டியலிலிருந்து மற்ற ஆப்ஸை நீங்கள் சேர்க்கலாம்</string>
     <!-- Shown when the link was opened for the universal patches of a source, which no app is added with -->
-    <string name="deep_link_add_source_only_universal">யுனிவர்சல் பேட்ச்கள் மட்டுமே சேர்க்கப்பட்டுள்ளன. மூலத்தின் ஆப் பட்டியலிலிருந்து ஆப்-களை நீங்கள் சேர்க்கலாம்</string>
     <!-- Asked when the link names an app of a source that is already added -->
-    <string name="deep_link_add_source_app_back">இந்த ஆதாரம் ஏற்கனவே சேர்க்கப்பட்டுள்ளது. இருக்கும் ஆதாரத்திலிருந்து இந்த செயலியைச் சேர்க்க வேண்டுமா?</string>
     <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
-    <string name="mpp_import_update_message">இது %s-ன் புதிய பதிப்பு. நீங்கள் இதை அப்டேட் செய்ய விரும்புகிறீர்களா?</string>
-    <string name="mpp_import_unreadable">இந்தக் கோப்பை வாசிக்க முடியாது</string>
     <!-- Home Screen - Update Notifications -->
-    <string name="home_update_available">Morphe மேம்படுத்தல் கிடைக்கிறது</string>
-    <string name="home_update_available_subtitle">புதிய பதிப்பு நிறுவ தயாராக உள்ளது</string>
-    <string name="home_blocked_source_title">தடுக்கப்பட்ட பேட்ச் ஆதாரம் கண்டறியப்பட்டது</string>
-    <string name="home_blocked_source_subtitle">ஆய்வு செய்து நீக்க தட்டவும்</string>
-    <string name="home_metadata_errors_title">சில பேட்ச் ஆதாரங்கள் கிடைக்கவில்லை</string>
-    <string name="home_metadata_errors_subtitle">ஆதாரங்களை ஆய்வு செய்ய தட்டவும்</string>
-    <string name="home_outdated_manager_title">Morphe காலாவதியாகிவிட்டது</string>
-    <string name="home_outdated_manager_subtitle">சில பேட்ச் மூலங்களுக்குப் புதிய பதிப்பு தேவைப்படுகிறது</string>
-    <string name="home_held_back_title">ஒரு பேட்ச் மூலமானது Morphe-ஐ செயலிழக்கச் செய்தது</string>
-    <string name="home_held_back_subtitle">செயலியைத் தொடங்குவதற்காக இது தவிர்க்கப்பட்டது. மதிப்பாய்வு செய்யத் தட்டவும்</string>
-    <string name="home_metered_skipped_title">மொபைல் டேட்டாவில் அப்டேட்கள் நிறுத்தப்பட்டுள்ளன</string>
-    <string name="home_metered_skipped_subtitle">மொபைல் டேட்டாவில் அப்டேட்களை அனுமதிக்க தட்டவும்</string>
-    <string name="home_repatch_available_subtitle">அனைத்தையும் வரிசைப்படுத்தத் தட்டவும்</string>
-    <string name="home_update_error">புதுப்பிப்பு தோல்வியடைந்தது</string>
-    <string name="home_update_error_subtitle">ஆதாரங்களைப் புதுப்பிக்கும்போது ஏதோ தவறு நேர்ந்தது</string>
-    <string name="home_update_skipped_metered">புதுப்பிப்புகள் தவிர்க்கப்பட்டன</string>
-    <string name="home_update_skipped_metered_subtitle">மொபைல் டேட்டா செயல்பாட்டில் உள்ளது</string>
-    <string name="home_updating_sources">மூலங்கள் புதுப்பிக்கப்படுகின்றன…</string>
-    <string name="home_update_success">மூலங்களை புதுப்பித்தல் முடிந்தது</string>
-    <string name="home_update_success_subtitle">உங்கள் மூலங்கள் up to date ஆக உள்ளன</string>
-    <string name="home_sources_are_loading">மூலங்கள் ஏற்றப்படுகின்றன, தயவுசெய்து காத்திருக்கவும்…</string>
-    <string name="home_search_apps">செயலிகளைத் தேடுக</string>
-    <string name="list_options_title">வரிசைப்படுத்து மற்றும் வடிகட்டு</string>
-    <string name="list_options_state_description">%1$s மூலம் வரிசைப்படுத்தப்பட்டது, %2$s மூலம் வடிகட்டப்பட்டது</string>
-    <string name="home_app_filter_all_description">முகப்புத் திரையில் உள்ள அனைத்து செயலிகளும்</string>
-    <string name="home_app_filter_patched_description">நீங்கள் Morphe மூலம் பேட்ச் செய்த அல்லது சேமித்த செயலிகள்</string>
-    <string name="home_app_filter_not_patched_description">நீங்கள் இன்னும் Morphe-இல் பேட்ச் செய்யாத செயலிகள்</string>
-    <string name="home_app_filter_installed_description">இந்த சாதனத்தில் தற்போது நிறுவப்பட்டுள்ள செயலிகள்</string>
-    <string name="home_app_filter_uninstalled_description">Morphe மூலம் பேட்ச் செய்யப்பட்டு, தற்போது இந்த சாதனத்தில் இல்லாத செயலிகள்</string>
-    <string name="home_app_filter_clones">குளோன்கள்</string>
-    <string name="home_app_filter_clones_description">அசல் ஆப்புடன் சேர்த்து, அவற்றின் சொந்த பேக்கேஜ் பெயரின் கீழ் உருவாக்கப்பட்ட ஆப்ஸ்கள்</string>
-    <string name="home_app_grouping_none">எதுவுமில்லை</string>
-    <string name="home_app_grouping_all_apps_description">அனைத்து ஆப்ஸ்களையும் கொண்ட ஒரு பட்டியல்</string>
-    <string name="home_app_grouping_sources_description">அவற்றை வழங்கும் பேட்ச் மூலத்தின் கீழ் உள்ள ஆப்ஸ்கள்</string>
-    <string name="home_app_grouping_custom_description">நீங்கள் உருவாக்கும் வகைகளில் உள்ள ஆப்ஸ்கள்</string>
-    <string name="home_app_sort_manual_description">ஒரு செயலியை நீண்ட நேரம் அழுத்தவும், பின்னர் மறுவரிசைப்படுத்தும் பொத்தானைத் தட்டவும்</string>
-    <string name="home_app_sort_recommended">பரிந்துரைக்கப்பட்ட வரிசை</string>
-    <string name="home_app_sort_recommended_description">நிறுவப்பட்ட மற்றும் பின் செய்யப்பட்ட செயலிகள் முதலில்</string>
-    <string name="home_app_sort_name_asc_description">அகரவரிசை, A முதல் Z வரை</string>
-    <string name="home_app_sort_name_desc_description">தலைகீழ் அகரவரிசை, Z முதல் A வரை</string>
-    <string name="home_app_sort_updates_first">பேட்ச் புதுப்பிப்புகள் முதலில்</string>
-    <string name="home_app_sort_updates_first_description">புதிய பேட்ச்கள் கொண்ட செயலிகள் முதலில், பிறகு பரிந்துரைக்கப்பட்ட வரிசை</string>
-    <string name="home_app_sort_recently_patched">சமீபத்தில் பேட்ச் செய்யப்பட்டது</string>
-    <string name="home_app_sort_recently_patched_description">சமீபத்தில் பேட்ச் செய்யப்பட்ட ஆப்ஸ்கள் முதலில்</string>
-    <string name="home_no_apps_title">செயலிகள் எதுவும் இல்லை</string>
-    <string name="home_no_apps_subtitle">%s இல் ஒரு பேட்ச் மூலத்தைச் சேர்க்கவும் அல்லது ஏற்கனவே உள்ள ஒன்றை இயக்கவும்</string>
-    <string name="home_no_apps_search_subtitle">\"%s\" உடன் எந்த செயலிகளும் பொருந்தவில்லை</string>
-    <string name="home_all_apps_hidden_title">அனைத்து செயலிகளும் மறைக்கப்பட்டுள்ளன</string>
-    <string name="home_all_apps_hidden_subtitle">முகப்புத் திரையிலிருந்து அனைத்து செயலிகளையும் நீங்கள் மறைத்துவிட்டீர்கள்</string>
-    <string name="home_no_apps_filter_title">இந்த ஃபில்டருடன் எந்தச் செயலியும் பொருந்தவில்லை</string>
-    <string name="home_no_apps_filter_subtitle">%s உடன் எதுவும் பொருந்தவில்லை</string>
-    <string name="home_category_add">வகையைச் சேர்க்கவும்</string>
-    <string name="home_category_all_apps">அனைத்து செயலிகள்</string>
-    <string name="home_category_custom">தனிப்பயனாக்கப்பட்டது</string>
-    <string name="home_category_uncategorized">வகைப்படுத்தப்படாதவை</string>
-    <string name="home_category_new_title">புதிய வகை</string>
-    <string name="home_category_rename_title">வகையை மறுபெயரிடவும்</string>
-    <string name="home_category_name">வகை பெயர்</string>
-    <string name="home_category_move_to">வகையை நகர்த்தவும்</string>
-    <string name="home_category_move_selected_title">தேர்ந்தெடுக்கப்பட்ட செயலிகளை நகர்த்தவும்</string>
     <!-- %s is the name of the category -->
-    <string name="home_category_delete_title">%s-ஐ நீக்க வேண்டுமா?</string>
     <!-- %s is the name of the category the apps fall back to -->
-    <string name="home_category_delete_moves_apps">அதிலுள்ள செயலிகள் &lt;b&gt;%s&lt;/b&gt;-க்கு மீண்டும் மாற்றப்படும்</string>
-    <string name="home_category_actions_unavailable">இந்த வகைக்குச் செயல்பாடுகள் கிடைக்கவில்லை</string>
     <!-- Home Screen - Home Greetings -->
-    <string name="home_greeting_1">நீங்கள் எந்த செயலியை பேட்ச் செய்ய விரும்புகிறீர்கள்?</string>
     <!-- Humorous hype message with light nostalgia -->
-    <string name="home_greeting_2">செயலிகளை மீண்டும் புகழ்ப்பிடிக்கத் தயாரா?</string>
     <!-- "Buckle up" referring to fastening your vehicle seat belt. A light-hearted joke to build excitement -->
-    <string name="home_greeting_3">தயாராகுங்கள், இது பேட்ச் செய்யும் நேரம்</string>
     <!-- Sarcastic joke about blocking ads, intentionally over-the-top -->
-    <string name="home_greeting_4">மற்றொரு நாள், மற்றொரு விளம்பர-தடை செய்யப்பட்ட 걸작ம்</string>
     <!-- "Watch ads" refers to watching video ads in unpatched apps -->
-    <string name="home_greeting_5">விளம்பரங்களைப் பார்க்க வேண்டுமா? எனக்கும் விருப்பமில்லை</string>
     <!-- Friendly, slightly mischievous joke about controlling app behavior -->
-    <string name="home_greeting_6">உங்கள் செயலிகளை முறையாகச் செயல்பட வைப்போம்</string>
     <!-- Whimsical forecast-style joke, not meant literally -->
-    <string name="home_greeting_7" formatted="false">இன்றைய முன்னறிவிப்பு: 100% பேட்சிங் வாய்ப்பு உள்ளது</string>
     <!-- From mediocrity to amazing -->
-    <string name="home_greeting_8">சாதாரணமானவற்றை அசத்தலானதாக மாற்றத் தயாரா?</string>
     <!-- Playful exaggeration, making patching feel heroic -->
-    <string name="home_greeting_9">இன்றிலிருந்து செயலிகளை அவற்றின் குறைகளிலிருந்து காப்பாற்றுகிறோம்</string>
     <!-- Light sarcasm, casual and tech-savvy humor -->
-    <string name="home_greeting_10">கஃபைன் மற்றும் சிறந்த பேட்ச்கள் மூலம் இயங்குகிறது</string>
     <!-- Morning greetings (5:00–11:59) -->
-    <string name="home_greeting_morning_1">எழுந்து பேட்ச் செய்யுங்கள்</string>
-    <string name="home_greeting_morning_2">காலை வணக்கம்! ஆப்ஸ் தானாக பேட்ச் ஆகாது</string>
     <!-- Afternoon greetings (12:00–16:59) -->
-    <string name="home_greeting_afternoon_1">மதிய நேர சோர்வா? ஏதேனும் ஒன்றை பேட்ச் செய்யுங்கள்</string>
-    <string name="home_greeting_afternoon_2">மதிய உணவுக்குப் பிந்தைய பேட்ச்சிங் வித்தியாசமாக இருக்கும்</string>
-    <string name="home_greeting_afternoon_3">மதிய ஷிப்ட்: பேட்ச் பதிப்பு</string>
     <!-- Evening greetings (17:00–21:59) -->
-    <string name="home_greeting_evening_1">மாலை வணக்கம்! மாலை நேர பேட்ச்கள் வித்தியாசமாக இருக்கும்</string>
-    <string name="home_greeting_evening_2">ஓய்வெடுக்கப் போகிறீர்களா? முதலில் ஒரு செயலியை பேட்ச் செய்யுங்கள்</string>
-    <string name="home_greeting_evening_3">வேலையை முடித்துக் கொள்கிறீர்களா? முதலில் எதையாவது பேட்ச் செய்யுங்கள்</string>
     <!-- Late night greetings (22:00–23:59) -->
-    <string name="home_greeting_late_night_1">இன்னும் தூங்கவில்லையா? பேட்ச் செய்ய வேண்டிய செயலிகளும் விழித்திருக்கின்றன</string>
-    <string name="home_greeting_late_night_2">நள்ளிரவு பேட்ச் அமีஷனா? மதிக்கிறேன்</string>
-    <string name="home_greeting_late_night_3">நள்ளிரவு விழித்திருக்கும் நிலை: செயல்படுத்தப்பட்டது</string>
     <!-- Super late night greetings (0:00–4:59) -->
-    <string name="home_greeting_super_late_1">பேட்ச் செய்வதற்கான உச்சக்கட்ட நேரம்... என்று சொல்லப்படுகிறது</string>
-    <string name="home_greeting_super_late_2">தூக்கம் வரவில்லையா? எதையாவது பேட்ச் செய்யுங்கள்</string>
-    <string name="home_greeting_super_late_3">இந்த நேரத்தில், விழித்திருந்து பேட்ச் செய்வதே சிறந்தது</string>
-    <string name="home_greeting_super_late_4">நீங்களும் சர்வர்க்களும், இருவரும் விழித்திருக்கிறீர்கள்</string>
-    <string name="home_greeting_super_late_5">இரவு நேரத்திலும் உற்பத்தித்திறனுடன்</string>
     <!-- Halloween greetings, shown instead of the ones above around October 31 -->
     <!-- Pun on "Trick or treat" -->
-    <string name="home_greeting_halloween_1">Trick or patch?</string>
-    <string name="home_greeting_halloween_2">இந்த APK-களில் பேய்கள் இல்லை, நாங்கள் சரிபார்த்தோம்</string>
-    <string name="home_greeting_halloween_3">பயமுறுத்தும் பருவம், புதிய திருத்தங்கள்</string>
     <!-- Pun on "Something wicked this way comes", a line from Shakespeare's Macbeth -->
-    <string name="home_greeting_halloween_4">ஏதோ ஒரு விசித்திரமான பேட்ச் வருகின்றது</string>
     <!-- Winter holiday greetings, shown instead of the ones above from late December to early January -->
-    <string name="home_greeting_winter_1">இனிய விடுமுறை நாட்கள், புதிய பேட்ச்கள்</string>
     <!-- Pun on the song "Let It Snow! Let It Snow! Let It Snow!" -->
-    <string name="home_greeting_winter_2">பனி பொழியட்டும், பேட்ச் நடக்கட்டும்</string>
-    <string name="home_greeting_winter_3">புதிய ஆண்டு, புதிய பேட்ச்கள்</string>
     <!-- Pun on "Dashing through the snow", the opening line of "Jingle Bells" -->
-    <string name="home_greeting_winter_4">பனிப்பாதையில் பேட்ச் செய்கிறோம்</string>
     <!-- New Year greetings, shown instead of the ones above on December 31 and January 1 -->
-    <string name="home_greeting_new_year_1">இனிய புத்தாண்டு நல்வாழ்த்துக்கள்!</string>
-    <string name="home_greeting_new_year_2">புதிய பேட்ச்களுக்கான கவுண்ட்டவுன்</string>
-    <string name="home_greeting_new_year_3">புதிய ஆண்டு, அதே விளம்பரமில்லாத ஆப்ஸ்</string>
     <!-- Pun on the saying "Out with the old, in with the new" -->
-    <string name="home_greeting_new_year_4">பழைய பதிப்புகள் வெளியே, புதிய பதிப்புகள் உள்ளே</string>
     <!-- Home Screen - Sources Management -->
-    <string name="sources_management_title">பேட்ச் ஆதாரங்கள்</string>
-    <string name="sources_search">மூலங்கள் மற்றும் பேட்ச்களைத் தேடுங்கள்</string>
     <!-- Which sources the sources page lists, each with what it keeps -->
-    <string name="sources_filter_all_description">ஒவ்வொரு மூலமும்</string>
-    <string name="sources_filter_enabled_description">மூலங்களில் இருந்து பேட்ச்கள் எடுக்கப்படுகின்றன</string>
-    <string name="sources_filter_disabled_description">மூலங்கள் முடக்கப்பட்டுள்ளன</string>
-    <string name="sources_filter_issues">கவனம் தேவை</string>
-    <string name="sources_filter_issues_description">தடுக்கப்பட்ட, ஏற்றத் தவறிய அல்லது புதிய Morphe தேவைப்படும் மூலங்கள்</string>
-    <string name="sources_sort_manual">கைமுறை வரிசை</string>
-    <string name="sources_sort_manual_hint">வரிசையை மாற்ற ஒரு மூலத்தை நீண்ட நேரம் அழுத்தவும்</string>
-    <string name="sources_sort_last_updated">கடைசியாக புதுப்பிக்கப்பட்டது</string>
-    <string name="sources_sort_last_updated_description">புதிய மூலப் புதுப்பிப்புகள் முதலில்</string>
-    <string name="sources_sort_enabled_first">இயக்கப்பட்டவை முதலில்</string>
-    <string name="sources_sort_enabled_first_description">முடக்கப்பட்ட மூலங்களுக்கு முன் செயலில் உள்ள மூலங்களைக் காட்டு</string>
-    <string name="sources_patches_source_disabled_hint">இந்த மூலம் முடக்கப்பட்டுள்ளது. அதன் பேட்ச்கள் குறிப்பிற்காகப் பட்டியலிடப்பட்டுள்ளன மற்றும் அவை பயன்படுத்தப்படவில்லை</string>
-    <string name="sources_management_open_in_browser">உலாவித்தில் திற</string>
-    <string name="sources_management_report_issue">பிரச்சனையைப் புகாரளிக்கவும்</string>
-    <string name="sources_management_failed_to_open_url">URL-ஐ திறக்க முடியவில்லை</string>
-    <string name="sources_apps">ஆப்ஸ்கள்</string>
-    <string name="sources_apps_description">டிக் செய்யப்பட்ட செயலிகள் இந்த ஆதாரத்திலிருந்து வருகின்றன. ஒரு செயலியை நீக்க அல்லது மீண்டும் கொண்டு வர அதைத் தட்டவும். ஒரு செயலிக்கு எந்த ஆதாரமும் இல்லாதபோது, நீங்கள் அதை பேட்ச் செய்திருந்தால் தவிர, அது முகப்புத் திரையை விட்டு வெளியேறும்</string>
-    <string name="sources_apps_brought">இந்த மூலத்தால் கொண்டுவரப்பட்டது</string>
-    <string name="sources_apps_left_out">இந்த மூலத்திலிருந்து விடுபட்டவை</string>
     <!-- Under an app left out of a source that keeps its home screen card because the user has patched it -->
-    <string name="sources_apps_stays_patched">பேட்ச் செய்யப்பட்டதாக வைக்கப்பட்டது</string>
     <!-- Marks an app (not a patch) the source started supporting since its app list was last opened -->
-    <string name="sources_apps_new">புதியது</string>
-    <string name="sources_apps_new_apps">புதிய ஆப்ஸை கொண்டு வா</string>
     <!-- Under the Bring new apps switch in a source's app list, whichever way it is set. "It" is the patch source -->
-    <string name="sources_apps_new_apps_description">இது பின்னர் சேர்க்கும் செயலிகள் முகப்புத் திரையில் தோன்றும்</string>
-    <string name="sources_management_prerelease_toggle">முன்-வெளியீட்டு பேட்ச்கள்</string>
-    <string name="sources_management_prerelease_toggle_description">புதிய சோதனை பேட்ச் பதிப்புகளுக்கான ஆரம்ப அணுகலைப் பெறுகிறது</string>
-    <string name="sources_prerelease_warning_title">முன்கூட்டிய வெளியீட்டு பேட்ச்களை இயக்க வேண்டுமா?</string>
-    <string name="sources_prerelease_warning_message">முன்கூட்டிய வெளியீட்டு பதிப்புகள் இன்னும் மேம்படுத்தப்பட்டு வருகின்றன. பேட்ச்கள் தோல்வியடையலாம் அல்லது ஆப்பை செயலிழக்கச் செய்யலாம், மேலும் அம்சங்கள் முன்னறிவிப்பு இன்றி மாறக்கூடும்</string>
-    <string name="expert_mode_prerelease_notice">இந்த ஆதாரம் முன்-வெளியீட்டு பேட்ச்களில் உள்ளது. பேட்ச் செய்வது தோல்வியடையலாம் அல்லது எதிர்பாராத விதமாக செயல்படலாம்</string>
-    <string name="expert_mode_experimental_version_notice">இந்த செயலி பதிப்பிற்கு இந்த மூலத்தில் சோதனை அடிப்படையிலான ஆதரவு மட்டுமே உள்ளது. இதன் பேட்ச்கள் நிலையற்றதாக அல்லது முழுமையற்றதாக இருக்கலாம்</string>
-    <string name="sources_management_experimental_versions_toggle">பரிசோதனை ஆப் பதிப்புகள்</string>
-    <string name="sources_management_experimental_versions_toggle_description">பரிசோதனை ஆப் இலக்குகளைக் காண்பித்து பேட்ச் செய்கிறது</string>
     <!-- Actions of the panel for several selected sources at once -->
-    <string name="sources_management_prerelease_enable">முன்-வெளியீட்டு பேட்ச்களை இயக்கவும்</string>
-    <string name="sources_management_prerelease_disable">முன்-வெளியீட்டு பேட்ச்களை முடக்கவும்</string>
-    <string name="sources_management_experimental_versions_enable">பரிசோதனை ஆப் பதிப்புகளை இயக்கவும்</string>
-    <string name="sources_management_experimental_versions_disable">பரிசோதனை ஆப் பதிப்புகளை முடக்கவும்</string>
-    <string name="sources_management_already_exists">இந்த ஆதாரம் ஏற்கனவே சேர்க்கப்பட்டுள்ளது</string>
-    <string name="sources_management_invalid_url">தவறான மூல URL. முகவரியைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்</string>
-    <string name="sources_management_blocked">இந்த பேட்ச் ஆதாரம் தடுக்கப்பட்டுள்ளது மற்றும் சேர்க்க முடியாது</string>
-    <string name="sources_management_source_blocked_badge">தடுக்கப்பட்டது</string>
-    <string name="sources_management_metadata_unavailable">மெட்டாடேட்டா கிடைக்கவில்லை</string>
-    <string name="sources_management_metadata_unavailable_hint">தொலைதூர மெட்டாடேட்டா கோப்பு கிடைக்கவில்லை. நிறுவப்பட்ட பண்டில் மூலம் பேட்ச் செய்வது இன்னும் வேலை செய்யும், ஆனால் இந்த ஆதாரத்திற்கான ஆட்டோ-அப்டேட் முடக்கப்பட்டுள்ளது</string>
-    <string name="sources_management_metadata_unavailable_hint_missing">பேட்ச் பண்டிலை பதிவிறக்கம் செய்ய முடியவில்லை. ஆதார URL தவறாக இருக்கலாம் அல்லது கோப்பு இல்லை</string>
-    <string name="sources_management_outdated_manager_badge">Morphe-ஐ மேம்படுத்தவும்</string>
-    <string name="sources_management_outdated_manager_hint">இந்த ஆதாரம் patcher %1$s-க்காக உருவாக்கப்பட்டது, ஆனால் Morphe %2$s-ல் patcher %3$s உள்ளது. அதைப் பயன்படுத்த Morphe-ஐப் புதுப்பிக்கவும்</string>
-    <string name="sources_management_held_back_badge">செயலிழந்தது</string>
-    <string name="sources_management_held_back_hint">இந்த மூலமானது பதிவேற்றும் போது Morphe-ஐ செயலிழக்கச் செய்தது, எனவே இது தவிர்க்கப்படுகிறது. மீண்டும் முயற்சிக்க இதை மேம்படுத்தவும் அல்லது மீண்டும் இறக்குமதி செய்யவும்</string>
-    <string name="sources_management_signed_by">கையொப்பமிட்டவர்</string>
-    <string name="sources_management_signing_key_changed_badge">திறவுச்சாவிய மாற்றப்பட்டது</string>
-    <string name="sources_management_signing_key_changed_hint">சமீபத்திய வெளியீடு, இந்த மூலப்பொருள் முன்பு பயன்படுத்திய திறவுச்சாவியால் கையொப்பமிடப்படவில்லை, எனவே அது நிறுவப்படவில்லை. அதை மதிப்பாய்வு செய்யத் தட்டவும்</string>
-    <string name="sources_management_source_enabled">மூலம் செயல்படுத்தப்பட்டது</string>
-    <string name="sources_management_source_disabled">மூலம் முடக்கப்பட்டது</string>
-    <string name="sources_management_source_updating">மூலத்தைப் புதுப்பிக்கிறது</string>
     <!-- Home Screen - Sources Dialogs -->
-    <string name="sources_dialog_display_name">காட்சி பெயர்</string>
-    <string name="sources_dialog_rename">பேட்ச் மூலத்தின் பெயரை மாற்று</string>
-    <string name="sources_dialog_duplicate_name_error">இந்த பெயரில் ஏற்கனவே ஒரு பேட்ச் மூலம் உள்ளது</string>
-    <string name="sources_dialog_missing_error">இந்த பேட்ச் மூலத்தை புதுப்பிக்க முடியவில்லை</string>
-    <string name="sources_dialog_add_source">பேட்ச் மூலத்தைச் சேர்க்கவும்</string>
-    <string name="sources_dialog_delete_confirm_body">இதை மாற்ற முடியாது</string>
-    <string name="sources_dialog_remote">ரிமோட்</string>
-    <string name="sources_dialog_remote_url">மூல URL</string>
-    <string name="sources_dialog_remote_url_hint">ஒரு களஞ்சியத்திற்கு அல்லது பேட்ச் பன்டில் .json இணைப்பிற்கு. அனைத்தையும் சேர்க்க பலவற்றை ஒரே நேரத்தில் ஒட்டவும்</string>
-    <string name="sources_dialog_paste_no_links">கிளிப்போர்டில் இணைப்புகள் எதுவும் காணப்படவில்லை</string>
-    <string name="sources_dialog_local">லோக்கல்</string>
-    <string name="sources_dialog_local_files">பேட்ச் மூலக் கோப்புகளைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="sources_dialog_local_invalid_extension">கோப்பு .mpp விரிவாக்கத்தைக் கொண்டிருக்க வேண்டும்</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
-    <string name="sources_dialog_local_updates">புதுப்பிப்புகள் %s</string>
-    <string name="sources_dialog_url_valid">செல்லுபடியாகும் களஞ்சிய அல்லது JSON URL</string>
-    <string name="sources_dialog_url_invalid">URL ஒரு GitHub/GitLab ரெப்போ அல்லது .json கோப்பைக் குறிக்க வேண்டும்</string>
-    <string name="sources_dialog_preinstalled">முன்பே நிறுவப்பட்டது</string>
-    <string name="sources_dialog_community">சமூக பேட்ச்கள்</string>
-    <string name="sources_dialog_choose_apps">ஆப்களைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="sources_dialog_choose_apps_description">மூலம் ஏற்றப்பட்ட பிறகு, அதன் ஆப்ஸ்களில் எவற்றை வைத்திருக்க வேண்டும் என்பதைத் தேர்ந்தெடுக்கவும்</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
-    <string name="sources_dialog_community_notice_title">மூன்றாம் தரப்பு பேட்ச் ஆதாரங்கள்</string>
-    <string name="sources_dialog_community_notice_message">"சமூக பேட்ச் மூலங்கள் அவற்றின் சொந்த ஆசிரியர்களால் உருவாக்கப்பட்டு பராமரிக்கப்படுகின்றன. Morphe மூன்றாம் தரப்பு பேட்ச்களை மதிப்பாய்வு செய்யவோ அல்லது சரிபார்க்கவோ இல்லை, மேலும் அவற்றின் உள்ளடக்கத்திற்கோ அல்லது உங்கள் சாதனத்தில் அவை செய்வதற்கோ பொறுப்பல்ல"</string>
-    <string name="sources_update_success">புதுப்பிப்பு வெற்றிகரமாக முடிந்தது</string>
-    <string name="sources_update_unavailable">புதுப்பிப்புகள் எதுவும் கிடைக்கவில்லை</string>
-    <string name="sources_download_fail">மூலங்களைப் பதிவிறக்க முடியவில்லை: %s</string>
-    <string name="sources_download_fail_named">\'%s\'-ஐ அப்டேட் செய்ய முடியவில்லை. உங்கள் இணைய இணைப்பை சரிபார்த்து மீண்டும் முயற்சிக்கவும்</string>
-    <string name="sources_download_endpoint_not_found">\'%s\': பேட்ச் மெட்டாடேட்டா காணப்படவில்லை</string>
-    <string name="sources_signing_key_changed_named">\'%s\' புதுப்பிக்கப்படவில்லை, ஏனெனில் அதன் சமீபத்திய வெளியீடு அது முன்பு பயன்படுத்திய திறவுச்சாவியால் கையொப்பமிடப்படவில்லை</string>
-    <string name="sources_signing_key_changed_local">இந்தக் கோப்பு, இந்த மூலப்பொருள் முன்பு பயன்படுத்திய திறவுச்சாவியால் கையொப்பமிடப்படவில்லை. இதை நம்ப வேண்டுமானால், மூலப்பொருளை நீக்கிவிட்டு கோப்பை மீண்டும் சேர்க்கவும்</string>
-    <string name="sources_signing_key_trust_title">புதிய திறவுச்சாவியை நம்ப வேண்டுமா?</string>
-    <string name="sources_signing_key_trust_message">சமீபத்திய வெளியீடு வேறு ஒரு விசையினால் கையொப்பமிடப்பட்டுள்ளது. டெவலப்பர் தனது விசையை மாற்றியிருக்கலாம் அல்லது வேறு யாரோ இந்த வெளியீட்டை வெளியிட்டிருக்கலாம். டெவலப்பர் புதிய விசையை அறிவித்திருந்தால் மட்டுமே நம்புங்கள்</string>
-    <string name="sources_signing_key_trust_message_unsigned">சமீபத்திய வெளியீடு கையொப்பமிடப்படவில்லை. டெவலப்பர் வெளியீடுகளைக் கையொப்பமிடுவதை நிறுத்தியிருக்கலாம் அல்லது வேறு யாரோ இந்த வெளியீட்டை வெளியிட்டிருக்கலாம். டெவலப்பர் இதை அறிவித்திருந்தால் மட்டுமே நம்புங்கள்</string>
-    <string name="sources_signing_key_trusted">நம்பகமான விசை</string>
-    <string name="sources_signing_key_new">புதிய விசை</string>
-    <string name="sources_patch_expert_badge">நிபுணர்</string>
-    <string name="sources_patch_expert_badge_tooltip">இந்த பேட்சை கைமுறையாகச் சேர்க்க அமைப்புகளில் நிபுணர் பயன்முறையை இயக்கவும்</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_title">APK-வைக் கண்டறிய உதவி தேவையா?</string>
-    <string name="home_apk_availability_dialog_simple">&lt;b&gt;%s&lt;/b&gt;-ஐ பேட்ச் செய்ய, உங்களுக்கு பேட்ச் செய்யப்படாத APK பதிப்பு தேவை:</string>
-    <string name="home_apk_availability_dialog_expert">&lt;b&gt;%s&lt;/b&gt;-ஐ பேட்ச் செய்ய, உங்களுக்கு இந்த பதிப்புகளின் பேட்ச் செய்யப்படாத APK தேவை:</string>
-    <string name="home_apk_availability_recommended_label">பரிந்துரைக்கப்பட்டது</string>
-    <string name="home_apk_availability_unpatched_label">பேட்ச் செய்யப்படவில்லை</string>
-    <string name="home_apk_availability_incompatible_label">பொருத்தமற்றது</string>
-    <string name="home_apk_availability_installed_version">இந்த சாதனத்தில் நிறுவப்பட்டது: %s</string>
-    <string name="home_apk_availability_find">ஆம், அதைக்கண்டறிய எனக்கு உதவுங்கள்</string>
-    <string name="home_apk_availability_have">இல்லை, அது ஏற்கனவே என்னிடம் உள்ளது</string>
-    <string name="home_apk_helper_download">உதவி செயலியைப் பயன்படுத்தவும்</string>
-    <string name="home_apk_helper_untrusted">ஒரு ஹெல்பர் செயலி நிறுவப்பட்டுள்ளது, ஆனால் இன்னும் நம்பகமானது என அங்கீகரிக்கப்படவில்லை, எனவே அது இங்கே வழங்கப்படவில்லை</string>
-    <string name="home_apk_helper_untrusted_action">ஹெல்பர்களை மதிப்பாய்வு செய்க</string>
-    <string name="home_apk_helper_title">உதவி செயலியின் மூலம் பதிவிறக்கவும்</string>
-    <string name="home_apk_helper_description">Morphe அசல் APK-வை பதிவிறக்கம் செய்து கோப்பை மீண்டும் வழங்குமாறு கீழே உள்ள ஹெல்பர் செயலியை கேட்டுக்கொள்ளும்</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="home_apk_helper_continue">உதவியைத் திற</string>
-    <string name="home_apk_helper_warning">இந்த ஹெல்பர் செயலியை நீங்கள் நம்பினால் மட்டுமே தொடரவும். Morphe பேட்ச் செய்வதற்கு முன்னதாக அது பெறும் அனைத்தின் தொகுப்பு, பதிப்பு மற்றும் கையொப்பத்தை சரிபார்க்கிறது</string>
-    <string name="home_apk_helper_warning_unverified">இந்த ஹெல்பர் செயலியை நீங்கள் நம்பினால் மட்டுமே தொடரவும். Morphe இந்த APK-வின் கையொப்பத்தை சரிபார்க்க முடியாது, எனவே மாற்றப்பட்ட கோப்பு கண்டறியப்படாது</string>
-    <string name="home_apk_helper_no_result">ஹெல்பர் செயலி APK-வை வழங்கவில்லை</string>
-    <string name="home_apk_helper_no_access">ஹெல்பர் செயலி அது வழங்கிய APK-விற்கான அணுகலை வழங்கவில்லை</string>
-    <string name="home_apk_helper_no_package">எந்த நிறுவப்பட்ட செயலியைப் பயன்படுத்த வேண்டும் என்று உதவியாளர் செயலி கூறவில்லை</string>
-    <string name="home_apk_helper_wrong_package">பேட்ச் செய்யப்படும் செயலியை விட உதவியாளர் செயலி வேறு ஒரு செயலியைத் திருப்பியனுப்பியது</string>
-    <string name="home_apk_helper_installed_unavailable">Morphe-ஆல் நிறுவப்பட்ட செயலியைப் பயன்படுத்த முடியவில்லை</string>
-    <string name="home_apk_helper_installed_incompatible">நிறுவப்பட்ட பதிப்பை பேட்ச் செய்ய முடியாது</string>
-    <string name="home_apk_use_saved_copy">சேமிக்கப்பட்ட நகலைப் பயன்படுத்தவும்</string>
-    <string name="home_apk_use_installed_app">நிறுவப்பட்ட செயலியைப் பயன்படுத்தவும்</string>
-    <string name="home_apk_use_saved_unsupported">இந்த சேமிக்கப்பட்ட நகலை பேட்ச்கள் ஆதரிக்கவில்லை. இதை பேட்ச் செய்யும்போது நீங்கள் உறுதிப்படுத்த வேண்டியிருக்கும் அல்லது மற்றொரு APK-ஐத் தேர்ந்தெடுக்கவும்</string>
-    <string name="home_apk_use_installed_unverified">நிறுவப்பட்ட ஆப்பின் கையொப்பத்தை சரிபார்க்க முடியவில்லை, எனவே அது ஏற்கனவே பேட்ச் செய்யப்பட்டிருக்கலாம்</string>
-    <string name="home_unverified">சரிபார்க்கப்படவில்லை</string>
-    <string name="home_install_verification_pending">நிறுவலத்தைச் சரிபார்க்கிறது…</string>
-    <string name="home_app_info_install_unverified">நிறுவப்பட்ட செயலி, அது பேட்ச் செய்த பில்ட் என்பதை Morphe உறுதிப்படுத்த முடியவில்லை. அதன் செயல்பாடுகளை மீட்டெடுக்க, மீண்டும் பேட்ச் செய்யவும் அல்லது சேமிக்கப்பட்ட APK-யிலிருந்து மீண்டும் நிறுவவும்</string>
-    <string name="home_app_info_no_saved_apk">சேமிக்கப்பட்ட APK இல்லை. பேட்ச் செய்ய APK கோப்பை மீண்டும் தேர்ந்தெடுக்க வேண்டும்</string>
-    <string name="home_version_requires_android">Android %s+ தேவைப்படுகிறது</string>
-    <string name="home_apk_no_compatible_versions_title">இந்த சாதனத்தில் ஆதரவு இல்லை</string>
-    <string name="home_apk_no_compatible_versions_message">&lt;b&gt;%1$s&lt;/b&gt; என்பதற்கு Android %2$s (API %3$s) க்கான ஆதரவு பதிப்புகள் இல்லை. அறிவிக்கப்பட்ட அனைத்து பதிப்புகளுக்கும் உயர் Android பதிப்பு தேவைப்படுகிறது</string>
     <!-- Home Screen - Dialog 2: Download Instructions -->
-    <string name="home_download_instructions_title">அசல் APK-வை பதிவிறக்கவும்</string>
-    <string name="home_download_instructions_finding">பதிவிறக்கப் பக்கத்தைக் கண்டறிகிறது…</string>
-    <string name="home_download_instructions_step1">கீழே உள்ள \'%s\' பொத்தானை அழுத்தவும்</string>
-    <string name="home_download_instructions_step2_part1">இணையப் பக்கத்தை கீழே நகர்த்தி மற்றும் அழுத்தவும்</string>
-    <string name="home_download_instructions_step2_generic">இணையப்பக்கத்தை கீழே ஸ்க்ரோல் செய்து அதன் டவுன்லோட் பட்டனை அழுத்தவும்</string>
-    <string name="home_download_instructions_step2_variant">இணையப்பக்கத்தை கீழே ஸ்க்ரோல் செய்து மேலேயுள்ள &lt;b&gt;APK variant&lt;/b&gt;-இன் டவுன்லோட் பட்டனை அழுத்தவும்</string>
-    <string name="home_download_instructions_step2_search">நீங்கள் நம்பும் ஒரு இணையதளத்திலிருந்து தேடல் முடிவை திறக்கவும்</string>
-    <string name="home_download_instructions_step2_search_note">இந்த இணையதளங்களுக்கு Morphe உத்தரவாதம் அளிக்க முடியாது. APK கோப்பிற்கு பதிலாக அவர்களது சொந்த ஆப் ஸ்டோரை வழங்கும் தளங்களைத் தவிர்க்கவும்</string>
-    <string name="home_download_instructions_step3_search">அந்த இணையதளத்தில், சமீபத்திய பதிப்பை அல்லாமல் பதிப்பு &lt;b&gt;%s&lt;/b&gt;-ன் APK-வை பதிவிறக்கவும்</string>
-    <string name="home_download_instructions_step3_search_any">அந்த இணையதளத்தில், செயலியின் APK-வை பதிவிறக்கவும். &lt;b&gt;எந்த பதிப்பையும்&lt;/b&gt; பேட்ச் செய்யலாம்</string>
-    <string name="home_download_instructions_download_button_toast">இங்கு அல்ல, இணையதளத்தில் பதிவிறக்கம் பொத்தானை அழுத்தவும் 😊</string>
-    <string name="home_download_instructions_download_button_toast_2">சிறப்பு! இப்போது தொடர என்பதைக் கிளிக் செய்து இணையதளத்திற்குச் செல்லுங்கள் 👆</string>
-    <string name="home_download_instructions_download_button_toast_3">தொடர் பயிற்சியே வெற்றியைத் தரும், நீங்கள் அதை நோக்கி முன்னேறுகிறீர்கள் 💪</string>
-    <string name="home_download_instructions_download_button_toast_4">இன்னும் வரவில்லை… இன்னும் வரவில்லை… 🙈</string>
-    <string name="home_download_instructions_download_button_toast_5">சரி, உங்கள் அர்ப்பணிப்பை நான் மதிக்கிறேன் 🫡</string>
-    <string name="home_download_instructions_download_button_toast_6">நீங்கள் இப்போது அதிகாரப்பூர்வ Morphe பொத்தான் পরীক্ষப்பாளர் 🏅</string>
-    <string name="home_download_instructions_step3">பதிவிறக்கம் முடிவடையும் வரை காத்திருக்கவும், மேலும் APK-வை &lt;b&gt;நிறுவ வேண்டாம்&lt;/b&gt;</string>
-    <string name="home_download_instructions_step3_mount">பதிவிறக்கம் முடிவடையும் வரை காத்திருக்கவும், பிறகு &lt;b&gt;APK-வை நிறுவவும்&lt;/b&gt;</string>
-    <string name="home_download_instructions_step4">பதிவிறக்கம் முடிந்ததும், Morphe-க்குத் திரும்புங்கள்</string>
-    <string name="home_download_instructions_step4_mount">அசல் APK-வை நிறுவிய பின், Morphe-க்குத் திரும்புங்கள்</string>
-    <string name="home_download_instructions_continue_to">%s-க்கு தொடருங்கள்</string>
-    <string name="home_download_instructions_destination">பதிவிறக்கப் பக்கம்</string>
-    <string name="home_download_instructions_copy_link">இணைப்பை நகலெடு</string>
-    <string name="home_download_instructions_link_copied">இணைப்பு நகலெடுக்கப்பட்டது</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
-    <string name="home_file_picker_prompt_app_title">%s APK-வைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="home_file_picker_prompt_where">உலாவி பொதுவாக இதை Download கோப்புறையில் சேமிக்கும்</string>
-    <string name="home_file_picker_prompt_open_apk">APK கோப்பைத் திறக்கவும்</string>
-    <string name="home_recommended_version">பரிந்துரைக்கப்பட்ட பதிப்பு</string>
-    <string name="home_selected_version">தேர்ந்தெடுக்கப்பட்ட பதிப்பு</string>
-    <string name="home_select_apk_title">APK-வை தேர்ந்தெடுக்கவும்</string>
-    <string name="home_select_apk_description">"யுனிவர்சல் பேட்ச்கள் எந்த ஆப்பிலும் வேலை செய்யும்
-
-அதன் APK-வை எங்கிருந்து எடுக்க வேண்டும் என்பதைத் தேர்வு செய்யவும்"</string>
-    <string name="home_use_installed_app">நிறுவப்பட்ட செயலியைப் பயன்படுத்தவும்</string>
-    <string name="home_use_installed_app_description">இந்த சாதனத்தில் ஏற்கனவே உள்ள ஒரு செயலியைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="home_open_apk_file_description">சேமிப்பகத்திலிருந்து ஒரு APK, APKM, APKS அல்லது XAPK கோப்பைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="home_installed_app_picker_title">நிறுவப்பட்ட செயலிகள்</string>
-    <string name="home_installed_app_picker_empty">செயலிகள் எதுவும் காணப்படவில்லை</string>
-    <string name="home_installed_app_picker_filter_user">பயனர் செயலிகள் மட்டும்</string>
-    <string name="home_installed_app_picker_filter_system">சிஸ்டம் செயலிகள் மட்டும்</string>
-    <string name="home_invalid_apk_unreadable">கோப்பை வாசிக்க முடியவில்லை. \'External Storage\' பேட்டரி கட்டுப்பாட்டில் இல்லை என்பதை உறுதிப்படுத்தவும்</string>
-    <string name="home_invalid_apk_not_an_apk">தேர்ந்தெடுக்கப்பட்ட கோப்பு சரியான APK அல்ல</string>
-    <string name="home_invalid_apk_already_patched">தேர்ந்தெடுக்கப்பட்ட APK ஏற்கனவே பேட்ச் செய்யப்பட்டுள்ளது. அதற்கு பதிலாக அசல் செயலியைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="home_invalid_apk_io_error">கோப்பைத் திறக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்</string>
-    <string name="home_external_apk_expert_mode_required">இந்த அம்சம் எக்ஸ்பர்ட் பயன்முறையில் மட்டுமே கிடைக்கும்</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
-    <string name="expert_mode_search">பேட்ச்களைத் தேடுங்கள்</string>
-    <string name="expert_mode_disable_all">அனைத்தையும் முடக்கவும்</string>
-    <string name="expert_mode_enable_all">அனைத்தையும் செயல்படுத்தவும்</string>
-    <string name="expert_mode_enable_all_universal_pending">யுனிவர்சல் பேட்ச்களுக்காக மீண்டும் தட்டுங்கள்</string>
-    <string name="expert_mode_universal_all_warning_title">அனைத்து யுனிவர்சல் பேட்ச்களையும் செயல்படுத்த வேண்டுமா?</string>
-    <string name="expert_mode_universal_all_warning_message">யுனிவர்சல் பேட்ச்கள் ஒன்றாகச் சோதிக்கப்படவில்லை. அனைத்தையும் ஒரே நேரத்தில் செயல்படுத்துவது மோதல்கள், பேட்ச் தோல்விகள் அல்லது செயலி முடக்கங்களை ஏற்படுத்தக்கூடும்</string>
-    <string name="expert_mode_reset_to_default">பரிந்துரைக்கப்பட்ட பேட்ச்களை இயக்கவும்</string>
-    <string name="expert_mode_reset_to_default_done">பரிந்துரைக்கப்பட்ட பேட்ச்கள் பயன்படுத்தப்பட்டன</string>
-    <string name="expert_mode_selected_count">%2$s-இல் %1$s தேர்ந்தெடுக்கப்பட்டது</string>
-    <string name="expert_mode_restore_saved">சேமிக்கப்பட்ட தேர்வை மீட்டமைக்கவும்</string>
-    <string name="expert_mode_restore_saved_done">சேமிக்கப்பட்ட தேர்வு மீட்டெடுக்கப்பட்டது</string>
-    <string name="expert_mode_copy_from_bundle_no_patches">இந்த பண்டிலில் பொருத்தமான பேட்ச்கள் எதுவும் இல்லை</string>
-    <string name="expert_mode_no_results">பேட்ச்கள் எதுவும் காணப்படவில்லை</string>
-    <string name="expert_mode_selected_only">தேர்ந்தெடுக்கப்பட்ட பேட்ச்கள் மட்டும்</string>
-    <string name="expert_mode_selected_only_on">தேர்ந்தெடுக்கப்பட்ட பேட்ச்கள் மட்டும் காட்டப்படுகின்றன</string>
-    <string name="expert_mode_selected_only_off">அனைத்து பேட்ச்களும் காட்டப்படுகின்றன</string>
-    <string name="expert_mode_universal_patches">Universal பேட்ச்கள்</string>
-    <string name="expert_mode_new_patches">புதியது</string>
-    <string name="expert_mode_options_customized">தனிப்பயனாக்கப்பட்டது</string>
-    <string name="expert_mode_patch_required_by_installer">தேர்ந்தெடுக்கப்பட்ட நிறுவல் இலக்கிற்குத் தேவைப்படுகிறது</string>
-    <string name="expert_mode_patch_unavailable_for_installer">தேர்ந்தெடுக்கப்பட்ட நிறுவல் இலக்கிற்கு கிடைக்கவில்லை</string>
-    <string name="expert_mode_multiple_sources_warning_title">பல பேட்ச் ஆதாரங்கள் தேர்ந்தெடுக்கப்பட்டுள்ளன</string>
-    <string name="expert_mode_multiple_sources_warning_conflict">வெவ்வேறு ஆதாரங்களில் இருந்து பெறப்பட்ட பேட்ச்கள் ஒன்றாகச் செயல்படும் வகையில் உருவாக்கப்படவில்லை, மேலும் அவை முரண்படலாம் அல்லது ஆப்பை செயலிழக்கச் செய்யலாம்</string>
     <!-- Home Screen - Home Sub-Dialogs -->
-    <string name="home_invalid_signature_title">சரிபார்க்கப்படாத APK</string>
-    <string name="home_invalid_signature_message">&lt;b&gt;%s&lt;/b&gt; க்காக நீங்கள் தேர்ந்தெடுத்த APK, எதிர்பார்க்கப்படும் கையொப்ப சான்றிதழுடன் பொருந்தவில்லை. இது மாற்றப்பட்டிருக்கலாம் அல்லது நம்பகமற்ற மூலத்திலிருந்து வந்திருக்கலாம்</string>
-    <string name="home_invalid_signature_badge">இந்த APK அசலாக இல்லாமல் இருக்கலாம்</string>
-    <string name="home_split_apk_warning_title">Split APK கண்டறியப்பட்டது</string>
-    <string name="home_split_apk_warning_message">"இந்தக் கோப்பு ஒரு APK bundle
-(&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).
-
-சிறந்த முடிவுகளுக்கு, இந்த ஆப் ஒரு &lt;b&gt;முழு APK-வை&lt;/b&gt; பேட்ச் செய்ய பரிந்துரைக்கிறது"</string>
-    <string name="home_split_apk_warning_pick_another">மற்றொரு APK-ஐத் தேர்ந்தெடுக்கவும்</string>
-    <string name="home_dialog_unsupported_version_experimental_label">பரிசோதனை முயற்சியானது</string>
-    <string name="home_dialog_unsupported_version_experimental_description">இந்த பதிப்பு பரிசோதனை ஆதரவைக் கொண்டுள்ளது மற்றும் இது நிலையற்றதாகவோ அல்லது முழுமையற்றதாகவோ இருக்கலாம்</string>
-    <string name="morphe_experimental_app_version_dialog_title">நீங்கள் பரிசோதிக்க விரும்புகிறீர்களா? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">"&lt;b&gt;%s&lt;/b&gt;-ன் இந்த பதிப்பு ஆரம்பகட்ட சோதனை ஆதரவைக் கொண்டுள்ளது.
-
-🔧 இந்த ஆப் பதிப்பிற்காக பேட்ச்கள் மேம்படுத்தப்படுவதால், ஆப் செயல்பாட்டில் விசித்திரமான மாற்றங்கள் அல்லது கண்டறியப்படாத பிழைகள் இருக்கலாம்"</string>
-    <string name="home_dialog_unsupported_version_dialog_title">ஆதரிக்கப்படாத பதிப்பு</string>
-    <string name="home_dialog_unsupported_version_dialog_description">இந்த APK பரிந்துரைக்கப்பட்ட ஆப் பதிப்பு அல்ல. தொடர்வது ஆப் செயல்படாத நிலைக்கு வழிவகுக்கலாம்</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="home_dialog_unsupported_version_dialog_proceed">தொடரவும்</string>
-    <string name="home_dialog_unsupported_version_compatible_versions">பொருத்தமான பதிப்புகள்:</string>
-    <string name="home_dialog_unsupported_version_unsupported_label">ஆதரிக்கப்படவில்லை</string>
     <!-- "Build" here refers to a specific compiled version of the app (versionCode) -->
-    <string name="home_dialog_unsupported_version_build">பில்ட் %s</string>
-    <string name="home_dialog_unsupported_version_build_mismatch_description">இது அதே பதிப்பின் வேறு கட்டமைப்பாகும். பேட்ச்களுக்கு ஒரு குறிப்பிட்ட கட்டமைப்பு தேவை</string>
-    <string name="home_dialog_wrong_package_title">தவறான தொகுப்பு தேர்வு செய்யப்பட்டது</string>
-    <string name="home_dialog_wrong_package_description">தேர்ந்தெடுக்கப்பட்ட APK நீங்கள் பேட்ச் செய்ய நினைத்த அப்ளிகேஷனுக்கானது அல்ல</string>
-    <string name="home_dialog_expected_package">எதிர்பார்க்கப்படும் தொகுப்பு:</string>
-    <string name="home_dialog_selected_package">தேர்ந்தெடுக்கப்பட்ட தொகுப்பு:</string>
-    <string name="home_outdated_patches_dialog_title">பேட்ச்கள் காலாவதியாகியிருக்கலாம்</string>
-    <string name="home_outdated_patches_dialog_message">மொபைல் டேட்டா செயல்பாட்டில் உள்ளது மற்றும் பேட்ச் புதுப்பிப்புகள் முடக்கப்பட்டுள்ளன</string>
-    <string name="home_outdated_patches_dialog_warning">காலாவதியான பேட்ச்களைப் பயன்படுத்தி பேட்ச் செய்வது ஆப் செயலிழக்க காரணமாகலாம்</string>
-    <string name="home_outdated_patches_dialog_update_and_patch">புதுப்பித்து &amp; பேட்ச் செய்யவும்</string>
-    <string name="home_low_disk_space_dialog_title">குறைந்த டிஸ்க் இடம்</string>
     <!-- "%1$s" is the free storage and "%2$s" the amount patching needs, both in gigabytes. -->
-    <string name="home_low_disk_space_dialog_message">%1$s GB இலவச சேமிப்பகம் மட்டுமே உள்ளது. பேட்ச் செய்ய சரியாகச் செயல்பட குறைந்தபட்சம் %2$s GB இலவச இடம் தேவை</string>
-    <string name="home_low_disk_space_dialog_warning">தொடர்வது \"கோப்பு காணப்படவில்லை\" பிழை அல்லது சிதைந்த அவுட்புட் APK-க்கு வழிவகுக்கலாம்</string>
-    <string name="home_simple_bundle_select_title">பேட்ச் மூலத்தைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="home_simple_bundle_select_remember">இந்த ஆப்பிற்கு எப்போதும் இந்த மூலத்தைப் பயன்படுத்தவும்</string>
     <!-- Color picker -->
-    <string name="custom_color">தனிப்பயன் நிறம்</string>
-    <string name="color_picker_shade">நிறச்செறிவு மற்றும் பிரகாசம்</string>
-    <string name="color_picker_hue">ஹியூ</string>
     <!-- Patch Options -->
-    <string name="patch_option_instructions">வழிமுறைகள்</string>
-    <string name="patch_option_enter_value">மதிப்பை உள்ளிடவும்</string>
-    <string name="patch_option_enter_number">எண்ணை உள்ளிடவும்</string>
-    <string name="patch_option_enter_decimal">தசம எண்ணை உள்ளிடவும்</string>
-    <string name="patch_option_slider_edit">துல்லியமான மதிப்பை உள்ளிடவும்</string>
-    <string name="patch_option_slider_range_start">இருந்து</string>
-    <string name="patch_option_slider_range_end">வரை</string>
-    <string name="patch_option_list_duplicate">இந்த மதிப்பு ஏற்கனவே உள்ளது</string>
-    <string name="patch_option_list_empty">மதிப்பு காலியாக இருக்க முடியாது</string>
-    <string name="patch_option_required_missing">%s: தேவையான அனைத்து விருப்பங்களையும் நிரப்பவும்</string>
     <!-- Badge on a patch option whose value differs from the patch's own, which resets it when tapped -->
-    <string name="patch_option_changed">மாற்றப்பட்டது</string>
     <!-- Badge on a patch option that has to be filled in before patching -->
-    <string name="patch_option_required">தேவை</string>
     <!-- Hint under an image patch option. "%1$s" is the width and "%2$s" the height in pixels -->
-    <string name="patch_option_recommended_size">பரிந்துரைக்கப்படுவது: %1$s×%2$s</string>
     <!-- Adaptive Icon Creator -->
-    <string name="adaptive_icon_create">அடாப்டிவ் ஐகானை உருவாக்கவும்</string>
-    <string name="adaptive_icon_select_image">படத்தைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="adaptive_icon_change_image">படத்தை மாற்றவும்</string>
-    <string name="image_load_failed">இந்த உருவப்படத்தை ஏற்ற முடியவில்லை</string>
     <!-- Card of the adaptive icon creator where the picture is placed on the icon -->
-    <string name="adaptive_icon_launcher">லாஞ்சர் ஐகான்</string>
-    <string name="adaptive_icon_gesture_hint">நகர்த்த இழுக்கவும், அளவை மாற்ற பிஞ்ச் செய்யவும்</string>
     <!-- Card of the adaptive icon creator showing the icons as the device draws them -->
-    <string name="adaptive_icon_preview">முன்னோட்டம்</string>
     <!-- Caption under the launcher icon in its own colors -->
-    <string name="adaptive_icon_standard">நிலையான</string>
     <!-- Caption under the launcher icon recolored by the system theme -->
-    <string name="adaptive_icon_themed">தீம் செய்யப்பட்ட</string>
-    <string name="adaptive_icon_background_color">பின்னணி நிறம்</string>
-    <string name="adaptive_icon_reset_transform">நிலை மற்றும் அளவை மீட்டமை</string>
-    <string name="adaptive_icon_no_transparency_warning">இந்த படத்தில் வெளிப்படையான பிக்சல்கள் இல்லை, எனவே தீம் மற்றும் அறிவிப்பு ஐகான்கள் Morphe லோகோவையே வைத்திருக்கும்</string>
-    <string name="adaptive_icon_created_success">அடாப்டிவ் ஐகான் வெற்றிகரமாக உருவாக்கப்பட்டது</string>
-    <string name="adaptive_icon_creation_failed">அடாப்டிவ் ஐகானை உருவாக்குவதில் தோல்வி</string>
-    <string name="adaptive_icon_guide">ஐகான் உருவாக்கும் வழிகாட்டி</string>
-    <string name="adaptive_icon_guide_png_title">வெளிப்படையான பின்னணி கொண்ட PNG-ஐப் பயன்படுத்தவும்</string>
-    <string name="adaptive_icon_guide_png_body">வெளிப்படையான பின்னணியில் உள்ள லோகோ சிறப்பாக செயல்படும், அதன் பின்னணி நிறத்தை கீழே தேர்ந்தெடுக்கவும். வெளிப்படைத்தன்மை இல்லாத படம் முழு ஐகானையும் நிரப்பும், மேலும் தீம் மற்றும் அறிவிப்பு ஐகான்கள் Morphe லோகோவையே வைத்திருக்கும்.</string>
-    <string name="adaptive_icon_guide_safe_zones_title">பாதுகாப்பான மண்டலங்கள்</string>
-    <string name="adaptive_icon_guide_safe_zones_body">இந்த அவுட்லைன் உங்கள் லான்ச்சரின் ஐகான் வடிவத்தைக் காட்டுகிறது, அதற்கு வெளியே உள்ள அனைத்தும் வெட்டப்படும். மற்ற லான்ச்சர்கள் வேறு வடிவங்களைப் பயன்படுத்துகின்றன, எனவே அனைத்து வடிவங்களிலும் தெரியும் இடைவெளி கொண்ட வட்டத்திற்குள் முக்கியமான விவரங்களை வைத்திருங்கள்.</string>
-    <string name="adaptive_icon_guide_notification_title">அறிவிப்பு ஐகான்</string>
-    <string name="adaptive_icon_guide_notification_body">படத்தின் দৃশ্যமான பகுதியிலிருந்து வெட்டப்பட்டு, கோப்பில் எந்த அளவு மார்ஜின் இருந்தாலும், மற்ற ஸ்டேட்டஸ் பார் ஐகான்களைப் போலவே அளவு நிர்ணயிக்கப்படும். முன்னோட்டத்திற்கு கீழே உள்ள ஸ்லைடரைப் பயன்படுத்தி அதைச் சரிசெய்யவும். ஆண்ட்ராய்டு இதை ஒரே நிறத்தில் காட்டும்.</string>
-    <string name="adaptive_icon_guide_monochrome_title">தீம் ஐகான்</string>
-    <string name="adaptive_icon_guide_monochrome_body">லான்ச்சர் ஐகானின் அதே நிலை மற்றும் அளவில் படத்திலிருந்து வெட்டப்பட்டது. ஆண்ட்ராய்டு 13 மற்றும் அதற்குப் பிறகு, தீம் ஐகான்கள் ஆன் செய்யப்பட்ட லான்ச்சர்கள், வால்பேப்பரில் இருந்து அதன் நிறத்தை மாற்றும்.</string>
-    <string name="notification_icon_preview">அறிவிப்பு</string>
     <!-- Header Creator -->
-    <string name="header_creator_create">தனிப்பயன் ஹெடரை உருவாக்கவும்</string>
-    <string name="header_creator_light_theme">லைட் தீம் ஹெடர்</string>
-    <string name="header_creator_dark_theme">டார்க் தீம் ஹெடர்</string>
-    <string name="header_creator_success">ஹெடர் வெற்றிகரமாக உருவாக்கப்பட்டது</string>
-    <string name="header_creator_failed">ஹெடரை உருவாக்குவதில் தோல்வி</string>
-    <string name="header_creator_guide">ஹெடர் உருவாக்கும் வழிகாட்டி</string>
-    <string name="header_creator_guide_image_title">படத் தேவைகள்</string>
-    <string name="header_creator_guide_image_body">வெளிப்படையான பின்னணியுடன் கூடிய PNG ஆப் பாருடன் ஒன்றிப்போகும். கோப்பில் லோகோவைச் சுற்றியுள்ள மார்ஜின்கள் புறக்கணிக்கப்படும், எனவே இது ஸ்டாக் லோகோவின் அளவு மற்றும் இடத்தில் தொடங்கும்.</string>
-    <string name="header_creator_guide_themes_title">ஒளி மற்றும் இருண்ட தீம்கள்</string>
-    <string name="header_creator_guide_themes_body">பெரும்பாலான செயலிகளுக்கு வெளிச்சமான மற்றும் இருண்ட தீம்களுக்குத் தனித்தனி படங்கள் தேவைப்படும். சில செயலிகள் (YouTube Music போன்றவை) இருண்ட தீமை மட்டுமே பயன்படுத்துகின்றன, எனவே அந்தப் பகுதி மட்டுமே காட்டப்படும்.</string>
-    <string name="header_creator_guide_positioning_title">இடப்படுத்துதல் மற்றும் அளவிடுதல்</string>
-    <string name="header_creator_guide_positioning_body">எடிட்டரில் படத்தை இழுத்து பின்ச் செய்யவும், அல்லது ஸ்லைடரைக் கொண்டு அதன் அளவை மாற்றவும். ஸ்டாக் லோகோ இருக்கும் இடத்தை இடைவெளி விட்ட பெட்டி குறிக்கிறது, மேலும் படம் அதனுடன் வரிசையாக அமையும் போது வழிகாட்டிகள் தோன்றும்.</string>
     <!-- Batch patching -->
-    <string name="batch_patch_action">தேர்ந்தெடுக்கப்பட்டதை பேட்ச் செய்</string>
-    <string name="batch_patch_title">தொகுப்பு பேட்ச் செய்தல்</string>
-    <string name="batch_patch_planning">வரிசைเตรียม செய்யப்படுகிறது…</string>
-    <string name="batch_patch_preparing_next">அடுத்த செயலிเตรียม செய்யப்படுகிறது…</string>
-    <string name="batch_patch_progress_counter">%2$s இல் %1$s பேட்ச் செய்யப்படுகிறது</string>
-    <string name="batch_patch_summary">%1$s பேட்ச் செய்யப்பட்டது, %2$s தோல்வியடைந்தது, %3$s தவிர்க்கப்பட்டது</string>
-    <string name="batch_patch_saved_hint">பேட்ச் செய்யப்பட்ட செயலிகள் சேமிக்கப்பட்டன. அவற்றை இப்போது நிறுவவும், அல்லது பிறகு அமைப்புகளில் உள்ள பேட்ச் செய்யப்பட்ட APK பட்டியலில் இருந்து நிறுவவும்</string>
-    <string name="batch_patch_multiple_sources">சில செயலிகள் ஒன்றுக்கு மேற்பட்ட மூலங்களிலிருந்து பேட்ச்களை இணைக்கின்றன, இது மோதல்களை ஏற்படுத்தக்கூடும்</string>
-    <string name="batch_patch_needs_apk">APK கிடைக்கவில்லை, ஒரு கோப்பை இணைக்கவும்</string>
-    <string name="batch_patch_wrong_package">இணைக்கப்பட்ட கோப்பு %s-க்கு உரியது</string>
-    <string name="batch_patch_version_mismatch">பதிப்பு %s பேட்ச்களால் ஆதரிக்கப்படவில்லை</string>
-    <string name="batch_patch_source_saved">அசல் சேமிக்கப்பட்டது</string>
-    <string name="batch_patch_source_installed">நிறுவப்பட்ட செயலி</string>
-    <string name="batch_patch_source_file">இணைக்கப்பட்ட கோப்பு</string>
-    <string name="batch_patch_source_unavailable">APK-வை தயார் செய்ய முடியவில்லை</string>
-    <string name="batch_patch_force_version">எப்படியும் பேட்ச் செய்</string>
-    <string name="batch_patch_force_version_done">இருந்தபோதிலும் வரிசைப்படுத்தப்பட்டது, செயலி செயலிழக்க வாய்ப்புள்ளது</string>
-    <string name="batch_patch_accept_signature_done">இருந்தபோதிலும் வரிசைப்படுத்தப்பட்டது, APK சரிபார்க்கப்படவில்லை</string>
-    <string name="batch_patch_apk_selected">APK தேர்ந்தெடுக்கப்பட்டது</string>
-    <string name="batch_patch_edit_patches">பேட்ச்களைத் தேர்வு செய்க</string>
-    <string name="batch_patch_state_no_apk">APK இல்லை</string>
-    <string name="batch_patch_state_no_patches">பேட்ச்கள் இல்லை</string>
-    <string name="batch_patch_state_no_selection">எதுவும் தேர்ந்தெடுக்கப்படவில்லை</string>
-    <string name="batch_patch_no_selection">கிடைக்கக்கூடிய பேட்ச்களில் எதுவும் தேர்ந்தெடுக்கப்படவில்லை</string>
-    <string name="batch_patch_policy_install">முடிந்ததும் நிறுவு</string>
-    <string name="batch_patch_policy_install_description">வரிசை முடிந்தவுடன் ஒவ்வொரு பேட்ச் செய்யப்பட்ட ஆப்பையும் நிறுவுகிறது. ஆஃப் செய்தால் APK-க்கள் பின்னர் பயன்படுத்த சேமிக்கப்படும்</string>
-    <string name="batch_patch_policy_mount">முடித்தவுடன் மவுண்ட் செய்யவும்</string>
-    <string name="batch_patch_policy_mount_description">வரிசை முடிந்தவுடன் ஒவ்வொரு பேட்ச் செய்யப்பட்ட ஆப்ஸையும் மவுண்ட் செய்யும். ஆஃப் செய்தால் APK-கள் பின்னர் பயன்படுத்த வைக்கப்படும்</string>
-    <string name="batch_patch_policy_install_mount">முடித்தவுடன் நிறுவு அல்லது மவுண்ட் செய்</string>
-    <string name="batch_patch_policy_install_mount_description">வரிசை முடிந்தவுடன் ஒவ்வொரு பேட்ச் செய்யப்பட்ட ஆப்ஸையும் நிறுவும் அல்லது மவுண்ட் செய்யும். ஆஃப் செய்தால் APK-கள் பின்னர் பயன்படுத்த வைக்கப்படும்</string>
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="batch_patch_start">தொடங்கு</string>
-    <string name="batch_patch_stop_title">பேட்ச் செய்வதை நிறுத்த வேண்டுமா?</string>
-    <string name="batch_patch_stop_description">தற்போது பேட்ச் செய்யப்படுபடும் ஆப் மற்றும் வரிசையில் காத்திருக்கும் அனைத்தும் ரத்து செய்யப்படும்</string>
     <!-- Label of a footer button beside "Done". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="batch_patch_install_all">அனைத்தையும் நிறுவு</string>
-    <string name="batch_patch_install_failed">நிறுவுதல் தோல்வியுற்றது</string>
-    <string name="batch_patch_in_progress">தொகுதி பேட்ச்சிங் ஏற்கனவே இயங்கிக்கொண்டிருக்கிறது</string>
-    <string name="batch_patch_nothing_outdated">பேட்ச் செய்யப்பட்ட அனைத்து ஆப்-களும் புதுப்பிக்கப்பட்டுள்ளன</string>
-    <string name="batch_queue_add_action">வரிசையில் சேர்க்கவும்</string>
-    <string name="batch_queue_pending_subtitle">ஆய்வு செய்து தொடங்கத் தட்டவும்</string>
-    <string name="batch_queue_clear_title">வரிசையை அழிக்க வேண்டுமா?</string>
-    <string name="batch_queue_clear_description">வரிசையில் உள்ள அனைத்து செயலிகளும் நீக்கப்படும்</string>
-    <string name="shortcut_repatch_short">மறு-பேட்ச்</string>
-    <string name="shortcut_repatch_long">காலாவதியான செயலிகளை மீண்டும் பேட்ச் செய்யவும்</string>
-    <string name="shortcut_check_updates_short">புதுப்பிப்புகளைச் சரிபார்க்கவும்</string>
-    <string name="shortcut_check_updates_long">பேட்ச் புதுப்பிப்புகளைச் சரிபார்க்கவும்</string>
-    <string name="shortcut_patch_app">%s-ஐ பேட்ச் செய்யவும்</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_title">இந்த ஆப்பை நீக்க வேண்டுமா?</string>
-    <string name="home_app_info_uninstall_removes_data">ஆப்பும் அதன் தரவுகளும் இந்த சாதனத்திலிருந்து நீக்கப்படும்</string>
-    <string name="batch_uninstall_confirm_body">தேர்ந்தெடுக்கப்பட்ட செயலிகள் உங்கள் சாதனத்திலிருந்து நிரந்தரமாக நீக்கப்படும்</string>
-    <string name="home_app_info_remove_app_warning">இது நிரந்தரமாக நீக்கும்:</string>
-    <string name="home_app_info_delete_item_database">தரவுத்தளப் பதிவு</string>
-    <string name="home_app_info_delete_item_patched_apk">பேட்ச் செய்யப்பட்ட APK கோப்பு</string>
-    <string name="home_app_info_delete_item_original_apk">அசல் APK கோப்பு</string>
-    <string name="home_app_info_delete_preservation_note">உங்கள் பேட்ச் தேர்வுகள் மற்றும் விருப்பங்கள் எதிர்கால பேட்ச்சிங்கிற்காகப் பாதுகாеப்படும்</string>
-    <string name="home_app_info_patches_name_default">பேட்ச்கள்</string>
-    <string name="home_app_info_patches_name_fallback">பெயரிடப்படவில்லை</string>
-    <string name="home_app_info_patches_source_removed">நீக்கப்பட்ட பேட்ச் ஆதாரம்</string>
-    <string name="home_app_info_patches_replace_fail">பேட்ச்களை இறக்குமதி செய்ய முடியவில்லை: %s</string>
-    <string name="home_app_info_repatch_no_original_apk">அசல் APK கண்டறியப்படவில்லை. இந்த செயலியை மீண்டும் பேட்ச் செய்ய முடியாது</string>
-    <string name="home_app_info_original_package_name">அசல் தொகுப்பு பெயர்</string>
-    <string name="home_app_info_applied_patches">பயன்படுத்தப்பட்ட பேட்ச்கள்</string>
-    <string name="home_app_info_patch_source_used">பயன்படுத்தப்பட்ட பேட்ச் ஆதாரம்</string>
-    <string name="home_app_info_install_type_custom_installer">தனிப்பயன் நிறுவி</string>
-    <string name="home_app_info_install_type_system_installer">சிஸ்டம் நிறுவி</string>
-    <string name="home_app_info_install_type_play_store">Play Store நிறுவல்</string>
-    <string name="home_app_info_install_type_root_play_store">ரூட் பிளே ஸ்டோர் நிறுவல்</string>
-    <string name="home_app_info_install_type_shizuku_play_store">ஷிஸுகு பிளே ஸ்டோர் நிறுவல்</string>
-    <string name="home_app_info_patch_update_available">பேட்ச் புதுப்பிப்பு உள்ளது</string>
-    <string name="home_app_info_patch_update_available_description">பேட்ச்களின் புதிய பதிப்பு கிடைக்கிறது. சமீபத்திய மேம்பாடுகள் மற்றும் சரிசெய்தல்களைப் பெற உங்கள் செயலியை மீண்டும் பேட்ச் செய்யவும்</string>
-    <string name="home_app_info_app_update_available">செயலி புதுப்பிப்பு உள்ளது</string>
-    <string name="home_app_info_app_update_available_description">பேட்ச் ஆதாரங்கள் இந்தச் செயலியின் புதிய பதிப்பிற்கு ஆதரவளிக்கின்றன. அந்தப் பதிப்பிற்கு மாற மீண்டும் பேட்ச் செய்யவும்</string>
-    <string name="home_app_info_newest_supported_version">ஆதரவு பெற்ற புதிய பதிப்பு</string>
-    <string name="home_app_info_version_move">நிறுவப்பட்டது %1$s, ஆதரிக்கப்படும் புதிய பதிப்பு %2$s</string>
-    <string name="home_app_info_version_restore">நிறுவப்பட்டது %1$s, பேட்ச் செய்யப்பட்டது %2$s</string>
-    <string name="home_app_info_app_deleted_warning">ஆப் நீக்கப்பட்டது</string>
-    <string name="home_app_info_app_deleted_description">இந்த ஆப் Morphe-க்கு வெளியே நீக்கப்பட்டது. செயல்பாட்டை மீட்டெடுக்க அதை மீண்டும் பேட்ச் செய்யவும்</string>
-    <string name="home_app_info_not_patched_description">இந்த செயலியின் பேட்ச் செய்யப்படாத பதிப்பு நிறுவப்பட்டுள்ளது. Morphe இன்னும் அதன் முந்தைய பேட்ச் பதிவைக் கொண்டுள்ளது</string>
-    <string name="home_app_info_mount_replaced_description">மவுண்ட் செய்யப்பட்ட ஆப் மற்றொரு பதிப்பால் மாற்றப்பட்டது, எனவே பேட்ச் இனி பொருந்தாது. Restore செய்வதன் மூலம் பேட்ச் செய்யப்பட்ட பதிப்பை மீண்டும் கொண்டு வரலாம்</string>
-    <string name="home_app_info_mount_replaced_by_play_store_description">Google Play மவுண்ட் செய்யப்பட்ட ஆப்பை அப்டேட் செய்தது, எனவே பேட்ச் இனி பொருந்தாது. Restore செய்வதன் மூலம் பேட்ச் செய்யப்பட்ட பதிப்பை மீண்டும் கொண்டு வரலாம். தொடர்ந்து பேட்ச் செய்யப்பட்ட நிலையில் வைத்திருக்க Google Play-ல் இதற்கான ஆட்டோ-அப்டேட்டை ஆஃப் செய்யவும்</string>
-    <string name="app_links_title">ஆதரிக்கப்படும் வலை இணைப்புகள்</string>
-    <string name="app_links_description">Android 12+ இல், அங்கீகரிக்கப்பட்ட unless தவிர, ஆதரிக்கப்படும் டொமைன்களுக்கான இணைப்புகள் இயல்பாகவே உங்கள் உலாவியில் திறக்கும்</string>
-    <string name="app_links_unverified_banner_title">வலை இணைப்புகள் சரிபார்க்கப்படவில்லை</string>
-    <string name="app_links_unverified_banner_description">ஆதரிக்கப்படும் வலை இணைப்புகள் தற்போது இந்தச் செயலிக்கு பதிலாக உங்கள் உலாவியில் திறக்கின்றன</string>
-    <string name="app_links_enable_auto">தானாக இயக்கவும்</string>
-    <string name="app_links_enable_auto_in_progress">இணைப்புகளை இயக்குகிறது…</string>
-    <string name="app_links_open_settings">இணைப்பு அமைப்புகளைத் திற</string>
-    <string name="app_links_repair_success">செயலி இணைப்புகள் வெற்றிகரமாக இயக்கப்பட்டன</string>
-    <string name="app_links_repair_failed">செயலி இணைப்புகளைத் தானாக இயக்க முடியவில்லை</string>
-    <string name="app_links_all_verified">ஆதரிக்கப்படும் அனைத்து இணைப்புகளும் இந்த செயலியில் திறக்குமாறு அமைக்கப்பட்டுள்ளன</string>
-    <string name="app_links_fix">இணைப்புகளைச் சரிசெய்</string>
-    <string name="configure">கட்டமைக்கவும்</string>
-    <string name="patcher_rename_title">இது ஒரு குளோனை நிறுவும்</string>
-    <string name="patcher_rename_description">பேட்ச்கள் இந்த ஆப்பை அவற்றின் சொந்த பேக்கேஜ் பெயரின் கீழ் உருவாக்கியுள்ளன, எனவே இதை நிறுவுவது &lt;b&gt;%s&lt;/b&gt;-ஐ அப்டேட் செய்வதற்கு பதிலாக அதன் பக்கத்திலேயே ஒரு குளோனைச் சேர்க்கும்</string>
-    <string name="patcher_rename_result_package">இப்படி நிறுவப்படும்</string>
-    <string name="patcher_rename_replaces">அந்த பெயரில் ஒரு ஆப் ஏற்கனவே நிறுவப்பட்டுள்ளது மற்றும் அது மாற்றப்படும்</string>
-    <string name="home_app_info_apk_size">APK அளவு</string>
-    <string name="home_app_info_cpu_arch">CPU கட்டமைப்பு</string>
     <!-- Home Screen - Root Mode -->
-    <string name="root_install_apk_required">ரூட் பயன்முறையில், பேட்ச் செய்வதற்கு முன் உங்கள் சாதனத்தில் அசல் APK நிறுவப்பட்டிருக்க வேண்டும்</string>
-    <string name="root_pre_patch_installer_title">பேட்ச் முறையைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="root_pre_patch_installer_description">உங்கள் சாதனத்திற்கு ரூட் அணுகல் உள்ளது. இந்த ஆப் ரூட் மவுண்டிற்காக பேட்ச் செய்யப்பட வேண்டுமா அல்லது நிலையான நிறுவலா என்பதைத் தேர்வு செய்யவும்</string>
-    <string name="root_pre_patch_installer_mount_title">ரூட் மவுண்ட் பயன்முறை</string>
-    <string name="root_pre_patch_installer_mount_description">ரூட் மவுண்டிற்காக பேட்ச் செய்கிறது, பின்னர் பொருத்தமான ஸ்டாக் ஆப் மீது APK-வை மவுண்ட் செய்கிறது. GmsCore தேவையில்லை</string>
-    <string name="root_mount_module_unmount_warning">KernelSU-வில் \"Unmount modules by default\" ஆன் செய்யப்பட்டிருந்தால், KernelSU &gt; Superuser &gt; நீங்கள் மவுண்ட் செய்த ஆப் &gt; Profile &gt; Custom என்பதற்குச் சென்று \"Unmount modules\" என்பதை ஆஃப் செய்யவும். இல்லையெனில், Morphe-இல் மவுண்ட் செய்யப்பட்டதாகக் காட்டப்பட்டாலும், மவுண்ட் செய்யப்பட்ட பேட்ச் செய்யப்பட்ட APK செயல்படாமல் போகலாம்</string>
-    <string name="root_pre_patch_installer_standard_title">நிலையான நிறுவல் பயன்முறை</string>
-    <string name="root_pre_patch_installer_standard_description">GmsCore ஆதரவுடன் ஒரு சாதாரண APK-வாக பேட்ச் செய்கிறது. பேட்ச் செய்த பிறகு உங்கள் நிறுவி அமைப்புகள் பயன்படுத்தப்படும்</string>
-    <string name="root_pre_patch_installer_hint">அமைப்புகள் &gt; பேட்சிங் &gt; நிறுவல் &gt; நிறுவி தேர்வு தூண்டுதல் ஆன் செய்யப்பட்டிருக்கும்போது கேட்கப்படுகிறது. பேட்சிங் செய்த பிறகு பேட்ச் பயன்முறையை மாற்ற முடியாது</string>
     <!-- Patcher Screen -->
-    <string name="patcher_error_copied">பிழை கிளிப்போர்டில் நகலெடுக்கப்பட்டது</string>
-    <string name="patcher_error_log">பிழைப் பதிவு</string>
-    <string name="patcher_error_technical">தொழில்நுட்ப விவரங்கள்</string>
-    <string name="patcher_error_dialog_diagnostics">கண்டறிதல்</string>
     <!-- Titles of the cards the expert log shows in place of the raw start and success log lines -->
-    <string name="patcher_card_started">பேட்சிங் தொடங்கப்பட்டது</string>
-    <string name="patcher_card_succeeded">பேட்சிங் வெற்றி பெற்றது</string>
     <!-- Field labels, shown in a column beside their values. Keep them short, a long one is cut off rather than wrapped -->
-    <string name="patcher_field_app">செயலி</string>
-    <string name="patcher_field_package">தொகுப்பு</string>
-    <string name="patcher_field_failed_patch">பேட்ச் தோல்வியுற்றது</string>
-    <string name="patcher_field_source">மூலம்</string>
-    <string name="patcher_field_split">பிரித்தெடுக்கப்பட்ட APK</string>
-    <string name="patcher_field_manager">மேலாளர்</string>
-    <string name="patcher_field_runtime">இயக்கநேரம்</string>
     <!-- Native code libraries (.so files) packed inside the APK -->
-    <string name="patcher_field_libraries">நூலகங்கள்</string>
-    <string name="patcher_field_android">Android</string>
-    <string name="patcher_field_device">சாதனம்</string>
     <!-- Free and total RAM of the device, never its storage -->
-    <string name="patcher_field_memory">நினைவகம்</string>
-    <string name="patcher_field_storage">சேமிப்பு</string>
     <!-- Size of the patched APK, once patching finished -->
-    <string name="patcher_field_output_size">வெளியீட்டு அளவு</string>
     <!-- How long patching took -->
-    <string name="patcher_field_time">நேரம்</string>
     <!-- Average and peak heap the patcher held while it ran -->
-    <string name="patcher_field_memory_average">சராசரி நினைவகம்</string>
-    <string name="patcher_field_memory_max">அதிகபட்ச நினைவகம்</string>
     <!-- Fastest read or write rate reached while patching, in data per second -->
-    <string name="patcher_field_io_peak">சேமிப்பக I/O உச்சம்</string>
-    <string name="patcher_field_value_unknown">தெரியவில்லை</string>
     <!-- Value of "Libraries": the libraries this device cannot use were dropped from the patched APK -->
-    <string name="patcher_field_value_stripped">நீக்கப்பட்டது</string>
     <!-- Value of "Libraries": every library was left in the patched APK -->
-    <string name="patcher_field_value_kept">தொடரப்பட்டது</string>
-    <string name="patcher_tab_logs">பேட்சர் பதிவுகள்</string>
-    <string name="patcher_tab_game">விளையாட்டுகள்</string>
-    <string name="patcher_logs_waiting">பதிவு வெளியீட்டிற்காக காத்திருக்கிறது…</string>
-    <string name="patcher_logs_lost">செயலியை மீண்டும் தொடங்கும் போது பதிவு வெளியீடு சேமிக்கப்படாது</string>
-    <string name="patcher_long_step_warning">இந்த படிக்கு சிறிது நேரம் ஆகலாம். தயவுசெய்து காத்திருக்கவும்…</string>
-    <string name="patcher_installing_subtitle">தொடங்க ஏறக்குறைய தயாராக உள்ளது! 🎸</string>
-    <string name="patcher_success_title">அனைத்தும் முடிந்தது! 🎉</string>
-    <string name="patcher_success_subtitle">உங்கள் செயலி பேட்ச் செய்யப்பட்டு நிறுவப்பட்டது!</string>
-    <string name="patcher_mounted_subtitle">உங்கள் ஆப் பேட்ச் செய்யப்பட்டு மவுண்ட் செய்யப்பட்டுள்ளது!</string>
-    <string name="patcher_complete_title">பேட்ச் செய்தல் நிறைவடைந்தது! ✨</string>
-    <string name="patcher_failed_title">மன்னிக்கவும்! ஏதோ தவறு நடந்துவிட்டது</string>
-    <string name="patcher_failed_dialog_title">பேட்ச் செய்தல் தோல்வியடைந்தது</string>
-    <string name="patcher_error_details">பிழை விவரங்கள்</string>
-    <string name="patcher_change_patches">திருத்தங்களை மாற்றவும்</string>
-    <string name="patcher_unknown_error">தெரியாத பிழை ஏற்பட்டது</string>
-    <string name="patcher_split_step_extracting">பிரிக்கப்பட்ட APK-களை பிரித்தெடுக்கிறது</string>
-    <string name="patcher_split_step_merging">%s இணைக்கப்படுகிறது</string>
-    <string name="patcher_split_step_writing">இணைக்கப்பட்ட APK எழுதப்படுகிறது</string>
-    <string name="patcher_split_step_finalizing">இணைக்கப்பட்ட APK இறுதி செய்யப்படுகிறது</string>
-    <string name="patcher_conflict_title">பேக்கேஜ் முரண்பாடு</string>
-    <string name="patcher_conflict_subtitle">தற்போதுள்ள பதிப்பை நீங்கள் அகற்ற வேண்டும்</string>
-    <string name="patcher_conflict_hint">பேட்ச் செய்யப்பட்ட செயலி, நிறுவப்பட்ட பதிப்பை விட வேறு சான்றிதழைப் பயன்படுத்துகிறது. நிறுவி நீக்குவது அனைத்து செயலி தரவுகளையும் அழித்துவிடும்</string>
-    <string name="patcher_installed_conflict_title">நிறுவி நீக்குதல் அவசியம்</string>
-    <string name="patcher_installed_conflict_body">"Morphe தனது சொந்த சான்றிதழைப் பயன்படுத்தி செயலிகளை பேட்ச் செய்கிறது, இது அசலிலிருந்து மாறுபட்டது. பேட்ச் செய்யப்பட்ட செயலியை நிறுவும் முன், ஏற்கனவே உள்ள பதிப்பை நீக்க ஆண்ட்ராய்டு கோருகிறது.
-
-நீக்குவது அனைத்து செயலி தரவுகளையும் நிரந்தரமாக அழித்துவிடும்"</string>
-    <string name="patcher_install_error_title">நிறுவல் பிழை</string>
-    <string name="patcher_mount_error_title">மவுண்ட் பிழை</string>
-    <string name="patcher_install_error_subtitle">அகற்றிவிட்டு மீண்டும் நிறுவ முயற்சிக்கவும்</string>
-    <string name="patcher_ready_to_mount_subtitle">மவுண்ட் செய்ய கீழே உள்ள பொத்தானை அழுத்தவும்</string>
-    <string name="patcher_patches_excluded_for_installer">இந்த நிறுவல் முறைக்குக் கிடைக்கவில்லை மற்றும் விலக்கப்பட்டுள்ளது: %s</string>
-    <string name="patcher_back_to_game_hint">உங்கள் விளையாட்டிற்குத் திரும்பச் செல்ல %1$s என்பதைத் தட்டவும்</string>
-    <string name="patcher_storage_permission_dialog_title">சேமிப்பகப் பாதையை அணுக முடியவில்லை</string>
-    <string name="patcher_incompatible_patcher_title">புதுப்பிப்பு தேவை</string>
-    <string name="patcher_incompatible_patcher_description">மூல &lt;b&gt;%1$s&lt;/b&gt;க்கு &lt;b&gt;%2$s&lt;/b&gt; அல்லது அதற்குப் பிந்தைய patcher தேவை. அதைப் பயன்படுத்த Morphe-ஐ மேம்படுத்தவும்</string>
-    <string name="patcher_storage_permission_description_api30">ஒன்று அல்லது அதற்கு மேற்பட்ட பேட்ச் விருப்பங்கள் Morphe-ஆல் படிக்க முடியாத பாதைகளைக் குறிக்கின்றன. சேமிப்பக அணுகலை வழங்கி பொத்தானைத் தட்டவும், அதன் பிறகு பேட்ச் செய்தல் தானாகவே தொடங்கும்</string>
-    <string name="patcher_storage_permission_description_legacy">ஒன்று அல்லது அதற்கு மேற்பட்ட பேட்ச் விருப்பங்கள் அணுக முடியாத பாதைகளைக் குறிக்கின்றன. பேட்ச் விருப்பங்களில் பாதைகளை மேம்படுத்தி மீண்டும் முயற்சிக்கவும்</string>
-    <string name="patcher_storage_permission_grant">சேமிப்பக அனுமதியை வழங்கவும்</string>
-    <string name="patcher_storage_permission_denied_warning">சேமிப்பக அனுமதி மறுக்கப்பட்டது. இந்தப் பாதையைப் பயன்படுத்த அனுமதியை வழங்கவும், அல்லது கோப்புகளை செயலியின் தனிப்பட்ட கோப்பகத்திற்கு நகர்த்தவும்</string>
-    <string name="patcher_storage_permission_open_settings">சேமிப்பக அமைப்புகளைத் திறக்கவும்</string>
-    <string name="patcher_storage_badge_denied">அனுமதி மறுக்கப்பட்டது</string>
-    <string name="patcher_storage_badge_missing">காணவில்லை</string>
-    <string name="patcher_storage_badge_rejected">பயன்படுத்த முடியாது</string>
-    <string name="batch_patch_option_paths_skipped">பேட்ச் ஆப்ஷன் கோப்புகள் இல்லை மற்றும் அவை தவிர்க்கப்படும்: %1$s</string>
-    <string name="patcher_missing_patches_title">சில பேட்ச்கள் மறைந்துவிட்டன</string>
-    <string name="patcher_missing_patches_description">இந்த ஆப்பிற்கு சேமிக்கப்பட்ட தேர்வில் உள்ள சில பேட்ச்கள், தற்போது எந்தவொரு இயக்கப்பட்ட மூலத்திலும் இல்லை. தொடர்ந்தால் அவற்றின்றி ஆப் பேட்ச் செய்யப்படும்</string>
-    <string name="patcher_missing_patches_label">இனி வழங்கப்படவில்லை</string>
-    <string name="patcher_option_paths_gone_title">பேட்ச் விருப்ப கோப்புகள் காணவில்லை</string>
-    <string name="patcher_option_paths_gone_description">ஒன்று அல்லது அதற்கு மேற்பட்ட பேட்ச் விருப்பங்கள் இனி இல்லாத கோப்புகளைக் குறிக்கின்றன. அவை இல்லாமல் பேட்ச் செய்ய அந்தப் பாதைகளை நீக்கவும், அல்லது கோப்புகளை மீண்டும் வைத்து மீண்டும் முயற்சிக்கவும்</string>
-    <string name="patcher_option_paths_rejected_title">பேட்ச் விருப்ப கோப்புகளைப் பயன்படுத்த முடியாது</string>
-    <string name="patcher_option_paths_rejected_description">ஒன்று அல்லது அதற்கு மேற்பட்ட பேட்ச் விருப்பங்கள் விடுபட்ட கோப்புகளைக் குறிக்கின்றன அல்லது பேட்ச் கோரும் தகவல்களைக் கொண்டிருக்கவில்லை. அவை இல்லாமல் பேட்ச் செய்ய அந்தப் பாதைகளை நீக்கவும், அல்லது விருப்ப வழிமுறைகளில் விவரிக்கப்பட்டுள்ளபடி கோப்புகளைச் சரிசெய்து மீண்டும் முயற்சிக்கவும்</string>
-    <string name="patcher_option_paths_clear">பாதைகளை நீக்கிவிட்டுத் தொடரவும்</string>
-    <string name="patcher_storage_permission_hint">குறிப்பு: கோப்புகளை /Android/data/app.morphe.manager/files/ க்கு நகர்த்தவும் - கூடுதல் அனுமதிகள் தேவையில்லை</string>
     <!-- Patcher Screen - Patcher Steps -->
-    <string name="patcher_step_group_preparing">தயாராகிறது</string>
-    <string name="patcher_step_load_patches">பேட்ச்களை ஏற்றுகிறது</string>
-    <string name="patcher_step_prepare_split_apk">பிரிக்கப்பட்ட APK-வை இணைக்கிறது</string>
-    <string name="patcher_step_unpack">APK கோப்பை வாசித்தல்</string>
-    <string name="patcher_step_group_saving">சேமிக்கப்படுகிறது</string>
-    <string name="patcher_step_write_patched">பேட்ச் செய்யப்பட்ட APK கோப்பை எழுதுகிறது</string>
-    <string name="patcher_step_sign_apk">பேட்ச் செய்யப்பட்ட APK கோப்பில் கையொப்பமிடுகிறது</string>
     <!-- Battery optimization pre-flight dialog -->
-    <string name="battery_optimization_dialog_title">பின்னணி பேட்சிங் பாதுகாப்பு</string>
-    <string name="battery_optimization_dialog_description">செயலி மினிமைஸ் செய்யப்படும்போது சில சாதனங்கள் பேட்சரை நிறுத்தக்கூடும். பேட்சிங் நம்பகத்தன்மையுடன் முடிவதை உறுதி செய்ய பேட்டரி கட்டுப்பாடுகள் இல்லாமல் Morphe இயங்க அனுமதிக்கவும்</string>
-    <string name="battery_optimization_not_now">இப்போது வேண்டாம்</string>
     <!-- Patcher Screen - Patcher Worker -->
-    <string name="patcher_notification_title">பேட்ச் செய்யும் பணி நடைபெற்று வருகிறது…</string>
-    <string name="patcher_notification_text">பேட்சருக்குத் திரும்பத் தட்டவும்</string>
-    <string name="patcher_stop_title">பேட்ச் செய்வதை நிறுத்த வேண்டுமா?</string>
-    <string name="patcher_stop_discards">இதுவரை நடந்த முன்னேற்றம் நீக்கப்படும் மற்றும் எதுவும் நிறுவப்படாது</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
-    <string name="patcher_keep_patching">தொடர்ந்து பேட்ச் செய்யவும்</string>
     <!-- Patcher Screen - Patcher Messages -->
-    <string name="patcher_message_1">உங்கள் செயலியை அற்புதமான ஒன்றாக மாற்றுகிறோம்… 🏆</string>
-    <string name="patcher_message_2">பழைய செயலிகளுக்கு புதிய நுணுக்கங்களைக் கற்பிக்கிறோம்… 🎩</string>
-    <string name="patcher_message_3">உங்கள் செயலிக்கு டிஜிட்டல் மேம்பாடு செய்கிறோம்… 🔧</string>
-    <string name="patcher_message_4">டிஜிட்டல் மாயாஜாலத்தை உருவாக்குகிறது… ☕</string>
-    <string name="patcher_message_5">காபி இடைவேளை பரிந்துரைக்கப்படுகிறது… ☕</string>
-    <string name="patcher_message_6">வெளியே பாருங்கள், வானிலை நன்றாக இருக்கிறது… 🌤️</string>
-    <string name="patcher_message_7">1 மற்றும் 0-களை சரிசெய்கிறது… 🤖</string>
-    <string name="patcher_message_8">டிஜிட்டல் சிக்கல்களைத் தீர்க்கிறது… 🍝</string>
     <!-- Morphe patches fix YouTube bugs that Google still has not fixed. -->
-    <string name="patcher_message_9">பேட்ச் செய்யப்படாத செயலியில் உள்ள பிழைகளை சரிசெய்கிறது… 🪲</string>
-    <string name="patcher_message_10">சிறந்த பேட்ச்களுக்காகக் காத்திருப்பது பலன் தரும்… ⏳</string>
-    <string name="patcher_message_11">பிக்சல்கள் மின்னும் வரை மெருகேற்றப்படுகிறது… 💎</string>
-    <string name="patcher_message_12">கேப்டன் \"Patching in progress\" அடையாளத்தை அணைக்கும் வரை தயவுசெய்து அமர்ந்திருக்கவும்… 💺✈️</string>
-    <string name="patcher_message_13">உங்கள் பேட்ச் செய்யப்பட்ட ஆப், சூடாகவும் பசுமையாகவும் தயாராகிறது… 🍳</string>
     <!-- "bytecode" can be translated from "the app code" -->
-    <string name="patcher_message_14">பைட் கோடுடன் மரியாதையுடன் பேச்சுவார்த்தை நடத்துகிறது… 🤝</string>
     <!-- Space flight communications callout. -->
-    <string name="patcher_message_15">அனைத்து அமைப்புகளும் இயல்பாக உள்ளன… பேட்சிங் பாதை சீராக உள்ளது… 🚀</string>
-    <string name="patcher_message_16">டிஜிட்டல் எலுமிச்சையிலிருந்து சாறு பிழிவது போல, கூடுதல் சக்தியைப் பிழிந்து எடுக்கிறோம்… 🍋</string>
-    <string name="patcher_message_17">புதிய, சிறந்த வடிவத்தை ஏற்றுக்கொள்ளும்படி செயலையும் ஊக்குவிக்கிறோம்… 🌱</string>
     <!-- Quantum physics (box emoji is a reference to Schrödinger's cat). -->
-    <string name="patcher_message_18">செயலியின் சூப்பர்பொசிஷனை பேட்ச் செய்யப்படாத நிலையிலிருந்து பேட்ச் செய்யப்பட்ட நிலைக்கு மாற்றுகிறோம்… 📦⚛️</string>
     <!-- Throw away reference to a Saturday Night Live sketch. "fever" means sickness or the flu. "prescription" means medical treatment or can be translated from "cure" -->
-    <string name="patcher_message_19">உங்கள் செயலி காய்ச்சலில் இருக்கிறது, இதற்கு ஒரே மருந்து கூடுதல் பேட்ச்கள் மட்டுமே… 🩺🔔</string>
-    <string name="patcher_message_20">தேவையற்றவற்றை நீக்குகிறோம். தயவுசெய்து காத்திருக்கவும்… 🗑️</string>
     <!-- Expert patcher Screen -->
-    <string name="patching_app">ஆப் பேட்ச் செய்யப்படுகிறது</string>
-    <string name="memory_usage">நினைவகப் பயன்பாடு</string>
-    <string name="cpu_usage">CPU பயன்பாடு</string>
-    <string name="storage_io_usage">சேமிப்பக I/O</string>
     <!-- Patcher Screen - Other hidden strings -->
-    <string name="applying_patches">பேட்ச்களைப் பயன்படுத்துகிறது</string>
-    <string name="failed_to_execute_patch">%s-ஐப் பயன்படுத்துவதில் தோல்வி</string>
-    <string name="patched_app_save_failed_toast">பேட்ச் செய்யப்பட்ட செயலியைச் சேமிப்பதில் தோல்வி</string>
-    <string name="plugin_activity_dialog_body">இந்த பிளகினுடன் தொடர பயனர் தொடர்பு தேவை</string>
-    <string name="patcher_process_killed_message">பேட்சர் முடிவதற்கு முன்பே சிஸ்டம் அதை நிறுத்தியது, பொதுவாக நினைவகத்தை விடுவிப்பதற்காக இவ்வாறு நடக்கும். மற்ற செயலிகளை மூடிவிட்டு மீண்டும் முயற்சிக்கவும்</string>
-    <string name="patcher_process_crashed_message">பேட்சர் முடிவதற்கு முன்பே செயலிழந்தது. இது மீண்டும் நடந்தால், அமைப்புகளில் \"Use embedded VM\" என்பதை அணைத்துவிட்டு, லாக் கோப்புடன் இந்தப் பிரச்சனையைப் புகாரியுங்கள்</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
-    <string name="patcher_out_of_memory_message">%1$s MB ஹீப் நினைவகத்துடன் பேட்சர் இயங்கும்போது நினைவகம் தீர்ந்துவிட்டது. தேர்ந்தெடுக்கப்பட்ட பேட்ச்களுக்கு இந்த ஆப் மிகவும் பெரியது. குறைந்த பேட்ச் ஆதாரங்களுடன் பேட்ச் செய்ய முயற்சிக்கவும், அல்லது குறைவான பேட்ச்களைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="install_app_success">வெற்றிகரமாக நிறுவப்பட்டது</string>
-    <string name="install_app_fail">செயலியை நிறுவ முடியவில்லை: %s</string>
-    <string name="install_ignore_signature">எப்படியும் நிறுவு</string>
-    <string name="install_ignore_signature_description">ஆப் தரவை வைத்திருக்கும், ஆனால் ரூட் மாட்யூல் ஆண்ட்ராய்டின் கையொப்ப சரிபார்ப்பை முடக்கியிருந்தால் மட்டுமே இது வேலை செய்யும்</string>
-    <string name="uninstall_app_fail">செயலியை நீக்க முடியவில்லை: %s</string>
-    <string name="uninstall_app_unverified">அப்படியே விடப்பட்டது: நிறுவப்பட்ட செயலி, பேட்ச் செய்யப்பட்ட பில்ட் தானா என்பதை Morphe-ஆல் சரிபார்க்க முடியவில்லை</string>
-    <string name="launch_app_unverified">நிறுவப்பட்ட ஆப், அது பேட்ச் செய்த பில்ட் என்பதை Morphe சரிபார்க்க முடியவில்லை</string>
-    <string name="uninstall_timeout">நீக்குவதற்கான கால அவகாசம் முடிந்தது</string>
-    <string name="save_apk_success">APK சேமிக்கப்பட்டது</string>
-    <string name="saved_app_export_failed">பேட்ச் செய்யப்பட்ட செயலியை ஏற்றுமதி செய்ய முடியவில்லை</string>
-    <string name="saved_app_removed_toast">சேமிக்கப்பட்ட பேட்ச் செயலி நீக்கப்பட்டது</string>
-    <string name="saved_app_launch_unavailable">செயலியைத் திறப்பதற்கு முன் அதை நிறுவவும்</string>
-    <string name="package_name">தொகுப்பு பெயர்</string>
-    <string name="failed_to_mount">நிறுவ முடியவில்லை: %s</string>
-    <string name="failed_to_unmount">நீக்க முடியவில்லை: %s</string>
     <!-- Patcher Screen - Mini-games -->
-    <string name="mini_game_score">மதிப்பெண் %s</string>
-    <string name="mini_game_best">சிறந்தது %s</string>
-    <string name="mini_game_new_record">புதிய சாதனை!</string>
-    <string name="mini_game_game_over">விளையாட்டு முடிந்தது</string>
-    <string name="mini_game_try_again">மீண்டும் முயற்சிக்கவும்</string>
-    <string name="mini_game_paused">நிறுத்தப்பட்டது</string>
-    <string name="mini_game_resume">தொடரவும்</string>
-    <string name="mini_game_restart">மீண்டும் தொடங்கு</string>
-    <string name="mini_game_change">வேறு விளையாட்டைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="mini_game_2048_picker_subtitle">இணைக்க டைல்களை நகர்த்தவும்</string>
-    <string name="mini_game_flappy_picker_subtitle">குழாய்களுக்கு இடையே பறக்க தட்டவும்</string>
-    <string name="mini_game_flappy_tap_to_start">பறக்க தட்டவும்</string>
-    <string name="mini_game_snake_picker_subtitle">உணவை உண்ணுங்கள், உங்களை நீங்களே மோதிக் கொள்ளாதீர்கள்</string>
-    <string name="mini_game_snake_swipe_to_start">தொடங்க ஸ்வைப் செய்யவும்</string>
-    <string name="mini_game_dino_picker_subtitle">கத்தரிக்காய் செடிகளின் மேல் குதிக்க தட்டுங்கள்</string>
-    <string name="mini_game_dino_tap_to_start">ஓடத் தட்டுங்கள்</string>
-    <string name="mini_game_blocks_picker_subtitle">வடிவங்களைப் பொருத்தவும், கோடுகளை அழிக்கவும்</string>
-    <string name="mini_game_blocks_tap_to_start">சுழற்றத் தட்டவும், நகர்த்த ஸ்வைப் செய்யவும், கீழே இட ஸ்வைப் செய்யவும்</string>
-    <string name="mini_game_bricks_picker_subtitle">பந்தைத் துள்ள வைக்கவும், சுவரை அழிக்கவும்</string>
-    <string name="mini_game_bricks_tap_to_start">குறிவைக்க இழுக்கவும், ஏவத் தட்டவும்</string>
-    <string name="mini_game_miner_picker_subtitle">திறக்கத் தட்டவும், அடையாளம் காண அழுத்தவும்</string>
-    <string name="mini_game_pairs_picker_subtitle">கார்டுகளைத் திருப்பவும், பொருத்தமானவற்றைத் தேடவும்</string>
     <!-- Settings -->
-    <string name="appearance">தோற்றம்</string>
-    <string name="system">முறைமை</string>
     <!-- Settings - Appearance Tab - Background animation -->
-    <string name="settings_appearance_background">பின்னணி அனிமேஷன்</string>
-    <string name="settings_appearance_background_description">செயலியின் திரைகளுக்குப் பின்னால் இயங்கும் அனிமேஷன்</string>
-    <string name="settings_appearance_background_circles">வட்டங்கள்</string>
-    <string name="settings_appearance_background_rings">வளையங்கள்</string>
-    <string name="settings_appearance_background_mesh">மெஷ்</string>
-    <string name="settings_appearance_background_space">விண்வெளி</string>
-    <string name="settings_appearance_background_shapes">வடிவங்கள்</string>
-    <string name="settings_appearance_background_snow">பனி</string>
-    <string name="settings_appearance_background_grid">கிரிட்</string>
-    <string name="settings_appearance_background_particles">துகள்கள்</string>
-    <string name="settings_appearance_background_lava">லாவா லேம்ப்</string>
-    <string name="settings_appearance_background_halloween">ஹாலோவீன்</string>
-    <string name="settings_appearance_background_fireworks">আতஷ்बाजी</string>
-    <string name="settings_appearance_background_none">எதுவுமில்லை</string>
-    <string name="settings_appearance_background_random">ரேண்டம்</string>
-    <string name="settings_appearance_background_random_interval_launch">தொடங்கும் போது</string>
-    <string name="settings_appearance_background_random_interval_daily">தினமும்</string>
-    <string name="settings_appearance_background_random_interval_3days">ஒவ்வொரு 3 நாட்களுக்கு ஒருமுறை</string>
-    <string name="settings_appearance_parallax_effect">பார்லாக்ஸ் விளைவு</string>
-    <string name="settings_appearance_parallax_effect_description">சாதனத்தைச் சாய்க்கும்போது பின்னணி மென்மையாக நகரும்</string>
-    <string name="settings_appearance_seasonal_themes">பருவகால தீம்கள்</string>
-    <string name="settings_appearance_seasonal_themes_description">விடுமுறை நாட்களில் பண்டிகை கால பின்னணிகள் மற்றும் வாழ்த்துகள்</string>
     <!-- %1$s is a holiday background name, such as Halloween. %2$s is a date, such as November 1 -->
-    <string name="settings_appearance_seasonal_background_notice">பருவகால தீம்கள் செயல்பாட்டில் இருக்கும்போது, %1$s பின்னணி %2$s வரை இருக்கும்</string>
     <!-- Settings - Appearance Tab - Theme -->
-    <string name="settings_appearance_display">காட்சி</string>
-    <string name="settings_appearance_effects">விளைவுகள்</string>
-    <string name="settings_appearance_theme">தீம்</string>
-    <string name="settings_appearance_theme_mode">தீம் முறை</string>
-    <string name="settings_appearance_system">சிஸ்டம்</string>
-    <string name="settings_appearance_light">லைட்</string>
-    <string name="settings_appearance_dark">டார்க்</string>
-    <string name="settings_appearance_dynamic">மெட்டீரியல் யூ</string>
-    <string name="settings_appearance_monochrome">ஒற்றை நிறம்</string>
-    <string name="settings_appearance_color_style">நிற பாணி</string>
-    <string name="settings_appearance_accent_color">ஆக்சென்ட் நிறம்</string>
-    <string name="settings_appearance_pure_black">தூய கருப்பு</string>
-    <string name="settings_appearance_pure_black_description">உண்மையான கருப்புப் பின்னணிகளைப் பயன்படுத்துகிறது</string>
-    <string name="settings_appearance_color_accents">செயலி மற்றும் மூல வண்ணங்கள்</string>
-    <string name="settings_appearance_color_accents_description">ஆக்ஸென்ட் நிறத்திற்குப் பதிலாக ஒவ்வொரு செயலியின் மற்றும் ஆதாரத்தின் நிறத்தைப் பயன்படுத்துகிறது</string>
-    <string name="settings_appearance_outlines">வெளிக்கோடுகள்</string>
-    <string name="settings_appearance_outlines_description">கார்டுகள், பேனல்கள் மற்றும் பொத்தான்களைச் சுற்றி ஒரு மெல்லிய விளிம்பை வரையும்</string>
-    <string name="settings_appearance_blur">மங்கலாக்குதல்</string>
-    <string name="settings_appearance_blur_description">தலைப்புகள், பட்டைகள் மற்றும் பேனல்களுக்குக் கீழ் உருளும் பகுதிகளை மங்கலாக்குகிறது</string>
     <!-- Settings - Appearance Tab - Language Selector -->
-    <string name="settings_appearance_app_language">ஆப் மொழி</string>
-    <string name="settings_appearance_app_language_current">தற்போதைய மொழி</string>
-    <string name="settings_appearance_translate">Morphe-ஐ மொழிபெயர்க்க உதவி செய்யுங்கள்</string>
-    <string name="settings_appearance_translations_info_title">சில மொழிகளுக்கான மொழிபெயர்ப்புகள் விடுபட்டிருக்கலாம் அல்லது முழுமையற்றதாக இருக்கலாம்</string>
     <!-- Settings - Appearance Tab - Interface Scale -->
-    <string name="settings_appearance_ui_scale">இடைமுக அளவு</string>
     <!-- Settings - Appearance Tab - Home Screen Section -->
-    <string name="settings_appearance_home_screen">முகப்புத் திரை</string>
-    <string name="settings_appearance_greeting_phrases">வரவேற்பு வாக்கியங்கள்</string>
-    <string name="settings_appearance_greeting_phrases_subtitle">வரவேற்பு செய்தியைக் காட்டுகிறது</string>
-    <string name="settings_appearance_repatch_notice">மறு-பேட்ச் அறிவிப்பு</string>
-    <string name="settings_appearance_repatch_notice_description">பேட்ச் செய்யப்பட்ட செயலிகளை மீண்டும் பேட்ச் செய்ய முடியும் போது ஒரு பேனரைக் காட்டுகிறது</string>
-    <string name="settings_appearance_more_apps_card">கூடுதல் ஆப்ஸ்கள் கார்டு</string>
-    <string name="settings_appearance_more_apps_card_description">கம்யூனிட்டி பேட்ச்களுக்கு அழைத்துச் செல்லும் ஒரு கார்டை ஆப்ஸ்களுக்குக் கீழே காண்பிக்கும்</string>
-    <string name="settings_appearance_app_card_colors">கார்டு நிறங்கள்</string>
-    <string name="settings_appearance_app_card_colors_default">இயல்பு</string>
-    <string name="settings_appearance_app_card_colors_default_description">ஒவ்வொரு செயலி மற்றும் மூலத்திற்கும் தனித்தனி நிறத்தை வழங்கவும்</string>
-    <string name="settings_appearance_app_card_colors_accent">முக்கிய நிறம்</string>
-    <string name="settings_appearance_app_card_colors_accent_description">செயலி மற்றும் மூல கார்டுகளுக்கு செயலியின் ஆக்சன்ட் நிறத்தைப் பயன்படுத்தவும்</string>
-    <string name="settings_appearance_app_card_colors_gradient">கிரேடியன்ட்</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">செயலி கார்டுகளுக்கு ஒரு தனிப்பயன் கிரேடியன்ட்டைப் பயன்படுத்தவும், மூல கார்டுகளுக்கு அது ஒரு நிறமாக மாற்றப்படும்</string>
-    <string name="settings_appearance_app_card_colors_solid">திடம்</string>
-    <string name="settings_appearance_app_card_colors_solid_description">செயலி மற்றும் மூல கார்டுகளுக்கு ஒரே ஒரு தனிப்பயன் நிறத்தைப் பயன்படுத்தவும்</string>
-    <string name="settings_appearance_app_card_colors_start">தொடக்க நிறம்</string>
-    <string name="settings_appearance_app_card_colors_middle">நடு நிறம்</string>
-    <string name="settings_appearance_app_card_colors_end">முடிவு நிறம்</string>
-    <string name="settings_appearance_app_card_colors_solid_color">திட நிறம்</string>
-    <string name="settings_appearance_app_card_colors_bundle">ஆப் பண்டில் நிறம்</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">ஒவ்வொரு செயலியின் அல்லது மூலத்தின் சொந்த நிறத்தை இங்கே பயன்படுத்தவும், அது பொருத்தமாக இருக்க தானாகவே நிழலிடப்படும்</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
-    <string name="settings_appearance_app_icon_selector_title">செயலி ஐகான்</string>
-    <string name="settings_appearance_app_icon_selector_description">உங்கள் முகப்புத் திரையிலும் செயலி டிராயரிலும் Morphe எப்படித் தோற்றமளிக்கும்</string>
-    <string name="settings_appearance_app_icon_default">இயல்பானது</string>
-    <string name="settings_appearance_app_icon_light_2">வானம்</string>
-    <string name="settings_appearance_app_icon_light_3">சூரிய அஸ்தமனம்</string>
-    <string name="settings_appearance_app_icon_light_4">லேவெண்டர்</string>
-    <string name="settings_appearance_app_icon_light_5">கிளேசியர்</string>
-    <string name="settings_appearance_app_icon_light_6">மிஸ்ட்</string>
-    <string name="settings_appearance_app_icon_light_7">மணல்</string>
-    <string name="settings_appearance_app_icon_dark_1">டீல்</string>
-    <string name="settings_appearance_app_icon_dark_2">வெற்றிடம்</string>
-    <string name="settings_appearance_app_icon_dark_3">பிளம்</string>
-    <string name="settings_appearance_app_icon_dark_4">நள்ளிரவு</string>
-    <string name="settings_appearance_app_icon_dark_5">ஸ்லேட்</string>
-    <string name="settings_appearance_app_icon_accent_1">அரோரா</string>
-    <string name="settings_appearance_app_icon_accent_2">மை</string>
-    <string name="settings_appearance_app_icon_accent_3">தாள்</string>
-    <string name="settings_appearance_app_icon_accent_4">அந்திக் காலம்</string>
-    <string name="settings_appearance_app_icon_background">பின்னணி</string>
-    <string name="settings_appearance_app_icon_mark">லோகோ</string>
-    <string name="settings_appearance_app_icon_mark_color">நிறம்</string>
-    <string name="settings_appearance_app_icon_mark_white">வெள்ளை</string>
-    <string name="settings_appearance_app_icon_mark_black">கருப்பு</string>
-    <string name="settings_appearance_app_icon_change_dialog_title">செயலி ஐகானை மாற்ற வேண்டுமா?</string>
     <!-- %s is the name of the icon picked -->
-    <string name="settings_appearance_app_icon_change_restarts">&lt;b&gt;%s&lt;/b&gt;-க்கு மாற Morphe மீண்டும் தொடங்கும்</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="settings_appearance_app_icon_change_dialog_confirm">ஐகானை மாற்று</string>
     <!-- Settings - Advanced Tab - Updates Section -->
-    <string name="settings_advanced_updates_manager_prereleases">முன்-வெளியீட்டு புதுப்பிப்புகள்</string>
     <!-- "Morphe" here is the app itself, not the patches. Do not translate this as pre-release patches -->
-    <string name="settings_advanced_updates_manager_prereleases_description">புதிய Morphe பதிப்புகளுக்கான ஆரம்ப அணுகல்</string>
-    <string name="settings_advanced_updates_prerelease_warning_title">முன்-வெளியீட்டு புதுப்பிப்புகளை செயல்படுத்த வேண்டுமா?</string>
     <!-- Shown before pre-release updates are turned on for the app itself. Patches have their own toggle in each patch source -->
-    <string name="settings_advanced_updates_prerelease_warning_message">"Morphe-இன் முன்கிடை வெளியீட்டு பதிப்புகள் இன்னும் மேம்படுத்தப்பட்டு வருகின்றன மற்றும் அவை நிலையற்றதாக இருக்கலாம்
-
-பேட்ச்கள் பாதிக்கப்படாது: பேட்ச் ஆதாரங்களின் பட்டியலில் உள்ள ஒவ்வொரு ஆதாரத்திற்கும் முன்கிடை வெளியீட்டு பேட்ச்களை இயக்கவும்"</string>
-    <string name="settings_advanced_updates_allow_metered">மொபைல் டேட்டா மேம்படுத்தல்கள்</string>
-    <string name="settings_advanced_updates_allow_metered_description">மொபைல் டேட்டா மூலம் Morphe மற்றும் பேட்ச் அப்டேட்டுகளைப் பதிவிறக்குகிறது</string>
-    <string name="settings_advanced_updates_background_notifications">பின்னணி புதுப்பிப்பு அறிவிப்புகள்</string>
-    <string name="settings_advanced_updates_background_notifications_description">பின்னணியில் அவ்வப்போது புதுப்பிப்புகளைச் சரிபார்த்து, அவை கிடைக்கும்போது அறிவிக்கவும்</string>
-    <string name="settings_advanced_updates_background_notifications_description_fcm">ஆப் மூடப்பட்டிருக்கும் போதும், புதிய வெளியீடுகளுக்கான புஷ் அறிவிப்புகள் வரும்</string>
-    <string name="settings_system_notifications_categories">அறிவிப்பு வகைகள்</string>
-    <string name="settings_system_notifications_categories_description">எந்த மேம்படுத்தல்கள் உங்களுக்கு அறிவிக்க வேண்டும் என்பதை கணினி அமைப்புகளில் தேர்வு செய்யவும்</string>
-    <string name="settings_advanced_update_interval">சரிபார்க்கும் அதிர்வெண்</string>
-    <string name="settings_advanced_update_interval_hourly">மணிநேரத்திற்கு ஒருமுறை</string>
-    <string name="settings_advanced_update_interval_daily">தினமும்</string>
-    <string name="settings_advanced_update_interval_weekly">வாரத்திற்கு ஒருமுறை</string>
-    <string name="settings_advanced_update_interval_monthly">மாதாந்திரம்</string>
-    <string name="settings_advanced_update_interval_battery_warning">Xiaomi, Huawei, Samsung மற்றும் OnePlus போன்ற பின்னணி செயலிகளைக் கட்டுப்படுத்தும் சாதனங்களில் பின்னணி சரிபார்ப்புகள் நம்பகத்தன்மையுடன் இயங்காமல் போகலாம்</string>
-    <string name="settings_advanced_external_batch_patch">வெளிப்புற தூண்டுதல்களை அனுமதிக்கவும்</string>
-    <string name="settings_advanced_external_batch_patch_description">ஆட்டோமேஷன் ஆப்ஸ்கள் பேட்ச் பேட்ச்சிங்கைத் தொடங்க அனுமதிக்கிறது</string>
-    <string name="external_batch_patch_title">பேட்ச் தொகுப்பைத் தொடங்க வேண்டுமா?</string>
-    <string name="external_batch_patch_description">செயலிகளை பேட்ச் செய்து நிறுவ Morphe-ஐ %s விரும்புகிறது</string>
-    <string name="external_batch_patch_trust_caller">இந்தச் செயலிக்கு எப்போதும் அனுமதி அளிக்கவும்</string>
-    <string name="external_batch_patch_unknown_caller">தெரியாத ஆப்</string>
     <!-- Notification content -->
-    <string name="notification_bundle_update_title">புதிய பேட்ச்கள் கிடைக்கின்றன</string>
-    <string name="notification_update_text">பதிவிறக்கம் செய்ய பதிப்பு %s தயாராக உள்ளது</string>
-    <string name="notification_bundle_update_text_unversioned">Morphe-ஐத் திறந்து மேம்படுத்த தட்டவும்</string>
-    <string name="notification_permission_dialog_title">அறிவிப்புகளை அனுமதி</string>
-    <string name="notification_permission_dialog_description">பின்னணியில் புதுப்பிப்புகள் கிடைக்கும்போது உங்களுக்குத் தெரிவிக்க Morphe-க்கு அறிவிப்பு அனுமதி தேவை</string>
-    <string name="notification_post_patch_dialog_title">புதுப்பிப்புகள் கிடைக்கும்போது உங்களுக்கு அறிவிக்கப்பட வேண்டுமா?</string>
-    <string name="notification_channel_manager_updates">Morphe புதுப்பிப்புகள்</string>
-    <string name="notification_channel_manager_updates_description">புதிய Morphe வெளியீடுகள் பற்றிய அறிவிப்புகள்</string>
-    <string name="notification_channel_patch_updates">பேட்ச் புதுப்பிப்புகள்</string>
-    <string name="notification_channel_patch_updates_description">புதிய பேட்ச் வெளியீடுகள் பற்றிய அறிவிப்புகள்</string>
-    <string name="notification_channel_patcher_description">Morphe பின்னணியில் ஒரு செயலியை பேட்ச் செய்யும்போது இது காட்டப்படும்</string>
-    <string name="notification_channel_mounted_apps">மவுண்ட் செய்யப்பட்ட ஆப்புகள்</string>
-    <string name="notification_channel_mounted_apps_description">மவுண்ட் செய்யப்பட்ட ஆப்பை மற்றொரு பதிப்பு மாற்றும்போது மற்றும் அதன் பேட்ச் இனி பொருந்தாதபோது</string>
-    <string name="notification_mount_replaced_title">%1$s இனி பேட்ச் செய்யப்படவில்லை</string>
-    <string name="notification_mount_replaced_text">v%1$s ஆனது பேட்ச் செய்யப்பட்ட v%2$s-ஐ மாற்றியுள்ளது. அதை மீட்டெடுக்க Morphe-ஐத் திறக்கவும்</string>
     <!-- Settings - Advanced Tab - Expert settings Section -->
-    <string name="settings_advanced_expert_mode">நிபுணர் பயன்முறை</string>
-    <string name="settings_advanced_expert_mode_description">மேம்பட்ட பேட்ச்சிங் அமைப்புகள் மற்றும் பேட்ச் விருப்பங்களைத் திறக்கிறது</string>
-    <string name="settings_advanced_expert_mode_dialog_title">நிபுணர் பயன்முறையைச் செயல்படுத்தவா?</string>
-    <string name="settings_advanced_expert_mode_dialog_message">நிபுணர் பயன்முறை பேட்ச்கள் எவ்வாறு பயன்படுத்தப்படுகின்றன என்பதில் அதிக கட்டுப்பாட்டை வழங்குகிறது, ஆனால் நிபுணர் பயன்முறையில் அமைப்புகளை தவறாகக் கட்டமைப்பது செயலி இயங்காமல் போவதற்கு வழிவகுக்கும்</string>
-    <string name="settings_advanced_strip_unused_libs">சாதன கட்டமைப்பிற்கு ஏற்ப மேம்படுத்து</string>
-    <string name="settings_advanced_strip_unused_libs_description">பயன்படுத்தப்படாத நேட்டிவ் லைப்ரரிகள் மற்றும் APK ஸ்ப்ளிட்டுகளை நீக்குகிறது</string>
     <!-- Settings - Advanced Tab - GitHub PAT Settings -->
-    <string name="settings_advanced_github_pat_summary">புல் ரிக்வெஸ்ட் மூலங்கள் மற்றும் தனிப்பட்ட களஞ்சியங்களைத் திறக்கிறது</string>
-    <string name="settings_advanced_github_pat_description">புல் ரிக்வெஸ்ட் மூலங்கள், தனிப்பட்ட களஞ்சியங்கள் மற்றும் அதிக GitHub விகித வரம்பிற்கு</string>
-    <string name="settings_advanced_github_pat_configured">டோக்கன் உள்ளமைக்கப்பட்டது</string>
-    <string name="settings_advanced_github_pat_create">GitHub-இல் ஒரு டோக்கனை உருவாக்கவும்</string>
     <!-- "%s" is the GitHub scope name, keep it as is -->
-    <string name="settings_advanced_github_pat_create_description">%s ஸ்கோப் ஏற்கனவே தேர்ந்தெடுக்கப்பட்ட நிலையில் GitHub-ஐத் திறக்கிறது</string>
-    <string name="settings_advanced_github_pat_checking">GitHub-உடன் சரிபார்க்கப்படுகிறது…</string>
     <!-- "%s" is the GitHub account name -->
-    <string name="settings_advanced_github_pat_account">%s ஆக GitHub-இல் உள்நுழைந்துள்ளீர்கள்</string>
-    <string name="settings_advanced_github_pat_rejected">GitHub இந்த டோக்கனை நிராகரித்தது. இது காலாவதியாகி இருக்கலாம் அல்லது ரத்து செய்யப்பட்டிருக்கலாம்</string>
-    <string name="settings_advanced_github_pat_unreachable">இந்த டோக்கனைச் சரிபார்க்க GitHub-ஐத் தொடர்பு கொள்ள முடியவில்லை</string>
-    <string name="settings_advanced_github_pat_export_include_label">அமைப்புகள் ஏற்றுமதியில் சேர்க்கவும்</string>
     <!-- "PAT" is a GitHub Personal Access Token, keep it in English because GitHub has no localized UI -->
-    <string name="settings_advanced_github_pat_export_include_supporting">ஏற்றுமதி செய்யப்பட்ட Morphe அமைப்புகளில் இந்த PAT-ஐச் சேர்க்கிறது</string>
     <!-- "PAT" is a GitHub Personal Access Token, keep it in English because GitHub has no localized UI -->
-    <string name="settings_advanced_github_pat_export_warning">உங்கள் PAT-ஐப் பகிர வேண்டாம். நீங்கள் அதை செட்டிங்ஸ் எக்ஸ்போர்ட்டில் சேர்த்தால், அந்த கோப்பை ரகசியமாக வைத்திருக்கவும், ஏனெனில் அதில் டோக்கன் உள்ளது</string>
     <!-- Settings - Advanced Tab - Patch Options Section -->
-    <string name="settings_advanced_patch_options">பேட்ச் விருப்பங்கள்</string>
-    <string name="settings_advanced_patch_options_restart_message">பேட்ச் விருப்பங்களை மாற்றுவது நடைமுறைக்கு வர ஆப்பை மீண்டும் பேட்ச் செய்ய வேண்டும்</string>
-    <string name="settings_advanced_patch_options_expert_mode_notice">நிபுணர் பயன்முறையில், பேட்ச் செய்யும் செயல்பாட்டின் போது பேட்ச் விருப்பங்கள் கிடைக்கும்</string>
-    <string name="settings_advanced_patch_options_loading">பேட்ச் விருப்பங்கள் ஏற்றப்படுகின்றன…</string>
-    <string name="settings_advanced_patch_options_waiting_for_source">பேட்ச் மூலம் புதுப்பிக்கப்படும் வரை காத்திருக்கவும்</string>
-    <string name="settings_advanced_patch_options_load_error">பேட்ச் விருப்பங்களை ஏற்றுவதில் தோல்வி</string>
-    <string name="settings_advanced_patch_options_no_available">இந்த பேட்சிற்கு விருப்பங்கள் எதுவும் இல்லை</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Custom Branding -->
-    <string name="settings_advanced_patch_options_custom_branding">தனிப்பயனாக்கப்பட்ட பிராண்டிங்</string>
-    <string name="settings_advanced_patch_options_custom_branding_description">ஆப்பின் டிஸ்ப்ளே பெயரை மாற்றுகிறது</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_name">செயலியின் பெயர்</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_name_hint">தனிப்பயன் பெயரை உள்ளிடவும்</string>
-    <string name="settings_advanced_patch_options_path_gone">இந்த ஃபோல்டரை இனி படிக்க முடியாது. அதை மீண்டும் தேர்வு செய்யவும் அல்லது நீக்கவும், இல்லையெனில் பேட்ச் செய்வது நிறுத்தப்பட்டு அது குறித்து கேட்கப்படும்</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_icon">ஆப் ஐகான்</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">செயலியில் பேட்ச் செய்யப்படும் ஐகான், Android Auto போன்ற பின்னர் மாற்ற முடியாத இடங்களிலும் பயன்படுத்தப்படும்</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">தனிப்பயன் ஆப் ஐகானுக்கு ஐகான் படங்களைக் கொண்ட ஒரு ஃபோல்டர் தேவை</string>
-    <string name="settings_advanced_patch_options_custom_branding_custom_icon">தனிப்பயன் ஐகான்</string>
-    <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"தனிப்பயன் ஐகானாகப் பயன்படுத்த வேண்டிய படங்களைக் கொண்ட கோப்புறை.
-
-சாதனத்தின் DPI-யைப் பொறுத்து, கோப்புறை பின்வரும் கோப்புறைகளில் ஒன்றையோ அல்லது அதற்கு மேற்பட்டவற்றையோ கொண்டிருக்க வேண்டும்:
-- mipmap-mdpi
-- mipmap-hdpi
-- mipmap-xhdpi
-- mipmap-xxhdpi
-- mipmap-xxxhdpi
-
-ஒவ்வொரு கோப்புறையிலும் பின்வரும் அனைத்துக் கோப்புகளும் இருக்க வேண்டும்:
-morphe_adaptive_background_custom.png
-morphe_adaptive_foreground_custom.png
-
-படத்தின் அளவுகள் பின்வருமாறு இருக்க வேண்டும்:
-- mipmap-mdpi: 108x108 px
-- mipmap-hdpi: 162x162 px
-- mipmap-xhdpi: 216x216 px
-- mipmap-xxhdpi: 324x324 px
-- mipmap-xxxhdpi: 432x432 px
-
-விருப்பத்தேர்வாக, அந்தப் பாதை ஒற்றை நிற ஐகான் கோப்பைக் கொண்ட 'drawable' கோப்புறையைக் கொண்டிருக்கும்:
-morphe_adaptive_monochrome_custom.xml
-
-விருப்பத்தேர்வாக, அந்தப் பாதை பின்வரும் வடிவங்களில் ஒன்றில் அறிவிப்பு ஐகானைக் கொண்டிருக்கும்:
-- 'drawable'-ல் உள்ள XML vector drawable:
-  morphe_notification_icon_custom.xml
-- 'drawable-dpi' கோப்புறைகளில் உள்ள PNG raster படங்கள்:
-  drawable-mdpi/morphe_notification_icon_custom.png (24x24 px)
-  drawable-hdpi/morphe_notification_icon_custom.png (36x36 px)
-  drawable-xhdpi/morphe_notification_icon_custom.png (48x48 px)
-  drawable-xxhdpi/morphe_notification_icon_custom.png (72x72 px)
-  drawable-xxxhdpi/morphe_notification_icon_custom.png (96x96 px)"</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Custom Header -->
-    <string name="settings_advanced_patch_options_custom_header">தனிப்பயன் ஹெடர் லோகோ</string>
-    <string name="settings_advanced_patch_options_custom_header_description">ஹெடர் லோகோவை மாற்றுகிறது</string>
-    <string name="settings_advanced_patch_options_custom_header_instruction">"தனிப்பயன் ஹெடர் லோகோவாகப் பயன்படுத்த வேண்டிய படங்களைக் கொண்ட ஃபோல்டர்.
-
-சாதனத்தின் DPI-ஐப் பொறுத்து, அந்த ஃபோல்டரில் பின்வரும் ஃபோல்டர்களில் ஒன்று அல்லது அதற்கு மேற்பட்டவை இருக்க வேண்டும்:
-- drawable-hdpi
-- drawable-xhdpi
-- drawable-xxhdpi
-- drawable-xxxhdpi
-
-ஒவ்வொரு ஃபோல்டரிலும் பின்வரும் அனைத்து கோப்புகளும் இருக்க வேண்டும்:
-morphe_header_custom_light.png
-morphe_header_custom_dark.png
-
-படத்தின் அளவுகள் பின்வருமாறு இருக்க வேண்டும்:
-- drawable-hdpi: 194x72 px
-- drawable-xhdpi: 258x96 px
-- drawable-xxhdpi: 387x144 px
-- drawable-xxxhdpi: 512x192 px"</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Hide Shorts -->
-    <string name="settings_advanced_patch_options_hide_shorts_app_shortcut">Shorts ஆப் குறுக்குவழியை மறைக்கவும்</string>
-    <string name="settings_advanced_patch_options_hide_shorts_app_shortcut_description">லாஞ்சர் லாங்-பிரஸ் மெனுவிலிருந்து Shorts-ஐ நீக்குகிறது</string>
-    <string name="settings_advanced_patch_options_hide_shorts_widget">Shorts விட்ஜெட்டை மறைக்கவும்</string>
-    <string name="settings_advanced_patch_options_hide_shorts_widget_description">லாஞ்சர் விட்ஜெட்டில் இருந்து Shorts பொத்தானை நீக்குகிறது</string>
     <!-- Settings - System Tab - Installer Section -->
-    <string name="installer">நிறுவி</string>
-    <string name="installer_settings_title">இயல்பான நிறுவி</string>
-    <string name="settings_installation">நிறுவல்</string>
-    <string name="installer_title">நிறுவியைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="installer_internal_description">Android தொகுப்பு நிறுவியைப் பயன்படுத்துகிறது</string>
-    <string name="installer_play_store_description">சிஸ்டம் இன்ஸ்டாலரைப் பயன்படுத்தி கூகுள் பிளே ஸ்டோரை நிறுவல் ஆதாரமாக அமைக்கிறது</string>
-    <string name="installer_root_play_store_description">ரூட் மூலம் அமைதியாக நிறுவி, கூகுள் பிளே ஸ்டோரை நிறுவல் ஆதாரமாக அமைக்கிறது</string>
-    <string name="installer_auto_saved_name">ரூட் மவுண்ட்</string>
-    <string name="installer_auto_saved_description">ரூட் மவுண்ட் பயன்முறையில் பேட்ச் செய்யப்பட்ட செயலிகளை மவுண்ட் செய்கிறது. தரப்படுத்தப்பட்ட பேட்ச் செய்யப்பட்ட APK-க்கள் மற்றொரு நிறுவியை பயன்படுத்துகின்றன</string>
-    <string name="installer_shizuku_description">Shizuku அல்லது Sui மூலம் அமைதியாக நிறுவுகிறது</string>
-    <string name="installer_shizuku_play_store_description">Shizuku அல்லது Sui மூலம் அமைதியாக நிறுவி, Google Play Store-ஐ நிறுவல் ஆதாரமாக அமைக்கிறது</string>
-    <string name="installer_option_none">மாற்று வழி இல்லை</string>
-    <string name="installer_none_description">மாற்று நிறுவி எதுவும் configured செய்யப்படவில்லை</string>
-    <string name="installer_status_requires_root">ரூட் அணுகல் தேவை</string>
-    <string name="installer_status_not_supported">இந்தச் செயலுக்கு ஆதரவு இல்லை</string>
-    <string name="installer_status_shizuku_not_installed">இந்த விருப்பத்தைப் பயன்படுத்த Shizuku அல்லது Sui-ஐ நிறுவவும்</string>
-    <string name="installer_status_shizuku_not_running">Shizuku அல்லது Sui-ஐத் தொடங்கி மீண்டும் முயற்சிக்கவும்</string>
-    <string name="installer_status_shizuku_permission">Shizuku செயலியிலிருந்து Morphe-க்கு அனுமதி வழங்கவும்</string>
-    <string name="installer_mount_warning_install">உங்கள் முதன்மை நிறுவி ரூட் செய்யப்பட்ட மவுண்ட் நிறுவியாக அமைக்கப்பட்டுள்ளது. இந்தச் சேமிக்கப்பட்ட ஆப் மவுண்ட் மூலம் நிறுவப்படவில்லை</string>
-    <string name="mount_version_mismatch_message">ஸ்டாக் ஆப் பதிப்பு (%2$s) பேட்ச் செய்யப்பட்ட ஆப் பதிப்புடன் (%1$s) பொருந்தவில்லை. பொருந்தக்கூடிய ஸ்டாக் பதிப்பை மவுண்ட் செய்து, மீண்டும் முயற்சிக்கவும்</string>
-    <string name="mount_stock_restore_failed_message">சேமிக்கப்பட்ட அசல் APK-வை ஆண்ட்ராய்டு நிராகரித்தது. பொருத்தமான ஸ்டாக் பதிப்பை நிறுவி, மீண்டும் மவுண்ட் செய்ய முயற்சிக்கவும்</string>
-    <string name="installer_status_shizuku_unsupported">நிறுவப்பட்ட Shizuku பதிப்பு ஆதரவுபெறவில்லை</string>
-    <string name="installer_action_open_shizuku">Shizuku-வை திறக்கவும்</string>
-    <string name="installer_hint_generic">நிறுவல் தோல்வியுற்றது. மீண்டும் முயற்சிக்கவும் அல்லது வேறு நிறுவிக்கு மாறவும்</string>
-    <string name="installer_hint_conflict">இந்த தொகுப்பு பெயரைக் கொண்ட மற்றொரு ஆப் ஏற்கனவே நிறுவப்பட்டுள்ளது. தொடருவதற்கு முன் அதை நீக்கவும்</string>
-    <string name="installer_confirm_notification_title">நிறுவலನ್ನು உறுதிப்படுத்தவும்</string>
-    <string name="installer_confirm_notification_text">பேட்ச் செய்யப்பட்ட செயலியை நிறுவி முடிக்கத் தட்டவும்</string>
-    <string name="installer_external_launched">%s திறக்கப்படுகிறது…</string>
-    <string name="installer_external_timeout">%s நிறுவலை உறுதிப்படுத்தவில்லை. மற்ற செயலியைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்</string>
-    <string name="installer_external_success">%s வெற்றிகரமான நிறுவலைத் தெரிவித்தது</string>
-    <string name="installer_unavailable_title">%s கிடைக்கவில்லை</string>
-    <string name="installer_unavailable_message">உங்களுக்கு விருப்பமான நிறுவி (%s) தற்போது கிடைக்கவில்லை. நீங்கள் இந்தப் பிரச்சனையைச் சரிசெய்து மீண்டும் முயற்சிக்கலாம், அல்லது அதற்குப் பதிலாக நிலையான நிறுவியைப் பயன்படுத்தலாம்</string>
-    <string name="installer_unavailable_shizuku_hint">Shizuku இயங்குவதையும், இந்த ஆப்பிற்கு அனுமதி வழங்கப்பட்டிருப்பதையும் உறுதி செய்யவும்</string>
-    <string name="installer_choose_another">மற்றொரு இன்ஸ்டாலரைத் தேர்வு செய்யவும்</string>
-    <string name="installer_play_store_warning_title">பிளே ஸ்டோராக நிறுவ வேண்டுமா?</string>
-    <string name="installer_play_store_warning_message">பேட்ச் செய்யப்பட்ட செயலியானது Google Play Store-லிருந்து நிறுவப்பட்டதாகப் பதிவு செய்யப்படும். இது Android Auto போன்ற சேவைகளுக்கு அந்தச் செயலியை Play Store செயலியாக அடையாளம் காண உதவக்கூடும், ஆனால் இது எல்லா செயலி அல்லது சாதனத்திற்கும் உத்தரவாதம் அளிக்கப்படவில்லை. Android பதிப்பு, ROM, சாதனத்தின் பிராண்ட் மற்றும் செயலி சார்ந்த சோதனைகளைப் பொறுத்து இதன் செயல்பாடு மாறுபடலாம்</string>
-    <string name="installer_play_store_warning_risk">பேட்ச் செய்யப்பட்ட ஆப்பிற்கு பிளே ஸ்டோர் அப்டேட்களை வழங்கக்கூடும். அந்த அப்டேட்டை நிறுவுவது, பேட்ச் செய்யப்பட்ட APK-வை அசல் பதிப்பால் மாற்றி, பேட்ச்களை நீக்கிவிடும். அப்டேட் செய்யக் கோரப்பட்டால், ஆப்பின் பிளே ஸ்டோர் பக்கத்தில் உள்ள மூன்று புள்ளி மெனுவை தட்டி \"அப்டேட்களை முடக்கவும்\" என்பதைத் தேர்வு செய்யவும்.</string>
-    <string name="installer_play_store_warning_continue">எனக்கு புரிகிறது, தொடரவும்</string>
-    <string name="installer_play_store_mode">Play Store-ஆக நிறுவவும்</string>
-    <string name="installer_play_store_mode_description">Google Play Store-ஐ நிறுவல் ஆதாரமாகக் குறிப்பிடுகிறது</string>
-    <string name="settings_nomount_only">NoMount மட்டும்</string>
-    <string name="settings_nomount_only_description">NoMount மூலம் மட்டுமே செயலிகளை மவுண்ட் செய்கிறது மற்றும் ஒருபோதும் பைண்ட் மவுண்டிற்கு மாறாது, எனவே அது இல்லையென்றால் அவை மவுண்ட் செய்யப்படாமல் இருக்கும்</string>
-    <string name="settings_prompt_installer_on_install">நிறுவியைத் தேர்ந்தெடுக்கும் தூண்டல்</string>
-    <string name="settings_prompt_installer_on_install_description">ஒவ்வொரு செயலியை எவ்வாறு நிறுவுவது என்று கேட்கிறது: பேட்ச் செய்வதற்கு முன் ரூட் உடன், இல்லையெனில் அதற்குப் பிறகு</string>
-    <string name="settings_auto_install_with_shizuku">பேட்ச் செய்த பிறகு தானாக நிறுவவும்</string>
-    <string name="settings_auto_install_with_shizuku_description">பேட்ச் செய்தவுடன், பேட்ச் செய்யப்பட்ட APK-வை நிறுவும் அல்லது மவுண்ட் செய்யும்</string>
-    <string name="settings_auto_uninstall_with_shizuku">முரண்பாட்டின் போது தானாகவே நீக்கவும்</string>
-    <string name="settings_auto_uninstall_with_shizuku_description">சிக்னேச்சர் முரண்பாட்டின் போது இருக்கும் ஆப்பை நீக்குகிறது. இது ஆப் டேட்டாவை நீக்கக்கூடும்</string>
-    <string name="settings_ignore_install_target_rules">நிறுவல் இலக்கு தேவைகளைப் புறக்கணிக்கவும்</string>
-    <string name="settings_ignore_install_target_rules_description">நிறுவல் இலக்குக்கு தேவைப்படும் பேட்ச்களை அணைக்கவும், அது நிராகரிப்பவற்றை இயக்கவும் அனுமதிக்கிறது. பேட்ச் செய்யப்பட்ட செயலி இயங்காமல் போகலாம்</string>
-    <string name="settings_auto_uninstall_warning_title">தானியங்கி நீக்குதலை இயக்க வேண்டுமா?</string>
-    <string name="settings_auto_uninstall_warning_message">Shizuku தானியங்கி நிறுவலின் போது Android ஒரு கையொப்ப முரண்பாட்டைத் தெரிவித்தால், Morphe பேட்ச் செய்யப்பட்ட APK-வை நிறுவும் முன் இருக்கும் செயலியை நீக்கும்</string>
-    <string name="settings_auto_uninstall_warning_risk">இது செயலி தரவை நீக்கக்கூடும். நீக்கிய பிறகு பேட்ச் செய்யப்பட்ட APK நிறுவத் தவறினால், முந்தைய செயலி ஏற்கனவே நீக்கப்பட்டிருக்கலாம்</string>
-    <string name="installer_shizuku_status_action">Shizuku நிலையைச் சரிபார்க்கவும்</string>
-    <string name="installer_shizuku_status_title">Shizuku நிலை</string>
-    <string name="installer_shizuku_status_ready">தயார்</string>
-    <string name="installer_shizuku_status_issue">கவனம் தேவை</string>
-    <string name="installer_shizuku_status_supported">ஆதரிக்கப்படுகிறது</string>
-    <string name="installer_shizuku_status_running">இயங்குகிறது</string>
-    <string name="installer_shizuku_status_permission">அனுமதி</string>
-    <string name="installer_shizuku_status_mode">முறை</string>
-    <string name="installer_shizuku_status_provider">வழங்குநர்</string>
-    <string name="installer_shizuku_status_granted">வழங்கப்பட்டது</string>
-    <string name="installer_shizuku_status_missing">இல்லை</string>
-    <string name="installer_shizuku_request_permission">அனுமதி கோருங்கள்</string>
-    <string name="installer_shizuku_install_fail">Shizuku நிறுவல் தோல்வியுற்றது: %s</string>
-    <string name="installer_shizuku_install_fail_with_details">"Shizuku நிறுவல் தோல்வியுற்றது: %1$s
-
-விவரங்கள்: %2$s"</string>
-    <string name="installer_shizuku_error_permission">Shizuku அனுமதி இல்லை. Morphe-க்கு அனுமதி வழங்கி மீண்டும் முயற்சிக்கவும்</string>
-    <string name="installer_shizuku_error_timeout">Shizuku நிறுவல் முடிவை வழங்கவில்லை. அது இன்னும் இயங்கிக் கொண்டிருப்பதை உறுதி செய்து மீண்டும் முயற்சிக்கவும்</string>
-    <string name="installer_shizuku_error_downgrade">நிறுவப்பட்ட செயலியை இது பதிப்பு குறைப்பு செய்யும் என்பதால் ஆண்ட்ராய்டு இதைத் தடுத்துள்ளது</string>
-    <string name="installer_shizuku_error_signature">நிறுவப்பட்ட செயலி ஒரு மாறுபட்ட கையொப்பத்தைக் கொண்டுள்ளதால் ஆண்ட்ராய்டு இதைத் தடுத்துள்ளது</string>
-    <string name="installer_shizuku_error_invalid_apk">ஆண்ட்ராய்டால் இந்த APK-வை படிக்க முடியவில்லை</string>
-    <string name="installer_shizuku_error_user_profile">இந்த நிறுவலை சிஸ்டம் தடுத்தது. Xiaomi மற்றும் அது போன்ற சாதனங்களில், டெவலப்பர் விருப்பங்களில் \"USB வழியாக நிறுவு\" என்பதை இயக்கவும். வேலை சுயவிவரத்தில், கொள்கையின்படி நிறுவல்கள் கட்டுப்படுத்தப்படலாம்</string>
     <!-- Settings - System Tab - Performance Section -->
-    <string name="settings_system_battery_optimization">பேட்டரி மேம்படுத்தல்</string>
-    <string name="settings_system_battery_optimization_description">செயலி குறைக்கப்படும்போது பேட்சர் இயங்குவதை உறுதி செய்கிறது</string>
-    <string name="settings_system_process_runtime">பேட்சர் ரன்டைம்</string>
-    <string name="settings_system_jvm_runtime_enable">உட்பொதிக்கப்பட்ட VM-ஐப் பயன்படுத்தவும்</string>
-    <string name="settings_system_jvm_runtime_description">Morphe-இன் சொந்த Java VM-இல் பேட்ச்கள் செய்யப்படும், இது அதிக நினைவகத்தைப் பயன்படுத்தக்கூடும். Android-இன் ரன்டைமைப் பயன்படுத்த இதை அணைக்கவும்</string>
-    <string name="settings_system_jvm_runtime_unavailable">ARM அல்லது 64-bit x86 சாதனம் தேவை</string>
-    <string name="settings_system_patcher_completion_sound">முடித்தல் ஒலி</string>
-    <string name="settings_system_patcher_completion_sound_description">பேட்ச் செய்தல் முடிந்ததும் வெற்றி அல்லது தோல்விக்கு ஒரு தனித்துவமான ஒலியை ஒலிக்கச் செய்கிறது</string>
     <!-- Settings - System Tab - Notifications Section -->
-    <string name="settings_system_notifications">அறிவிப்புகள்</string>
-    <string name="settings_system_notifications_description">Morphe உங்களை எவ்வாறு অবহিত வைத்திருக்கும்</string>
-    <string name="settings_system_notifications_success_sound">வெற்றி ஒலி</string>
-    <string name="settings_system_notifications_error_sound">தோல்வி ஒலி</string>
-    <string name="settings_system_notifications_sound_default">இயல்பானது</string>
-    <string name="settings_system_notifications_sound_picker_title">ஒலி மூலத்தைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="settings_system_notifications_sound_pick_ringtone">அமைப்பு ஒலிகள்</string>
-    <string name="settings_system_notifications_sound_pick_file">கோப்புகளிலிருந்து தேர்ந்தெடுக்கவும்</string>
-    <string name="settings_system_notifications_sound_reset">இயல்பான நிலைக்கு மீட்டமைக்கவும்</string>
-    <string name="settings_system_notifications_ringtone_picker_title">ஒரு தொனியைத் தேர்ந்தெடுக்கவும்</string>
     <!-- Settings - System Tab - Import and Export Section -->
-    <string name="settings_system_signing_key">கையெழுத்து சாவி</string>
-    <string name="settings_system_signing_key_description">பேட்ச் செய்யப்பட்ட ஆப்ஸ்களை கையொப்பமிடும் கீயை பேக்அப் அல்லது ரீஸ்டோர் செய்கிறது</string>
-    <string name="settings_system_signing_key_dialog_description">Morphe பேட்ச் செய்யும் ஒவ்வொரு ஆப்பும் இந்தச் சாவியால் கையொப்பமிடப்படுகிறது. இதன் நகலை வைத்திருங்கள்: இது இல்லையெனில், பேட்ச் செய்யப்பட்ட ஆப்புகளை அவற்றை நிறுவிய பின்னரே புதுப்பிக்க முடியும்</string>
-    <string name="settings_system_signing_key_missing">உங்கள் முதல் பேட்ச் மூலம் Morphe ஒன்றை உருவாக்குகிறது</string>
-    <string name="settings_system_signing_key_created">%s உருவாக்கப்பட்டது</string>
-    <string name="settings_system_signing_key_fingerprint">SHA-256 கைரேகை</string>
-    <string name="settings_system_backup_appearance_description">தீம், வண்ணங்கள் மற்றும் மொழி</string>
-    <string name="settings_system_backup_home_description">குழுக்கள், மறைக்கப்பட்ட ஆப்புகள், வரிசைப்படுத்துதல் மற்றும் டோகிள்கள்</string>
-    <string name="settings_system_backup_patching">பேட்ச் செய்தல் மற்றும் நிறுவுதல்</string>
-    <string name="settings_system_backup_patching_description">நிறுவி, பேட்சர் மற்றும் சேமிக்கப்பட்ட APK-க்கள்</string>
-    <string name="settings_system_backup_updates_description">முன்பதிவு வெளியீடுகள் மற்றும் புதுப்பிப்பு சரிபார்ப்புகள்</string>
-    <string name="settings_system_backup_sources_description">தனிப்பயன் ஆதாரங்கள் மற்றும் GitHub டோக்கன்</string>
-    <string name="settings_system_backup_patch_selections_description">ஒவ்வொரு ஆப்பிற்கும் தேர்ந்தெடுக்கப்பட்ட பேட்ச்கள்</string>
-    <string name="settings_system_backup_signing_key_note">கையெழுத்து சாவி தனியாக பேக்கப் செய்யப்பட்டுள்ளது</string>
-    <string name="settings_system_import_keystore_dialog_title">கீஸ்டோர் அங்கீகார விவரங்களை உள்ளிடவும்</string>
-    <string name="settings_system_import_keystore_dialog_description">இதை இறக்குமதி செய்ய கீஸ்டோரின் அங்கீகார விவரங்களை நீங்கள் உள்ளிட வேண்டும்</string>
-    <string name="settings_system_import_keystore_dialog_alias_field">பயனர் பெயர் (மாற்றுப் பெயர்)</string>
-    <string name="settings_system_import_keystore_dialog_password_field">கடவுச்சொல்</string>
-    <string name="settings_system_import_keystore_dialog_format_field">கீஸ்டோர் வடிவம்</string>
-    <string name="settings_system_import_keystore_wrong_credentials">தவறான கீஸ்டோர் அங்கீகாரத் தகவல்கள்</string>
-    <string name="settings_system_import_keystore_success">கீஸ்டோர் இறக்குமதி செய்யப்பட்டது</string>
-    <string name="settings_system_import_keystore_failed">கீஸ்டோரை இறக்குமதி செய்ய முடியவில்லை</string>
-    <string name="settings_system_export_keystore_success">கீஸ்டோர் ஏற்றுமதி செய்யப்பட்டது</string>
-    <string name="settings_system_export_keystore_failed">கீஸ்டோரை ஏற்றுமதி செய்ய முடியவில்லை</string>
-    <string name="settings_system_show_password_field">கடவுச்சொல்லைக் காட்டு</string>
-    <string name="settings_system_hide_password_field">கடவுச்சொல்லை மறை</string>
-    <string name="settings_system_morphe_settings">Morphe அமைப்புகள்</string>
-    <string name="settings_system_import_manager_settings_description">உங்கள் Morphe அமைப்புகளை பேக்கப் செய்து மீட்டமைக்கிறது</string>
-    <string name="settings_system_import_manager_settings_fail">Morphe அமைப்புகளை இறக்குமதி செய்யத் தவறியது: %s</string>
-    <string name="settings_system_import_manager_settings_success">Morphe அமைப்புகள் இறக்குமதி செய்யப்பட்டன</string>
-    <string name="settings_system_import_manager_settings_mode_title">Morphe அமைப்புகளை இறக்குமதி செய்யவும்</string>
-    <string name="settings_system_import_manager_settings_mode_description">இறக்குமதி செய்யப்பட்ட அமைப்புகள் மற்றும் மூலங்கள் எவ்வாறு பயன்படுத்தப்பட வேண்டும் என்பதைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="settings_system_import_selections_mode_title">பேட்ச் தேர்வுகளை இறக்குமதி செய்யவும்</string>
-    <string name="settings_system_import_selections_mode_description">இறக்குமதி செய்யப்பட்ட தேர்வுகள் மற்றும் பேட்ச் விருப்பங்கள் எவ்வாறு பயன்படுத்தப்பட வேண்டும் என்பதைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="import_mode_replace_title">தற்போதுள்ளதை மாற்றவும்</string>
-    <string name="import_mode_replace_description">பேக்கப் உடன் சரியாகப் பொருத்துக. பேக்கப்பில் இல்லாத உருப்படிகள் நீக்கப்படும்</string>
-    <string name="import_mode_merge_title">தற்போதுள்ளத்துடன் இணைக்கவும்</string>
-    <string name="import_mode_merge_description">காப்புப்பிரதியிலிருந்து விடுபட்ட உருப்படிகளைச் சேர்க்கவும். இருக்கும் உருப்படிகள் மாற்றப்படாமல் அப்படியே இருக்கும்</string>
-    <string name="settings_system_export_manager_settings_fail">Morphe அமைப்புகளை ஏற்றுமதி செய்யத் தவறியது: %s</string>
-    <string name="settings_system_export_manager_settings_success">Morphe அமைப்புகள் ஏற்றுமதி செய்யப்பட்டன</string>
-    <string name="settings_system_export_debug_logs">டிபக் பதிவுகளை ஏற்றுமதி செய்</string>
-    <string name="settings_system_export_debug_logs_description">பிரச்சினைகளை சரிசெய்ய சிஸ்டம் பதிவுகளைச் சேமிக்கிறது</string>
-    <string name="settings_system_export_debug_logs_export_read_failed">லாக்ஸை படிக்க முடியவில்லை (வெளியேறும் குறியீடு %s)</string>
-    <string name="settings_system_export_debug_logs_export_failed">பதிவுகளை ஏற்றுமதி செய்ய முடியவில்லை</string>
-    <string name="settings_system_export_debug_logs_export_success">பதிவுகள் ஏற்றுமதி செய்யப்பட்டன</string>
     <!-- Settings - System Tab - Files & Storage Section -->
-    <string name="settings_system_apks_size">மொத்த அளவு: %s</string>
-    <string name="settings_system_apks_delete_all_confirm">இது இங்கே காட்டப்பட்டுள்ள சேமிக்கப்பட்ட APK கோப்புகளை நிரந்தரமாக நீக்கும்</string>
-    <string name="settings_system_apks_delete_selected_title">தேர்ந்தெடுக்கப்பட்ட APK-க்களை நீக்கவா?</string>
-    <string name="settings_system_apks_delete_selected_confirm">இது தேர்ந்தெடுக்கப்பட்ட APK கோப்புகளை நிரந்தரமாக நீக்கும்</string>
-    <string name="settings_system_apks_deleted_all">APK-க்கள் வெற்றிகரமாக நீக்கப்பட்டன</string>
-    <string name="settings_system_apks_delete_failed">சில APK கோப்புகளை நீக்க முடியவில்லை</string>
-    <string name="settings_system_apks_export_zip_success">தேர்ந்தெடுக்கப்பட்ட APK-க்கள் ஏற்றுமதி செய்யப்பட்டன</string>
-    <string name="settings_system_apks_export_zip_failed">தேர்ந்தெடுக்கப்பட்ட APK-களை ஏற்றுமதி செய்ய முடியவில்லை</string>
     <!-- Settings - System Tab - Storage Management screen -->
-    <string name="settings_system_storage_management_title">சேமிப்பு மேலாண்மை</string>
-    <string name="settings_system_storage_management_description">டிஸ்க் பயன்பாட்டைக் காட்டி, கேச் செய்யப்பட்ட கோப்புகளை நீக்குகிறது</string>
     <!-- Shown under how much Morphe takes up. "%1$s" is the space still available on the device, already formatted with its unit. "Free" as in unused, not as in free of charge. -->
-    <string name="settings_system_storage_free">%1$s காலியாக உள்ளது</string>
-    <string name="settings_system_storage_saved_apks">சேமிக்கப்பட்ட APK-க்கள்</string>
-    <string name="settings_system_storage_caches">கேச்சுகள்</string>
-    <string name="settings_system_storage_keystore_title">கையொப்ப கீஸ்டோர்</string>
-    <string name="settings_system_storage_app_data_title">ஆப் தரவு</string>
-    <string name="settings_system_storage_patch_bundles_title">பேட்ச் தொகுப்புகள்</string>
-    <string name="settings_system_storage_http_cache_title">நெட்வொர்க் கேச்</string>
-    <string name="settings_system_storage_http_cache_description">புதுப்பிப்புகளை விரைவுபடுத்த HTTP பதில்கள் கேச் செய்யப்பட்டுள்ளன</string>
-    <string name="settings_system_storage_installer_cache_title">வெளிப்புற நிறுவி கேச்</string>
-    <string name="settings_system_storage_installer_cache_description">மூன்றாம் தரப்பு நிறுவியர்களுக்கு அனுப்பப்பட்ட APK நகல்கள்</string>
-    <string name="settings_system_storage_patcher_workspace_title">பேட்சர் பணியிடம்</string>
-    <string name="settings_system_storage_patcher_workspace_description">பேட்சர் ரன்டைம் கோப்புகள் மற்றும் கைவிடப்பட்ட ஸ்க்ராட்ச் தரவு</string>
-    <string name="settings_system_storage_temporary_title">தற்காலிக கோப்புகள்</string>
-    <string name="settings_system_storage_temporary_description">பேட்ச் செய்யும்போது உருவாக்கப்பட்ட செயல்பாட்டுக் கோப்புகள்</string>
-    <string name="settings_system_storage_clear_all">அனைத்து கேஷ்களையும் நீக்கு</string>
-    <string name="settings_system_storage_clear_all_description">மீட்கக்கூடிய அனைத்து கேஷ் இடத்தையும் ஒரே நேரத்தில் விடுவிக்கிறது</string>
-    <string name="settings_system_storage_clear_all_confirm">இது கேஷ் செய்யப்பட்ட நெட்வொர்க் பதில்கள், நிறுவி நகல்கள் மற்றும் தற்காலிக கோப்புகளை நீக்கும். அசல் மற்றும் பேட்ச் செய்யப்பட்ட APK-க்கள் தக்கவைக்கப்படும்</string>
-    <string name="settings_system_storage_cleared">விடுவிக்கப்பட்டது %s</string>
-    <string name="settings_system_storage_patch_running_warning">ஒரு பேட்ச் இயங்கிக் கொண்டிருக்கிறது மற்றும் இந்த கோப்புகளைப் பயன்படுத்துகிறது. இப்போது அவற்றை அழிப்பது அதைத் தோல்வியடையச் செய்யும்</string>
-    <string name="settings_system_storage_clear_anyway">இருந்தாலும் அழி</string>
-    <string name="settings_system_storage_nothing_to_clear">அழிப்பதற்கு எதுவும் இல்லை</string>
-    <string name="settings_system_storage_open_app_info_title">Android ஆப் சேமிப்பகத்தைத் திறக்கவும்</string>
-    <string name="settings_system_storage_open_app_info_description">சிஸ்டம் செட்டிங்ஸ் மூலம் அனைத்து Morphe தரவுகளையும் நிர்வகிக்கவும் அல்லது அழிக்கவும்</string>
-    <string name="settings_system_save_original_apks_title">அசல் APK-களை வைத்திருங்கள்</string>
-    <string name="settings_system_save_original_apks_description">மீண்டும் கோப்பைத் தேர்ந்தெடுக்காமலேயே, மறுபடியும் பேட்ச் செய்ய வசதியாக, பேட்ச் செய்யப்படாத APK-வைச் சேமிக்கவும்</string>
-    <string name="settings_system_save_patched_apks_title">பேட்ச் செய்யப்பட்ட APK-களை வைத்திருங்கள்</string>
-    <string name="settings_system_save_patched_apks_description">பிற்காலத்தில் ஏற்றுமதி செய்ய அல்லது மேலாளரிலிருந்து மீண்டும் நிறுவ, பேட்ச் செய்யப்பட்ட APK-வின் நகலைச் சேமிக்கவும்</string>
     <!-- Settings - System Tab - Storage Management - Patched APKs Management -->
-    <string name="settings_system_patched_apks_title">பேட்ச் செய்யப்பட்ட APK-க்கள்</string>
-    <string name="settings_system_patched_apks_empty">இன்னும் பேட்ச் செய்யப்பட்ட APK-க்கள் எதுவும் சேமிக்கப்படவில்லை</string>
-    <string name="settings_system_patched_apks_delete_title">பேட்ச் செய்யப்பட்ட APK-வை நீக்க வேண்டுமா?</string>
-    <string name="settings_system_patched_apks_deleted">பேட்ச் செய்யப்பட்ட APK வெற்றிகரமாக நீக்கப்பட்டது</string>
-    <string name="settings_system_patched_apks_delete_all_title">திருத்தப்பட்ட அனைத்து APK-களையும் நீக்க வேண்டுமா?</string>
     <!-- Settings - System Tab - Storage Management - Original APKs Management -->
-    <string name="settings_system_original_apks_title">அசல் APK-க்கள்</string>
-    <string name="settings_system_original_apks_empty">அசல் APK-க்கள் எதுவும் சேமிக்கப்படவில்லை</string>
-    <string name="settings_system_original_apks_deleted">அசல் APK வெற்றிகரமாக நீக்கப்பட்டது</string>
-    <string name="settings_system_original_apks_delete_title">அசல் APK-வை நீக்க வேண்டுமா?</string>
-    <string name="settings_system_original_apks_delete_notice">புதிய APK-வை வழங்காமல் உங்களால் மீண்டும் பேட்ச் செய்ய முடியாது</string>
-    <string name="settings_system_original_apks_delete_all_title">அசல் அனைத்து APK-களையும் நீக்க வேண்டுமா?</string>
     <!-- Settings - System Tab - Storage Management - Patch Selection Management -->
-    <string name="settings_system_patch_selections_title">பேட்ச் தேர்வுகள்</string>
-    <string name="settings_system_patch_selections_description">சேமிக்கப்பட்ட பேட்ச் தேர்வுகள், நிறுக்குதலுக்குப் பிறகும் தக்கவைக்கப்படும்</string>
-    <string name="settings_system_patch_selection_reset_all_confirm_title">அனைத்துத் தெரிவுகளையும் மீட்டமைக்க வேண்டுமா?</string>
-    <string name="settings_system_patch_selection_reset_selected_confirm_title">தேர்ந்தெடுக்கப்பட்ட தொகுப்புகளை மீட்டமைக்க வேண்டுமா?</string>
-    <string name="settings_system_patch_selection_reset_source_confirm_title">மூலத் தெரிவை மீட்டமைக்க வேண்டுமா?</string>
-    <string name="settings_system_patch_selection_total_summary_format">%2$s இல் %1$s</string>
-    <string name="settings_system_patch_selection_source_format">மூலம் #%s</string>
-    <string name="settings_system_patch_selection_reset_all_warning">இது அனைத்து தொகுப்புகள் மற்றும் மூலங்களுக்கான சேமிக்கப்பட்ட அனைத்து பேட்ச் தெரிவுகளையும் நிரந்தரமாக நீக்கும்</string>
-    <string name="settings_system_patch_selection_reset_source_warning">இது &lt;b&gt;%2$s&lt;/b&gt;-இல் &lt;b&gt;%1$s&lt;/b&gt; க்கான சேமிக்கப்பட்ட பேட்ச் தேர்வுகளை நிரந்தரமாக நீக்கும்</string>
-    <string name="settings_system_patch_selection_reset_selected_warning">இது தேர்ந்தெடுக்கப்பட்ட தொகுப்புகளுக்கான அனைத்து சேமிக்கப்பட்ட பேட்ச் தேர்வுகளையும் நிரந்தரமாக நீக்கும்</string>
-    <string name="settings_system_export_source_data_fail">மூலத் தரவை ஏற்றுமதி செய்ய முடியவில்லை</string>
-    <string name="settings_system_export_source_data_success">மூலத் தரவு வெற்றிகரமாக ஏற்றுமதி செய்யப்பட்டது</string>
-    <string name="settings_system_import_source_data_fail">மூலத் தரவை இறக்குமதி செய்ய முடியவில்லை</string>
-    <string name="settings_system_import_source_data_success">மூலத் தரவு வெற்றிகரமாக இறக்குமதி செய்யப்பட்டது</string>
-    <string name="settings_system_selected_patches_section">தேர்ந்தெடுக்கப்பட்ட பேட்ச்கள்</string>
-    <string name="settings_system_no_patches_or_options">பேட்சுகள் அல்லது விருப்பங்கள் எதுவும் சேமிக்கப்படவில்லை</string>
     <!-- Selection panel: saved selection, sets and copies -->
-    <string name="selection_panel_title">தேர்வுகள்</string>
-    <string name="selection_panel_copy_into">%s-இல் நகலெடு</string>
-    <string name="selection_sets_title">தொகுப்புகள்</string>
-    <string name="selection_set_name">தொகுப்பு பெயர்</string>
-    <string name="selection_set_save">தொகுப்பாகச் சேமி</string>
-    <string name="selection_set_replace">தொகுப்பை மாற்று</string>
-    <string name="selection_set_saved">%s எனச் சேமிக்கப்பட்டது</string>
-    <string name="selection_set_applied">%s-க்கு மாற்றப்பட்டது</string>
-    <string name="selection_set_deleted">%s நீக்கப்பட்டது</string>
-    <string name="selection_set_renamed">%s என மறுபெயரிடப்பட்டது</string>
-    <string name="selection_set_rename_title">தொகுப்பை மறுபெயரிடு</string>
-    <string name="selection_set_delete_title">தொகுப்பை நீக்க வேண்டுமா?</string>
-    <string name="selection_set_delete_message">இது %s தொகுப்பை நிரந்தரமாக நீக்கும்</string>
-    <string name="copy_selection_empty">நகலெடுக்க வேறு சேமிக்கப்பட்ட தேர்வுகள் எதுவும் இல்லை</string>
-    <string name="copy_selection_available_format">கிடைக்கக்கூடிய %2$s-இல் %1$s</string>
     <!-- Settings - System Tab - Custom file picker -->
-    <string name="settings_system_custom_file_picker">தனிப்பயன் கோப்பு தேர்வுப்படுத்தி</string>
-    <string name="settings_system_custom_file_picker_description">முறைமை கோப்பு தேர்வுக்குப் பதிலாக Morphe-இன் உள்ளமைக்கப்பட்ட கோப்பு தேர்வைப் பயன்படுத்துகிறது</string>
     <!-- Settings - System Tab - APK download helper -->
-    <string name="settings_system_apk_download_helper">APK பதிவிறக்க உதவியாளர்</string>
-    <string name="settings_system_apk_download_helper_trusted_count">நம்பகமானது: %2$d-இல் %1$d</string>
-    <string name="settings_system_apk_download_helper_dialog_description">உதவி ஆப்ஸ்கள் உங்களுக்காக அசல் APK-க்களைப் பதிவிறக்கம் செய்யலாம். நீங்கள் இங்கே நம்பும் ஆப்ஸ்கள் மட்டுமே பதிவிறக்க வழிமுறைகளில் வழங்கப்படும்</string>
-    <string name="settings_system_apk_download_helper_trust_title">இந்த ஹெல்பரை நம்புகிறீர்களா?</string>
-    <string name="settings_system_apk_download_helper_warning">APK உதவி ஆப்ஸிலிருந்து வருகிறது, எனவே உங்களுக்குத் தெரிந்த ஆப்ஸை மட்டுமே நம்புங்கள். பேட்ச் செய்வதற்கு முன் ஒவ்வொரு கோப்பின் தொகுப்பு, பதிப்பு மற்றும் கையொப்பத்தை Morphe இன்னும் சரிபார்க்கிறது</string>
-    <string name="settings_system_apk_download_helper_installed_by">%s மூலம் நிறுவப்பட்டது</string>
-    <string name="settings_system_apk_download_helper_installed_by_unknown">நிறுவியவர் அறியப்படவில்லை</string>
-    <string name="settings_system_apk_download_helper_open_directly">உதவியாளரை உடனடியாகத் திறக்கவும்</string>
-    <string name="settings_system_apk_download_helper_open_directly_description">பதிவிறக்க வழிமுறைகளைத் தவிர்த்து, நம்பகமான உதவியாளரைத் திறக்கிறது</string>
     <!-- File Picker -->
-    <string name="file_picker_no_files">இங்கு கோப்புகள் எதுவும் இல்லை</string>
-    <string name="file_picker_read_error">இந்த டைரக்டரியைப் படிக்க முடியவில்லை</string>
-    <string name="file_picker_internal_storage">உள் சேமிப்பகம்</string>
-    <string name="file_picker_sd_card">SD கார்டு</string>
-    <string name="file_picker_root">ரூட் (/)</string>
-    <string name="file_picker_storage_access_unavailable">அனைத்து கோப்புகளையும் அணுக அனுமதிப்பதற்கான திரை இந்த சாதனத்தில் இல்லை. ADB மூலம் இதை அனுமதிக்கவும்: adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
-    <string name="file_picker_storages">சேமிப்பகங்கள்</string>
-    <string name="file_saver_downloads_failed">பதிவிறக்கங்களில் கோப்பை உருவாக்க முடியவில்லை</string>
-    <string name="file_saver_saving_to_downloads">இந்த சாதனத்தில் சேமிப்புத் திரை இல்லை, எனவே கோப்பு பதிவிறக்கங்களில் %1$s ஆகச் சேமிக்கப்படுகிறது</string>
-    <string name="file_picker_sort_name_asc">பெயர் (A–Z)</string>
-    <string name="file_picker_sort_name_desc">பெயர் (Z–A)</string>
-    <string name="file_picker_sort_size_desc">அளவு (பெரியது முதலில்)</string>
-    <string name="file_picker_sort_size_asc">அளவு (சிறியது முதலில்)</string>
-    <string name="file_picker_sort_date_desc">தேதி (புதியது முதலில்)</string>
-    <string name="file_picker_sort_date_asc">தேதி (பழையது முதலில்)</string>
-    <string name="file_picker_show_hidden_files">மறைக்கப்பட்ட கோப்புகளைக் காட்டு</string>
     <!-- Settings - System Tab - About Section -->
-    <string name="settings_system_about">விபரம்</string>
-    <string name="settings_system_manager_description">பிரபலமான ஆண்ட்ராய்டு செயலிகளை நவீனமாகவும், எளிமையாகவும் பேட்ச் செய்வதற்கான ஒரு திறந்த மூலத் திட்டம், இது சமூகத்தின் கருத்துக்கள் மற்றும் பங்களிப்புகளால் இயக்கப்படுகிறது</string>
-    <string name="credits">நன்றி நவிலல்</string>
-    <string name="credits_description">Morphe-க்கு பின்னால் உள்ளவர்கள்</string>
-    <string name="settings_about_section_project">திட்டம்</string>
-    <string name="settings_about_section_help">உதவி</string>
-    <string name="credits_current_development">தற்போதைய மேம்பாடு</string>
-    <string name="credits_prior_development">முந்தைய மேம்பாடு</string>
-    <string name="opensource_licenses">திறந்த மூல உரிமங்கள்</string>
-    <string name="opensource_licenses_description">Morphe உருவாக்கப்பட்டது அடிப்படையாகக் கொண்ட நூலகங்கள்</string>
     <!-- Easter egg offered after seven taps on the version in the About dialog -->
-    <string name="easter_egg_pill_title">ஒரு தேர்வு</string>
-    <string name="easter_egg_pill_message">நீல நிற மாத்திரையை எடுத்துக்கொண்டால் விளம்பரங்கள் இருக்கும் இடத்திலேயே இருக்கும். சிவப்பு நிற மாத்திரையை எடுத்து பைட் கோட் எவ்வளவு ஆழமானது என்று பாருங்கள்</string>
-    <string name="easter_egg_pill_red">சிவப்பு மாத்திரை</string>
-    <string name="easter_egg_pill_blue">நீல மாத்திரை</string>
-    <string name="easter_egg_pill_red_toast">மேட்ரிக்ஸ் பின்னணி அன்லாக் செய்யப்பட்டது</string>
-    <string name="easter_egg_pill_blue_toast">விளம்பரங்கள் உங்களுக்காகக் காத்திருக்கும்</string>
-    <string name="easter_egg_pill_message_again">நீங்கள் ஏற்கனவே மேட்ரிக்ஸில் இருக்கிறீர்கள். சிவப்பு மாத்திரை உங்களை மீண்டும் மழையிலேயே இறக்கிவிடும், நீல மாத்திரை உங்களை எழுப்பும்</string>
-    <string name="easter_egg_pill_red_toast_again">மீண்டும் மழையில்</string>
-    <string name="easter_egg_pill_blue_toast_again">தொடர்பு துண்டிக்கப்பட்டது. திரும்பச் செல்லும் வழி எப்போதும் இருந்த இடத்திலேயே உள்ளது</string>
     <!-- Shared strings -->
-    <string name="select_file">கோப்பைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="select_files">கோப்புகளைத் தேர்ந்தெடுக்கவும்</string>
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="select_folder">கோப்புறையைத் தேர்வு செய்க</string>
-    <string name="patches">பேட்ச்கள்</string>
-    <string name="home">முகப்பு</string>
-    <string name="settings">அமைப்புகள்</string>
-    <string name="apps">செயலிகள்</string>
     <!-- Sections the settings page lists, each opening a page of its own. A summary names what the section holds -->
-    <string name="settings_section_patcher">பேட்சர்</string>
-    <string name="settings_section_updates">புதுப்பிப்புகள்</string>
-    <string name="settings_section_patching">பேட்ச் செய்தல்</string>
-    <string name="settings_section_appearance_summary">Morphe எப்படி தோற்றமளிக்கிறது</string>
-    <string name="settings_section_patch_options_summary">எளிய பயன்முறை எதைக் கொண்டு செயலிகளைப் பேட்ச் செய்கிறது</string>
-    <string name="settings_section_general">பொது</string>
-    <string name="settings_section_patcher_summary">இந்த சாதனத்தில் செயலிகள் எவ்வாறு பேட்ச் செய்யப்படுகின்றன</string>
-    <string name="settings_section_help_info">உதவி &amp; தகவல்</string>
-    <string name="settings_section_about_summary">Morphe பற்றிய கூடுதல் விவரங்கள் மற்றும் உதவி பெறுதல்</string>
-    <string name="settings_section_local_files">கோப்புகள்</string>
-    <string name="settings_section_backup">பேக்கப்</string>
-    <string name="settings_search">தேடல் அமைப்புகள்</string>
-    <string name="yes">ஆம்</string>
-    <string name="no">இல்லை</string>
-    <string name="all">அனைத்தும்</string>
-    <string name="filter">வடிகட்டி</string>
-    <string name="group">குரூப்</string>
-    <string name="reset">மறுநிறுவல்</string>
-    <string name="reset_all">அனைத்தையும் மீட்டமை</string>
-    <string name="apply">பயன்படுத்து</string>
-    <string name="confirm">உறுதிப்படுத்து</string>
-    <string name="warning">எச்சரிக்கை</string>
-    <string name="error_">பிழை</string>
-    <string name="failed">தோல்வி</string>
-    <string name="canceled">ரத்து செய்யப்பட்டது</string>
-    <string name="ready">தயார்</string>
-    <string name="retry">மீண்டும் முயற்சி செய்</string>
-    <string name="refresh">புதுப்பி</string>
-    <string name="add">சேர்</string>
-    <string name="close">மூடு</string>
-    <string name="back">பின்னால்</string>
-    <string name="next">அடுத்தது</string>
-    <string name="done">முடிந்தது</string>
-    <string name="skip">தவிர்</string>
-    <string name="clear">நீக்கு</string>
-    <string name="paste">ஒட்டவும்</string>
-    <string name="delete">அழி</string>
-    <string name="delete_all">அனைத்தையும் நீக்கு</string>
-    <string name="remove">நீக்கு</string>
-    <string name="exclude">விலக்கு</string>
-    <string name="excluded">விலக்கப்பட்டது</string>
-    <string name="include">சேர்</string>
-    <string name="disable">முடக்கு</string>
-    <string name="enable">செயல்படுத்து</string>
-    <string name="trust">நம்பு</string>
-    <string name="loading">ஏற்றப்படுகிறது…</string>
-    <string name="creating">உருவாக்கப்படுகிறது…</string>
-    <string name="processing_apk">APK செயலாக்கப்படுகிறது…</string>
-    <string name="exporting_apks">APK-கள் ஏற்றுமதி செய்யப்படுகின்றன…</string>
-    <string name="not_installed">நிறுவப்படவில்லை</string>
-    <string name="view">காண்பு</string>
-    <string name="search">தேடல்</string>
-    <string name="search_no_results">முடிவுகள் எதுவும் காணப்படவில்லை</string>
-    <string name="sort">வரிசைப்படுத்து</string>
-    <string name="any_version">ஏதேனும்</string>
-    <string name="enabled">செயலில்பாட்டில் உள்ளது</string>
-    <string name="disabled">முடக்கப்பட்டது</string>
-    <string name="state_selected">தேர்ந்தெடுக்கப்பட்டது</string>
-    <string name="state_not_selected">தேர்ந்தெடுக்கப்படவில்லை</string>
-    <string name="select_all">அனைத்தையும் தேர்ந்தெடு</string>
-    <string name="deselect_all">அனைத்தையும் நீக்கு</string>
-    <string name="reorder_list">பட்டியலை மறுவரிசைப்படுத்து</string>
-    <string name="reorder_list_hint">மறுவரிசைப்படுத்த இழுக்கவும்</string>
-    <string name="reorder_done">வரிசை சேமிக்கப்பட்டது</string>
-    <string name="reset_order">வரிசையை மீட்டமை</string>
-    <string name="reset_order_done">வரிசை மீட்டமைக்கப்பட்டது</string>
-    <string name="reset_order_confirm_title">வரிசையை மீட்டமைக்க வேண்டுமா?</string>
-    <string name="reset_order_confirm_message">பட்டியல் அதன் இயல்பான வரிசைக்குத் திரும்பும் மற்றும் கையால் மாற்றப்பட்ட வரிசை நீக்கப்படும்</string>
-    <string name="accessibility_select_app">ஆப்பைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="accessibility_select_source">மூலத்தைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="accessibility_move_up">மேலே நகர்த்தவும்</string>
-    <string name="accessibility_move_down">கீழே நகர்த்தவும்</string>
-    <string name="accessibility_app_moved_announcement">%1$s, %3$s-ல் %2$s-வது இடத்திற்கு நகர்த்தப்பட்டது</string>
-    <string name="accessibility_scroll_to_top">பட்டியலின் மேலே செல்ல நகர்த்தவும்</string>
-    <string name="rename">பெயரை மாற்று</string>
-    <string name="more_options">கூடுதல் விருப்பங்கள்</string>
-    <string name="import_">இறக்குமதி</string>
-    <string name="export">ஏற்றுமதி செய்</string>
-    <string name="copy">நகல் எடு</string>
-    <string name="copied_to_clipboard">கிளிப்போர்டில் நகலெடுக்கப்பட்டது</string>
-    <string name="download">பதிவிறக்கு</string>
-    <string name="less">குறைவாக</string>
-    <string name="expand">விரிவாக்கு</string>
-    <string name="expanded">விரிவடைந்தது</string>
-    <string name="collapse">சுருக்கு</string>
-    <string name="collapsed">சுருக்கப்பட்டது</string>
-    <string name="continue_">தொடரவும்</string>
-    <string name="version">பதிப்பு</string>
     <!-- Who made a patch source, as a field label -->
-    <string name="author">ஆசிரியர்</string>
     <!-- A file a patch source is added from, as a field label -->
-    <string name="file">கோப்பு</string>
-    <string name="clone">நகல்</string>
     <!-- Button that starts patching the selected app. A verb, as in "patch this app" -->
-    <string name="patch">பேட்ச்</string>
-    <string name="patching">பேட்ச் செய்கிறது</string>
-    <string name="patched">பேட்ச் செய்யப்பட்டது</string>
-    <string name="open">திற</string>
-    <string name="mount">நிறுவு</string>
-    <string name="mounted">நிறுவப்பட்டது</string>
-    <string name="unmount">আনமவுண்ட்</string>
-    <string name="unmounted">நீக்கப்பட்டது</string>
-    <string name="remount">மறுடன்நிறுத்து</string>
-    <string name="restore">மீட்டெடு</string>
-    <string name="share">பகிர்</string>
-    <string name="install">நிறுவு</string>
-    <string name="installed">நிறுவப்பட்டது</string>
-    <string name="reinstall">மீண்டும் நிறுவு</string>
-    <string name="uninstall">நிறுவலை நீக்கு</string>
-    <string name="uninstalled">நீக்கப்பட்டது</string>
-    <string name="save">சேமி</string>
-    <string name="saved">சேமிக்கப்பட்டது</string>
-    <string name="update">புதுப்பிப்பு</string>
-    <string name="allow">அனுமதி</string>
-    <string name="hide">மறை</string>
-    <string name="hidden">மறைக்கப்பட்டது</string>
-    <string name="unhide">மறைப்பை நீக்கு</string>
-    <string name="show_all">அனைத்தையும் காட்டு</string>
-    <string name="ignore">புறக்கணிக்கவும்</string>
-    <string name="stop_ignoring">புறக்கணிப்பதை நிறுத்தவும்</string>
-    <string name="stop">நிறுத்து</string>
-    <string name="logs">பதிவுகள்</string>
-    <string name="sources">ஆதாரங்கள்</string>
-    <string name="installing_ellipsis">நிறுத்தப்படுகிறது…</string>
-    <string name="mounting_ellipsis">நிறுத்தப்படுகிறது…</string>
-    <string name="mount_stage_restoring_stock">அசல் மீட்டெடுக்கப்படுகிறது…</string>
-    <string name="mount_stage_copying">நகலெடுக்கப்படுகிறது…</string>
-    <string name="unmounting_ellipsis">டன்நிறுத்த நீக்கப்படுகிறது…</string>
-    <string name="importing_ellipsis">இறக்குகிறது…</string>
-    <string name="imported_successfully">வெற்றிகரமாக இறக்குமதி செய்யப்பட்டது</string>
-    <string name="changelog">மாற்றப் பதிவுகளைக் காண்க</string>
-    <string name="changelog_for_app">%s-க்கான மாற்றங்கள்</string>
-    <string name="changelog_general_changes">பொதுவான மாற்றங்கள்</string>
-    <string name="whats_new">புதியவை என்ன</string>
-    <string name="changelog_description">இந்த பதிப்பில் உள்ள புதிய அம்சங்கள்</string>
-    <string name="changelog_download_fail">மாற்றப்பதிவிறக்கத்தை பதிவிறக்க முடியவில்லை: %s</string>
-    <string name="changelog_empty">மாற்றப் பதிவு எதுவும் இல்லை</string>
-    <string name="changelog_earlier_releases">முந்தைய வெளியீடுகள்</string>
-    <string name="changelog_patched_with">%s மூலம் திருத்தப்பட்டது</string>
-    <string name="changelog_older_empty">காட்டுவதற்கு பழைய பதிப்புகள் இல்லை</string>
-    <string name="changelog_older_failed">பழைய வெளியீடுகளை ஏற்ற முடியவில்லை</string>
     <!-- Label of a footer button beside "Translate". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="changelog_release_page">வெளியீட்டுப் பக்கம்</string>
-    <string name="content_translate">மொழிபெயர்க்கவும்</string>
     <!-- Label of a footer button beside other buttons, which reads "Translate" until pressed. Keep it as short as "Translate", a longer one moves the buttons onto two rows -->
-    <string name="content_show_original">அசல்</string>
-    <string name="content_translation_failed">மொழிபெயர்ப்பது தோல்வியுற்றது: %s</string>
-    <string name="changelog_section_new">புதியவை</string>
-    <string name="changelog_section_fixes">சரிசெய்தல்கள்</string>
-    <string name="changelog_section_performance">செயல்திறன்</string>
-    <string name="changelog_section_improvements">மேம்பாடுகள்</string>
-    <string name="changelog_section_app_support">ஆப் ஆதரவு</string>
-    <string name="changelog_section_other">மாற்றங்கள்</string>
-    <string name="changelog_badge_latest">சமீபத்தியது</string>
     <!-- Marks the version of a patch source downloaded to the manager, which patches with it rather than the one an installed app was patched with -->
-    <string name="changelog_badge_downloaded">பதிவிறக்கப்பட்டது</string>
-    <string name="changelog_badge_prerelease">முன்-வெளியீடு</string>
     <!-- "%s" is the number of changes in the section -->
-    <string name="changelog_show_all">அனைத்தையும் காட்டு (%s)</string>
-    <string name="changelog_show_less">குறைவாகக் காட்டு</string>
-    <string name="no_network_toast">இணைய இணைப்பு கிடைக்கவில்லை</string>
-    <string name="update_available">ஒரு புதுப்பிப்பு கிடைக்கிறது</string>
-    <string name="ready_to_install_update">புதுப்பிப்பை நிறுவத் தயாராக உள்ளது</string>
-    <string name="update_completed">புதுப்பிப்பு நிறுவப்பட்டது</string>
-    <string name="install_update_manager_failed">புதுப்பிப்பை நிறுவுவதில் தோல்வி</string>
-    <string name="installing_manager_update">புதுப்பிப்பை நிறுவுகிறது…</string>
-    <string name="installing_manager_update_hint">புதுப்பித்தலை முடிக்க Morphe மூடப்படும்</string>
-    <string name="downloading_manager_update">புதுப்பிப்பைப் பதிவிறக்குகிறது…</string>
     <!-- Shown while downloading when the server does not report the total size. "%1$s" is the megabytes so far. -->
-    <string name="manager_update_progress_downloaded">%1$s MB பதிவிறக்கப்பட்டது</string>
     <!-- Shown under the download percentage. "%1$s" is the megabytes so far, "%2$s" the total. -->
-    <string name="manager_update_progress_size">%1$s / %2$s MB</string>
-    <string name="manager_update_not_ready">இந்த வெளியீடு இன்னும் வெளியிடப்பட்டு வருகிறது. சில நிமிடங்கள் கழித்து மீண்டும் முயற்சிக்கவும்</string>
-    <string name="update_download_missing">பதிவிறக்கம் செய்யப்பட்ட புதுப்பிப்பு இனி கிடைக்கவில்லை. அதை மீண்டும் பதிவிறக்கவும்</string>
-    <string name="failed_to_check_updates">புதுப்பிப்புகளைச் சரிபார்க்க முடியவில்லை: %s</string>
-    <string name="failed_to_download_update">புதுப்பிப்பை பதிவிறக்க முடியவில்லை: %s</string>
-    <string name="download_confirmation_metered">"நீங்கள் தற்போது அளவிடப்பட்ட இணைப்பில் இருக்கிறீர்கள், மேலும் உங்கள் சேவை வழங்குநரிடமிருந்து தரவு கட்டணங்கள் வசூலிக்கப்படலாம்.
-
-நீங்கள் இன்னும் தொடர விரும்புகிறீர்களா?"</string>
-    <string name="download_update_confirmation">புதுப்பிப்பை பதிவிறக்க வேண்டுமா?</string>
     <!-- Onboarding coach marks -->
     <!-- %1$s = current step number, %2$s = total number of steps (e.g. "3 of 13") -->
-    <string name="onboarding_step_of">%2$s-ல் %1$s</string>
-    <string name="onboarding_sources_desc">உங்கள் பேட்ச் ஆதாரங்களை நிர்வகிக்கவும். ஒவ்வொரு ஆதாரமும் உங்கள் செயலிகளில் பயன்படுத்தக்கூடிய பேட்ச்களை வழங்குகிறது</string>
-    <string name="onboarding_other_apps_desc">பட்டியலில் இல்லாத ஒரு ஆப்பை, APK கோப்பிலிருந்தோ அல்லது உங்கள் சாதனத்தில் நிறுவப்பட்ட ஆப்பிலிருந்தோ பேட்ச் செய்யவும்</string>
-    <string name="onboarding_add_source_desc">ஒரு இணைப்பிலிருந்தோ அல்லது பேட்ச் பண்டில் கோப்பிலிருந்தோ பேட்ச் ஆதாரத்தைச் சேர்க்கவும்</string>
-    <string name="onboarding_signing_key_desc">உங்கள் பேட்ச் செய்யப்பட்ட ஆப்புகளை கையொப்பமிடும் கீ-யை பேக்அப் செய்யவும். அது இல்லையெனில், அவற்றை நிறுவி நீக்கிய பிறகுதான் அப்டேட் செய்ய முடியும்</string>
-    <string name="onboarding_swipe_title">ஸ்வைப் சைகைகள்</string>
-    <string name="onboarding_swipe_desc">கிடைக்கக்கூடிய பேட்ச்களைப் பார்க்க ஒரு செயலி கார்டை வலதுபுறமாக ஸ்வைப் செய்யவும். முகப்புத் திரையில் இருந்து கார்டை மறைக்க இடதுபுறமாக ஸ்வைப் செய்யவும்</string>
-    <string name="onboarding_settings_desc">Morphe-ஐ தனிப்பயனாக்கவும்: தோற்றம், மேம்பட்ட விருப்பங்கள் மற்றும் கணினி கருவிகள்</string>
-    <string name="onboarding_sources_patches_desc">இந்த மூலத்திலிருந்து கிடைக்கும் அனைத்து பேட்ச்களையும் பார்க்க தட்டவும்</string>
-    <string name="onboarding_sources_version_desc">இந்த மூலத்திற்கான முழுமையான மாற்றப்பதிவைக் காண பதிப்பைத் தட்டவும்</string>
-    <string name="onboarding_sources_apps_desc">இந்த ஆதாரம் எந்த ஆப்புகளை பேட்ச் செய்கிறது என்பதைப் பார்க்கவும், அதில் எவற்றுக்கு பேட்ச்கள் வழங்கப்படுகின்றன என்பதைத் தேர்ந்தெடுக்கவும் தட்டவும்</string>
-    <string name="onboarding_sources_prerelease_desc">இந்த மூலத்திலிருந்து முன்கூட்டிய வெளியீட்டு பேட்ச் பதிப்புகளைப் பெற இதை இயக்குக</string>
-    <string name="onboarding_appearance_tab_desc">செயலியின் தோற்றத்தை மாற்றியமைக்கவும்: தீம், ஆக்சென்ட் வண்ணம் மற்றும் பின்னணி</string>
-    <string name="onboarding_expert_mode_desc">பேட்ச் தேர்வு, தனிப்பயன் விருப்பங்கள் மற்றும் பிற மேம்பட்ட அம்சங்களைத் திறக்க எக்ஸ்பர்ட் மோடை இயக்குக</string>
     <!-- Translate "System" the same way as the System settings tab -->
-    <string name="onboarding_system_installer_desc">பேட்ச் செய்யப்பட்ட செயலிகள் எவ்வாறு நிறுவப்பட வேண்டும் என்பதைத் தேர்வு செய்யவும்: தரநிலை, ரூட் மவுண்ட் அல்லது Shizuku</string>
-    <string name="onboarding_system_file_picker_desc">APK-கள் அல்லது கீஸ்டோர்களைத் தேர்ந்தெடுக்கும்போது சிஸ்டம் பிக்கருக்குப் பதிலாக உள்ளமைக்கப்பட்ட கோப்பு உலாவியைப் பயன்படுத்த இதை இயக்குக</string>
     <!-- Tour prompt dialog shown after first successful patch install -->
-    <string name="tour_prompt_title">விரைவான அம்சப் பயணம்</string>
-    <string name="tour_prompt_desc">Morphe-இன் முக்கிய அம்சங்களைப் பற்றிய விரைவான சுற்றுப்பயணம் வேண்டுமா?</string>
     <!-- Label of a footer button beside "Skip". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="tour_prompt_confirm">எனக்குக் காட்டுங்கள்</string>
-    <string name="onboarding_restart_title">அம்சங்கள் சுற்றுப்பயணம்</string>
-    <string name="onboarding_restart_desc">முக்கிய அம்சங்களின் வழிகாட்டுதல் சுற்றுப்பயணம்</string>
 </resources>

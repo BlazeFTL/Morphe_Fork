@@ -1,1519 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Home Screen -->
-    <string name="home_other_apps">កម្មវិធីផ្សេង</string>
-    <string name="home_other_apps_action">ជ្រើសរើសកម្មវិធីផ្សេងទៀត</string>
-    <string name="home_not_patched_yet">មិនទាន់បានបំណេះនៅឡើយទេ</string>
-    <string name="home_unpatched_version_installed">កំណែដែលមិនទាន់បាន patch ត្រូវបានដំឡើង</string>
-    <string name="home_unpatched_badge">មិនបានបំណេះ</string>
-    <string name="home_no_patches_available">មិនមាន patch ឡើយ</string>
-    <string name="home_app_hide_title">លាក់កម្មវិធីនេះមែនទេ?</string>
-    <string name="home_more_apps_title">កម្មវិធីបន្ថែម</string>
-    <string name="home_more_apps_hide_title">លាក់កាតនេះ?</string>
-    <string name="home_more_apps_hide_message">អ្នកអាចនាំវាត្រឡប់មកវិញគ្រប់ពេលនៅក្នុង ការកំណត់ &gt; រូបរាង &gt; អេក្រង់ដើម</string>
-    <string name="home_app_hide_message">កម្មវិធីនេះនឹងត្រូវបានលាក់មិនបង្ហាញលើអេក្រង់មុខ។ អ្នកអាចបង្ហាញវាឡើងវិញដោយចុចប៊ូតុងនៅខាងក្រោមបំផុតនៃបញ្ជី</string>
-    <string name="home_app_will_be_hidden">កម្មវិធីនេះនឹងត្រូវលាក់</string>
-    <string name="home_app_hidden_named">%s ត្រូវបានលាក់</string>
-    <string name="home_app_shown_named">%s ត្រូវបានបង្ហាញ</string>
-    <string name="home_app_no_hidden">គ្មានកម្មវិធីដែលត្រូវបានលាក់</string>
-    <string name="home_app_hidden_apps_title">កម្មវិធីដែលបានលាក់</string>
-    <string name="home_app_hidden_apps_hint">ប៉ះដើម្បីបង្ហាញឡើងវិញ</string>
-    <string name="home_apps_unhide_message">កម្មវិធីដែលត្រូវបានបង្ហាញឡើងវិញ នឹងត្រឡប់ទៅអេក្រង់ដើម</string>
-    <string name="home_app_patch_sources_description">ប្រភពដែលមិនបានគូសសញ្ញា នឹងមិនត្រូវបានផ្តល់ជូននៅពេលដែលកម្មវិធីទាំងនេះត្រូវបាន patch ហើយ patch របស់ពួកគេនឹងមិនចូលរួមក្នុងការជ្រើសរើសដោយខ្លួនឯងឡើយ។ ប្រភពនីមួយៗនៅតែដំណើរការសម្រាប់កម្មវិធីផ្សេងទៀត</string>
-    <string name="home_app_patch_sources_mixed">ផ្តល់ជូនសម្រាប់ %1$s នៃ %2$s</string>
-    <string name="home_app_patch_sources_covers">មាន patch សម្រាប់ %1$s នៃ %2$s</string>
-    <string name="home_app_patch_sources_last">រាល់កម្មវិធីទាំងអស់ត្រូវការប្រភពមួយដែលនៅសល់ដើម្បី patch</string>
-    <string name="android_11_bug_dialog_title">បញ្ហាបច្ចេកទេស Android 11</string>
-    <string name="android_11_bug_dialog_description">ការអនុញ្ញាតដំឡើងកម្មវិធីត្រូវតែផ្តល់ឱ្យជាមុន ដើម្បីជៀសវាងកំហុសនៅក្នុងប្រព័ន្ធ Android 11 ដែលនឹងប៉ះពាល់អវិជ្ជមានដល់បទពិសោធន៍របស់អ្នកប្រើប្រាស់</string>
-    <string name="deep_link_add_source_title">បន្ថែមប្រភព</string>
-    <string name="deep_link_add_source_message">តើអ្នកចង់បន្ថែមប្រភពបំណះនេះទៅក្នុង Morphe ដែរឬទេ?</string>
-    <string name="deep_link_add_source_warning">បន្ថែមតែប្រភពដែលអ្នកទុកចិត្តប៉ុណ្ណោះ</string>
     <!-- Shown under the app a link was opened for -->
-    <string name="deep_link_add_source_only_app">មានតែកម្មវិធីនេះប៉ុណ្ណោះដែលត្រូវបានបន្ថែម។ អ្នកអាចបន្ថែមកម្មវិធីផ្សេងទៀតពីបញ្ជីកម្មវិធីនៃប្រភព</string>
     <!-- Shown when the link was opened for the universal patches of a source, which no app is added with -->
-    <string name="deep_link_add_source_only_universal">មានតែ patch សកលប៉ុណ្ណោះដែលត្រូវបានបន្ថែម។ អ្នកអាចបន្ថែមកម្មវិធីពីបញ្ជីកម្មវិធីរបស់ប្រភព</string>
     <!-- Asked when the link names an app of a source that is already added -->
-    <string name="deep_link_add_source_app_back">ប្រភពនេះត្រូវបានបន្ថែមរួចហើយ។ តើអ្នកចង់បន្ថែមកម្មវិធីនេះពីប្រភពដែលមានស្រាប់ដែរឬទេ?</string>
     <!-- Asked when a .mpp file opened from a file manager is another version of a local source, %s being its name -->
-    <string name="mpp_import_update_message">នេះគឺជាកំណែថ្មីនៃ %s។ តើអ្នកចង់ធ្វើបច្ចុប្បន្នភាពវាដែរឬទេ?</string>
-    <string name="mpp_import_unreadable">ឯកសារនេះមិនអាចអានបានទេ</string>
     <!-- Home Screen - Update Notifications -->
-    <string name="home_update_available">Morphe អាចអាប់ដេតបានហើយ</string>
-    <string name="home_update_available_subtitle">កំណែថ្មីត្រៀមជាស្រេច ដើម្បីដំឡើង</string>
-    <string name="home_blocked_source_title">បានរកឃើញប្រភព patch ដែលត្រូវបានបិទ</string>
-    <string name="home_blocked_source_subtitle">ប៉ះដើម្បីពិនិត្យមើល និងលុបចេញ</string>
-    <string name="home_metadata_errors_title">ប្រភព patch មួយចំនួនមិនអាចប្រើប្រាស់បាន</string>
-    <string name="home_metadata_errors_subtitle">ប៉ះដើម្បីពិនិត្យមើលប្រភព</string>
-    <string name="home_outdated_manager_title">Morphe ហួសកាលបរិច្ឆេទហើយ</string>
-    <string name="home_outdated_manager_subtitle">ប្រភព patch មួយចំនួនត្រូវការកំណែថ្មីជាងនេះ</string>
-    <string name="home_held_back_title">ប្រភព patch មួយបានធ្វើឱ្យ Morphe គាំង</string>
-    <string name="home_held_back_subtitle">វាត្រូវបានរំលង ដើម្បីឱ្យកម្មវិធីអាចចាប់ផ្ដើមបាន។ ប៉ះដើម្បីពិនិត្យមើលឡើងវិញ</string>
-    <string name="home_metered_skipped_title">ការធ្វើបច្ចុប្បន្នភាពត្រូវបានផ្អាកលើទិន្នន័យចល័ត</string>
-    <string name="home_metered_skipped_subtitle">ប៉ះដើម្បីអនុញ្ញាតឱ្យធ្វើបច្ចុប្បន្នភាពលើទិន្នន័យចល័ត</string>
-    <string name="home_repatch_available_subtitle">ប៉ះដើម្បីដាក់ពួកវាទាំងអស់ក្នុងជួររង់ចាំ</string>
-    <string name="home_update_error">ការអាប់ដេតបានបរាជ័យ</string>
-    <string name="home_update_error_subtitle">មានបញ្ហាមួយចំនួនបានកើតឡើងពេលធ្វើបច្ចុប្បន្នភាពប្រភព</string>
-    <string name="home_update_skipped_metered">ការអាប់ដេតត្រូវបានរំលង</string>
-    <string name="home_update_skipped_metered_subtitle">ទិន្នន័យចល័តកំពុងដំណើរការ</string>
-    <string name="home_updating_sources">កំពុងអាប់ដេតប្រភព…</string>
-    <string name="home_update_success">អាប់ដេតប្រភពបានបញ្ចប់</string>
-    <string name="home_update_success_subtitle">ប្រភពរបស់អ្នកទាន់សម័យហើយ</string>
-    <string name="home_sources_are_loading">ប្រភពកំពុងផ្ទុក សូមរង់ចាំ…</string>
-    <string name="home_search_apps">ស្វែងរកកម្មវិធី</string>
-    <string name="list_options_title">តម្រៀប និងចម្រោះ</string>
-    <string name="list_options_state_description">តម្រៀបតាម %1$s, ចម្រោះតាម %2$s</string>
-    <string name="home_app_filter_all_description">គ្រប់កម្មវិធីទាំងអស់នៅលើអេក្រង់ដើម</string>
-    <string name="home_app_filter_patched_description">កម្មវិធីដែលអ្នកបាន patch ឬបានរក្សាទុកជាមួយ Morphe</string>
-    <string name="home_app_filter_not_patched_description">កម្មវិធីដែលអ្នកមិនទាន់បាន patch ក្នុង Morphe នៅឡើយ</string>
-    <string name="home_app_filter_installed_description">កម្មវិធីដែលបានដំឡើងនៅលើឧបករណ៍នេះនាពេលបច្ចុប្បន្ន</string>
-    <string name="home_app_filter_uninstalled_description">កម្មវិធីដែលបាន patch ជាមួយ Morphe ដែលលែងមាននៅលើឧបករណ៍នេះទៀតហើយ</string>
-    <string name="home_app_filter_clones">ការចម្លង</string>
-    <string name="home_app_filter_clones_description">កម្មវិធីដែលត្រូវបានបង្កើតឡើងក្រោមឈ្មោះ package ផ្ទាល់ខ្លួន ហើយត្រូវបានដំឡើងទន្ទឹមនឹងកម្មវិធីដើម</string>
-    <string name="home_app_grouping_none">ឥតមាន</string>
-    <string name="home_app_grouping_all_apps_description">បញ្ជីមួយដែលមានគ្រប់កម្មវិធីទាំងអស់</string>
-    <string name="home_app_grouping_sources_description">កម្មវិធីស្ថិតនៅក្រោមប្រភព patch ដែលផ្តល់ឱ្យពួកវា</string>
-    <string name="home_app_grouping_custom_description">កម្មវិធីនៅក្នុងប្រភេទដែលអ្នកបង្កើត</string>
-    <string name="home_app_sort_manual_description">សង្កត់ឱ្យជាប់លើកម្មវិធីមួយ រួចចុចប៊ូតុងរៀបលំដាប់</string>
-    <string name="home_app_sort_recommended">លំដាប់ដែលបានណែនាំ</string>
-    <string name="home_app_sort_recommended_description">កម្មវិធីដែលបានដំឡើង និងបាន Pin ជាមុន</string>
-    <string name="home_app_sort_name_asc_description">តាមលំដាប់អក្ខរក្រម, A ទៅ Z</string>
-    <string name="home_app_sort_name_desc_description">លំដាប់អក្ខរក្រមបញ្ច្រាស, Z ទៅ A</string>
-    <string name="home_app_sort_updates_first">បច្ចុប្បន្នភាព Patch ជាមុន</string>
-    <string name="home_app_sort_updates_first_description">កម្មវិធីដែលមាន patch ថ្មីជាងគេមុន បន្ទាប់មកតាមលំដាប់ដែលបានណែនាំ</string>
-    <string name="home_app_sort_recently_patched">បានបិទបាំងថ្មីៗ</string>
-    <string name="home_app_sort_recently_patched_description">កម្មវិធីដែលបានបិទបាំងថ្មីបំផុតមុនគេ</string>
-    <string name="home_no_apps_title">មិនមានកម្មវិធីឡើយ</string>
-    <string name="home_no_apps_subtitle">បន្ថែមប្រភព patch ឬបើកដំណើរការប្រភពដែលមានស្រាប់នៅក្នុង %s</string>
-    <string name="home_no_apps_search_subtitle">គ្មានកម្មវិធីណាមួយដែលត្រូវនឹង \"%s\" ទេ</string>
-    <string name="home_all_apps_hidden_title">កម្មវិធីទាំងអស់ត្រូវបានលាក់</string>
-    <string name="home_all_apps_hidden_subtitle">អ្នកបានលាក់កម្មវិធីទាំងអស់ពីអេក្រង់ដើម</string>
-    <string name="home_no_apps_filter_title">គ្មានកម្មវិធីណាមួយត្រូវនឹងតម្រងនេះទេ</string>
-    <string name="home_no_apps_filter_subtitle">គ្មានអ្វីដែលត្រូវនឹង %s ទេ</string>
-    <string name="home_category_add">បន្ថែមប្រភេទ</string>
-    <string name="home_category_all_apps">កម្មវិធីទាំងអស់</string>
-    <string name="home_category_custom">ផ្ទាល់ខ្លួន</string>
-    <string name="home_category_uncategorized">មិនទាន់បានបែងចែកប្រភេទ</string>
-    <string name="home_category_new_title">ប្រភេទថ្មី</string>
-    <string name="home_category_rename_title">ប្តូរឈ្មោះប្រភេទ</string>
-    <string name="home_category_name">ឈ្មោះប្រភេទ</string>
-    <string name="home_category_move_to">ផ្លាស់ទីទៅកាន់ប្រភេទ</string>
-    <string name="home_category_move_selected_title">ផ្លាស់ទីកម្មវិធីដែលបានជ្រើសរើស</string>
     <!-- %s is the name of the category -->
-    <string name="home_category_delete_title">លុប %s ឬទេ?</string>
     <!-- %s is the name of the category the apps fall back to -->
-    <string name="home_category_delete_moves_apps">កម្មវិធីរបស់វាត្រូវបានផ្លាស់ប្តូរត្រឡប់ទៅ &lt;b&gt;%s&lt;/b&gt; វិញ</string>
-    <string name="home_category_actions_unavailable">សកម្មភាពមិនមានសម្រាប់ប្រភេទនេះ</string>
     <!-- Home Screen - Home Greetings -->
-    <string name="home_greeting_1">តើកម្មវិធីណាមួយដែលអ្នកចង់ធ្វើបំណេះ?</string>
     <!-- Humorous hype message with light nostalgia -->
-    <string name="home_greeting_2">ត្រៀមខ្លួនដើម្បីធ្វើឱ្យកម្មវិធីក្លាយជាអស្ចារ្យម្ដងទៀតហើយឬនៅ?</string>
     <!-- "Buckle up" referring to fastening your vehicle seat belt. A light-hearted joke to build excitement -->
-    <string name="home_greeting_3">រៀបចំខ្លួនឱ្យរួចរាល់ ដល់ពេល Patch ហើយ</string>
     <!-- Sarcastic joke about blocking ads, intentionally over-the-top -->
-    <string name="home_greeting_4">ថ្ងៃថ្មីមួយទៀត ជាមួយស្នាដៃប្លុកពាណិជ្ជកម្មដ៏អស្ចារ្យ</string>
     <!-- "Watch ads" refers to watching video ads in unpatched apps -->
-    <string name="home_greeting_5">ចង់មើលពាណិជ្ជកម្មមែនទេ? ខ្ញុំក៏មិនចង់ដែរ</string>
     <!-- Friendly, slightly mischievous joke about controlling app behavior -->
-    <string name="home_greeting_6">តោះ ធ្វើឱ្យ App របស់អ្នកដើរតាមយើង</string>
     <!-- Whimsical forecast-style joke, not meant literally -->
-    <string name="home_greeting_7" formatted="false">ការព្យាករណ៍សម្រាប់ថ្ងៃនេះ៖ មានឱកាស ១០០% ក្នុងការបិតपैច</string>
     <!-- From mediocrity to amazing -->
-    <string name="home_greeting_8">ត្រៀមខ្លួនប្ដូរពីភាពធម្មតា ទៅជាភាពអស្ចារ្យហើយឬនៅ?</string>
     <!-- Playful exaggeration, making patching feel heroic -->
-    <string name="home_greeting_9">ជួយសង្គ្រោះ App ពីបញ្ហានានា ចាប់ពីថ្ងៃនេះតទៅ</string>
     <!-- Light sarcasm, casual and tech-savvy humor -->
-    <string name="home_greeting_10">ដំណើរការដោយកាហ្វេអ៊ីន និង Patch ល្អៗ</string>
     <!-- Morning greetings (5:00–11:59) -->
-    <string name="home_greeting_morning_1">ក្រោកឡើង ហើយធ្វើការ patch</string>
-    <string name="home_greeting_morning_2">អរុណសួគ៌! កម្មវិធីមិនអាច patch ខ្លួនឯងបានទេ</string>
     <!-- Afternoon greetings (12:00–16:59) -->
-    <string name="home_greeting_afternoon_1">ងងុយដេកពេលរសៀលមែនទេ? សាកល្បង patch អ្វីមួយទៅ</string>
-    <string name="home_greeting_afternoon_2">ការ patch ក្រោយពេលទទួលទានអាហារថ្ងៃត្រង់ ផ្តល់អារម្មណ៍ប្លែក</string>
-    <string name="home_greeting_afternoon_3">វេនពេលរសៀល៖ កំណែ patch</string>
     <!-- Evening greetings (17:00–21:59) -->
-    <string name="home_greeting_evening_1">សាយ័ណ្ហសួគ៌! ការ patch ពេលល្ងាចផ្តល់អារម្មណ៍ប្លែក</string>
-    <string name="home_greeting_evening_2">ត្រៀមសម្រាកមែនទេ? patch កម្មវិធីមួយសិនទៅ</string>
-    <string name="home_greeting_evening_3">ចេញពីធ្វើការមែនទេ? patch អ្វីមួយសិនទៅ</string>
     <!-- Late night greetings (22:00–23:59) -->
-    <string name="home_greeting_late_night_1">នៅមិនទាន់សម្រាកទៀតឬ? កម្មវិធីដែលត្រូវ patch ក៏នៅមិនទាន់សម្រាកដែរ</string>
-    <string name="home_greeting_late_night_2">វគ្គ patch នៅពេលយប់ជ្រៅ? គោរពមែនទែន</string>
-    <string name="home_greeting_late_night_3">របៀប Night owl: ត្រូវបានបើកដំណើរការ</string>
     <!-- Super late night greetings (0:00–4:59) -->
-    <string name="home_greeting_super_late_1">ម៉ោង peak សម្រាប់ការ patch... តាមពាក្យគេនិយាយ</string>
-    <string name="home_greeting_super_late_2">គេងមិនលក់មែនទេ? សាក patch អ្វីមួយទៅ</string>
-    <string name="home_greeting_super_late_3">ដល់ពេលនេះហើយ គ្រាន់តែនៅភ្ញាក់ ហើយ patch ទៅ</string>
-    <string name="home_greeting_super_late_4">អ្នក និង server ភ្ញាក់ទាំងពីរ</string>
-    <string name="home_greeting_super_late_5">សកម្មពេលយប់ និងមានផលិតភាព</string>
     <!-- Halloween greetings, shown instead of the ones above around October 31 -->
     <!-- Pun on "Trick or treat" -->
-    <string name="home_greeting_halloween_1">ល្បិច ឬ បំណះ?</string>
-    <string name="home_greeting_halloween_2">គ្មានខ្មោចនៅក្នុង APK ទាំងនេះទេ យើងបានត្រួតពិនិត្យរួចហើយ</string>
-    <string name="home_greeting_halloween_3">រដូវកាលដ៏គួរឱ្យខ្លាច បំណះថ្មីៗ</string>
     <!-- Pun on "Something wicked this way comes", a line from Shakespeare's Macbeth -->
-    <string name="home_greeting_halloween_4">មានការ patch ដ៏គួរឱ្យរន្ធត់មកដល់ហើយ</string>
     <!-- Winter holiday greetings, shown instead of the ones above from late December to early January -->
-    <string name="home_greeting_winter_1">រីករាយថ្ងៃឈប់សម្រាក ជាមួយនឹងការ patch ថ្មីៗ</string>
     <!-- Pun on the song "Let It Snow! Let It Snow! Let It Snow!" -->
-    <string name="home_greeting_winter_2">ឱ្យព្រិលធ្លាក់ចុះមក ឱ្យការ patch កើតឡើង</string>
-    <string name="home_greeting_winter_3">ឆ្នាំថ្មី ការ patch ថ្មី</string>
     <!-- Pun on "Dashing through the snow", the opening line of "Jingle Bells" -->
-    <string name="home_greeting_winter_4">Patch ឆ្លងកាត់ហ្វូងព្រិល</string>
     <!-- New Year greetings, shown instead of the ones above on December 31 and January 1 -->
-    <string name="home_greeting_new_year_1">រីករាយឆ្នាំថ្មី!</string>
-    <string name="home_greeting_new_year_2">រាប់ថយក្រោយឆ្ពោះទៅរកការ patch ថ្មីៗ</string>
-    <string name="home_greeting_new_year_3">ឆ្នាំថ្មី ប៉ុន្តែកម្មវិធីដែលគ្មានការផ្សាយពាណិជ្ជកម្មនៅតែដដែល</string>
     <!-- Pun on the saying "Out with the old, in with the new" -->
-    <string name="home_greeting_new_year_4">ចេញចោលនូវកំណែចាស់ ទទួលយកកំណែថ្មី</string>
     <!-- Home Screen - Sources Management -->
-    <string name="sources_management_title">ប្រភពបំណះ</string>
-    <string name="sources_search">ស្វែងរកប្រភព និង patch</string>
     <!-- Which sources the sources page lists, each with what it keeps -->
-    <string name="sources_filter_all_description">គ្រប់ប្រភពទាំងអស់</string>
-    <string name="sources_filter_enabled_description">ប្រភពដែល patch ត្រូវបានយកចេញពី</string>
-    <string name="sources_filter_disabled_description">ប្រភពត្រូវបានបិទ</string>
-    <string name="sources_filter_issues">ត្រូវការការយកចិត្តទុកដាក់</string>
-    <string name="sources_filter_issues_description">ប្រភពដែលត្រូវបានបិទ បរាជ័យក្នុងការផ្ទុក ឬត្រូវការ Morphe កំណែថ្មីជាងនេះ</string>
-    <string name="sources_sort_manual">លំដាប់ដោយដៃ</string>
-    <string name="sources_sort_manual_hint">ចុចឱ្យជាប់លើប្រភពដើម្បីរៀបចំលំដាប់ឡើងវិញ</string>
-    <string name="sources_sort_last_updated">បានធ្វើបច្ចុប្បន្នភាពចុងក្រោយ</string>
-    <string name="sources_sort_last_updated_description">បច្ចុប្បន្នភាពប្រភពថ្មីបំផុតជាមុន</string>
-    <string name="sources_sort_enabled_first">ដែលបានបើកដំណើរការជាមុន</string>
-    <string name="sources_sort_enabled_first_description">បង្ហាញប្រភពសកម្មមុនប្រភពដែលបានបិទ</string>
-    <string name="sources_patches_source_disabled_hint">ប្រភពនេះត្រូវបានបិទ។ Patch របស់វាត្រូវបានបង្ហាញសម្រាប់ជាឯកសារយោង ហើយមិនត្រូវបានអនុវត្តទេ</string>
-    <string name="sources_management_open_in_browser">បើកក្នុងកម្មវិធីច្បោល</string>
-    <string name="sources_management_report_issue">រាយការណ៍អំពីបញ្ហា</string>
-    <string name="sources_management_failed_to_open_url">បរាជ័យក្នុងការបើក URL</string>
-    <string name="sources_apps">កម្មវិធី</string>
-    <string name="sources_apps_description">កម្មវិធីដែលបានគូសសញ្ញាគឺមកពីប្រភពនេះ។ ប៉ះកម្មវិធីដើម្បីដកវាចេញ ឬនាំវាត្រឡប់មកវិញ។ កម្មវិធីមួយនឹងចាកចេញពីអេក្រង់ដើម នៅពេលដែលគ្មានប្រភពណាមួយនាំវាចូល លុះត្រាតែអ្នកបាន patch វា</string>
-    <string name="sources_apps_brought">នាំមកដោយប្រភពនេះ</string>
-    <string name="sources_apps_left_out">ត្រូវបានទុកចេញពីប្រភពនេះ</string>
     <!-- Under an app left out of a source that keeps its home screen card because the user has patched it -->
-    <string name="sources_apps_stays_patched">រក្សាទុកជា patched</string>
     <!-- Marks an app (not a patch) the source started supporting since its app list was last opened -->
-    <string name="sources_apps_new">ថ្មី</string>
-    <string name="sources_apps_new_apps">នាំយកកម្មវិធីថ្មីៗ</string>
     <!-- Under the Bring new apps switch in a source's app list, whichever way it is set. "It" is the patch source -->
-    <string name="sources_apps_new_apps_description">កម្មវិធីដែលវាបន្ថែមនៅពេលក្រោយ នឹងបង្ហាញនៅលើអេក្រង់ដើម</string>
-    <string name="sources_management_prerelease_toggle">Patch មុនពេលចេញផ្សាយជាផ្លូវការ (Pre-release patches)</string>
-    <string name="sources_management_prerelease_toggle_description">ទទួលបានការចូលប្រើមុនសម្រាប់កំណែ patch പരീក្សាកម្រិតថ្មី</string>
-    <string name="sources_prerelease_warning_title">បើកដំណើរការ pre-release patches?</string>
-    <string name="sources_prerelease_warning_message">Pre-release builds នៅតែស្ថិតក្នុងការអភិវឌ្ឍន៍នៅឡើយ។ Patches អាចនឹងបរាជ័យ ឬធ្វើឱ្យកម្មវិធីគាំង ហើយមុខងារអាចនឹងផ្លាស់ប្តូរដោយគ្មានការជូនដំណឹង</string>
-    <string name="expert_mode_prerelease_notice">ប្រភពនេះស្ថិតនៅលើការបិទបាំងមុនការចេញផ្សាយ។ ការបិទបាំងអាចនឹងបរាជ័យ ឬដំណើរការមិនដូចការរំពឹងទុក</string>
-    <string name="expert_mode_experimental_version_notice">ប្រភពនេះមានតែការគាំទ្របែបពិសោធន៍សម្រាប់កំណែកម្មវិធីនេះប៉ុណ្ណោះ។ Patch របស់វាអាចនឹងមិនមានស្ថេរភាព ឬមិនពេញលេញ</string>
-    <string name="sources_management_experimental_versions_toggle">កំណែកម្មវិធីពិសោធន៍</string>
-    <string name="sources_management_experimental_versions_toggle_description">បង្ហាញ និងបិត patches លើគោលដៅកម្មវិធីពិសោធន៍</string>
     <!-- Actions of the panel for several selected sources at once -->
-    <string name="sources_management_prerelease_enable">បើកដំណើរការបំណិតមុនពេលចេញផ្សាយ</string>
-    <string name="sources_management_prerelease_disable">បិទ patch មុនពេលចេញផ្សាយ</string>
-    <string name="sources_management_experimental_versions_enable">បើកកំណែកម្មវិធីពិសោធន៍</string>
-    <string name="sources_management_experimental_versions_disable">បិទកំណែកម្មវិធីពិសោធន៍</string>
-    <string name="sources_management_already_exists">ប្រភពនេះត្រូវបានបន្ថែមរួចហើយ</string>
-    <string name="sources_management_invalid_url">URL ប្រភពមិនត្រឹមត្រូវ។ សូមពិនិត្យមើលអាសយដ្ឋាន ហើយព្យាយាមម្ដងទៀត</string>
-    <string name="sources_management_blocked">ប្រភព patch នេះត្រូវបានបិទ ហើយមិនអាចបន្ថែមបានទេ</string>
-    <string name="sources_management_source_blocked_badge">បានបិទ</string>
-    <string name="sources_management_metadata_unavailable">ទិន្នន័យមេតា មិនមាន</string>
-    <string name="sources_management_metadata_unavailable_hint">ឯកសារទិន្នន័យមេតាពីចម្ងាយមិនមាន។ ការបំណះជាមួយ bundle ដែលបានដំឡើងនៅតែអាចដំណើរការ ប៉ុន្តែការអាប់ដេតស្វ័យប្រវត្តិត្រូវបានបិទសម្រាប់ប្រភពនេះ</string>
-    <string name="sources_management_metadata_unavailable_hint_missing">មិនអាចទាញយកបណ្តុំ patch បានទេ។ URL ប្រភពអាចមិនត្រឹមត្រូវ ឬឯកសារមិនមានវត្តមាន</string>
-    <string name="sources_management_outdated_manager_badge">ធ្វើបច្ចុប្បន្នភាព Morphe</string>
-    <string name="sources_management_outdated_manager_hint">ប្រភពនេះត្រូវបានបង្កើតឡើងសម្រាប់ patcher %1$s ប៉ុន្តែ Morphe %2$s រួមបញ្ចូល patcher %3$s។ សូមធ្វើបច្ចុប្បន្នភាព Morphe ដើម្បីប្រើប្រាស់វា</string>
-    <string name="sources_management_held_back_badge">បានគាំង</string>
-    <string name="sources_management_held_back_hint">ប្រភពនេះបានធ្វើឱ្យ Morphe គាំងពេលកំពុងផ្ទុក ដូច្នេះវាត្រូវបានរំលង។ សូមធ្វើបច្ចុប្បន្នភាព ឬនាំចូលវាឡើងវិញ ដើម្បីព្យាយាមម្ដងទៀត</string>
-    <string name="sources_management_signed_by">ចុះហត្ថលេខាដោយ</string>
-    <string name="sources_management_signing_key_changed_badge">គន្លឹះត្រូវបានផ្លាស់ប្តូរ</string>
-    <string name="sources_management_signing_key_changed_hint">កំណែចេញថ្មីបំផុតមិនត្រូវបានចុះហត្ថលេខាដោយគន្លឹះដែលប្រភពនេះធ្លាប់ប្រើពីមុនមក ដូច្នេះវាមិនត្រូវបានដំឡើងទេ។ ប៉ះដើម្បីពិនិត្យមើលវា</string>
-    <string name="sources_management_source_enabled">ប្រភពត្រូវបានបើកឱ្យប្រើ</string>
-    <string name="sources_management_source_disabled">ប្រភពត្រូវបានបិទ</string>
-    <string name="sources_management_source_updating">កំពុងអាប់ដេតប្រភព</string>
     <!-- Home Screen - Sources Dialogs -->
-    <string name="sources_dialog_display_name">ឈ្មោះបង្ហាញ</string>
-    <string name="sources_dialog_rename">ប្តូរឈ្មោះប្រភពបំណះ</string>
-    <string name="sources_dialog_duplicate_name_error">ប្រភពបំណះដែលមានឈ្មោះនេះមានរួចហើយ</string>
-    <string name="sources_dialog_missing_error">មិនអាចធ្វើបច្ចុប្បន្នភាពប្រភព patch នេះបានទេ</string>
-    <string name="sources_dialog_add_source">បន្ថែមប្រភពបំណះ</string>
-    <string name="sources_dialog_delete_confirm_body">សកម្មភាពនេះមិនអាចត្រឡប់ក្រោយវិញបានទេ</string>
-    <string name="sources_dialog_remote">ពីចម្ងាយ</string>
-    <string name="sources_dialog_remote_url">URL ប្រភព</string>
-    <string name="sources_dialog_remote_url_hint">Repository ឬតំណភ្ជាប់ទៅកាន់ patch bundle .json។ បិទភ្ជាប់ច្រើនក្នុងពេលតែមួយដើម្បីបន្ថែមពួកវាទាំងអស់</string>
-    <string name="sources_dialog_paste_no_links">រកមិនឃើញតំណភ្ជាប់នៅលើ clipboard ទេ</string>
-    <string name="sources_dialog_local">ក្នុងម៉ាស៊ីន</string>
-    <string name="sources_dialog_local_files">រើសឯកសារប្រភពបំណះ</string>
-    <string name="sources_dialog_local_invalid_extension">ឯកសារត្រូវតែមានកន្ទុយ .mpp</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
-    <string name="sources_dialog_local_updates">អាប់ដេត %s</string>
-    <string name="sources_dialog_url_valid">Repository ឬ JSON URL ដែលត្រឹមត្រូវ</string>
-    <string name="sources_dialog_url_invalid">URL ត្រូវតែចង្អុលទៅកាន់ repo GitHub/GitLab ឬឯកសារ .json</string>
-    <string name="sources_dialog_preinstalled">បានដំឡើងទុកជាមុន</string>
-    <string name="sources_dialog_community">បំណះសហគមន៍</string>
-    <string name="sources_dialog_choose_apps">ជ្រើសរើសកម្មវិធី</string>
-    <string name="sources_dialog_choose_apps_description">ជ្រើសរើសកម្មវិធីដែលត្រូវរក្សាទុក នៅពេលដែលប្រភពត្រូវបានផ្ទុក</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
-    <string name="sources_dialog_community_notice_title">ប្រភព patch ភាគីទីបី</string>
-    <string name="sources_dialog_community_notice_message">"ប្រភព patch សហគមន៍ត្រូវបានបង្កើត និងថែទាំដោយអ្នកនិពន្ធផ្ទាល់របស់ពួកគេ។ Morphe មិនត្រួតពិនិត្យ ឬផ្ទៀងផ្ទាត់ patch ពីភាគីទីបីនោះទេ ហើយក៏មិនទទួលខុសត្រូវចំពោះមាតិកា ឬអ្វីដែលពួកគេធ្វើនៅលើឧបករណ៍របស់អ្នកដែរ"</string>
-    <string name="sources_update_success">ការធ្វើបច្ចុប្បន្នភាពបានជោគជ័យ</string>
-    <string name="sources_update_unavailable">មិនទាន់មានការអាប់ដេតឡើយ</string>
-    <string name="sources_download_fail">បរាជ័យក្នុងការទាញយកប្រភព៖ %s</string>
-    <string name="sources_download_fail_named">មិនអាចធ្វើបច្ចុប្បន្នភាព \'%s\' បានទេ។ សូមពិនិត្យមើលការតភ្ជាប់អ៊ីនធឺណិតរបស់អ្នក ហើយព្យាយាមម្តងទៀត</string>
-    <string name="sources_download_endpoint_not_found">\'%s\': មិនឃើញ metadata នៃ patch ទេ</string>
-    <string name="sources_signing_key_changed_named">\'%s\' មិនត្រូវបានធ្វើបច្ចុប្បន្នភាពទេ ពីព្រោះកំណែចេញថ្មីបំផុតរបស់វា មិនត្រូវបានចុះហត្ថលេខាដោយគន្លឹះដែលវាធ្លាប់ប្រើពីមុនមក</string>
-    <string name="sources_signing_key_changed_local">ឯកសារនេះមិនត្រូវបានចុះហត្ថលេខាដោយគន្លឹះដែលប្រភពនេះធ្លាប់ប្រើពីមុនមកទេ។ ដើម្បីទុកចិត្តវា សូមលុបប្រភពនេះចេញ ហើយបន្ថែមឯកសារនេះម្តងទៀត</string>
-    <string name="sources_signing_key_trust_title">ទុកចិត្តគន្លឹះថ្មីនេះទេ?</string>
-    <string name="sources_signing_key_trust_message">ការចេញផ្សាយចុងក្រោយត្រូវបានចុះហត្ថលេខាដោយកូនសោផ្សេង។ នេះមានន័យថា អ្នកបង្កើតបានផ្លាស់ប្តូរកូនសោរបស់ពួកគេ ឬមានអ្នកផ្សេងបានបោះពោះការចេញផ្សាយនេះ។ សូមទុកចិត្តវា លុះត្រាតែអ្នកបង្កើតបានប្រកាសអំពីកូនសោថ្មី</string>
-    <string name="sources_signing_key_trust_message_unsigned">ការចេញផ្សាយចុងក្រោយមិនត្រូវបានចុះហត្ថលេខាទេ។ នេះមានន័យថា អ្នកបង្កើតបានបញ្ឈប់ការចុះហត្ថលេខាលើការចេញផ្សាយ ឬមានអ្នកផ្សេងបានបោះពោះការចេញផ្សាយនេះ។ សូមទុកចិត្តវា លុះត្រាតែអ្នកបង្កើតបានប្រកាសអំពីវា</string>
-    <string name="sources_signing_key_trusted">កូនសោដែលទុកចិត្តបាន</string>
-    <string name="sources_signing_key_new">កូនសោថ្មី</string>
-    <string name="sources_patch_expert_badge">អ្នកជំនាញ</string>
-    <string name="sources_patch_expert_badge_tooltip">បើកដំណើរការ Expert mode នៅក្នុងការកំណត់ ដើម្បីរួមបញ្ចូល patch នេះដោយផ្ទាល់</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
-    <string name="home_apk_availability_title">ត្រូវការជំនួយក្នុងការស្វែងរក APK ឬ?</string>
-    <string name="home_apk_availability_dialog_simple">ដើម្បីបំណះ &lt;b&gt;%s&lt;/b&gt; អ្នកត្រូវការកំណែ APK ដែលមិនទាន់បានបំណះ៖</string>
-    <string name="home_apk_availability_dialog_expert">ដើម្បីបំណះ &lt;b&gt;%s&lt;/b&gt; អ្នកត្រូវការ APK ដែលមិនទាន់បានបំណះនៃកំណែ៖</string>
-    <string name="home_apk_availability_recommended_label">ដែលបានណែនាំ</string>
-    <string name="home_apk_availability_unpatched_label">មិនទាន់បាន Patch</string>
-    <string name="home_apk_availability_incompatible_label">មិនស៊ីគ្នា</string>
-    <string name="home_apk_availability_installed_version">បានដំឡើងលើឧបករណ៍នេះ៖ %s</string>
-    <string name="home_apk_availability_find">បាទ/ចាស ជួយខ្ញុំស្វែងរកវា</string>
-    <string name="home_apk_availability_have">ទេ ខ្ញុំមានវាហើយ</string>
-    <string name="home_apk_helper_download">ប្រើកម្មវិធីជំនួយ</string>
-    <string name="home_apk_helper_untrusted">កម្មវិធីជំនួយត្រូវបានដំឡើង ប៉ុន្តែមិនទាន់ត្រូវបានទុកចិត្តនៅឡើយ ដូច្នេះវាមិនត្រូវបានផ្តល់ជូននៅទីនេះទេ</string>
-    <string name="home_apk_helper_untrusted_action">ពិនិត្យកម្មវិធីជំនួយ</string>
-    <string name="home_apk_helper_title">ទាញយកជាមួយកម្មវិធីជំនួយ</string>
-    <string name="home_apk_helper_description">Morphe នឹងសុំឱ្យកម្មវិធីជំនួយខាងក្រោមទាញយក APK ដើម និងបញ្ជូនឯកសារនោះត្រឡប់មកវិញ</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="home_apk_helper_continue">បើកជំនួយ</string>
-    <string name="home_apk_helper_warning">បន្តតែក្នុងករណីដែលអ្នកទុកចិត្តកម្មវិធីជំនួយនេះប៉ុណ្ណោះ។ Morphe ពិនិត្យមើលកញ្ចប់ កំណែ និងហត្ថលេខានៃអ្វីដែលវាទទួលបាន មុនពេលធ្វើការ patch</string>
-    <string name="home_apk_helper_warning_unverified">បន្តតែក្នុងករណីដែលអ្នកទុកចិត្តកម្មវិធីជំនួយនេះប៉ុណ្ណោះ។ Morphe មិនអាចផ្ទៀងផ្ទាត់ហត្ថលេខានៃ APK នេះបានទេ ដូច្នេះឯកសារដែលត្រូវបានកែប្រែនឹងមិនត្រូវបានរកឃើញឡើយ</string>
-    <string name="home_apk_helper_no_result">កម្មវិធីជំនួយមិនបានផ្ដល់ជូន APK ត្រឡប់មកវិញទេ</string>
-    <string name="home_apk_helper_no_access">កម្មវិធីជំនួយមិនបានផ្តល់សិទ្ធិចូលប្រើ APK ដែលវាបានផ្ដល់ជូននោះទេ</string>
-    <string name="home_apk_helper_no_package">កម្មវិធីជំនួយមិនបានបញ្ជាក់ថាត្រូវប្រើកម្មវិធីដែលបានដំឡើងមួយណាទេ</string>
-    <string name="home_apk_helper_wrong_package">កម្មវិធីជំនួយបានបញ្ជូនកម្មវិធីផ្សេង ពីកម្មវិធីដែលកំពុងត្រូវបាន patch</string>
-    <string name="home_apk_helper_installed_unavailable">Morphe មិនអាចប្រើកម្មវិធីដែលបានដំឡើងបានទេ</string>
-    <string name="home_apk_helper_installed_incompatible">កំណែដែលបានដំឡើងមិនអាច patch បានទេ</string>
-    <string name="home_apk_use_saved_copy">ប្រើប្រាស់ច្បាប់ចម្លងដែលបានរក្សាទុក</string>
-    <string name="home_apk_use_installed_app">ប្រើប្រាស់កម្មវិធីដែលបានដំឡើង</string>
-    <string name="home_apk_use_saved_unsupported">Patches មិនគាំទ្រច្បាប់ចម្លងដែលបានរក្សាទុកនេះទេ។ ការ Patch វានឹងតម្រូវឱ្យអ្នកបញ្ជាក់ ឬជ្រើសរើស APK ផ្សេងទៀត</string>
-    <string name="home_apk_use_installed_unverified">មិនអាចផ្ទៀងផ្ទាត់ហត្ថលេខានៃកម្មវិធីដែលបានដំឡើងបានទេ ដូច្នេះវាប្រហែលជាត្រូវបាន Patch រួចហើយ</string>
-    <string name="home_unverified">មិនបានផ្ទៀងផ្ទាត់</string>
-    <string name="home_install_verification_pending">កំពុងពិនិត្យការដំឡើង…</string>
-    <string name="home_app_info_install_unverified">Morphe មិនអាចបញ្ជាក់បានថា កម្មវិធីដែលបានដំឡើងគឺជា build ដែលវាបាន patch នោះទេ។ សូម patch ម្តងទៀត ឬដំឡើងវាឡើងវិញពី APK ដែលបានរក្សាទុក ដើម្បី Wiederherstellen សកម្មភាពរបស់វា</string>
-    <string name="home_app_info_no_saved_apk">មិនមាន APK ដែលបានរក្សាទុកទេ។ ការ Patch នឹងតម្រូវឱ្យជ្រើសរើសឯកសារ APK ម្តងទៀត</string>
-    <string name="home_version_requires_android">តម្រូវឱ្យមាន Android %s+</string>
-    <string name="home_apk_no_compatible_versions_title">មិនគាំទ្រលើឧបករណ៍នេះ</string>
-    <string name="home_apk_no_compatible_versions_message">&lt;b&gt;%1$s&lt;/b&gt; មិនមានកំណែដែលគាំទ្រសម្រាប់ Android %2$s (API %3$s) ទេ។ រាល់កំណែដែលបានប្រកាសទាំងអស់តម្រូវឱ្យមានកំណែ Android ខ្ពស់ជាងនេះ</string>
     <!-- Home Screen - Dialog 2: Download Instructions -->
-    <string name="home_download_instructions_title">ទាញយក APK ដើម</string>
-    <string name="home_download_instructions_finding">កំពុងស្វែងរកទំព័រទាញយក…</string>
-    <string name="home_download_instructions_step1">ចុចប៊ូតុង \'%s\' ខាងក្រោម</string>
-    <string name="home_download_instructions_step2_part1">អូសចុះក្រោមលើទំព័រវេបសាយ ហើយចុច</string>
-    <string name="home_download_instructions_step2_generic">អូសចុះក្រោមទំព័រវេបសាយ ហើយចុចប៊ូតុងទាញយករបស់វា</string>
-    <string name="home_download_instructions_step2_variant">អូសចុះក្រោមទំព័រវេបសាយ ហើយចុចប៊ូតុងទាញយកនៃ &lt;b&gt;ប្រភេទ APK&lt;/b&gt; នៅផ្នែកខាងលើ</string>
-    <string name="home_download_instructions_step2_search">បើកលទ្ធផលស្វែងរកពីគេហទំព័រដែលអ្នកទុកចិត្ត</string>
-    <string name="home_download_instructions_step2_search_note">Morphe មិនអាចធានាបានចំពោះគេហទំព័រទាំងនេះទេ។ សូមរំលងគេហទំព័រណាដែលផ្តល់នូវហាងកម្មវិធីផ្ទាល់ខ្លួនរបស់ពួកគេ ជំនួសឱ្យឯកសារ APK</string>
-    <string name="home_download_instructions_step3_search">នៅលើគេហទំព័រនោះ សូមទាញយក APK នៃកំណែ &lt;b&gt;%s&lt;/b&gt; មិនមែនកំណែចុងក្រោយបំផុតនោះទេ</string>
-    <string name="home_download_instructions_step3_search_any">នៅលើគេហទំព័រនោះ សូមទាញយក APK នៃកម្មវិធី។ &lt;b&gt;កំណែណាមួយ&lt;/b&gt; អាចត្រូវបាន patch</string>
-    <string name="home_download_instructions_download_button_toast">សូមចុចទាញយកនៅលើគេហទំព័រ មិនមែននៅទីនេះទេ 😊</string>
-    <string name="home_download_instructions_download_button_toast_2">អស្ចារ្យ! ឥឡូវនេះ សូមចុចបន្ត ហើយចូលទៅកាន់គេហទំព័រ 👆</string>
-    <string name="home_download_instructions_download_button_toast_3">ការហាត់រៀនធ្វើឱ្យកាន់តែប្រសើរ ហើយអ្នកជិតសម្រេចបានហើយ 💪</string>
-    <string name="home_download_instructions_download_button_toast_4">នៅមិនទាន់មាននៅឡើយទេ… នៅមិនទាន់មាននៅឡើយទេ… 🙈</string>
-    <string name="home_download_instructions_download_button_toast_5">យល់ព្រម ខ្ញុំគោរពនូវការតស៊ូនេះ 🫡</string>
-    <string name="home_download_instructions_download_button_toast_6">ឥឡូវនេះ អ្នកគឺជាអ្នកតេស្តប៊ូតុងផ្លូវការរបស់ Morphe 🏅</string>
-    <string name="home_download_instructions_step3">រង់ចាំរហូតដល់ការទាញយកបានរួចរាល់ ហើយ &lt;b&gt;កុំដំឡើង&lt;/b&gt; APK</string>
-    <string name="home_download_instructions_step3_mount">រង់ចាំរហូតដល់ការទាញយកបានរួចរាល់ បន្ទាប់មក &lt;b&gt;ដំឡើង APK&lt;/b&gt;</string>
-    <string name="home_download_instructions_step4">បន្ទាប់ពីការទាញយកបានបញ្ចប់ សូមត្រឡប់ទៅ Morphe វិញ</string>
-    <string name="home_download_instructions_step4_mount">បន្ទាប់ពីដំឡើង APK ដើមរួចរាល់ សូមត្រឡប់ទៅ Morphe វិញ</string>
-    <string name="home_download_instructions_continue_to">បន្តទៅ %s</string>
-    <string name="home_download_instructions_destination">ទំព័រទាញយក</string>
-    <string name="home_download_instructions_copy_link">ចម្លងតំណភ្ជាប់</string>
-    <string name="home_download_instructions_link_copied">តំណភ្ជាប់ត្រូវបានចម្លង</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <!-- %s is the name of the app whose APK was just downloaded -->
-    <string name="home_file_picker_prompt_app_title">ជ្រើសរើស APK របស់ %s</string>
-    <string name="home_file_picker_prompt_where">ជាទូទៅ កម្មវិធីរុករករក្សាទុកវានៅក្នុងថតទាញយក</string>
-    <string name="home_file_picker_prompt_open_apk">បើកហ្វាយ APK</string>
-    <string name="home_recommended_version">កំណែដែលត្រូវបានណែនាំ</string>
-    <string name="home_selected_version">កំណែដែលបានជ្រើសរើស</string>
-    <string name="home_select_apk_title">ជ្រើសរើស APK</string>
-    <string name="home_select_apk_description">"Universal patches ដំណើរការជាមួយកម្មវិធីណាមួយក៏បាន
-
-ជ្រើសរើសកន្លែងដើម្បីយក APK របស់វា"</string>
-    <string name="home_use_installed_app">ប្រើកម្មវិធីដែលបានដំឡើង</string>
-    <string name="home_use_installed_app_description">ជ្រើសរើសកម្មវិធីដែលមាននៅលើឧបករណ៍នេះ</string>
-    <string name="home_open_apk_file_description">ជ្រើសរើសឯកសារ APK, APKM, APKS ឬ XAPK ពីអង្គផ្ទុក</string>
-    <string name="home_installed_app_picker_title">កម្មវិធីដែលបានដំឡើង</string>
-    <string name="home_installed_app_picker_empty">រកមិនឃើញកម្មវិធីទេ</string>
-    <string name="home_installed_app_picker_filter_user">តែកម្មវិធីអ្នកប្រើប្រាស់</string>
-    <string name="home_installed_app_picker_filter_system">តែកម្មវិធីប្រព័ន្ធ</string>
-    <string name="home_invalid_apk_unreadable">មិនអាចអានឯកសារបានទេ។ សូមពិនិត្យមើលថា \'External Storage\' មិនត្រូវបានដាក់កម្រិតប្រើប្រាស់ថ្ម</string>
-    <string name="home_invalid_apk_not_an_apk">ឯកសារដែលបានជ្រើសរើសមិនមែនជា APK ដែលត្រឹមត្រូវទេ</string>
-    <string name="home_invalid_apk_already_patched">APK ដែលបានជ្រើសរើសត្រូវបាន patch រួចហើយ។ សូមជ្រើសរើសកម្មវិធីដើមវិញ</string>
-    <string name="home_invalid_apk_io_error">ការបើកឯកសារបានបរាជ័យ។ សូមព្យាយាមម្តងទៀត</string>
-    <string name="home_external_apk_expert_mode_required">មុខងារនេះមានតែនៅក្នុងโหมดអ្នកជំនាញ (Expert mode) ប៉ុណ្ណោះ</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
-    <string name="expert_mode_search">ស្វែងរក patch</string>
-    <string name="expert_mode_disable_all">បិទទាំងអស់</string>
-    <string name="expert_mode_enable_all">បើកទាំងអស់</string>
-    <string name="expert_mode_enable_all_universal_pending">ចុចម្តងទៀតសម្រាប់ universal patches</string>
-    <string name="expert_mode_universal_all_warning_title">បើកដំណើរការ universal patches ទាំងអស់?</string>
-    <string name="expert_mode_universal_all_warning_message">ការបិតបំណះជាសកលមិនត្រូវបានធ្វើតេស្តរួមគ្នាទេ។ ការបើកវាទាំងអស់ក្នុងពេលតែមួយអាចបណ្តាលឱ្យមានជម្លោះ ការបិតបំណះមិនជោគជ័យ ឬការគាំងកម្មវិធី</string>
-    <string name="expert_mode_reset_to_default">បើកដំណើរការ patch ដែលបានណែនាំ</string>
-    <string name="expert_mode_reset_to_default_done">បានអនុវត្តការ patch ដែលបានណែនាំ</string>
-    <string name="expert_mode_selected_count">បានជ្រើសរើស %1$s នៃ %2$s</string>
-    <string name="expert_mode_restore_saved">ស្ដារការជ្រើសរើសដែលបានរក្សាទុក</string>
-    <string name="expert_mode_restore_saved_done">បានស្តារការជ្រើសរើសដែលបានរក្សាទុក</string>
-    <string name="expert_mode_copy_from_bundle_no_patches">មិនមាន patch ដែលត្រូវគ្នានៅក្នុង bundle នេះទេ</string>
-    <string name="expert_mode_no_results">រកមិនឃើញ patch ទេ</string>
-    <string name="expert_mode_selected_only">តែ patch ដែលបានជ្រើសរើសប៉ុណ្ណោះ</string>
-    <string name="expert_mode_selected_only_on">បង្ហាញតែ patch ដែលបានជ្រើសរើសប៉ុណ្ណោះ</string>
-    <string name="expert_mode_selected_only_off">បង្ហាញ patch ទាំងអស់</string>
-    <string name="expert_mode_universal_patches">ការប៉ះប៉ូវជាសកល</string>
-    <string name="expert_mode_new_patches">ថ្មី</string>
-    <string name="expert_mode_options_customized">ដែលបានកែសម្រួលផ្ទាល់ខ្លួន</string>
-    <string name="expert_mode_patch_required_by_installer">ចាំបាច់សម្រាប់គោលដៅដំឡើងដែលបានជ្រើសរើស</string>
-    <string name="expert_mode_patch_unavailable_for_installer">មិនមានសម្រាប់គោលដៅដំឡើងដែលបានជ្រើសរើសទេ</string>
-    <string name="expert_mode_multiple_sources_warning_title">ប្រភព patch ច្រើនត្រូវបានជ្រើសរើស</string>
-    <string name="expert_mode_multiple_sources_warning_conflict">បំណិតពីប្រភពផ្សេងៗគ្នា មិនត្រូវបានបង្កើតឡើងដើម្បីដំណើរការជាមួយគ្នាទេ ហើយអាចនឹងមានជម្លោះ ឬធ្វើឱ្យកម្មវិធីគាំង</string>
     <!-- Home Screen - Home Sub-Dialogs -->
-    <string name="home_invalid_signature_title">APK ដែលមិនបានផ្ទៀងផ្ទាត់</string>
-    <string name="home_invalid_signature_message">APK ដែលអ្នកបានជ្រើសរើសសម្រាប់ &lt;b&gt;%s&lt;/b&gt; មិនត្រូវគ្នាជាមួយវិញ្ញាបនបត្រចុះហត្ថលេខាដែលបានរំពឹងទុកទេ។ វាអាចត្រូវបានកែប្រែ ឬមកពីប្រភពដែលមិនគួរឱ្យទុកចិត្ត</string>
-    <string name="home_invalid_signature_badge">APK នេះប្រហែលជាមិនមែនជា APK ដើមទេ</string>
-    <string name="home_split_apk_warning_title">បានរកឃើញ Split APK</string>
-    <string name="home_split_apk_warning_message">"ឯកសារនេះគឺជា APK bundle
-(&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;)។
-
-ដើម្បីទទួលបានលទ្ធផលល្អបំផុត កម្មវិធីនេះណែនាំឱ្យ patch &lt;b&gt;full APK&lt;/b&gt;"</string>
-    <string name="home_split_apk_warning_pick_another">ជ្រើសរើស APK ផ្សេងទៀត</string>
-    <string name="home_dialog_unsupported_version_experimental_label">ការពិសោធន៍</string>
-    <string name="home_dialog_unsupported_version_experimental_description">កំណែនេះមានការគាំទ្របែបពិសោធន៍ ហើយអាចនឹងមិនមានស្ថេរភាព ឬមិនពេញលេញ</string>
-    <string name="morphe_experimental_app_version_dialog_title">តើអ្នកចង់សាកល្បងពិសោធន៍ដែរឬទេ? 🧪</string>
-    <string name="morphe_experimental_app_version_dialog_message">"កំណែនេះនៃ &lt;b&gt;%s&lt;/b&gt; មានការគាំទ្របែបពិសោធន៍ដំបូង។
-
-🔧 រំពឹងថានឹងមានសកម្មភាពកម្មវិធីមិនប្រក្រតី ឬកំហុសដែលមិនទាន់កំណត់ ក្នុងពេលដែល patch ត្រូវបានកែលម្អសម្រាប់កំណែកម្មវិធីនេះ"</string>
-    <string name="home_dialog_unsupported_version_dialog_title">កំណែដែលមិនគាំទ្រ</string>
-    <string name="home_dialog_unsupported_version_dialog_description">APK នេះមិនមែនជាកំណែកម្មវិធីដែលបានណែនាំទេ។ ការបន្តអាចបណ្តាលឱ្យកម្មវិធីមិនដំណើរការ</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="home_dialog_unsupported_version_dialog_proceed">បន្តទោះជាយ៉ាងណា</string>
-    <string name="home_dialog_unsupported_version_compatible_versions">កំណែដែលត្រូវគ្នា៖</string>
-    <string name="home_dialog_unsupported_version_unsupported_label">មិនគាំទ្រ</string>
     <!-- "Build" here refers to a specific compiled version of the app (versionCode) -->
-    <string name="home_dialog_unsupported_version_build">Build %s</string>
-    <string name="home_dialog_unsupported_version_build_mismatch_description">នេះគឺជា build ខុសគ្នា នៃ version តែមួយ។ ការ patch តម្រូវឱ្យមាន build ជាក់លាក់មួយ</string>
-    <string name="home_dialog_wrong_package_title">ជ្រើសរើសកញ្ចប់មិនត្រឹមត្រូវ</string>
-    <string name="home_dialog_wrong_package_description">APK ដែលបានជ្រើសរើសមិនមែនសម្រាប់កម្មវិធីដែលអ្នកមានបំណង patch នោះទេ</string>
-    <string name="home_dialog_expected_package">កញ្ចប់ដែលរំពឹងទុក៖</string>
-    <string name="home_dialog_selected_package">កញ្ចប់ដែលបានជ្រើសរើស៖</string>
-    <string name="home_outdated_patches_dialog_title">បំណះអាចនឹងហួសសម័យ</string>
-    <string name="home_outdated_patches_dialog_message">ទិន្នន័យចល័តកំពុងដំណើរការ ហើយការអាប់ដេតបំណះត្រូវបានបិទ</string>
-    <string name="home_outdated_patches_dialog_warning">ការដាក់បំណះជាមួយនឹងបំណះដែលហួសសម័យ អាចបណ្តាលឱ្យកម្មវិធីមានបញ្ហា</string>
-    <string name="home_outdated_patches_dialog_update_and_patch">អាប់ដេត &amp; ដាក់បំណះ</string>
-    <string name="home_low_disk_space_dialog_title">ទំហំផ្ទុកក្នុងថាសតិតិច</string>
     <!-- "%1$s" is the free storage and "%2$s" the amount patching needs, both in gigabytes. -->
-    <string name="home_low_disk_space_dialog_message">មានផ្ទុកទិន្នន័យទំនេរត្រឹមតែ %1$s GB ប៉ុណ្ណោះ។ ការ Patch ត្រូវការកន្លែងទំនេរយ៉ាងតិច %2$s GB ដើម្បីដំណើរការបានត្រឹមត្រូវ</string>
-    <string name="home_low_disk_space_dialog_warning">ការបន្តអាចបណ្តាលឱ្យមានកំហុស \"រកមិនឃើញឯកសារ\" ឬ APK លទ្ធផលត្រូវបានខូចខាត</string>
-    <string name="home_simple_bundle_select_title">ជ្រើសរើសប្រភពបំណះ</string>
-    <string name="home_simple_bundle_select_remember">ប្រើប្រាស់ប្រភពនេះជានិច្ចសម្រាប់កម្មវិធីនេះ</string>
     <!-- Color picker -->
-    <string name="custom_color">ពណ៌ផ្ទាល់ខ្លួន</string>
-    <string name="color_picker_shade">កម្រិតឆ្អែតនៃពណ៌ និងពន្លឺ</string>
-    <string name="color_picker_hue">Hue</string>
     <!-- Patch Options -->
-    <string name="patch_option_instructions">ការណែនាំ</string>
-    <string name="patch_option_enter_value">បញ្ចូលតម្លៃ</string>
-    <string name="patch_option_enter_number">បញ្ចូលលេខ</string>
-    <string name="patch_option_enter_decimal">បញ្ចូលលេខទសភាគ</string>
-    <string name="patch_option_slider_edit">បញ្ចូលតម្លៃឱ្យបានច្បាស់លាស់</string>
-    <string name="patch_option_slider_range_start">ពី</string>
-    <string name="patch_option_slider_range_end">ទៅ</string>
-    <string name="patch_option_list_duplicate">តម្លៃនេះមានរួចហើយ</string>
-    <string name="patch_option_list_empty">តម្លៃមិនអាចទុកឱ្យទំនេរបានទេ</string>
-    <string name="patch_option_required_missing">%s: សូមបំពេញជម្រើសដែលតម្រូវទាំងអស់</string>
     <!-- Badge on a patch option whose value differs from the patch's own, which resets it when tapped -->
-    <string name="patch_option_changed">បានផ្លាស់ប្តូរ</string>
     <!-- Badge on a patch option that has to be filled in before patching -->
-    <string name="patch_option_required">តម្រូវឱ្យមាន</string>
     <!-- Hint under an image patch option. "%1$s" is the width and "%2$s" the height in pixels -->
-    <string name="patch_option_recommended_size">ដែលបានណែនាំ៖ %1$s×%2$s</string>
     <!-- Adaptive Icon Creator -->
-    <string name="adaptive_icon_create">បង្កើត adaptive icon</string>
-    <string name="adaptive_icon_select_image">ជ្រើសរើសរូបភាព</string>
-    <string name="adaptive_icon_change_image">ផ្លាស់ប្តូររូបភាព</string>
-    <string name="image_load_failed">មិនអាចផ្ទុកជារូបភាពនេះបានទេ</string>
     <!-- Card of the adaptive icon creator where the picture is placed on the icon -->
-    <string name="adaptive_icon_launcher">រូបតំណាង Launcher</string>
-    <string name="adaptive_icon_gesture_hint">អូសដើម្បីផ្លាស់ទី, ច្បីដើម្បីផ្លាស់ប្តូរទំហំ</string>
     <!-- Card of the adaptive icon creator showing the icons as the device draws them -->
-    <string name="adaptive_icon_preview">ការមើលជាមុន</string>
     <!-- Caption under the launcher icon in its own colors -->
-    <string name="adaptive_icon_standard">ស្តង់ដារ</string>
     <!-- Caption under the launcher icon recolored by the system theme -->
-    <string name="adaptive_icon_themed">តាមប្រធានបទ</string>
-    <string name="adaptive_icon_background_color">ពណ៌ផ្ទៃខាងក្រោយ</string>
-    <string name="adaptive_icon_reset_transform">កំណត់ទីតាំង និងមាត្រដ្ឋានឡើងវិញ</string>
-    <string name="adaptive_icon_no_transparency_warning">រូបភាពនេះគ្មានពុម្ពដែលថ្លាទេ ដូច្នេះរូបតំណាងតាមប្រធានបទ និងការជូនដំណឹងនឹងរក្សាទុកនូវឡូហ្គោ Morphe</string>
-    <string name="adaptive_icon_created_success">បង្កើត Adaptive icon បានជោគជ័យ</string>
-    <string name="adaptive_icon_creation_failed">ការបង្កើត Adaptive icon បានបរាជ័យ</string>
-    <string name="adaptive_icon_guide">មគ្គុទ្ទេសក៍បង្កើតរូបតំណាង</string>
-    <string name="adaptive_icon_guide_png_title">ប្រើប្រាស់រូបភាព PNG ដែលមានផ្ទៃខាងក្រោយថ្លា</string>
-    <string name="adaptive_icon_guide_png_body">ឡូហ្គោនៅលើផ្ទៃខាងក្រោយដែលថ្លាដំណើរការល្អបំផុត ដោយពណ៌ផ្ទៃខាងក្រោយត្រូវបានជ្រើសរើសនៅខាងក្រោម។ រូបភាពដែលគ្មានភាពថ្លានឹងបំពេញរូបតំណាងទាំងមូល ផ្ទុយទៅវិញ រូបតំណាងតាមប្រធានបទ និងការជូនដំណឹងនឹងរក្សាទុកនូវឡូហ្គោ Morphe។</string>
-    <string name="adaptive_icon_guide_safe_zones_title">តំបន់សុវត្ថិភាព</string>
-    <string name="adaptive_icon_guide_safe_zones_body">បន្ទាត់គំនូរបង្ហាញពីទម្រង់រូបតំណាងនៃ launcher របស់អ្នក ហើយអ្វីគ្រប់យ៉ាងនៅខាងក្រៅបន្ទាត់នោះនឹងត្រូវបានកាត់ចេញ។ Launcher ផ្សេងទៀតប្រើទម្រង់ផ្សេងៗ ដូច្នេះសូមរក្សាបើកលម្អិតដែលសំខាន់ៗនៅក្នុងរង្វង់ដែលគូសដោយបន្ទាត់ដាច់ៗ ដែលគ្រប់ទម្រង់ទាំងអស់នឹងបង្ហាញ។</string>
-    <string name="adaptive_icon_guide_notification_title">រូបតំណាងជូនដំណឹង</string>
-    <string name="adaptive_icon_guide_notification_body">កាត់ចេញពីផ្នែកដែលមើលឃើញនៃរូបភាព និងកំណត់ទំហំដូចរូបតំណាងរបារស្ថានភាពផ្សេងទៀត ទោះបីជាឯកសារមានគម្លាតអ្វីក៏ដោយ។ កែតម្រូវវាដោយប្រើរបាររំកិលនៅខាងក្រោមការមើលជាមុន។ Android បង្ហាញវាជាពណ៌តែមួយ។</string>
-    <string name="adaptive_icon_guide_monochrome_title">រូបតំណាងតាមប្រធានបទ</string>
-    <string name="adaptive_icon_guide_monochrome_body">កាត់ចេញពីរូបភាពដែលមានទីតាំង និងទំហំប៉ុនគ្នាទៅនឹង launcher icon។ ចំពោះ Android 13 និងជំនាន់ក្រោយ launcher ដែលបើក themed icons នឹងកំណត់ពណ៌វាចេញពី wallpaper។</string>
-    <string name="notification_icon_preview">ការជូនដំណឹង</string>
     <!-- Header Creator -->
-    <string name="header_creator_create">បង្កើត custom header</string>
-    <string name="header_creator_light_theme">Header ธีមភ្លឺ</string>
-    <string name="header_creator_dark_theme">Header ธีមងងឹត</string>
-    <string name="header_creator_success">បង្កើត Header បានជោគជ័យ</string>
-    <string name="header_creator_failed">ការបង្កើត Header បានបរាជ័យ</string>
-    <string name="header_creator_guide">មគ្គុទ្ទេសក៍បង្កើត Header</string>
-    <string name="header_creator_guide_image_title">តម្រូវការរូបភាព</string>
-    <string name="header_creator_guide_image_body">ឯកសារ PNG ដែលមានផ្ទៃខាងក្រោយថ្លា នឹងបញ្ចូលគ្នាទៅក្នុង app bar។ រឹមជុំវិញឡូហ្គោនៅក្នុងឯកសារនឹងត្រូវបានមិនយកគិត ដូច្នេះវានឹងចាប់ផ្តើមនៅទំហំ និងទីតាំងនៃឡូហ្គោដើម។</string>
-    <string name="header_creator_guide_themes_title">ប្រធានបទបែបពន្លឺ និងបែបងងឹត</string>
-    <string name="header_creator_guide_themes_body">កម្មវិធីភាគច្រើនតម្រូវឱ្យមានរូបភាពដាច់ដោយឡែកសម្រាប់ប្រធានបទបែបពន្លឺ និងបែបងងឹត។ កម្មវិធីមួយចំនួន (ដូចជា YouTube Music ជាដើម) ប្រើតែប្រធានបទបែបងងឹត ដូច្នេះមានតែផ្នែកនោះដែលត្រូវបានបង្ហាញ។</string>
-    <string name="header_creator_guide_positioning_title">ការកំណត់ទីតាំង និងការតម្រូវទំហំ</string>
-    <string name="header_creator_guide_positioning_body">អូស និងច្បីរូបភាពនៅក្នុងកម្មវិធីកែសម្រួល ឬកំណត់ទំហំវាជាមួយរបាររំកិល។ ប្រអប់ខ្សែបន្ទាត់ដាច់ៗបង្ហាញពីកន្លែងដែលឡូហ្គោដើមស្ថិតនៅ ហើយគោលការណ៍ណែនាំនឹងបង្ហាញឡើងនៅពេលរូបភាពតម្រឹមត្រូវជាមួយវា។</string>
     <!-- Batch patching -->
-    <string name="batch_patch_action">បំណះដែលបានជ្រើសរើស</string>
-    <string name="batch_patch_title">ការបំណះជាក្រុម</string>
-    <string name="batch_patch_planning">កំពុងរៀបចំជួរ...</string>
-    <string name="batch_patch_preparing_next">កំពុងរៀបចំកម្មវិធីបន្ទាប់...</string>
-    <string name="batch_patch_progress_counter">កំពុង Patch %1$s នៃ %2$s</string>
-    <string name="batch_patch_summary">បិតបំណះបាន %1$s, បរាជ័យ %2$s, រំលង %3$s</string>
-    <string name="batch_patch_saved_hint">កម្មវិធីដែលបានបំណះត្រូវបានរក្សាទុក។ ដំឡើងពួកវានៅពេលនេះ ឬពេលក្រោយពីបញ្ជី APK ដែលបានបំណះនៅក្នុងការកំណត់</string>
-    <string name="batch_patch_multiple_sources">កម្មវិធីមួយចំនួនរួមបញ្ចូលបំណះពីប្រភពលើសពីមួយ ដែលអាចបណ្តាលឱ្យមានជម្លោះ</string>
-    <string name="batch_patch_needs_apk">មិនមាន APK ទេ សូមភ្ជាប់ឯកសារ</string>
-    <string name="batch_patch_wrong_package">ឯកសារដែលបានភ្ជាប់ជារបស់ %s</string>
-    <string name="batch_patch_version_mismatch">កំណែ %s មិនត្រូវបានគាំទ្រដោយបំណះឡើយ</string>
-    <string name="batch_patch_source_saved">បានរក្សាទុកឯកសារដើម</string>
-    <string name="batch_patch_source_installed">កម្មវិធីដែលបានដំឡើង</string>
-    <string name="batch_patch_source_file">ឯកសារដែលបានភ្ជាប់</string>
-    <string name="batch_patch_source_unavailable">មិនអាចរៀបចំ APK បានទេ</string>
-    <string name="batch_patch_force_version">បំណះ ទោះជាយ៉ាងណាក៏ដោយ</string>
-    <string name="batch_patch_force_version_done">ត្រូវបានដាក់ក្នុងជួររង់ចាំ ទោះជាយ៉ាងណាក៏ដោយ កម្មវិធីអាចនឹងមានបញ្ហា</string>
-    <string name="batch_patch_accept_signature_done">ត្រូវបានដាក់ក្នុងជួររង់ចាំ ទោះជាយ៉ាងណាក៏ដោយ APK មិនត្រូវបានផ្ទៀងផ្ទាត់</string>
-    <string name="batch_patch_apk_selected">APK ដែលបានរើស</string>
-    <string name="batch_patch_edit_patches">ជ្រើសរើសបំណះ</string>
-    <string name="batch_patch_state_no_apk">គ្មាន APK</string>
-    <string name="batch_patch_state_no_patches">គ្មានបំណះ</string>
-    <string name="batch_patch_state_no_selection">មិនមានការរើស</string>
-    <string name="batch_patch_no_selection">មិនមាន patch ដែលអាចប្រើបានណាមួយត្រូវបានរើស</string>
-    <string name="batch_patch_policy_install">ដំឡើងនៅពេលបញ្ចប់</string>
-    <string name="batch_patch_policy_install_description">ដំឡើងរាល់កម្មវិធីដែលបានបំណះភ្លាមៗបន្ទាប់ពីជួររង់ចាំបានបញ្ចប់។ ការបិទ នឹងរក្សាទុក APK សម្រាប់ពេលក្រោយ</string>
-    <string name="batch_patch_policy_mount">Mount នៅពេលបញ្ចប់</string>
-    <string name="batch_patch_policy_mount_description">Mount គ្រប់កម្មវិធីដែលបាន patch ទាំងអស់ នៅពេលដែល queue បញ្ចប់។ បិទ គឺរក្សាទុក APKs សម្រាប់ពេលក្រោយ</string>
-    <string name="batch_patch_policy_install_mount">ដំឡើង ឬ mount នៅពេលបញ្ចប់</string>
-    <string name="batch_patch_policy_install_mount_description">ដំឡើង ឬ mount គ្រប់កម្មវិធីដែលបាន patch ទាំងអស់ នៅពេលដែល queue បញ្ចប់។ បិទ គឺរក្សាទុក APKs សម្រាប់ពេលក្រោយ</string>
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="batch_patch_start">ចាប់ផ្តើម</string>
-    <string name="batch_patch_stop_title">បញ្ឈប់ការបំណះជាបាច់?</string>
-    <string name="batch_patch_stop_description">កម្មវិធីដែលកំពុង patch ឥឡូវនេះ និងអ្វីគ្រប់យ៉ាងដែលនៅជួររង់ចាំនឹងត្រូវបានលុបចោល</string>
     <!-- Label of a footer button beside "Done". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="batch_patch_install_all">ដំឡើងទាំងអស់</string>
-    <string name="batch_patch_install_failed">ការដំឡើងបានបរាជ័យ</string>
-    <string name="batch_patch_in_progress">ការបំណះជាបាច់កំពុងដំណើរការហើយ</string>
-    <string name="batch_patch_nothing_outdated">រាល់កម្មវិធីដែលបានបំណះគឺថ្មីបំផុតហើយ</string>
-    <string name="batch_queue_add_action">បន្ថែមទៅក្នុងជួររង់ចាំ</string>
-    <string name="batch_queue_pending_subtitle">ចុចដើម្បីពិនិត្យ និងចាប់ផ្តើម</string>
-    <string name="batch_queue_clear_title">សម្អាតជួររង់ចាំ?</string>
-    <string name="batch_queue_clear_description">រាល់កម្មវិធីទាំងអស់នឹងត្រូវលុបចេញពីជួររង់ចាំ</string>
-    <string name="shortcut_repatch_short">បិតបំណះឡើងវិញ</string>
-    <string name="shortcut_repatch_long">បិតបំណះកម្មវិធីដែលហួសសម័យឡើងវិញ</string>
-    <string name="shortcut_check_updates_short">ពិនិត្យបច្ចុប្បន្នភាព</string>
-    <string name="shortcut_check_updates_long">ពិនិត្យមើលការធ្វើបច្ចុប្បន្នភាពបំណះ</string>
-    <string name="shortcut_patch_app">បិតបំណះ %s</string>
     <!-- Home Screen - App Info Screen -->
-    <string name="home_app_info_uninstall_title">ដកតំលៃកម្មវិធីនេះចេញ?</string>
-    <string name="home_app_info_uninstall_removes_data">កម្មវិធី និងទិន្នន័យរបស់វា នឹងត្រូវលុបចេញពីឧបករណ៍នេះ</string>
-    <string name="batch_uninstall_confirm_body">កម្មវិធីដែលបានជ្រើសរើសនឹងត្រូវបានលុបចេញពីឧបករណ៍របស់អ្នកជារៀងរហូត</string>
-    <string name="home_app_info_remove_app_warning">សកម្មភាពនេះនឹងលុបជាអចិន្ត្រៃយ៍នូវ៖</string>
-    <string name="home_app_info_delete_item_database">ទិន្នន័យក្នុង Database</string>
-    <string name="home_app_info_delete_item_patched_apk">ឯកសារ APK ដែលបាន Patch រួច</string>
-    <string name="home_app_info_delete_item_original_apk">ឯកសារ APK ដើម</string>
-    <string name="home_app_info_delete_preservation_note">ការជ្រើសរើស patch និងជម្រើសរបស់អ្នកនឹងត្រូវបានរក្សាទុកសម្រាប់ការ patch ទៅថ្ងៃក្រោយ</string>
-    <string name="home_app_info_patches_name_default">បំណះ</string>
-    <string name="home_app_info_patches_name_fallback">គ្មានឈ្មោះ</string>
-    <string name="home_app_info_patches_source_removed">ប្រភពបំណះដែលបានលុប</string>
-    <string name="home_app_info_patches_replace_fail">បានបរាជិតក្នុងការនាំចូលបំណះ៖ %s</string>
-    <string name="home_app_info_repatch_no_original_apk">រកមិនឃើញ APK ដើមទេ។ មិនអាច repatch កម្មវិធីនេះបានទេ</string>
-    <string name="home_app_info_original_package_name">ឈ្មោះកញ្ចប់ដើម</string>
-    <string name="home_app_info_applied_patches">បំណះដែលបានអនុវត្ត</string>
-    <string name="home_app_info_patch_source_used">ប្រភពបំណះដែលបានប្រើ</string>
-    <string name="home_app_info_install_type_custom_installer">កម្មវិធីដំឡើងតាមតម្រូវការ</string>
-    <string name="home_app_info_install_type_system_installer">កម្មវិធីដំឡើងប្រព័ន្ធ</string>
-    <string name="home_app_info_install_type_play_store">ការដំឡើងតាម Play Store</string>
-    <string name="home_app_info_install_type_root_play_store">ការដំឡើង Root តាម Play Store</string>
-    <string name="home_app_info_install_type_shizuku_play_store">ការដំឡើង Shizuku តាម Play Store</string>
-    <string name="home_app_info_patch_update_available">មានការអាប់ដេតបំណះ</string>
-    <string name="home_app_info_patch_update_available_description">កំណែថ្មីនៃ patch គឺមានហើយ។ សូម patch កម្មវិធីរបស់អ្នកឡើងវិញ ដើម្បីទទួលបានការកែលម្អ និងការកែតម្រូវចុងក្រោយបំផុត</string>
-    <string name="home_app_info_app_update_available">មានការអាប់ដេតកម្មវិធី</string>
-    <string name="home_app_info_app_update_available_description">ប្រភពនៃ patch គាំទ្រកំណែថ្មីជាងនេះនៃកម្មវិធីនេះ។ សូម patch វាម្តងទៀត ដើម្បីទៅកាន់កំណែនោះ</string>
-    <string name="home_app_info_newest_supported_version">ថ្មីបំផុតដែលគាំទ្រ</string>
-    <string name="home_app_info_version_move">បានដំឡើង %1$s, ថ្មីបំផុតដែលគាំទ្រ %2$s</string>
-    <string name="home_app_info_version_restore">បានដំឡើង %1$s, បានកែសម្រួល %2$s</string>
-    <string name="home_app_info_app_deleted_warning">កម្មវិធីត្រូវបានលុបចេញ</string>
-    <string name="home_app_info_app_deleted_description">កម្មវិធីនេះត្រូវបានលុបចេញពីខាងក្រៅ Morphe។ សូម Patch វាឡើងវិញ ដើម្បីស្តារមុខងារមកវិញ</string>
-    <string name="home_app_info_not_patched_description">កំណែដែលមិនទាន់បាន patch នៃកម្មវិធីនេះត្រូវបានដំឡើង។ Morphe នៅតែមានកំណត់ត្រា patch ពីមុនរបស់វា</string>
-    <string name="home_app_info_mount_replaced_description">កំណែផ្សេងទៀតបានជំនួសកម្មវិធីដែលបានភ្ជាប់ ដូច្នេះការកែសម្រួលលែងមានប្រសិទ្ធភាព។ ការស្ដារឡើងវិញនឹងដាក់កំណែដែលបានកែសម្រួលត្រឡប់មកវិញ</string>
-    <string name="home_app_info_mount_replaced_by_play_store_description">Google Play បានធ្វើបច្ចុប្បន្នកម្មកម្មវិធីដែលបាន mounted ដូច្នេះ patch លែងមានប្រសិទ្ធភាពទៀតហើយ។ ការ Restore នឹងដាក់កំណែ patched ត្រឡប់មកវិញ។ សូមបិទ auto-update សម្រាប់កម្មវិធីនេះនៅក្នុង Google Play ដើម្បីរក្សាវាឱ្យនៅជា patched</string>
-    <string name="app_links_title">តំណភ្ជាប់វេបសាយដែលគាំទ្រ</string>
-    <string name="app_links_description">នៅលើ Android 12+, លីងទៅកាន់ដូមេនដែលគាំទ្រនឹងបើកក្នុងកម្មវិធីរុករករបស់អ្នកជាលំនាំ លុះត្រាតែត្រូវបានអនុម័ត</string>
-    <string name="app_links_unverified_banner_title">លីងវេបសាយមិនត្រូវបានផ្ទៀងផ្ទាត់</string>
-    <string name="app_links_unverified_banner_description">បច្ចុប្បន្ន លីងវេបសាយដែលគាំទ្រត្រូវបានបើកក្នុងកម្មវិធីរុករករបស់អ្នក ជំនួសឱ្យកម្មវិធីនេះ</string>
-    <string name="app_links_enable_auto">បើកដំណើរការដោយស្វ័យប្រវត្តិ</string>
-    <string name="app_links_enable_auto_in_progress">កំពុងបើកដំណើរការលីង…</string>
-    <string name="app_links_open_settings">បើកការកំណត់លីង</string>
-    <string name="app_links_repair_success">បានបើកដំណើរការលីងកម្មវិធីដោយជោគជ័យ</string>
-    <string name="app_links_repair_failed">ការបើកដំណើរការលីងកម្មវិធីដោយស្វ័យប្រវត្តិបានបរាជ័យ</string>
-    <string name="app_links_all_verified">រាល់លីងដែលគាំទ្រទាំងអស់ត្រូវបានកំណត់ឱ្យបើកក្នុងកម្មវិធីនេះ</string>
-    <string name="app_links_fix">កែសម្រួលលីង</string>
-    <string name="configure">កំណត់រចនាសម្ព័ន្ធ</string>
-    <string name="patcher_rename_title">វានឹងដំឡើងកម្មវិធីចម្លង</string>
-    <string name="patcher_rename_description">បំណះបានបង្កើតកម្មវិធីនេះក្រោមឈ្មោះកញ្ចប់ផ្ទាល់របស់ពួកគេ ដូច្នេះការដំឡើងវា នឹងបន្ថែមការចម្លងមួយនៅក្បែរ &lt;b&gt;%s&lt;/b&gt; ជំនួសឱ្យការធ្វើបច្ចុប្បន្នភាពវា</string>
-    <string name="patcher_rename_result_package">នឹងដំឡើងជា</string>
-    <string name="patcher_rename_replaces">កម្មវិធីមួយត្រូវបានដំឡើងរួចហើយក្រោមឈ្មោះនោះ ហើយនឹងត្រូវជំនួសចេញ</string>
-    <string name="home_app_info_apk_size">ទំហំ APK</string>
-    <string name="home_app_info_cpu_arch">ស្ថាបត្យកម្ម CPU</string>
     <!-- Home Screen - Root Mode -->
-    <string name="root_install_apk_required">មុខងារ Root mode តម្រូវឱ្យដំឡើង APK ដើមនៅលើឧបករណ៍របស់អ្នក មុនពេលធ្វើការ patching</string>
-    <string name="root_pre_patch_installer_title">ជ្រើសរើសរបៀប patch</string>
-    <string name="root_pre_patch_installer_description">ឧបករណ៍របស់អ្នកមានសិទ្ធិ root។ សូមជ្រើសរើសថាតើកម្មវិធីនេះគួរត្រូវបាន patch សម្រាប់ root mount ឬការដំឡើងស្តង់ដារ</string>
-    <string name="root_pre_patch_installer_mount_title">របៀប Root mount</string>
-    <string name="root_pre_patch_installer_mount_description">Patch សម្រាប់ root mount បន្ទាប់មក mount APK លើកម្មវិធី stock ដែលត្រូវគ្នា។ មិនត្រូវការ GmsCore ទេ</string>
-    <string name="root_mount_module_unmount_warning">ប្រសិនបើ KernelSU បានបើក \"Unmount modules by default\" សូមបើក KernelSU &gt; Superuser &gt; កម្មវិធីដែលអ្នកបាន mount &gt; Profile &gt; Custom ហើយបិទ \"Unmount modules\"។ បើមិនដូច្នេះទេ APK ដែលបាន patch និង mount អាចនឹងមិនមានប្រសិទ្ធភាព ទោះបីជា Morphe បង្ហាញថាវាត្រូវបាន mount ក៏ដោយ</string>
-    <string name="root_pre_patch_installer_standard_title">របៀបដំឡើងស្តង់ដារ</string>
-    <string name="root_pre_patch_installer_standard_description">Patch ជា APK ធម្មតាជាមួយការគាំទ្រ GmsCore។ ការកំណត់អ្នកដំឡើងរបស់អ្នកត្រូវបានប្រើបន្ទាប់ពីការ patch</string>
-    <string name="root_pre_patch_installer_hint">ត្រូវបានសួរនៅពេលដែល Settings &gt; Patching &gt; Installation &gt; Installer selection prompt ត្រូវបានបើក។ មិនអាចផ្លាស់ប្តូររបៀប patch បានទេ បន្ទាប់ពីការ patch រួចរាល់</string>
     <!-- Patcher Screen -->
-    <string name="patcher_error_copied">កំហុសត្រូវបានចម្លងទៅកាន់ clipboard</string>
-    <string name="patcher_error_log">កំណត់ហេតុកំហុស</string>
-    <string name="patcher_error_technical">ព័ត៌មានលម្អិតបច្ចេកទេស</string>
-    <string name="patcher_error_dialog_diagnostics">ការវិនិច្ឆ័យ</string>
     <!-- Titles of the cards the expert log shows in place of the raw start and success log lines -->
-    <string name="patcher_card_started">ការបិត patch បានចាប់ផ្តើម</string>
-    <string name="patcher_card_succeeded">ការបិត patch បានជោគជ័យ</string>
     <!-- Field labels, shown in a column beside their values. Keep them short, a long one is cut off rather than wrapped -->
-    <string name="patcher_field_app">កម្មវិធី</string>
-    <string name="patcher_field_package">កញ្ចប់</string>
-    <string name="patcher_field_failed_patch">ការ patch បរាជ័យ</string>
-    <string name="patcher_field_source">ប្រភព</string>
-    <string name="patcher_field_split">Split APK</string>
-    <string name="patcher_field_manager">អ្នកគ្រប់គ្រង</string>
-    <string name="patcher_field_runtime">Runtime</string>
     <!-- Native code libraries (.so files) packed inside the APK -->
-    <string name="patcher_field_libraries">បណ្ណាល័យ</string>
-    <string name="patcher_field_android">Android</string>
-    <string name="patcher_field_device">ឧបករណ៍</string>
     <!-- Free and total RAM of the device, never its storage -->
-    <string name="patcher_field_memory">មេម៉ូរី</string>
-    <string name="patcher_field_storage">អង្គផ្ទុកទិន្នន័យ</string>
     <!-- Size of the patched APK, once patching finished -->
-    <string name="patcher_field_output_size">ទំហំលទ្ធផល</string>
     <!-- How long patching took -->
-    <string name="patcher_field_time">ពេលវេលា</string>
     <!-- Average and peak heap the patcher held while it ran -->
-    <string name="patcher_field_memory_average">មធ្យមមេម៉ូរី</string>
-    <string name="patcher_field_memory_max">មេម៉ូរីអតិបរម</string>
     <!-- Fastest read or write rate reached while patching, in data per second -->
-    <string name="patcher_field_io_peak">Storage I/O អតិបរម</string>
-    <string name="patcher_field_value_unknown">មិនស្គាល់</string>
     <!-- Value of "Libraries": the libraries this device cannot use were dropped from the patched APK -->
-    <string name="patcher_field_value_stripped">ត្រូវបានដកចេញ</string>
     <!-- Value of "Libraries": every library was left in the patched APK -->
-    <string name="patcher_field_value_kept">រក្សាទុក</string>
-    <string name="patcher_tab_logs">កំណត់ហេតុ Patcher</string>
-    <string name="patcher_tab_game">ហ្គេម</string>
-    <string name="patcher_logs_waiting">កំពុងរង់ចាំលទ្ធផល log…</string>
-    <string name="patcher_logs_lost">លទ្ធផល log មិនត្រូវបានរក្សាទុកពេលចាប់ផ្ដើមកម្មវិធីឡើងវិញទេ</string>
-    <string name="patcher_long_step_warning">ជំហាននេះអាចប្រើពេលមួយរយៈ។ សូមរង់ចាំ…</string>
-    <string name="patcher_installing_subtitle">ជិតរួចរាល់ហើយ! 🎸</string>
-    <string name="patcher_success_title">រួចរាល់ទាំងអស់ហើយ! 🎉</string>
-    <string name="patcher_success_subtitle">កម្មវិធីរបស់អ្នកត្រូវបាន patch និងដំឡើងរួចរាល់ហើយ!</string>
-    <string name="patcher_mounted_subtitle">កម្មវិធីរបស់អ្នកត្រូវបាន patch និង mount រួចរាល់ហើយ!</string>
-    <string name="patcher_complete_title">ការដាក់ Patch បានជោគជ័យ! ✨</string>
-    <string name="patcher_failed_title">អូ! មានបញ្ហាមួយបានកើតឡើង</string>
-    <string name="patcher_failed_dialog_title">ការដាក់ Patch បានបរាជ័យ</string>
-    <string name="patcher_error_details">ព័ត៌មានលម្អិតនៃកំហុស</string>
-    <string name="patcher_change_patches">ផ្លាស់ប្តូរបំណះ</string>
-    <string name="patcher_unknown_error">មានកំហុសមិនស្គាល់បានកើតឡើង</string>
-    <string name="patcher_split_step_extracting">កំពុងស្រង់ split APKs</string>
-    <string name="patcher_split_step_merging">កំពុងបញ្ចូល %s</string>
-    <string name="patcher_split_step_writing">កំពុងសរសេរ APK ដែលបានបញ្ចូល</string>
-    <string name="patcher_split_step_finalizing">កំពុងបញ្ចប់ការបញ្ចូល APK</string>
-    <string name="patcher_conflict_title">ជម្លោះកញ្ចប់</string>
-    <string name="patcher_conflict_subtitle">អ្នកត្រូវតែលុបកំណែដែលមានស្រាប់ចេញ</string>
-    <string name="patcher_conflict_hint">កម្មវិធីដែលបាន patch ប្រើប្រាស់សញ្ញាបត្រខុសពីកំណែដែលបានដំឡើង។ ការដោះចេញនឹងលុបទិន្នន័យកម្មវិធីទាំងអស់</string>
-    <string name="patcher_installed_conflict_title">ត្រូវការដោះចេញ</string>
-    <string name="patcher_installed_conflict_body">"Morphe ចុះហត្ថលេខាលើកម្មវិធីដែលបាន patch ជាមួយនឹងសញ្ញាបត្រផ្ទាល់ខ្លួន ដែលខុសពីសញ្ញាបត្រដើម។ Android តម្រូវឱ្យលុបកំណែដែលមានស្រាប់ មុនពេលកម្មវិធីដែលបាន patch អាចដំឡើងបាន។
-
-ការដោះចេញនឹងលុបទិន្នន័យកម្មវិធីទាំងអស់ជាអចិន្ត្រៃយ៍"</string>
-    <string name="patcher_install_error_title">កំហុសនៃការដំឡើង</string>
-    <string name="patcher_mount_error_title">កំហុសក្នុងការ Mount</string>
-    <string name="patcher_install_error_subtitle">សាកល្បងលុបចេញ ហើយដំឡើងម្តងទៀត</string>
-    <string name="patcher_ready_to_mount_subtitle">ចុចប៊ូតុងខាងក្រោមដើម្បី mount</string>
-    <string name="patcher_patches_excluded_for_installer">មិនមានសម្រាប់វិធីសាស្ត្រដំឡើងនេះ និងត្រូវបានដកចេញ៖ %s</string>
-    <string name="patcher_back_to_game_hint">ចុច %1$s ដើម្បីត្រឡប់ទៅហ្គេមរបស់អ្នកវិញ</string>
-    <string name="patcher_storage_permission_dialog_title">មិនអាចចូលទៅកាន់ផ្លូវផ្ទុកទិន្នន័យបានទេ</string>
-    <string name="patcher_incompatible_patcher_title">តម្រូវឱ្យមានការអាប់ដេត</string>
-    <string name="patcher_incompatible_patcher_description">ប្រភព &lt;b&gt;%1$s&lt;/b&gt; តម្រូវឱ្យប្រើ patcher &lt;b&gt;%2$s&lt;/b&gt; ឬថ្មីជាងនេះ។ សូមធ្វើបច្ចុប្បន្នភាព Morphe ដើម្បីប្រើវា</string>
-    <string name="patcher_storage_permission_description_api30">ជម្រើស patch មួយ ឬច្រើនបានចង្អុលទៅកាន់ផ្លូវដែល Morphe មិនអាចអានបាន។ សូមផ្តល់សិទ្ធិចូលប្រើការផ្ទុក រួចចុចប៊ូតុង នោះការ patch នឹងចាប់ផ្តើមដោយស្វ័យប្រវត្តិ</string>
-    <string name="patcher_storage_permission_description_legacy">ជម្រើស patch មួយ ឬច្រើនចង្អុលទៅកាន់ផ្លូវដែលមិនអាចចូលទៅបាន។ សូមធ្វើបច្ចុប្បន្នភាពផ្លូវនៅក្នុងជម្រើស patch ហើយព្យាយាមម្តងទៀត</string>
-    <string name="patcher_storage_permission_grant">ផ្តល់ការអនុញ្ញាតផ្ទុកទិន្នន័យ</string>
-    <string name="patcher_storage_permission_denied_warning">ការអនុញ្ញាតផ្ទុកទិន្នន័យត្រូវបានបដិសេធ។ សូមផ្តល់ការអនុញ្ញាតដើម្បីប្រើផ្លូវនេះ ឬផ្លាស់ទីឯកសារទៅកាន់ថតឯកសារឯកជនរបស់កម្មវិធី</string>
-    <string name="patcher_storage_permission_open_settings">បើកការកំណត់ផ្ទុកទិន្នន័យ</string>
-    <string name="patcher_storage_badge_denied">ការអនុញ្ញាតត្រូវបានបដិសេធ</string>
-    <string name="patcher_storage_badge_missing">រកមិនឃើញ</string>
-    <string name="patcher_storage_badge_rejected">មិនអាចប្រើបាន</string>
-    <string name="batch_patch_option_paths_skipped">ឯកសារជម្រើស patch បានបាត់ ហើយនឹងត្រូវរំលង: %1$s</string>
-    <string name="patcher_missing_patches_title">Patch មួយចំនួនបានបាត់</string>
-    <string name="patcher_missing_patches_description">ជម្រើសដែលបានរក្សាទុកសម្រាប់កម្មវិធីនេះ មានឈ្មោះ patch ដែលគ្មាន source ណាមួយផ្តល់ជូនទៀតទេ។ ការបន្តនឹង patch កម្មវិធីដោយមិនមាន patch ទាំងនោះ</string>
-    <string name="patcher_missing_patches_label">លែងផ្តល់ជូនទៀតហើយ</string>
-    <string name="patcher_option_paths_gone_title">ឯកសារជម្រើស patch បានបាត់</string>
-    <string name="patcher_option_paths_gone_description">ជម្រើស patch មួយ ឬច្រើនបានចង្អុលទៅកាន់ឯកសារដែលលែងមាននៅទីនោះ។ លុបផ្លូវដើម្បី patch ដោយគ្មានពួកវា ឬដាក់ឯកសារត្រឡប់មកវិញ ហើយព្យាយាមម្តងទៀត</string>
-    <string name="patcher_option_paths_rejected_title">មិនអាចប្រើឯកសារជម្រើស patch បានទេ</string>
-    <string name="patcher_option_paths_rejected_description">ជម្រើសបំណិតមួយ ឬច្រើនបានចង្អុលទៅកាន់ឯកសារដែលបាត់ ឬមិនមានអ្វីដែលបំណិតទាមទារ។ លុបផ្លូវដើម្បីដាក់បំណិតដោយគ្មានពួកវា ឬជួសជុលឯកសារដូចដែលការណែនាំនៃជម្រើសបានរៀបរាប់ ហើយព្យាយាមម្តងទៀត</string>
-    <string name="patcher_option_paths_clear">លុបផ្លូវ ហើយបន្ត</string>
-    <string name="patcher_storage_permission_hint">គន្លឹះ៖ ផ្លាស់ទីឯកសារទៅ /Android/data/app.morphe.manager/files/ - មិនត្រូវការការអនុញ្ញាតបន្ថែមទេ</string>
     <!-- Patcher Screen - Patcher Steps -->
-    <string name="patcher_step_group_preparing">កំពុងរៀបចំ</string>
-    <string name="patcher_step_load_patches">កំពុងផ្ទុកបំណះ</string>
-    <string name="patcher_step_prepare_split_apk">កំពុងបញ្ចូល split APK</string>
-    <string name="patcher_step_unpack">អានឯកសារ APK</string>
-    <string name="patcher_step_group_saving">កំពុងរក្សាទុក</string>
-    <string name="patcher_step_write_patched">កំពុងសរសេរឯកសារ APK ដែលបានកែប្រែ</string>
-    <string name="patcher_step_sign_apk">កំពុងចុះហត្ថលេខាលើឯកសារ APK ដែលបានកែប្រែ</string>
     <!-- Battery optimization pre-flight dialog -->
-    <string name="battery_optimization_dialog_title">ការការពារការបិទបិទបាយបកផ្ទៃខាងក្រោយ</string>
-    <string name="battery_optimization_dialog_description">ឧបករណ៍មួយចំនួនអាចនឹងបញ្ឈប់កម្មវិធី patcher នៅពេលដែលកម្មវិធីត្រូវបានបង្រួម។ សូមអនុញ្ញាតឱ្យ Morphe ដំណើរការដោយគ្មានការរឹតត្បិតថាមពលថ្ម ដើម្បីធានាថាការ patch ត្រូវបានបញ្ចប់ដោយជោគជ័យ</string>
-    <string name="battery_optimization_not_now">មិនមែនពេលនេះទេ</string>
     <!-- Patcher Screen - Patcher Worker -->
-    <string name="patcher_notification_title">ការកែប្រែកំពុងដំណើរការ…</string>
-    <string name="patcher_notification_text">ចុចដើម្បីត្រឡប់ទៅកាន់កម្មវិធីកែប្រែ</string>
-    <string name="patcher_stop_title">បញ្ឈប់ការដាក់បំណិត?</string>
-    <string name="patcher_stop_discards">វឌ្ឍនភាពដែលបានធ្វើមកដល់ពេលនេះនឹងត្រូវបោះបង់ ហើយគ្មានអ្វីត្រូវបានដំឡើងឡើយ</string>
     <!-- Keeps the run going, the way out of a dialog that asks whether to stop it -->
-    <string name="patcher_keep_patching">បន្តការដាក់បំណិត</string>
     <!-- Patcher Screen - Patcher Messages -->
-    <string name="patcher_message_1">កំពុងផ្លាស់ប្តូរកម្មវិធីរបស់អ្នកឱ្យទៅជាអ្វីដែលអស្ចារ្យ… 🏆</string>
-    <string name="patcher_message_2">កំពុងបង្រៀនកម្មវិធីចាស់ៗនូវល្បិចថ្មីៗ… 🎩</string>
-    <string name="patcher_message_3">កំពុងធ្វើការកែសម្រួលឌីជីថលដល់កម្មវិធីរបស់អ្នក… 🔧</string>
-    <string name="patcher_message_4">កំពុងឆុងមន្តអាគមឌីជីថល… ☕</string>
-    <string name="patcher_message_5">សូមសម្រាកផឹកកាហ្វេមួយសិន… ☕</string>
-    <string name="patcher_message_6">សាកមើលទៅខាងក្រៅ ធាតុអាកាសល្អណាស់… 🌤️</string>
-    <string name="patcher_message_7">កំពុងកែតម្រូវ 1s និង 0s… 🤖</string>
-    <string name="patcher_message_8">កំពុងស្រាយបញ្ហាកូដឌីជីថលដ៏ស្មុគស្មាញ… 🍝</string>
     <!-- Morphe patches fix YouTube bugs that Google still has not fixed. -->
-    <string name="patcher_message_9">កំពុងកែសម្រួល bug នៅក្នុង app ដែលមិនទាន់បាន patch… 🪲</string>
-    <string name="patcher_message_10">ការ patch ដែលល្អ គឺគួរសមនឹងការរង់ចាំ… ⏳</string>
-    <string name="patcher_message_11">កំពុងសម្រិតសម្រាំង pixels ឱ្យមានពន្លឺចែងចាំង… 💎</string>
-    <string name="patcher_message_12">សូមបន្តអង្គុយនៅកន្លែង រហូតដល់ប្រធានលូសបិទសញ្ញា \"កំពុង patch\"… 💺✈️</string>
-    <string name="patcher_message_13">កំពុងរៀបចំ app ដែលបាន patch របស់អ្នក ឱ្យរួចរាល់ និងថ្មីស្រឡាង… 🍳</string>
     <!-- "bytecode" can be translated from "the app code" -->
-    <string name="patcher_message_14">កំពុងចរចាយ៉ាងគួរសមជាមួយ bytecode… 🤝</string>
     <!-- Space flight communications callout. -->
-    <string name="patcher_message_15">ប្រព័ន្ធទាំងអស់ដំណើរការធម្មតា… គន្លងនៃការ patch មានស្ថេរភាព… 🚀</string>
-    <string name="patcher_message_16">កំពុងបញ្ចេញថាមពលបន្ថែម ដូចជាការច្របាច់ទឹកពីក្រូចឆ្មាឌីជីថលអីចឹង… 🍋</string>
-    <string name="patcher_message_17">កំពុងជំរុញឱ្យកម្មវិធីទទួលយកខ្លួនឯងថ្មីដែលប្រសើរជាងមុន… 🌱</string>
     <!-- Quantum physics (box emoji is a reference to Schrödinger's cat). -->
-    <string name="patcher_message_18">កំពុងផ្លាស់ប្តូរស្ថានភាពកម្មវិធី ពីមិនទាន់បាន patch ទៅជាបាន patch… 📦⚛️</string>
     <!-- Throw away reference to a Saturday Night Live sketch. "fever" means sickness or the flu. "prescription" means medical treatment or can be translated from "cure" -->
-    <string name="patcher_message_19">កម្មវិធីរបស់អ្នកមានអាការៈក្តៅខ្លួន ហើយវិធីព្យាបាលតែមួយគត់គឺការបន្ថែម patch ឱ្យបានច្រើន… 🩺🔔</string>
-    <string name="patcher_message_20">កំពុងលុបចេញនូវអ្វីដែលមិនចាំបាច់។ សូមរង់ចាំបន្តិច… 🗑️</string>
     <!-- Expert patcher Screen -->
-    <string name="patching_app">កំពុងដាក់បំណះកម្មវិធី</string>
-    <string name="memory_usage">ការប្រើប្រាស់អង្គចងចាំ</string>
-    <string name="cpu_usage">ការប្រើប្រាស់ CPU</string>
-    <string name="storage_io_usage">Storage I/O</string>
     <!-- Patcher Screen - Other hidden strings -->
-    <string name="applying_patches">កំពុងអនុវត្ត patch</string>
-    <string name="failed_to_execute_patch">បរាជ័យក្នុងការអនុវត្ត %s</string>
-    <string name="patched_app_save_failed_toast">បរាជ័យក្នុងការរក្សាទុកកម្មវិធីដែលបាន patch</string>
-    <string name="plugin_activity_dialog_body">ត្រូវការអន្តរកម្មរបស់អ្នកប្រើប្រាស់ ដើម្បីបន្តជាមួយ plugin នេះ</string>
-    <string name="patcher_process_killed_message">ប្រព័ន្ធបានបញ្ឈប់ patcher មុនពេលវាបញ្ចប់ ជាធម្មតាដើម្បីបង្កើនមេម៉ូរី។ សូមបិទកម្មវិធីផ្សេងទៀត ហើយព្យាយាមម្តងទៀត</string>
-    <string name="patcher_process_crashed_message">Patcher បានគាំងមុនពេលវាបញ្ចប់។ ប្រសិនបើវាเกิดขึ้นម្តងទៀត សូមបិទ \"Use embedded VM\" នៅក្នុងការកំណត់ ហើយរាយការណ៍បញ្ហានេះជាមួយនឹង log</string>
     <!-- Shown when a run fills the heap it was given. "%1$s" is the heap in megabytes. -->
-    <string name="patcher_out_of_memory_message">Patcher បានអស់មេម៉ូរីជាមួយ heap %1$s MB។ កម្មវិធីនេះមានទំហំធំពេកសម្រាប់ patch ដែលបានរើស។ ព្យាយាម patch ជាមួយប្រភព patch តិចជាងនេះ ឬរើស patch តិចជាងនេះ</string>
-    <string name="install_app_success">ដំឡើងបានជោគជ័យ</string>
-    <string name="install_app_fail">ការដំឡើងកម្មវិធីបានបរាជ័យ៖ %s</string>
-    <string name="install_ignore_signature">ដំឡើងតែម្តង</string>
-    <string name="install_ignore_signature_description">រក្សាទុកទិន្នន័យកម្មវិធី ប៉ុន្តែដំណើរការបានតែក្នុងករណីដែល root module បិទការផ្ទៀងផ្ទាត់ហត្ថលេខារបស់ Android ប៉ុណ្ណោះ</string>
-    <string name="uninstall_app_fail">ការដោះកម្មវិធីចេញបានបរាជ័យ៖ %s</string>
-    <string name="uninstall_app_unverified">រក្សាទុកនៅនឹងកន្លែង៖ Morphe មិនអាចផ្ទៀងផ្ទាត់បានថា កម្មវិធីដែលបានដំឡើង គឺជាកំណែដែលវាបាន patch នោះទេ</string>
-    <string name="launch_app_unverified">Morphe មិនអាចផ្ទៀងផ្ទាត់បានថា កម្មវិធីដែលបានដំឡើងគឺជា build ដែលវាបាន patch នោះទេ</string>
-    <string name="uninstall_timeout">ការដោះកម្មវិធីចេញបានអស់ពេលកំណត់</string>
-    <string name="save_apk_success">បានរក្សាទុក APK</string>
-    <string name="saved_app_export_failed">ការនាំចេញកម្មវិធីដែលបាន patch បានបរាជ័យ</string>
-    <string name="saved_app_removed_toast">បានលុបកម្មវិធីដែលបាន patch ដែលបានរក្សាទុក</string>
-    <string name="saved_app_launch_unavailable">សូមដំឡើងកម្មវិធី មុនពេលបើកវា</string>
-    <string name="package_name">ឈ្មោះកញ្ចប់</string>
-    <string name="failed_to_mount">ការភ្ជាប់បានបរាជ័យ: %s</string>
-    <string name="failed_to_unmount">ការដកចេញបានបរាជ័យ: %s</string>
     <!-- Patcher Screen - Mini-games -->
-    <string name="mini_game_score">ពិន្ទុ %s</string>
-    <string name="mini_game_best">ល្អបំផុត %s</string>
-    <string name="mini_game_new_record">កំណត់ត្រាថ្មី!</string>
-    <string name="mini_game_game_over">ចប់ហ្គេម</string>
-    <string name="mini_game_try_again">ព្យាយាមម្តងទៀត</string>
-    <string name="mini_game_paused">ផ្អាក</string>
-    <string name="mini_game_resume">បន្ត</string>
-    <string name="mini_game_restart">ចាប់ផ្តើមឡើងវិញ</string>
-    <string name="mini_game_change">ជ្រើសរើសហ្គេមផ្សេងទៀត</string>
-    <string name="mini_game_2048_picker_subtitle">អូសការ៉ូដើម្បីបញ្ចូលគ្នា</string>
-    <string name="mini_game_flappy_picker_subtitle">ប៉ះដើម្បីហោះកាត់បំពង់</string>
-    <string name="mini_game_flappy_tap_to_start">ប៉ះដើម្បីហោះ</string>
-    <string name="mini_game_snake_picker_subtitle">ស៊ីចំណី កុំឱ្យប៉ះខ្លួនឯង</string>
-    <string name="mini_game_snake_swipe_to_start">អូសដើម្បីចាប់ផ្តើម</string>
-    <string name="mini_game_dino_picker_subtitle">ប៉ះដើម្បីលោតលើដើមស្បៃរ៉ា</string>
-    <string name="mini_game_dino_tap_to_start">ប៉ះដើម្បីរត់</string>
-    <string name="mini_game_blocks_picker_subtitle">តម្រឹមរូបរាង បោសសម្អាតបន្ទាត់</string>
-    <string name="mini_game_blocks_tap_to_start">ចុចដើម្បីបង្វិល អូសដើម្បីផ្លាស់ទី អូសចុះក្រោមដើម្បីទម្លាក់</string>
-    <string name="mini_game_bricks_picker_subtitle">លោតបាល់ បោសសម្អាតជញ្ជាំង</string>
-    <string name="mini_game_bricks_tap_to_start">អូសដើម្បីកំណត់គោលដៅ ចុចដើម្បីបាញ់</string>
-    <string name="mini_game_miner_picker_subtitle">ចុចដើម្បីបើក ចុចឱ្យជាប់ដើម្បីបោះទង់</string>
-    <string name="mini_game_pairs_picker_subtitle">បកកាត រកគូដែលត្រូវគ្នា</string>
     <!-- Settings -->
-    <string name="appearance">រូបរាង</string>
-    <string name="system">ប្រព័ន្ធ</string>
     <!-- Settings - Appearance Tab - Background animation -->
-    <string name="settings_appearance_background">ចលនាផ្ទៃខាងក្រោយ</string>
-    <string name="settings_appearance_background_description">ចលនាដែលបង្ហាញនៅពីក្រោយអេក្រង់នៃកម្មវិធី</string>
-    <string name="settings_appearance_background_circles">រង្វង់</string>
-    <string name="settings_appearance_background_rings">កង</string>
-    <string name="settings_appearance_background_mesh">សំណាញ់</string>
-    <string name="settings_appearance_background_space">លំហអាកាស</string>
-    <string name="settings_appearance_background_shapes">រូបរាង</string>
-    <string name="settings_appearance_background_snow">ព្រិល</string>
-    <string name="settings_appearance_background_grid">ក្រឡា</string>
-    <string name="settings_appearance_background_particles">ភាគល្អិត</string>
-    <string name="settings_appearance_background_lava">ចង្កៀង Lava</string>
-    <string name="settings_appearance_background_halloween">ហالوវីន</string>
-    <string name="settings_appearance_background_fireworks">កាំភ្លើងគប់</string>
-    <string name="settings_appearance_background_none">ឥតមាន</string>
-    <string name="settings_appearance_background_random">ចៃដន្យ</string>
-    <string name="settings_appearance_background_random_interval_launch">ពេលចាប់ផ្ដើម</string>
-    <string name="settings_appearance_background_random_interval_daily">ប្រចាំថ្ងៃ</string>
-    <string name="settings_appearance_background_random_interval_3days">រៀងរាល់ ៣ ថ្ងៃម្ដង</string>
-    <string name="settings_appearance_parallax_effect">ផលប៉ះពាល់ Parallax</string>
-    <string name="settings_appearance_parallax_effect_description">ការផ្លាស់ប្តូរផ្ទៃខាងក្រោយយ៉ាងរលូន នៅពេលផ្អៀងឧបករណ៍</string>
-    <string name="settings_appearance_seasonal_themes">ប្រធានបទតាមរដូវកាល</string>
-    <string name="settings_appearance_seasonal_themes_description">ផ្ទៃខាងក្រោយ និងការសួរសុខទុក្ខបែបបុណ្យទានក្នុងអំឡុងពេលថ្ងៃឈប់សម្រាក</string>
     <!-- %1$s is a holiday background name, such as Halloween. %2$s is a date, such as November 1 -->
-    <string name="settings_appearance_seasonal_background_notice">ផ្ទៃខាងក្រោយ %1$s នឹងបង្ហាញរហូតដល់ %2$s ខណៈពេលដែលសាច់រឿងតាមរដូវកាលត្រូវបានបើក</string>
     <!-- Settings - Appearance Tab - Theme -->
-    <string name="settings_appearance_display">ការបង្ហាញ</string>
-    <string name="settings_appearance_effects">ផលប៉ះពាល់</string>
-    <string name="settings_appearance_theme">ប្រធានបទ</string>
-    <string name="settings_appearance_theme_mode">របៀបនៃប្រធានបទ</string>
-    <string name="settings_appearance_system">ប្រព័ន្ធ</string>
-    <string name="settings_appearance_light">ពន្លឺ</string>
-    <string name="settings_appearance_dark">ងងឹត</string>
-    <string name="settings_appearance_dynamic">Material You</string>
-    <string name="settings_appearance_monochrome">ម៉ូណូក្រូម</string>
-    <string name="settings_appearance_color_style">ស្ទីលពណ៌</string>
-    <string name="settings_appearance_accent_color">ពណ៌បញ្ជាក់</string>
-    <string name="settings_appearance_pure_black">ពណ៌ខ្មៅសុទ្ធ</string>
-    <string name="settings_appearance_pure_black_description">ប្រើផ្ទៃខាងក្រោយពណ៌ខ្មៅពិតប្រាកដ</string>
-    <string name="settings_appearance_color_accents">ពណ៌កម្មវិធី និងប្រភព</string>
-    <string name="settings_appearance_color_accents_description">ប្រើពណ៌របស់កម្មវិធី និងប្រភពនីមួយៗ ជំនួសឱ្យពណ៌ accent</string>
-    <string name="settings_appearance_outlines">បន្ទាត់គែម</string>
-    <string name="settings_appearance_outlines_description">គូរគែមស្តើងជុំវិញកាត បន្ទះ និងប៊ូតុង</string>
-    <string name="settings_appearance_blur">ភាពស្រពិចស្រពិល</string>
-    <string name="settings_appearance_blur_description">ធ្វើឱ្យស្រពិចស្រពិលនូវអ្វីដែលអូសក្រោម header, bar និង panel</string>
     <!-- Settings - Appearance Tab - Language Selector -->
-    <string name="settings_appearance_app_language">ភាសាកម្មវិធី</string>
-    <string name="settings_appearance_app_language_current">ភាសាបច្ចុប្បន្ន</string>
-    <string name="settings_appearance_translate">ជួយបកប្រែ Morphe</string>
-    <string name="settings_appearance_translations_info_title">ការបកប្រែសម្រាប់ភាសាមួយចំនួនអាចនឹងបាត់ ឬមិនពេញលេញ</string>
     <!-- Settings - Appearance Tab - Interface Scale -->
-    <string name="settings_appearance_ui_scale">ទំហំ Interface</string>
     <!-- Settings - Appearance Tab - Home Screen Section -->
-    <string name="settings_appearance_home_screen">អេក្រង់ដើម</string>
-    <string name="settings_appearance_greeting_phrases">ឃ្លាសួរសុខទុក្ខ</string>
-    <string name="settings_appearance_greeting_phrases_subtitle">បង្ហាញសារស្វាគមន៍</string>
-    <string name="settings_appearance_repatch_notice">ការជូនដំណឹងអំពីការ patch ឡើងវិញ</string>
-    <string name="settings_appearance_repatch_notice_description">បង្ហាញបដា នៅពេលដែលកម្មវិធីដែលបាន patch អាចត្រូវបាន patch ឡើងវិញ</string>
-    <string name="settings_appearance_more_apps_card">កាតកម្មវិធីបន្ថែម</string>
-    <string name="settings_appearance_more_apps_card_description">បង្ហាញកាតមួយនៅក្រោមកម្មវិធី ដែលនាំទៅកាន់ការកែសម្រួលសហគមន៍</string>
-    <string name="settings_appearance_app_card_colors">ពណ៌កាត</string>
-    <string name="settings_appearance_app_card_colors_default">លំនាំដើម</string>
-    <string name="settings_appearance_app_card_colors_default_description">ផ្តល់ពណ៌ផ្ទាល់ខ្លួនសម្រាប់កម្មវិធី និងប្រភពនីមួយៗ</string>
-    <string name="settings_appearance_app_card_colors_accent">ពណ៌សង្កត់</string>
-    <string name="settings_appearance_app_card_colors_accent_description">ប្រើពណ៌ accent នៃកម្មវិធីសម្រាប់កាតកម្មវិធី និងប្រភព</string>
-    <string name="settings_appearance_app_card_colors_gradient">ពណ៌ Gradient</string>
-    <string name="settings_appearance_app_card_colors_gradient_description">ប្រើ gradient ផ្ទាល់ខ្លួនមួយសម្រាប់កាតកម្មវិធី ដោយប្លेंडចូលទៅក្នុងពណ៌មួយសម្រាប់កាតប្រភព</string>
-    <string name="settings_appearance_app_card_colors_solid">ពណ៌រឹង</string>
-    <string name="settings_appearance_app_card_colors_solid_description">ប្រើពណ៌ផ្ទាល់ខ្លួនមួយសម្រាប់កាតកម្មវិធី និងកាតប្រភព</string>
-    <string name="settings_appearance_app_card_colors_start">ពណ៌ចាប់ផ្ដើម</string>
-    <string name="settings_appearance_app_card_colors_middle">ពណ៌កណ្ដាល</string>
-    <string name="settings_appearance_app_card_colors_end">ពណ៌បញ្ចប់</string>
-    <string name="settings_appearance_app_card_colors_solid_color">ពណ៌រឹង</string>
-    <string name="settings_appearance_app_card_colors_bundle">ពណ៌កញ្ចប់កម្មវិធី</string>
-    <string name="settings_appearance_app_card_colors_bundle_description">ប្រើពណ៌ផ្ទាល់របស់កម្មវិធី ឬប្រភពនីមួយៗនៅទីនេះ ដែលនឹងត្រូវបានកំណត់ស្រមោលដោយស្វ័យប្រវត្តិដើម្បីឱ្យសមស្រប</string>
     <!-- Settings - Appearance Tab - App Icon Selector -->
-    <string name="settings_appearance_app_icon_selector_title">អាយខនកម្មវិធី</string>
-    <string name="settings_appearance_app_icon_selector_description">របៀបដែល Morphe បង្ហាញនៅលើអេក្រង់ដើមរបស់អ្នក និងនៅក្នុង app drawer</string>
-    <string name="settings_appearance_app_icon_default">លំនាំដើម</string>
-    <string name="settings_appearance_app_icon_light_2">មេឃ</string>
-    <string name="settings_appearance_app_icon_light_3">ថ្ងៃលិច</string>
-    <string name="settings_appearance_app_icon_light_4">ពណ៌ស្វាយ Lavender</string>
-    <string name="settings_appearance_app_icon_light_5">ពណ៌ទឹកកក Glacier</string>
-    <string name="settings_appearance_app_icon_light_6">ពណ៌អ័ព្ទ Mist</string>
-    <string name="settings_appearance_app_icon_light_7">ពណ៌ខ្សាច់</string>
-    <string name="settings_appearance_app_icon_dark_1">ពណ៌ខៀវ Teal</string>
-    <string name="settings_appearance_app_icon_dark_2">ភាពទទេ</string>
-    <string name="settings_appearance_app_icon_dark_3">ពណ៌ស្វាយ Plum</string>
-    <string name="settings_appearance_app_icon_dark_4">ពណ៌កណ្តាលអធ្រាត្រ Midnight</string>
-    <string name="settings_appearance_app_icon_dark_5">ពណ៌ Slate</string>
-    <string name="settings_appearance_app_icon_accent_1">ពណ៌ Aurora</string>
-    <string name="settings_appearance_app_icon_accent_2">ទឹកប៊ិច</string>
-    <string name="settings_appearance_app_icon_accent_3">ក្រដាស</string>
-    <string name="settings_appearance_app_icon_accent_4">ពេលសាយ័ណ្ហ</string>
-    <string name="settings_appearance_app_icon_background">ផ្ទៃខាងក្រោយ</string>
-    <string name="settings_appearance_app_icon_mark">ឡូហ្គោ</string>
-    <string name="settings_appearance_app_icon_mark_color">ពណ៌</string>
-    <string name="settings_appearance_app_icon_mark_white">ពណ៌ស</string>
-    <string name="settings_appearance_app_icon_mark_black">ពណ៌ខ្មៅ</string>
-    <string name="settings_appearance_app_icon_change_dialog_title">ផ្លាស់ប្តូររូបតំណាងកម្មវិធី?</string>
     <!-- %s is the name of the icon picked -->
-    <string name="settings_appearance_app_icon_change_restarts">Morphe នឹងចាប់ផ្ដើមឡើងវិញ ដើម្បីប្ដូរទៅប្រើ &lt;b&gt;%s&lt;/b&gt;</string>
     <!-- Label of a footer button beside "Cancel". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="settings_appearance_app_icon_change_dialog_confirm">ផ្លាស់ប្តូររូបតំណាង</string>
     <!-- Settings - Advanced Tab - Updates Section -->
-    <string name="settings_advanced_updates_manager_prereleases">ការធ្វើបច្ចុប្បន្នភាពមុនពេលចេញផ្សាយ</string>
     <!-- "Morphe" here is the app itself, not the patches. Do not translate this as pre-release patches -->
-    <string name="settings_advanced_updates_manager_prereleases_description">ការចូលប្រើមុនគេសម្រាប់កំណែ Morphe ថ្មីៗ</string>
-    <string name="settings_advanced_updates_prerelease_warning_title">បើកការធ្វើបច្ចុប្បន្នភាពមុនពេលចេញផ្សាយផ្លូវការ?</string>
     <!-- Shown before pre-release updates are turned on for the app itself. Patches have their own toggle in each patch source -->
-    <string name="settings_advanced_updates_prerelease_warning_message">"កំណែមុនពេលចេញផ្សាយផ្លូវការរបស់ Morphe នៅតែស្ថិតក្នុងការអភិវឌ្ឍន៍ និងអាចមិនមានស្ថិរភាព។
-
-ការបិតបំណះមិនរងផលប៉ះពាល់ទេ៖ សូមបើកការបិតបំណះមុនពេលចេញផ្សាយសម្រាប់ប្រភពនីមួយៗនៅក្នុងបញ្ជីប្រភពបំណះ"</string>
-    <string name="settings_advanced_updates_allow_metered">ការធ្វើបច្ចុប្បន្នភាពទិន្នន័យចល័ត</string>
-    <string name="settings_advanced_updates_allow_metered_description">ទាញយក Morphe និងបច្ចុប្បន្នភាព patch តាមរយៈទិន្នន័យចល័ត</string>
-    <string name="settings_advanced_updates_background_notifications">ការជូនដំណឹងអំពីការអាប់ដេតផ្ទៃខាងក្រោយ</string>
-    <string name="settings_advanced_updates_background_notifications_description">ត្រួតពិនិត្យរកមើលការអាប់ដេតក្នុងផ្ទៃខាងក្រោយតាមកាលកំណត់ និងជូនដំណឹងនៅពេលដែលមាន</string>
-    <string name="settings_advanced_updates_background_notifications_description_fcm">ការជូនដំណឹង Push សម្រាប់ការចេញផ្សាយថ្មី ទោះបីជាកម្មវិធីត្រូវបានបិទក៏ដោយ</string>
-    <string name="settings_system_notifications_categories">ប្រភេទនៃការជូនដំណឹង</string>
-    <string name="settings_system_notifications_categories_description">ជ្រើសរើសនៅក្នុងការកំណត់ប្រព័ន្ធនូវការធ្វើបច្ចុប្បន្នភាពដែលត្រូវជូនដំណឹងដល់អ្នក</string>
-    <string name="settings_advanced_update_interval">ប្រេកង់នៃការត្រួតពិនិត្យ</string>
-    <string name="settings_advanced_update_interval_hourly">រៀងរាល់ម៉ោង</string>
-    <string name="settings_advanced_update_interval_daily">រៀងរាល់ថ្ងៃ</string>
-    <string name="settings_advanced_update_interval_weekly">រៀងរាល់សប្តាហ៍</string>
-    <string name="settings_advanced_update_interval_monthly">រៀងរាល់ខែ</string>
-    <string name="settings_advanced_update_interval_battery_warning">ការត្រួតពិនិត្យផ្ទៃក្រោយអាចនឹងមិនដំណើរការដោយជឿជាក់លើឧបករណ៍ដែលកម្រិតកម្មវិធីផ្ទៃក្រោយ ដូចជា Xiaomi, Huawei, Samsung និង OnePlus</string>
-    <string name="settings_advanced_external_batch_patch">អនុញ្ញាតឱ្យមានការជំរុញពីខាងក្រៅ</string>
-    <string name="settings_advanced_external_batch_patch_description">អនុញ្ញាតឱ្យកម្មវិធី automation ចាប់ផ្តើមការ patch ជាក្រុម</string>
-    <string name="external_batch_patch_title">ចាប់ផ្តើមការបិតបំណះជាបាច់?</string>
-    <string name="external_batch_patch_description">%s ចង់ឱ្យ Morphe បិតបំណះ និងដំឡើងកម្មវិធី</string>
-    <string name="external_batch_patch_trust_caller">អនុញ្ញាតឱ្យកម្មវិធីនេះជានិច្ច</string>
-    <string name="external_batch_patch_unknown_caller">កម្មវិធីដែលមិនស្គាល់</string>
     <!-- Notification content -->
-    <string name="notification_bundle_update_title">មាន patch ថ្មីដែលអាចប្រើបាន</string>
-    <string name="notification_update_text">កំណែ %s គឺរួចរាល់សម្រាប់ទាញយក</string>
-    <string name="notification_bundle_update_text_unversioned">ប៉ះដើម្បីបើក Morphe និងធ្វើបច្ចុប្បន្នភាព</string>
-    <string name="notification_permission_dialog_title">អនុញ្ញាតឱ្យមានការជូនដំណឹង</string>
-    <string name="notification_permission_dialog_description">Morphe ត្រូវការការអនុញ្ញាតឱ្យផ្ញើការជូនដំណឹង ដើម្បីជូនដំណឹងដល់អ្នក នៅពេលដែលមានការធ្វើបច្ចុប្បន្នភាពក្នុងផ្ទៃខាងក្រោយ</string>
-    <string name="notification_post_patch_dialog_title">តើអ្នកចង់ឱ្យមានការជូនដំណឹងនៅពេលមានការអាប់ដេតដែលអាចប្រើបានដែរឬទេ?</string>
-    <string name="notification_channel_manager_updates">ការធ្វើបច្ចុប្បន្នភាព Morphe</string>
-    <string name="notification_channel_manager_updates_description">ការជូនដំណឹងអំពីការចេញផ្សាយ Morphe ថ្មីៗ</string>
-    <string name="notification_channel_patch_updates">បច្ចុប្បន្នភាព Patch</string>
-    <string name="notification_channel_patch_updates_description">ការជូនដំណឹងអំពីការចេញផ្សាយ patch ថ្មី</string>
-    <string name="notification_channel_patcher_description">បង្ហាញនៅពេលដែល Morphe កំពុង patch កម្មវិធីមួយនៅក្នុង background</string>
-    <string name="notification_channel_mounted_apps">កម្មវិធីដែលបាន mounted</string>
-    <string name="notification_channel_mounted_apps_description">នៅពេលដែលកំណែផ្សេងទៀតបានជំនួសកម្មវិធីដែលបាន mounted ហើយ patch របស់វា លែងមានប្រសិទ្ធភាពទៀតហើយ</string>
-    <string name="notification_mount_replaced_title">%1$s លែងត្រូវបាន patched ទៀតហើយ</string>
-    <string name="notification_mount_replaced_text">v%1$s បានជំនួស patched v%2$s។ បើក Morphe ដើម្បី restore វាឡើងវិញ</string>
     <!-- Settings - Advanced Tab - Expert settings Section -->
-    <string name="settings_advanced_expert_mode">របៀបអ្នកជំនាញ</string>
-    <string name="settings_advanced_expert_mode_description">បើកការកំណត់ patching កម្រិតខ្ពស់ និងជម្រើស patch</string>
-    <string name="settings_advanced_expert_mode_dialog_title">បើកដំណើរការ Expert mode?</string>
-    <string name="settings_advanced_expert_mode_dialog_message">Expert mode ផ្តល់ការគ្រប់គ្រងកាន់តែច្រើនលើរបៀបដែល patch ត្រូវបានអនុវត្ត ប៉ុន្តែការកំណត់មិនត្រឹមត្រូវនៅក្នុង expert mode អាចបណ្តាលឱ្យកម្មវិធីមិនដំណើរការ</string>
-    <string name="settings_advanced_strip_unused_libs">បង្កើនប្រសិទ្ធភាពសម្រាប់ស្ថាបត្យកម្មឧបករណ៍</string>
-    <string name="settings_advanced_strip_unused_libs_description">លុប native libraries និង APK splits ដែលមិនបានប្រើប្រាស់</string>
     <!-- Settings - Advanced Tab - GitHub PAT Settings -->
-    <string name="settings_advanced_github_pat_summary">ដោះសោប្រភព pull request និង private repositories</string>
-    <string name="settings_advanced_github_pat_description">សម្រាប់ប្រភព pull request, private repositories និងកម្រិត GitHub rate limit ខ្ពស់ជាងមុន</string>
-    <string name="settings_advanced_github_pat_configured">បានកំណត់ Token រួចរាល់</string>
-    <string name="settings_advanced_github_pat_create">បង្កើត token នៅលើ GitHub</string>
     <!-- "%s" is the GitHub scope name, keep it as is -->
-    <string name="settings_advanced_github_pat_create_description">បើក GitHub ជាមួយនឹង scope %s ដែលត្រូវបានជ្រើសរើសរួចហើយ</string>
-    <string name="settings_advanced_github_pat_checking">កំពុងត្រួតពិនិត្យជាមួយ GitHub…</string>
     <!-- "%s" is the GitHub account name -->
-    <string name="settings_advanced_github_pat_account">បានចូលប្រើ GitHub ក្នុងនាមជា %s</string>
-    <string name="settings_advanced_github_pat_rejected">GitHub បានបដិសេធ token នេះ។ វាអាចនឹងផុតកំណត់ ឬត្រូវបានដកហូត</string>
-    <string name="settings_advanced_github_pat_unreachable">មិនអាចភ្ជាប់ទៅ GitHub ដើម្បីពិនិត្យមើល token នេះបានទេ</string>
-    <string name="settings_advanced_github_pat_export_include_label">រួមបញ្ចូលក្នុងការនាំចេញការកំណត់</string>
     <!-- "PAT" is a GitHub Personal Access Token, keep it in English because GitHub has no localized UI -->
-    <string name="settings_advanced_github_pat_export_include_supporting">បន្ថែម PAT នេះទៅក្នុងការកំណត់ Morphe ដែលត្រូវបាននាំចេញ</string>
     <!-- "PAT" is a GitHub Personal Access Token, keep it in English because GitHub has no localized UI -->
-    <string name="settings_advanced_github_pat_export_warning">សូមកុំចែករំលែក PAT របស់អ្នក។ ប្រសិនបើអ្នកបញ្ចូលវាទៅក្នុងការនាំចេញការកំណត់ សូមរក្សាទុកឯកសារនោះជាសម្ងាត់ ព្រោះវាមានផ្ទុក token</string>
     <!-- Settings - Advanced Tab - Patch Options Section -->
-    <string name="settings_advanced_patch_options">ជម្រើស Patch</string>
-    <string name="settings_advanced_patch_options_restart_message">ការផ្លាស់ប្តូរជម្រើស patch តម្រូវឱ្យធ្វើការ patch កម្មវិធីឡើងវិញ ដើម្បីឱ្យមានប្រសិទ្ធភាព</string>
-    <string name="settings_advanced_patch_options_expert_mode_notice">នៅក្នុងមុខងារ Expert ជម្រើស patch នឹងមានផ្តល់ជូនក្នុងអំឡុងពេលដំណើរការ patch</string>
-    <string name="settings_advanced_patch_options_loading">កំពុងផ្ទុកជម្រើស patch…</string>
-    <string name="settings_advanced_patch_options_waiting_for_source">សូមរង់ចាំរហូតដល់ប្រភព patch ត្រូវបានធ្វើបច្ចុប្បន្នភាព</string>
-    <string name="settings_advanced_patch_options_load_error">ការផ្ទុកជម្រើស patch បានបរាជ័យ</string>
-    <string name="settings_advanced_patch_options_no_available">មិនមានជម្រើសសម្រាប់ patch នេះទេ</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Custom Branding -->
-    <string name="settings_advanced_patch_options_custom_branding">ការបង្កើតម៉ាកសញ្ញាផ្ទាល់ខ្លួន</string>
-    <string name="settings_advanced_patch_options_custom_branding_description">ផ្លាស់ប្តូរឈ្មោះបង្ហាញរបស់កម្មវិធី</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_name">ឈ្មោះកម្មវិធី</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_name_hint">បញ្ចូលឈ្មោះផ្ទាល់ខ្លួន</string>
-    <string name="settings_advanced_patch_options_path_gone">ថតនេះមិនអាចអានបានទៀតទេ។ សូមជ្រើសរើសវាឡើងវិញ ឬលុបវា បើមិនដូច្នេះទេ ការ patch នឹងឈប់ ហើយសួរអំពីវា</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_icon">អាយខនកម្មវិធី</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_icon_description">រូបតំណាងដែលកម្មវិធីត្រូវបាន patch, ដែលត្រូវបានប្រើផងដែរនៅកន្លែងដែលមិនអាចផ្លាស់ប្តូរបាននៅពេលក្រោយ ដូចជា Android Auto</string>
-    <string name="settings_advanced_patch_options_custom_branding_app_icon_needs_folder">រូបតំណាងកម្មវិធីដែលកំណត់ដោយខ្លួនឯង ត្រូវការថតដែលមានរូបភាពតំណាង</string>
-    <string name="settings_advanced_patch_options_custom_branding_custom_icon">រូបតំណាងផ្ទាល់ខ្លួន</string>
-    <string name="settings_advanced_patch_options_custom_branding_custom_icon_instruction">"ថតដែលមានរូបភាពសម្រាប់ប្រើជាសញ្ញាសម្គាល់ (icon) ផ្ទាល់ខ្លួន។
-
-ថតនោះត្រូវតែមានថតមួយ ឬច្រើនដូចខាងក្រោម អាស្រ័យលើ DPI នៃឧបករណ៍៖
-- mipmap-mdpi
-- mipmap-hdpi
-- mipmap-xhdpi
-- mipmap-xxhdpi
-- mipmap-xxxhdpi
-
-ថតនីមួយៗត្រូវតែមានឯកសារទាំងអស់ដូចខាងក្រោម៖
-morphe_adaptive_background_custom.png
-morphe_adaptive_foreground_custom.png
-
-ទំហំរូបភាពត្រូវតែដូចខាងក្រោម៖
-- mipmap-mdpi: 108x108 px
-- mipmap-hdpi: 162x162 px
-- mipmap-xhdpi: 216x216 px
-- mipmap-xxhdpi: 324x324 px
-- mipmap-xxxhdpi: 432x432 px
-
-ជម្រើសបន្ថែម ផ្លូវ (path) អាចមានថត 'drawable' ដែលមានឯកសារសញ្ញាសម្គាល់ពណ៌តែមួយ (monochrome icon file)៖
-morphe_adaptive_monochrome_custom.xml
-
-ជម្រើសបន្ថែម ផ្លូវ (path) អាចមានសញ្ញាសម្គាល់ការជូនដំណឹង (notification icon) ក្នុងទម្រង់ណាមួយដូចខាងក្រោម៖
-- XML vector drawable ក្នុង 'drawable'៖
-  morphe_notification_icon_custom.xml
-- រូបភាព PNG raster ក្នុងថត 'drawable-dpi'៖
-  drawable-mdpi/morphe_notification_icon_custom.png (24x24 px)
-  drawable-hdpi/morphe_notification_icon_custom.png (36x36 px)
-  drawable-xhdpi/morphe_notification_icon_custom.png (48x48 px)
-  drawable-xxhdpi/morphe_notification_icon_custom.png (72x72 px)
-  drawable-xxxhdpi/morphe_notification_icon_custom.png (96x96 px)"</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Custom Header -->
-    <string name="settings_advanced_patch_options_custom_header">ឡូហ្គោផ្នែកខាងលើផ្ទាល់ខ្លួន</string>
-    <string name="settings_advanced_patch_options_custom_header_description">ផ្លាស់ប្តូរឡូហ្គោផ្នែកខាងលើ</string>
-    <string name="settings_advanced_patch_options_custom_header_instruction">"ថតឯកសារដែលមានរូបភាពសម្រាប់ប្រើជាឡូហ្គោផ្នែកខាងលើផ្ទាល់ខ្លួន។
-
-ថតឯកសារត្រូវតែមានថតឯកសារមួយ ឬច្រើនដូចខាងក្រោម អាស្រ័យលើ DPI នៃឧបករណ៍៖
-- drawable-hdpi
-- drawable-xhdpi
-- drawable-xxhdpi
-- drawable-xxxhdpi
-
-ថតឯកសារនីមួយៗត្រូវតែមានឯកសារទាំងអស់ដូចខាងក្រោម៖
-morphe_header_custom_light.png
-morphe_header_custom_dark.png
-
-ទំហំរូបភាពត្រូវតែដូចខាងក្រោម៖
-- drawable-hdpi: 194x72 px
-- drawable-xhdpi: 258x96 px
-- drawable-xxhdpi: 387x144 px
-- drawable-xxxhdpi: 512x192 px"</string>
     <!-- Settings - Advanced Tab - Patch Options Section: Hide Shorts -->
-    <string name="settings_advanced_patch_options_hide_shorts_app_shortcut">លាក់ផ្លូវកាត់កម្មវិធី Shorts</string>
-    <string name="settings_advanced_patch_options_hide_shorts_app_shortcut_description">លុប Shorts ចេញពីម៉ឺនុយចុចអូសលើ launcher</string>
-    <string name="settings_advanced_patch_options_hide_shorts_widget">លាក់ widget Shorts</string>
-    <string name="settings_advanced_patch_options_hide_shorts_widget_description">លុបប៊ូតុង Shorts ចេញពី launcher widget</string>
     <!-- Settings - System Tab - Installer Section -->
-    <string name="installer">កម្មវិធីដំឡើង</string>
-    <string name="installer_settings_title">កម្មវិធីដំឡើងលំនាំដើម</string>
-    <string name="settings_installation">ការដំឡើង</string>
-    <string name="installer_title">ជ្រើសរើសអ្នកដំឡើង</string>
-    <string name="installer_internal_description">ប្រើប្រាស់កម្មវិធីដំឡើងកញ្ចប់ Android (Android package installer)</string>
-    <string name="installer_play_store_description">ប្រើប្រាស់កម្មវិធីដំឡើងប្រព័ន្ធ និងកំណត់ Google Play Store ជាប្រភពនៃការដំឡើង</string>
-    <string name="installer_root_play_store_description">ដំឡើងដោយស្ងាត់ៗជាមួយ root និងកំណត់ Google Play Store ជាប្រភពនៃការដំឡើង</string>
-    <string name="installer_auto_saved_name">ការភ្ជាប់ Root</string>
-    <string name="installer_auto_saved_description">Mount កម្មវិធីដែលត្រូវបាន patch ក្នុង chế độ root mount។ APK ដែលបាន patch ជាស្តង់ដារ ប្រើកម្មវិធីដំឡើងផ្សេងទៀត</string>
-    <string name="installer_shizuku_description">ដំឡើងដោយស្ងប់ស្ងាត់ដោយប្រើ Shizuku ឬ Sui</string>
-    <string name="installer_shizuku_play_store_description">ដំឡើងដោយស្ងាត់ៗតាមរយៈ Shizuku ឬ Sui និងកំណត់ Google Play Store ជាប្រភពនៃការដំឡើង</string>
-    <string name="installer_option_none">គ្មានជម្រើសបម្រុង</string>
-    <string name="installer_none_description">មិនមានកម្មវិធីដំឡើងបម្រុងត្រូវបានកំណត់ configurações</string>
-    <string name="installer_status_requires_root">តម្រូវឱ្យមានការចូលប្រើ root</string>
-    <string name="installer_status_not_supported">មិនគាំទ្រសម្រាប់សកម្មភាពនេះទេ</string>
-    <string name="installer_status_shizuku_not_installed">ដំឡើង Shizuku ឬ Sui ដើម្បីប្រើជម្រើសនេះ</string>
-    <string name="installer_status_shizuku_not_running">ចាប់ផ្ដើម Shizuku ឬ Sui ហើយព្យាយាមម្ដងទៀត</string>
-    <string name="installer_status_shizuku_permission">ផ្តល់ការអនុញ្ញាតដល់ Morphe ពីកម្មវិធី Shizuku</string>
-    <string name="installer_mount_warning_install">អ្នកដំឡើងចម្បងរបស់អ្នកត្រូវបានកំណត់ទៅជា rooted mount installer។ កម្មវិធីដែលបានរក្សាទុកនេះមិនត្រូវបានដំឡើងដោយប្រើ mount នោះទេ</string>
-    <string name="mount_version_mismatch_message">កំណែកម្មវិធីដើម (%2$s) មិនស៊ីគ្នាជាមួយកំណែកម្មវិធីដែលបានកែសម្រួល (%1$s) ទេ។ សូម Mount កំណែដើមដែលស៊ីគ្នា រួចព្យាយាមម្ដងទៀត</string>
-    <string name="mount_stock_restore_failed_message">Android បានបដិសេធ APK ដើមដែលបានរក្សាទុក។ សូមដំឡើងកំណែ stock ដែលត្រូវគ្នា រួចព្យាយាម Mount ម្តងទៀត</string>
-    <string name="installer_status_shizuku_unsupported">កំណែ Shizuku ដែលបានដំឡើង មិនត្រូវបានគាំទ្រទេ</string>
-    <string name="installer_action_open_shizuku">បើក Shizuku</string>
-    <string name="installer_hint_generic">ការដំឡើងបានបរាជ័យ។ សូមព្យាយាមម្ដងទៀត ឬប្ដូរទៅប្រើអ្នកដំឡើងផ្សេង</string>
-    <string name="installer_hint_conflict">កម្មវិធីផ្សេងទៀតដែលមានឈ្មោះ package នេះ ត្រូវបានដំឡើងរួចហើយ។ សូមលុបវាចេញមុនពេលបន្ត</string>
-    <string name="installer_confirm_notification_title">បញ្ជាក់ការដំឡើង</string>
-    <string name="installer_confirm_notification_text">ស្ដាប់ដើម្បីបញ្ចប់ការដំឡើងកម្មវិធីដែលបាន patch រួច</string>
-    <string name="installer_external_launched">កំពុងបើក %s…</string>
-    <string name="installer_external_timeout">%s មិនបានបញ្ជាក់ពីការដំឡើងទេ។ សូមពិនិត្យមើលកម្មវិធីផ្សេងទៀត ហើយព្យាយាមម្តងទៀត</string>
-    <string name="installer_external_success">%s បានរាយការណ៍ពីការដំឡើងដោយជោគជ័យ</string>
-    <string name="installer_unavailable_title">%s មិនមាន</string>
-    <string name="installer_unavailable_message">អ្នកដំឡើងដែលអ្នកពេញចិត្ត (%s) មិនអាចប្រើបានក្នុងពេលនេះទេ។ អ្នកអាចដោះស្រាយបញ្ហានេះហើយសាកល្បងម្ដងទៀត ឬប្រើអ្នកដំឡើងស្តង់ដារជំនួសវិញ</string>
-    <string name="installer_unavailable_shizuku_hint">សូមប្រាកដថា Shizuku កំពុងដំណើរការ ហើយការអនុញ្ញាតត្រូវបានផ្តល់ឱ្យកម្មវិធីនេះ</string>
-    <string name="installer_choose_another">ជ្រើសរើសអ្នកដំឡើងផ្សេងទៀត</string>
-    <string name="installer_play_store_warning_title">ដំឡើងជា Play Store មែនទេ?</string>
-    <string name="installer_play_store_warning_message">កម្មវិធីដែលបាន patch នឹងត្រូវកត់ត្រាថាត្រូវបានដំឡើងពី Google Play Store។ នេះអាចជួយឱ្យសេវាកម្មដូចជា Android Auto ទទួលស្គាល់វាថាជាកម្មវិធី Play Store ប៉ុន្តែវាមិនត្រូវបានធានាសម្រាប់គ្រប់កម្មវិធី ឬឧបករណ៍ទាំងអស់នោះទេ។ ឥរិយាបថអាចប្រែប្រួលទៅតាមកំណែ Android, ROM, ម៉ាកឧបករណ៍ និងការត្រួតពិនិត្យជាក់លាក់របស់កម្មវិធី</string>
-    <string name="installer_play_store_warning_risk">Play Store អាចនឹងផ្តល់ការធ្វើបច្ចុប្បន្នភាពសម្រាប់កម្មវិធីដែលបាន patch។ ការដំឡើងបច្ចុប្បន្នភាពនោះនឹងសរសេរជាន់លើ APK ដែលបាន patch ជាមួយនឹងកំណែដើម និងលុប patches ចេញ។ ប្រសិនបើមានការស្នើឱ្យធ្វើបច្ចុប្បន្នភាព សូមចុចលើម៉ឺនុយចុចបីនៅលើទំព័រ Play Store នៃកម្មវិធី ហើយជ្រើសរើស \"បិទការធ្វើបច្ចុប្បន្នភាព\"</string>
-    <string name="installer_play_store_warning_continue">ខ្ញុំយល់ សូមបន្ត</string>
-    <string name="installer_play_store_mode">ដំឡើងជា Play Store</string>
-    <string name="installer_play_store_mode_description">កំណត់ Google Play Store ជាប្រភពដំឡើង</string>
-    <string name="settings_nomount_only">សម្រាប់តែ NoMount ប៉ុណ្ណោះ</string>
-    <string name="settings_nomount_only_description">ដំឡើងកម្មវិធីជាមួយនឹង NoMount តែប៉ុណ្ណោះ ហើយមិនត្រឡប់ទៅប្រើ bind mount វិញទេ ដូច្នេះកម្មវិធីនឹងមិនត្រូវបានដំឡើងប្រសិនបើគ្មានវា</string>
-    <string name="settings_prompt_installer_on_install">ការណែនាំឱ្យជ្រើសរើសកម្មវិធីដំឡើង</string>
-    <string name="settings_prompt_installer_on_install_description">សួរអំពីរបៀបដំឡើងរាល់កម្មវិធី៖ ជាមួយនឹង root មុនពេល patch ឬ បន្ទាប់ពីការ patch</string>
-    <string name="settings_auto_install_with_shizuku">ដំឡើងដោយស្វ័យប្រវត្តិក្រោយពេល patch</string>
-    <string name="settings_auto_install_with_shizuku_description">ដំឡើង ឬ mount APK ដែលបាន patch ทันทีនៅពេលដែលការ patch ត្រូវបានបញ្ចប់</string>
-    <string name="settings_auto_uninstall_with_shizuku">លុបចេញដោយស្វ័យប្រវត្តិពេលមានជម្លោះ</string>
-    <string name="settings_auto_uninstall_with_shizuku_description">ដកតំលើងកម្មវិធីដែលមានស្រាប់ នៅពេលមានជម្លោះហត្ថលេខា។ ការធ្វើបែបនេះអាចលុបទិន្នន័យកម្មវិធី</string>
-    <string name="settings_ignore_install_target_rules">មិនអើពើនឹងតម្រូវការគោលដៅដំឡើង</string>
-    <string name="settings_ignore_install_target_rules_description">អនុញ្ញាតឱ្យបិទ patch ដែលគោលដៅដំឡើងតម្រូវ និងបើក patch ដែលវាបានបដិសេធ។ កម្មវិធីដែលបាន patch អាចនឹងមិនដំណើរការ</string>
-    <string name="settings_auto_uninstall_warning_title">បើកដំណើរការការលុបចេញដោយស្វ័យប្រវត្តិ?</string>
-    <string name="settings_auto_uninstall_warning_message">ប្រសិនបើ Android រាយការណ៍អំពីជម្លោះហត្ថលេខាក្នុងអំឡុងពេលដំឡើង Shizuku ដោយស្វ័យប្រវត្តិ Morphe នឹងលុបកម្មវិធីដែលមានស្រាប់ចេញ មុនពេលដំឡើង APK ដែលបាន patch</string>
-    <string name="settings_auto_uninstall_warning_risk">សកម្មភាពនេះអាចលុបទិន្នន័យកម្មវិធី។ ប្រសិនបើ APK ដែលបាន patch បរាជ័យក្នុងការដំឡើងបន្ទាប់ពីការលុបចេញ កម្មវិធីមុនអាចនឹងបាត់បង់រួចទៅហើយ</string>
-    <string name="installer_shizuku_status_action">ពិនិត្យស្ថានភាព Shizuku</string>
-    <string name="installer_shizuku_status_title">ស្ថានភាព Shizuku</string>
-    <string name="installer_shizuku_status_ready">រួចរាល់</string>
-    <string name="installer_shizuku_status_issue">ត្រូវការការយកចិត្តទុកដាក់</string>
-    <string name="installer_shizuku_status_supported">គាំទ្រ</string>
-    <string name="installer_shizuku_status_running">កំពុងដំណើរការ</string>
-    <string name="installer_shizuku_status_permission">ការអនុញ្ញាត</string>
-    <string name="installer_shizuku_status_mode">របៀប</string>
-    <string name="installer_shizuku_status_provider">អ្នកផ្តល់សេវា</string>
-    <string name="installer_shizuku_status_granted">បានផ្តល់ឱ្យ</string>
-    <string name="installer_shizuku_status_missing">បាត់</string>
-    <string name="installer_shizuku_request_permission">ស្នើសុំការអនុញ្ញាត</string>
-    <string name="installer_shizuku_install_fail">ការដំឡើង Shizuku បរាជ័យ៖ %s</string>
-    <string name="installer_shizuku_install_fail_with_details">"ការដំឡើង Shizuku បរាជ័យ៖ %1$s
-
-ព័ត៌មានលម្អិត៖ %2$s"</string>
-    <string name="installer_shizuku_error_permission">ខ្វះការអនុញ្ញាត Shizuku។ សូមផ្តល់ការអនុញ្ញាតដល់ Morphe ហើយព្យាយាមម្តងទៀត</string>
-    <string name="installer_shizuku_error_timeout">Shizuku មិនបានផ្តល់លទ្ធផលនៃការដំឡើងត្រឡប់មកវិញទេ។ សូមប្រាកដថាវាដែលកំពុងដំណើរការ ហើយព្យាយាមម្តងទៀត</string>
-    <string name="installer_shizuku_error_downgrade">Android បានរារាំងការងារនេះ ព្រោះវានឹងធ្វើឱ្យកម្មវិធីដែលបានដំឡើងមានកំណែទាបជាងមុន</string>
-    <string name="installer_shizuku_error_signature">Android បានរារាំងការងារនេះ ព្រោះកម្មវិធីដែលបានដំឡើងមានហត្ថលេខាខុសគ្នា</string>
-    <string name="installer_shizuku_error_invalid_apk">Android មិនអាចអាន APK នេះបានទេ</string>
-    <string name="installer_shizuku_error_user_profile">ប្រព័ន្ធបានរារាំងការដំឡើងនេះ។ ចំពោះឧបករណ៍ Xiaomi និងឧបករណ៍ស្រដៀងគ្នា សូមបើក \"ដំឡើងតាមរយៈ USB\" នៅក្នុងជម្រើសអ្នកអភិវឌ្ឍន៍។ សម្រាប់ប្រវត្តិរូបការងារ ការដំឡើងអាចត្រូវបានកំណត់ដោយគោលការណ៍</string>
     <!-- Settings - System Tab - Performance Section -->
-    <string name="settings_system_battery_optimization">ការបង្កើនប្រសិទ្ធភាពថ្ម</string>
-    <string name="settings_system_battery_optimization_description">រក្សាកម្មវិធី patcher ឱ្យដំណើរការនៅពេលដែលកម្មវិធីត្រូវបានបង្រួម (minimized)</string>
-    <string name="settings_system_process_runtime">ពេលដំណើរការ Patcher</string>
-    <string name="settings_system_jvm_runtime_enable">ប្រើ embedded VM</string>
-    <string name="settings_system_jvm_runtime_description">Patch នៅក្នុង Java VM ផ្ទាល់របស់ Morphe ដែលអាចប្រើប្រាស់អង្គចងចាំច្រើនជាង។ បិទដើម្បីប្រើ runtime របស់ Android</string>
-    <string name="settings_system_jvm_runtime_unavailable">ត្រូវការឧបករណ៍ ARM ឬ x86 64-bit</string>
-    <string name="settings_system_patcher_completion_sound">សំឡេងបញ្ចប់</string>
-    <string name="settings_system_patcher_completion_sound_description">បន្លឺសំឡេងដាច់ដោយឡែកសម្រាប់ជោគជ័យ ឬបរាជ័យ នៅពេលដែលការដាក់បំណះត្រូវបានបញ្ចប់</string>
     <!-- Settings - System Tab - Notifications Section -->
-    <string name="settings_system_notifications">ការជូនដំណឹង</string>
-    <string name="settings_system_notifications_description">របៀបដែល Morphe ផ្តល់ដំណឹងដល់អ្នក</string>
-    <string name="settings_system_notifications_success_sound">សំឡេងជោគជ័យ</string>
-    <string name="settings_system_notifications_error_sound">សំឡេងបរាជ័យ</string>
-    <string name="settings_system_notifications_sound_default">លំនាំដើម</string>
-    <string name="settings_system_notifications_sound_picker_title">ជ្រើសរើសប្រភពសំឡេង</string>
-    <string name="settings_system_notifications_sound_pick_ringtone">សំឡេងប្រព័ន្ធ</string>
-    <string name="settings_system_notifications_sound_pick_file">ជ្រើសរើសពីឯកសារ</string>
-    <string name="settings_system_notifications_sound_reset">កំណត់ឡើងវិញទៅលំនាំដើម</string>
-    <string name="settings_system_notifications_ringtone_picker_title">ជ្រើសរើសសំឡេង</string>
     <!-- Settings - System Tab - Import and Export Section -->
-    <string name="settings_system_signing_key">សោចុះហត្ថលេខា</string>
-    <string name="settings_system_signing_key_description">ចម្លងទុក ឬស្តារគន្លឹះដែលចុះហត្ថលេខាលើកម្មវិធីដែលបាន patch</string>
-    <string name="settings_system_signing_key_dialog_description">រាល់ការ patch កម្មវិធីដោយ Morphe ត្រូវបានចុះហត្ថលេខាជាមួយសោនេះ។ សូមរក្សារប្អូនទុកមួយច្បាប់៖ បើគ្មានវាទេ កម្មវិធីដែលបាន patch អាចនឹងធ្វើបច្ចុប្បន្នភាពបាន លុះត្រាតែលុបវាចេញជាមុនសិន</string>
-    <string name="settings_system_signing_key_missing">Morphe នឹងបង្កើតវាជាមួយការ patch លើកដំបូងរបស់អ្នក</string>
-    <string name="settings_system_signing_key_created">បានបង្កើតនៅ %s</string>
-    <string name="settings_system_signing_key_fingerprint">ស្នាមមេដៃ SHA-256</string>
-    <string name="settings_system_backup_appearance_description">ប្រធានបទ ពណ៌ និងភាសា</string>
-    <string name="settings_system_backup_home_description">ក្រុម, កម្មវិធីដែលលាក់, ការតម្រៀប និងការបិទបើក</string>
-    <string name="settings_system_backup_patching">ការបិទបិទ និងការដំឡើង</string>
-    <string name="settings_system_backup_patching_description">កម្មវិធីដំឡើង, កម្មវិធីបិទបិទ និង APK ដែលបានរក្សាទុក</string>
-    <string name="settings_system_backup_updates_description">កំណែមុនការចេញផ្សាយផ្លូវការ និងការពិនិត្យបច្ចុប្បន្នភាព</string>
-    <string name="settings_system_backup_sources_description">ប្រភពផ្ទាល់ខ្លួន និង GitHub token</string>
-    <string name="settings_system_backup_patch_selections_description">ការជ្រើសរើសការបិទបិទសម្រាប់រាល់កម្មវិធី</string>
-    <string name="settings_system_backup_signing_key_note">គន្លឹះចុះហត្ថលេខាត្រូវបានបម្រុងទុកដាច់ដោយឡែក</string>
-    <string name="settings_system_import_keystore_dialog_title">បញ្ចូលព័ត៌មានសម្ងាត់ keystore</string>
-    <string name="settings_system_import_keystore_dialog_description">អ្នកនឹងត្រូវបញ្ចូលព័ត៌មានសម្ងាត់របស់ keystore ដើម្បីនាំចូលវា</string>
-    <string name="settings_system_import_keystore_dialog_alias_field">ឈ្មោះអ្នកប្រើប្រាស់ (Alias)</string>
-    <string name="settings_system_import_keystore_dialog_password_field">លេខសម្ងាត់</string>
-    <string name="settings_system_import_keystore_dialog_format_field">ទម្រង់ keystore</string>
-    <string name="settings_system_import_keystore_wrong_credentials">ព័ត៌មានសម្ងាត់ keystore មិនត្រឹមត្រូវ</string>
-    <string name="settings_system_import_keystore_success">បាននាំចូល Keystore រួចរាល់</string>
-    <string name="settings_system_import_keystore_failed">ការនាំចូល keystore បានបរាជ័យ</string>
-    <string name="settings_system_export_keystore_success">បាននាំចេញ Keystore រួចរាល់</string>
-    <string name="settings_system_export_keystore_failed">ការនាំចេញ keystore បរាជ័យ</string>
-    <string name="settings_system_show_password_field">បង្ហាញពាក្យសម្ងាត់</string>
-    <string name="settings_system_hide_password_field">លាក់ពាក្យសម្ងាត់</string>
-    <string name="settings_system_morphe_settings">ការកំណត់ Morphe</string>
-    <string name="settings_system_import_manager_settings_description">ចម្លងទុក និងស្ដារការកំណត់ Morphe របស់អ្នក</string>
-    <string name="settings_system_import_manager_settings_fail">ការនាំចូលការកំណត់ Morphe បានបរាជ័យ៖ %s</string>
-    <string name="settings_system_import_manager_settings_success">ការកំណត់របស់ Morphe ត្រូវបាននាំចូលរួចរាល់</string>
-    <string name="settings_system_import_manager_settings_mode_title">នាំចូលការកំណត់ Morphe</string>
-    <string name="settings_system_import_manager_settings_mode_description">ជ្រើសរើសពីរបៀបដែលការកំណត់ និងប្រភពដែលបាននាំចូលគួរតែត្រូវបានអនុវត្ត</string>
-    <string name="settings_system_import_selections_mode_title">នាំចូលការជ្រើសរើស patch</string>
-    <string name="settings_system_import_selections_mode_description">ជ្រើសរើសពីរបៀបដែលការជ្រើសរើសដែលបាននាំចូល និងជម្រើស patch គួរតែត្រូវបានអនុវត្ត</string>
-    <string name="import_mode_replace_title">ជំនួសអ្វីដែលមានស្រាប់</string>
-    <string name="import_mode_replace_description">ធ្វើឱ្យដូចទៅនឹងការបម្រុងទុកឱ្យបានច្បាស់លាស់។ ធាតុដែលបាត់ពីការបម្រុងទុកនឹងត្រូវលុបចេញ</string>
-    <string name="import_mode_merge_title">បញ្ចូលគ្នាជាមួយអ្វីដែលមានស្រាប់</string>
-    <string name="import_mode_merge_description">បន្ថែមធាតុដែលបាត់ពីការបម្រុងទុក។ ធាតុដែលមានស្រាប់នឹងត្រូវបានរក្សាទុកដោយមិនផ្លាស់ប្តូរ</string>
-    <string name="settings_system_export_manager_settings_fail">ការនាំចេញការកំណត់របស់ Morphe បានបរាជ័យ៖ %s</string>
-    <string name="settings_system_export_manager_settings_success">ការកំណត់របស់ Morphe ត្រូវបាននាំចេញរួចរាល់</string>
-    <string name="settings_system_export_debug_logs">នាំចេញកំណត់ហេតុ debug</string>
-    <string name="settings_system_export_debug_logs_description">រក្សាទុកកំណត់ហេតុប្រព័ន្ធ (system logs) សម្រាប់ដោះស្រាយបញ្ហា</string>
-    <string name="settings_system_export_debug_logs_export_read_failed">បរាជ័យក្នុងការអានកំណត់ហេតុ (exit code %s)</string>
-    <string name="settings_system_export_debug_logs_export_failed">ការនាំចេញកំណត់ហេតុបានបរាជ័យ</string>
-    <string name="settings_system_export_debug_logs_export_success">បាននាំចេញកំណត់ហេតុរួចរាល់</string>
     <!-- Settings - System Tab - Files & Storage Section -->
-    <string name="settings_system_apks_size">ទំហំសរុប៖ %s</string>
-    <string name="settings_system_apks_delete_all_confirm">សកម្មភាពនេះនឹងលុបឯកសារ APK ដែលបានរក្សាទុកដែលបង្ហាញនៅទីនេះជារៀងរហូត</string>
-    <string name="settings_system_apks_delete_selected_title">លុប APK ដែលបានជ្រើសរើសមែនទេ?</string>
-    <string name="settings_system_apks_delete_selected_confirm">សកម្មភាពនេះនឹងលុបឯកសារ APK ដែលបានជ្រើសរើសជារៀងរហូត</string>
-    <string name="settings_system_apks_deleted_all">បានលុប APKs ដោយជោគជ័យ</string>
-    <string name="settings_system_apks_delete_failed">ឯកសារ APK មួយចំនួនមិនអាចលុបបានទេ</string>
-    <string name="settings_system_apks_export_zip_success">បាននាំចេញ APKs ដែលបានជ្រើសរើស</string>
-    <string name="settings_system_apks_export_zip_failed">ការនាំចេញ APKs ដែលបានជ្រើសរើសបានបរាជ័យ</string>
     <!-- Settings - System Tab - Storage Management screen -->
-    <string name="settings_system_storage_management_title">ការគ្រប់គ្រងការផ្ទុក</string>
-    <string name="settings_system_storage_management_description">បង្ហាញការប្រើប្រាស់ថាស និងសម្អាតឯកសារ cache</string>
     <!-- Shown under how much Morphe takes up. "%1$s" is the space still available on the device, already formatted with its unit. "Free" as in unused, not as in free of charge. -->
-    <string name="settings_system_storage_free">ទំនេរ %1$s</string>
-    <string name="settings_system_storage_saved_apks">APK ដែលបានរក្សាទុក</string>
-    <string name="settings_system_storage_caches">ឃ្លីក</string>
-    <string name="settings_system_storage_keystore_title">Signing keystore</string>
-    <string name="settings_system_storage_app_data_title">ទិន្នន័យកម្មវិធី</string>
-    <string name="settings_system_storage_patch_bundles_title">កញ្ចប់បំណះ</string>
-    <string name="settings_system_storage_http_cache_title">ឃ្លីសបណ្តាញ</string>
-    <string name="settings_system_storage_http_cache_description">ការឆ្លើយតប HTTP ដែលបានរក្សាទុកក្នុង cache ដើម្បីពន្លឿនការធ្វើបច្ចុប្បន្នកម្ម</string>
-    <string name="settings_system_storage_installer_cache_title">External installer cache</string>
-    <string name="settings_system_storage_installer_cache_description">ច្បាប់ចម្លង APK ដែលបានបញ្ជូនទៅកាន់អ្នកដំឡើងភាគីទីបី</string>
-    <string name="settings_system_storage_patcher_workspace_title">កន្លែងធ្វើការ Patcher</string>
-    <string name="settings_system_storage_patcher_workspace_description">ឯកសារ runtime របស់ Patcher និងទិន្នន័យ scratch ដែលគ្មានម្ចាស់</string>
-    <string name="settings_system_storage_temporary_title">ឯកសារបណ្តោះអាសន្ន</string>
-    <string name="settings_system_storage_temporary_description">ឯកសារការងារដែលត្រូវបានបង្កើតក្នុងអំឡុងពេល patching</string>
-    <string name="settings_system_storage_clear_all">សម្អាត cache ទាំងអស់</string>
-    <string name="settings_system_storage_clear_all_description">រំដោះលំហ cache ដែលអាចទាញយកមកវិញបានទាំងអស់ក្នុងពេលតែមួយ</string>
-    <string name="settings_system_storage_clear_all_confirm">ការดำเนินการនេះនឹងសម្អាតការឆ្លើយតបបណ្តាញដែលបានរក្សាទុកក្នុង cache, ច្បូរកូពីនៃកម្មវិធីដំឡើងដែលបានរៀបចំទុក និងឯកសារបណ្តោះអាសន្ន។ APK ដើម និងដែលបាន patch នឹងត្រូវបានរក្សាទុក</string>
-    <string name="settings_system_storage_cleared">បានរំដោះ %s</string>
-    <string name="settings_system_storage_patch_running_warning">ការ Patch កំពុងដំណើរការ ហើយប្រើប្រាស់ឯកសារទាំងនេះ។ ការលុបពួកវាឥឡូវនេះនឹងធ្វើឱ្យមានកំហុស</string>
-    <string name="settings_system_storage_clear_anyway">លុបតែម្តង</string>
-    <string name="settings_system_storage_nothing_to_clear">មិនមានអ្វីត្រូវសម្អាត</string>
-    <string name="settings_system_storage_open_app_info_title">បើកការផ្ទុកកម្មវិធី Android</string>
-    <string name="settings_system_storage_open_app_info_description">គ្រប់គ្រង ឬលុបទិន្នន័យ Morphe ទាំងអស់តាមរយៈការកំណត់ប្រព័ន្ធ</string>
-    <string name="settings_system_save_original_apks_title">រក្សាទុក APK ដើម</string>
-    <string name="settings_system_save_original_apks_description">រក្សាទុក APK មុនពេល patch ដើម្បីអាចយកមកប្រើឡើងវិញសម្រាប់ការ patch ម្តងទៀត ដោយមិនចាំបាច់ជ្រើសរើសឯកសារម្តងទៀត</string>
-    <string name="settings_system_save_patched_apks_title">រក្សាទុក APK ដែលបាន patch ហើយ</string>
-    <string name="settings_system_save_patched_apks_description">រក្សាមុចចម្លងនៃ APK ដែលបាន patch សម្រាប់ការនាំចេញនៅពេលក្រោយ ឬដំឡើងឡើងវិញពីអ្នកគ្រប់គ្រង</string>
     <!-- Settings - System Tab - Storage Management - Patched APKs Management -->
-    <string name="settings_system_patched_apks_title">APK ដែលបានបំណះ</string>
-    <string name="settings_system_patched_apks_empty">មិនទាន់មានការរក្សាទុក APK ដែលបានបំណះនៅឡើយទេ</string>
-    <string name="settings_system_patched_apks_delete_title">លុប APK ដែលបានបំណះមែនទេ?</string>
-    <string name="settings_system_patched_apks_deleted">បានលុប APK ដែលបានបំណះដោយជោគជ័យ</string>
-    <string name="settings_system_patched_apks_delete_all_title">លុប APKs ដែលបានកែប្រែទាំងអស់ឬ?</string>
     <!-- Settings - System Tab - Storage Management - Original APKs Management -->
-    <string name="settings_system_original_apks_title">APK ច្បាប់ដើម</string>
-    <string name="settings_system_original_apks_empty">មិនមាន APK ច្បាប់ដើមដែលបានរក្សាទុក</string>
-    <string name="settings_system_original_apks_deleted">បានលុប APK ដើមដោយជោគជ័យ</string>
-    <string name="settings_system_original_apks_delete_title">លុប APK ដើមឬទេ?</string>
-    <string name="settings_system_original_apks_delete_notice">អ្នកនឹងមិនអាច patch ឡើងវិញបានទេ ប្រសិនបើមិនផ្តល់ APK ថ្មី</string>
-    <string name="settings_system_original_apks_delete_all_title">លុប APKs ដើមទាំងអស់ឬ?</string>
     <!-- Settings - System Tab - Storage Management - Patch Selection Management -->
-    <string name="settings_system_patch_selections_title">ការជ្រើសរើស patch</string>
-    <string name="settings_system_patch_selections_description">ការជ្រើសរើស patch ដែលបានរក្សាទុក នឹងត្រូវបានរក្សាទុកបន្ទាប់ពីលុបកម្មវិធីចេញ</string>
-    <string name="settings_system_patch_selection_reset_all_confirm_title">កំណត់ការជ្រើសរើសទាំងអស់ឡើងវិញ?</string>
-    <string name="settings_system_patch_selection_reset_selected_confirm_title">កំណត់កញ្ចប់ដែលបានជ្រើសរើសឡើងវិញឬ?</string>
-    <string name="settings_system_patch_selection_reset_source_confirm_title">កំណត់ការជ្រើសរើសប្រភពឡើងវិញ?</string>
-    <string name="settings_system_patch_selection_total_summary_format">%1$s ក្នុងចំណោម %2$s</string>
-    <string name="settings_system_patch_selection_source_format">ប្រភព #%s</string>
-    <string name="settings_system_patch_selection_reset_all_warning">សកម្មភាពនេះនឹងលុបការជ្រើសរើស patch ដែលបានរក្សាទុកទាំងអស់សម្រាប់រាល់ package និងប្រភពជារៀងរហូត</string>
-    <string name="settings_system_patch_selection_reset_source_warning">សកម្មភាពនេះនឹងលុបការជ្រើសរើស patch ដែលបានរក្សាទុកសម្រាប់ &lt;b&gt;%1$s&lt;/b&gt; នៅក្នុង &lt;b&gt;%2$s&lt;/b&gt; ជារៀងរហូត</string>
-    <string name="settings_system_patch_selection_reset_selected_warning">សកម្មភាពនេះនឹងលុបការជ្រើសរើស patch ដែលបានរក្សាទុកទាំងអស់សម្រាប់កញ្ចប់ដែលបានជ្រើសរើសជារៀងរហូត</string>
-    <string name="settings_system_export_source_data_fail">ការនាំចេញទិន្នន័យប្រភពបានបរាជ័យ</string>
-    <string name="settings_system_export_source_data_success">ទិន្នន័យប្រភពត្រូវបាននាំចេញដោយជោគជ័យ</string>
-    <string name="settings_system_import_source_data_fail">ការនាំចូលទិន្នន័យប្រភពបានបរាជ័យ</string>
-    <string name="settings_system_import_source_data_success">ទិន្នន័យប្រភពត្រូវបាននាំចូលដោយជោគជ័យ</string>
-    <string name="settings_system_selected_patches_section">បំណះដែលបានជ្រើសរើស</string>
-    <string name="settings_system_no_patches_or_options">មិនមាន patch ឬជម្រើសដែលបានរក្សាទុក</string>
     <!-- Selection panel: saved selection, sets and copies -->
-    <string name="selection_panel_title">ការជ្រើសរើស</string>
-    <string name="selection_panel_copy_into">ចម្លងទៅក្នុង %s</string>
-    <string name="selection_sets_title">សំណុំ</string>
-    <string name="selection_set_name">ឈ្មោះសំណុំ</string>
-    <string name="selection_set_save">រក្សាទុកជាសំណុំ</string>
-    <string name="selection_set_replace">ជំនួសសំណុំ</string>
-    <string name="selection_set_saved">បានរក្សាទុកជា %s</string>
-    <string name="selection_set_applied">បានប្តូរទៅ %s</string>
-    <string name="selection_set_deleted">%s ត្រូវបានលុប</string>
-    <string name="selection_set_renamed">បានប្តូរឈ្មោះទៅជា %s</string>
-    <string name="selection_set_rename_title">ប្ដូរឈ្មោះសំណុំ</string>
-    <string name="selection_set_delete_title">លុបសំណុំ?</string>
-    <string name="selection_set_delete_message">សកម្មភាពនេះនឹងលុបសំណុំ %s ជាអចិន្ត្រៃយ៍</string>
-    <string name="copy_selection_empty">មិនមានការជ្រើសរើសដែលបានរក្សាទុកផ្សេងទៀតដើម្បីចម្លងចេញពីនោះទេ</string>
-    <string name="copy_selection_available_format">មាន %1$s នៃ %2$s</string>
     <!-- Settings - System Tab - Custom file picker -->
-    <string name="settings_system_custom_file_picker">កម្មវិធីជ្រើសរើសឯកសារផ្ទាល់</string>
-    <string name="settings_system_custom_file_picker_description">ប្រើប្រាស់កម្មវិធីជ្រើសរើសឯកសារក្នុង Morphe ជំនួសឱ្យកម្មវិធីរបស់ប្រព័ន្ធ</string>
     <!-- Settings - System Tab - APK download helper -->
-    <string name="settings_system_apk_download_helper">កម្មវិធីជំនួយទាញយក APK</string>
-    <string name="settings_system_apk_download_helper_trusted_count">ដែលទុកចិត្តបាន៖ %1$d នៃ %2$d</string>
-    <string name="settings_system_apk_download_helper_dialog_description">កម្មវិធីជំនួយអាចទាញយក APK ដើមសម្រាប់អ្នក។ មានតែកម្មវិធីដែលអ្នកទុកចិត្តនៅទីនេះប៉ុណ្ណោះ ដែលត្រូវបានផ្តល់ជូននៅក្នុងការណែនាំនៃការទាញយក</string>
-    <string name="settings_system_apk_download_helper_trust_title">ទុកចិត្តកម្មវិធីជំនួយនេះទេ?</string>
-    <string name="settings_system_apk_download_helper_warning">APK មកពីកម្មវិធីជំនួយ ដូច្នេះសូមទុកចិត្តតែកម្មវិធីដែលអ្នកស្គាល់ប៉ុណ្ណោះ។ Morphe នៅតែត្រួតពិនិត្យកញ្ចប់ កំណែ និងហត្ថលេខានៃរាល់ឯកសារទាំងអស់ មុនពេលធ្វើការ patch</string>
-    <string name="settings_system_apk_download_helper_installed_by">ដំឡើងដោយ %s</string>
-    <string name="settings_system_apk_download_helper_installed_by_unknown">មិនស្គាល់អ្នកដំឡើង</string>
-    <string name="settings_system_apk_download_helper_open_directly">បើកជំនួយការភ្លាមៗ</string>
-    <string name="settings_system_apk_download_helper_open_directly_description">រំលងការណែនាំអំពីការទាញយក និងបើកជំនួយការដែលទុកចិត្ត</string>
     <!-- File Picker -->
-    <string name="file_picker_no_files">មិនមានឯកសារនៅទីនេះ</string>
-    <string name="file_picker_read_error">មិនអាចអានថតឯកសារនេះបានទេ</string>
-    <string name="file_picker_internal_storage">អង្គផ្ទុកផ្ទៃក្នុង</string>
-    <string name="file_picker_sd_card">កាត SD</string>
-    <string name="file_picker_root">ឫស (/)</string>
-    <string name="file_picker_storage_access_unavailable">ឧបករណ៍នេះមិនមានអេក្រង់សម្រាប់អនុញ្ញាតឱ្យចូលប្រើឯកសារទាំងអស់នោះទេ។ សូមអនុញ្ញាតវាតាមរយៈ ADB ជាមួយ៖ adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
-    <string name="file_picker_storages">ការផ្ទុកទិន្នន័យ</string>
-    <string name="file_saver_downloads_failed">មិនអាចបង្កើតឯកសារនៅក្នុង Downloads បានទេ</string>
-    <string name="file_saver_saving_to_downloads">ឧបករណ៍នេះមិនមានអេក្រង់រក្សាទុកទេ ដូច្នេះឯកសារនឹងត្រូវបញ្ជូនទៅ Downloads ជា %1$s</string>
-    <string name="file_picker_sort_name_asc">ឈ្មោះ (A–Z)</string>
-    <string name="file_picker_sort_name_desc">ឈ្មោះ (Z–A)</string>
-    <string name="file_picker_sort_size_desc">ទំហំ (ធំបំផុតមុន)</string>
-    <string name="file_picker_sort_size_asc">ទំហំ (តូចបំផុតមុន)</string>
-    <string name="file_picker_sort_date_desc">កាលបរិច្ឆេទ (ថ្មីបំផុតមុន)</string>
-    <string name="file_picker_sort_date_asc">កាលបរិច្ឆេទ (ចាស់បំផុតមុន)</string>
-    <string name="file_picker_show_hidden_files">បង្ហាញឯកសារដែលលាក់</string>
     <!-- Settings - System Tab - About Section -->
-    <string name="settings_system_about">អំពីកម្មវិធីនេះ</string>
-    <string name="settings_system_manager_description">គម្រោង open-source សម្រាប់ការបិតपैចដ៏ទំនើប និងមានប្រសិទ្ធភាពសម្រាប់កម្មវិធី Android ល្បីៗ ដែលត្រូវបានជំរុញដោយមតិកែលម្អ និងការរួមចំណែកពីសហគមន៍</string>
-    <string name="credits">ឥណទាន</string>
-    <string name="credits_description">មនុស្សដែលនៅពីក្រោយ Morphe</string>
-    <string name="settings_about_section_project">គម្រោង</string>
-    <string name="settings_about_section_help">ជំនួយ</string>
-    <string name="credits_current_development">ការអភិវឌ្ឍន៍បច្ចុប្បន្ន</string>
-    <string name="credits_prior_development">ការអភិវឌ្ឍន៍មុនៗ</string>
-    <string name="opensource_licenses">អាជ្ញាបណ្ណប្រភពបើកចំហ</string>
-    <string name="opensource_licenses_description">បណ្ណាល័យដែល Morphe ត្រូវបានបង្កើតឡើង</string>
     <!-- Easter egg offered after seven taps on the version in the About dialog -->
-    <string name="easter_egg_pill_title">ជម្រើសមួយ</string>
-    <string name="easter_egg_pill_message">លេបថ្នាំពណ៌ខៀវ ហើយផ្ទាំងពាណិជ្ជកម្មនឹងនៅដដែល។ លេបថ្នាំពណ៌ក្រហម ដើម្បីមើលថាតើ bytecode នេះជ្រៅដល់កម្រិតណា</string>
-    <string name="easter_egg_pill_red">ថ្នាំពណ៌ក្រហម</string>
-    <string name="easter_egg_pill_blue">ថ្នាំពណ៌ខៀវ</string>
-    <string name="easter_egg_pill_red_toast">បានបើកផ្ទៃខាងក្រោយ Matrix ហើយ</string>
-    <string name="easter_egg_pill_blue_toast">ផ្ទាំងពាណិជ្ជកម្មនឹងរង់ចាំអ្នក</string>
-    <string name="easter_egg_pill_message_again">អ្នកស្ថិតនៅក្នុង Matrix រួចហើយ។ ថ្នាំពណ៌ក្រហមនឹងនាំអ្នកត្រឡប់ទៅក្នុងតំណក់ទឹកភ្លៀងវិញ ហើយថ្នាំពណ៌ខៀវនឹងដាស់អ្នកឱ្យភ្ញាក់</string>
-    <string name="easter_egg_pill_red_toast_again">ត្រឡប់ទៅក្នុងតំណក់ទឹកភ្លៀងវិញ</string>
-    <string name="easter_egg_pill_blue_toast_again">ដកខ្សែចេញហើយ។ ផ្លូវត្រឡប់ក្រោយ គឺនៅកន្លែងដែលវាធ្លាប់នៅជានិច្ច</string>
     <!-- Shared strings -->
-    <string name="select_file">ជ្រើសរើសឯកសារ</string>
-    <string name="select_files">ជ្រើសរើសឯកសារ</string>
     <!-- Label of a footer button beside "Close". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="select_folder">ជ្រើសរើសថត</string>
-    <string name="patches">បំណះ</string>
-    <string name="home">ទំព័រដើម</string>
-    <string name="settings">ការកំណត់</string>
-    <string name="apps">កម្មវិធី</string>
     <!-- Sections the settings page lists, each opening a page of its own. A summary names what the section holds -->
-    <string name="settings_section_patcher">កម្មវិធីបិតបំណះ</string>
-    <string name="settings_section_updates">ការអាប់ដេត</string>
-    <string name="settings_section_patching">ការ Patch</string>
-    <string name="settings_section_appearance_summary">របៀបដែល Morphe បង្ហាញ</string>
-    <string name="settings_section_patch_options_summary">តើ simple mode patch កម្មវិធីជាមួយនឹងអ្វី</string>
-    <string name="settings_section_general">ជាទូទៅ</string>
-    <string name="settings_section_patcher_summary">របៀបដែលកម្មវិធីត្រូវបាន patch នៅលើឧបករណ៍នេះ</string>
-    <string name="settings_section_help_info">ជំនួយ &amp; ព័ត៌មាន</string>
-    <string name="settings_section_about_summary">បន្ថែមអំពី Morphe និងការទទួលបានជំនួយ</string>
-    <string name="settings_section_local_files">ឯកសារ</string>
-    <string name="settings_section_backup">ចម្លងទុក</string>
-    <string name="settings_search">ស្វែងរកការកំណត់</string>
-    <string name="yes">បាទ/ចាស</string>
-    <string name="no">ទេ</string>
-    <string name="all">ទាំងអស់</string>
-    <string name="filter">តម្រង</string>
-    <string name="group">ក្រុម</string>
-    <string name="reset">កំណត់សាថ្មី</string>
-    <string name="reset_all">កំណត់ឡើងវិញទាំងអស់</string>
-    <string name="apply">អនុវត្ត</string>
-    <string name="confirm">បញ្ជាក់</string>
-    <string name="warning">ការព្រមាន</string>
-    <string name="error_">កំហុស</string>
-    <string name="failed">បានបរាជ័យ</string>
-    <string name="canceled">បានបោះបង់</string>
-    <string name="ready">រួចរាល់</string>
-    <string name="retry">ព្យាយាមម្តងទៀត</string>
-    <string name="refresh">បច្ចុប្បន្នភាព</string>
-    <string name="add">បន្ថែម</string>
-    <string name="close">បិទ</string>
-    <string name="back">ត្រឡប់ក្រោយ</string>
-    <string name="next">បន្ទាប់</string>
-    <string name="done">រួចរាល់</string>
-    <string name="skip">រំលង</string>
-    <string name="clear">សម្អាត</string>
-    <string name="paste">បិទភ្ជាប់</string>
-    <string name="delete">លុប</string>
-    <string name="delete_all">លុបទាំងអស់</string>
-    <string name="remove">ដកចេញ</string>
-    <string name="exclude">ដកចេញ</string>
-    <string name="excluded">ត្រូវបានដកចេញ</string>
-    <string name="include">រួមបញ្ចូល</string>
-    <string name="disable">បិទ</string>
-    <string name="enable">បើក</string>
-    <string name="trust">ទុកចិត្ត</string>
-    <string name="loading">កំពុងផ្ទុក…</string>
-    <string name="creating">កំពុងបង្កើត…</string>
-    <string name="processing_apk">កំពុងដំណើរការ APK…</string>
-    <string name="exporting_apks">កំពុងនាំចេញ APKs…</string>
-    <string name="not_installed">មិនទាន់បានដំឡើង</string>
-    <string name="view">មើល</string>
-    <string name="search">ស្វែងរក</string>
-    <string name="search_no_results">រកមិនឃើញលទ្ធផល</string>
-    <string name="sort">តម្រៀប</string>
-    <string name="any_version">ណាមួយ</string>
-    <string name="enabled">បានបើក</string>
-    <string name="disabled">បានផ្ដាច់</string>
-    <string name="state_selected">ដែលបានរើស</string>
-    <string name="state_not_selected">មិនទាន់បានរើស</string>
-    <string name="select_all">ជ្រើសរើសទាំងអស់</string>
-    <string name="deselect_all">លុបការជ្រើសរើសទាំងអស់</string>
-    <string name="reorder_list">រៀបចំលំដាប់បញ្ជីឡើងវិញ</string>
-    <string name="reorder_list_hint">អូសដើម្បីរៀបចំលំដាប់ឡើងវិញ</string>
-    <string name="reorder_done">ការបញ្ជាទិញត្រូវបានរក្សាទុក</string>
-    <string name="reset_order">កំណត់ការបញ្ជាទិញសាថ្មី</string>
-    <string name="reset_order_done">ការបញ្ជាទិញត្រូវបានកំណត់សាថ្មី</string>
-    <string name="reset_order_confirm_title">កំណត់លំដាប់ឡើងវិញ?</string>
-    <string name="reset_order_confirm_message">បញ្ជីនឹងត្រឡប់ទៅលំដាប់លំនាំដើមវិញ ហើយលំដាប់ដែលបានអូសដោយដៃនឹងត្រូវបានបាត់បង់</string>
-    <string name="accessibility_select_app">ជ្រើសរើសកម្មវិធី</string>
-    <string name="accessibility_select_source">ជ្រើសរើសប្រភព</string>
-    <string name="accessibility_move_up">ផ្លាស់ទីឡើងលើ</string>
-    <string name="accessibility_move_down">ផ្លាស់ទីចុះក្រោម</string>
-    <string name="accessibility_app_moved_announcement">%1$s ត្រូវបានផ្លាស់ទីទៅទីតាំង %2$s នៃ %3$s</string>
-    <string name="accessibility_scroll_to_top">អូសឡើងទៅលើបង្អស់នៃបញ្ជី</string>
-    <string name="rename">ប្ដូរឈ្មោះ</string>
-    <string name="more_options">ជម្រើសបន្ថែម</string>
-    <string name="import_">នាំចូល</string>
-    <string name="export">នាំចេញ</string>
-    <string name="copy">ចម្លង</string>
-    <string name="copied_to_clipboard">បានចម្លងទៅ clipboard</string>
-    <string name="download">ដោនឡូដ</string>
-    <string name="less">តិចជាងនេះ</string>
-    <string name="expand">ពង្រីក</string>
-    <string name="expanded">ពង្រីក</string>
-    <string name="collapse">បង្រួម</string>
-    <string name="collapsed">បង្រួម</string>
-    <string name="continue_">បន្ត</string>
-    <string name="version">កំណែ</string>
     <!-- Who made a patch source, as a field label -->
-    <string name="author">អ្នកនិពន្ធ</string>
     <!-- A file a patch source is added from, as a field label -->
-    <string name="file">ឯកសារ</string>
-    <string name="clone">ចម្លង</string>
     <!-- Button that starts patching the selected app. A verb, as in "patch this app" -->
-    <string name="patch">បំណះ</string>
-    <string name="patching">កំពុងប៉ាត់</string>
-    <string name="patched">បាន patch</string>
-    <string name="open">បើក</string>
-    <string name="mount">ភ្ជាប់</string>
-    <string name="mounted">បានភ្ជាប់</string>
-    <string name="unmount">ដកចេញ</string>
-    <string name="unmounted">បានដកចេញ</string>
-    <string name="remount">ភ្ជាប់ឡើងវិញ</string>
-    <string name="restore">ស្ដារឡើងវិញ</string>
-    <string name="share">ចែករំលែក</string>
-    <string name="install">ដំឡើង</string>
-    <string name="installed">ត្រូវបានដំឡើង</string>
-    <string name="reinstall">ដំឡើងឡើងវិញ</string>
-    <string name="uninstall">ដកការដំឡើង</string>
-    <string name="uninstalled">បានលុបចេញ</string>
-    <string name="save">រក្សាទុក</string>
-    <string name="saved">បានរក្សាទុក</string>
-    <string name="update">អាប់ដេត</string>
-    <string name="allow">អនុញ្ញាត</string>
-    <string name="hide">លាក់</string>
-    <string name="hidden">បានលាក់</string>
-    <string name="unhide">បង្ហាញឡើងវិញ</string>
-    <string name="show_all">បង្ហាញទាំងអស់</string>
-    <string name="ignore">មិនអើពើ</string>
-    <string name="stop_ignoring">ឈប់មិនអើពើ</string>
-    <string name="stop">បញ្ឈប់</string>
-    <string name="logs">កំណត់ហេតុ</string>
-    <string name="sources">ប្រភព</string>
-    <string name="installing_ellipsis">កំពុងដំឡើង…</string>
-    <string name="mounting_ellipsis">កំពុង Mount…</string>
-    <string name="mount_stage_restoring_stock">កំពុង restore កំណែដើម…</string>
-    <string name="mount_stage_copying">កំពុងចម្លង…</string>
-    <string name="unmounting_ellipsis">កំពុងដកចេញ…</string>
-    <string name="importing_ellipsis">កំពុងនាំចូល…</string>
-    <string name="imported_successfully">បាននាំចូលដោយជោគជ័យ</string>
-    <string name="changelog">មើលកំណត់ត្រានៃការផ្លាស់ប្តូរ</string>
-    <string name="changelog_for_app">ការផ្លាស់ប្តូរសម្រាប់ %s</string>
-    <string name="changelog_general_changes">ការផ្លាស់ប្តូរសាមញ្ញ</string>
-    <string name="whats_new">មានអ្វីថ្មី</string>
-    <string name="changelog_description">មានអ្វីថ្មីនៅក្នុងកំណែនេះ</string>
-    <string name="changelog_download_fail">ការទាញយកកំណត់ត្រានៃការផ្លាស់ប្តូរបានបរាជ័យ៖ %s</string>
-    <string name="changelog_empty">មិនមានកំណត់ត្រាបម្រែបម្រួលឡើយ</string>
-    <string name="changelog_earlier_releases">កំណែចេញមុនៗ</string>
-    <string name="changelog_patched_with">បានបំណះជាមួយ %s</string>
-    <string name="changelog_older_empty">មិនមានកំណែចេញផ្សាយចាស់ៗសម្រាប់បង្ហាញ</string>
-    <string name="changelog_older_failed">មិនអាចផ្ទុកកំណែចេញមុនៗបានទេ</string>
     <!-- Label of a footer button beside "Translate". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="changelog_release_page">ទំព័រចេញផ្សាយ</string>
-    <string name="content_translate">បកប្រែ</string>
     <!-- Label of a footer button beside other buttons, which reads "Translate" until pressed. Keep it as short as "Translate", a longer one moves the buttons onto two rows -->
-    <string name="content_show_original">ច្បាប់ដើម</string>
-    <string name="content_translation_failed">ការបកប្រែបានបរាជ័យ៖ %s</string>
-    <string name="changelog_section_new">ថ្មី</string>
-    <string name="changelog_section_fixes">ការកែសម្រួល</string>
-    <string name="changelog_section_performance">ប្រសិទ្ធភាព</string>
-    <string name="changelog_section_improvements">ការកែលម្អ</string>
-    <string name="changelog_section_app_support">ការគាំទ្រកម្មវិធី</string>
-    <string name="changelog_section_other">ការផ្លាស់ប្តូរ</string>
-    <string name="changelog_badge_latest">ថ្មីបំផុត</string>
     <!-- Marks the version of a patch source downloaded to the manager, which patches with it rather than the one an installed app was patched with -->
-    <string name="changelog_badge_downloaded">បានដោនឡូដ</string>
-    <string name="changelog_badge_prerelease">មុនពេលចេញផ្សាយ</string>
     <!-- "%s" is the number of changes in the section -->
-    <string name="changelog_show_all">បង្ហាញទាំងអស់ (%s)</string>
-    <string name="changelog_show_less">បង្ហាញតិចជាងនេះ</string>
-    <string name="no_network_toast">មិនមានការតភ្ជាប់អ៊ីនធឺណិតឡើយ</string>
-    <string name="update_available">មានការអាប់ដេតថ្មី</string>
-    <string name="ready_to_install_update">រួចរាល់សម្រាប់ដំឡើងការអាប់ដេត</string>
-    <string name="update_completed">ការអាប់ដេតត្រូវបានដំឡើងរួចរាល់</string>
-    <string name="install_update_manager_failed">ការដំឡើងការអាប់ដេតបានបរាជ័យ</string>
-    <string name="installing_manager_update">កំពុងដំឡើងការអាប់ដេត…</string>
-    <string name="installing_manager_update_hint">Morphe នឹងបិទដើម្បីបញ្ចប់ការអាប់ដេត</string>
-    <string name="downloading_manager_update">កំពុងដោនឡូដការអាប់ដេត…</string>
     <!-- Shown while downloading when the server does not report the total size. "%1$s" is the megabytes so far. -->
-    <string name="manager_update_progress_downloaded">បានទាញយក %1$s MB</string>
     <!-- Shown under the download percentage. "%1$s" is the megabytes so far, "%2$s" the total. -->
-    <string name="manager_update_progress_size">%1$s / %2$s MB</string>
-    <string name="manager_update_not_ready">កំណែចេញផ្សាយនេះកំពុងត្រូវបានបោះពុម្ពផ្សាយ។ សូមព្យាយាមម្ដងទៀតក្នុងរយៈពេលប៉ុន្មាននាទីទៀត</string>
-    <string name="update_download_missing">ការធ្វើបច្ចុប្បន្នភាពដែលបានទាញយកលែងមានទៀតហើយ។ សូមទាញយកវាម្តងទៀត</string>
-    <string name="failed_to_check_updates">ការត្រួតពិនិត្យសម្រាប់ការអាប់ដេតបានបរាជ័យ៖ %s</string>
-    <string name="failed_to_download_update">ការដោនឡូដការអាប់ដេតបានបរាជ័យ៖ %s</string>
-    <string name="download_confirmation_metered">"បច្ចុប្បន្នអ្នកកំពុងប្រើប្រាស់ការតភ្ជាប់ដែលមានកំណត់ទិន្នន័យ ហើយកម្រៃសេវាទិន្នន័យពីអ្នកផ្តល់សេវាកម្មរបស់អ្នកអាចនឹងត្រូវបានអនុវត្ត។
-
-តើអ្នកនៅតែចង់បន្តដែរឬទេ?"</string>
-    <string name="download_update_confirmation">ដោនឡូដការធ្វើបច្ចុប្បន្នភាព?</string>
     <!-- Onboarding coach marks -->
     <!-- %1$s = current step number, %2$s = total number of steps (e.g. "3 of 13") -->
-    <string name="onboarding_step_of">%1$s នៃ %2$s</string>
-    <string name="onboarding_sources_desc">គ្រប់គ្រងប្រភព patch របស់អ្នក។ ប្រភពនីមួយៗផ្តល់នូវ patch ដែលអាចប្រើបានសម្រាប់កម្មវិធីរបស់អ្នក</string>
-    <string name="onboarding_other_apps_desc">Patch កម្មវិធីដែលមិនមានក្នុងបញ្ជី ពីឯកសារ APK ឬកម្មវិធីដែលបានដំឡើងនៅលើឧបករណ៍របស់អ្នក</string>
-    <string name="onboarding_add_source_desc">បន្ថែមប្រភព patch ពីតំណភ្ជាប់ ឬឯកសារ patch bundle</string>
-    <string name="onboarding_signing_key_desc">បម្រុងទុក key ដែលចុះហត្ថលេខាលើកម្មវិធីដែលបាន patch របស់អ្នក។ បើគ្មានវាទេ កម្មវិធីទាំងនោះអាចធ្វើបច្ចុប្បន្នភាពបាន លុះត្រាតែដំឡើងវាឡើងវិញ</string>
-    <string name="onboarding_swipe_title">កាយវិការអូស</string>
-    <string name="onboarding_swipe_desc">អូសទៅខាងស្តាំលើកាតកម្មវិធី ដើម្បីមើល patch ដែលមាន។ អូសទៅខាងឆ្វេង ដើម្បីលាក់កាតពីអេក្រង់ដើម</string>
-    <string name="onboarding_settings_desc">កំណត់ Morphe តាមតម្រូវការ៖ រូបរាង, ជម្រើសកម្រិតខ្ពស់ និងឧបករណ៍ប្រព័ន្ធ</string>
-    <string name="onboarding_sources_patches_desc">ចុច ដើម្បីមើល patch ទាំងអស់ដែលមានពីប្រភពនេះ</string>
-    <string name="onboarding_sources_version_desc">ចុចលើកំណែ ដើម្បីមើលកំណត់ត្រានៃការផ្លាស់ប្តូរទាំងស្រុងសម្រាប់ប្រភពនេះ</string>
-    <string name="onboarding_sources_apps_desc">ចុចដើម្បីមើលកម្មវិធីដែលប្រភពនេះ patch និងជ្រើសរើសកម្មវិធីដែលវាផ្តល់ patch ឱ្យ</string>
-    <string name="onboarding_sources_prerelease_desc">បើកមុខងារនេះដើម្បីទទួលកំណែ patch មុនពេលចេញផ្សាយជាផ្លូវការពីប្រភពនេះ</string>
-    <string name="onboarding_appearance_tab_desc">កំណត់ផ្ទៃមុខកម្មវិធី៖ ธีម, ពណ៌សង្កត់ និងផ្ទៃខាងក្រោយ</string>
-    <string name="onboarding_expert_mode_desc">បើក Expert Mode ដើម្បីប្រើប្រាស់ការជ្រើសរើស patch, ជម្រើសផ្ទាល់ខ្លួន និងមុខងារកម្រិតខ្ពស់ផ្សេងៗទៀត</string>
     <!-- Translate "System" the same way as the System settings tab -->
-    <string name="onboarding_system_installer_desc">ជ្រើសរើសវិធីដំឡើងកម្មវិធីដែលបាន patch៖ បែបស្តង់ដារ, root mount ឬ Shizuku</string>
-    <string name="onboarding_system_file_picker_desc">បើកដើម្បីប្រើកម្មវិធីរុករកឯកសារដែលភ្ជាប់មកជាមួយ ជំនួសឱ្យ system picker នៅពេលជ្រើសរើស APK ឬ keystores</string>
     <!-- Tour prompt dialog shown after first successful patch install -->
-    <string name="tour_prompt_title">ការណែនាំមុខងាររហ័ស</string>
-    <string name="tour_prompt_desc">តើអ្នកចង់ស្វែងយល់យ៉ាងរហ័សអំពីមុខងារសំខាន់ៗរបស់ Morphe ដែរឬទេ?</string>
     <!-- Label of a footer button beside "Skip". Keep it short, a longer one moves the buttons onto two rows -->
-    <string name="tour_prompt_confirm">បង្ហាញខ្ញុំ</string>
-    <string name="onboarding_restart_title">ដំណើរកម្សាន្តស្វែងយល់ពីមុខងារ</string>
-    <string name="onboarding_restart_desc">ការណែនាំអំពីមុខងារសំខាន់ៗ</string>
 </resources>

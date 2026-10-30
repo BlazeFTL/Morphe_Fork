@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">새 실험 패치 버전을 미리 받아보세요</string>
     <string name="sources_prerelease_warning_title">Pre-release 패치 활성화</string>
     <string name="sources_prerelease_warning_message">Pre-release 빌드는 아직 개발 중입니다. 패치가 실패하거나 앱이 손상될 수 있으며, 기능은 예고 없이 변경될 수 있습니다</string>
-    <string name="expert_mode_prerelease_notice">이 소스는 Pre-release 패치를 사용하고 있습니다. 패치가 실패하거나 예상치 못한 방식으로 작동할 수 있습니다</string>
-    <string name="expert_mode_experimental_version_notice">이 소스는 이 앱 버전에 대해 실험적인 지원만 제공합니다. 패치가 불안정하거나 불완전할 수 있습니다</string>
+    <string name="expert_mode_unstable_notice">Pre-release 또는 실험적 패치는 불안정할 수 있습니다</string>
     <string name="sources_management_experimental_versions_toggle">실험 앱 버전</string>
     <string name="sources_management_experimental_versions_toggle_description">실험 앱 대상을 표시하고 패치합니다</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">메타데이터 없음</string>
     <string name="sources_management_metadata_unavailable_hint">원격 메타데이터 파일을 사용할 수 없습니다. 설치된 번들로 패치는 계속 가능하지만, 이 소스에 대한 자동 업데이트는 비활성화됩니다</string>
     <string name="sources_management_metadata_unavailable_hint_missing">패치 번들을 다운로드할 수 없습니다. 소스 URL이 올바르지 않거나 파일이 존재하지 않을 수 있습니다</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">패치 번들을 다운로드할 수 없습니다. 소스 URL이 잘못되었거나 파일이 존재하지 않을 수 있습니다. 변경하려면 탭하세요</string>
     <string name="sources_management_outdated_manager_badge">Morphe 업데이트</string>
     <string name="sources_management_outdated_manager_hint">이 소스는 패처 %1$s용으로 빌드되었지만, Morphe %2$s에는 패처 %3$s가 포함되어 있습니다. 이를 사용하려면 Morphe를 업데이트하세요</string>
     <string name="sources_management_held_back_badge">충돌 발생</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">표시 이름</string>
     <string name="sources_dialog_rename">패치 소스 이름 변경</string>
+    <string name="sources_dialog_change_url">패치 소스 다운로드 경로 변경</string>
     <string name="sources_dialog_duplicate_name_error">이 이름의 패치 소스가 이미 존재합니다</string>
     <string name="sources_dialog_missing_error">이 패치 소스를 업데이트할 수 없습니다</string>
     <string name="sources_dialog_add_source">패치 소스 추가</string>
@@ -354,10 +355,10 @@ APK를 가져올 위치를 선택하세요"</string>
     <string name="expert_mode_enable_all_universal_pending">유니버설 패치를 위해 다시 탭하세요</string>
     <string name="expert_mode_universal_all_warning_title">모든 유니버설 패치 활성화</string>
     <string name="expert_mode_universal_all_warning_message">유니버설 패치는 함께 테스트되지 않았습니다. 모든 패치를 한 번에 활성화하면 패치 충돌, 패치 실패 또는 앱 충돌이 발생할 수 있습니다</string>
-    <string name="expert_mode_reset_to_default">패치 기본값으로 초기화</string>
+    <string name="expert_mode_recommended">추천 패치</string>
     <string name="expert_mode_reset_to_default_done">권장 패치 적용됨</string>
     <string name="expert_mode_selected_count">%2$s 개 중 %1$s 개 선택됨</string>
-    <string name="expert_mode_restore_saved">저장된 선택 목록으로 복원</string>
+    <string name="expert_mode_saved_selection">저장된 선택 목록</string>
     <string name="expert_mode_restore_saved_done">저장된 선택 목록 복원됨</string>
     <string name="expert_mode_copy_from_bundle_no_patches">이 번들에는 일치하는 패치가 없습니다</string>
     <string name="expert_mode_no_results">패치를 찾을 수 없습니다</string>

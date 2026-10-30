@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Ստանում է վաղ հասանելիություն նոր փորձարարական փեթչերի տար version-ներին</string>
     <string name="sources_prerelease_warning_title">Ակտիվացնել նախնական թողարկման պատչերը՞</string>
     <string name="sources_prerelease_warning_message">Նախնական թողարկման տարբերակները դեռ մշակման փուլում են: Պատչերը կարող են ձախողվել կամ խաթարել հավելվածը, իսկ գործառույթները կարող են փոխվել առանց նախնական ծանուցման</string>
-    <string name="expert_mode_prerelease_notice">Այս աղբյուրը օգտագործում է նախնական թողարկման պատչեր: Պատչիଂը կարող է ձախողվել կամ անսպասելիորեն աշխատել</string>
-    <string name="expert_mode_experimental_version_notice">Այս աղբյուրն ունի միայն փորձարարական աջակցություն հավելվածի այս տարբերակի համար: Դրա փոփոխությունները կարող են լինել անկայուն կամ թերի</string>
+    <string name="expert_mode_unstable_notice">Նախնական թողարկման կամ փորձարարական թարմացումները կարող են լինել անկայուն</string>
     <string name="sources_management_experimental_versions_toggle">Հավելվածի փորձարարական տարբերակներ</string>
     <string name="sources_management_experimental_versions_toggle_description">Ցուցադրում և թարմացնում է հավելվածի փորձնական թիրախները</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Մետատվյալները հասանելի չեն</string>
     <string name="sources_management_metadata_unavailable_hint">Հեռակա մետատվյալների ֆայլը հասանելի չէ: Տեղադրված փաթեթի միջոցով փոփոխությունների կիրառումը դեռ աշխատում է, սակայն այս աղբյուրի համար ավտոմատ թարմացումը անջատված է</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Փոփոխությունների փաթեթը հնարավոր չեղավ ներբեռնել: Աղբյուրի URL-ը կարող է լինել սխալ, կամ ֆայլը գոյություն չունի</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Թարմացման փաթեթը հնարավոր չեղավ ներբեռնել: Աղբյուրի URL-ը կարող է լինել սխալ, կամ ֆայլը գոյություն չունի: Պատկերեք փոփոխելու համար</string>
     <string name="sources_management_outdated_manager_badge">Թարմացնել Morphe-ը</string>
     <string name="sources_management_outdated_manager_hint">Այս աղբյուրը ստեղծված է %1$s փաթեթավորիչի համար, սակայն Morphe %2$s-ը ներառում է %3$s փաթեթավորիչը: Թարմացրեք Morphe-ը դրա համար</string>
     <string name="sources_management_held_back_badge">Բռնվել է</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Ցուցադրվող անվանում</string>
     <string name="sources_dialog_rename">Վերանվանել պատչի աղբյուրը</string>
+    <string name="sources_dialog_change_url">Փոխեք թարմացման աղբյուրի ներբեռնման վայրը</string>
     <string name="sources_dialog_duplicate_name_error">Այս անվամբ պատչի աղբյուրն արդեն գոյություն ունի</string>
     <string name="sources_dialog_missing_error">Չհաջողվեց թարմացնել այս փաթեթի աղբյուրը</string>
     <string name="sources_dialog_add_source">Ավելացնել պատչի աղբյուր</string>
@@ -354,10 +355,8 @@
     <string name="expert_mode_enable_all_universal_pending">Հպեք նորից՝ համապարփակ փոփոխությունների համար</string>
     <string name="expert_mode_universal_all_warning_title">Ակտիվացնել բոլոր համընդհանուր պատչերը՞</string>
     <string name="expert_mode_universal_all_warning_message">Համընդհանուր պատչերը միասին չեն թեստավորվել: Բոլորը միաժամանակ ակտիվացնելը կարող է առաջացնել կոնֆլիկտներ, պատչիଂի ձախողում կամ հավելվածի անկումներ</string>
-    <string name="expert_mode_reset_to_default">Ակտիվացնել නිර්දේශվող փեթչերը</string>
     <string name="expert_mode_reset_to_default_done">Հանձնարարված փեթչերը կիրառված են</string>
     <string name="expert_mode_selected_count">ընտրված է %1$s-ը %2$s-ից</string>
-    <string name="expert_mode_restore_saved">Վերականգնել պահպանված ընտրությունը</string>
     <string name="expert_mode_restore_saved_done">Պահպանված ընտրությունը վերականգնված է</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Այս փաթեթում չկան համապատասխան փոփոխություններ</string>
     <string name="expert_mode_no_results">Փաթեթներ չեն գտնվել</string>

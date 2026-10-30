@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Ontvang vroegtydige toegang tot nuwe eksperimentele weergawe-opdaterings</string>
     <string name="sources_prerelease_warning_title">Aktiveer pre-release patches?</string>
     <string name="sources_prerelease_warning_message">Pre-release weergawes is nog in ontwikkeling. Patches kan misluk of die app breek, en kenmerke kan sonder waarskuwing verander.</string>
-    <string name="expert_mode_prerelease_notice">Hierdie bron is op pre-release patches. Patching kan misluk of onverwags optree.</string>
-    <string name="expert_mode_experimental_version_notice">Hierdie bron het slegs eksperimentele ondersteuning vir hierdie app-weergawe. Die kolke daarvan mag onstabil of onvolledig wees</string>
+    <string name="expert_mode_unstable_notice">Voorafvrystellings- of eksperimentele regstellings kan onstabil wees</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentele program-weergawes</string>
     <string name="sources_management_experimental_versions_toggle_description">Wys en patch eksperimentele app-teikens</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadata Nie beskikbaar nie</string>
     <string name="sources_management_metadata_unavailable_hint">Die afstandmetadata lêer is nie beskikbaar nie. Patches met die geïnstalleerde bundel werk steeds, maar outo-opdatering is vir hierdie bron afgeskakel</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Die patch bundel kon nie afgelaai word nie. Die bron-URL kan verkeerd wees of die lêer bestaan ​​nie</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Die regstelbundel kon nie afgelaai word nie. Die bron-URL is moontlik foutief of die lêer bestaan nie. Tik om dit te verander</string>
     <string name="sources_management_outdated_manager_badge">Opdatering Morphe</string>
     <string name="sources_management_outdated_manager_hint">Hierdie bron is gebou vir pleister %1$s, maar Morphe %2$s sluit pleister %3$s in. Opdateer Morphe om dit te gebruik</string>
     <string name="sources_management_held_back_badge">Vasgeloop</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Wys naam</string>
     <string name="sources_dialog_rename">Hernoem verandering oorsprong</string>
+    <string name="sources_dialog_change_url">Verander waar die regstelbron vandaan afgelaai word</string>
     <string name="sources_dialog_duplicate_name_error">\'n Verandering oorsprong met hierdie naam bestaan reeds</string>
     <string name="sources_dialog_missing_error">Kon nie hierdie verandering oorsprong opdateer nie</string>
     <string name="sources_dialog_add_source">Voeg verandering oorsprong by</string>
@@ -354,10 +355,10 @@ Kies waar om sy APK vanaf te neem"</string>
     <string name="expert_mode_enable_all_universal_pending">Tik weer vir universele patches</string>
     <string name="expert_mode_universal_all_warning_title">Aktiveer alle universele patches?</string>
     <string name="expert_mode_universal_all_warning_message">Universele patches word nie saam getoets nie. Om almal gelyktydig te aktiveer kan konflikte, mislukte patching of crashes veroorsaak.</string>
-    <string name="expert_mode_reset_to_default">Aktiveer aanbevole pleisters</string>
+    <string name="expert_mode_recommended">Aanbevole patrone</string>
     <string name="expert_mode_reset_to_default_done">Aanbevole pleisters toegepas</string>
     <string name="expert_mode_selected_count">%1$s van %2$s gekies</string>
-    <string name="expert_mode_restore_saved">Ingevoeg suksesvol</string>
+    <string name="expert_mode_saved_selection">Gestoorde keuse</string>
     <string name="expert_mode_restore_saved_done">Gestoorde keuse herstel</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Geen ooreenstemmende patrone in hierdie bundel nie</string>
     <string name="expert_mode_no_results">Geen patchings gevind</string>

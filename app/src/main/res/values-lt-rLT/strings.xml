@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Gaukite ankstyvą prieigą prie naujų eksperimentinių pataisos versijų</string>
     <string name="sources_prerelease_warning_title">Įjungti išankstines pataisas?</string>
     <string name="sources_prerelease_warning_message">Išankstiniai leidimai vis dar kuriami. Pataisos gali nepavykti arba sugadinti programą, o funkcijos gali keistis be įspėjimo</string>
-    <string name="expert_mode_prerelease_notice">Šis šaltinis naudoja išankstines pataisas. Pataisymas gali nepavykti arba elgtis netikėtai</string>
-    <string name="expert_mode_experimental_version_notice">Šis šaltinis šiai programėlės versijai turi tik eksperimentinį palaikymą. Jo pataisai gali būti nestabilios arba nepilnos</string>
+    <string name="expert_mode_unstable_notice">Išankstinio išleidimo arba eksperimentiniai pataikymai gali būti nestabilūs</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentinės programos versijos</string>
     <string name="sources_management_experimental_versions_toggle_description">Rodo ir pataiso eksperimentines programų versijas</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metaduomenys N/A</string>
     <string name="sources_management_metadata_unavailable_hint">Nutolusių metaduomenų failas nepasiekiamas. Programėlė vis tiek funkcionuos su įdiegtu paketu, bet automatinis atnaujinimas šitam šaltiniui bus išjungtas</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Šaltinio paketo rinkinys nepavyko atsisiųsti. Galbūt neteisingas šaltinio URL arba failas neegzistuoja.</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Šaltinio paketo rinkinys nepavyko atsisiųsti. Galbūt neteisingas šaltinio URL arba failas neegzistuoja. Bakstelėkite, kad jį pakeistumėte</string>
     <string name="sources_management_outdated_manager_badge">Atnaujinti „Morphe“</string>
     <string name="sources_management_outdated_manager_hint">Šis šaltinis sukurtas pataisymo įrankiui %1$s, o „Morphe“ %2$s apima pataisymo įrankį %3$s. Atnaujinkite „Morphe“, kad galėtumėte jį naudoti</string>
     <string name="sources_management_held_back_badge">Sugriuvo</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Rodomas vardas</string>
     <string name="sources_dialog_rename">Pervadinti pataisos šaltinį</string>
+    <string name="sources_dialog_change_url">Pakeiskite vietą, iš kurios atsisiunčia pataikymo šaltinis</string>
     <string name="sources_dialog_duplicate_name_error">Pataisų šaltinis su šiuo pavadinimu jau egzistuoja</string>
     <string name="sources_dialog_missing_error">Negalima atnaujinti šio pataisos šaltinio</string>
     <string name="sources_dialog_add_source">Pridėti pataisų šaltini</string>
@@ -354,10 +355,10 @@ Pasirinkite, iš kur paimti jos APK"</string>
     <string name="expert_mode_enable_all_universal_pending">Palieskite dar kartą, kad įjungtumėte universalias pataisas</string>
     <string name="expert_mode_universal_all_warning_title">Įjungti visas universalias pataisas?</string>
     <string name="expert_mode_universal_all_warning_message">Universalios pataisos nėra išbandytos kartu. Įjungus jas visas vienu metu, gali kilti konfliktų, pataisymas gali nepavykti arba programa gali strigti</string>
-    <string name="expert_mode_reset_to_default">Įjungti rekomenduojamus pataisymus</string>
+    <string name="expert_mode_recommended">Rekomenduojami pataisymai</string>
     <string name="expert_mode_reset_to_default_done">Rekomenduojami pataisymai pridėti</string>
     <string name="expert_mode_selected_count">Pasirinkta %1$s iš %2$s</string>
-    <string name="expert_mode_restore_saved">Atkurti išsaugotą pasirinkimą</string>
+    <string name="expert_mode_saved_selection">Išsaugotas pasirinkimas</string>
     <string name="expert_mode_restore_saved_done">Išsaugotas pasirinkimas atkurtas</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Šiame rinkinyje nėra atitinkančių pataisų</string>
     <string name="expert_mode_no_results">Nėra rasti pataisų</string>

@@ -198,9 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Primite rani pristup novoj verziji eksperimentalnih patcheva</string>
     <string name="sources_prerelease_warning_title">Omogućiti predizdanja patcheva?</string>
     <string name="sources_prerelease_warning_message">Predizdanja su još uvijek u razvoju. Patchevi mogu propasti ili prekinuti rad aplikacije, a značajke se mogu promijeniti bez upozorenja.</string>
-    <string name="expert_mode_prerelease_notice">
-Ovaj izvor se nalazi na predizdanjima patcheva. Patchanje može propasti ili se ponašati neočekivano.</string>
-    <string name="expert_mode_experimental_version_notice">Ovaj izvor ima samo eksperimentalnu podršku za ovu verziju aplikacije. Njegovi patchevi mogu biti nestabilni ili nepotpuni</string>
+    <string name="expert_mode_unstable_notice">Pred-izdanja ili eksperimentalni zakrpe mogu biti nestabilni</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentalne verzije aplikacije</string>
     <string name="sources_management_experimental_versions_toggle_description">Prikazuje i patcha eksperimentalne ciljne aplikacije</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -359,10 +357,10 @@ Odaberite odakle ćete preuzeti APK datoteku"</string>
     <string name="expert_mode_enable_all_universal_pending">Dodirnite ponovno za univerzalne patcheve</string>
     <string name="expert_mode_universal_all_warning_title">Omogućiti sve univerzalne patcheve?</string>
     <string name="expert_mode_universal_all_warning_message">Univerzalni patchevi se ne testiraju zajedno. Omogućavanje svih odjednom može uzrokovati sukobe, neuspješno instaliranje patchanje ili rušenje</string>
-    <string name="expert_mode_reset_to_default">Omogući preporučene patcheve</string>
+    <string name="expert_mode_recommended">Preporučeni zakrpe</string>
     <string name="expert_mode_reset_to_default_done">Preporučeni patchevi su primjenjeni</string>
     <string name="expert_mode_selected_count">odabrano %1$s od %2$s</string>
-    <string name="expert_mode_restore_saved">Vrati spremljeni odabir</string>
+    <string name="expert_mode_saved_selection">Spremljen odabir</string>
     <string name="expert_mode_restore_saved_done">Spremljeni odabir vraćen</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nema podudarnih patcheva u ovom paketu</string>
     <string name="expert_mode_no_results">Nema pronađenih patcheva</string>

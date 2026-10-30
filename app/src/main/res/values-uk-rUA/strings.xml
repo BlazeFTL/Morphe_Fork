@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Отримує ранній доступ до нових експериментальних версій патчів</string>
     <string name="sources_prerelease_warning_title">Увімкнути передрелізні патчі?</string>
     <string name="sources_prerelease_warning_message">Передрелізні збірки ще перебувають у розробці. Патчі можуть не спрацювати або пошкодити застосунок, а функції можуть змінюватися без попередження</string>
-    <string name="expert_mode_prerelease_notice">Це джерело використовує передрелізні патчі. Патчинг може не спрацювати або поводитися непередбачувано</string>
-    <string name="expert_mode_experimental_version_notice">Це джерело лише експериментально підтримує цю версію застосунку. Його патчі можуть бути нестабільними або неповними</string>
+    <string name="expert_mode_unstable_notice">Передрелізні або експериментальні патчі можуть бути нестабільними</string>
     <string name="sources_management_experimental_versions_toggle">Експериментальні версії застосунків</string>
     <string name="sources_management_experimental_versions_toggle_description">Показує та патчить експериментальні версії застосунків</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -354,10 +353,10 @@
     <string name="expert_mode_enable_all_universal_pending">Натисніть ще раз для універсальних патчів</string>
     <string name="expert_mode_universal_all_warning_title">Увімкнути всі універсальні патчі?</string>
     <string name="expert_mode_universal_all_warning_message">Універсальні патчі не тестуються разом. Увімкнення всіх одночасно може спричинити конфлікти, невдалий патчинг або збої</string>
-    <string name="expert_mode_reset_to_default">Увімкнути рекомендовані патчі</string>
+    <string name="expert_mode_recommended">Рекомендовані патчі</string>
     <string name="expert_mode_reset_to_default_done">Рекомендовані патчі застосовано</string>
     <string name="expert_mode_selected_count">Вибрано %1$s з %2$s</string>
-    <string name="expert_mode_restore_saved">Відновити збережений вибір</string>
+    <string name="expert_mode_saved_selection">Збережений вибір</string>
     <string name="expert_mode_restore_saved_done">Збережений вибір відновлено</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Немає відповідних патчів у цьому пакеті</string>
     <string name="expert_mode_no_results">Патчі не знайдено</string>

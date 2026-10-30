@@ -199,8 +199,7 @@ Diese App aus der vorhandenen Quelle hinzufügen?</string>
     <string name="sources_management_prerelease_toggle_description">Erhalten Sie frühzeitigen Zugriff auf neue experimentelle Patch-Versionen</string>
     <string name="sources_prerelease_warning_title">Vorabversions-Patches aktivieren?</string>
     <string name="sources_prerelease_warning_message">Vorabversionen befinden sich noch in der Entwicklung. Patches können fehlschlagen oder die App beschädigen, und Funktionen können sich ohne Vorwarnung ändern.</string>
-    <string name="expert_mode_prerelease_notice">Diese Quelle enthält Vorabversionen von Patches. Das Patchen kann fehlschlagen oder unerwartetes Verhalten verursachen.</string>
-    <string name="expert_mode_experimental_version_notice">Diese Quelle bietet nur experimentelle Unterstützung für diese App-Version. Ihre Patches können instabil oder unvollständig sein</string>
+    <string name="expert_mode_unstable_notice">Pre-Release- oder experimentelle Patches können instabil sein</string>
     <string name="sources_management_experimental_versions_toggle">Experimentelle App-Versionen</string>
     <string name="sources_management_experimental_versions_toggle_description">Zeigt experimentelle App-Ziele an und patcht sie</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -215,6 +214,7 @@ Diese App aus der vorhandenen Quelle hinzufügen?</string>
     <string name="sources_management_metadata_unavailable">Metadaten nicht verfügbar</string>
     <string name="sources_management_metadata_unavailable_hint">Die Metadaten des Remote-Servers sind nicht verfügbar. Das Patchen mit dem installierten Paket funktioniert weiterhin, die automatische Aktualisierung ist jedoch für diese Quelle deaktiviert</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Das Patch-Bundle konnte nicht heruntergeladen werden. Die Quell-URL ist möglicherweise falsch oder die Datei existiert nicht.</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Das Patch-Bundle konnte nicht heruntergeladen werden. Die Quell-URL ist möglicherweise falsch oder die Datei existiert nicht. Tippen Sie hier, um sie zu ändern</string>
     <string name="sources_management_outdated_manager_badge">Morphe aktualisieren</string>
     <string name="sources_management_outdated_manager_hint">Diese Quelle ist für die Patcher-Version %1$s erstellt, aber Morphe %2$s enthält die Version %3$s. Aktualisieren Sie Morphe, um diese zu verwenden.</string>
     <string name="sources_management_held_back_badge">Abgestürzt</string>
@@ -228,6 +228,7 @@ Diese App aus der vorhandenen Quelle hinzufügen?</string>
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Anzeigename</string>
     <string name="sources_dialog_rename">Patch-Quelle umbenennen</string>
+    <string name="sources_dialog_change_url">Ändern Sie den Download-Ort der Patch-Quelle</string>
     <string name="sources_dialog_duplicate_name_error">Eine Patch-Quelle mit diesem Namen existiert bereits</string>
     <string name="sources_dialog_missing_error">Fehler beim Aktualisieren dieser Patch-Quelle</string>
     <string name="sources_dialog_add_source">Patch-Quelle hinzufügen</string>
@@ -355,10 +356,10 @@ Wähle aus, woher die APK bezogen werden soll"</string>
     <string name="expert_mode_enable_all_universal_pending">Tippe erneut für universelle Patches</string>
     <string name="expert_mode_universal_all_warning_title">Alle universellen Patches aktivieren?</string>
     <string name="expert_mode_universal_all_warning_message">Universelle Patches werden nicht gemeinsam getestet. Wenn sie alle auf einmal aktiviert werden, kann dies zu Konflikten, fehlgeschlagenen Patches oder Abstürzen führen.</string>
-    <string name="expert_mode_reset_to_default">Empfohlene Patches aktivieren</string>
+    <string name="expert_mode_recommended">Empfohlene Patches</string>
     <string name="expert_mode_reset_to_default_done">Empfohlene Patches angewendet</string>
     <string name="expert_mode_selected_count">%1$s von %2$s ausgewählt</string>
-    <string name="expert_mode_restore_saved">Gespeicherte Auswahl wiederherstellen</string>
+    <string name="expert_mode_saved_selection">Gespeicherte Auswahl</string>
     <string name="expert_mode_restore_saved_done">Gespeicherte Auswahl wiederhergestellt</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Keine übereinstimmenden Patches in diesem Bundle</string>
     <string name="expert_mode_no_results">Keine Patches gefunden</string>
