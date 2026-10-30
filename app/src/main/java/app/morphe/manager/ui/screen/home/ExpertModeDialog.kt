@@ -77,7 +77,7 @@ class ExpertPatchActions(
 
 /**
  * The source whose tab is open, as the selection panel heads with it: its name and how much of it
- * is selected, and the switches acting on its patches in view.
+ * is selected, and the buttons acting on its patches in view.
  */
 @Stable
 class OpenSource(
@@ -115,19 +115,11 @@ fun expertSelectionPanel(host: SelectionPanelHost): ExpertSelectionPanel {
         SelectionPanel(
             title = stringResource(R.string.selection_panel_title),
             subtitle = openSource?.summary,
-            headerActions = {
-                if (openSource != null) {
-                    TitleAction(
-                        icon = MaterialSymbols.Rounded.Recommend,
-                        contentDescription = stringResource(R.string.expert_mode_reset_to_default),
-                        onClick = { host.resetToDefault(openSource.bundle.uid) },
-                        style = TitleActionStyle.Neutral
-                    )
-                    openSource.actions(this)
-                }
-            },
+            headerActions = { openSource?.actions(this) },
             sets = SelectionSetActions(
                 sets = sets,
+                canApplyRecommended = openBundle != null,
+                onApplyRecommended = { openBundle?.let { host.resetToDefault(it.uid) } },
                 hasSavedSelection = host.hasSavedSelection,
                 onRestoreSaved = host::restoreSaved,
                 onApply = host::applySet,
@@ -437,7 +429,7 @@ fun DialogHostScope.ExpertModeDialog(
         // list above the panel at once
         bottomBar = if (selectionPanel?.isOpen == true) {
             {
-                // Kept on a tab the filters emptied, so its switches gray out rather than the
+                // Kept on a tab the filters emptied, so its buttons gray out rather than the
                 // panel's head changing under the user
                 val openSource = headBundle?.let { bundle ->
                     val patches = filteredPatchesByUid[bundle.uid].orEmpty()
@@ -737,8 +729,8 @@ private inline fun List<Pair<PatchBundleInfo.Scoped, List<Pair<PatchInfo, Boolea
 }.toMap()
 
 /**
- * Select all switch for one bundle, wired to the patches currently in view: what turning all on or
- * off reaches is what the search and the filters left on screen.
+ * Select all and deselect all for one bundle, wired to the patches currently in view: what turning
+ * all on or off reaches is what the search and the filters left on screen.
  */
 @Composable
 private fun BundleControls(
@@ -758,7 +750,7 @@ private fun BundleControls(
         isEnabled && lockStateOf(patch) != PatchLockState.LOCKED_ON
     }
 
-    SelectAllSwitch(
+    BulkSelectActions(
         canEnableMore = canEnableMore,
         canDisable = canDisable,
         holdsUniversalPatches = holdsUniversal,

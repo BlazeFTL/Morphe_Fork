@@ -33,12 +33,11 @@ import com.composables.icons.materialsymbols.rounded.*
 import org.koin.compose.koinInject
 
 /**
- * Switch turning every patch in view on or off, for the source the selection panel is headed with.
+ * Buttons turning every patch in view on and off, for the source the selection panel is headed
+ * with. Each stays where it is and does the same thing, out of reach while there is nothing for it.
  *
  * Turning all on is staged as a run sets it up: the regular patches first, the universal ones on
  * the next tap and after a warning, as enabling every one of them is a common cause of conflicts.
- * Once nothing is left to turn on, the switch turns everything off instead, and stays engaged
- * while it would, as the select all switch of a selection panel does.
  *
  * @param canEnableMore Whether a patch in view is off and free to be turned on.
  * @param canDisable Whether a patch in view is on and free to be turned off.
@@ -46,7 +45,7 @@ import org.koin.compose.koinInject
  * @param warnOnUniversalAll Whether this tap would turn the universal patches on.
  */
 @Composable
-internal fun SelectAllSwitch(
+internal fun BulkSelectActions(
     canEnableMore: Boolean,
     canDisable: Boolean,
     holdsUniversalPatches: Boolean,
@@ -65,20 +64,18 @@ internal fun SelectAllSwitch(
     }
 
     TitleAction(
-        icon = if (canEnableMore) MaterialSymbols.Rounded.Done_all else MaterialSymbols.Rounded.Remove_done,
-        contentDescription = stringResource(
-            if (canEnableMore) R.string.expert_mode_enable_all else R.string.expert_mode_disable_all
-        ),
-        onClick = {
-            when {
-                !canEnableMore -> onDeselectAll()
-                warnOnUniversalAll -> showUniversalAllWarning = true
-                else -> selectAll()
-            }
-        },
-        style = TitleActionStyle.Toggle,
-        active = !canEnableMore,
-        enabled = canEnableMore || canDisable
+        icon = MaterialSymbols.Rounded.Remove_done,
+        contentDescription = stringResource(R.string.expert_mode_disable_all),
+        onClick = onDeselectAll,
+        style = TitleActionStyle.Neutral,
+        enabled = canDisable
+    )
+    TitleAction(
+        icon = MaterialSymbols.Rounded.Done_all,
+        contentDescription = stringResource(R.string.expert_mode_enable_all),
+        onClick = { if (warnOnUniversalAll) showUniversalAllWarning = true else selectAll() },
+        style = TitleActionStyle.Neutral,
+        enabled = canEnableMore
     )
 
     DialogHost(visible = showUniversalAllWarning) {
