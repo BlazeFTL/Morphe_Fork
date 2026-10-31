@@ -199,8 +199,7 @@
     <string name="sources_management_prerelease_toggle_description">מקבל גישה מוקדמת לגרסאות תיקונים ניסיוניות חדשות</string>
     <string name="sources_prerelease_warning_title">להפעיל תיקונים לגרסאות מוקדמות?</string>
     <string name="sources_prerelease_warning_message">גרסאות מוקדמות עדיין בפיתוח. תיקונים עלולים להיכשל או לשבור את האפליקציה, ותכונות עשויות להשתנות ללא אזהרה</string>
-    <string name="expert_mode_prerelease_notice">מקור זה נמצא בגרסה מוקדמת. תיקונים עלולים להיכשל או להתנהג באופן בלתי צפוי</string>
-    <string name="expert_mode_experimental_version_notice">למקור זה יש תמיכה ניסיונית בלבד עבור גרסת אפליקציה זו. הפאטצ\'ים שלו עשויים להיות לא יציבים או לא מלאים</string>
+    <string name="expert_mode_unstable_notice">תיקונים בגרסת Pre-release או תיקונים ניסיוניים עשויים להיות לא יציבים</string>
     <string name="sources_management_experimental_versions_toggle">גרסאות אפליקציה ניסיוניות</string>
     <string name="sources_management_experimental_versions_toggle_description">מציג ומתקן יעדים ניסיוניים של אפליקציות</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -215,6 +214,7 @@
     <string name="sources_management_metadata_unavailable">מטא-נתונים לא זמינים</string>
     <string name="sources_management_metadata_unavailable_hint">קובץ המטא-נתונים המרוחק לא זמין. תיקון באמצעות החבילה המותקנת עדיין עובד, אך עדכון אוטומטי מושבת עבור מקור זה</string>
     <string name="sources_management_metadata_unavailable_hint_missing">לא ניתן להוריד את חבילת התיקון. כתובת ה-URL של המקור עשויה להיות שגויה או שהקובץ אינו קיים</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">לא ניתן היה להוריד את חבילת התיקונים. ייתכן שכתובת ה-URL של המקור אינה נכונה או שהקובץ אינו קיים. לחץ כדי לשנות אותה</string>
     <string name="sources_management_outdated_manager_badge">עדכן Morphe</string>
     <string name="sources_management_outdated_manager_hint">מקור זה נבנה עבור patcher %1$s, אך Morphe %2$s כוללת את patcher %3$s. עדכן את Morphe כדי להשתמש בו</string>
     <string name="sources_management_held_back_badge">קרס</string>
@@ -228,6 +228,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">הצג שם</string>
     <string name="sources_dialog_rename">שנה את שם מקור התיקונים</string>
+    <string name="sources_dialog_change_url">שנה את מקור ההורדה של התיקונים</string>
     <string name="sources_dialog_duplicate_name_error">יש כבר מקור תיקונים עם שם זה</string>
     <string name="sources_dialog_missing_error">עדכון מקור התיקונים הזה נכשל</string>
     <string name="sources_dialog_add_source">הוסף תצוג</string>
@@ -355,10 +356,10 @@
     <string name="expert_mode_enable_all_universal_pending">הקש שוב עבור תיקונים אוניברסליים</string>
     <string name="expert_mode_universal_all_warning_title">להפעיל את כל התיקונים האוניברסליים?</string>
     <string name="expert_mode_universal_all_warning_message">תיקונים אוניברסליים אינם נבדקים יחד. הפעלת כולם עלולה לגרום להתנגשויות, כשלים בתיקון או קריסות</string>
-    <string name="expert_mode_reset_to_default">להפעיל תיקונים מומלצים</string>
+    <string name="expert_mode_recommended">תיקונים מומלצים</string>
     <string name="expert_mode_reset_to_default_done">התיקונים המומלצים הוחלו</string>
     <string name="expert_mode_selected_count">%1$s מתוך %2$s נבחר</string>
-    <string name="expert_mode_restore_saved">שחזור בחירה שמורה</string>
+    <string name="expert_mode_saved_selection">בחירה שמורה</string>
     <string name="expert_mode_restore_saved_done">שחזור הבחירה השמורה הסתיים</string>
     <string name="expert_mode_copy_from_bundle_no_patches">לא נמצאו התאמות מדבקות בחבילה זו</string>
     <string name="expert_mode_no_results">לא נמצאו תיקונים</string>

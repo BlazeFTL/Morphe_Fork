@@ -198,8 +198,6 @@
     <string name="sources_management_prerelease_toggle_description">Yangi eksperimental patch versiyalariga erta kira olish</string>
     <string name="sources_prerelease_warning_title">Oldindan chiqarilgan yangilanishlarni yoqish?</string>
     <string name="sources_prerelease_warning_message">Oldindan chiqarilgan versiyalar hali ham ishlab chiqilmoqda. Yangilanishlar muvaffaqiyatsiz bo\'lishi yoki ilovani buzishi mumkin, va xususiyatlar ogohlantirishsiz o\'zgarishi mumkin.</string>
-    <string name="expert_mode_prerelease_notice">Bu manba oldindan chiqarilgan yangilanishlarda. Yangilash muvaffaqiyatsiz bo\'lishi yoki kutilmagan xatti-harakatlarga olib kelishi mumkin.</string>
-    <string name="expert_mode_experimental_version_notice">Ushbu manba ilovaning ushbu versiyasi uchun faqat eksperimental qo\'llab-quvvatlashga ega. Uning patchlari beqaror yoki tugallanmagan bo\'lishi mumkin</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimental ilova versiyalari</string>
     <string name="sources_management_experimental_versions_toggle_description">Eksperimental ilova maqsadlarini ko‘rsatadi va yamaydi</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -354,10 +352,8 @@ Uning APK faylini qayerdan olishni tanlang"</string>
     <string name="expert_mode_enable_all_universal_pending">Universal yamalar uchun yana bir marta bosing</string>
     <string name="expert_mode_universal_all_warning_title">Barcha universal yangilanishlarni yoqish?</string>
     <string name="expert_mode_universal_all_warning_message">Universal yangilanishlar birgalikda sinovdan o\'tkazilmagan. Ularning hammasini bir vaqtda yoqish konfliktlarga, yangilanishning muvaffaqiyatsiz bo\'lishiga yoki ishdan chiqishiga olib kelishi mumkin.</string>
-    <string name="expert_mode_reset_to_default">Tavsiya etilgan patchlarni yoqing</string>
     <string name="expert_mode_reset_to_default_done">Tavsiya etilgan patchlar qo‘llandi</string>
     <string name="expert_mode_selected_count">%2$s dan %1$s ta tanlandi</string>
-    <string name="expert_mode_restore_saved">Saqlangan tanlovni tiklash</string>
     <string name="expert_mode_restore_saved_done">Saqlangan tanlov tiklandi</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Ushbu paketda mos keladigan takrorlash yo‘q</string>
     <string name="expert_mode_no_results">Tuzatishlar topilmadi</string>

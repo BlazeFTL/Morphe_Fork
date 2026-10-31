@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">নতুন প্ৰায়োগিক patch সংস্কৰণসমূহৰ আগতীয়া প্ৰৱেশ পায়</string>
     <string name="sources_prerelease_warning_title">প্ৰি-ৰিলিজ প্ৰচবোৰ সক্ৰিয় কৰিব নেকি?</string>
     <string name="sources_prerelease_warning_message">প্ৰি-ৰিলিজ বিল্ডবোৰ এতিয়াও উন্নয়নৰ অৱস্থাত আছে। প্ৰচিং ব্যৰ্থ হ\'ব পাৰে বা এপটোত সমস্যাৰ সৃষ্টি কৰিব পাৰে, আৰু কোনো আগতীয়া জাননী নোহোৱাকৈ বৈশিষ্ট্যবোৰ সলনি হ\'ব পাৰে</string>
-    <string name="expert_mode_prerelease_notice">এই উৎসটো প্ৰি-ৰিলিজ প্ৰচত আছে। প্ৰচিং ব্যৰ্থ হ\'ব পাৰে বা অপ্ৰত্যাশিতভাৱে কাম কৰিব পাৰে</string>
-    <string name="expert_mode_experimental_version_notice">এই এপ সংস্কৰণটোৰ বাবে এই উৎসটোত কেৱল প্ৰয়োগিক সমৰ্থন আছে। ইয়াৰ পেচবোৰ অস্থিতিশীল বা অসম্পূৰ্ণ হ\'ব পাৰে</string>
+    <string name="expert_mode_unstable_notice">প্ৰি-ৰিলিজ বা প্ৰায়োগিক পাচসমূহ অস্থিতিশীল হ’ব পাৰে</string>
     <string name="sources_management_experimental_versions_toggle">পৰীক্ষামূলক এপ সংস্কৰণসমূহ</string>
     <string name="sources_management_experimental_versions_toggle_description">প্ৰায়োগিক এপ লক্ষ্যসমূহ দেখুৱায় আৰু পেচ কৰে</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">মেটাডেটা উপলব্ধ নহয়</string>
     <string name="sources_management_metadata_unavailable_hint">ৰিমোট মেটাডেটা ফাইলটো উপলব্ধ নহয়। সংস্থাপন কৰা বান্ডেলৰ সৈতে পেচিং কৰাটো আজিও কাম কৰিব, কিন্তু এই উৎসটোৰ বাবে অটো-আপডেট নিষ্ক্ৰীয় কৰা হৈছে</string>
     <string name="sources_management_metadata_unavailable_hint_missing">পেচ বান্ডেলটো ডাউনলোড কৰিব পৰা নগ\'ল। উৎস URL টো ভুল হ\'ব পাৰে বা ফাইলটো বিদ্যমান নাই</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">পাচ বান্ডিলটো ডাউনলোড কৰিব পৰা নগ’ল। উৎস URL টো ভুল হ’ব পাৰে বা ফাইলটো বিদ্যমান নাই। ইয়াৰ পৰিবৰ্তন কৰিবলৈ টেপ কৰক</string>
     <string name="sources_management_outdated_manager_badge">Morphe আপডেট কৰক</string>
     <string name="sources_management_outdated_manager_hint">এই উৎসটো পেচচৰ %1$s ৰ বাবে নিৰ্মিত, কিন্তু Morphe %2$s ত পেচচৰ %3$s অন্তৰ্ভুক্ত আছে। ইয়াক ব্যৱহাৰ কৰিবলৈ Morphe আপডেট কৰক</string>
     <string name="sources_management_held_back_badge">ক্ৰাশ কৰিছে</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">প্ৰদৰ্শন নাম</string>
     <string name="sources_dialog_rename">পেচ উত্‍সৰ নাম সলনি কৰক</string>
+    <string name="sources_dialog_change_url">পাচ উৎস ক’ৰ পৰা ডাউনলোড হ’ব সেয়া পৰিবৰ্তন কৰক</string>
     <string name="sources_dialog_duplicate_name_error">এই নামৰ এটা পেচ উত্‍স ইতিমধ্যে আছে</string>
     <string name="sources_dialog_missing_error">এই পেচচৰ উৎসটো আপডেট কৰিব পৰা নগ\'ল</string>
     <string name="sources_dialog_add_source">পেচ উত্‍স যোগ কৰক</string>
@@ -354,10 +355,8 @@
     <string name="expert_mode_enable_all_universal_pending">ইউনিভাৰ্চেল পেচৰ বাবে পুনৰ টেপ কৰক</string>
     <string name="expert_mode_universal_all_warning_title">সকলো সৰ্বজনীন প্ৰচ সক্ৰিয় কৰিব নেকি?</string>
     <string name="expert_mode_universal_all_warning_message">ইউনিভাৰ্চেল পেচবোৰ একেলগে পৰীক্ষা কৰা হোৱা নাই। এই সকলোবোৰ একেলগে সক্ৰিয় কৰিলে সংঘাত, পেচিংত বিফলতা বা ক্ৰেশ হ\'ব পাৰে</string>
-    <string name="expert_mode_reset_to_default">সুপৰিশ কৰা পেচসমূহ সক্ৰিয় কৰক</string>
     <string name="expert_mode_reset_to_default_done">সুপৰিশ কৰা patch সমূহ প্ৰয়োগ কৰা হৈছে</string>
     <string name="expert_mode_selected_count">%2$s ৰ ভিতৰত %1$s টা চয়ন কৰা হৈছে</string>
-    <string name="expert_mode_restore_saved">সংৰক্ষিত নিৰ্বাচন পুনৰুদ্ধাৰ কৰক</string>
     <string name="expert_mode_restore_saved_done">সংৰক্ষিত নিৰ্বাচন পুনৰুদ্ধাৰ কৰা হৈছে</string>
     <string name="expert_mode_copy_from_bundle_no_patches">এই বান্ডেলটোত কোনো মিল থকা পেচ নাই</string>
     <string name="expert_mode_no_results">কোনো পেচ পতা যোৱা নাই</string>

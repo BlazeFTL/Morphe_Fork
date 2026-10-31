@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Recebe acesso antecipado às novas versões experimentais de modificações</string>
     <string name="sources_prerelease_warning_title">Ativar correções de pré-lançamento?</string>
     <string name="sources_prerelease_warning_message">As versões de pré-lançamento ainda estão em desenvolvimento. As correções podem falhar ou quebrar o aplicativo, e os recursos podem mudar sem aviso prévio.</string>
-    <string name="expert_mode_prerelease_notice">Esta fonte está em correções de pré-lançamento. A correção pode falhar ou se comportar inesperadamente.</string>
-    <string name="expert_mode_experimental_version_notice">Esta fonte possui apenas suporte experimental para esta versão do aplicativo. Seus patches podem estar instáveis ou incompletos</string>
+    <string name="expert_mode_unstable_notice">Patches de pré-lançamento ou experimentais podem ser instáveis</string>
     <string name="sources_management_experimental_versions_toggle">Versões experimentais da aplicação</string>
     <string name="sources_management_experimental_versions_toggle_description">Mostra e aplica patches em alvos de aplicativos experimentais</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadados não disponíveis</string>
     <string name="sources_management_metadata_unavailable_hint">O ficheiro de metadados remoto está indisponível. A aplicação de modificações com o pacote instalado ainda funciona, mas a atualização automática está desativada para esta fonte</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Não foi possível transferir o pacote de modificações. A URL da fonte pode estar incorreta ou o ficheiro não existe</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Não foi possível transferir o pacote de modificações. A URL da fonte pode estar incorreta ou o ficheiro não existe. Toque para alterá-la</string>
     <string name="sources_management_outdated_manager_badge">Atualizar Morphe</string>
     <string name="sources_management_outdated_manager_hint">Esta fonte foi criada para o patcher %1$s, mas o Morphe %2$s inclui o patcher %3$s. Atualize o Morphe para utilizá-lo</string>
     <string name="sources_management_held_back_badge">Falhou</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Nome de exibição</string>
     <string name="sources_dialog_rename">Mudar o nome da fonte de modificações</string>
+    <string name="sources_dialog_change_url">Alterar a origem da transferência do patch</string>
     <string name="sources_dialog_duplicate_name_error">Já existe uma fonte de modificações com este nome</string>
     <string name="sources_dialog_missing_error">Não foi possível atualizar esta fonte de modificações</string>
     <string name="sources_dialog_add_source">Adicionar fonte de modificações</string>
@@ -354,9 +355,10 @@ Escolha de onde obter seu APK"</string>
     <string name="expert_mode_enable_all_universal_pending">Toque novamente para patches universais</string>
     <string name="expert_mode_universal_all_warning_title">Ativar todas as correções universais?</string>
     <string name="expert_mode_universal_all_warning_message">As correções universais não são testadas em conjunto. Ativar todas de uma vez pode causar conflitos, falhas de correção ou travamentos.</string>
-    <string name="expert_mode_reset_to_default">Ativar modificações recomendadas</string>
+    <string name="expert_mode_recommended">Modificações recomendadas</string>
     <string name="expert_mode_reset_to_default_done">Modificações recomendadas aplicadas</string>
-    <string name="expert_mode_restore_saved">Restaurar seleção guardada</string>
+    <string name="expert_mode_selected_count">%1$s de %2$s selecionados</string>
+    <string name="expert_mode_saved_selection">Seleção salva</string>
     <string name="expert_mode_restore_saved_done">Seleção guardada restaurada</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nenhum patch correspondente neste pacote</string>
     <string name="expert_mode_no_results">Nenhuma modificação encontrada</string>

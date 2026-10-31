@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Prejmite zgodnji dostop do novih eksperimentalnih različic popravkov</string>
     <string name="sources_prerelease_warning_title">Omogoči predizdajne-popravke?</string>
     <string name="sources_prerelease_warning_message">Pred-različice so še v razvoju. Popravki lahko ne uspejo ali poškodujejo aplikacijo, funkcije pa se lahko spremenijo brez opozorila.</string>
-    <string name="expert_mode_prerelease_notice">Ta vir uporablja pred-popravke. Popravljanje lahko ne uspe ali se obnaša nepričakovano.</string>
-    <string name="expert_mode_experimental_version_notice">Ta vir ima za to različico aplikacije le eksperimentalno podporo. Njegovi popravki so lahko nestabilni ali nepopolni</string>
+    <string name="expert_mode_unstable_notice">Predizdajni ali eksperimentalni popravki so lahko nestabilni</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentalne različice aplikacij</string>
     <string name="sources_management_experimental_versions_toggle_description">Prikaže in popravi eksperimentalne cilje aplikacij</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Ni metapodatkov</string>
     <string name="sources_management_metadata_unavailable_hint">Dostop do datoteke z metapodatki na daljavo ni možen. Uporaba popravka z nameščenim paketom še vedno deluje, vendar je samodejno posodabljanje za ta vir onemogočeno.</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Paketa s popravki ni bilo mogoče prenesti. Izvorni URL naslov je lahko napačen ali pa datoteka ne obstaja.</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Paketa s popravki ni bilo mogoče prenesti. Izvorni URL naslov je lahko napačen ali pa datoteka ne obstaja. Dotaknite se za spremembo</string>
     <string name="sources_management_outdated_manager_badge">Posodobite Morphe</string>
     <string name="sources_management_outdated_manager_hint">Ta vir je izdelan za popravek %1$s, vendar Morphe %2$s vključuje popravek %3$s. Posodobite Morphe za uporabo</string>
     <string name="sources_management_held_back_badge">Zrušen</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Prikazano ime</string>
     <string name="sources_dialog_rename">Preimenuj vir popravka</string>
+    <string name="sources_dialog_change_url">Spremenite lokacijo prenosa izvora popravkov</string>
     <string name="sources_dialog_duplicate_name_error">Vir s tem imenom že obstaja</string>
     <string name="sources_dialog_missing_error">Ni mogoče posodobiti tega vira popravkov.</string>
     <string name="sources_dialog_add_source">Dodaj vir popravka</string>
@@ -354,9 +355,10 @@ Izberite, od kje naj prevzame APK"</string>
     <string name="expert_mode_enable_all_universal_pending">Ponovno se dotaknite za univerzalne popravke.</string>
     <string name="expert_mode_universal_all_warning_title">Omogoči vse univerzalne popravke?</string>
     <string name="expert_mode_universal_all_warning_message">Univerzalni popravki niso testirani skupaj. Omogočanje vseh hkrati lahko povzroči konflikte, neuspešno popravljanje ali sesutje.</string>
-    <string name="expert_mode_reset_to_default">Omogoči priporočene popravke</string>
+    <string name="expert_mode_recommended">Priporočeni popravki</string>
     <string name="expert_mode_reset_to_default_done">Uporabljeni priporočeni popravki</string>
-    <string name="expert_mode_restore_saved">Obnovi izbrano izbiro</string>
+    <string name="expert_mode_selected_count">%1$s od %2$s izbrano</string>
+    <string name="expert_mode_saved_selection">Shranjena izbira</string>
     <string name="expert_mode_restore_saved_done">Obnovljena shranjena izbira</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Ni ujemajočih popravkov v tem paketu</string>
     <string name="expert_mode_no_results">Ni najdenih popravkov</string>

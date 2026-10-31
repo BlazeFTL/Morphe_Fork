@@ -364,10 +364,10 @@ Choose where to take its APK from"</string>
     <string name="expert_mode_enable_all_universal_pending">Tap again for universal patches</string>
     <string name="expert_mode_universal_all_warning_title">Enable all universal patches?</string>
     <string name="expert_mode_universal_all_warning_message">Universal patches are not tested together. Enabling all of them at once can cause conflicts, failed patching, or crashes</string>
-    <string name="expert_mode_reset_to_default">Enable recommended patches</string>
+    <string name="expert_mode_recommended">Recommended patches</string>
     <string name="expert_mode_reset_to_default_done">Recommended patches applied</string>
     <string name="expert_mode_selected_count">%1$s of %2$s selected</string>
-    <string name="expert_mode_restore_saved">Restore saved selection</string>
+    <string name="expert_mode_saved_selection">Saved selection</string>
     <string name="expert_mode_restore_saved_done">Saved selection restored</string>
     <string name="expert_mode_copy_from_bundle_no_patches">No matching patches in this bundle</string>
     <string name="expert_mode_no_results">No patches found</string>

@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Patch bertsio esperimental berrien sarbide erken jasotzen du</string>
     <string name="sources_prerelease_warning_title">Pre-release patch-ak aktibatzea?</string>
     <string name="sources_prerelease_warning_message">Pre-release build-ak oraindik garapidean daude. Patch-ak huts egin ditzakete edo aplikazioa apurtu ditzakete, eta ezaugarriak abisurik gabe alda daitezke</string>
-    <string name="expert_mode_prerelease_notice">Iturri hau pre-release patch-etan dago. Patchatzea huts egin dezake edo modu ezustekoa jokatu</string>
-    <string name="expert_mode_experimental_version_notice">Iturri honek babes esperimental bakarrik du app-en bertsio honentzat. Bere patch-ak ezestabilak edo incomplete izan daitezke</string>
+    <string name="expert_mode_unstable_notice">Pre-release edo patch eksperimentalak ezestabilak izan daitezke</string>
     <string name="sources_management_experimental_versions_toggle">Aplikazio bertsio esperimentalak</string>
     <string name="sources_management_experimental_versions_toggle_description">App helburuen bertsio esperimentalak erakusten ditu eta patching-atu</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadataren informazioa ez dago eskuragarri</string>
     <string name="sources_management_metadata_unavailable_hint">Urruneko metadaten fitxategia ez dago eskuragarri. Instalatutako bundle-arekin patch-egiteak oraindik funtzionatzen du, baina automatiko eguneratzea desaktibatuta dago iturri honentzat</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Patch-bundle-a ezin izan da deskargatu. Iturri-URLa okerra izan daiteke edo fitxategia ez dago</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Patch-bundlea ezin da deskargatu. Iturri-URLa okerra izan daiteke edo fitxategia ez da existitzen. Tapatu aldatzeko</string>
     <string name="sources_management_outdated_manager_badge">Eguneratu Morphe</string>
     <string name="sources_management_outdated_manager_hint">Iturri hau %1$s patcherrarentzat egin da, baina Morphe %2$s-ek %3$s patcherra sisältzen du. Eguneratu Morphe erabiltzeko</string>
     <string name="sources_management_held_back_badge">Crash egin du</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Izen publikoa</string>
     <string name="sources_dialog_rename">Patch iturria bizientatu</string>
+    <string name="sources_dialog_change_url">Aldatu patch-iturria deskargatzen den lekua</string>
     <string name="sources_dialog_duplicate_name_error">Izen honek patch iturri bat badaki jada</string>
     <string name="sources_dialog_missing_error">Ezin izan da patch-iturri hau eguneratzea</string>
     <string name="sources_dialog_add_source">Patch iturria gehitu</string>
@@ -354,10 +355,8 @@ Zukertu non hartu APK-a"</string>
     <string name="expert_mode_enable_all_universal_pending">Sakatu berriro patch universalentzat</string>
     <string name="expert_mode_universal_all_warning_title">Universal patch guztiak aktibatzea?</string>
     <string name="expert_mode_universal_all_warning_message">Universal patch-ak ez dira elkarrekin probatu. Guztira behin aktibatzeak gatazkak, patchatze hutsak edo crashes eragin ditzake</string>
-    <string name="expert_mode_reset_to_default">Aktibatu gomendatutako patch-ak</string>
     <string name="expert_mode_reset_to_default_done">Patch gomendatuak aplikatuak</string>
     <string name="expert_mode_selected_count">%2$s-tik %1$s hautatuak</string>
-    <string name="expert_mode_restore_saved">Berreskuratu gorde eta eta izanda zen hautapena</string>
     <string name="expert_mode_restore_saved_done">Gorde 된 hautaketa berreskuratuta</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Ez daunik patchik matchatuko bundle honetan</string>
     <string name="expert_mode_no_results">Ez da patchingik aurkitu</string>

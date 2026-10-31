@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Korai hozzáférés kísérleti új javításverziókhoz</string>
     <string name="sources_prerelease_warning_title">Előzetes javítások engedélyezése?</string>
     <string name="sources_prerelease_warning_message">Az előzetes verziók még fejlesztés alatt állnak. A javítások meghiúsulhatnak vagy megtörhetik az alkalmazást, és a funkciók figyelmeztetés nélkül változhatnak.</string>
-    <string name="expert_mode_prerelease_notice">Ez a forrás előzetes verzió. A javítás meghiúsulhat vagy váratlanul viselkedhet.</string>
-    <string name="expert_mode_experimental_version_notice">Ez a forrás csak kísérleti támogatást biztosít a hozzájuk tartozó alkalmazásverzióhoz. A javítások instabilak vagy hiányosak lehetnek</string>
+    <string name="expert_mode_unstable_notice">A elő prélimináris vagy kísérleti patchok instabilak lehetnek</string>
     <string name="sources_management_experimental_versions_toggle">Kísérleti alkalmazásverziók</string>
     <string name="sources_management_experimental_versions_toggle_description">Megmutatja és javítja a kísérleti alkalmazás célpontjait. MaxLength: null. Applied translations: none.</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metaadatok nem állnak rendelkezésre.</string>
     <string name="sources_management_metadata_unavailable_hint">A távoli metaadatfájl nem érhető el. A telepített csomaggal történő javítás továbbra is működik, de az automatikus frissítés le van tiltva ehhez a forráshoz.</string>
     <string name="sources_management_metadata_unavailable_hint_missing">A javítócsomag letöltése nem sikerült. A forrás URL helytelen lehet, vagy a fájl nem létezik.</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">A patch csomag nem tölthető le. A forrás URL cím incorrectly lehet, vagy a fájl nem létezik. Koppintson a módosításhoz</string>
     <string name="sources_management_outdated_manager_badge">Morphe frissítése</string>
     <string name="sources_management_outdated_manager_hint">Ez a forrás a %1$s javítóprogramhoz készült, de a Morphe %2$s a %3$s javítóprogramot tartalmazza. Frissítse a Morphe-t a használatához.</string>
     <string name="sources_management_held_back_badge">Összeomlott</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Megjelenítendő név</string>
     <string name="sources_dialog_rename">Módosításforrás átnevezése</string>
+    <string name="sources_dialog_change_url">Módosítsa a patch forrásának letöltési helyét</string>
     <string name="sources_dialog_duplicate_name_error">Ezzel a névvel már létezik módosításforrás</string>
     <string name="sources_dialog_missing_error">A módosításforrás frissítése sikertelen</string>
     <string name="sources_dialog_add_source">Módosításforrás hozzáadása</string>
@@ -354,10 +355,10 @@ Válaszd ki, honnan szerezze be az APK-ját"</string>
     <string name="expert_mode_enable_all_universal_pending">Koppintson újra az univerzális javításokhoz.</string>
     <string name="expert_mode_universal_all_warning_title">Az összes univerzális javítás engedélyezése?</string>
     <string name="expert_mode_universal_all_warning_message">Az univerzális javítások nincsenek együtt tesztelve. Ha egyszerre engedélyezed mindet, az ütközéseket, sikertelen javítást vagy összeomlást okozhat.</string>
-    <string name="expert_mode_reset_to_default">Ajánlott módosítások engedélyezése</string>
+    <string name="expert_mode_recommended">Ajánlott javítások</string>
     <string name="expert_mode_reset_to_default_done">A javasolt patch-ek alkalmazva</string>
     <string name="expert_mode_selected_count">%1$s/%2$s módosítás kiválasztva</string>
-    <string name="expert_mode_restore_saved">Mentett összeállítás visszaállítása</string>
+    <string name="expert_mode_saved_selection">Mentett kiválasztás</string>
     <string name="expert_mode_restore_saved_done">A mentett kijelölés visszaállítva</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Nincs megfelelő patch ehhez a csomaghoz</string>
     <string name="expert_mode_no_results">Nem találhatók módosítások</string>

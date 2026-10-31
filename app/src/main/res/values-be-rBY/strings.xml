@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Атрымлівае ранні доступ да новых эксперыментальных версій патчаў</string>
     <string name="sources_prerelease_warning_title">Уключаць перадвыпускныя патчы?</string>
     <string name="sources_prerelease_warning_message">Перадвыпускныя зборкі ўсё яшчэ знаходзяцца ў распрацоўцы. Патчы могуць працаваць няправільна або паламаць праграму, а функцыі могуць змяняцца без папярэджання</string>
-    <string name="expert_mode_prerelease_notice">Гэты крыніца выкарыстоўвае перадвыпускныя патчы. Патчынг можа завяршыцца памылкай або працаваць непрадзізначана</string>
-    <string name="expert_mode_experimental_version_notice">Гэты крыніца мае толькі eksperыментальную падтрымку для гэтай версіі праграмы. Яе патчы могуць быць нестайкімі або няпоўнымі</string>
+    <string name="expert_mode_unstable_notice">Прэрылізныя або eksperыментальныя патчы могуць быць нестабільнымі</string>
     <string name="sources_management_experimental_versions_toggle">Эксперыментальныя версіі праграмы</string>
     <string name="sources_management_experimental_versions_toggle_description">Паказваць і патчыць eksperыментальныя мэты праграмы</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Метаданыя недаступны</string>
     <string name="sources_management_metadata_unavailable_hint">Знешні файл метаданых недаступны. Прымяненне патча да ўсталяванага пакета па-ранейшаму працуе, але аўтаматычныя абнаўленні для гэтай крыніцы адключаны</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Не ўдалося спампаваць пакет патчаў. Магчыма, URL-адрас крыніцы няправільны або файл не існуе</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Не ўдалося спампаваць пакет патчаў. Магчыма, URL-адрас крыніцы няправільны або файл не існуе. Націсніце, каб змяніць яго</string>
     <string name="sources_management_outdated_manager_badge">Абнавіць Morphe</string>
     <string name="sources_management_outdated_manager_hint">Гэтая крыніца створана для патчара %1$s, але Morphe %2$s уключае патчар %3$s. Абнавіце Morphe, каб выкарыстоўваць яе</string>
     <string name="sources_management_held_back_badge">Збой</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Адлюстраванае iмя</string>
     <string name="sources_dialog_rename">Перайменаваць крыніцу патча</string>
+    <string name="sources_dialog_change_url">Змяніць адрас спампоўкі крыніцы патчаў</string>
     <string name="sources_dialog_duplicate_name_error">Крыніца патча з такой назвай ужо існуе</string>
     <string name="sources_dialog_missing_error">Не ўдалося абнавіць гэтую крыніцу патча</string>
     <string name="sources_dialog_add_source">Дадаць крыніцу патча</string>
@@ -354,10 +355,8 @@
     <string name="expert_mode_enable_all_universal_pending">Націсніце яшчэ раз для універсальных патчаў</string>
     <string name="expert_mode_universal_all_warning_title">Уключаць усе універсальныя патчы?</string>
     <string name="expert_mode_universal_all_warning_message">Універсальныя патчы не тэсціраваліся разам. Уключаэнне іх усіх адначасова можа прывесці да канфліктаў, памылак пры патчынгу або збояў</string>
-    <string name="expert_mode_reset_to_default">Уключаць рэкамендаваныя патчы</string>
     <string name="expert_mode_reset_to_default_done">Рэкамендаваныя патчы прымененыя</string>
     <string name="expert_mode_selected_count">Выбрана %1$s з %2$s</string>
-    <string name="expert_mode_restore_saved">Аднавіць захаваны выбар</string>
     <string name="expert_mode_restore_saved_done">Захаваны выбар аднаўлены</string>
     <string name="expert_mode_copy_from_bundle_no_patches">У гэтым бандле няма адпаведных патчаў</string>
     <string name="expert_mode_no_results">Патчаў не знойдзена</string>

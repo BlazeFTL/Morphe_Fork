@@ -45,12 +45,17 @@ data class CopySelectionCandidate(
 )
 
 /**
- * The sets kept for the app a selection is being made for, and the selection it opened with, for
- * the screens that edit a selection before it is used.
+ * The sets kept for the app a selection is being made for, the selection it opened with and the
+ * patches the open source recommends, for the screens that edit a selection before it is used.
+ *
+ * @param canApplyRecommended Whether a source is open for [onApplyRecommended] to switch to its
+ *   recommended patches.
  */
 @Stable
 class SelectionSetActions(
     val sets: List<SelectionSetSummary>,
+    val canApplyRecommended: Boolean,
+    val onApplyRecommended: () -> Unit,
     val hasSavedSelection: Boolean,
     val onRestoreSaved: () -> Unit,
     val onApply: (SelectionSetSummary) -> Unit,
@@ -60,14 +65,14 @@ class SelectionSetActions(
 )
 
 /**
- * Panel docked under a patch list for the selection as a whole: the selection it opened with and
- * the sets kept for the app, which switch every source at once, then the selections of other apps
- * and sources the open source can copy from. Only copies that apply are offered, so one never
- * picks up nothing.
+ * Panel docked under a patch list for the selection as a whole: the recommended patches of the open
+ * source, then the selection it opened with and the sets kept for the app, which switch every
+ * source at once, then the selections of other apps and sources the open source can copy from.
+ * Only copies that apply are offered, so one never picks up nothing.
  *
  * @param subtitle What the [headerActions] act on, such as the open source and how much of it is
- *   selected, as the body acts on the app as a whole.
- * @param headerActions Switches acting on the open source, ahead of the close button.
+ *   selected.
+ * @param headerActions Buttons acting on the open source, ahead of the close button.
  * @param sets The sets kept for the app, or null where a selection is not being edited.
  * @param copyTargetName Source a copy lands in, or null while there is none to copy into.
  * @param candidates What [copyTargetName] can copy from, null while it loads.
@@ -239,8 +244,9 @@ fun DialogHostScope.DeleteSelectionSetDialog(
 }
 
 /**
- * The saved selection and the sets of the app, then the field a new set is named in. A set is
- * applied on a tap, and renamed or deleted from its menu, a long press renaming it too.
+ * The recommended patches of the open source, the saved selection and the sets of the app, then the
+ * field a new set is named in. A set is applied on a tap, and renamed or deleted from its menu, a
+ * long press renaming it too.
  */
 @Composable
 private fun SetsSection(
@@ -252,7 +258,13 @@ private fun SetsSection(
     Column(verticalArrangement = Arrangement.spacedBy(Defaults.SpaceExtraSmall)) {
         SectionTitle(text = stringResource(R.string.selection_sets_title), icon = null, parent = null, onClick = null)
         PanelRow(
-            title = stringResource(R.string.expert_mode_restore_saved),
+            title = stringResource(R.string.expert_mode_recommended),
+            onClick = actions.onApplyRecommended,
+            icon = MaterialSymbols.Rounded.Recommend,
+            enabled = actions.canApplyRecommended
+        )
+        PanelRow(
+            title = stringResource(R.string.expert_mode_saved_selection),
             onClick = actions.onRestoreSaved,
             icon = MaterialSymbols.Rounded.History,
             enabled = actions.hasSavedSelection

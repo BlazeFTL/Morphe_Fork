@@ -198,8 +198,6 @@
     <string name="sources_management_prerelease_toggle_description">Saņem agri piekļuvi jaunām eksperimentālajām patch versijām</string>
     <string name="sources_prerelease_warning_title">Activēt pirmizlaiduma lappisus?</string>
     <string name="sources_prerelease_warning_message">Pirmizlaiduma versijas joprojām tiek izstrādātas. Lappisēšana var neveiksmīgi beigties vai sabojāt lietotni, un funkcijas var mainīties bez brīdinājuma</string>
-    <string name="expert_mode_prerelease_notice">Šis avots izmanto pirmizlaiduma lappisus. Lappisēšana var neveiksmīgi beigties vai darboties negaidīti</string>
-    <string name="expert_mode_experimental_version_notice">Šim avotam ir tikai eksperimentāls atbalsts šai lietotnes versijai. Tā lapiņi var būt nestabili vai nepilnīgi</string>
     <string name="sources_management_experimental_versions_toggle">Eksperimentālās lietotnes versijas</string>
     <string name="sources_management_experimental_versions_toggle_description">Rāda un patchē eksperimentālos lietotnes mērķus</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -354,9 +352,7 @@ Izvēlieties, no kurienes ņemt tās APK"</string>
     <string name="expert_mode_enable_all_universal_pending">Kārtējiet vēlreiz universāliem patchiem</string>
     <string name="expert_mode_universal_all_warning_title">Akativēt visus universālos patchus?</string>
     <string name="expert_mode_universal_all_warning_message">Universālie patchi nav testēti kopā. Aktivizējot visus vienlaicīgi, var rasties konflikti, patchošanas kļūme vai programma var crashes</string>
-    <string name="expert_mode_reset_to_default">Ienablet iesakātos patchus</string>
     <string name="expert_mode_reset_to_default_done">Ieteiktie patches piemērti</string>
-    <string name="expert_mode_restore_saved">Atjaunot saglabāto atlasi</string>
     <string name="expert_mode_restore_saved_done">Saglabātā atlase atjaunota</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Šajā bundle nav atbilstošu patchiem</string>
     <string name="expert_mode_no_results">Nekādi patchi netika atrasti</string>

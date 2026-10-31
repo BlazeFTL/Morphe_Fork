@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Yeni deneysel sürüm yamalarına erken erişim sağlar</string>
     <string name="sources_prerelease_warning_title">Ön sürüm yamalarını etkinleştir?</string>
     <string name="sources_prerelease_warning_message">Ön sürüm yapıları hâlâ geliştirme aşamasındadır. Yamalar başarısız olabilir veya uygulamayı bozabilir ve özellikler uyarı vermeden değişebilir.</string>
-    <string name="expert_mode_prerelease_notice">Bu kaynak ön sürüm yamalarındadır. Yama yapma başarısız olabilir veya beklenmedik davranabilir.</string>
-    <string name="expert_mode_experimental_version_notice">Bu kaynak, bu uygulama sürümü için yalnızca deneysel desteğe sahiptir. Yamaları kararsız veya eksik olabilir</string>
+    <string name="expert_mode_unstable_notice">Ön sürüm veya deneysel yamalar kararsız olabilir</string>
     <string name="sources_management_experimental_versions_toggle">Deneysel uygulama sürümleri</string>
     <string name="sources_management_experimental_versions_toggle_description">Deneysel uygulama hedeflerini gösterir ve yamalar</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -356,10 +355,10 @@ APK'nin nereden alınacağını seçin"</string>
     <string name="expert_mode_enable_all_universal_pending">Evrensel yamalar için tekrar dokunun</string>
     <string name="expert_mode_universal_all_warning_title">Tüm evrensel yamaları etkinleştir?</string>
     <string name="expert_mode_universal_all_warning_message">Evrensel yamalar birlikte test edilmemiştir. Hepsini aynı anda etkinleştirmek çakışmalara, başarısız yamalara veya çökmelere neden olabilir.</string>
-    <string name="expert_mode_reset_to_default">Önerilen yamaları etkinleştir</string>
+    <string name="expert_mode_recommended">Önerilen yamalar</string>
     <string name="expert_mode_reset_to_default_done">Önerilen yamalar uygulandı</string>
     <string name="expert_mode_selected_count">%1$s / %2$s seçildi</string>
-    <string name="expert_mode_restore_saved">Kaydedilen seçimi geri yükle</string>
+    <string name="expert_mode_saved_selection">Kaydedilen seçim</string>
     <string name="expert_mode_restore_saved_done">Kaydedilmiş seçim geri yüklendi</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Bu bundle\'da eşleşen yama yok</string>
     <string name="expert_mode_no_results">Yama bulunamadı</string>

@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Faigheann sé rochtain luath ar leaganacha nua paiste turgnamhacha</string>
     <string name="sources_prerelease_warning_title">Paistí réamh-eisiúna a chumasú?</string>
     <string name="sources_prerelease_warning_message">Tá leaganacha réamh-eisiúna fós á bhforbairt. D’fhéadfadh paistí teip nó an aip a bhriseadh, agus d’fhéadfadh gnéithe athrú gan rabhadh.</string>
-    <string name="expert_mode_prerelease_notice">Tá an fhoinse seo ar phaistí réamh-eisiúna. D’fhéadfadh teip nó iompar gan choinne a bheith mar thoradh ar phaistí.</string>
-    <string name="expert_mode_experimental_version_notice">Níl ach tacaíocht thurgnamhach ag an bhfoinse seo don leagan seo den aip. D’fhéadfadh a paistí a bheith éagobhsaí nó neamhiomlán.</string>
+    <string name="expert_mode_unstable_notice">Seachas patching roimh sc subtly nó patches turgnaimh, is féidir go mbeadh siad neamhbhuan</string>
     <string name="sources_management_experimental_versions_toggle">Leaganacha turgnamhacha aipeanna</string>
     <string name="sources_management_experimental_versions_toggle_description">Taispeánann agus paistíonn spriocanna aipeanna turgnamhacha</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Meiteashonraí N/B</string>
     <string name="sources_management_metadata_unavailable_hint">Níl an cianchomhad meiteashonraí ar fáil. Oibríonn paistí leis an mbeart suiteáilte fós, ach tá uath-nuashonrú díchumasaithe don fhoinse seo</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Níorbh fhéidir an pacáiste paiste a íoslódáil. B’fhéidir go bhfuil an URL foinse mícheart nó nach bhfuil an comhad ann.</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Níorbh fhéidir an pacáiste paiste a íoslódáil. D’fhéadfadh sé go bhfuil an URL foinse mícheart, nó nach bhfuil an comhad ann. Beartaigh air chun é a athrú.</string>
     <string name="sources_management_outdated_manager_badge">Nuashonraigh Morphe</string>
     <string name="sources_management_outdated_manager_hint">Tá an foinse seo tógtha don phaisteoir %1$s, ach tá an paisteoir %3$s san áireamh i Morphe %2$s. Nuashonraigh Morphe chun é a úsáid.</string>
     <string name="sources_management_held_back_badge">Tuairteála</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Ainm taispeána</string>
     <string name="sources_dialog_rename">Athainmnigh foinse an phaiste</string>
+    <string name="sources_dialog_change_url">Athraigh an áit a n-íoslódálann foinse an phaiste</string>
     <string name="sources_dialog_duplicate_name_error">Tá pacáiste beartáin leis an ainm seo ann cheana féin</string>
     <string name="sources_dialog_missing_error">Níorbh fhéidir an pacáiste beartáin seo a nuashonrú</string>
     <string name="sources_dialog_add_source">Cuir foinse paiste leis</string>
@@ -354,10 +355,10 @@ Roghnaigh cá as a bhfaighfear an APK"</string>
     <string name="expert_mode_enable_all_universal_pending">Tapáil arís le haghaidh paistí uilíocha</string>
     <string name="expert_mode_universal_all_warning_title">Cumasaigh na paistí uilíocha go léir?</string>
     <string name="expert_mode_universal_all_warning_message">Ní dhéantar paistí uilíocha a thástáil le chéile. Má chuirtear ar chumas iad go léir ag an am céanna, d’fhéadfadh coimhlintí, paistí teipthe, nó tuairteanna a bheith mar thoradh orthu.</string>
-    <string name="expert_mode_reset_to_default">Cumasaigh paistí molta</string>
+    <string name="expert_mode_recommended">Paistí molta</string>
     <string name="expert_mode_reset_to_default_done">Paistí molta curtha i bhfeidhm</string>
     <string name="expert_mode_selected_count">%1$s de %2$s roghnaithe</string>
-    <string name="expert_mode_restore_saved">Athchóirigh an rogha sábháilte</string>
+    <string name="expert_mode_saved_selection">Rogha sábháilte</string>
     <string name="expert_mode_restore_saved_done">Athchóiríodh an rogha sábháilte</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Níl aon phaistí comhoiriúnacha sa phacáiste seo</string>
     <string name="expert_mode_no_results">Níor aimsíodh aon phaistí</string>

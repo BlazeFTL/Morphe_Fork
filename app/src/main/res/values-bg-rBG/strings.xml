@@ -199,8 +199,7 @@
     <string name="sources_management_prerelease_toggle_description">Получава ранен достъп до нови експериментални версии на пачове</string>
     <string name="sources_prerelease_warning_title">Активиране на предварителни пачове ли?</string>
     <string name="sources_prerelease_warning_message">Предварителните версии все още са в разработка. Пачовете може да се провалят или да счупят приложението, а функциите може да се променят без предупреждение.</string>
-    <string name="expert_mode_prerelease_notice">Този източник е на предварителни пачове. Пачването може да се провали или да се държи неочаквано.</string>
-    <string name="expert_mode_experimental_version_notice">Този източник има само експериментална поддръжка за тази версия на приложението. Пачовете му могат да бъдат нестабилни или непълни</string>
+    <string name="expert_mode_unstable_notice">Предварителните версии или експерименталните корекции могат да бъдат нестабилни</string>
     <string name="sources_management_experimental_versions_toggle">Експериментални версии на приложението</string>
     <string name="sources_management_experimental_versions_toggle_description">Показва и поправя експериментални цели на приложението</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -215,6 +214,7 @@
     <string name="sources_management_metadata_unavailable">Метаданни не са налични</string>
     <string name="sources_management_metadata_unavailable_hint">Дистанционният метаданнен файл не е достъпен. Патчването с инсталирания пакет все още работи, но автоматичното обновяване е деактивирано за този източник</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Пакетът за корекции не може да бъде свален. URL адресът на източника може да е неверен или файлът не съществува</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Пакетът с корекции не можа да бъде изтеглен. Източникът на URL адреса може да е неправилен или файлът не съществува. Докоснете, за да го промените</string>
     <string name="sources_management_outdated_manager_badge">Актуализиране на Morphe</string>
     <string name="sources_management_outdated_manager_hint">Този източник е създаден за пачър %1$s, но Morphe %2$s включва пачър %3$s. Актуализирайте Morphe, за да го използвате.</string>
     <string name="sources_management_held_back_badge">Срив</string>
@@ -228,6 +228,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Име на диалога</string>
     <string name="sources_dialog_rename">Преименуване на източник</string>
+    <string name="sources_dialog_change_url">Променете мястото, от където се изтегля източникът на корекциите</string>
     <string name="sources_dialog_duplicate_name_error">Източник с това име вече съществува</string>
     <string name="sources_dialog_missing_error">Не може да се обнови този източник на патча</string>
     <string name="sources_dialog_add_source">Добавяне на източник</string>
@@ -355,10 +356,10 @@
     <string name="expert_mode_enable_all_universal_pending">Докоснете отново за универсални кръпки</string>
     <string name="expert_mode_universal_all_warning_title">Активиране на всички универсални пачове ли?</string>
     <string name="expert_mode_universal_all_warning_message">Универсалните пачове не са тествани заедно. Активирането на всички наведнъж може да причини конфликти, неуспешно пачване или сривове.</string>
-    <string name="expert_mode_reset_to_default">Активиране на препоръчаните поправки</string>
+    <string name="expert_mode_recommended">Препоръчани поправки</string>
     <string name="expert_mode_reset_to_default_done">Приложени са препоръчителните корекции</string>
     <string name="expert_mode_selected_count">%1$s от %2$s избрани</string>
-    <string name="expert_mode_restore_saved">Възстановяване на запазения избор</string>
+    <string name="expert_mode_saved_selection">Запазен избор</string>
     <string name="expert_mode_restore_saved_done">Възстановената запазена селекция</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Няма съвпадащи поправки в този пакет</string>
     <string name="expert_mode_no_results">Няма намерени пачове</string>

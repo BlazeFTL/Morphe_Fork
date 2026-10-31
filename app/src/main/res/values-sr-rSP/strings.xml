@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Примање ране приступности новим експерименталним верзијама пача</string>
     <string name="sources_prerelease_warning_title">Омогући пре-издање закрпе?</string>
     <string name="sources_prerelease_warning_message">Пре-издање верзије су још увек у развоју. Закрпе могу да не успеју или да оштете апликацију, а функције се могу променити без упозорења.</string>
-    <string name="expert_mode_prerelease_notice">Овај извор користи пре-издање закрпе. Примена закрпа може да не успе или да се понаша неочекивано.</string>
-    <string name="expert_mode_experimental_version_notice">Овај извор има само експерименталну подршку за ову верзију апликације. Његове закрпе могу бити нестабилне или некомплетне</string>
+    <string name="expert_mode_unstable_notice">Пре-релизација или експерименталне крпе могу бити нестабилне</string>
     <string name="sources_management_experimental_versions_toggle">Експерименталне верзије апликације</string>
     <string name="sources_management_experimental_versions_toggle_description">Приказује и исправља експерименталне циљеве апликација</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Метаподаци нису доступни</string>
     <string name="sources_management_metadata_unavailable_hint">Датотека метаподатка са удаљеног извора није доступна. Поправка са инсталираним пакетом и даље функционише, али аутоматска ажурирања су искључена за овај извор</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Пакест за поправку није могао да се преузме. УРЛ адреса извора може бити неисправна или датотека не постоји</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Пакет за крпљење није mogao бити преузет. Изворни URL је можда нетачан или датотека не постоји. Додирните да га промените</string>
     <string name="sources_management_outdated_manager_badge">Ажурирај Морфе</string>
     <string name="sources_management_outdated_manager_hint">Овај извор је направљен за закрпљивач %1$s, али Морфе %2$s укључује закрпљивач %3$s. Ажурирај Морфе да би га користио</string>
     <string name="sources_management_held_back_badge">Пао</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Назив за приказ</string>
     <string name="sources_dialog_rename">Преименујте изворни извор</string>
+    <string name="sources_dialog_change_url">Промените локацију са које се преузима извор крпљења</string>
     <string name="sources_dialog_duplicate_name_error">Извор за патчевање са овим именом већ постоји</string>
     <string name="sources_dialog_missing_error">Nije moguće ažurirati ovaj patch izvor</string>
     <string name="sources_dialog_add_source">Додај извор</string>
@@ -354,9 +355,10 @@
     <string name="expert_mode_enable_all_universal_pending">Додирните поново за универзалне закрпе</string>
     <string name="expert_mode_universal_all_warning_title">Омогући све универзалне закрпе?</string>
     <string name="expert_mode_universal_all_warning_message">Универзалне закрпе нису тестиране заједно. Омогућавање свих одједном може изазвати конфликте, неуспех примене закрпа или падове.</string>
-    <string name="expert_mode_reset_to_default">Омогући препоручене исправке</string>
+    <string name="expert_mode_recommended">Препоручени патчеви</string>
     <string name="expert_mode_reset_to_default_done">Примењене препоручене закрпе</string>
-    <string name="expert_mode_restore_saved">Поврати сачувани избор</string>
+    <string name="expert_mode_selected_count">%1$s од %2$s изабрано</string>
+    <string name="expert_mode_saved_selection">Сачувани избор</string>
     <string name="expert_mode_restore_saved_done">Враћена сачувана селекција</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Нема поклапајућих закрпа у овом пакету</string>
     <string name="expert_mode_no_results">Нema пронађених печева</string>

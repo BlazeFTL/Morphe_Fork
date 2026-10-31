@@ -198,8 +198,6 @@
     <string name="sources_management_prerelease_toggle_description">Жаңы эксперименталдык патч версияларына эрте мүмкүнчүлүк алат</string>
     <string name="sources_prerelease_warning_title">Алдын ала чыгарылган патчтарды иштетүүнү каалайсызбы?</string>
     <string name="sources_prerelease_warning_message">Алдын ала чыгарылган версиялар дагы деле иштелип жатат. Патчтар иштебей калышы же колдонмону бузушу мүмкүн, ошондой эле функциялар эскертүүсүз өзгөрүшү мүмкүн</string>
-    <string name="expert_mode_prerelease_notice">Бул булак алдын ала чыгарылган патчтарда. Патчтоо иштебей калышы же күтүлбөгөн түрдө жүрүшү мүмкүн</string>
-    <string name="expert_mode_experimental_version_notice">Бул булактын тиркеменин бул версиясы үчүн эксперименттик колдоосу гана бар. Анын патчтары туруксуз же толук эмес болушу мүмкүн</string>
     <string name="sources_management_experimental_versions_toggle">Тиркеменин эксперименталдык версиялары</string>
     <string name="sources_management_experimental_versions_toggle_description">Эксперименталдык тиркеме максаттарын көрсөтөт жана патчтайт</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -354,10 +352,8 @@
     <string name="expert_mode_enable_all_universal_pending">Универсалдуу патчтар үчүн кайра басыңыз</string>
     <string name="expert_mode_universal_all_warning_title">Бардык универсалдуу патчтарды күydүрүү?</string>
     <string name="expert_mode_universal_all_warning_message">Универсалдуу патчтар бирге тестирленген эмес. Бардыгын бир убакта күydүрүү чыр-чатактарга, патчтоонун иштебей калышына же программанын бузулушуна алып келиши мүмкүн</string>
-    <string name="expert_mode_reset_to_default">Сунушталган патчтарды иштетүү</string>
     <string name="expert_mode_reset_to_default_done">Сунушталган патчтер колдонулду</string>
     <string name="expert_mode_selected_count">%2$s санын ичинен %1$s тандалды</string>
-    <string name="expert_mode_restore_saved">Сакталган тандоону калыбына келтирүү</string>
     <string name="expert_mode_restore_saved_done">Сакталган тандоо калыбына келтирилди</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Бул пакетте тиешелүү патчтар жок</string>
     <string name="expert_mode_no_results">Патчтар табылган жок</string>

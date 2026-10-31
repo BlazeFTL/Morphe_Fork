@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Krijg vroegtijdige toegang tot nieuwe experimentele patchversies</string>
     <string name="sources_prerelease_warning_title">Pre-release patches inschakelen?</string>
     <string name="sources_prerelease_warning_message">Pre-release builds zijn nog in ontwikkeling. Patches kunnen falen of de app breken, en functies kunnen zonder waarschuwing veranderen.</string>
-    <string name="expert_mode_prerelease_notice">Deze bron heeft pre-release patches. Patchen kan falen of onverwacht gedrag vertonen.</string>
-    <string name="expert_mode_experimental_version_notice">Deze bron heeft slechts experimentele ondersteuning voor deze app-versie. De patches kunnen onstabiel of onvolledig zijn</string>
+    <string name="expert_mode_unstable_notice">Pre-release- of experimentele patches kunnen onstabiel zijn</string>
     <string name="sources_management_experimental_versions_toggle">Experimentele app-versies</string>
     <string name="sources_management_experimental_versions_toggle_description">Toont en patcht experimentele app-targets</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadata niet beschikbaar</string>
     <string name="sources_management_metadata_unavailable_hint">Het externe metadabestand is niet beschikbaar. Patchen met het geïnstalleerde bundel werkt nog steeds, maar automatische update is uitgeschakeld voor deze bron</string>
     <string name="sources_management_metadata_unavailable_hint_missing">De patch-bundel kon niet worden gedownload. De bron-URL is mogelijk onjuist of het bestand bestaat niet</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Het patchbundel kon niet worden gedownload. De bron-URL is mogelijk onjuist of het bestand bestaat niet. Tik om deze te wijzigen</string>
     <string name="sources_management_outdated_manager_badge">Update Morphe</string>
     <string name="sources_management_outdated_manager_hint">Deze bron is gebouwd voor patcher %1$s, maar Morphe %2$s bevat patcher %3$s. Update Morphe om deze te gebruiken</string>
     <string name="sources_management_held_back_badge">Gecrasht</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Weergavenaam</string>
     <string name="sources_dialog_rename">Patchbron hernoemen</string>
+    <string name="sources_dialog_change_url">Wijzig de locatie waar de patchbron wordt gedownload</string>
     <string name="sources_dialog_duplicate_name_error">Er bestaat al een patchbron met deze naam</string>
     <string name="sources_dialog_missing_error">Kon deze patchbron niet bijwerken.</string>
     <string name="sources_dialog_add_source">Patchbron toevoegen</string>
@@ -354,10 +355,10 @@ Kies waar de APK vandaan moet worden gehaald"</string>
     <string name="expert_mode_enable_all_universal_pending">Tik opnieuw voor universele patches</string>
     <string name="expert_mode_universal_all_warning_title">Alle universele patches inschakelen?</string>
     <string name="expert_mode_universal_all_warning_message">Universele patches zijn niet samen getest. Ze allemaal tegelijk inschakelen kan conflicten, mislukte patching of crashes veroorzaken.</string>
-    <string name="expert_mode_reset_to_default">Aanbevolen patches inschakelen</string>
+    <string name="expert_mode_recommended">Aanbevolen patches</string>
     <string name="expert_mode_reset_to_default_done">Aanbevolen patches toegepast</string>
     <string name="expert_mode_selected_count">%1$s van %2$s geselecteerd</string>
-    <string name="expert_mode_restore_saved">Selectie opslaan herstellen</string>
+    <string name="expert_mode_saved_selection">Geselecteerde items opgeslagen</string>
     <string name="expert_mode_restore_saved_done">Opgeslagen selectie hersteld</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Geen bijpassende patches in deze bundel</string>
     <string name="expert_mode_no_results">Geen patches gevonden</string>

@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">იღებს ადრეულ წვდომას ახალი ექსპერიმენტული პატჩების ვერსიებზე</string>
     <string name="sources_prerelease_warning_title">გადმოწერილისწინა პატჩების ჩართვა?</string>
     <string name="sources_prerelease_warning_message">გადმოწერილისწინა ვერსიები ჯერ კიდევ განვითარების პროცესშია. პატჩირება შესაძლოა ჩაიშალოს ან გააფუჭოს აპლიკაცია, ხოლო ფუნქციები შეიძლება შეიცვალოს გაფრთხილების გარეშე</string>
-    <string name="expert_mode_prerelease_notice">ეს წყარო იყენებს გადმოწერილისწინა პატჩებს. პატჩირება შესაძლოა ჩაიშალოს ან მოიქცეს მოულოდნელად</string>
-    <string name="expert_mode_experimental_version_notice">ამ წყაროს აქვს მხოლოდ ექსპერიმენტული მხარდაჭერა აპლიკაციის ამ ვერსიისთვის. მისი პატჩები შესაძლოა იყოს არასტაბილური ან არასრული</string>
+    <string name="expert_mode_unstable_notice">წინასწარი რელიზის ან ექსპერიმენტული პატჩები შესაძლოა იყოს არასტაბილური</string>
     <string name="sources_management_experimental_versions_toggle">აპლიკაციის ექსპერიმენტული ვერსიები</string>
     <string name="sources_management_experimental_versions_toggle_description">აჩვენებს და პატჩავს აპლიკაციის ექსპერიმენტულ სამიზნეებს</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">მეტამონაცემები მიუწვდომელია</string>
     <string name="sources_management_metadata_unavailable_hint">დისტანციური მეტამონაცემთა ფაილი მიუწვდომელია. დაპატჩვა დაინსტალირებული პაკეტით კვლავ მუშაობს, თუმცა ამ წყაროსთვის ავტო-განახლება გამორთულია</string>
     <string name="sources_management_metadata_unavailable_hint_missing">პატჩის პაკეტის ჩამოტვირთვა ვერ მოხერხდა. შესაძლოა წყაროს URL არასწორია ან ფაილი არ არსებობს</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">პატჩების პაკეტის ჩამოტვირთვა ვერ მოხერხდა. შესაძლოა წყაროს URL არასწორია ან ფაილი არ არსებობს. შეცვლისთვის დააჭირეთ</string>
     <string name="sources_management_outdated_manager_badge">განაახლეთ Morphe</string>
     <string name="sources_management_outdated_manager_hint">ეს წყარო შექმნილია პატჩერის %1$s-ისთვის, მაგრამ Morphe %2$s მოიცავს პატჩერს %3$s. მისი გამოსაყენებლად განაახლეთ Morphe</string>
     <string name="sources_management_held_back_badge">გატეხილია</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">საგნი სახელი</string>
     <string name="sources_dialog_rename">გადაარქვით სახელი პატჩის წყაროს</string>
+    <string name="sources_dialog_change_url">შეცვალეთ პატჩების წყაროს ჩამოტვირთვის მისამართი</string>
     <string name="sources_dialog_duplicate_name_error">ამ სახელის მქონე პატჩის წყარო უკვე არსებობს</string>
     <string name="sources_dialog_missing_error">ამ პატჩის წყაროს განახლება ვერ მოხერხდა</string>
     <string name="sources_dialog_add_source">დაამატეთ პატჩის წყარო</string>
@@ -354,10 +355,8 @@
     <string name="expert_mode_enable_all_universal_pending">კვლავ დააჭირეთ უნივერსალური პატჩებისთვის</string>
     <string name="expert_mode_universal_all_warning_title">ყველა უნივერსალური პატჩის ჩართვა?</string>
     <string name="expert_mode_universal_all_warning_message">უნივერსალური პატჩები ერთად არ არის დატესტავებული. მათი ერთდროულად ჩართვამ შესაძლოა გამოიწვიოს კონფლიქტები, პატჩირების ჩაგდება ან აპლიკაციის გათიშვა</string>
-    <string name="expert_mode_reset_to_default">ჩართეთ რეკომენდებული პატჩები</string>
     <string name="expert_mode_reset_to_default_done">გამოყენებულია რეკომენდებული პატჩები</string>
     <string name="expert_mode_selected_count">%1$s შერჩეულია %2$s-დან</string>
-    <string name="expert_mode_restore_saved">შენახული არჩევანის აღდგენა</string>
     <string name="expert_mode_restore_saved_done">აღდგენილია შენახული არჩევანი</string>
     <string name="expert_mode_copy_from_bundle_no_patches">ამ ბანდლში შესაბამისი პატჩები არ მოიპოვება</string>
     <string name="expert_mode_no_results">პატჩები ვერ მოიძებნა</string>

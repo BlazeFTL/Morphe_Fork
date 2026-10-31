@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Uthola ukufikelela kwesikhathi esingaphambili kwezinguqulo zezipathi ezintsha zokuzama</string>
     <string name="sources_prerelease_warning_title">Vula ama-patches angakaphumile?</string>
     <string name="sources_prerelease_warning_message">Izakhiro ze-Pre-release zisasekuthuthukisweni. Ama-patches angahluleka noma abulale i-app, futhi izici zingashintsha ngaphandle kokuxwayiswa</string>
-    <string name="expert_mode_prerelease_notice">Lo mthombo usema-patches e-pre-release. Ukufaka i-patch kungahluleka noma kube nokuziphatha okungalinqebile</string>
-    <string name="expert_mode_experimental_version_notice">Lo mthombo unobuphathwayo obuzama kuphela kule version ye-app. Ama-patch awo angase abe angaqinile noma angephelele</string>
+    <string name="expert_mode_unstable_notice">Ama-patch angase abe ayizivivinyo noma angakakhishwe ngokusemthethweni angase abe angaqinile</string>
     <string name="sources_management_experimental_versions_toggle">Izinguqulo ze-app ezizama izinto ezintsha</string>
     <string name="sources_management_experimental_versions_toggle_description">Kukhombisa futhi kulungiswa izinhlelo zezinhlelo zezinhlelo ezizama izinto ezintsha</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">I-Metadata ayitholakali</string>
     <string name="sources_management_metadata_unavailable_hint">Ifayela le-metadata elikude alitholakali. I-Patching nge-bundle efakwe isasebenza, kodwa i-auto-update icishiwe kulo mthombo</string>
     <string name="sources_management_metadata_unavailable_hint_missing">I-patch bundle ayikwazanga ukulandwa. I-URL komthombo kungenzeka ayilungile noma ifayela alikho</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">I-patch bundle ayikwazanga ukulandwa. I-URL yomthombo kungenzeka ukuthi ayilungile noma ifayela alikho. Thinta ukuze uyishintshe</string>
     <string name="sources_management_outdated_manager_badge">Update iMorphe</string>
     <string name="sources_management_outdated_manager_hint">Lolu thambo lwakhelwe i-patcher %1$s, kodwa iMorphe %2$s ihlanganise i-patcher %3$s. Update iMorphe ukuze ukusebenzise</string>
     <string name="sources_management_held_back_badge">I-crashed</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Igama elibonakalayo</string>
     <string name="sources_dialog_rename">Yishintshe igama lomthombo we-patch</string>
+    <string name="sources_dialog_change_url">Shintsha lapho i-patch source ilandwa khona</string>
     <string name="sources_dialog_duplicate_name_error">Umthombo we-patch onesi gama sele ukhona</string>
     <string name="sources_dialog_missing_error">Kwenzeke ukungakwazi ukubuyekeza lo mthombo we-patch</string>
     <string name="sources_dialog_add_source">Yengeza umthombo we-patch</string>
@@ -354,9 +355,8 @@ Khetha ukuthi uthathe i-APK yayo kuphi"</string>
     <string name="expert_mode_enable_all_universal_pending">Thinta futhi ukuze uthole ama-patches onke</string>
     <string name="expert_mode_universal_all_warning_title">Vula wonke ama-patches universal?</string>
     <string name="expert_mode_universal_all_warning_message">Ama-patches universal awakuhloliswana. Ukuvula wonke ngasikhathi sinye kungabangela ukungahambisani, ukuhluleka kokufaka i-patch, noma ukuqhuma kwe-app</string>
-    <string name="expert_mode_reset_to_default">Vula ama-patch anelelwe</string>
     <string name="expert_mode_reset_to_default_done">Izipathi ezinekilwayo sezifakwe</string>
-    <string name="expert_mode_restore_saved">Buyisela ukukhetha okugcinwe</string>
+    <string name="expert_mode_selected_count">%1$s kwe-%2$s ukhethiwe</string>
     <string name="expert_mode_restore_saved_done">Ukukhetha okugcinwe sekubuyiselwe</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Azikho ama-patch ahambisana naleyo bundle</string>
     <string name="expert_mode_no_results">Azikho izigaba ezitholakele</string>

@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Fáðu snemma aðgang að nýjum tilraunabreytingar útgáfum</string>
     <string name="sources_prerelease_warning_title">Tilkynna vandamál</string>
     <string name="sources_prerelease_warning_message">Virkja forútgáfuplástra?</string>
-    <string name="expert_mode_prerelease_notice">Þessi uppspretta er með forútgáfuplástra. Plástrun getur mistekist eða hegðað sér óvænt.</string>
-    <string name="expert_mode_experimental_version_notice">Þessi uppspretta hefur aðeins tilraunastöðu fyrir þessa útgáfu af forritinu. Pötsunir hennar gætu verið óstöðugar eða ófullkomnar</string>
+    <string name="expert_mode_unstable_notice">Forútgáfu- eða tilraunauppfærslur gætu verið óstöðugar</string>
     <string name="sources_management_experimental_versions_toggle">Tilrauna app úgáfur</string>
     <string name="sources_management_experimental_versions_toggle_description">Sýnir og lagar tilraunamarkmið forrita</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadata N/A</string>
     <string name="sources_management_metadata_unavailable_hint">Fjarlæg metadata skráin er ófær. Pökkun með uppsetta pakkann virkar enn, en sjálfvirk uppfærsla er óvirkjuð fyrir þessa uppsprettu</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Ekki tókst að sækja pakkann. URL uppsprettan gæti verið röng eða skráin er ekki til</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Gat ekki sótt uppfærsluguðja. Uppruna-URL gæti verið rangt eða skráin sé ekki til. Ýttu til að breyta því</string>
     <string name="sources_management_outdated_manager_badge">Uppféra Morphe</string>
     <string name="sources_management_outdated_manager_hint">Ðetta uppspretta er á byggð fyrir flík %1$s, en Morphe %2$s inniheldur flík %3$s. Uppféra Morphe til að nota éð.</string>
     <string name="sources_management_held_back_badge">Hrundi</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Nafn</string>
     <string name="sources_dialog_rename">Endurnefna heimild breytistillinga</string>
+    <string name="sources_dialog_change_url">Breyttu stað þar sem uppfærsluguðja eru sýndir frá</string>
     <string name="sources_dialog_duplicate_name_error">Heimild breytistillinga með þessu nafn er þegar til</string>
     <string name="sources_dialog_missing_error">Ekki tókst að uppfæra þessa pakkagjafa</string>
     <string name="sources_dialog_add_source">Bæta við heimild breytistillingum</string>
@@ -354,10 +355,10 @@ Veldu hvaðan skal sækja APK þess"</string>
     <string name="expert_mode_enable_all_universal_pending">Ýttu aftur til að fá algilda plástra</string>
     <string name="expert_mode_universal_all_warning_title">Virkja alla alhliða plástra?</string>
     <string name="expert_mode_universal_all_warning_message">Alhliða plástrar eru ekki prófaðir saman. Að virkja alla í einu getur valdið árekstrum, mistekinni plástrun eða hruni.</string>
-    <string name="expert_mode_reset_to_default">Virkja mæltu breytingar</string>
+    <string name="expert_mode_recommended">Tillögur við bætingar</string>
     <string name="expert_mode_reset_to_default_done">Mæltu breytingarnar notaðar</string>
     <string name="expert_mode_selected_count">%1$s af %2$s valdir</string>
-    <string name="expert_mode_restore_saved">Endurheimta valda</string>
+    <string name="expert_mode_saved_selection">Vistað val</string>
     <string name="expert_mode_restore_saved_done">Geymt val endurheimt</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Engar samsvarandi breytingar í þessum pakka</string>
     <string name="expert_mode_no_results">Engar breytistillingar fundust</string>

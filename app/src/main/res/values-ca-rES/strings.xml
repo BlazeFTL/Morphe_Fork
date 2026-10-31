@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Rebre accés anticipat a noves versions experimentals de pegats</string>
     <string name="sources_prerelease_warning_title">Habilitar els pegats de pre-llançament?</string>
     <string name="sources_prerelease_warning_message">Les versions de pre-llançament encara estan en desenvolupament. Els pegats poden fallar o bloquejar l\'aplicació, i les funcions poden canviar sense avisar</string>
-    <string name="expert_mode_prerelease_notice">Aquesta font utilitza pegats de pre-llançament. El pegat pot fallar o comportar-se de manera inesperada</string>
-    <string name="expert_mode_experimental_version_notice">Aquesta font només té suport experimental per a aquesta versió de l\'aplicació. Els seus patxes poden ser inestables o incompletos</string>
+    <string name="expert_mode_unstable_notice">Els patchs pre-llançament o experimentals poden ser inestables</string>
     <string name="sources_management_experimental_versions_toggle">Versions experimentals de l\'aplicació</string>
     <string name="sources_management_experimental_versions_toggle_description">Mostra i aplica patxes a objectius d\'aplicacions experimentals</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metadades N/A</string>
     <string name="sources_management_metadata_unavailable_hint">El fitxer de metadades remot no està disponible. El pegat amb el paquet instal·lat segueix funcionant, però l\'actualització automàtica està desactivada per a aquesta font</string>
     <string name="sources_management_metadata_unavailable_hint_missing">No s\'ha pogut descarregar el paquet del pegat. La URL de la font pot ser incorrecta o el fitxer no existeix</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">No s\'ha pogut descarregar el paquet de patchs. És possible que l\'URL de origen sigui incorrecta o que el fitxer no existeixi. Toqueu per canviar-la</string>
     <string name="sources_management_outdated_manager_badge">Actualitza Morphe</string>
     <string name="sources_management_outdated_manager_hint">Aquesta font s\'ha creat per al patcher %1$s, però Morphe %2$s inclou el patcher %3$s. Actualitza Morphe per utilitzar-la</string>
     <string name="sources_management_held_back_badge">Tancament inesperat</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Nom mostrat</string>
     <string name="sources_dialog_rename">Canviar la font del pegat</string>
+    <string name="sources_dialog_change_url">Canvia l\'origen de descàrrega del patch</string>
     <string name="sources_dialog_duplicate_name_error">Una font de pegats amb aquest nom ja existeix</string>
     <string name="sources_dialog_missing_error">No s\'ha pogut actualitzar aquesta font del patch</string>
     <string name="sources_dialog_add_source">Afegeix la font del pegat</string>
@@ -354,10 +355,8 @@ Tria d'on voler agafar l'APK"</string>
     <string name="expert_mode_enable_all_universal_pending">Toca de nou per als patxes universals</string>
     <string name="expert_mode_universal_all_warning_title">Habilitar tots els pegats universals?</string>
     <string name="expert_mode_universal_all_warning_message">Els pegats universals no estan provats conjuntament. Habilitar-los tots a la vegada pot causar conflictes, falls en el pegat o tancaments inesperats</string>
-    <string name="expert_mode_reset_to_default">Activa els pegats recomanats</string>
     <string name="expert_mode_reset_to_default_done">Pegats recomanats aplicats</string>
     <string name="expert_mode_selected_count">%1$s de %2$s seleccionats</string>
-    <string name="expert_mode_restore_saved">Restaura la selecció desada</string>
     <string name="expert_mode_restore_saved_done">Selecció guardada restaurada</string>
     <string name="expert_mode_copy_from_bundle_no_patches">No hi ha patchs corresponents en aquest paquet</string>
     <string name="expert_mode_no_results">No s\'han trobat mosaics</string>

@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Saab varajase juuripääsu uute eksperimentaalsete paigade versioonideni</string>
     <string name="sources_prerelease_warning_title">Kas lubada eelväljalaskuse paigandused?</string>
     <string name="sources_prerelease_warning_message">Eelväljalaskuse versioonid on veel arendamisel. Paigandused võivad ebaõnnestuda või rakendust rikkuda ning funktsioonid võivad muutuda ilma eelteatuse%</string>
-    <string name="expert_mode_prerelease_notice">See allikas on eelväljalaskmise lappidega. Lappimine võib ebaõnnestuda või toimida ootamatult</string>
-    <string name="expert_mode_experimental_version_notice">Selle allikaga on selle rakenduse versiooni puhul vaid eksperimentaalne tugi. Selle paigad võivad olla ebastabiilsed või mittetäielikud</string>
+    <string name="expert_mode_unstable_notice">Eelväljalaskused või eksperimentaalsed paigutused võivad olla ebastabiilsed</string>
     <string name="sources_management_experimental_versions_toggle">Rakenduse eksperimentaalsed versioonid</string>
     <string name="sources_management_experimental_versions_toggle_description">Kuvab ja paigutab eksperimentaalseid rakendussigandeid</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metandandmed puuduvad</string>
     <string name="sources_management_metadata_unavailable_hint">Kaugmetandandmete fail puudub. Paastamine installitud paketiga toimib endiselt, kuid selle allika jaoks on automaatne värskendus keelatud</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Paastipaketti ei õnnestunud alla laadida. Allika URL võib olla vale või fail ei eksisteeri</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Paigutuskogumit ei õnnestunud alla laadida. Allika-URL võib olla vale või faili ei eksisteeri. Muutmiseks puudutage</string>
     <string name="sources_management_outdated_manager_badge">Uuenda Morphet</string>
     <string name="sources_management_outdated_manager_hint">See allikas on loodud plaastija versioonile %1$s, kuid Morphe %2$s sisaldab plaastijat %3$s. Selle kasutamiseks uuenda Morphet</string>
     <string name="sources_management_held_back_badge">Crashitud</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Kuvanimi</string>
     <string name="sources_dialog_rename">Nimeks patchi allika ümbernimetamine</string>
+    <string name="sources_dialog_change_url">Muuda paigutusallika allalaadimiskoha</string>
     <string name="sources_dialog_duplicate_name_error">Selle nimega patchi allikas on juba olemas</string>
     <string name="sources_dialog_missing_error">Selle patchi allikat ei õnnestunud uuendada</string>
     <string name="sources_dialog_add_source">Lisa patchi allikas</string>
@@ -354,9 +355,8 @@ Valige, kust selle APK võtta"</string>
     <string name="expert_mode_enable_all_universal_pending">Universaalsete paigutuste jaoks puudutage uuesti</string>
     <string name="expert_mode_universal_all_warning_title">Kas aktiveerida kõik universaalsed lapid?</string>
     <string name="expert_mode_universal_all_warning_message">Universaalseid lappe ei ole koos testitud. Kõigi nende korraga aktiveerimine võib põhjustada konflikte, lappimise ebaõnnestumist või rakenduse kokkujärgemist</string>
-    <string name="expert_mode_reset_to_default">Luba soovitatud paigad</string>
     <string name="expert_mode_reset_to_default_done">Soovitatud paigad on rakendatud</string>
-    <string name="expert_mode_restore_saved">Taasta salvestatud valik</string>
+    <string name="expert_mode_selected_count">Valitud %1$s / %2$s</string>
     <string name="expert_mode_restore_saved_done">Salvestatud valik on taastatud</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Selle paketist ei leidu sobivaid plaastreid</string>
     <string name="expert_mode_no_results">Plaastreid ei leitud</string>

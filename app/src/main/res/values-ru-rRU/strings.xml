@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Получает ранний доступ к новым экспериментальным версиям патча</string>
     <string name="sources_prerelease_warning_title">Включить предварительные патчи?</string>
     <string name="sources_prerelease_warning_message">Предварительные сборки всё ещё в разработке. Патчи могут не сработать или сломать приложение, а функции могут меняться без предупреждения</string>
-    <string name="expert_mode_prerelease_notice">Этот источник использует предварительные патчи. Патчи могут не сработать или работать некорректно</string>
-    <string name="expert_mode_experimental_version_notice">Этот источник имеет только экспериментальную поддержку для данной версии приложения. Его патчи могут быть нестабильными или неполными</string>
+    <string name="expert_mode_unstable_notice">Предрелизные или экспериментальные патчи могут быть нестабильными</string>
     <string name="sources_management_experimental_versions_toggle">Экспериментальные версии приложений</string>
     <string name="sources_management_experimental_versions_toggle_description">Показывает и исправляет экспериментальные целевые приложения</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Метаданные недоступны</string>
     <string name="sources_management_metadata_unavailable_hint">Удаленный файл метаданных недоступен. Применение патча к установленному пакету по-прежнему работает, но автоматическое обновление для этого источника отключено</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Не удалось загрузить пакет патчей. URL-адрес источника может быть указан неверно или файл не существует</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Не удалось загрузить пакет патчей. Возможно, URL источника неверен или файл не существует. Нажмите, чтобы изменить это</string>
     <string name="sources_management_outdated_manager_badge">Обновить Morphe</string>
     <string name="sources_management_outdated_manager_hint">Этот источник собран для патчера %1$s, но Morphe %2$s включает патчер %3$s. Обновите Morphe, чтобы использовать его</string>
     <string name="sources_management_held_back_badge">Сбой</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Отображаемое имя</string>
     <string name="sources_dialog_rename">Переименовать источник патча</string>
+    <string name="sources_dialog_change_url">Изменение места загрузки исходного кода патча</string>
     <string name="sources_dialog_duplicate_name_error">Источник патча с таким названием уже существует</string>
     <string name="sources_dialog_missing_error">Не удалось обновить этот источник патча</string>
     <string name="sources_dialog_add_source">Добавить источник патча</string>
@@ -354,10 +355,10 @@
     <string name="expert_mode_enable_all_universal_pending">Нажмите еще раз для универсальных патчей</string>
     <string name="expert_mode_universal_all_warning_title">Включить все универсальные патчи?</string>
     <string name="expert_mode_universal_all_warning_message">Универсальные патчи не тестировались вместе. Включение всех одновременно может вызвать конфликты, ошибки патчинга или краши</string>
-    <string name="expert_mode_reset_to_default">Включить рекомендованные патчи</string>
+    <string name="expert_mode_recommended">Рекомендуемые патчи</string>
     <string name="expert_mode_reset_to_default_done">Рекомендуемые патчи применены</string>
     <string name="expert_mode_selected_count">Выбрано %1$s из %2$s</string>
-    <string name="expert_mode_restore_saved">Восстановить сохраненный выбор</string>
+    <string name="expert_mode_saved_selection">Сохраненный выбор</string>
     <string name="expert_mode_restore_saved_done">Восстановленный сохраненный выбор</string>
     <string name="expert_mode_copy_from_bundle_no_patches">В этом пакете нет подходящих патчей</string>
     <string name="expert_mode_no_results">Патчи не найдены</string>

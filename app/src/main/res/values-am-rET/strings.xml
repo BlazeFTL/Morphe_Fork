@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">ለአዳዲስ የሙከራ ፓች ስሪቶች ቀድሞ የማግኘት መብት ያገኛል</string>
     <string name="sources_prerelease_warning_title">ከይፋዊ విడుታ በፊት ያሉ ፓቾችን ማብራት?</string>
     <string name="sources_prerelease_warning_message">ከይፋዊ విడుታ በፊት ያሉ ግንባታዎች አሁንም በልማት ላይ ናቸው። ፓቾች ሊበላሹ ወይም መተግበሪያውን ሊያበላሹ ይችላሉ፣ እና ባህሪያት ያለ ማስጠንቀቂያ ሊለወጡ ይችላሉ</string>
-    <string name="expert_mode_prerelease_notice">ይህ ምንጭ ከይፋዊ విడుታ በፊት ባሉ ፓቾች ላይ ነው። ፓች ማድረግ ሊወድቅ ወይም ያልተጠበቀ ባህሪ ሊያሳይ ይችላል</string>
-    <string name="expert_mode_experimental_version_notice">ይህ ምንጭ ለዚህ የአፕሊኬሽን ስሪት የሙከራ ድጋፍ ብቻ አለው። ፓቾቹ የማይረግቡ ወይም ያልተሟሉ ሊሆኑ ይችላሉ</string>
+    <string name="expert_mode_unstable_notice">ከይፋዊ መልቀቂያ በፊት የሚወጡ ወይም የሙከራ ፓቾች ያልተረጋጉ ሊሆኑ ይችላሉ</string>
     <string name="sources_management_experimental_versions_toggle">የሙከራ መተግበሪያ ስሪቶች</string>
     <string name="sources_management_experimental_versions_toggle_description">የሙከራ መተግበሪያ ኢላማዎችን ያሳያል እንዲሁም ይጠግናል</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">ሜታዳታ አይገኝም</string>
     <string name="sources_management_metadata_unavailable_hint">የርቀት ሜታዳታ ፋይሉ አይገኝም። ከተጫነው ባንድል ጋር ፓች ማድረግ አሁንም ይሰራል፣ ነገር ግን ለዚህ ምንጭ አውቶ-አፕዴት ተዘግቷል</string>
     <string name="sources_management_metadata_unavailable_hint_missing">የፓች ባንድሉን ማውረድ አልተቻለም። የምንጭ URL ስህተት ሊሆን ይችላል ወይም ፋይሉ የለም</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">የፓች ባንድሉ ሊወርድ አልቻለም። የምንጩ URL ስህተት ሊሆን ይችላል ወይም ፋይሉ የለም። ለመቀየር ይጫኑ</string>
     <string name="sources_management_outdated_manager_badge">Morpheን አዘምን</string>
     <string name="sources_management_outdated_manager_hint">ይህ ምንጭ ለፓቸር %1$s የተገነባ ነው፣ ነገር ግን Morphe %2$s ፓቸር %3$sን ያካትታል። ለመጠቀም Morpheን አዘምን</string>
     <string name="sources_management_held_back_badge">አጋልጧል</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">የሚታይ ስም</string>
     <string name="sources_dialog_rename">የፓች ምንጭን ስም ቀይር</string>
+    <string name="sources_dialog_change_url">የፓች ምንጭ የሚወርድበትን ቦታ ይቀይሩ</string>
     <string name="sources_dialog_duplicate_name_error">በዚህ ስም የተሰየመ የፓች ምንጭ ቀድሞውኑ አለ</string>
     <string name="sources_dialog_missing_error">ይህንን የፓች ምንጭ ማዘመን አልተቻለም</string>
     <string name="sources_dialog_add_source">የፓች ምንጭ አክል</string>
@@ -354,10 +355,8 @@
     <string name="expert_mode_enable_all_universal_pending">ለዩኒቨርሳል ፓቾች እንደገና ይጫኑ</string>
     <string name="expert_mode_universal_all_warning_title">ሁሉንም አጠቃላይ ፓቾች ማብራት?</string>
     <string name="expert_mode_universal_all_warning_message">አጠቃላይ ፓቾች አብረው አልተሞከሩም። ሁሉንም በአንድ ጊዜ ማብራት ግጭቶችን፣ የፓች ውድቀትን ወይም መተግበሪያው እንዲዘጋ ሊያደርግ ይችላል</string>
-    <string name="expert_mode_reset_to_default">የሚመከሩ ፓቾችን ያብሩ</string>
     <string name="expert_mode_reset_to_default_done">የሚመከሩት ፓቾች ተተግብረዋል</string>
     <string name="expert_mode_selected_count">%2$s ውስጥ %1$s ተመርጧል</string>
-    <string name="expert_mode_restore_saved">የተቀመጠውን ምርጫ መልስ</string>
     <string name="expert_mode_restore_saved_done">የተቀመጠው ምርጫ ተመልሷል</string>
     <string name="expert_mode_copy_from_bundle_no_patches">በዚህ ባንድል ውስጥ የሚዛመዱ ፓቾች የሉም</string>
     <string name="expert_mode_no_results">ምንም ፓቾች አልተገኙም</string>

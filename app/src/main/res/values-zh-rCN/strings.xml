@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">接收新实验性补丁版本的早期访问权限</string>
     <string name="sources_prerelease_warning_title">启用预发布补丁？</string>
     <string name="sources_prerelease_warning_message">预发布版本仍在开发中。补丁可能导致应用崩溃或行为异常，且功能可能随时更改，恕不另行通知。</string>
-    <string name="expert_mode_prerelease_notice">此源使用预发布补丁。应用可能崩溃或出现意外行为。</string>
-    <string name="expert_mode_experimental_version_notice">此来源对该应用版本仅提供实验性支持。其补丁可能不稳定或不完整</string>
+    <string name="expert_mode_unstable_notice">预发布或实验性补丁可能不稳定</string>
     <string name="sources_management_experimental_versions_toggle">实验版应用版本</string>
     <string name="sources_management_experimental_versions_toggle_description">显示并修补实验性应用目标</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">元数据不可用</string>
     <string name="sources_management_metadata_unavailable_hint">远程元数据文件不可用。使用已安装的程序包进行修补仍然有效，但此源的自动更新已禁用</string>
     <string name="sources_management_metadata_unavailable_hint_missing">无法下载补丁包。源URL可能不正确或文件不存在</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">无法下载补丁包。源 URL 可能不正确或文件不存在。点击以更改</string>
     <string name="sources_management_outdated_manager_badge">更新 Morphe</string>
     <string name="sources_management_outdated_manager_hint">此补丁源需要修补器版本 %1$s，而 Morphe %2$s 内置修补器版本为 %3$s 。需要更新 Morphe 才能应用该补丁</string>
     <string name="sources_management_held_back_badge">已崩溃</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">显示名称</string>
     <string name="sources_dialog_rename">重命名补丁配置文件</string>
+    <string name="sources_dialog_change_url">更改补丁源的下载地址</string>
     <string name="sources_dialog_duplicate_name_error">已存在同名的补丁包</string>
     <string name="sources_dialog_missing_error">无法更新此补丁源。</string>
     <string name="sources_dialog_add_source">添加补丁源</string>
@@ -354,10 +355,10 @@
     <string name="expert_mode_enable_all_universal_pending">再次点按以启用通用补丁</string>
     <string name="expert_mode_universal_all_warning_title">启用所有通用补丁？</string>
     <string name="expert_mode_universal_all_warning_message">通用补丁未经全面测试。同时启用可能导致冲突、补丁失败或崩溃。</string>
-    <string name="expert_mode_reset_to_default">启用推荐补丁</string>
+    <string name="expert_mode_recommended">推荐的补丁</string>
     <string name="expert_mode_reset_to_default_done">已应用推荐补丁</string>
     <string name="expert_mode_selected_count">%2$s人中以选择%1$s</string>
-    <string name="expert_mode_restore_saved">还原已保存的选择</string>
+    <string name="expert_mode_saved_selection">已保存的选项</string>
     <string name="expert_mode_restore_saved_done">已保存的选择已恢复</string>
     <string name="expert_mode_copy_from_bundle_no_patches">此包中没有匹配的补丁</string>
     <string name="expert_mode_no_results">未找到修补的应用</string>

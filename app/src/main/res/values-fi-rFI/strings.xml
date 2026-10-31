@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Saat uusien kokeellisten lisäosaversioiden ennakkopääsyn</string>
     <string name="sources_prerelease_warning_title">Ota käyttöön esijulkaisupatchit?</string>
     <string name="sources_prerelease_warning_message">Esijulkaisuversiot ovat vielä kehitysvaiheessa. Patchit voivat epäonnistua tai rikkoa sovelluksen, ja ominaisuudet voivat muuttua ilman varoitusta</string>
-    <string name="expert_mode_prerelease_notice">Tämä lähde on esijulkaisussa. Patchaaminen voi epäonnistua tai toimia odottamattomasti</string>
-    <string name="expert_mode_experimental_version_notice">Tällä lähteellä on vain kokeellinen tuki tälle sovellusversiolle. Sen päivitykset voivat olla epävakaita tai puutteellisia</string>
+    <string name="expert_mode_unstable_notice">Esijulkaisun tai kokeelliset lisäosat voivat olla epävakaita</string>
     <string name="sources_management_experimental_versions_toggle">Kokeelliset sovellusversiot</string>
     <string name="sources_management_experimental_versions_toggle_description">Näyttää ja korjaa kokeellisia sovelluksen kohteita</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Metatietoja ei ole saatavilla</string>
     <string name="sources_management_metadata_unavailable_hint">Etämetatietotiedosto ei ole saatavilla. Muokkaaminen asennetulla lisäosapaketilla onnistuu edelleen, mutta automaattinen päivitys on poistettu käytöstä tässä lähteessä</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Lisäosapaketin lataaminen epäonnistui. Lähteen URL-osoite saattaa olla virheellinen tai tiedostoa ei ole olemassa</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Lisäosapaketin lataaminen epäonnistui. Lähteen URL-osoite saattaa olla virheellinen tai tiedostoa ei ole olemassa. Napauta muuttaaksesi sitä</string>
     <string name="sources_management_outdated_manager_badge">Päivitä Morphe</string>
     <string name="sources_management_outdated_manager_hint">Tämä lähde on rakennettu päivitysohjelmalle %1$s, mutta Morphe %2$s sisältää päivitysohjelman %3$s. Päivitä Morphe käyttämään sitä.</string>
     <string name="sources_management_held_back_badge">Kaatui</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Näkyvä nimi</string>
     <string name="sources_dialog_rename">Nimeä lisäosien lähde uudelleen</string>
+    <string name="sources_dialog_change_url">Muuta osoite, josta lisäosan lähde ladataan</string>
     <string name="sources_dialog_duplicate_name_error">Tämän niminen lisäosien lähde on jo olemassa</string>
     <string name="sources_dialog_missing_error">Tämän lisäosien lähteen päivitys epäonnistui</string>
     <string name="sources_dialog_add_source">Lisää lisäosien lähde</string>
@@ -354,10 +355,10 @@ Valitse, mistä sen APK haetaan"</string>
     <string name="expert_mode_enable_all_universal_pending">Napauta uudelleen ottaaksesi universaalit korjaukset käyttöön</string>
     <string name="expert_mode_universal_all_warning_title">Ota käyttöön kaikki universaalipatchit?</string>
     <string name="expert_mode_universal_all_warning_message">Universaalipatchit eivät ole testattuja yhdessä. Kaikkien käyttöönotto kerralla voi aiheuttaa ristiriitoja, epäonnistuneita patchauksia tai kaatumisia</string>
-    <string name="expert_mode_reset_to_default">Ota suositellut lisäosat käyttöön</string>
+    <string name="expert_mode_recommended">Suositellut korjaukset</string>
     <string name="expert_mode_reset_to_default_done">Suositellut korjaukset asennettu</string>
     <string name="expert_mode_selected_count">%1$s kpl %2$s valittu</string>
-    <string name="expert_mode_restore_saved">Palauta tallennettu valinta</string>
+    <string name="expert_mode_saved_selection">Tallennettu valinta</string>
     <string name="expert_mode_restore_saved_done">Tallennusvalinta palautettu</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Tästä paketista ei löytynyt vastaavia korjauksia</string>
     <string name="expert_mode_no_results">Lisäosia ei löytynyt</string>

@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">دسترسی زودهنگام به نسخه‌های آزمایشی جدید پچ را فراهم می‌کند</string>
     <string name="sources_prerelease_warning_title">پچ‌های پیش‌انتشار فعال شوند؟</string>
     <string name="sources_prerelease_warning_message">نسخه‌های پیش‌انتشار هنوز در حال توسعه‌اند. ممکن است پچ‌ها شکست بخورند یا برنامه را خراب کنند و ویژگی‌ها بدون هشدار تغییر کنند</string>
-    <string name="expert_mode_prerelease_notice">این منبع از پچ‌های پیش‌انتشار استفاده می‌کند. ممکن است پچ‌کردن شکست بخورد یا رفتاری غیرمنتظره داشته باشد</string>
-    <string name="expert_mode_experimental_version_notice">این منبع برای این نسخه از برنامه فقط دارای پشتیبانی آزمایشی است. وصله‌های آن ممکن است ناپایدار یا ناقص باشند</string>
+    <string name="expert_mode_unstable_notice">پچ‌های پیش‌انتشار یا آزمایشی ممکن است ناپایدار باشند</string>
     <string name="sources_management_experimental_versions_toggle">نسخه‌های آزمایشی برنامه</string>
     <string name="sources_management_experimental_versions_toggle_description">هدف‌های آزمایشی برنامه را نشان می‌دهد و پچ می‌کند</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">فراداده در دسترس نیست</string>
     <string name="sources_management_metadata_unavailable_hint">فایل فرادادهٔ راه دور در دسترس نیست. پچ‌کردن با بستهٔ نصب‌شده همچنان کار می‌کند، اما به‌روزرسانی خودکار برای این منبع غیرفعال است</string>
     <string name="sources_management_metadata_unavailable_hint_missing">بستهٔ پچ قابل دانلود نیست. ممکن است نشانی منبع نادرست باشد یا فایل وجود نداشته باشد</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">بستهٔ پچ قابل دانلود نیست. ممکن است نشانی منبع نادرست باشد یا فایل وجود نداشته باشد. برای تغییر آن ضربه بزنید</string>
     <string name="sources_management_outdated_manager_badge">به‌روزرسانی Morphe</string>
     <string name="sources_management_outdated_manager_hint">این منبع برای پچر %1$s ساخته شده است، اما Morphe %2$s شامل پچر %3$s است. برای استفاده از آن، Morphe را به‌روز کنید</string>
     <string name="sources_management_held_back_badge">از کار افتاد</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">نام نمایشی</string>
     <string name="sources_dialog_rename">تغییر نام منبع پچ</string>
+    <string name="sources_dialog_change_url">تغییر محل دانلود منبع پچ</string>
     <string name="sources_dialog_duplicate_name_error">یک منبع پچ با این نام قبلا وجود دارد</string>
     <string name="sources_dialog_missing_error">نتوانستم منبع این پچ را به روزرسانی کنم</string>
     <string name="sources_dialog_add_source">افزودن منبع پچ</string>
@@ -354,10 +355,10 @@
     <string name="expert_mode_enable_all_universal_pending">برای پچ‌های همگانی دوباره ضربه بزنید</string>
     <string name="expert_mode_universal_all_warning_title">همهٔ پچ‌های همگانی فعال شوند؟</string>
     <string name="expert_mode_universal_all_warning_message">پچ‌های همگانی در کنار یکدیگر آزمایش نشده‌اند. فعال‌کردن همهٔ آن‌ها به‌صورت هم‌زمان ممکن است باعث تداخل، شکست پچ‌کردن یا از کار افتادن برنامه شود</string>
-    <string name="expert_mode_reset_to_default">فعال‌کردن پچ‌های پیشنهادی</string>
+    <string name="expert_mode_recommended">پچ‌های پیشنهادی</string>
     <string name="expert_mode_reset_to_default_done">پچ‌های پیشنهادی اعمال شدند</string>
     <string name="expert_mode_selected_count">%1$s از %2$s انتخاب شده است</string>
-    <string name="expert_mode_restore_saved">بازیابی انتخاب ذخیره‌شده</string>
+    <string name="expert_mode_saved_selection">انتخاب ذخیره شده</string>
     <string name="expert_mode_restore_saved_done">انتخاب ذخیره‌شده بازیابی شد</string>
     <string name="expert_mode_copy_from_bundle_no_patches">پچ منطبقی در این بسته وجود ندارد</string>
     <string name="expert_mode_no_results">هیچ پچی یافت نشد</string>

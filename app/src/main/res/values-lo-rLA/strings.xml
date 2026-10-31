@@ -198,8 +198,6 @@
     <string name="sources_management_prerelease_toggle_description">ໄດ້ຮັບສິດເຂົ້າເຖິງເວີຊັນຊຸດແພດທົດລອງໃໝ່ກ່ອນໄວ</string>
     <string name="sources_prerelease_warning_title">ເປີດໃຊ້ແພັດຊ໌ເວີຊັນກ່ອນປ່ອຍຕົວບໍ?</string>
     <string name="sources_prerelease_warning_message">ບິວເວີຊັນກ່ອນປ່ອຍຕົວຍັງຢູ່ໃນຂັ້ນຕອນການພັດທະນາ. ການແພັດຊ໌ອາດຈະລົ້ມເຫຼວ ຫຼື ເຮັດໃຫ້ແອັບໃຊ້ງານບໍ່ໄດ້, ແລະ ຄຸນສົມບັດຕ່າງໆອາດມີການປ່ຽນແປງໂດຍບໍ່ມີການແຈ້ງລ່ວງໜ້າ</string>
-    <string name="expert_mode_prerelease_notice">ແຫຼ່ງຂໍ້ມູນນີ້ໃຊ້ແພັດຊ໌ເວີຊັນກ່ອນປ່ອຍຕົວ. ການແພັດຊ໌ອາດຈະລົ້ມເຫຼວ ຫຼື ເຮັດວຽກຜິດປົກກະຕິ</string>
-    <string name="expert_mode_experimental_version_notice">ແຫຼ່ງຂໍ້ມູນນີ້ມີພຽງການສະໜັບສະໜູນແບບທົດລອງສຳລັບເວີຊັນຂອງແອັບນີ້. ການປັບປຸງຂອງມັນອາດຈະບໍ່ຄົງທີ່ ຫຼື ບໍ່ສົມບູນ</string>
     <string name="sources_management_experimental_versions_toggle">ເວີຊັນແອັບທົດລອງ</string>
     <string name="sources_management_experimental_versions_toggle_description">ສະແດງ ແລະ ແພັດຊ໌ເປົ້າໝາຍແອັບທົດລອງ</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -354,10 +352,8 @@
     <string name="expert_mode_enable_all_universal_pending">ແຕະອີກຄັ້ງ ສຳລັບ universal patches</string>
     <string name="expert_mode_universal_all_warning_title">ເປີດໃຊ້ແພັດຊ໌ສາກົນທັງໝົດບໍ?</string>
     <string name="expert_mode_universal_all_warning_message">ແພັດຊ໌ສາກົນບໍ່ໄດ້ຖືກທົດສອບຮ່ວມກັນ. ການເປີດໃຊ້ທັງໝົດພ້ອມກັນອາດເຮັດໃຫ້ເກີດຄວາມຂັດແຍ່ງ, ການແພັດຊ໌ລົ້ມເຫຼວ ຫຼື ແອັບປິດໂຕເອງ</string>
-    <string name="expert_mode_reset_to_default">ເປີດໃຊ້ຊຸດແພດທີ່ແນະນຳ</string>
     <string name="expert_mode_reset_to_default_done">ນຳໃຊ້ຊຸດແພດທີ່ແນະນຳແລ້ວ</string>
     <string name="expert_mode_selected_count">ເລືອກແລ້ວ %1$s ຈາກ %2$s</string>
-    <string name="expert_mode_restore_saved">ກູ້ຄືນການເລືອກທີ່ບັນທຶກໄວ້</string>
     <string name="expert_mode_restore_saved_done">ກູ້ຄືນການເລືອກທີ່ບັນທຶກໄວ້ແລ້ວ</string>
     <string name="expert_mode_copy_from_bundle_no_patches">ບໍ່ມີ patch ທີ່ກົງກັນໃນບັນດິລນີ້</string>
     <string name="expert_mode_no_results">ບໍ່ພົບຊຸດແພດ</string>

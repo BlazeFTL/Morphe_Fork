@@ -198,8 +198,7 @@
     <string name="sources_management_prerelease_toggle_description">Trải nghiệm sớm các bản vá thử nghiệm mới</string>
     <string name="sources_prerelease_warning_title">Bật các bản vá trước khi phát hành?</string>
     <string name="sources_prerelease_warning_message">Các bản dựng trước khi phát hành vẫn đang trong quá trình phát triển. Các bản vá có thể thất bại hoặc làm hỏng ứng dụng, và các tính năng có thể thay đổi mà không có cảnh báo</string>
-    <string name="expert_mode_prerelease_notice">Nguồn này đang sử dụng các bản vá trước khi phát hành. Việc vá có thể thất bại hoặc hoạt động không như mong đợi</string>
-    <string name="expert_mode_experimental_version_notice">Nguồn này chỉ có hỗ trợ thử nghiệm cho phiên bản ứng dụng này. Các bản vá của nó có thể không ổn định hoặc không đầy đủ</string>
+    <string name="expert_mode_unstable_notice">Các bản vá tiền phát hành hoặc thử nghiệm có thể không ổn định</string>
     <string name="sources_management_experimental_versions_toggle">Phiên bản ứng dụng thử nghiệm</string>
     <string name="sources_management_experimental_versions_toggle_description">Hiển thị và vá các mục tiêu ứng dụng thử nghiệm</string>
     <!-- Actions of the panel for several selected sources at once -->
@@ -214,6 +213,7 @@
     <string name="sources_management_metadata_unavailable">Không có metadata</string>
     <string name="sources_management_metadata_unavailable_hint">Không thể truy cập tệp metadata từ máy chủ. Bạn vẫn có thể vá bằng gói ứng dụng đã cài, nhưng tính năng tự động cập nhật sẽ bị tắt cho nguồn này</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Không thể tải gói vá. URL nguồn có thể không đúng hoặc file không tồn tại</string>
+    <string name="sources_management_metadata_unavailable_hint_missing_editable">Không thể tải gói vá. URL nguồn có thể không đúng hoặc file không tồn tại. Nhấn để thay đổi</string>
     <string name="sources_management_outdated_manager_badge">Cập nhật Morphe</string>
     <string name="sources_management_outdated_manager_hint">Nguồn vá này được xây dựng cho trình vá %1$s, nhưng Morphe %2$s chỉ có trình vá %3$s. Hãy cập nhật Morphe để sử dụng nguồn vá này</string>
     <string name="sources_management_held_back_badge">Đã sập</string>
@@ -227,6 +227,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Tên hiển thị</string>
     <string name="sources_dialog_rename">Đổi tên nguồn vá</string>
+    <string name="sources_dialog_change_url">Thay đổi nơi tải xuống nguồn gói vá</string>
     <string name="sources_dialog_duplicate_name_error">Đã tồn tại nguồn vá có tên này rồi</string>
     <string name="sources_dialog_missing_error">Không thể cập nhật nguồn vá này</string>
     <string name="sources_dialog_add_source">Thêm nguồn vá</string>
@@ -354,10 +355,10 @@ Chọn nơi lấy tệp APK của nó"</string>
     <string name="expert_mode_enable_all_universal_pending">Chạm lần nữa để dùng bản vá phổ quát</string>
     <string name="expert_mode_universal_all_warning_title">Bật tất cả các bản vá phổ quát?</string>
     <string name="expert_mode_universal_all_warning_message">Các bản vá phổ quát không được kiểm tra cùng nhau. Bật tất cả chúng cùng lúc có thể gây ra xung đột, vá thất bại hoặc treo máy</string>
-    <string name="expert_mode_reset_to_default">Bật các bản vá đề xuất</string>
+    <string name="expert_mode_recommended">Các bản vá được đề xuất</string>
     <string name="expert_mode_reset_to_default_done">Đã áp dụng các bản vá đề xuất</string>
     <string name="expert_mode_selected_count">Đã chọn %1$s/%2$s</string>
-    <string name="expert_mode_restore_saved">Khôi phục lựa chọn đã lưu</string>
+    <string name="expert_mode_saved_selection">Lựa chọn đã lưu</string>
     <string name="expert_mode_restore_saved_done">Đã khôi phục bản vá đã chọn</string>
     <string name="expert_mode_copy_from_bundle_no_patches">Không tìm thấy bản vá phù hợp trong gói này</string>
     <string name="expert_mode_no_results">Không tìm thấy bản vá nào</string>
