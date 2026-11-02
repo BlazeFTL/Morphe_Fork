@@ -1,3 +1,31 @@
+## [2.4.0-dev.4](https://github.com/MorpheApp/morphe-manager/compare/v2.4.0-dev.3...v2.4.0-dev.4) (2026-11-01)
+
+### Bug Fixes
+
+* Export the signing key as a password-protected PKCS12 keystore ([ca660e7](https://github.com/MorpheApp/morphe-manager/commit/ca660e7064a72adb0872055e3f5ddf55c2fe38e4))
+
+## [2.4.0-dev.3](https://github.com/MorpheApp/morphe-manager/compare/v2.4.0-dev.2...v2.4.0-dev.3) (2026-11-01)
+
+### Features
+
+* Show download instructions for APKs on GitHub releases ([079c7a0](https://github.com/MorpheApp/morphe-manager/commit/079c7a01007ab2dd2e1558025559fd6249810c11))
+
+### Bug Fixes
+
+* Open link settings on One UI 4 ([a77e840](https://github.com/MorpheApp/morphe-manager/commit/a77e84079de1c1fad00ce69a6b2995aebef77353))
+* Support Shizuku forks such as Shevery 14.6 ([cdde80a](https://github.com/MorpheApp/morphe-manager/commit/cdde80ab4eb459a5edbe79124f7abf41d3d89682))
+* Wait for external installers while they are on screen ([6a1dbd0](https://github.com/MorpheApp/morphe-manager/commit/6a1dbd05d57a55f5fc7a7d4c74e7be264cb123e6))
+
+## [2.4.0-dev.2](https://github.com/MorpheApp/morphe-manager/compare/v2.4.0-dev.1...v2.4.0-dev.2) (2026-11-01)
+
+### Features
+
+* Ask whether to keep the queue when leaving it ([9130ec3](https://github.com/MorpheApp/morphe-manager/commit/9130ec3794bc5816d3d0aa99920e10badc774deb))
+
+### Bug Fixes
+
+* Keep every source in the run unless a version was picked by hand ([64e3beb](https://github.com/MorpheApp/morphe-manager/commit/64e3beb8245318ce8217b30f5dce8619ccf7a417))
+
 ## [2.4.0-dev.1](https://github.com/MorpheApp/morphe-manager/compare/v2.3.0...v2.4.0-dev.1) (2026-10-31)
 
 ### Features
