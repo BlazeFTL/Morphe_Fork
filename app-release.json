@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-02T21:48:48",
-  "description": "## [2.4.0-dev.5](https://github.com/MorpheApp/morphe-manager/compare/v2.4.0-dev.4...v2.4.0-dev.5) (2026-11-02)\n\n### Performance Improvements\n\n* Write the patched APK in one pass ([#1345](https://github.com/MorpheApp/morphe-manager/issues/1345)) ([04e8fa7](https://github.com/MorpheApp/morphe-manager/commit/04e8fa7b67beae719d6aa2696098ba61e4977be2))\n\n### Bug Fixes\n\n* Clear the patching notification once a run ends ([efd050e](https://github.com/MorpheApp/morphe-manager/commit/efd050ed7ab7700f47efb4b987dbba3db7c0cd83))\n* Keep patching and installing in the foreground ([f29c101](https://github.com/MorpheApp/morphe-manager/commit/f29c1018ff0c629ebc3f8bf084226d859523070b))",
-  "download_url": "https://github.com/BlazeFTL/Morphe_Fork/releases/download/v2.4.0-dev.5/MorpheFork-V2.4.0-dev.5.apk",
+  "created_at": "2026-11-03T19:32:58",
+  "description": "## [2.4.0-dev.8](https://github.com/MorpheApp/morphe-manager/compare/v2.4.0-dev.7...v2.4.0-dev.8) (2026-11-03)\n\n### Features\n\n* Show the open-source licenses without AboutLibraries ([3714b88](https://github.com/MorpheApp/morphe-manager/commit/3714b88d16c954cf6fe0b60fa72fbf6c51fa945a))\n\n### Performance Improvements\n\n* Drop AppCompat from the app ([7c86151](https://github.com/MorpheApp/morphe-manager/commit/7c861513b7af827cabefe268fe238551bf3fe95d))\n\n### Bug Fixes\n\n* End the patching Live Update once patching is over ([b7fc871](https://github.com/MorpheApp/morphe-manager/commit/b7fc871d85f146afbdbbd05acd8ead5c5e84cc0c))",
+  "download_url": "https://github.com/BlazeFTL/Morphe_Fork/releases/download/v2.4.0-dev.8/MorpheFork-V2.4.0-dev.8.apk",
   "signature_download_url": "",
-  "version": "2.4.0-dev.5"
+  "version": "2.4.0-dev.8"
 }
