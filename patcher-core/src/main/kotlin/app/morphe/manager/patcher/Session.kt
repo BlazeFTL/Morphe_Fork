@@ -11,6 +11,7 @@
 package app.morphe.manager.patcher
 
 import app.morphe.manager.patcher.logger.Logger
+import app.morphe.manager.util.toLogString
 import app.morphe.patcher.Patcher
 import app.morphe.patcher.PatcherConfig
 import app.morphe.patcher.patch.Patch
@@ -33,7 +34,7 @@ class Session(
     temporaryDir: File,
     workspaceDir: File,
     private val logger: Logger,
-    private val input: File,
+    input: File,
     keepArchitectures: Set<CpuArchitecture>,
     private val listener: PatchingListener
 ) : Closeable {
@@ -56,7 +57,7 @@ class Session(
     private suspend fun Patcher.applyPatchesVerbose(selectedPatches: PatchList) {
         listener.patchesStarted()
 
-        this().collect { (patch, exception) ->
+        this { patch -> listener.patchExecuting(patch.toString()) }.collect { (patch, exception) ->
             if (patch !in selectedPatches) return@collect
 
             if (exception != null) {
@@ -110,8 +111,8 @@ class Session(
         }
 
         logger.info(
-            "Patched apk saved to $output (patch=${patchTime.inWholeMilliseconds}ms " +
-                "compile=${compileTime.inWholeMilliseconds}ms write=${writeTime.inWholeMilliseconds}ms)"
+            "Patched apk saved to $output (patch=${patchTime.toLogString()} " +
+                "compile=${compileTime.toLogString()} write=${writeTime.toLogString()})"
         )
         listener.stepCompleted() // Saving
     }
