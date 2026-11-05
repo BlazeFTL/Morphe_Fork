@@ -284,6 +284,7 @@
     <string name="home_download_instructions_finding">Kufunwa ikhasi lokulandela…</string>
     <string name="home_download_instructions_step1">Cindezela inkinobho ye-\'%s\' ngezansi</string>
     <string name="home_download_instructions_step2_part1">Hlehla phansi ekhasini lewebhu bese ucindezela</string>
+    <string name="home_download_instructions_step2_apkcube">Sula phansi ikhasi lewebhu, khetha uhlobo u&lt;b&gt;%s&lt;/b&gt; bese ucindezela</string>
     <string name="home_download_instructions_step2_generic">Sula phansi ikhasi lewebhu bese ucindezela inkinobho yokudownloada</string>
     <string name="home_download_instructions_step2_variant">Sula phansi ikhasi lewebhu bese ucindezela inkinobho yokudownloada ye-&lt;b&gt;APK variant&lt;/b&gt; yephezulu</string>
     <string name="home_download_instructions_step2_search">Vula imiphumela yokusesha okuvela kuwebhu okwethembayo</string>
@@ -904,6 +905,8 @@ Ama-patch awathintikile: vumela ama-patch angaphambi kokukhishwa kuthumele wonke
     <string name="notification_channel_patch_updates">Izibuyekezo ze-patch</string>
     <string name="notification_channel_patch_updates_description">Izaziso mayelana nokukhipha okusha kwe-patch</string>
     <string name="notification_channel_patcher_description">Kubonakala ngenkathi i-Morphe ipatch-a uhlelo ngokungasemva</string>
+    <string name="notification_channel_patching_results">Imiphumela yokulungisa</string>
+    <string name="notification_channel_patching_results_description">Lapho ukulungisa kuphela noma ukufaka kulindele wena ngenkathi iMorphe isengemuva</string>
     <string name="notification_channel_mounted_apps">Izinhlelo ezifakwe</string>
     <string name="notification_channel_mounted_apps_description">Lapho omunye uhlobo uthathe indawo yohlelo olufakwe futhi i-patch yalo ayisasebenzi</string>
     <string name="notification_mount_replaced_title">%1$s ayisasebenzi i-patch yalo</string>
@@ -1275,6 +1278,7 @@ Imininingwane: %2$s"</string>
     <string name="credits_prior_development">Ukuthuthukiswa kwangaphambilini</string>
     <string name="opensource_licenses">Ama-license we-open-source</string>
     <string name="opensource_licenses_description">Imilayibrari i-Morphe eyakhiwe ngayo</string>
+    <string name="opensource_licenses_search">Sesha imilayibrari namalayisense</string>
     <!-- Easter egg offered after seven taps on the version in the About dialog -->
     <string name="easter_egg_pill_title">Inketho</string>
     <string name="easter_egg_pill_message">Thatha iphali eliluhlaza bese izikhangiso zihlala lapho zikhona. Thatha elibomvu ubone ukuthi i-bytecode ijula kangakanani</string>

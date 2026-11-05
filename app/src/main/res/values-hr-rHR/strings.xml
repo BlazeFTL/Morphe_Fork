@@ -284,6 +284,7 @@
     <string name="home_download_instructions_finding">Pronalaženje stranice za preuzimanje…</string>
     <string name="home_download_instructions_step1">Dodirnite tipku \'%s\' ispod</string>
     <string name="home_download_instructions_step2_part1">Povucite stranicu prema dolje i dodirnite</string>
+    <string name="home_download_instructions_step2_apkcube">Pomaknite se prema dolje na web stranici, odaberite verziju &lt;b&gt;%s&lt;/b&gt; i pritisnite</string>
     <string name="home_download_instructions_step2_generic">Pomaknite se prema dolje po web stranici i dodirnite tipku za preuzimanje</string>
     <string name="home_download_instructions_step2_variant">Pomaknite se prema dolje po web stranici i dodirnite tipku za preuzimanje gornje &lt;b&gt;APK varijante&lt;/b&gt;</string>
     <string name="home_download_instructions_step2_search">Otvorite rezultat pretraživanja s web-stranice kojoj vjerujete</string>
@@ -907,6 +908,8 @@ Patchevi nisu pogođeni: omogućite predizdanja patcheva za svaki izvor na popis
     <string name="notification_channel_patch_updates">Ažuriranja patcheva</string>
     <string name="notification_channel_patch_updates_description">Obavijesti o novim patchevima</string>
     <string name="notification_channel_patcher_description">Prikazuje se dok Morphe patcha aplikaciju u pozadini</string>
+    <string name="notification_channel_patching_results">Rezultati patchanja</string>
+    <string name="notification_channel_patching_results_description">Kada patchanje završi ili instalacija čeka na vas dok je Morphe u pozadini</string>
     <string name="notification_channel_mounted_apps">Montirane aplikacije</string>
     <string name="notification_channel_mounted_apps_description">Kada druga verzija zamijeni učitanu aplikaciju i njezin se patch više ne primjenjuje</string>
     <string name="notification_mount_replaced_title">%1$s više nije patchan</string>
@@ -1278,6 +1281,7 @@ Detalji: %2$s"</string>
     <string name="credits_prior_development">Prijašnji razvoj</string>
     <string name="opensource_licenses">Licence otvorenog koda</string>
     <string name="opensource_licenses_description">Knjižnice na kojima je izgrađen Morphe</string>
+    <string name="opensource_licenses_search">Pretražite knjižnice i licence</string>
     <!-- Easter egg offered after seven taps on the version in the About dialog -->
     <string name="easter_egg_pill_title">Odabir A</string>
     <string name="easter_egg_pill_message">Uzmi plavu pilulu i oglasi će ostati točno tamo gdje jesu. Uzmi crvenu i vidi koliko duboko bajtkod ide.</string>

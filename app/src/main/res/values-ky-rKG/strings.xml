@@ -284,6 +284,7 @@
     <string name="home_download_instructions_finding">Жүктөө баракчасы изделип жатат…</string>
     <string name="home_download_instructions_step1">Төмөндөгү \'%s\' баскычын басыңыз</string>
     <string name="home_download_instructions_step2_part1">Веб-баракчаны төмөн түшүрүп, басыңыз</string>
+    <string name="home_download_instructions_step2_apkcube">Веб-баракчаны төмөн карай жылдырыңыз, &lt;b&gt;%s&lt;/b&gt; версиясын тандаңыз жана басыңыз</string>
     <string name="home_download_instructions_step2_generic">Веб-баракчаны төмөн жылдырып, жүктөө баскычын басыңыз</string>
     <string name="home_download_instructions_step2_variant">Веб-баракчаны төмөн жылдырып, эң жогорку &lt;b&gt;APK вариантынын&lt;/b&gt; жүктөө баскычын басыңыз</string>
     <string name="home_download_instructions_step2_search">Ишенген веб-сайтыңыздан издөө жыйынтыгын ачыңыз</string>
@@ -904,6 +905,8 @@
     <string name="notification_channel_patch_updates">Патч жаңыртуулары</string>
     <string name="notification_channel_patch_updates_description">Жаңы патч версиялары жөнүндө билдирүүлөр</string>
     <string name="notification_channel_patcher_description">Morphe фондо тиркемени патчтап жаткан учурда көрсөтүлөт</string>
+    <string name="notification_channel_patching_results">Патчтоо натыйжалары</string>
+    <string name="notification_channel_patching_results_description">Патчтоо аяктаганда же Morphe фондук режимде жүргөндө орнотуу сизди күткөндө</string>
     <string name="notification_channel_mounted_apps">Орнатылган колдонмолор</string>
     <string name="notification_channel_mounted_apps_description">Орнатылган колдонмо башка версия менен алмашканда жана анын патчы колдонулбай калганда</string>
     <string name="notification_mount_replaced_title">%1$s эми патчтелген эмес</string>
@@ -1275,6 +1278,7 @@ morphe_header_custom_dark.png
     <string name="credits_prior_development">Мурунку иштемелер</string>
     <string name="opensource_licenses">Ачык булак лицензиялары</string>
     <string name="opensource_licenses_description">Morphe түзүлгөн китепканалар</string>
+    <string name="opensource_licenses_search">Китепканаларды жана лицензияларды издөө</string>
     <!-- Easter egg offered after seven taps on the version in the About dialog -->
     <string name="easter_egg_pill_title">Тандоо</string>
     <string name="easter_egg_pill_message">Көк таблетканы ичсеңиз, жарнамалар өз ордунда калат. Кызыл таблетканы ичип, байт-код канчалык терең экенин көрүңүз</string>

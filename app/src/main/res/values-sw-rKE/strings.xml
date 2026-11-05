@@ -284,6 +284,7 @@
     <string name="home_download_instructions_finding">Inatafuta ukurasa wa kupakulia…</string>
     <string name="home_download_instructions_step1">Bonyeza kitufe cha \'%s\' hapo chini</string>
     <string name="home_download_instructions_step2_part1">Shuka chini kwenye ukurasa wa wavuti na ubonyeze</string>
+    <string name="home_download_instructions_step2_apkcube">Shusha ukurasa wa wavuti, chagua toleo &lt;b&gt;%s&lt;/b&gt; na ubonyeze</string>
     <string name="home_download_instructions_step2_generic">Shusha ukurasa wa wavuti na ubonyeze kitufe chake cha kupakua</string>
     <string name="home_download_instructions_step2_variant">Shusha ukurasa wa wavuti na ubonyeze kitufe cha kupakua cha &lt;b&gt;toleo la APK&lt;/b&gt; la juu</string>
     <string name="home_download_instructions_step2_search">Fungua matokeo ya utafutaji kutoka tovuti unayoiamini</string>
@@ -904,6 +905,8 @@ Patch haziaathiriwi: wezesha patch za toleo za awali kwa kila chanzo katika orod
     <string name="notification_channel_patch_updates">Sasisho za patch</string>
     <string name="notification_channel_patch_updates_description">Arifa kuhusu matoleo mapya ya patch</string>
     <string name="notification_channel_patcher_description">Inaonyeshwa wakati Morphe inafanyia programu marekebisho nyuma ya pazia</string>
+    <string name="notification_channel_patching_results">Matokeo ya patching</string>
+    <string name="notification_channel_patching_results_description">Wakati patching inapokwisha au usakinishaji unapokusubiri wakati Morphe ikiwa kwenye background</string>
     <string name="notification_channel_mounted_apps">Programu zilizowekwa</string>
     <string name="notification_channel_mounted_apps_description">Wakati toleo lingine linapobadilisha programu iliyowekwa na patch yake haitumiki tena</string>
     <string name="notification_mount_replaced_title">%1$s haina patch tena</string>
@@ -1275,6 +1278,7 @@ Maelezo: %2$s"</string>
     <string name="credits_prior_development">Uendelezaji wa awali</string>
     <string name="opensource_licenses">Leseni za chanzo cha wazi</string>
     <string name="opensource_licenses_description">Maktaba ambazo Morphe imejengwa nazo</string>
+    <string name="opensource_licenses_search">Tafuta maktaba na leseni</string>
     <!-- Easter egg offered after seven taps on the version in the About dialog -->
     <string name="easter_egg_pill_title">Chaguo</string>
     <string name="easter_egg_pill_message">Meza kidonge cha bluu na matangazo yabaki pale pale yalipo. Meza kidonge cha nyekundu na uone bytecode inaenda ndani kiasi gani</string>

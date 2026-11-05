@@ -284,6 +284,7 @@
     <string name="home_download_instructions_finding">Finder downloadsiden…</string>
     <string name="home_download_instructions_step1">Tryk på \'%s\' knappen nedenfor</string>
     <string name="home_download_instructions_step2_part1">Rul ned på websiden og tryk</string>
+    <string name="home_download_instructions_step2_apkcube">Rul ned på websiden, vælg version &lt;b&gt;%s&lt;/b&gt; og tryk på</string>
     <string name="home_download_instructions_step2_generic">Rul ned på websiden, og tryk på dens downloadknap</string>
     <string name="home_download_instructions_step2_variant">Rul ned på websiden, og tryk på downloadknappen for den øverste &lt;b&gt;APK-variant&lt;/b&gt;</string>
     <string name="home_download_instructions_step2_search">Åbn et søgeresultat fra et websted, som du stoler på</string>
@@ -904,6 +905,8 @@ Patcher er ikke påvirket: aktivér præ-release-patcher for hver kilde i patch-
     <string name="notification_channel_patch_updates">Patch-opdateringer</string>
     <string name="notification_channel_patch_updates_description">Notifikationer om nye patch-udgivelser</string>
     <string name="notification_channel_patcher_description">Vises mens Morphe patcher en app i baggrunden</string>
+    <string name="notification_channel_patching_results">Patch-resultater</string>
+    <string name="notification_channel_patching_results_description">Når patching afsluttes, eller en installation afventer dig, mens Morphe er i baggrunden</string>
     <string name="notification_channel_mounted_apps">Monterede apps</string>
     <string name="notification_channel_mounted_apps_description">Når en anden version har erstattet en monteret app, og dens patch ikke længere gælder</string>
     <string name="notification_mount_replaced_title">%1$s er ikke længere patchet</string>
@@ -1275,6 +1278,7 @@ Detaljer: %2$s"</string>
     <string name="credits_prior_development">Prior development</string>
     <string name="opensource_licenses">Open-source licenser</string>
     <string name="opensource_licenses_description">De biblioteker, Morphe er bygget på</string>
+    <string name="opensource_licenses_search">Søg efter biblioteker og licenser</string>
     <!-- Easter egg offered after seven taps on the version in the About dialog -->
     <string name="easter_egg_pill_title">Et valg</string>
     <string name="easter_egg_pill_message">Tag den blå pille, og reklamerne forbliver præcis, hvor de er. Tag den røde, og se, hvor dybt bytekoden går.</string>

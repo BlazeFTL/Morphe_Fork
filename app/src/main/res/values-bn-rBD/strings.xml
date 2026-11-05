@@ -284,6 +284,7 @@
     <string name="home_download_instructions_finding">ডাউনলোড পেজ খোঁজা হচ্ছে…</string>
     <string name="home_download_instructions_step1">নিচের \'%s\' বোতামটি চাপুন</string>
     <string name="home_download_instructions_step2_part1">ওয়েবপেজটি স্ক্রোল করুন এবং চাপুন</string>
+    <string name="home_download_instructions_step2_apkcube">ওয়েবপেজটি স্ক্রল করে নিচে নামুন, ভার্সন &lt;b&gt;%s&lt;/b&gt; বেছে নিন এবং প্রেস করুন</string>
     <string name="home_download_instructions_step2_generic">ওয়েবপেজে নিচে স্ক্রল করুন এবং এর ডাউনলোড বাটনটি চাপুন</string>
     <string name="home_download_instructions_step2_variant">ওয়েবপেজে নিচে স্ক্রল করুন এবং উপরের <b>APK ভ্যারিয়েন্টের</b> ডাউনলোড বাটনটি চাপুন</string>
     <string name="home_download_instructions_step2_search">আপনি বিশ্বাস করেন এমন একটি ওয়েবসাইট থেকে একটি অনুসন্ধান ফলাফল খুলুন</string>
@@ -904,6 +905,8 @@
     <string name="notification_channel_patch_updates">প্যাচ আপডেট</string>
     <string name="notification_channel_patch_updates_description">নতুন প্যাচ রিলিজ সম্পর্কে বিজ্ঞপ্তি</string>
     <string name="notification_channel_patcher_description">Morphe ব্যাকগ্রাউন্ডে কোনো অ্যাপ প্যাচ করার সময় দেখানো হয়</string>
+    <string name="notification_channel_patching_results">প্যাচিং ফলাফল</string>
+    <string name="notification_channel_patching_results_description">যখন প্যাচিং শেষ হয় বা Morphe ব্যাকগ্রাউন্ডে থাকা অবস্থায় কোনো ইনস্টলেশন আপনার জন্য অপেক্ষা করে</string>
     <string name="notification_channel_mounted_apps">মাউন্ট করা অ্যাপগুলো</string>
     <string name="notification_channel_mounted_apps_description">যখন অন্য কোনো সংস্করণ একটি মাউন্ট করা অ্যাপকে প্রতিস্থাপন করেছে এবং এর প্যাচটি আর প্রযোজ্য নয়</string>
     <string name="notification_mount_replaced_title">%1$s আর প্যাচ করা নেই</string>
@@ -1267,6 +1270,7 @@ morphe_adaptive_monochrome_custom.xml
     <string name="credits_prior_development">পূর্ববর্তী উন্নয়ন</string>
     <string name="opensource_licenses">ওপেন-সোর্স লাইসেন্স।</string>
     <string name="opensource_licenses_description">যে লাইব্রেরিগুলোর উপর Morphe তৈরি হয়েছে</string>
+    <string name="opensource_licenses_search">লাইব্রেরি এবং লাইসেন্স অনুসন্ধান করুন</string>
     <!-- Easter egg offered after seven taps on the version in the About dialog -->
     <string name="easter_egg_pill_title">একটি পছন্দ</string>
     <string name="easter_egg_pill_message">নীল পিলটি নিন এবং বিজ্ঞাপনগুলো ঠিক যেখানে আছে সেখানেই থাকবে। লালটি নিন এবং দেখুন বাইটকোড কত গভীরে যায়।</string>
