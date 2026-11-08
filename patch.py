@@ -14,6 +14,15 @@ patch.py -- apply fork changes to a MorpheApp/morphe-manager checkout (dev branc
      ones) are listed first
   8. Patcher log: the loader's "Universal patches must be declared with default false" notice
      (header, message and the indented bundle/patch list) is dropped
+  9. Sources page: the floating button beside the bottom pill reads "Add source" (opens the add
+     source panel) instead of "Select APK", and the header (+) is dropped in portrait
+ 10. Add source panel: full screen instead of a bottom sheet; title, form and Add stand together as one
+     block centered on the screen, with only the community and close icons left at the top
+ 11. Add source title centered
+ 12. Sources page: sort and filter are two header buttons, each opening a dropdown (no docked bottom
+     panel); the filter button is marked while a filter narrows the list
+ 13. Expert patch dialog: a row of buttons under the source tabs (enable all, recommended, saved
+     selection, selection panel, disable all), as before the selection panel replaced it
 
 Anchors are structural (function bodies, call arguments, parameter lists, single
 lines), never pasted multi-line context. Files are found by declaration; the path
@@ -365,6 +374,7 @@ ICONS_MATERIAL = {
     "ADV_IMPORTS": ("import androidx.compose.material.icons.Icons\n"
                     "import androidx.compose.material.icons.outlined.LockOpen"),
     "FILE_OPEN": "Icons.Outlined.FileOpen",
+    "ADD": "Icons.Outlined.Add",
     "SCHEDULE": "Icons.Outlined.Schedule",
     "CHECK": "Icons.Outlined.Check",
     "LOCK_OPEN": "Icons.Outlined.LockOpen",
@@ -380,6 +390,7 @@ ICONS_SYMBOLS = {
     "ADV_IMPORTS": ("import com.composables.icons.materialsymbols.MaterialSymbols\n"
                     "import com.composables.icons.materialsymbols.rounded.*"),
     "FILE_OPEN": "MaterialSymbols.Rounded.File_open",
+    "ADD": "MaterialSymbols.Rounded.Add",
     "SCHEDULE": "MaterialSymbols.Rounded.Schedule",
     "CHECK": "MaterialSymbols.Rounded.Check",
     "LOCK_OPEN": "MaterialSymbols.Rounded.Lock_open",
@@ -414,6 +425,7 @@ SIGNING_STRINGS = [
 
 APK_BUTTON_STRINGS = [
     ("floating_select_apk", '<string name="floating_select_apk">Select APK</string>'),
+    ("floating_add_source", '<string name="floating_add_source">Add source</string>'),
 ]
 
 PATCH_INTERVAL_STRINGS = [
@@ -955,7 +967,12 @@ def home_trailing(src):
     calls = find_calls(m, "MainPagerScaffold")
     if len(calls) != 1:
         return None
-    text = "trailingAction = { FloatingApkButton(onClick = pickApkFromFile) }"
+    text = ("trailingAction = { FloatingTrailingAction(pagerState = pagerState, onSelectApk = pickApkFromFile, "
+            "onAddSource = sourcesPageState::openAddSource, onboardingState = onboardingState) }")
+    # An earlier run left the plain select-APK button, which only reads the same on every page
+    old = re.search(r"\btrailingAction\s*=\s*\{\s*FloatingApkButton\(\s*onClick\s*=\s*pickApkFromFile\s*\)\s*\}", m)
+    if old:
+        return src[:old.start()] + text + src[old.end():]
     return add_last_arg(src, m, calls[0], text, r"\btrailingAction\s*=")
 
 
@@ -971,25 +988,34 @@ def home_flags(src):
     return src[:h.start()] + "showOtherAppsButton = isLandscape()" + src[h.end():]
 
 
-def header_flags(src):
-    m = mask(src)
-    hits = []
-    for lp in find_calls(m, "TitleAction"):
-        rp = match_close(m, lp)
-        if rp > 0 and re.search(r"\bonClick\s*=\s*onPatchFileClick\b", m[lp:rp]):
-            hits.append((lp, rp))
-    if len(hits) != 1:
-        return None
-    lp, rp = hits[0]
-    start = m.rfind("TitleAction", 0, lp)
-    s = line_start(src, start)
-    if src[s:start].strip() or src[rp + 1:line_end(src, rp)].strip():
-        return None
-    if re.search(r"\bif\s*\(\s*isLandscape\(\)\s*\)\s*\{\s*$", m[:s]):
-        return src
-    ind = indent_of(src, start)
-    block = reindent(src[s:rp + 1], "    ")
-    return src[:s] + ind + "if (isLandscape()) {\n" + block + "\n" + ind + "}" + src[rp + 1:]
+def landscape_only_action(click_rx):
+    """Wraps the one TitleAction whose arguments match click_rx in `if (isLandscape())`."""
+    def fn(src):
+        m = mask(src)
+        hits = []
+        for lp in find_calls(m, "TitleAction"):
+            rp = match_close(m, lp)
+            if rp > 0 and re.search(click_rx, m[lp:rp]):
+                hits.append((lp, rp))
+        if len(hits) != 1:
+            return None
+        lp, rp = hits[0]
+        start = m.rfind("TitleAction", 0, lp)
+        s = line_start(src, start)
+        if src[s:start].strip() or src[rp + 1:line_end(src, rp)].strip():
+            return None
+        if re.search(r"\bif\s*\(\s*isLandscape\(\)\s*\)\s*\{\s*$", m[:s]):
+            return src
+        ind = indent_of(src, start)
+        block = reindent(src[s:rp + 1], "    ")
+        return src[:s] + ind + "if (isLandscape()) {\n" + block + "\n" + ind + "}" + src[rp + 1:]
+    return fn
+
+
+# The toolbar's select-APK button and the Sources header's add (+) stay in landscape, where the
+# bottom pill (and the button beside it) is replaced by a sidebar
+header_flags = landscape_only_action(r"\bonClick\s*=\s*onPatchFileClick\b")
+sources_add_landscape = landscape_only_action(r"\bonClick\s*=\s*state::openAddSource\b")
 
 
 def app_gate(src):
@@ -1494,6 +1520,7 @@ internal fun FavoriteStarButton(
 
 FLOATING_APK_BUTTON = r'''package @@PKG@@
 
+import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
@@ -1505,6 +1532,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.shape.CircleShape
 @@ICON_IMPORTS@@
 import androidx.compose.material3.Icon
@@ -1518,12 +1546,36 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import @@NS@@.R
 import @@SHARED_PKG@@.*
+import @@TOUR_PKG@@.OnboardingState
+import @@TOUR_PKG@@.TourTarget
+import @@TOUR_PKG@@.tourTarget
+
+/**
+ * The action beside the bottom pill: add a source on the sources page, select an APK on any
+ * other. A single button whose icon and label cross-fade as the page turns.
+ */
+@Composable
+internal fun FloatingTrailingAction(
+    pagerState: PagerState,
+    onSelectApk: () -> Unit,
+    onAddSource: () -> Unit,
+    onboardingState: OnboardingState?
+) {
+    val onSources = MainPage.entries[pagerState.currentPage] == MainPage.SOURCES
+    FloatingApkButton(
+        onClick = if (onSources) onAddSource else onSelectApk,
+        label = stringResource(if (onSources) R.string.floating_add_source else R.string.floating_select_apk),
+        icon = if (onSources) @@ICON_ADD@@ else @@ICON_FILE_OPEN@@,
+        modifier = if (onSources) Modifier.tourTarget(TourTarget.ADD_SOURCE, onboardingState) else Modifier
+    )
+}
 
 /**
  * Button beside the bottom pill that opens the select-APK flow. Built as one slot of that pill,
@@ -1533,9 +1585,10 @@ import @@SHARED_PKG@@.*
 @Composable
 internal fun FloatingApkButton(
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    label: String = stringResource(R.string.floating_select_apk),
+    icon: ImageVector = @@ICON_FILE_OPEN@@
 ) {
-    val label = stringResource(R.string.floating_select_apk)
     val interactionSource = remember { MutableInteractionSource() }
     val shape = rememberPressShape(interactionSource, CircleShape)
     val tint = MaterialTheme.colorScheme.primary
@@ -1566,20 +1619,24 @@ internal fun FloatingApkButton(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                Icon(
-                    imageVector = @@ICON_FILE_OPEN@@,
-                    contentDescription = null,
-                    tint = tint,
-                    modifier = Modifier.size(22.dp)
-                )
-                Text(
-                    text = label,
-                    style = MaterialTheme.typography.labelSmall,
-                    color = tint,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    modifier = Modifier.padding(horizontal = 10.dp)
-                )
+                Crossfade(targetState = icon to label, label = "floating_action_content") { (currentIcon, currentLabel) ->
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Icon(
+                            imageVector = currentIcon,
+                            contentDescription = null,
+                            tint = tint,
+                            modifier = Modifier.size(22.dp)
+                        )
+                        Text(
+                            text = currentLabel,
+                            style = MaterialTheme.typography.labelSmall,
+                            color = tint,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                            modifier = Modifier.padding(horizontal = 10.dp)
+                        )
+                    }
+                }
             }
         }
     }
@@ -1588,6 +1645,92 @@ internal fun FloatingApkButton(
 private val FloatingApkButtonHeight = 64.dp
 private val FloatingApkButtonInset = 6.dp
 private val FloatingApkButtonMaxWidth = 128.dp
+'''
+
+
+FULLSCREEN_PANEL = r'''package @@PKG@@
+
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.Animatable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.contentColorFor
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+
+/**
+ * A [DockedPanel] that takes the whole screen: it slides up over the page, header and bars
+ * included, with its content clear of the system bars and the keyboard. Meant for a form that is
+ * the only thing on screen while it is up, such as the one sources are added from.
+ *
+ * @param onBack Closes the panel on back, which it follows down as the gesture goes.
+ */
+@Composable
+fun FullScreenPanel(
+    visible: Boolean,
+    onBack: () -> Unit,
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit
+) {
+    val backProgress = remember { Animatable(0f) }
+    // A gesture that closed the panel leaves it drawn down, which the next opening must not inherit
+    LaunchedEffect(visible) {
+        if (visible) backProgress.snapTo(0f)
+    }
+    PredictiveBackSlideHandler(backProgress, enabled = visible, onBack = onBack)
+
+    AnimatedVisibility(
+        visible = visible,
+        enter = Animations.springSlideUpEnter,
+        exit = Animations.springSlideDownExit,
+        modifier = modifier
+    ) {
+        val background = MaterialTheme.colorScheme.background
+        // Solid, so the list under it neither shows through nor takes a touch
+        Surface(
+            modifier = Modifier
+                .fillMaxSize()
+                .predictiveBackSlide(backProgress),
+            color = background,
+            contentColor = contentColorFor(background)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .windowInsetsPadding(WindowInsets.safeDrawing)
+                    .padding(bottom = Defaults.SpaceMedium)
+            ) {
+                content()
+            }
+        }
+    }
+}
+
+/** Large title set above the form of a [FullScreenPanel], centered and standing with it rather than up in a header. */
+@Composable
+fun FullScreenPanelTitle(text: String, modifier: Modifier = Modifier) {
+    Text(
+        text = text,
+        style = MaterialTheme.typography.headlineSmall,
+        fontWeight = FontWeight.Bold,
+        textAlign = TextAlign.Center,
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(bottom = Defaults.SpaceSmall)
+    )
+}
 '''
 
 PATCH_UPDATE_THROTTLE = r'''package @@PKG@@
@@ -1846,6 +1989,464 @@ def host_quiet_universal(src):
     return src[:f.start] + new + src[rp + 1:]
 
 
+def _wrap_form_block(src):
+    """Wraps the scrolling body and the Add button of AddSourcePanel in one block centered in the
+    room under the header, so the form sits together instead of spread from top to bottom."""
+    m = mask(src)
+    f = one(find_funs(m, "AddSourcePanel"))
+    if not f or f.bo is None:
+        return None
+    hits = list(re.finditer(r"^[ \t]*val\s+scrollState\s*=\s*rememberScrollState\(\)[ \t]*$", m[f.bo:f.bc], re.M))
+    if len(hits) != 1:
+        return None
+    a = f.bo + hits[0].start()
+    ind = indent_of(src, a)
+    start = line_start(src, a)
+    # The comment above the scroll state belongs with it
+    while start > 0:
+        ps = line_start(src, start - 1)
+        if src[ps:start].strip().startswith("//"):
+            start = ps
+        else:
+            break
+    ends = []
+    for lp in find_calls(m, "Box", a, f.bc):
+        rp = match_close(m, lp)
+        if rp < 0 or not re.search(r"Modifier\.padding\(\s*horizontal\s*=\s*Defaults\.SpaceLarge\s*\)", m[lp:rp]):
+            continue
+        t = re.match(r"\s*\{", m[rp + 1:])
+        if not t:
+            continue
+        bo = rp + t.end()
+        bc = match_close(m, bo)
+        if bc > 0 and "AppDialogButtonRow" in m[bo:bc]:
+            ends.append(bc)
+    if len(ends) != 1:
+        return None
+    end = line_end(src, ends[0])
+    if src[ends[0] + 1:end].strip():
+        return None
+    block = src[start:end]
+    wrapped = (ind + "Box(modifier = Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.Center) {\n"
+               + ind + "    Column(modifier = Modifier.fillMaxWidth()) {\n"
+               + reindent(block, "        ") + "\n"
+               + ind + "    }\n"
+               + ind + "}")
+    return src[:start] + wrapped + src[end:]
+
+
+def add_panel_full(src):
+    m = mask(src)
+    f = one(find_funs(m, "AddSourcePanel"))
+    if not f or f.bo is None:
+        return None
+    body = m[f.bo:f.bc]
+    if "FullScreenPanelTitle" in body:
+        return src
+    steps = []
+    # Full screen rather than a sheet docked under the list
+    if re.search(r"\bDockedPanel\(", body):
+        steps.append((r"\bDockedPanel\(", "FullScreenPanel("))
+    if re.search(r"\bColumn\(\s*modifier\s*=\s*Modifier\.padding\(bottom\s*=\s*Defaults\.SpaceSmall\)\s*\)", body):
+        steps.append((r"\bColumn\(\s*modifier\s*=\s*Modifier\.padding\(bottom\s*=\s*Defaults\.SpaceSmall\)\s*\)",
+                      "Column(modifier = Modifier.fillMaxSize())"))
+    # An earlier run centered the scrolling body by itself, which left a gap under the header
+    if re.search(r"\.weight\(1f\)", body):
+        steps.append((r"\.weight\(1f\)", ".weight(1f, fill = false)"))
+    if re.search(r"Alignment\.CenterVertically\)", body):
+        steps.append((r"Arrangement\.spacedBy\(Defaults\.SpaceMedium,\s*Alignment\.CenterVertically\)",
+                      "Arrangement.spacedBy(Defaults.SpaceMedium)"))
+    steps += [
+        # The title moves into the form, leaving only the icons up top
+        (r"\bPanelHeader\(\s*title\s*=\s*\{\s*PanelTitle\(\s*text\s*=\s*stringResource\(R\.string\.sources_dialog_add_source\)\s*\)\s*\}\s*\)",
+         "PanelHeader(title = {})"),
+        (r"^([ \t]*)PendingSources\(",
+         "\\1FullScreenPanelTitle(text = stringResource(R.string.sources_dialog_add_source))\n\\1PendingSources("),
+    ]
+    out = _replace_in_fun(src, "AddSourcePanel", steps)
+    if out is None:
+        return None
+    return _wrap_form_block(out)
+
+
+EXPERT_SELECTION_BAR = r'''package @@PKG@@
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Icon
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.role
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.dp
+import @@SHARED_PKG@@.*
+import app.morphe.manager.R
+import com.composables.icons.materialsymbols.MaterialSymbols
+import com.composables.icons.materialsymbols.rounded.*
+import org.koin.compose.koinInject
+
+/**
+ * The row of buttons under the source tabs of the expert patch dialog: enable all, the recommended
+ * patches, the saved selection, the selection panel and disable all. Each acts on the source whose
+ * tab is open, and stays in place, grayed out while there is nothing for it to do.
+ *
+ * Enabling all is staged like the one in the selection panel: the regular patches first, the
+ * universal ones on the next tap and after a warning.
+ */
+@Composable
+fun ExpertSelectionBar(
+    canEnableMore: Boolean,
+    canDisable: Boolean,
+    holdsUniversalPatches: Boolean,
+    warnOnUniversalAll: Boolean,
+    onSelectAll: () -> Unit,
+    onDeselectAll: () -> Unit,
+    canApplyRecommended: Boolean,
+    onApplyRecommended: () -> Unit,
+    hasSavedSelection: Boolean,
+    onRestoreSaved: () -> Unit,
+    panelOpen: Boolean,
+    onTogglePanel: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val messages = koinInject<UserMessages>()
+    val pendingUniversal = stringResource(R.string.expert_mode_enable_all_universal_pending)
+    var showUniversalAllWarning by remember { mutableStateOf(false) }
+
+    val selectAll = {
+        onSelectAll()
+        // Nothing on screen may change with this tap, so it says what the next one does
+        if (holdsUniversalPatches) messages.show(pendingUniversal)
+    }
+
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(top = Defaults.SpaceSmall),
+        horizontalArrangement = Arrangement.spacedBy(6.dp, Alignment.CenterHorizontally)
+    ) {
+        BarPill(
+            icon = MaterialSymbols.Rounded.Done_all,
+            contentDescription = stringResource(R.string.expert_mode_enable_all),
+            onClick = { if (warnOnUniversalAll) showUniversalAllWarning = true else selectAll() },
+            enabled = canEnableMore
+        )
+        BarPill(
+            icon = MaterialSymbols.Rounded.Recommend,
+            contentDescription = stringResource(R.string.expert_mode_recommended),
+            onClick = onApplyRecommended,
+            enabled = canApplyRecommended
+        )
+        BarPill(
+            icon = MaterialSymbols.Rounded.History,
+            contentDescription = stringResource(R.string.expert_mode_saved_selection),
+            onClick = onRestoreSaved,
+            enabled = hasSavedSelection
+        )
+        BarPill(
+            icon = MaterialSymbols.Rounded.Content_copy,
+            contentDescription = stringResource(R.string.selection_panel_title),
+            onClick = onTogglePanel,
+            active = panelOpen
+        )
+        BarPill(
+            icon = MaterialSymbols.Rounded.Remove_done,
+            contentDescription = stringResource(R.string.expert_mode_disable_all),
+            onClick = onDeselectAll,
+            destructive = true,
+            enabled = canDisable
+        )
+    }
+
+    DialogHost(visible = showUniversalAllWarning) {
+        ConfirmDialog(
+            title = stringResource(R.string.expert_mode_universal_all_warning_title),
+            message = stringResource(R.string.expert_mode_universal_all_warning_message),
+            primaryText = stringResource(R.string.enable),
+            isPrimaryDestructive = false,
+            onDismiss = { showUniversalAllWarning = false },
+            onConfirm = {
+                showUniversalAllWarning = false
+                selectAll()
+            }
+        )
+    }
+}
+
+/** A small pill of the bar, filled as a header control is and with its icon centered. */
+@Composable
+private fun BarPill(
+    icon: ImageVector,
+    contentDescription: String,
+    onClick: () -> Unit,
+    enabled: Boolean = true,
+    active: Boolean = false,
+    destructive: Boolean = false
+) {
+    val container = HeaderControlDefaults.container(active = active)
+    val content = if (destructive) destructiveColor() else HeaderControlDefaults.content(container, active = active)
+    val shownContainer = if (enabled) container else container.copy(alpha = container.alpha * Defaults.DISABLED_ALPHA)
+    val shownContent = if (enabled) content else dialogTextColor().copy(alpha = Defaults.DISABLED_ALPHA)
+    var pill = Modifier
+        .width(56.dp)
+        .height(30.dp)
+        .clip(CircleShape)
+        .background(shownContainer)
+    if (destructive && enabled) pill = pill.border(1.dp, content.copy(alpha = 0.45f), CircleShape)
+    IconTooltip(text = contentDescription) {
+        Box(
+            modifier = pill
+                .semantics {
+                    this.contentDescription = contentDescription
+                    role = Role.Button
+                }
+                .clickable(enabled = enabled, onClick = onClick),
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(imageVector = icon, contentDescription = null, tint = shownContent, modifier = Modifier.size(Defaults.IconSizeSmall))
+        }
+    }
+}
+'''
+
+
+LIST_OPTIONS_MENU = r'''package @@PKG@@
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+
+/**
+ * The header buttons of a list that sorts and filters, in place of the panel [ListOptionsPanel]
+ * docks over the list: a button for each of [sections], opening the options of that section in a
+ * dropdown under it, the one in effect checked, in alphabetical order. Picking an option applies
+ * it and closes the menu. A section past the first is the filter, which marks its button while it
+ * narrows the list, as an order is kept for good and would never stop showing.
+ */
+@Composable
+fun ListOptionsMenuButtons(
+    sections: List<ListOptionSection<*>>,
+    modifier: Modifier = Modifier
+) {
+    Row(modifier = modifier, horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall)) {
+        sections.forEachIndexed { index, section ->
+            ListOptionsMenuButton(section = section, marked = index > 0 && section.isChanged)
+        }
+    }
+}
+
+@Composable
+private fun <T> ListOptionsMenuButton(
+    section: ListOptionSection<T>,
+    marked: Boolean
+) {
+    var expanded by remember { mutableStateOf(false) }
+    // Keeps showing the option the menu opened on until it is gone, as the sort menus do
+    val shownCurrent = rememberWhileVisible(expanded, section.current)
+    Box {
+        TitleAction(
+            icon = section.icon,
+            contentDescription = stringResource(section.titleRes),
+            onClick = { expanded = true },
+            style = TitleActionStyle.Toggle,
+            active = expanded,
+            marked = marked
+        )
+        AppDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+            section.options.sortedBy { it.title.lowercase() }.forEach { option ->
+                AppDropdownMenuItem(
+                    text = option.title,
+                    onClick = {
+                        section.onSelect(option.value)
+                        expanded = false
+                    },
+                    selected = option.value == shownCurrent
+                )
+            }
+        }
+    }
+}
+'''
+
+
+def sources_sort_menu(src):
+    """Header sort button opens a dropdown (sort and filter) instead of the docked options panel."""
+    m = mask(src)
+    f = one(find_funs(m, "SourcesPageContent"))
+    if not f or f.bo is None:
+        return None
+    if "ListOptionsMenuButton" in m[f.bo:f.bc]:
+        return src
+    calls = find_calls(m, "ListOptionsButton", f.bo, f.bc)
+    if len(calls) != 1:
+        return None
+    lp = calls[0]
+    rp = match_close(m, lp)
+    body = m[lp:rp]
+    if not re.search(r"\bsortRes\s*=\s*sourceSortMode\.labelRes", body):
+        return None
+    start = lp - len("ListOptionsButton")
+    new = "ListOptionsMenuButtons(sections = listOptions)"
+    return src[:start] + new + src[rp + 1:]
+
+
+def sources_drop_options_panel(src):
+    m = mask(src)
+    f = one(find_funs(m, "SourcesPageContent"))
+    if not f or f.bo is None:
+        return None
+    calls = find_calls(m, "ListOptionsPanel", f.bo, f.bc)
+    if not calls:
+        return src
+    if len(calls) != 1:
+        return None
+    lp = calls[0]
+    rp = match_close(m, lp)
+    start = lp - len("ListOptionsPanel")
+    ls = line_start(src, start)
+    if src[ls:start].strip():
+        return None
+    le = line_end(src, rp)
+    if src[rp + 1:le].strip():
+        return None
+    return src[:ls] + src[le + 1:]
+
+
+def expert_panel_fields(src):
+    """ExpertSelectionPanel also hands the dialog what its selection bar acts on."""
+    m = mask(src)
+    cm = re.search(r"\bclass\s+ExpertSelectionPanel\s*\(", m)
+    if not cm:
+        return None
+    lp = cm.end() - 1
+    rp = match_close(m, lp)
+    if "onApplyRecommended" in m[lp:rp]:
+        out = src
+    else:
+        hits = list(re.finditer(r"^([ \t]*)val\s+onToggle\s*:\s*\(\)\s*->\s*Unit\s*,[ \t]*$", m[lp:rp], re.M))
+        if len(hits) != 1:
+            return None
+        h = hits[0]
+        a, b = lp + h.start(), lp + h.end()
+        ind = h.group(1)
+        out = (src[:b] + "\n" + ind + "val onApplyRecommended: (bundleUid: Int) -> Unit = {},\n"
+               + ind + "val hasSavedSelection: () -> Boolean = { false },\n"
+               + ind + "val onRestoreSaved: () -> Unit = {}," + src[b:])
+    m = mask(out)
+    f = one(find_funs(m, "expertSelectionPanel"))
+    if not f or f.bo is None:
+        return None
+    if "host::resetToDefault" in m[f.bo:f.bc]:
+        return out
+    hits = list(re.finditer(r"\bonToggle\s*=\s*panel::toggle\b", m[f.bo:f.bc]))
+    if len(hits) != 1:
+        return None
+    b = f.bo + hits[0].end()
+    return (out[:b] + ", onApplyRecommended = host::resetToDefault,"
+            " hasSavedSelection = { host.hasSavedSelection }, onRestoreSaved = host::restoreSaved" + out[b:])
+
+
+def expert_bar_header(src):
+    """Puts the selection bar under the source tabs, in the header of the expert patch dialog."""
+    m = mask(src)
+    if "ExpertSelectionBar(" in m:
+        return src
+    hits = list(re.finditer(
+        r"\bcontent\s*=\s*if\s*\(\s*hasMultipleBundleLayout\s*&&\s*displayedBundles\.isNotEmpty\(\)\s*\)\s*\{", m))
+    if len(hits) != 1:
+        return None
+    h = hits[0]
+    tabs_cond = "hasMultipleBundleLayout && displayedBundles.isNotEmpty()"
+    ob = h.end() - 1
+    ob_close = match_close(m, ob)
+    t = re.match(r"\s*\{", m[ob + 1:ob_close])
+    if ob_close < 0 or not t:
+        return None
+    ib = ob + 1 + t.end() - 1
+    ib_close = match_close(m, ib)
+    if ib_close < 0 or ib_close > ob_close:
+        return None
+    body = src[ib + 1:ib_close].rstrip().lstrip("\n")
+    ind = indent_of(src, ib)
+    bar = textwrap.dedent("""\
+        if (selectionPanel != null && headBundle != null) {
+            // Acts on the source whose tab is open, on the patches the filters left in view
+            val barPatches = filteredPatchesByUid[headBundle.uid].orEmpty()
+            val barHoldsUniversal = holdsUniversalPatches(headBundle.uid, barPatches)
+            ExpertSelectionBar(
+                canEnableMore = barPatches.any { (patch, isEnabled) ->
+                    !isEnabled && lockStateOf(patch) != PatchLockState.LOCKED_OFF
+                },
+                canDisable = barPatches.any { (patch, isEnabled) ->
+                    isEnabled && lockStateOf(patch) != PatchLockState.LOCKED_ON
+                },
+                holdsUniversalPatches = barHoldsUniversal,
+                warnOnUniversalAll = !barHoldsUniversal && barPatches.hasUniversalToEnable(lockStateOf),
+                onSelectAll = {
+                    if (!barHoldsUniversal) patchSections.setExpanded(headBundle.uid, UNIVERSAL_GROUP_KEY, true)
+                    patchActions.onSelectAll(headBundle.uid, barPatches)
+                },
+                onDeselectAll = { patchActions.onDeselectAll(headBundle.uid, barPatches) },
+                canApplyRecommended = true,
+                onApplyRecommended = { selectionPanel.onApplyRecommended(headBundle.uid) },
+                hasSavedSelection = selectionPanel.hasSavedSelection(),
+                onRestoreSaved = selectionPanel.onRestoreSaved,
+                panelOpen = selectionPanel.isOpen,
+                onTogglePanel = selectionPanel.onToggle
+            )
+        }""")
+    inner = ("{\n" + ind + "    Column {\n"
+             + ind + "        if (" + tabs_cond + ") {\n"
+             + reindent(body, "        ") + "\n"
+             + ind + "        }\n"
+             + reindent(bar, ind + "        ") + "\n"
+             + ind + "    }\n" + ind + "}")
+    cond_new = "content = if (selectionPanel != null || (" + tabs_cond + ")) {"
+    return src[:h.start()] + cond_new + src[h.end():ib] + inner + src[ib_close + 1:]
+
+
+
+def sources_sort_dropdown(src):
+    out = sources_sort_menu(src)
+    if out is None:
+        return None
+    return sources_drop_options_panel(out)
+
+
+def expert_bar_all(src):
+    out = expert_panel_fields(src)
+    if out is None:
+        return None
+    return expert_bar_header(out)
+
+
 class Workspace:
     def __init__(self, root):
         self.root = root
@@ -1992,6 +2593,16 @@ def build_plan(ws):
             problems.append("cannot locate HostEvents (patcher log STDIO printer)")
     selext = locate("PatchSelectionUtils", r"\bobject\s+PatchSelectionUtils\b", P + "util/PatchSelectionExtensions.kt")
     srcpage = locate("SourcesPageContent", r"\bfun\s+SourcesPageContent\s*\(", P + "ui/screen/sources/SourcesPage.kt")
+    addpanel = locate("AddSourcePanel", r"\bfun\s+AddSourcePanel\s*\(", P + "ui/screen/sources/AddSourcePanel.kt")
+    # The sources tour points at the add source button, which now floats beside the pill
+    tour_state = ws.find(r"\bclass\s+OnboardingState\b", P + "ui/screen/home/OnboardingShowcase.kt")
+    tour_enum = ws.find(r"\benum\s+class\s+TourTarget\b", P + "ui/screen/home/OnboardingShowcase.kt")
+    tour_mod = ws.find(r"\bfun\s+Modifier\.tourTarget\s*\(", P + "ui/screen/home/OnboardingShowcase.kt")
+    tour_pkgs = {package_of(ws.get(x[0])) for x in (tour_state, tour_enum, tour_mod) if len(x) == 1}
+    if len(tour_state) != 1 or len(tour_enum) != 1 or len(tour_mod) != 1 or len(tour_pkgs) != 1:
+        problems.append("cannot locate the tour (OnboardingState / TourTarget / Modifier.tourTarget)")
+    elif not re.search(r"\bADD_SOURCE\b", mask(ws.get(tour_enum[0]))):
+        problems.append("TourTarget.ADD_SOURCE not found")
     patchinfo = ws.find(r"\bclass\s+PatchInfo\b", P + "patcher/patch/PatchInfo.kt")
     toast = ws.find(r"\bfun\s+Context\.toast\s*\(", P + "util/Util.kt")
     # Newer upstream shows its messages through UserMessages instead of a toast helper
@@ -2060,6 +2671,7 @@ def build_plan(ws):
             "                )\n"
             "            )"),
         "SHARED_PKG": package_of(ws.get(pill)),
+        "TOUR_PKG": package_of(ws.get(tour_state[0])),
     }
     fmt.update({"ICON_" + k: v for k, v in ICON.items()})
 
@@ -2115,7 +2727,7 @@ def build_plan(ws):
             ("toolbar button landscape only", home_flags, False),
             ("import isLandscape", imp(land_pkg + ".isLandscape"), False),
         ]
-    home_edits.append(("import FloatingApkButton", imp(helper_pkg + ".FloatingApkButton"), False))
+    home_edits.append(("import FloatingTrailingAction", imp(helper_pkg + ".FloatingTrailingAction"), False))
     plan.append((str(home.relative_to(ws.root)), home, home_edits))
     if not legacy_flag:
         plan.append((str(header[0].relative_to(ws.root)), header[0], [
@@ -2139,7 +2751,15 @@ def build_plan(ws):
         ("page header searchFirst param", phead_param, False),
         ("page header searchFirst pass-through", phead_pass, False),
     ]))
-    plan.append((str(srcpage.relative_to(ws.root)), srcpage, [("sources header search first", sources_search_first, False)]))
+    plan.append((str(srcpage.relative_to(ws.root)), srcpage, [
+        ("sources header search first", sources_search_first, False),
+        ("sources header add button landscape only", sources_add_landscape, False),
+        ("import isLandscape", imp(land_pkg + ".isLandscape"), False),
+    ] + ([
+        ("sources sort and filter as a dropdown", sources_sort_dropdown, True),
+        ("import ListOptionsMenuButton", imp(package_of(ws.get(pill)) + ".ListOptionsMenuButtons"), False),
+    ] if symbols else [])))
+    plan.append((str(addpanel.relative_to(ws.root)), addpanel, [("add source panel full screen", add_panel_full, False)]))
     host_path = host_ext[0]
     ws.ensure(host_path)
     plan.append((str(host_path.relative_to(ws.root)), host_path, [("quiet universal default notice", host_quiet_universal, False)]))
@@ -2152,14 +2772,25 @@ def build_plan(ws):
     ]))
     for d in dialogs:
         plan.append((str(d.relative_to(ws.root)), d, [("favorites wiring", make_dialog_edit(helper_pkg), False)]))
+    expert_dlg = ws.find(r"\bclass\s+ExpertSelectionPanel\b", P + "ui/screen/home/ExpertModeDialog.kt")
+    if symbols and len(expert_dlg) == 1:
+        plan.append((str(expert_dlg[0].relative_to(ws.root)), expert_dlg[0], [
+            ("expert selection bar under the source tabs", expert_bar_all, True),
+        ]))
 
     new_files = [
         (util_dir / "SignatureRestorer.kt", render(SIGNATURE_RESTORER, util_pkg)),
         (helper_dir / "FavoritePatches.kt", render(FAVORITE_PATCHES, helper_pkg)),
         (helper_dir / "FloatingApkButton.kt", render(FLOATING_APK_BUTTON, helper_pkg)),
+        (pill.parent / "FullScreenPanel.kt", render(FULLSCREEN_PANEL, package_of(ws.get(pill)))),
         (prefs.parent / "PatchUpdateThrottle.kt", render(PATCH_UPDATE_THROTTLE, package_of(ws.get(prefs)))),
         (updates.parent / "PatchUpdateIntervalSetting.kt", render(PATCH_UPDATE_INTERVAL_SETTING, package_of(ws.get(updates)))),
     ]
+    if symbols:
+        new_files += [
+            (helper_dir / "ExpertSelectionBar.kt", render(EXPERT_SELECTION_BAR, helper_pkg)),
+            (pill.parent / "ListOptionsMenu.kt", render(LIST_OPTIONS_MENU, package_of(ws.get(pill)))),
+        ]
     needles = [
         (r"\bval\s+skipApkSigning\s*=", prefs, "skipApkSigning preference"),
         (r"\bval\s+favoriteUniversalPatches\s*=", prefs, "favoriteUniversalPatches preference"),
