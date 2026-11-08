@@ -16,7 +16,8 @@ patch.py -- apply fork changes to a MorpheApp/morphe-manager checkout (dev branc
      (header, message and the indented bundle/patch list) is dropped
   9. Sources page: the floating button beside the bottom pill reads "Add source" (opens the add
      source panel) instead of "Select APK", and the header (+) is dropped in portrait
- 10. Add source panel: full screen instead of a bottom sheet, content centered, Add pinned at the bottom
+ 10. Add source panel: full screen instead of a bottom sheet; title, form and Add stand together as one
+     block centered on the screen, with only the community and close icons left at the top
 
 Anchors are structural (function bodies, call arguments, parameter lists, single
 lines), never pasted multi-line context. Files are found by declaration; the path
@@ -1654,11 +1655,13 @@ import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.material3.contentColorFor
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 
 /**
  * A [DockedPanel] that takes the whole screen: it slides up over the page, header and bars
@@ -1706,6 +1709,17 @@ fun FullScreenPanel(
             }
         }
     }
+}
+
+/** Large title set above the form of a [FullScreenPanel], standing with it rather than up in a header. */
+@Composable
+fun FullScreenPanelTitle(text: String, modifier: Modifier = Modifier) {
+    Text(
+        text = text,
+        style = MaterialTheme.typography.headlineSmall,
+        fontWeight = FontWeight.Bold,
+        modifier = modifier.padding(bottom = Defaults.SpaceSmall)
+    )
 }
 '''
 
@@ -1965,24 +1979,84 @@ def host_quiet_universal(src):
     return src[:f.start] + new + src[rp + 1:]
 
 
+def _wrap_form_block(src):
+    """Wraps the scrolling body and the Add button of AddSourcePanel in one block centered in the
+    room under the header, so the form sits together instead of spread from top to bottom."""
+    m = mask(src)
+    f = one(find_funs(m, "AddSourcePanel"))
+    if not f or f.bo is None:
+        return None
+    hits = list(re.finditer(r"^[ \t]*val\s+scrollState\s*=\s*rememberScrollState\(\)[ \t]*$", m[f.bo:f.bc], re.M))
+    if len(hits) != 1:
+        return None
+    a = f.bo + hits[0].start()
+    ind = indent_of(src, a)
+    start = line_start(src, a)
+    # The comment above the scroll state belongs with it
+    while start > 0:
+        ps = line_start(src, start - 1)
+        if src[ps:start].strip().startswith("//"):
+            start = ps
+        else:
+            break
+    ends = []
+    for lp in find_calls(m, "Box", a, f.bc):
+        rp = match_close(m, lp)
+        if rp < 0 or not re.search(r"Modifier\.padding\(\s*horizontal\s*=\s*Defaults\.SpaceLarge\s*\)", m[lp:rp]):
+            continue
+        t = re.match(r"\s*\{", m[rp + 1:])
+        if not t:
+            continue
+        bo = rp + t.end()
+        bc = match_close(m, bo)
+        if bc > 0 and "AppDialogButtonRow" in m[bo:bc]:
+            ends.append(bc)
+    if len(ends) != 1:
+        return None
+    end = line_end(src, ends[0])
+    if src[ends[0] + 1:end].strip():
+        return None
+    block = src[start:end]
+    wrapped = (ind + "Box(modifier = Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.Center) {\n"
+               + ind + "    Column(modifier = Modifier.fillMaxWidth()) {\n"
+               + reindent(block, "        ") + "\n"
+               + ind + "    }\n"
+               + ind + "}")
+    return src[:start] + wrapped + src[end:]
+
+
 def add_panel_full(src):
     m = mask(src)
     f = one(find_funs(m, "AddSourcePanel"))
     if not f or f.bo is None:
         return None
-    if re.search(r"\bFullScreenPanel\s*\(", m[f.bo:f.bc]):
+    body = m[f.bo:f.bc]
+    if "FullScreenPanelTitle" in body:
         return src
-    steps = [
-        # Full screen rather than a sheet docked under the list
-        (r"\bDockedPanel\(", "FullScreenPanel("),
-        (r"\bColumn\(\s*modifier\s*=\s*Modifier\.padding\(bottom\s*=\s*Defaults\.SpaceSmall\)\s*\)",
-         "Column(modifier = Modifier.fillMaxSize())"),
-        # The scrolling body takes the room between the header and Add, and centers what it holds
-        (r"\.weight\(1f,\s*fill\s*=\s*false\)", ".weight(1f)"),
-        (r"Arrangement\.spacedBy\(Defaults\.SpaceMedium\)",
-         "Arrangement.spacedBy(Defaults.SpaceMedium, Alignment.CenterVertically)"),
+    steps = []
+    # Full screen rather than a sheet docked under the list
+    if re.search(r"\bDockedPanel\(", body):
+        steps.append((r"\bDockedPanel\(", "FullScreenPanel("))
+    if re.search(r"\bColumn\(\s*modifier\s*=\s*Modifier\.padding\(bottom\s*=\s*Defaults\.SpaceSmall\)\s*\)", body):
+        steps.append((r"\bColumn\(\s*modifier\s*=\s*Modifier\.padding\(bottom\s*=\s*Defaults\.SpaceSmall\)\s*\)",
+                      "Column(modifier = Modifier.fillMaxSize())"))
+    # An earlier run centered the scrolling body by itself, which left a gap under the header
+    if re.search(r"\.weight\(1f\)", body):
+        steps.append((r"\.weight\(1f\)", ".weight(1f, fill = false)"))
+    if re.search(r"Alignment\.CenterVertically\)", body):
+        steps.append((r"Arrangement\.spacedBy\(Defaults\.SpaceMedium,\s*Alignment\.CenterVertically\)",
+                      "Arrangement.spacedBy(Defaults.SpaceMedium)"))
+    steps += [
+        # The title moves into the form, leaving only the icons up top
+        (r"\bPanelHeader\(\s*title\s*=\s*\{\s*PanelTitle\(\s*text\s*=\s*stringResource\(R\.string\.sources_dialog_add_source\)\s*\)\s*\}\s*\)",
+         "PanelHeader(title = {})"),
+        (r"^([ \t]*)PendingSources\(",
+         "\\1FullScreenPanelTitle(text = stringResource(R.string.sources_dialog_add_source))\n\\1PendingSources("),
     ]
-    return _replace_in_fun(src, "AddSourcePanel", steps)
+    out = _replace_in_fun(src, "AddSourcePanel", steps)
+    if out is None:
+        return None
+    return _wrap_form_block(out)
 
 
 class Workspace:
