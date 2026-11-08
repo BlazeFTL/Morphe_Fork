@@ -19,8 +19,8 @@ patch.py -- apply fork changes to a MorpheApp/morphe-manager checkout (dev branc
  10. Add source panel: full screen instead of a bottom sheet; title, form and Add stand together as one
      block centered on the screen, with only the community and close icons left at the top
  11. Add source title centered
- 12. Sources page: sort and filter open as a dropdown under the header sort button (no docked bottom
-     panel); the sort button is still marked while a filter narrows the list
+ 12. Sources page: sort and filter are two header buttons, each opening a dropdown (no docked bottom
+     panel); the filter button is marked while a filter narrows the list
  13. Expert patch dialog: a row of buttons under the source tabs (enable all, recommended, saved
      selection, selection panel, disable all), as before the selection panel replaced it
 
@@ -2071,17 +2071,34 @@ def add_panel_full(src):
 
 EXPERT_SELECTION_BAR = r'''package @@PKG@@
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.role
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.dp
 import @@SHARED_PKG@@.*
 import app.morphe.manager.R
 import com.composables.icons.materialsymbols.MaterialSymbols
@@ -2126,41 +2143,37 @@ fun ExpertSelectionBar(
         modifier = modifier
             .fillMaxWidth()
             .padding(top = Defaults.SpaceSmall),
-        horizontalArrangement = Arrangement.SpaceEvenly
+        horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall, Alignment.CenterHorizontally)
     ) {
-        TitleAction(
+        BarPill(
             icon = MaterialSymbols.Rounded.Done_all,
             contentDescription = stringResource(R.string.expert_mode_enable_all),
             onClick = { if (warnOnUniversalAll) showUniversalAllWarning = true else selectAll() },
-            style = TitleActionStyle.Neutral,
             enabled = canEnableMore
         )
-        TitleAction(
+        BarPill(
             icon = MaterialSymbols.Rounded.Recommend,
             contentDescription = stringResource(R.string.expert_mode_recommended),
             onClick = onApplyRecommended,
-            style = TitleActionStyle.Neutral,
             enabled = canApplyRecommended
         )
-        TitleAction(
+        BarPill(
             icon = MaterialSymbols.Rounded.History,
             contentDescription = stringResource(R.string.expert_mode_saved_selection),
             onClick = onRestoreSaved,
-            style = TitleActionStyle.Neutral,
             enabled = hasSavedSelection
         )
-        TitleAction(
+        BarPill(
             icon = MaterialSymbols.Rounded.Content_copy,
             contentDescription = stringResource(R.string.selection_panel_title),
             onClick = onTogglePanel,
-            style = TitleActionStyle.Toggle,
             active = panelOpen
         )
-        TitleAction(
+        BarPill(
             icon = MaterialSymbols.Rounded.Remove_done,
             contentDescription = stringResource(R.string.expert_mode_disable_all),
             onClick = onDeselectAll,
-            style = TitleActionStyle.Destructive,
+            destructive = true,
             enabled = canDisable
         )
     }
@@ -2179,16 +2192,49 @@ fun ExpertSelectionBar(
         )
     }
 }
+
+/** A wide pill of the bar, filled as a header control is and with its icon centered. */
+@Composable
+private fun BarPill(
+    icon: ImageVector,
+    contentDescription: String,
+    onClick: () -> Unit,
+    enabled: Boolean = true,
+    active: Boolean = false,
+    destructive: Boolean = false
+) {
+    val container = HeaderControlDefaults.container(active = active)
+    val content = if (destructive) destructiveColor() else HeaderControlDefaults.content(container, active = active)
+    val shownContainer = if (enabled) container else container.copy(alpha = container.alpha * Defaults.DISABLED_ALPHA)
+    val shownContent = if (enabled) content else dialogTextColor().copy(alpha = Defaults.DISABLED_ALPHA)
+    var pill = Modifier
+        .width(72.dp)
+        .height(35.dp)
+        .clip(CircleShape)
+        .background(shownContainer)
+    if (destructive && enabled) pill = pill.border(1.dp, content.copy(alpha = 0.45f), CircleShape)
+    IconTooltip(text = contentDescription) {
+        Box(
+            modifier = pill
+                .semantics {
+                    this.contentDescription = contentDescription
+                    role = Role.Button
+                }
+                .clickable(enabled = enabled, onClick = onClick),
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(imageVector = icon, contentDescription = null, tint = shownContent, modifier = Modifier.size(Defaults.IconSize))
+        }
+    }
+}
 '''
+
 
 LIST_OPTIONS_MENU = r'''package @@PKG@@
 
-import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.Row
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -2196,63 +2242,55 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 
 /**
- * The header button of a list that sorts and filters, opening a dropdown under it in place of the
- * panel [ListOptionsPanel] docks over the list: every section of [sections] as a titled group of
- * options, the one in effect checked, in alphabetical order. Picking an option applies it and
- * closes the menu. The button is marked while a filter narrows the list, see [ListOptionsButton].
- *
- * @param filterRes The active filter, null while nothing narrows the list.
+ * The header buttons of a list that sorts and filters, in place of the panel [ListOptionsPanel]
+ * docks over the list: a button for each of [sections], opening the options of that section in a
+ * dropdown under it, the one in effect checked, in alphabetical order. Picking an option applies
+ * it and closes the menu. A section past the first is the filter, which marks its button while it
+ * narrows the list, as an order is kept for good and would never stop showing.
  */
 @Composable
-fun ListOptionsMenuButton(
+fun ListOptionsMenuButtons(
     sections: List<ListOptionSection<*>>,
-    @StringRes sortRes: Int,
-    @StringRes filterRes: Int?,
     modifier: Modifier = Modifier
 ) {
-    var expanded by remember { mutableStateOf(false) }
-    Box(modifier = modifier) {
-        ListOptionsButton(
-            sortRes = sortRes,
-            filterRes = filterRes,
-            open = expanded,
-            onClick = { expanded = true }
-        )
-        AppDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-            sections.forEachIndexed { index, section ->
-                if (index > 0) HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
-                ListOptionsMenuSection(section = section, expanded = expanded, onDone = { expanded = false })
-            }
+    Row(modifier = modifier, horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall)) {
+        sections.forEachIndexed { index, section ->
+            ListOptionsMenuButton(section = section, marked = index > 0 && section.isChanged)
         }
     }
 }
 
 @Composable
-private fun <T> ListOptionsMenuSection(
+private fun <T> ListOptionsMenuButton(
     section: ListOptionSection<T>,
-    expanded: Boolean,
-    onDone: () -> Unit
+    marked: Boolean
 ) {
+    var expanded by remember { mutableStateOf(false) }
     // Keeps showing the option the menu opened on until it is gone, as the sort menus do
     val shownCurrent = rememberWhileVisible(expanded, section.current)
-    Text(
-        text = stringResource(section.titleRes),
-        style = MaterialTheme.typography.labelLarge,
-        color = MaterialTheme.colorScheme.onSurfaceVariant,
-        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
-    )
-    section.options.sortedBy { it.title.lowercase() }.forEach { option ->
-        AppDropdownMenuItem(
-            text = option.title,
-            onClick = {
-                section.onSelect(option.value)
-                onDone()
-            },
-            selected = option.value == shownCurrent
+    Box {
+        TitleAction(
+            icon = section.icon,
+            contentDescription = stringResource(section.titleRes),
+            onClick = { expanded = true },
+            style = TitleActionStyle.Toggle,
+            active = expanded,
+            marked = marked
         )
+        AppDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+            section.options.sortedBy { it.title.lowercase() }.forEach { option ->
+                AppDropdownMenuItem(
+                    text = option.title,
+                    onClick = {
+                        section.onSelect(option.value)
+                        expanded = false
+                    },
+                    selected = option.value == shownCurrent
+                )
+            }
+        }
     }
 }
 '''
@@ -2275,11 +2313,7 @@ def sources_sort_menu(src):
     if not re.search(r"\bsortRes\s*=\s*sourceSortMode\.labelRes", body):
         return None
     start = lp - len("ListOptionsButton")
-    new = ("ListOptionsMenuButton(\n"
-           + indent_of(src, start) + "    sections = listOptions,\n"
-           + indent_of(src, start) + "    sortRes = sourceSortMode.labelRes,\n"
-           + indent_of(src, start) + "    filterRes = sourceFilter.labelRes.takeIf { sourceFilter.isActive }\n"
-           + indent_of(src, start) + ")")
+    new = "ListOptionsMenuButtons(sections = listOptions)"
     return src[:start] + new + src[rp + 1:]
 
 
@@ -2723,7 +2757,7 @@ def build_plan(ws):
         ("import isLandscape", imp(land_pkg + ".isLandscape"), False),
     ] + ([
         ("sources sort and filter as a dropdown", sources_sort_dropdown, True),
-        ("import ListOptionsMenuButton", imp(package_of(ws.get(pill)) + ".ListOptionsMenuButton"), False),
+        ("import ListOptionsMenuButton", imp(package_of(ws.get(pill)) + ".ListOptionsMenuButtons"), False),
     ] if symbols else [])))
     plan.append((str(addpanel.relative_to(ws.root)), addpanel, [("add source panel full screen", add_panel_full, False)]))
     host_path = host_ext[0]
