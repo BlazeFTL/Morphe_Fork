@@ -2126,47 +2126,42 @@ fun ExpertSelectionBar(
         modifier = modifier
             .fillMaxWidth()
             .padding(top = Defaults.SpaceSmall),
-        horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall)
+        horizontalArrangement = Arrangement.SpaceEvenly
     ) {
         TitleAction(
             icon = MaterialSymbols.Rounded.Done_all,
             contentDescription = stringResource(R.string.expert_mode_enable_all),
             onClick = { if (warnOnUniversalAll) showUniversalAllWarning = true else selectAll() },
             style = TitleActionStyle.Neutral,
-            enabled = canEnableMore,
-            modifier = Modifier.weight(1f)
+            enabled = canEnableMore
         )
         TitleAction(
             icon = MaterialSymbols.Rounded.Recommend,
             contentDescription = stringResource(R.string.expert_mode_recommended),
             onClick = onApplyRecommended,
             style = TitleActionStyle.Neutral,
-            enabled = canApplyRecommended,
-            modifier = Modifier.weight(1f)
+            enabled = canApplyRecommended
         )
         TitleAction(
             icon = MaterialSymbols.Rounded.History,
             contentDescription = stringResource(R.string.expert_mode_saved_selection),
             onClick = onRestoreSaved,
             style = TitleActionStyle.Neutral,
-            enabled = hasSavedSelection,
-            modifier = Modifier.weight(1f)
+            enabled = hasSavedSelection
         )
         TitleAction(
             icon = MaterialSymbols.Rounded.Content_copy,
             contentDescription = stringResource(R.string.selection_panel_title),
             onClick = onTogglePanel,
             style = TitleActionStyle.Toggle,
-            active = panelOpen,
-            modifier = Modifier.weight(1f)
+            active = panelOpen
         )
         TitleAction(
             icon = MaterialSymbols.Rounded.Remove_done,
             contentDescription = stringResource(R.string.expert_mode_disable_all),
             onClick = onDeselectAll,
             style = TitleActionStyle.Destructive,
-            enabled = canDisable,
-            modifier = Modifier.weight(1f)
+            enabled = canDisable
         )
     }
 
