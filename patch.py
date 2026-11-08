@@ -2618,4 +2618,258 @@ def build_plan(ws):
         util_pkg = package_of(stripper_ext[1])
         util_dir = ws.main / "java" / pathlib.Path(*util_pkg.split("."))
     else:
-       
+        util_dir = stripper[0].parent
+        util_pkg = package_of(ws.get(stripper[0]))
+    helper_dir = card.parent
+    helper_pkg = package_of(ws.get(card))
+    fmt = {
+        "PKG": None,
+        "NS": ns.group(1),
+        "PREFS_PKG": package_of(ws.get(prefs)),
+        "PATCHINFO_PKG": package_of(ws.get(patchinfo[0])),
+        "TOAST_IMPORT": "import %s.UserMessages" % package_of(ws.get(usermsgs[0])) if usermsgs
+        else "import %s.toast" % package_of(ws.get(toast[0])),
+        "TOAST_DECL": "val messages: UserMessages = koinInject()" if usermsgs else "val context = LocalContext.current",
+        "TOAST_CALL": (
+            "messages.show(\n"
+            "                if (wasFavorite) R.string.expert_mode_favorite_removed else R.string.expert_mode_favorite_added,\n"
+            "                patch.displayName\n"
+            "            )") if usermsgs else (
+            "context.toast(\n"
+            "                context.getString(\n"
+            "                    if (wasFavorite) R.string.expert_mode_favorite_removed else R.string.expert_mode_favorite_added,\n"
+            "                    patch.displayName\n"
+            "                )\n"
+            "            )"),
+        "SHARED_PKG": package_of(ws.get(pill)),
+        "TOUR_PKG": package_of(ws.get(tour_state[0])),
+    }
+    fmt.update({"ICON_" + k: v for k, v in ICON.items()})
+
+    def render(tpl, pkg):
+        out = tpl.replace("@@PKG@@", pkg)
+        for k, v in fmt.items():
+            if v:
+                out = out.replace("@@%s@@" % k, v)
+        return out
+
+    plan.append(("res/values/strings.xml", strings, [
+        ("favorite strings", strings_edit(FAVORITE_STRINGS, "expert_mode_universal_patches"), False),
+        ("skip signing strings", strings_edit(SIGNING_STRINGS, "settings_advanced_strip_unused_libs_description"), False),
+        ("app name", app_name_edit, False),
+        ("select APK button string", strings_edit(APK_BUTTON_STRINGS, "home_other_apps_action"), False),
+        ("patch update interval strings", strings_edit(PATCH_INTERVAL_STRINGS, "settings_advanced_update_interval"), False),
+    ]))
+    plan.append(("app/build.gradle.kts", gradle, [("applicationId", app_id_edit, False)]))
+    if has_gservices:
+        plan.append(("app/google-services.json", gservices, [("package_name", gservices_edit(upstream), False)]))
+    plan.append((str(prefs.relative_to(ws.root)), prefs,
+                 PREFS_EDITS + ([("update interval default", interval_default_edit, False)] if FORK_REPO else [])))
+    plan.append((str(vm.relative_to(ws.root)), vm,
+                 [("setSkipApkSigning", vm_edit, False)]
+                 + ([("update worker without GMS gate", no_gms_edit, False)] if FORK_REPO else [])))
+    plan.append((str(adv.relative_to(ws.root)), adv, skip_edits))
+    plan.append((str(worker.relative_to(ws.root)), worker, [
+        ("import SignatureRestorer", imp(util_pkg + ".SignatureRestorer"), False),
+        ("signing branch", worker_sign, False),
+        ("auto-install guard", worker_autoinstall, False),
+    ]))
+    plan.append((str(pill.relative_to(ws.root)), pill, [
+        ("pill trailing param", pill_param, False),
+        ("pill trailing slot", pill_invoke, False),
+    ]))
+    plan.append((str(nav.relative_to(ws.root)), nav, [
+        ("scaffold trailingAction param", nav_param, False),
+        ("pill trailing pass-through", nav_pass, False),
+    ]))
+    land = ws.find(r"\bfun\s+isLandscape\s*\(", P + "ui/screen/shared/WindowSize.kt")
+    land_pkg = package_of(ws.get(land[0])) if land else package_of(ws.get(pill))
+    # Older upstream gates the toolbar button in HomeScreen with a flag, newer keeps it in HomeHeader
+    legacy_flag = re.search(r"\bshowOtherAppsButton\s*=\s*(?:showOtherAppsButton|isLandscape\(\))", mask(ws.get(home)))
+    header = ws.find(r"\bfun\s+HomeHeader\s*\(", P + "ui/screen/home/HomeHeader.kt")
+    if not legacy_flag and len(header) != 1:
+        return None, ["cannot locate the toolbar button (showOtherAppsButton flag / HomeHeader)"]
+    home_edits = [
+        ("pickApkFromFile extract", home_extract, False),
+        ("trailing APK button", home_trailing, False),
+    ]
+    if legacy_flag:
+        home_edits += [
+            ("toolbar button landscape only", home_flags, False),
+            ("import isLandscape", imp(land_pkg + ".isLandscape"), False),
+        ]
+    home_edits.append(("import FloatingTrailingAction", imp(helper_pkg + ".FloatingTrailingAction"), False))
+    plan.append((str(home.relative_to(ws.root)), home, home_edits))
+    if not legacy_flag:
+        plan.append((str(header[0].relative_to(ws.root)), header[0], [
+            ("toolbar button landscape only", header_flags, False),
+            ("import isLandscape", imp(land_pkg + ".isLandscape"), False),
+        ]))
+    plan.append((str(app.relative_to(ws.root)), app, [
+        ("patch update throttle", app_gate, False),
+        ("import PatchUpdateThrottle", imp(package_of(ws.get(prefs)) + ".PatchUpdateThrottle"), False),
+    ] + ([("update worker without GMS gate", no_gms_edit, False)] if FORK_REPO else [])))
+    if FORK_REPO:
+        plan.append((str(consts.relative_to(ws.root)), consts, [("fork update source", update_source_edit, False)]))
+        plan.append((str(api.relative_to(ws.root)), api, [("stable channel accepts dev versions", prerelease_filter_edit, False)]))
+        plan.append((str(postprompts.relative_to(ws.root)), postprompts, [("update worker without GMS gate", no_gms_edit, False)]))
+    plan.append((str(updates.relative_to(ws.root)), updates, [("patch update interval row", updates_row, False)]))
+    plan.append((str(hbar.relative_to(ws.root)), hbar, [
+        ("header searchFirst param", hbar_param, False),
+        ("header search toggle ahead of actions", hbar_layout, False),
+    ]))
+    plan.append((str(phead.relative_to(ws.root)), phead, [
+        ("page header searchFirst param", phead_param, False),
+        ("page header searchFirst pass-through", phead_pass, False),
+    ]))
+    plan.append((str(srcpage.relative_to(ws.root)), srcpage, [
+        ("sources header search first", sources_search_first, False),
+        ("sources header add button landscape only", sources_add_landscape, False),
+        ("import isLandscape", imp(land_pkg + ".isLandscape"), False),
+    ] + ([
+        ("sources sort and filter as a dropdown", sources_sort_dropdown, True),
+        ("import ListOptionsMenuButton", imp(package_of(ws.get(pill)) + ".ListOptionsMenuButton"), False),
+    ] if symbols else [])))
+    plan.append((str(addpanel.relative_to(ws.root)), addpanel, [("add source panel full screen", add_panel_full, False)]))
+    host_path = host_ext[0]
+    ws.ensure(host_path)
+    plan.append((str(host_path.relative_to(ws.root)), host_path, [("quiet universal default notice", host_quiet_universal, False)]))
+    plan.append((str(selext.relative_to(ws.root)), selext, [("expert bundles with app patches first", bundles_app_first, False)]))
+    plan.append((str(comps.relative_to(ws.root)), comps, COMPONENT_EDITS))
+    plan.append((str(card.relative_to(ws.root)), card, [
+        ("PatchCard params", card_params, False),
+        ("PatchCard long-press", card_longclick, False),
+        ("PatchCard star", card_star, False),
+    ]))
+    for d in dialogs:
+        plan.append((str(d.relative_to(ws.root)), d, [("favorites wiring", make_dialog_edit(helper_pkg), False)]))
+    expert_dlg = ws.find(r"\bclass\s+ExpertSelectionPanel\b", P + "ui/screen/home/ExpertModeDialog.kt")
+    if symbols and len(expert_dlg) == 1:
+        plan.append((str(expert_dlg[0].relative_to(ws.root)), expert_dlg[0], [
+            ("expert selection bar under the source tabs", expert_bar_all, True),
+        ]))
+
+    new_files = [
+        (util_dir / "SignatureRestorer.kt", render(SIGNATURE_RESTORER, util_pkg)),
+        (helper_dir / "FavoritePatches.kt", render(FAVORITE_PATCHES, helper_pkg)),
+        (helper_dir / "FloatingApkButton.kt", render(FLOATING_APK_BUTTON, helper_pkg)),
+        (pill.parent / "FullScreenPanel.kt", render(FULLSCREEN_PANEL, package_of(ws.get(pill)))),
+        (prefs.parent / "PatchUpdateThrottle.kt", render(PATCH_UPDATE_THROTTLE, package_of(ws.get(prefs)))),
+        (updates.parent / "PatchUpdateIntervalSetting.kt", render(PATCH_UPDATE_INTERVAL_SETTING, package_of(ws.get(updates)))),
+    ]
+    if symbols:
+        new_files += [
+            (helper_dir / "ExpertSelectionBar.kt", render(EXPERT_SELECTION_BAR, helper_pkg)),
+            (pill.parent / "ListOptionsMenu.kt", render(LIST_OPTIONS_MENU, package_of(ws.get(pill)))),
+        ]
+    needles = [
+        (r"\bval\s+skipApkSigning\s*=", prefs, "skipApkSigning preference"),
+        (r"\bval\s+favoriteUniversalPatches\s*=", prefs, "favoriteUniversalPatches preference"),
+        (r"\bfun\s+setSkipApkSigning\b", vm, "setSkipApkSigning"),
+        (r"\bval\s+patchUpdateIntervalHours\s*=", prefs, "patchUpdateIntervalHours preference"),
+        (r"\bval\s+lastPatchUpdateCheck\s*=", prefs, "lastPatchUpdateCheck preference"),
+    ]
+    return (plan, new_files, adv, needles), []
+
+
+def verify(ws, changed, strings_path, needles):
+    errors = []
+    for p in changed:
+        if p.suffix == ".kt" and not balanced(mask(ws.get(p))):
+            errors.append("%s: unbalanced brackets after edit" % p.relative_to(ws.root))
+    strings_text = ws.get(strings_path)
+    for p in changed:
+        if p.suffix != ".kt":
+            continue
+        for name in set(re.findall(r"R\.string\.(\w+)", mask(ws.get(p)))):
+            if name in OUR_STRINGS and 'name="%s"' % name not in strings_text:
+                errors.append("%s: R.string.%s not defined" % (p.relative_to(ws.root), name))
+    for rx, path, what in needles:
+        if not re.search(rx, mask(ws.get(path))):
+            errors.append("missing " + what)
+    return errors
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("source", nargs="?", default=".", help="morphe-manager repo root (default: cwd)")
+    ap.add_argument("--check", action="store_true", help="dry run, no changes written")
+    args = ap.parse_args()
+
+    root = pathlib.Path(args.source).resolve()
+    if not (root / "app" / "src" / "main").is_dir():
+        print("error: %s doesn't look like a morphe-manager checkout (no app/src/main)" % root, file=sys.stderr)
+        sys.exit(1)
+
+    ws = Workspace(root)
+    built, problems = build_plan(ws)
+    if problems:
+        for pr in problems:
+            print("[!] " + pr, file=sys.stderr)
+        sys.exit(1)
+    plan, new_files, adv, needles = built
+
+    failed = []
+    status = {}
+    for label, path, edits in plan:
+        cur = ws.get(path)
+        bad = []
+        for desc, fn, optional in edits:
+            r = fn(cur)
+            if r is None:
+                if optional:
+                    note("%s: '%s' anchor not found, skipped" % (label, desc))
+                else:
+                    bad.append(desc)
+            else:
+                cur = r
+        if bad:
+            failed.append(label)
+            print("[!] %s: no matching anchor for: %s" % (label, ", ".join(bad)), file=sys.stderr)
+            status[path] = "failed"
+            continue
+        ws.set(path, cur)
+        status[path] = "pending" if cur != ws.orig[path] else "applied"
+
+    if not failed:
+        fix_duplicate_strip_toggle(ws, adv)
+        if ws.get(adv) != ws.orig[adv]:
+            status[adv] = "pending"
+
+    new_status = {}
+    for path, text in new_files:
+        old = path.read_text(encoding="utf-8").replace("\r\n", "\n") if path.is_file() else None
+        ws.add_new(path, text)
+        new_status[path] = "applied" if old == text else ("pending-new" if old is None else "pending")
+
+    if failed:
+        print("\n%d file(s) failed: %s\nnothing written." % (len(failed), ", ".join(failed)), file=sys.stderr)
+        sys.exit(1)
+
+    changed = [p for p, s in list(status.items()) + list(new_status.items()) if s.startswith("pending")]
+    errors = verify(ws, changed, ws.main / "res" / "values" / "strings.xml", needles)
+    if errors:
+        for e in errors:
+            print("[!] " + e, file=sys.stderr)
+        print("\nnothing written.", file=sys.stderr)
+        sys.exit(1)
+
+    for p, s in list(status.items()) + list(new_status.items()):
+        rel = p.relative_to(root)
+        if s == "applied":
+            print("[=] %s: already applied" % rel)
+        elif args.check:
+            print("[ ] %s: pending" % rel)
+        else:
+            ws.write(p)
+            print("[+] %s: %s" % (rel, "created" if s == "pending-new" else "applied"))
+    for n in NOTES:
+        print("[~] " + n)
+
+    if args.check:
+        sys.exit(1 if changed else 0)
+    print("\ndone.")
+
+
+if __name__ == "__main__":
+    main()
