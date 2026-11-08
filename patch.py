@@ -2143,7 +2143,7 @@ fun ExpertSelectionBar(
         modifier = modifier
             .fillMaxWidth()
             .padding(top = Defaults.SpaceSmall),
-        horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall, Alignment.CenterHorizontally)
+        horizontalArrangement = Arrangement.spacedBy(6.dp, Alignment.CenterHorizontally)
     ) {
         BarPill(
             icon = MaterialSymbols.Rounded.Done_all,
@@ -2193,7 +2193,7 @@ fun ExpertSelectionBar(
     }
 }
 
-/** A wide pill of the bar, filled as a header control is and with its icon centered. */
+/** A small pill of the bar, filled as a header control is and with its icon centered. */
 @Composable
 private fun BarPill(
     icon: ImageVector,
@@ -2208,8 +2208,8 @@ private fun BarPill(
     val shownContainer = if (enabled) container else container.copy(alpha = container.alpha * Defaults.DISABLED_ALPHA)
     val shownContent = if (enabled) content else dialogTextColor().copy(alpha = Defaults.DISABLED_ALPHA)
     var pill = Modifier
-        .width(72.dp)
-        .height(35.dp)
+        .width(56.dp)
+        .height(30.dp)
         .clip(CircleShape)
         .background(shownContainer)
     if (destructive && enabled) pill = pill.border(1.dp, content.copy(alpha = 0.45f), CircleShape)
@@ -2223,7 +2223,7 @@ private fun BarPill(
                 .clickable(enabled = enabled, onClick = onClick),
             contentAlignment = Alignment.Center
         ) {
-            Icon(imageVector = icon, contentDescription = null, tint = shownContent, modifier = Modifier.size(Defaults.IconSize))
+            Icon(imageVector = icon, contentDescription = null, tint = shownContent, modifier = Modifier.size(Defaults.IconSizeSmall))
         }
     }
 }
