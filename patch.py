@@ -18,6 +18,11 @@ patch.py -- apply fork changes to a MorpheApp/morphe-manager checkout (dev branc
      source panel) instead of "Select APK", and the header (+) is dropped in portrait
  10. Add source panel: full screen instead of a bottom sheet; title, form and Add stand together as one
      block centered on the screen, with only the community and close icons left at the top
+ 11. Add source title centered
+ 12. Sources page: sort and filter open as a dropdown under the header sort button (no docked bottom
+     panel); the sort button is still marked while a filter narrows the list
+ 13. Expert patch dialog: a row of buttons under the source tabs (enable all, recommended, saved
+     selection, selection panel, disable all), as before the selection panel replaced it
 
 Anchors are structural (function bodies, call arguments, parameter lists, single
 lines), never pasted multi-line context. Files are found by declaration; the path
@@ -1650,6 +1655,7 @@ import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
@@ -1662,6 +1668,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 
 /**
  * A [DockedPanel] that takes the whole screen: it slides up over the page, header and bars
@@ -1711,14 +1718,17 @@ fun FullScreenPanel(
     }
 }
 
-/** Large title set above the form of a [FullScreenPanel], standing with it rather than up in a header. */
+/** Large title set above the form of a [FullScreenPanel], centered and standing with it rather than up in a header. */
 @Composable
 fun FullScreenPanelTitle(text: String, modifier: Modifier = Modifier) {
     Text(
         text = text,
         style = MaterialTheme.typography.headlineSmall,
         fontWeight = FontWeight.Bold,
-        modifier = modifier.padding(bottom = Defaults.SpaceSmall)
+        textAlign = TextAlign.Center,
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(bottom = Defaults.SpaceSmall)
     )
 }
 '''
@@ -2059,6 +2069,355 @@ def add_panel_full(src):
     return _wrap_form_block(out)
 
 
+EXPERT_SELECTION_BAR = r'''package @@PKG@@
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import @@SHARED_PKG@@.*
+import app.morphe.manager.R
+import com.composables.icons.materialsymbols.MaterialSymbols
+import com.composables.icons.materialsymbols.rounded.*
+import org.koin.compose.koinInject
+
+/**
+ * The row of buttons under the source tabs of the expert patch dialog: enable all, the recommended
+ * patches, the saved selection, the selection panel and disable all. Each acts on the source whose
+ * tab is open, and stays in place, grayed out while there is nothing for it to do.
+ *
+ * Enabling all is staged like the one in the selection panel: the regular patches first, the
+ * universal ones on the next tap and after a warning.
+ */
+@Composable
+fun ExpertSelectionBar(
+    canEnableMore: Boolean,
+    canDisable: Boolean,
+    holdsUniversalPatches: Boolean,
+    warnOnUniversalAll: Boolean,
+    onSelectAll: () -> Unit,
+    onDeselectAll: () -> Unit,
+    canApplyRecommended: Boolean,
+    onApplyRecommended: () -> Unit,
+    hasSavedSelection: Boolean,
+    onRestoreSaved: () -> Unit,
+    panelOpen: Boolean,
+    onTogglePanel: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val messages = koinInject<UserMessages>()
+    val pendingUniversal = stringResource(R.string.expert_mode_enable_all_universal_pending)
+    var showUniversalAllWarning by remember { mutableStateOf(false) }
+
+    val selectAll = {
+        onSelectAll()
+        // Nothing on screen may change with this tap, so it says what the next one does
+        if (holdsUniversalPatches) messages.show(pendingUniversal)
+    }
+
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(top = Defaults.SpaceSmall),
+        horizontalArrangement = Arrangement.spacedBy(Defaults.SpaceSmall)
+    ) {
+        TitleAction(
+            icon = MaterialSymbols.Rounded.Done_all,
+            contentDescription = stringResource(R.string.expert_mode_enable_all),
+            onClick = { if (warnOnUniversalAll) showUniversalAllWarning = true else selectAll() },
+            style = TitleActionStyle.Neutral,
+            enabled = canEnableMore,
+            modifier = Modifier.weight(1f)
+        )
+        TitleAction(
+            icon = MaterialSymbols.Rounded.Recommend,
+            contentDescription = stringResource(R.string.expert_mode_recommended),
+            onClick = onApplyRecommended,
+            style = TitleActionStyle.Neutral,
+            enabled = canApplyRecommended,
+            modifier = Modifier.weight(1f)
+        )
+        TitleAction(
+            icon = MaterialSymbols.Rounded.History,
+            contentDescription = stringResource(R.string.expert_mode_saved_selection),
+            onClick = onRestoreSaved,
+            style = TitleActionStyle.Neutral,
+            enabled = hasSavedSelection,
+            modifier = Modifier.weight(1f)
+        )
+        TitleAction(
+            icon = MaterialSymbols.Rounded.Content_copy,
+            contentDescription = stringResource(R.string.selection_panel_title),
+            onClick = onTogglePanel,
+            style = TitleActionStyle.Toggle,
+            active = panelOpen,
+            modifier = Modifier.weight(1f)
+        )
+        TitleAction(
+            icon = MaterialSymbols.Rounded.Remove_done,
+            contentDescription = stringResource(R.string.expert_mode_disable_all),
+            onClick = onDeselectAll,
+            style = TitleActionStyle.Destructive,
+            enabled = canDisable,
+            modifier = Modifier.weight(1f)
+        )
+    }
+
+    DialogHost(visible = showUniversalAllWarning) {
+        ConfirmDialog(
+            title = stringResource(R.string.expert_mode_universal_all_warning_title),
+            message = stringResource(R.string.expert_mode_universal_all_warning_message),
+            primaryText = stringResource(R.string.enable),
+            isPrimaryDestructive = false,
+            onDismiss = { showUniversalAllWarning = false },
+            onConfirm = {
+                showUniversalAllWarning = false
+                selectAll()
+            }
+        )
+    }
+}
+'''
+
+LIST_OPTIONS_MENU = r'''package @@PKG@@
+
+import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
+
+/**
+ * The header button of a list that sorts and filters, opening a dropdown under it in place of the
+ * panel [ListOptionsPanel] docks over the list: every section of [sections] as a titled group of
+ * options, the one in effect checked, in alphabetical order. Picking an option applies it and
+ * closes the menu. The button is marked while a filter narrows the list, see [ListOptionsButton].
+ *
+ * @param filterRes The active filter, null while nothing narrows the list.
+ */
+@Composable
+fun ListOptionsMenuButton(
+    sections: List<ListOptionSection<*>>,
+    @StringRes sortRes: Int,
+    @StringRes filterRes: Int?,
+    modifier: Modifier = Modifier
+) {
+    var expanded by remember { mutableStateOf(false) }
+    Box(modifier = modifier) {
+        ListOptionsButton(
+            sortRes = sortRes,
+            filterRes = filterRes,
+            open = expanded,
+            onClick = { expanded = true }
+        )
+        AppDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+            sections.forEachIndexed { index, section ->
+                if (index > 0) HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
+                ListOptionsMenuSection(section = section, expanded = expanded, onDone = { expanded = false })
+            }
+        }
+    }
+}
+
+@Composable
+private fun <T> ListOptionsMenuSection(
+    section: ListOptionSection<T>,
+    expanded: Boolean,
+    onDone: () -> Unit
+) {
+    // Keeps showing the option the menu opened on until it is gone, as the sort menus do
+    val shownCurrent = rememberWhileVisible(expanded, section.current)
+    Text(
+        text = stringResource(section.titleRes),
+        style = MaterialTheme.typography.labelLarge,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+    )
+    section.options.sortedBy { it.title.lowercase() }.forEach { option ->
+        AppDropdownMenuItem(
+            text = option.title,
+            onClick = {
+                section.onSelect(option.value)
+                onDone()
+            },
+            selected = option.value == shownCurrent
+        )
+    }
+}
+'''
+
+
+def sources_sort_menu(src):
+    """Header sort button opens a dropdown (sort and filter) instead of the docked options panel."""
+    m = mask(src)
+    f = one(find_funs(m, "SourcesPageContent"))
+    if not f or f.bo is None:
+        return None
+    if "ListOptionsMenuButton" in m[f.bo:f.bc]:
+        return src
+    calls = find_calls(m, "ListOptionsButton", f.bo, f.bc)
+    if len(calls) != 1:
+        return None
+    lp = calls[0]
+    rp = match_close(m, lp)
+    body = m[lp:rp]
+    if not re.search(r"\bsortRes\s*=\s*sourceSortMode\.labelRes", body):
+        return None
+    start = lp - len("ListOptionsButton")
+    new = ("ListOptionsMenuButton(\n"
+           + indent_of(src, start) + "    sections = listOptions,\n"
+           + indent_of(src, start) + "    sortRes = sourceSortMode.labelRes,\n"
+           + indent_of(src, start) + "    filterRes = sourceFilter.labelRes.takeIf { sourceFilter.isActive }\n"
+           + indent_of(src, start) + ")")
+    return src[:start] + new + src[rp + 1:]
+
+
+def sources_drop_options_panel(src):
+    m = mask(src)
+    f = one(find_funs(m, "SourcesPageContent"))
+    if not f or f.bo is None:
+        return None
+    calls = find_calls(m, "ListOptionsPanel", f.bo, f.bc)
+    if not calls:
+        return src
+    if len(calls) != 1:
+        return None
+    lp = calls[0]
+    rp = match_close(m, lp)
+    start = lp - len("ListOptionsPanel")
+    ls = line_start(src, start)
+    if src[ls:start].strip():
+        return None
+    le = line_end(src, rp)
+    if src[rp + 1:le].strip():
+        return None
+    return src[:ls] + src[le + 1:]
+
+
+def expert_panel_fields(src):
+    """ExpertSelectionPanel also hands the dialog what its selection bar acts on."""
+    m = mask(src)
+    cm = re.search(r"\bclass\s+ExpertSelectionPanel\s*\(", m)
+    if not cm:
+        return None
+    lp = cm.end() - 1
+    rp = match_close(m, lp)
+    if "onApplyRecommended" in m[lp:rp]:
+        out = src
+    else:
+        hits = list(re.finditer(r"^([ \t]*)val\s+onToggle\s*:\s*\(\)\s*->\s*Unit\s*,[ \t]*$", m[lp:rp], re.M))
+        if len(hits) != 1:
+            return None
+        h = hits[0]
+        a, b = lp + h.start(), lp + h.end()
+        ind = h.group(1)
+        out = (src[:b] + "\n" + ind + "val onApplyRecommended: (bundleUid: Int) -> Unit = {},\n"
+               + ind + "val hasSavedSelection: () -> Boolean = { false },\n"
+               + ind + "val onRestoreSaved: () -> Unit = {}," + src[b:])
+    m = mask(out)
+    f = one(find_funs(m, "expertSelectionPanel"))
+    if not f or f.bo is None:
+        return None
+    if "host::resetToDefault" in m[f.bo:f.bc]:
+        return out
+    hits = list(re.finditer(r"\bonToggle\s*=\s*panel::toggle\b", m[f.bo:f.bc]))
+    if len(hits) != 1:
+        return None
+    b = f.bo + hits[0].end()
+    return (out[:b] + ", onApplyRecommended = host::resetToDefault,"
+            " hasSavedSelection = { host.hasSavedSelection }, onRestoreSaved = host::restoreSaved" + out[b:])
+
+
+def expert_bar_header(src):
+    """Puts the selection bar under the source tabs, in the header of the expert patch dialog."""
+    m = mask(src)
+    if "ExpertSelectionBar(" in m:
+        return src
+    hits = list(re.finditer(
+        r"\bcontent\s*=\s*if\s*\(\s*hasMultipleBundleLayout\s*&&\s*displayedBundles\.isNotEmpty\(\)\s*\)\s*\{", m))
+    if len(hits) != 1:
+        return None
+    h = hits[0]
+    tabs_cond = "hasMultipleBundleLayout && displayedBundles.isNotEmpty()"
+    ob = h.end() - 1
+    ob_close = match_close(m, ob)
+    t = re.match(r"\s*\{", m[ob + 1:ob_close])
+    if ob_close < 0 or not t:
+        return None
+    ib = ob + 1 + t.end() - 1
+    ib_close = match_close(m, ib)
+    if ib_close < 0 or ib_close > ob_close:
+        return None
+    body = src[ib + 1:ib_close].rstrip().lstrip("\n")
+    ind = indent_of(src, ib)
+    bar = textwrap.dedent("""\
+        if (selectionPanel != null && headBundle != null) {
+            // Acts on the source whose tab is open, on the patches the filters left in view
+            val barPatches = filteredPatchesByUid[headBundle.uid].orEmpty()
+            val barHoldsUniversal = holdsUniversalPatches(headBundle.uid, barPatches)
+            ExpertSelectionBar(
+                canEnableMore = barPatches.any { (patch, isEnabled) ->
+                    !isEnabled && lockStateOf(patch) != PatchLockState.LOCKED_OFF
+                },
+                canDisable = barPatches.any { (patch, isEnabled) ->
+                    isEnabled && lockStateOf(patch) != PatchLockState.LOCKED_ON
+                },
+                holdsUniversalPatches = barHoldsUniversal,
+                warnOnUniversalAll = !barHoldsUniversal && barPatches.hasUniversalToEnable(lockStateOf),
+                onSelectAll = {
+                    if (!barHoldsUniversal) patchSections.setExpanded(headBundle.uid, UNIVERSAL_GROUP_KEY, true)
+                    patchActions.onSelectAll(headBundle.uid, barPatches)
+                },
+                onDeselectAll = { patchActions.onDeselectAll(headBundle.uid, barPatches) },
+                canApplyRecommended = true,
+                onApplyRecommended = { selectionPanel.onApplyRecommended(headBundle.uid) },
+                hasSavedSelection = selectionPanel.hasSavedSelection(),
+                onRestoreSaved = selectionPanel.onRestoreSaved,
+                panelOpen = selectionPanel.isOpen,
+                onTogglePanel = selectionPanel.onToggle
+            )
+        }""")
+    inner = ("{\n" + ind + "    Column {\n"
+             + ind + "        if (" + tabs_cond + ") {\n"
+             + reindent(body, "        ") + "\n"
+             + ind + "        }\n"
+             + reindent(bar, ind + "        ") + "\n"
+             + ind + "    }\n" + ind + "}")
+    cond_new = "content = if (selectionPanel != null || (" + tabs_cond + ")) {"
+    return src[:h.start()] + cond_new + src[h.end():ib] + inner + src[ib_close + 1:]
+
+
+
+def sources_sort_dropdown(src):
+    out = sources_sort_menu(src)
+    if out is None:
+        return None
+    return sources_drop_options_panel(out)
+
+
+def expert_bar_all(src):
+    out = expert_panel_fields(src)
+    if out is None:
+        return None
+    return expert_bar_header(out)
+
+
 class Workspace:
     def __init__(self, root):
         self.root = root
@@ -2259,245 +2618,4 @@ def build_plan(ws):
         util_pkg = package_of(stripper_ext[1])
         util_dir = ws.main / "java" / pathlib.Path(*util_pkg.split("."))
     else:
-        util_dir = stripper[0].parent
-        util_pkg = package_of(ws.get(stripper[0]))
-    helper_dir = card.parent
-    helper_pkg = package_of(ws.get(card))
-    fmt = {
-        "PKG": None,
-        "NS": ns.group(1),
-        "PREFS_PKG": package_of(ws.get(prefs)),
-        "PATCHINFO_PKG": package_of(ws.get(patchinfo[0])),
-        "TOAST_IMPORT": "import %s.UserMessages" % package_of(ws.get(usermsgs[0])) if usermsgs
-        else "import %s.toast" % package_of(ws.get(toast[0])),
-        "TOAST_DECL": "val messages: UserMessages = koinInject()" if usermsgs else "val context = LocalContext.current",
-        "TOAST_CALL": (
-            "messages.show(\n"
-            "                if (wasFavorite) R.string.expert_mode_favorite_removed else R.string.expert_mode_favorite_added,\n"
-            "                patch.displayName\n"
-            "            )") if usermsgs else (
-            "context.toast(\n"
-            "                context.getString(\n"
-            "                    if (wasFavorite) R.string.expert_mode_favorite_removed else R.string.expert_mode_favorite_added,\n"
-            "                    patch.displayName\n"
-            "                )\n"
-            "            )"),
-        "SHARED_PKG": package_of(ws.get(pill)),
-        "TOUR_PKG": package_of(ws.get(tour_state[0])),
-    }
-    fmt.update({"ICON_" + k: v for k, v in ICON.items()})
-
-    def render(tpl, pkg):
-        out = tpl.replace("@@PKG@@", pkg)
-        for k, v in fmt.items():
-            if v:
-                out = out.replace("@@%s@@" % k, v)
-        return out
-
-    plan.append(("res/values/strings.xml", strings, [
-        ("favorite strings", strings_edit(FAVORITE_STRINGS, "expert_mode_universal_patches"), False),
-        ("skip signing strings", strings_edit(SIGNING_STRINGS, "settings_advanced_strip_unused_libs_description"), False),
-        ("app name", app_name_edit, False),
-        ("select APK button string", strings_edit(APK_BUTTON_STRINGS, "home_other_apps_action"), False),
-        ("patch update interval strings", strings_edit(PATCH_INTERVAL_STRINGS, "settings_advanced_update_interval"), False),
-    ]))
-    plan.append(("app/build.gradle.kts", gradle, [("applicationId", app_id_edit, False)]))
-    if has_gservices:
-        plan.append(("app/google-services.json", gservices, [("package_name", gservices_edit(upstream), False)]))
-    plan.append((str(prefs.relative_to(ws.root)), prefs,
-                 PREFS_EDITS + ([("update interval default", interval_default_edit, False)] if FORK_REPO else [])))
-    plan.append((str(vm.relative_to(ws.root)), vm,
-                 [("setSkipApkSigning", vm_edit, False)]
-                 + ([("update worker without GMS gate", no_gms_edit, False)] if FORK_REPO else [])))
-    plan.append((str(adv.relative_to(ws.root)), adv, skip_edits))
-    plan.append((str(worker.relative_to(ws.root)), worker, [
-        ("import SignatureRestorer", imp(util_pkg + ".SignatureRestorer"), False),
-        ("signing branch", worker_sign, False),
-        ("auto-install guard", worker_autoinstall, False),
-    ]))
-    plan.append((str(pill.relative_to(ws.root)), pill, [
-        ("pill trailing param", pill_param, False),
-        ("pill trailing slot", pill_invoke, False),
-    ]))
-    plan.append((str(nav.relative_to(ws.root)), nav, [
-        ("scaffold trailingAction param", nav_param, False),
-        ("pill trailing pass-through", nav_pass, False),
-    ]))
-    land = ws.find(r"\bfun\s+isLandscape\s*\(", P + "ui/screen/shared/WindowSize.kt")
-    land_pkg = package_of(ws.get(land[0])) if land else package_of(ws.get(pill))
-    # Older upstream gates the toolbar button in HomeScreen with a flag, newer keeps it in HomeHeader
-    legacy_flag = re.search(r"\bshowOtherAppsButton\s*=\s*(?:showOtherAppsButton|isLandscape\(\))", mask(ws.get(home)))
-    header = ws.find(r"\bfun\s+HomeHeader\s*\(", P + "ui/screen/home/HomeHeader.kt")
-    if not legacy_flag and len(header) != 1:
-        return None, ["cannot locate the toolbar button (showOtherAppsButton flag / HomeHeader)"]
-    home_edits = [
-        ("pickApkFromFile extract", home_extract, False),
-        ("trailing APK button", home_trailing, False),
-    ]
-    if legacy_flag:
-        home_edits += [
-            ("toolbar button landscape only", home_flags, False),
-            ("import isLandscape", imp(land_pkg + ".isLandscape"), False),
-        ]
-    home_edits.append(("import FloatingTrailingAction", imp(helper_pkg + ".FloatingTrailingAction"), False))
-    plan.append((str(home.relative_to(ws.root)), home, home_edits))
-    if not legacy_flag:
-        plan.append((str(header[0].relative_to(ws.root)), header[0], [
-            ("toolbar button landscape only", header_flags, False),
-            ("import isLandscape", imp(land_pkg + ".isLandscape"), False),
-        ]))
-    plan.append((str(app.relative_to(ws.root)), app, [
-        ("patch update throttle", app_gate, False),
-        ("import PatchUpdateThrottle", imp(package_of(ws.get(prefs)) + ".PatchUpdateThrottle"), False),
-    ] + ([("update worker without GMS gate", no_gms_edit, False)] if FORK_REPO else [])))
-    if FORK_REPO:
-        plan.append((str(consts.relative_to(ws.root)), consts, [("fork update source", update_source_edit, False)]))
-        plan.append((str(api.relative_to(ws.root)), api, [("stable channel accepts dev versions", prerelease_filter_edit, False)]))
-        plan.append((str(postprompts.relative_to(ws.root)), postprompts, [("update worker without GMS gate", no_gms_edit, False)]))
-    plan.append((str(updates.relative_to(ws.root)), updates, [("patch update interval row", updates_row, False)]))
-    plan.append((str(hbar.relative_to(ws.root)), hbar, [
-        ("header searchFirst param", hbar_param, False),
-        ("header search toggle ahead of actions", hbar_layout, False),
-    ]))
-    plan.append((str(phead.relative_to(ws.root)), phead, [
-        ("page header searchFirst param", phead_param, False),
-        ("page header searchFirst pass-through", phead_pass, False),
-    ]))
-    plan.append((str(srcpage.relative_to(ws.root)), srcpage, [
-        ("sources header search first", sources_search_first, False),
-        ("sources header add button landscape only", sources_add_landscape, False),
-        ("import isLandscape", imp(land_pkg + ".isLandscape"), False),
-    ]))
-    plan.append((str(addpanel.relative_to(ws.root)), addpanel, [("add source panel full screen", add_panel_full, False)]))
-    host_path = host_ext[0]
-    ws.ensure(host_path)
-    plan.append((str(host_path.relative_to(ws.root)), host_path, [("quiet universal default notice", host_quiet_universal, False)]))
-    plan.append((str(selext.relative_to(ws.root)), selext, [("expert bundles with app patches first", bundles_app_first, False)]))
-    plan.append((str(comps.relative_to(ws.root)), comps, COMPONENT_EDITS))
-    plan.append((str(card.relative_to(ws.root)), card, [
-        ("PatchCard params", card_params, False),
-        ("PatchCard long-press", card_longclick, False),
-        ("PatchCard star", card_star, False),
-    ]))
-    for d in dialogs:
-        plan.append((str(d.relative_to(ws.root)), d, [("favorites wiring", make_dialog_edit(helper_pkg), False)]))
-
-    new_files = [
-        (util_dir / "SignatureRestorer.kt", render(SIGNATURE_RESTORER, util_pkg)),
-        (helper_dir / "FavoritePatches.kt", render(FAVORITE_PATCHES, helper_pkg)),
-        (helper_dir / "FloatingApkButton.kt", render(FLOATING_APK_BUTTON, helper_pkg)),
-        (pill.parent / "FullScreenPanel.kt", render(FULLSCREEN_PANEL, package_of(ws.get(pill)))),
-        (prefs.parent / "PatchUpdateThrottle.kt", render(PATCH_UPDATE_THROTTLE, package_of(ws.get(prefs)))),
-        (updates.parent / "PatchUpdateIntervalSetting.kt", render(PATCH_UPDATE_INTERVAL_SETTING, package_of(ws.get(updates)))),
-    ]
-    needles = [
-        (r"\bval\s+skipApkSigning\s*=", prefs, "skipApkSigning preference"),
-        (r"\bval\s+favoriteUniversalPatches\s*=", prefs, "favoriteUniversalPatches preference"),
-        (r"\bfun\s+setSkipApkSigning\b", vm, "setSkipApkSigning"),
-        (r"\bval\s+patchUpdateIntervalHours\s*=", prefs, "patchUpdateIntervalHours preference"),
-        (r"\bval\s+lastPatchUpdateCheck\s*=", prefs, "lastPatchUpdateCheck preference"),
-    ]
-    return (plan, new_files, adv, needles), []
-
-
-def verify(ws, changed, strings_path, needles):
-    errors = []
-    for p in changed:
-        if p.suffix == ".kt" and not balanced(mask(ws.get(p))):
-            errors.append("%s: unbalanced brackets after edit" % p.relative_to(ws.root))
-    strings_text = ws.get(strings_path)
-    for p in changed:
-        if p.suffix != ".kt":
-            continue
-        for name in set(re.findall(r"R\.string\.(\w+)", mask(ws.get(p)))):
-            if name in OUR_STRINGS and 'name="%s"' % name not in strings_text:
-                errors.append("%s: R.string.%s not defined" % (p.relative_to(ws.root), name))
-    for rx, path, what in needles:
-        if not re.search(rx, mask(ws.get(path))):
-            errors.append("missing " + what)
-    return errors
-
-
-def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("source", nargs="?", default=".", help="morphe-manager repo root (default: cwd)")
-    ap.add_argument("--check", action="store_true", help="dry run, no changes written")
-    args = ap.parse_args()
-
-    root = pathlib.Path(args.source).resolve()
-    if not (root / "app" / "src" / "main").is_dir():
-        print("error: %s doesn't look like a morphe-manager checkout (no app/src/main)" % root, file=sys.stderr)
-        sys.exit(1)
-
-    ws = Workspace(root)
-    built, problems = build_plan(ws)
-    if problems:
-        for pr in problems:
-            print("[!] " + pr, file=sys.stderr)
-        sys.exit(1)
-    plan, new_files, adv, needles = built
-
-    failed = []
-    status = {}
-    for label, path, edits in plan:
-        cur = ws.get(path)
-        bad = []
-        for desc, fn, optional in edits:
-            r = fn(cur)
-            if r is None:
-                if optional:
-                    note("%s: '%s' anchor not found, skipped" % (label, desc))
-                else:
-                    bad.append(desc)
-            else:
-                cur = r
-        if bad:
-            failed.append(label)
-            print("[!] %s: no matching anchor for: %s" % (label, ", ".join(bad)), file=sys.stderr)
-            status[path] = "failed"
-            continue
-        ws.set(path, cur)
-        status[path] = "pending" if cur != ws.orig[path] else "applied"
-
-    if not failed:
-        fix_duplicate_strip_toggle(ws, adv)
-        if ws.get(adv) != ws.orig[adv]:
-            status[adv] = "pending"
-
-    new_status = {}
-    for path, text in new_files:
-        old = path.read_text(encoding="utf-8").replace("\r\n", "\n") if path.is_file() else None
-        ws.add_new(path, text)
-        new_status[path] = "applied" if old == text else ("pending-new" if old is None else "pending")
-
-    if failed:
-        print("\n%d file(s) failed: %s\nnothing written." % (len(failed), ", ".join(failed)), file=sys.stderr)
-        sys.exit(1)
-
-    changed = [p for p, s in list(status.items()) + list(new_status.items()) if s.startswith("pending")]
-    errors = verify(ws, changed, ws.main / "res" / "values" / "strings.xml", needles)
-    if errors:
-        for e in errors:
-            print("[!] " + e, file=sys.stderr)
-        print("\nnothing written.", file=sys.stderr)
-        sys.exit(1)
-
-    for p, s in list(status.items()) + list(new_status.items()):
-        rel = p.relative_to(root)
-        if s == "applied":
-            print("[=] %s: already applied" % rel)
-        elif args.check:
-            print("[ ] %s: pending" % rel)
-        else:
-            ws.write(p)
-            print("[+] %s: %s" % (rel, "created" if s == "pending-new" else "applied"))
-    for n in NOTES:
-        print("[~] " + n)
-
-    if args.check:
-        sys.exit(1 if changed else 0)
-    print("\ndone.")
-
-
-if __name__ == "__main__":
-    main()
+       
