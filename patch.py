@@ -14,6 +14,9 @@ patch.py -- apply fork changes to a MorpheApp/morphe-manager checkout (dev branc
      ones) are listed first
   8. Patcher log: the loader's "Universal patches must be declared with default false" notice
      (header, message and the indented bundle/patch list) is dropped
+  9. Sources page: the floating button beside the bottom pill reads "Add source" (opens the add
+     source panel) instead of "Select APK", and the header (+) is dropped in portrait
+ 10. Add source panel: full screen instead of a bottom sheet, content centered, Add pinned at the bottom
 
 Anchors are structural (function bodies, call arguments, parameter lists, single
 lines), never pasted multi-line context. Files are found by declaration; the path
@@ -365,6 +368,7 @@ ICONS_MATERIAL = {
     "ADV_IMPORTS": ("import androidx.compose.material.icons.Icons\n"
                     "import androidx.compose.material.icons.outlined.LockOpen"),
     "FILE_OPEN": "Icons.Outlined.FileOpen",
+    "ADD": "Icons.Outlined.Add",
     "SCHEDULE": "Icons.Outlined.Schedule",
     "CHECK": "Icons.Outlined.Check",
     "LOCK_OPEN": "Icons.Outlined.LockOpen",
@@ -380,6 +384,7 @@ ICONS_SYMBOLS = {
     "ADV_IMPORTS": ("import com.composables.icons.materialsymbols.MaterialSymbols\n"
                     "import com.composables.icons.materialsymbols.rounded.*"),
     "FILE_OPEN": "MaterialSymbols.Rounded.File_open",
+    "ADD": "MaterialSymbols.Rounded.Add",
     "SCHEDULE": "MaterialSymbols.Rounded.Schedule",
     "CHECK": "MaterialSymbols.Rounded.Check",
     "LOCK_OPEN": "MaterialSymbols.Rounded.Lock_open",
@@ -414,6 +419,7 @@ SIGNING_STRINGS = [
 
 APK_BUTTON_STRINGS = [
     ("floating_select_apk", '<string name="floating_select_apk">Select APK</string>'),
+    ("floating_add_source", '<string name="floating_add_source">Add source</string>'),
 ]
 
 PATCH_INTERVAL_STRINGS = [
@@ -955,7 +961,12 @@ def home_trailing(src):
     calls = find_calls(m, "MainPagerScaffold")
     if len(calls) != 1:
         return None
-    text = "trailingAction = { FloatingApkButton(onClick = pickApkFromFile) }"
+    text = ("trailingAction = { FloatingTrailingAction(pagerState = pagerState, onSelectApk = pickApkFromFile, "
+            "onAddSource = sourcesPageState::openAddSource, onboardingState = onboardingState) }")
+    # An earlier run left the plain select-APK button, which only reads the same on every page
+    old = re.search(r"\btrailingAction\s*=\s*\{\s*FloatingApkButton\(\s*onClick\s*=\s*pickApkFromFile\s*\)\s*\}", m)
+    if old:
+        return src[:old.start()] + text + src[old.end():]
     return add_last_arg(src, m, calls[0], text, r"\btrailingAction\s*=")
 
 
@@ -971,25 +982,34 @@ def home_flags(src):
     return src[:h.start()] + "showOtherAppsButton = isLandscape()" + src[h.end():]
 
 
-def header_flags(src):
-    m = mask(src)
-    hits = []
-    for lp in find_calls(m, "TitleAction"):
-        rp = match_close(m, lp)
-        if rp > 0 and re.search(r"\bonClick\s*=\s*onPatchFileClick\b", m[lp:rp]):
-            hits.append((lp, rp))
-    if len(hits) != 1:
-        return None
-    lp, rp = hits[0]
-    start = m.rfind("TitleAction", 0, lp)
-    s = line_start(src, start)
-    if src[s:start].strip() or src[rp + 1:line_end(src, rp)].strip():
-        return None
-    if re.search(r"\bif\s*\(\s*isLandscape\(\)\s*\)\s*\{\s*$", m[:s]):
-        return src
-    ind = indent_of(src, start)
-    block = reindent(src[s:rp + 1], "    ")
-    return src[:s] + ind + "if (isLandscape()) {\n" + block + "\n" + ind + "}" + src[rp + 1:]
+def landscape_only_action(click_rx):
+    """Wraps the one TitleAction whose arguments match click_rx in `if (isLandscape())`."""
+    def fn(src):
+        m = mask(src)
+        hits = []
+        for lp in find_calls(m, "TitleAction"):
+            rp = match_close(m, lp)
+            if rp > 0 and re.search(click_rx, m[lp:rp]):
+                hits.append((lp, rp))
+        if len(hits) != 1:
+            return None
+        lp, rp = hits[0]
+        start = m.rfind("TitleAction", 0, lp)
+        s = line_start(src, start)
+        if src[s:start].strip() or src[rp + 1:line_end(src, rp)].strip():
+            return None
+        if re.search(r"\bif\s*\(\s*isLandscape\(\)\s*\)\s*\{\s*$", m[:s]):
+            return src
+        ind = indent_of(src, start)
+        block = reindent(src[s:rp + 1], "    ")
+        return src[:s] + ind + "if (isLandscape()) {\n" + block + "\n" + ind + "}" + src[rp + 1:]
+    return fn
+
+
+# The toolbar's select-APK button and the Sources header's add (+) stay in landscape, where the
+# bottom pill (and the button beside it) is replaced by a sidebar
+header_flags = landscape_only_action(r"\bonClick\s*=\s*onPatchFileClick\b")
+sources_add_landscape = landscape_only_action(r"\bonClick\s*=\s*state::openAddSource\b")
 
 
 def app_gate(src):
@@ -1494,6 +1514,7 @@ internal fun FavoriteStarButton(
 
 FLOATING_APK_BUTTON = r'''package @@PKG@@
 
+import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
@@ -1505,6 +1526,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.shape.CircleShape
 @@ICON_IMPORTS@@
 import androidx.compose.material3.Icon
@@ -1518,12 +1540,36 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import @@NS@@.R
 import @@SHARED_PKG@@.*
+import @@TOUR_PKG@@.OnboardingState
+import @@TOUR_PKG@@.TourTarget
+import @@TOUR_PKG@@.tourTarget
+
+/**
+ * The action beside the bottom pill: add a source on the sources page, select an APK on any
+ * other. A single button whose icon and label cross-fade as the page turns.
+ */
+@Composable
+internal fun FloatingTrailingAction(
+    pagerState: PagerState,
+    onSelectApk: () -> Unit,
+    onAddSource: () -> Unit,
+    onboardingState: OnboardingState?
+) {
+    val onSources = MainPage.entries[pagerState.currentPage] == MainPage.SOURCES
+    FloatingApkButton(
+        onClick = if (onSources) onAddSource else onSelectApk,
+        label = stringResource(if (onSources) R.string.floating_add_source else R.string.floating_select_apk),
+        icon = if (onSources) @@ICON_ADD@@ else @@ICON_FILE_OPEN@@,
+        modifier = if (onSources) Modifier.tourTarget(TourTarget.ADD_SOURCE, onboardingState) else Modifier
+    )
+}
 
 /**
  * Button beside the bottom pill that opens the select-APK flow. Built as one slot of that pill,
@@ -1533,9 +1579,10 @@ import @@SHARED_PKG@@.*
 @Composable
 internal fun FloatingApkButton(
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    label: String = stringResource(R.string.floating_select_apk),
+    icon: ImageVector = @@ICON_FILE_OPEN@@
 ) {
-    val label = stringResource(R.string.floating_select_apk)
     val interactionSource = remember { MutableInteractionSource() }
     val shape = rememberPressShape(interactionSource, CircleShape)
     val tint = MaterialTheme.colorScheme.primary
@@ -1566,20 +1613,24 @@ internal fun FloatingApkButton(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                Icon(
-                    imageVector = @@ICON_FILE_OPEN@@,
-                    contentDescription = null,
-                    tint = tint,
-                    modifier = Modifier.size(22.dp)
-                )
-                Text(
-                    text = label,
-                    style = MaterialTheme.typography.labelSmall,
-                    color = tint,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    modifier = Modifier.padding(horizontal = 10.dp)
-                )
+                Crossfade(targetState = icon to label, label = "floating_action_content") { (currentIcon, currentLabel) ->
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Icon(
+                            imageVector = currentIcon,
+                            contentDescription = null,
+                            tint = tint,
+                            modifier = Modifier.size(22.dp)
+                        )
+                        Text(
+                            text = currentLabel,
+                            style = MaterialTheme.typography.labelSmall,
+                            color = tint,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                            modifier = Modifier.padding(horizontal = 10.dp)
+                        )
+                    }
+                }
             }
         }
     }
@@ -1588,6 +1639,74 @@ internal fun FloatingApkButton(
 private val FloatingApkButtonHeight = 64.dp
 private val FloatingApkButtonInset = 6.dp
 private val FloatingApkButtonMaxWidth = 128.dp
+'''
+
+
+FULLSCREEN_PANEL = r'''package @@PKG@@
+
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.Animatable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.contentColorFor
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+
+/**
+ * A [DockedPanel] that takes the whole screen: it slides up over the page, header and bars
+ * included, with its content clear of the system bars and the keyboard. Meant for a form that is
+ * the only thing on screen while it is up, such as the one sources are added from.
+ *
+ * @param onBack Closes the panel on back, which it follows down as the gesture goes.
+ */
+@Composable
+fun FullScreenPanel(
+    visible: Boolean,
+    onBack: () -> Unit,
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit
+) {
+    val backProgress = remember { Animatable(0f) }
+    // A gesture that closed the panel leaves it drawn down, which the next opening must not inherit
+    LaunchedEffect(visible) {
+        if (visible) backProgress.snapTo(0f)
+    }
+    PredictiveBackSlideHandler(backProgress, enabled = visible, onBack = onBack)
+
+    AnimatedVisibility(
+        visible = visible,
+        enter = Animations.springSlideUpEnter,
+        exit = Animations.springSlideDownExit,
+        modifier = modifier
+    ) {
+        val background = MaterialTheme.colorScheme.background
+        // Solid, so the list under it neither shows through nor takes a touch
+        Surface(
+            modifier = Modifier
+                .fillMaxSize()
+                .predictiveBackSlide(backProgress),
+            color = background,
+            contentColor = contentColorFor(background)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .windowInsetsPadding(WindowInsets.safeDrawing)
+                    .padding(bottom = Defaults.SpaceMedium)
+            ) {
+                content()
+            }
+        }
+    }
+}
 '''
 
 PATCH_UPDATE_THROTTLE = r'''package @@PKG@@
@@ -1846,6 +1965,26 @@ def host_quiet_universal(src):
     return src[:f.start] + new + src[rp + 1:]
 
 
+def add_panel_full(src):
+    m = mask(src)
+    f = one(find_funs(m, "AddSourcePanel"))
+    if not f or f.bo is None:
+        return None
+    if re.search(r"\bFullScreenPanel\s*\(", m[f.bo:f.bc]):
+        return src
+    steps = [
+        # Full screen rather than a sheet docked under the list
+        (r"\bDockedPanel\(", "FullScreenPanel("),
+        (r"\bColumn\(\s*modifier\s*=\s*Modifier\.padding\(bottom\s*=\s*Defaults\.SpaceSmall\)\s*\)",
+         "Column(modifier = Modifier.fillMaxSize())"),
+        # The scrolling body takes the room between the header and Add, and centers what it holds
+        (r"\.weight\(1f,\s*fill\s*=\s*false\)", ".weight(1f)"),
+        (r"Arrangement\.spacedBy\(Defaults\.SpaceMedium\)",
+         "Arrangement.spacedBy(Defaults.SpaceMedium, Alignment.CenterVertically)"),
+    ]
+    return _replace_in_fun(src, "AddSourcePanel", steps)
+
+
 class Workspace:
     def __init__(self, root):
         self.root = root
@@ -1992,6 +2131,16 @@ def build_plan(ws):
             problems.append("cannot locate HostEvents (patcher log STDIO printer)")
     selext = locate("PatchSelectionUtils", r"\bobject\s+PatchSelectionUtils\b", P + "util/PatchSelectionExtensions.kt")
     srcpage = locate("SourcesPageContent", r"\bfun\s+SourcesPageContent\s*\(", P + "ui/screen/sources/SourcesPage.kt")
+    addpanel = locate("AddSourcePanel", r"\bfun\s+AddSourcePanel\s*\(", P + "ui/screen/sources/AddSourcePanel.kt")
+    # The sources tour points at the add source button, which now floats beside the pill
+    tour_state = ws.find(r"\bclass\s+OnboardingState\b", P + "ui/screen/home/OnboardingShowcase.kt")
+    tour_enum = ws.find(r"\benum\s+class\s+TourTarget\b", P + "ui/screen/home/OnboardingShowcase.kt")
+    tour_mod = ws.find(r"\bfun\s+Modifier\.tourTarget\s*\(", P + "ui/screen/home/OnboardingShowcase.kt")
+    tour_pkgs = {package_of(ws.get(x[0])) for x in (tour_state, tour_enum, tour_mod) if len(x) == 1}
+    if len(tour_state) != 1 or len(tour_enum) != 1 or len(tour_mod) != 1 or len(tour_pkgs) != 1:
+        problems.append("cannot locate the tour (OnboardingState / TourTarget / Modifier.tourTarget)")
+    elif not re.search(r"\bADD_SOURCE\b", mask(ws.get(tour_enum[0]))):
+        problems.append("TourTarget.ADD_SOURCE not found")
     patchinfo = ws.find(r"\bclass\s+PatchInfo\b", P + "patcher/patch/PatchInfo.kt")
     toast = ws.find(r"\bfun\s+Context\.toast\s*\(", P + "util/Util.kt")
     # Newer upstream shows its messages through UserMessages instead of a toast helper
@@ -2060,6 +2209,7 @@ def build_plan(ws):
             "                )\n"
             "            )"),
         "SHARED_PKG": package_of(ws.get(pill)),
+        "TOUR_PKG": package_of(ws.get(tour_state[0])),
     }
     fmt.update({"ICON_" + k: v for k, v in ICON.items()})
 
@@ -2115,7 +2265,7 @@ def build_plan(ws):
             ("toolbar button landscape only", home_flags, False),
             ("import isLandscape", imp(land_pkg + ".isLandscape"), False),
         ]
-    home_edits.append(("import FloatingApkButton", imp(helper_pkg + ".FloatingApkButton"), False))
+    home_edits.append(("import FloatingTrailingAction", imp(helper_pkg + ".FloatingTrailingAction"), False))
     plan.append((str(home.relative_to(ws.root)), home, home_edits))
     if not legacy_flag:
         plan.append((str(header[0].relative_to(ws.root)), header[0], [
@@ -2139,7 +2289,12 @@ def build_plan(ws):
         ("page header searchFirst param", phead_param, False),
         ("page header searchFirst pass-through", phead_pass, False),
     ]))
-    plan.append((str(srcpage.relative_to(ws.root)), srcpage, [("sources header search first", sources_search_first, False)]))
+    plan.append((str(srcpage.relative_to(ws.root)), srcpage, [
+        ("sources header search first", sources_search_first, False),
+        ("sources header add button landscape only", sources_add_landscape, False),
+        ("import isLandscape", imp(land_pkg + ".isLandscape"), False),
+    ]))
+    plan.append((str(addpanel.relative_to(ws.root)), addpanel, [("add source panel full screen", add_panel_full, False)]))
     host_path = host_ext[0]
     ws.ensure(host_path)
     plan.append((str(host_path.relative_to(ws.root)), host_path, [("quiet universal default notice", host_quiet_universal, False)]))
@@ -2157,6 +2312,7 @@ def build_plan(ws):
         (util_dir / "SignatureRestorer.kt", render(SIGNATURE_RESTORER, util_pkg)),
         (helper_dir / "FavoritePatches.kt", render(FAVORITE_PATCHES, helper_pkg)),
         (helper_dir / "FloatingApkButton.kt", render(FLOATING_APK_BUTTON, helper_pkg)),
+        (pill.parent / "FullScreenPanel.kt", render(FULLSCREEN_PANEL, package_of(ws.get(pill)))),
         (prefs.parent / "PatchUpdateThrottle.kt", render(PATCH_UPDATE_THROTTLE, package_of(ws.get(prefs)))),
         (updates.parent / "PatchUpdateIntervalSetting.kt", render(PATCH_UPDATE_INTERVAL_SETTING, package_of(ws.get(updates)))),
     ]
