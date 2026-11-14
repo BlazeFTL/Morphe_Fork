@@ -313,6 +313,9 @@ class PatcherProcesses(
         // Set once the process ended on its own, after which its pid may belong to another
         private var ended = false
 
+        // Set once the run started its service in the foreground, which only the app stops
+        private var heldForeground = false
+
         val isAlive get() = connection.service.asBinder().isBinderAlive
 
         @Synchronized
@@ -343,6 +346,14 @@ class PatcherProcesses(
                 throw killed
             }
 
+            // A debug run that records an AOT configuration writes it while the JVM exits, which
+            // unbinding now would cut short by ending the process
+            if (launch?.options?.any { it.startsWith("-XX:AOTMode=record") } == true) {
+                withTimeoutOrNull(AOT_RECORD_EXIT_TIMEOUT) {
+                    while (isAlive) delay(EXIT_RECORD_POLL)
+                } ?: Log.w(tag, "The JVM recording an AOT configuration did not exit in time")
+            }
+
             val failure = finished.failure ?: return
             throw if (failure.outOfMemory) HeapExhaustedException(started.heapLimitMb, failure.stackTrace)
             else PatcherFailureException(failure.stackTrace)
@@ -356,10 +367,21 @@ class PatcherProcesses(
         private fun holdForeground(foreground: ForegroundInfo) {
             try {
                 app.startForegroundService(PatcherService.foregroundIntent(app, foreground))
+                heldForeground = true
             } catch (e: IllegalStateException) {
                 // Refused to a run started from the background, which goes on bound alone
                 Log.w(tag, "Could not hold the patcher process in the foreground", e)
             }
+        }
+
+        /**
+         * Stops what [holdForeground] started, from here, as the process ends as soon as its run
+         * is done, at times before the system tells it of the unbinding. A service started in the
+         * foreground that is unbound from a process ended so stays on record with the system, and
+         * keeps the notification up, which the app cannot cancel, until the app itself ends.
+         */
+        private fun releaseForeground() {
+            if (heldForeground) app.stopService(Intent(app, PatcherService::class.java))
         }
 
         /**
@@ -440,6 +462,7 @@ class PatcherProcesses(
         override fun close() {
             if (!ended) Process.killProcess(started.pid)
             runCatching { writer.close() }
+            releaseForeground()
             connection.close()
         }
     }
@@ -561,6 +584,9 @@ class PatcherProcesses(
 
         val EXIT_RECORD_TIMEOUT = 2.seconds
         val EXIT_RECORD_POLL = 200.milliseconds
+
+        /** How long a debug run that records an AOT configuration waits for its JVM to write it and exit. */
+        val AOT_RECORD_EXIT_TIMEOUT = 2.minutes
 
         // Long enough to pick an APK and the patches, short enough not to hold memory long for nothing
         val AHEAD_LIFETIME = 5.minutes
