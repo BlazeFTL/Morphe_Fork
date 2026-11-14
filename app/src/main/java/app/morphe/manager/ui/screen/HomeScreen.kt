@@ -217,12 +217,12 @@ fun HomeScreen(
         repatchedPackageName = installedApp?.trackingKey
     )
 
-    // Only the apps a rebuild actually moves on: one the sources still cover at its installed
-    // version comes back from patching exactly as it went in, however its card is badged.
-    // Those already queued are left to the queue's own alert
+    // Every app whose card offers a rebuild, a newer app version as much as newer patches: the
+    // queue fetches the newer APK itself where it may, and asks for one otherwise. Those already
+    // queued are left to the queue's own alert
     val repatchableApps = remember(homeAppItems, savedBatchQueue) {
         val queued = savedBatchQueue?.targets.orEmpty().mapTo(HashSet()) { it.id }
-        homeAppItems.filter { it.showsUpdateBadge && it.batchTarget().id !in queued }
+        homeAppItems.filter { it.status.offersRebuild && it.batchTarget().id !in queued }
     }
 
     val batchInProgressText = stringResource(R.string.batch_patch_in_progress)
@@ -419,6 +419,7 @@ fun HomeScreen(
                                 homeViewModel.patchFlow.openInstalledAppInfo(it.currentPackageName)
                             }
                         },
+                        onUpdateApp = { item -> item.installedApp?.let(homeViewModel.patchFlow::repatch) },
                         onHideApp = { packageName -> homeViewModel.apps.hideApp(packageName) },
                         onHideMultiple = { packageNames -> packageNames.forEach { homeViewModel.apps.hideApp(it) } },
                         onUninstallMultiple = { items -> homeViewModel.uninstallApps(items) },

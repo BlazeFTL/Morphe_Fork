@@ -5,7 +5,11 @@
     <string name="home_other_apps_action">Επιλογή άλλων εφαρμογών</string>
     <string name="home_not_patched_yet">Δεν τροποποιήθηκε ακόμη</string>
     <string name="home_unpatched_version_installed">Εγκαταστάθηκε η μη τροποποιημένη έκδοση</string>
-    <string name="home_unpatched_badge">Δεν τροποποιήθηκε</string>
+    <string name="home_app_status_newer_version">Ενημέρωση σε %s</string>
+    <string name="home_app_status_newer_patches">Νέα διορθώματα</string>
+    <!-- Mark on the card of an app built for a device other than a phone -->
+    <string name="form_factor_tv">Τηλεόραση</string>
+    <string name="form_factor_automotive">Αυτοκίνητο</string>
     <string name="home_no_patches_available">Δεν υπάρχουν διαθέσιμες τροποποιήσεις</string>
     <string name="home_app_hide_title"> Απόκρυψη αυτής της εφαρμογής;</string>
     <string name="home_more_apps_title">Περισσότερες εφαρμογές</string>
@@ -62,11 +66,17 @@
     <string name="home_search_apps">Αναζήτηση εφαρμογών</string>
     <string name="list_options_title">Ταξινόμηση και φιλτράρισμα</string>
     <string name="list_options_state_description">Ταξινομημένο κατά %1$s, φιλτραρισμένο κατά %2$s</string>
+    <!-- Orders every sortable list offers -->
+    <string name="list_sort_manual">Χειροκίνητο</string>
+    <string name="list_sort_name_asc">Όνομα (Α–Ω)</string>
+    <string name="list_sort_name_desc">Όνομα (Ω–Α)</string>
+    <string name="home_app_filter_all">Όλα</string>
+    <string name="home_app_filter_not_patched">Δεν τροποποιήθηκε</string>
     <string name="home_app_filter_clones">Κλώνοι</string>
     <string name="home_app_grouping_none">Κανένα</string>
     <string name="home_app_sort_manual_hint">Κρατήστε πατημένη μια εφαρμογή και στη συνέχεια πατήστε το κουμπί αναδιάταξης</string>
-    <string name="home_app_sort_recommended">Προτεινόμενη σειρά</string>
-    <string name="home_app_sort_updates_first">Ενημερώσεις τροποποιήσεων πρώτα</string>
+    <string name="home_app_sort_recommended">Συνιστάται</string>
+    <string name="home_app_sort_updates_first">Ενημερώσεις πρώτα</string>
     <string name="home_app_sort_recently_patched">Πρόσφατα επιδιορθωμένα</string>
     <string name="home_no_apps_title">Καμία διαθέσιμη εφαρμογή</string>
     <string name="home_no_apps_subtitle">Προσθέστε μια πηγή τροποποιήσεων ή ενεργοποιήστε μια υπάρχουσα στο %s</string>
@@ -82,6 +92,7 @@
     <string name="home_category_new_title">Νέα κατηγορία</string>
     <string name="home_category_rename_title">Μετονομασία κατηγορίας</string>
     <string name="home_category_name">Όνομα κατηγορίας</string>
+    <string name="home_category_name_description">Η αρχική οθόνη ομαδοποιεί τις εφαρμογές της κάτω από αυτό το όνομα</string>
     <string name="home_category_move_to">Μετακίνηση στην κατηγορία</string>
     <string name="home_category_move_selected_title">Μετακίνηση επιλεγμένων εφαρμογών</string>
     <!-- %s is the name of the category -->
@@ -155,7 +166,6 @@
     <string name="sources_search">Αναζήτηση πηγών και επιδιορθώσεων</string>
     <!-- Which sources the sources page lists, each with what it keeps -->
     <string name="sources_filter_issues">Απαιτούν προσοχή</string>
-    <string name="sources_sort_manual">Χειροκίνητη ταξινόμηση</string>
     <string name="sources_sort_manual_hint">Πατήστε παρατεταμένα μια πηγή για να την αναδιατάξετε</string>
     <string name="sources_sort_last_updated">Τελευταία ενημέρωση</string>
     <string name="sources_sort_enabled_first">Ενεργοποιημένες πρώτα</string>
@@ -164,7 +174,7 @@
     <string name="sources_management_report_issue">Αναφορά προβλήματος</string>
     <string name="sources_management_failed_to_open_url">Απέτυχε το άνοιγμα της διεύθυνσης URL</string>
     <string name="sources_apps">Εφαρμογές</string>
-    <string name="sources_apps_description">Οι επιλεγμένες εφαρμογές προέρχονται από αυτή την πηγή. Πατήστε μια εφαρμογή για να την αποκλείσετε ή να την επαναφέρετε. Μια εφαρμογή αφαιρείται από την αρχική οθόνη μόλις δεν υπάρχει καμία πηγή που να την προσφέρει, εκτός αν την έχετε διαμορφώσει χειροκίνητα</string>
+    <string name="sources_apps_description">Οι επιλεγμένες εφαρμογές προέρχονται από αυτή την πηγή. Πατήστε μια εφαρμογή για να την εξαιρέσετε ή να την επαναφέρετε, σύρετε για να δείτε τα patches της. Μια εφαρμογή χωρίς πηγή απομακρύνεται από την αρχική οθόνη, εκτός εάν την έχετε κάνει patch</string>
     <string name="sources_apps_brought">Παρέχονται από αυτήν την πηγή</string>
     <string name="sources_apps_left_out">Εξαιρούνται από αυτήν την πηγή</string>
     <!-- Under an app left out of a source that keeps its home screen card because the user has patched it -->
@@ -1166,6 +1176,26 @@ morphe_header_custom_dark.png
     <string name="settings_system_hide_password_field">Απόκρυψη κωδικού πρόσβασης</string>
     <string name="settings_system_morphe_settings">Ρυθμίσεις Morphe</string>
     <string name="settings_system_import_manager_settings_description">Δημιουργεί αντίγραφα ασφαλείας και επαναφέρει τις ρυθμίσεις του Morphe</string>
+    <string name="settings_system_export_manager_settings_title">Εξαγωγή ρυθμίσεων του Morphe</string>
+    <string name="settings_system_export_manager_settings_description">Αποθηκεύει τις ρυθμίσεις που επιλέγετε σε ένα αρχείο</string>
+    <string name="settings_system_import_manager_settings_file_description">Επαναφέρει τις ρυθμίσεις από ένα αρχείο αντιγράφου ασφαλείας</string>
+    <string name="settings_system_auto_backup">Αυτόματο αντίγραφο ασφαλείας</string>
+    <string name="settings_system_auto_backup_switch">Δημιουργία αντιγράφου ασφαλείας αυτόματα</string>
+    <string name="settings_system_auto_backup_now">Αντίγραφο ασφαλείας τώρα</string>
+    <string name="settings_system_auto_backup_saved">Το αντίγραφο ασφαλείας αποθηκεύτηκε</string>
+    <string name="settings_system_auto_backup_interval_description">Το Morphe περιμένει τουλάχιστον αυτό το χρονικό διάστημα μετά από ένα αντίγραφο πριν δημιουργήσει το επόμενο</string>
+    <string name="settings_system_auto_backup_description">Αποθηκεύει τις ρυθμίσεις του Morphe σε έναν φάκελο που επιλέγετε</string>
+    <string name="settings_system_auto_backup_last">Τελευταίο αντίγραφο ασφαλείας: %s</string>
+    <string name="settings_system_auto_backup_folder">Φάκελος</string>
+    <string name="settings_system_auto_backup_folder_name">Αντίγραφα ασφαλείας του Morphe</string>
+    <string name="settings_system_auto_backup_folder_failed">Δεν ήταν δυνατή η χρήση αυτού του φακέλου: %s</string>
+    <string name="settings_system_auto_backup_interval">Συχνότητα αντιγράφου ασφαλείας</string>
+    <string name="settings_system_auto_backup_signing_key">Περιλαμβάνω κλειδί υπογραφής</string>
+    <string name="settings_system_auto_backup_signing_key_description">Αποθηκεύει το κλειδί που υπογράφει τις τροποποιημένες εφαρμογές δίπλα στις ρυθμίσεις</string>
+    <string name="settings_system_auto_backup_signing_key_warning_title">Αντίγραφο ασφαλείας για το κλειδί υπογραφής;</string>
+    <string name="settings_system_auto_backup_signing_key_warning_message">Οποιοσδήποτε αποκτήσει αυτό το αρχείο μπορεί να υπογράψει ενημερώσεις που εγκαθίστανται πάνω από τις τροποποιημένες εφαρμογές σας. Κρατήστε τον φάκελο ιδιωτικό και μοιραστείτε τον μόνο με τις δικές σας συσκευές</string>
+    <string name="settings_system_auto_backup_footer">Ένα αντίγραφο αποθηκεύεται όταν αποχωρείτε από το Morphe μετά από μια αλλαγή. Διατηρούνται τα νεότερα %s</string>
+    <string name="settings_system_auto_backup_failed">Το τελευταίο αντίγραφο ασφαλείας δεν θα μπορούσε να αποθηκευτεί. Επιλέξτε ξανά τον φάκελο</string>
     <string name="settings_system_import_manager_settings_fail">Αποτυχία εισαγωγής των ρυθμίσεων του Morphe: %s</string>
     <string name="settings_system_import_manager_settings_success">Επιτυχής εισαγωγή ρυθμίσεων του Morphe</string>
     <string name="settings_system_import_manager_settings_mode_title">Εισαγωγή ρυθμίσεων του Morphe</string>
@@ -1265,6 +1295,7 @@ morphe_header_custom_dark.png
     <string name="selection_set_deleted">Το %s διαγράφηκε</string>
     <string name="selection_set_renamed">Μετονομασία σε %s</string>
     <string name="selection_set_rename_title">Μετονομασία σετ</string>
+    <string name="selection_set_rename_description">Η χρήση του ονόματος ενός άλλου συνόλου αντικαθιστά αυτό το σύνολο</string>
     <string name="selection_set_delete_title">Διαγραφή σετ;</string>
     <string name="selection_set_delete_message">Αυτό θα διαγράψει οριστικά το σετ %s</string>
     <string name="copy_selection_empty">Δεν υπάρχουν άλλες αποθηκευμένες επιλογές για αντιγραφή</string>
@@ -1294,13 +1325,17 @@ morphe_header_custom_dark.png
     <string name="file_picker_storages">Αποθηκεύσεις</string>
     <string name="file_saver_downloads_failed">Δεν ήταν δυνατή η δημιουργία του αρχείου στον φάκελο Λήψεις</string>
     <string name="file_saver_saving_to_downloads">Αυτή η συσκευή δεν διαθέτει οθόνη αποθήκευσης, επομένως το αρχείο αποθηκεύεται στις Λήψεις ως %1$s</string>
-    <string name="file_picker_sort_name_asc">Όνομα (Α–Ω)</string>
-    <string name="file_picker_sort_name_desc">Όνομα (Ω–Α)</string>
     <string name="file_picker_sort_size_desc">Μέγεθος (μεγαλύτερο πρώτο)</string>
     <string name="file_picker_sort_size_asc">Μέγεθος (μικρότερο πρώτο)</string>
     <string name="file_picker_sort_date_desc">Ημερομηνία (πιο πρόσφατο πρώτο)</string>
     <string name="file_picker_sort_date_asc">Ημερομηνία (πιο παλιό πρώτο)</string>
     <string name="file_picker_show_hidden_files">Εμφάνιση κρυφών αρχείων</string>
+    <string name="file_picker_new_folder">Νέος φάκελος</string>
+    <string name="file_picker_folder_name">Όνομα φακέλου</string>
+    <string name="file_picker_new_folder_description">Δημιουργήθηκε στο %1$s και ανοίγει αμέσως</string>
+    <string name="file_picker_folder_name_taken">Κάτι με αυτό το όνομα υπάρχει ήδη εδώ</string>
+    <string name="file_picker_folder_name_invalid">Το όνομα ενός φακέλου δεν μπορεί να περιέχει \" * / : &lt; &gt; ? \\ |</string>
+    <string name="file_picker_new_folder_failed">Δεν ήταν δυνατή η δημιουργία του φακέλου</string>
     <!-- Settings - System Tab - About Section -->
     <string name="settings_system_about">Πληροφορίες</string>
     <string name="settings_system_manager_description">Ένα έργο ανοικτού κώδικα για σύγχρονο, αποτελεσματικό patching δημοφιλών εφαρμογών Android, με γνώμονα τα σχόλια και τις συνεισφορές της κοινότητας</string>
@@ -1344,6 +1379,7 @@ morphe_header_custom_dark.png
     <string name="settings_section_about_summary">Περισσότερα για το Morphe και αναζήτηση βοήθειας</string>
     <string name="settings_section_local_files">Αρχεία</string>
     <string name="settings_section_backup">Αντίγραφο ασφαλείας</string>
+    <string name="settings_section_import_export">Εισαγωγή και εξαγωγή</string>
     <string name="settings_search">Ρυθμίσεις αναζήτησης</string>
     <string name="yes">Ναι</string>
     <string name="no">Όχι</string>
@@ -1362,6 +1398,7 @@ morphe_header_custom_dark.png
     <string name="retry">Προσπαθήστε ξανά</string>
     <string name="refresh">Ανανέωση</string>
     <string name="add">Προσθήκη</string>
+    <string name="create">Δημιουργία</string>
     <string name="close">Κλείσιμο</string>
     <string name="back">Πίσω</string>
     <string name="next">Επόμενο</string>
@@ -1425,6 +1462,7 @@ morphe_header_custom_dark.png
     <string name="author">Συγγραφέας</string>
     <!-- A file a patch source is added from, as a field label -->
     <string name="file">Αρχείο</string>
+    <!-- Chip marking an install as a copy of an app kept alongside it, a noun rather than an action -->
     <string name="clone">Κλώνος</string>
     <!-- Button that starts patching the selected app. A verb, as in "patch this app" -->
     <string name="patch">Τροποποίηση</string>

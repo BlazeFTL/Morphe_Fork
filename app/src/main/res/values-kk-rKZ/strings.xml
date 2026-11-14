@@ -5,7 +5,11 @@
     <string name="home_other_apps_action">Басқа қолданбаларды таңдау</string>
     <string name="home_not_patched_yet">Әлі патчтелмеген</string>
     <string name="home_unpatched_version_installed">Патч жасалмаған нұсқа орнатылған</string>
-    <string name="home_unpatched_badge">Патчталмаған</string>
+    <string name="home_app_status_newer_version">%s нұсқасына жаңарту</string>
+    <string name="home_app_status_newer_patches">Жаңа патчтар</string>
+    <!-- Mark on the card of an app built for a device other than a phone -->
+    <string name="form_factor_tv">ТВ</string>
+    <string name="form_factor_automotive">Автомобильдік</string>
     <string name="home_no_patches_available">Қолжетімді патчтар жоқ</string>
     <string name="home_app_hide_title">Бұл бағдарламаны жасыру керек пе?</string>
     <string name="home_more_apps_title">Көбірек қолданбалар</string>
@@ -62,11 +66,17 @@
     <string name="home_search_apps">Қосымшаларды іздеу</string>
     <string name="list_options_title">Сұрыптау және сүзгілеу</string>
     <string name="list_options_state_description">%1$s бойынша сұрыпталды, %2$s бойынша сүзілді</string>
+    <!-- Orders every sortable list offers -->
+    <string name="list_sort_manual">Қолмен</string>
+    <string name="list_sort_name_asc">Аты (A–Z)</string>
+    <string name="list_sort_name_desc">Аты (Z–A)</string>
+    <string name="home_app_filter_all">Барлығы</string>
+    <string name="home_app_filter_not_patched">Патчталмаған</string>
     <string name="home_app_filter_clones">Клондар</string>
     <string name="home_app_grouping_none">Жоқ</string>
     <string name="home_app_sort_manual_hint">Қосымшаны ұзақ басып, содан кейін қайта реттеу түймесін басыңыз</string>
-    <string name="home_app_sort_recommended">Ұсынылған реті</string>
-    <string name="home_app_sort_updates_first">Патч жаңартулары бірінші</string>
+    <string name="home_app_sort_recommended">Ұсынылған</string>
+    <string name="home_app_sort_updates_first">Жаңартулар бірінші</string>
     <string name="home_app_sort_recently_patched">Жақында патчтелген</string>
     <string name="home_no_apps_title">Қолжетімді қосымшалар жоқ</string>
     <string name="home_no_apps_subtitle">%s бөлімінде патч көзін қосыңыз немесе қолданыстағыны қосыңыз</string>
@@ -82,6 +92,7 @@
     <string name="home_category_new_title">Жаңа санат</string>
     <string name="home_category_rename_title">Санатты қайта атау</string>
     <string name="home_category_name">Категория атауы</string>
+    <string name="home_category_name_description">Басты экран қолданбаларды осы атаумен топтайды</string>
     <string name="home_category_move_to">Категорияға ауыстыру</string>
     <string name="home_category_move_selected_title">Таңдалған қолданбаларды ауыстыру</string>
     <!-- %s is the name of the category -->
@@ -155,7 +166,6 @@
     <string name="sources_search">Дереккөздер мен патчтарды іздеу</string>
     <!-- Which sources the sources page lists, each with what it keeps -->
     <string name="sources_filter_issues">Назар аудару қажет</string>
-    <string name="sources_sort_manual">Қолмен реттеу</string>
     <string name="sources_sort_manual_hint">Реттеу үшін дереккөзге ұзақ басыңыз</string>
     <string name="sources_sort_last_updated">Соңғы жаңарту уақыты</string>
     <string name="sources_sort_enabled_first">Қосылғандар бірінші</string>
@@ -164,7 +174,7 @@
     <string name="sources_management_report_issue">Мәселені хабарлау</string>
     <string name="sources_management_failed_to_open_url">URL-ді ашу мүмкін болмады</string>
     <string name="sources_apps">Қосымшалар</string>
-    <string name="sources_apps_description">Белгіленген қолданбалар осы дереккөзден келеді. Қолданбаны алып тастау немесе қайта қосу үшін оны түртіңіз. Егер сіз оны патчтемеген болсаңыз, ешбір дереккөз әкелмеген жағдайда қолданба басты экраннан жоғалады</string>
+    <string name="sources_apps_description">Белгіленген қолданбалар осы дереккөзінен алынады. Қолданбаны алып тастау немесе қайта қосу үшін оны түртіңіз, патчтарын көру үшін сырғытыңыз. Дереккөзі жоқ қолданба, егер оған патч орнатылмаса, басты экраннан жойылады</string>
     <string name="sources_apps_brought">Осы дереккөз арқылы келді</string>
     <string name="sources_apps_left_out">Осы дереккөзден тыс қалды</string>
     <!-- Under an app left out of a source that keeps its home screen card because the user has patched it -->
@@ -1166,6 +1176,26 @@ morphe_header_custom_dark.png
     <string name="settings_system_hide_password_field">Құпия сөзді жасыру</string>
     <string name="settings_system_morphe_settings">Morphe баптаулары</string>
     <string name="settings_system_import_manager_settings_description">Morphe параметрлерін резервтік көшірмелеп және қалпына келтіреді</string>
+    <string name="settings_system_export_manager_settings_title">Morphe баптауларын экспорттау</string>
+    <string name="settings_system_export_manager_settings_description">Сіз таңдаған параметрлерді файлға сақтайды</string>
+    <string name="settings_system_import_manager_settings_file_description">Параметрлерді резервтік көшірме файлынан қалпына келтіреді</string>
+    <string name="settings_system_auto_backup">Автоматты резервтік көшірме</string>
+    <string name="settings_system_auto_backup_switch">Автоматты түрде резервтік көшірме жасау</string>
+    <string name="settings_system_auto_backup_now">Қазір резервтік көшірме жасау</string>
+    <string name="settings_system_auto_backup_saved">Резервтік көшірме сақталды</string>
+    <string name="settings_system_auto_backup_interval_description">Morphe келесі көшірмені жасамас бұрын, алдыңғысынан кейін кемінде осы уақытша күтеді</string>
+    <string name="settings_system_auto_backup_description">Morphe параметрлерін сіз таңдаған папкаға сақтайды</string>
+    <string name="settings_system_auto_backup_last">Соңғы резервтік көшірме: %s</string>
+    <string name="settings_system_auto_backup_folder">Папка</string>
+    <string name="settings_system_auto_backup_folder_name">Morphe резервтік көшірмелері</string>
+    <string name="settings_system_auto_backup_folder_failed">Бұл папканы қолдану мүмкін болмады: %s</string>
+    <string name="settings_system_auto_backup_interval">Резервтік көшірме жиілігі</string>
+    <string name="settings_system_auto_backup_signing_key">Қол қою кілтін қосу</string>
+    <string name="settings_system_auto_backup_signing_key_description">Патчтелген қолданбаларды қол қоятын кілтті параметрлердің жанына сақтайды</string>
+    <string name="settings_system_auto_backup_signing_key_warning_title">Қол қою кілтін резервтеу керек пе?</string>
+    <string name="settings_system_auto_backup_signing_key_warning_message">Бұл файлды алған кез келген адам сіздің патчтелген қолданбаларыңыздың үстіне орнатылатын жаңартуларға қол қоя алады. Папканы құпия сақтаңыз және оны тек өз құрылғыларыңызбен бөлісіңіз</string>
+    <string name="settings_system_auto_backup_footer">Бірдеңені өзгерткеннен кейін Morphe-ден шыққанда көшірме сақталады. Ең жаңа %s сақталады</string>
+    <string name="settings_system_auto_backup_failed">Соңғы резервтік көшірмені сақтау мүмкін болмады. Папканы қайта таңдаңыз</string>
     <string name="settings_system_import_manager_settings_fail">Morphe баптауларын импорттау сәтсіз аяқталды: %s</string>
     <string name="settings_system_import_manager_settings_success">Morphe параметрлері импортталды</string>
     <string name="settings_system_import_manager_settings_mode_title">Morphe параметрлерін импорттау</string>
@@ -1265,6 +1295,7 @@ morphe_header_custom_dark.png
     <string name="selection_set_deleted">%s жойылды</string>
     <string name="selection_set_renamed">Атауы %s деп өзгертілді</string>
     <string name="selection_set_rename_title">Жиынтықты қайта атау</string>
+    <string name="selection_set_rename_description">Басқа жиынтықтың атауын қолдану сол жиынтықты алмастырады</string>
     <string name="selection_set_delete_title">Жиынтықты жою керек пе?</string>
     <string name="selection_set_delete_message">Бұл әрекет %s жиынтығын біржола жояды</string>
     <string name="copy_selection_empty">Көшіретін басқа сақталған таңдаулар жоқ</string>
@@ -1294,13 +1325,17 @@ morphe_header_custom_dark.png
     <string name="file_picker_storages">Жады</string>
     <string name="file_saver_downloads_failed">Жүктемелерге файлды жасау мүмкін болмады</string>
     <string name="file_saver_saving_to_downloads">Бұл құрылғыда сақтау экраны жоқ, сондықтан файл Жүктемелерге %1$s ретінде сақталады</string>
-    <string name="file_picker_sort_name_asc">Атауы (A–Z)</string>
-    <string name="file_picker_sort_name_desc">Атауы (Z–A)</string>
     <string name="file_picker_sort_size_desc">Көлемі (ең үлкені бірінші)</string>
     <string name="file_picker_sort_size_asc">Көлемі (ең кішісі бірінші)</string>
     <string name="file_picker_sort_date_desc">Күні (ең жаңасы бірінші)</string>
     <string name="file_picker_sort_date_asc">Күні (ең ескісі бірінші)</string>
     <string name="file_picker_show_hidden_files">Жасырын файлдарды көрсету</string>
+    <string name="file_picker_new_folder">Жаңа папка</string>
+    <string name="file_picker_folder_name">Папка атауы</string>
+    <string name="file_picker_new_folder_description">%1$s ішінде жасалып, бірден ашылады</string>
+    <string name="file_picker_folder_name_taken">Бұл атаулы объект мұнда redan бар</string>
+    <string name="file_picker_folder_name_invalid">Папка атауында \" * / : &lt; &gt; ? \\ | белгілері болмауы керек</string>
+    <string name="file_picker_new_folder_failed">Папканы жасау мүмкін болмады</string>
     <!-- Settings - System Tab - About Section -->
     <string name="settings_system_about">Туралы</string>
     <string name="settings_system_manager_description">Қоғамдылық кері байланысы мен үлестері негізінде жұмыс істейтін, танымал Android қолданбаларын заманауи, оңтайландырылған патчтеуге арналған ашық бастапқы коды бар жоба</string>
@@ -1344,6 +1379,7 @@ morphe_header_custom_dark.png
     <string name="settings_section_about_summary">Morphe туралы толығырақ және көмек алу</string>
     <string name="settings_section_local_files">Файлдар</string>
     <string name="settings_section_backup">Резервтік көшірме</string>
+    <string name="settings_section_import_export">Импорт және экспорт</string>
     <string name="settings_search">Баптауларды іздеу</string>
     <string name="yes">Иә</string>
     <string name="no">Жоқ</string>
@@ -1362,6 +1398,7 @@ morphe_header_custom_dark.png
     <string name="retry">Қайталау</string>
     <string name="refresh">Жаңарту</string>
     <string name="add">Қосу</string>
+    <string name="create">Жасау</string>
     <string name="close">Жабу</string>
     <string name="back">Артқа</string>
     <string name="next">Келесі</string>
@@ -1425,6 +1462,7 @@ morphe_header_custom_dark.png
     <string name="author">Авторы</string>
     <!-- A file a patch source is added from, as a field label -->
     <string name="file">Файл</string>
+    <!-- Chip marking an install as a copy of an app kept alongside it, a noun rather than an action -->
     <string name="clone">Клондау</string>
     <!-- Button that starts patching the selected app. A verb, as in "patch this app" -->
     <string name="patch">Патч</string>

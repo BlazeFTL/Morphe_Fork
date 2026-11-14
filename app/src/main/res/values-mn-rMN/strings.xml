@@ -5,7 +5,11 @@
     <string name="home_other_apps_action">Бусад аппликейшн сонгох</string>
     <string name="home_not_patched_yet">Хараахан патчлаагүй</string>
     <string name="home_unpatched_version_installed">Патчлагдаагүй хувилбар суурилуулагдсан байна</string>
-    <string name="home_unpatched_badge">Патч хийгдээгүй</string>
+    <string name="home_app_status_newer_version">%s хувилбар руу шинэчлэх</string>
+    <string name="home_app_status_newer_patches">Шинэ патчууд</string>
+    <!-- Mark on the card of an app built for a device other than a phone -->
+    <string name="form_factor_tv">Зурагт</string>
+    <string name="form_factor_automotive">Автомашин</string>
     <string name="home_no_patches_available">Боломжтой патч байхгүй байна</string>
     <string name="home_app_hide_title">Энэ апп-ыг нуух уу?</string>
     <string name="home_more_apps_title">Илүү олон апп</string>
@@ -62,11 +66,17 @@
     <string name="home_search_apps">Аппликейшн хайх</string>
     <string name="list_options_title">Эрэмбэлэх ба шүүх</string>
     <string name="list_options_state_description">%1$s-ээр эрэмбэлэв, %2$s-ээр шүүв</string>
+    <!-- Orders every sortable list offers -->
+    <string name="list_sort_manual">Гар аргаар</string>
+    <string name="list_sort_name_asc">Нэр (А–Я)</string>
+    <string name="list_sort_name_desc">Нэр (Я–А)</string>
+    <string name="home_app_filter_all">Бүгд</string>
+    <string name="home_app_filter_not_patched">Патчлаагүй</string>
     <string name="home_app_filter_clones">Хуулбарууд</string>
     <string name="home_app_grouping_none">Байхгүй</string>
     <string name="home_app_sort_manual_hint">Аппликейшн дээр удаан дарж, дараа нь дарааллыг өөрчлөх товчийг дарна уу</string>
-    <string name="home_app_sort_recommended">Зөвлөсөн дараалал</string>
-    <string name="home_app_sort_updates_first">Засваруудыг эхлээд харуулах</string>
+    <string name="home_app_sort_recommended">Зөвлөмж</string>
+    <string name="home_app_sort_updates_first">Шинэчлэлтүүдийг эхлээд</string>
     <string name="home_app_sort_recently_patched">Сүүлд патлагдсан</string>
     <string name="home_no_apps_title">Боломжтой апп байхгүй байна</string>
     <string name="home_no_apps_subtitle">Патчийн эх сурвалж нэмэх эсвэл %s хэсэгт байгааг идэвхжүүлнэ үү</string>
@@ -82,6 +92,7 @@
     <string name="home_category_new_title">Шинэ ангилал</string>
     <string name="home_category_rename_title">Ангиллын нэрийг өөрчлөх</string>
     <string name="home_category_name">Ангиллын нэр</string>
+    <string name="home_category_name_description">Нүүр дэлгэц нь аппликейшнуудаа энэ нэрээр бүлэглэнэ</string>
     <string name="home_category_move_to">Ангилалд шилжүүлэх</string>
     <string name="home_category_move_selected_title">Сонгосон апп-уудыг шилжүүлэх</string>
     <!-- %s is the name of the category -->
@@ -155,7 +166,6 @@
     <string name="sources_search">Эх сурвалж болон патчуудыг хайх</string>
     <!-- Which sources the sources page lists, each with what it keeps -->
     <string name="sources_filter_issues">Анхаарал шаардлагатай</string>
-    <string name="sources_sort_manual">Гар аргаар эрэмбэлэх</string>
     <string name="sources_sort_manual_hint">Эрэмбэ өөрчлөхийн тулд эх сурвалж дээр удаан дарна уу</string>
     <string name="sources_sort_last_updated">Хамгийн сүүлд шинэчилсэн</string>
     <string name="sources_sort_enabled_first">Идэвхжүүлсэнийг эхлээд харуулах</string>
@@ -164,7 +174,7 @@
     <string name="sources_management_report_issue">Асуудлыг мэдээлэх</string>
     <string name="sources_management_failed_to_open_url">URL нээхэд алдаа гарлаа</string>
     <string name="sources_apps">Аппликейшнүүд</string>
-    <string name="sources_apps_description">Сонгогдсон апп-ууд энэ эх сурвалжаас ирсэн. Апп-ыг хасах эсвэл буцааж нэмэхийн тулд дээр нь дарна уу. Хэрэв та апп-ыг патчлаагүй бол ямар ч эх сурвалж түүнийг авчрахаа больсон үед нүүр дэлгэцээс алга болно</string>
+    <string name="sources_apps_description">Тэмдэглэгдсэн аппликейшнүүд энэ эх сурвалжаас ирсэн байна. Аппликейшн дээр дарж хасах эсвэл буцаан нэмэх, хасах чиглэлд гүйлгэж патч-уудыг нь харна уу. Хэрэв аппликейшн эх сурвалжгүй болвол, патч хийгдээгүй тохиолдолд нүүр дэлгэцээс алга болно</string>
     <string name="sources_apps_brought">Энэхүү эх сурвалжаас авсан</string>
     <string name="sources_apps_left_out">Энэхүү эх сурвалжаас хасагдсан</string>
     <!-- Under an app left out of a source that keeps its home screen card because the user has patched it -->
@@ -1166,6 +1176,26 @@ morphe_header_custom_dark.png
     <string name="settings_system_hide_password_field">Нууц үгийг нуух</string>
     <string name="settings_system_morphe_settings">Morphe тохиргоо</string>
     <string name="settings_system_import_manager_settings_description">Morphe тохиргоог нөөцлөх болон сэргээх</string>
+    <string name="settings_system_export_manager_settings_title">Morphe тохиргоог экспортлох</string>
+    <string name="settings_system_export_manager_settings_description">Таны сонгосон тохиргоог файлд хадгална</string>
+    <string name="settings_system_import_manager_settings_file_description">Нөөцлөлтөөс тохиргоог сэргээнэ</string>
+    <string name="settings_system_auto_backup">Автомат нөөцлөлт</string>
+    <string name="settings_system_auto_backup_switch">Автоматаар нөөцлөх</string>
+    <string name="settings_system_auto_backup_now">Одоо нөөцлөх</string>
+    <string name="settings_system_auto_backup_saved">Нөөцлөлтийг хадгаллаа</string>
+    <string name="settings_system_auto_backup_interval_description">Morphe нь нэг хуулбар хийсний дараа дараагийн хуулбарыг хийх хүртлэн дор хаяж энэ хугацаанд хүлээх болно</string>
+    <string name="settings_system_auto_backup_description">Таны Morphe тохиргоог таны сонгосон хавтсанд хадгална</string>
+    <string name="settings_system_auto_backup_last">Сүүлийн нөөцлөлт: %s</string>
+    <string name="settings_system_auto_backup_folder">Хавтас</string>
+    <string name="settings_system_auto_backup_folder_name">Morphe нөөцлөлтүүд</string>
+    <string name="settings_system_auto_backup_folder_failed">Энэ хавтсыг ашиглах боломжгүй: %s</string>
+    <string name="settings_system_auto_backup_interval">Нөөцлөлтийн давтамж</string>
+    <string name="settings_system_auto_backup_signing_key">Гарын書の түлхүүрийг багтаах</string>
+    <string name="settings_system_auto_backup_signing_key_description">Тохиргооны хажууд патч хийгдсэн апп-уудыг гарыншрын түлхүүрийг хадгална</string>
+    <string name="settings_system_auto_backup_signing_key_warning_title">Гарыншрын түлхүүрийг нөөцлөх үү?</string>
+    <string name="settings_system_auto_backup_signing_key_warning_message">Энэ файлыг олж авсан хэн бүхэн таны патч хийгдсэн апп-уудын дээрээс суулгах шинэчлэлтүүдийг гарыншруулж болно. Хавтсыг нууцалж, зөвхөн өөрийн төхөөрөмжүүдтэйгээ хуваалцаарай</string>
+    <string name="settings_system_auto_backup_footer">Ямар нэг зүйлийг өөрчилсний дараа Morphe-ээс гарах үед хуулбар хадгалагдана. Хамгийн сүүлийн %s хуулбарыг хадгална</string>
+    <string name="settings_system_auto_backup_failed">Сүүлийн нөөцлөлтийг хадгалах боломжгүй боллоо. Хавтсыг дахин сонгоно уу</string>
     <string name="settings_system_import_manager_settings_fail">Morphe тохиргоог импортлоход алдаа гарлаа: %s</string>
     <string name="settings_system_import_manager_settings_success">Morphe тохиргоог импортлолоо</string>
     <string name="settings_system_import_manager_settings_mode_title">Morphe тохиргоог импортлох</string>
@@ -1265,6 +1295,7 @@ morphe_header_custom_dark.png
     <string name="selection_set_deleted">%s устгагдлаа</string>
     <string name="selection_set_renamed">%s болгон нэрлэв</string>
     <string name="selection_set_rename_title">Багцыг дахин нэрлэх</string>
+    <string name="selection_set_rename_description">Өөр багцын нэрийг ашиглавал тухайн багцыг сольно</string>
     <string name="selection_set_delete_title">Багцыг устгах уу?</string>
     <string name="selection_set_delete_message">Энэ нь %s багцыг бүрмөсөн устгана</string>
     <string name="copy_selection_empty">Хуулж авах өөр хадгалсан сонголт байхгүй байна</string>
@@ -1294,13 +1325,17 @@ morphe_header_custom_dark.png
     <string name="file_picker_storages">Хадгалах байрлалууд</string>
     <string name="file_saver_downloads_failed">Downloads хавтсанд файл үүсгэж чадсангүй</string>
     <string name="file_saver_saving_to_downloads">Энэ төхөөрөмжид хадгалах дэлгэц байхгүй тул файл Downloads хавтас руу %1$s нэрээр хадгалагдана</string>
-    <string name="file_picker_sort_name_asc">Нэр (А–Я)</string>
-    <string name="file_picker_sort_name_desc">Нэр (Я–А)</string>
     <string name="file_picker_sort_size_desc">Хэмжээ (хамгийн том нь эхлээд)</string>
     <string name="file_picker_sort_size_asc">Хэмжээ (хамгийн бага нь эхлээд)</string>
     <string name="file_picker_sort_date_desc">Огноо (хамгийн сүүлийнх нь түрүүлж)</string>
     <string name="file_picker_sort_date_asc">Огноо (хамгийн эхнийх нь түрүүлж)</string>
     <string name="file_picker_show_hidden_files">Нуугдмал файлуудыг харуулах</string>
+    <string name="file_picker_new_folder">Шинэ хавтас</string>
+    <string name="file_picker_folder_name">Хавтсаны нэр</string>
+    <string name="file_picker_new_folder_description">%1$s дотор үүсгэж, шууд нээх</string>
+    <string name="file_picker_folder_name_taken">Энэ нэртэй зүйл аль хэдийн байна</string>
+    <string name="file_picker_folder_name_invalid">Хавтсаны нэрэнд \" * / : &lt; &gt; ? \\ | тэмдэгтүүд байж болохгүй</string>
+    <string name="file_picker_new_folder_failed">Хавтсыг үүсгэж чадсангүй</string>
     <!-- Settings - System Tab - About Section -->
     <string name="settings_system_about">Тухай</string>
     <string name="settings_system_manager_description">Нийгэмлэгийн санал хүсэлт, хувь нэмэр дээр суурилсан, Android-ын түгээмэл аппликейшнуудыг орчин үеийн, оновчтой аргаар патчлах нээлттэй эх сурвалж бүхий төсөл</string>
@@ -1344,6 +1379,7 @@ morphe_header_custom_dark.png
     <string name="settings_section_about_summary">Morphe-ийн талаар илүү их мэдээлэл болон тусламж авах</string>
     <string name="settings_section_local_files">Файлууд</string>
     <string name="settings_section_backup">Нөөцлөлт</string>
+    <string name="settings_section_import_export">Импорт болон экспорт</string>
     <string name="settings_search">Тохиргоо хайх</string>
     <string name="yes">Тийм</string>
     <string name="no">Үгүй</string>
@@ -1362,6 +1398,7 @@ morphe_header_custom_dark.png
     <string name="retry">Дахин оролдох</string>
     <string name="refresh">Шинэчлэх</string>
     <string name="add">Нэмэх</string>
+    <string name="create">Үүсгэх</string>
     <string name="close">Хаах</string>
     <string name="back">Буцах</string>
     <string name="next">Дараах</string>
@@ -1425,6 +1462,7 @@ morphe_header_custom_dark.png
     <string name="author">Зохиогч</string>
     <!-- A file a patch source is added from, as a field label -->
     <string name="file">Файл</string>
+    <!-- Chip marking an install as a copy of an app kept alongside it, a noun rather than an action -->
     <string name="clone">Клон хийх</string>
     <!-- Button that starts patching the selected app. A verb, as in "patch this app" -->
     <string name="patch">Патчлах</string>

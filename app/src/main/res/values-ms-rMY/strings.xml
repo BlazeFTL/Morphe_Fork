@@ -5,7 +5,11 @@
     <string name="home_other_apps_action">Pilih aplikasi lain</string>
     <string name="home_not_patched_yet">Belum ditampal lagi</string>
     <string name="home_unpatched_version_installed">Versi tanpa tampalan dipasang</string>
-    <string name="home_unpatched_badge">Tidak ditampal</string>
+    <string name="home_app_status_newer_version">Kemas kini ke %s</string>
+    <string name="home_app_status_newer_patches">Tampalan baharu</string>
+    <!-- Mark on the card of an app built for a device other than a phone -->
+    <string name="form_factor_tv">TV</string>
+    <string name="form_factor_automotive">Automotif</string>
     <string name="home_no_patches_available">Tiada tampalan tersedia</string>
     <string name="home_app_hide_title">Sorokkan aplikasi ini?</string>
     <string name="home_more_apps_title">Lebih banyak aplikasi</string>
@@ -62,11 +66,17 @@
     <string name="home_search_apps">Cari aplikasi</string>
     <string name="list_options_title">Isih dan tapis</string>
     <string name="list_options_state_description">Diisih mengikut %1$s, ditapis mengikut %2$s</string>
+    <!-- Orders every sortable list offers -->
+    <string name="list_sort_manual">Manual</string>
+    <string name="list_sort_name_asc">Nama (A–Z)</string>
+    <string name="list_sort_name_desc">Nama (Z–A)</string>
+    <string name="home_app_filter_all">Semua</string>
+    <string name="home_app_filter_not_patched">Tidak ditampal</string>
     <string name="home_app_filter_clones">Klon</string>
     <string name="home_app_grouping_none">Tiada</string>
     <string name="home_app_sort_manual_hint">Tekan lama pada aplikasi, kemudian ketik butang susun semula</string>
-    <string name="home_app_sort_recommended">Susunan disyorkan</string>
-    <string name="home_app_sort_updates_first">Kemas kini tampalan dahulu</string>
+    <string name="home_app_sort_recommended">Disyorkan</string>
+    <string name="home_app_sort_updates_first">Kemas kini dahulu</string>
     <string name="home_app_sort_recently_patched">Baru-baru ditampal</string>
     <string name="home_no_apps_title">Tiada aplikasi tersedia</string>
     <string name="home_no_apps_subtitle">Tambahkan sumber tambalan atau benarkan yang sedia ada di %s</string>
@@ -82,6 +92,7 @@
     <string name="home_category_new_title">Kategori baharu</string>
     <string name="home_category_rename_title">Namakan semula kategori</string>
     <string name="home_category_name">Nama kategori</string>
+    <string name="home_category_name_description">Skrin utama mengumpulkan aplikasinya di bawah nama ini</string>
     <string name="home_category_move_to">Pindah ke kategori</string>
     <string name="home_category_move_selected_title">Pindahkan aplikasi yang dipilih</string>
     <!-- %s is the name of the category -->
@@ -155,7 +166,6 @@
     <string name="sources_search">Cari sumber dan tampalan</string>
     <!-- Which sources the sources page lists, each with what it keeps -->
     <string name="sources_filter_issues">Perlu perhatian</string>
-    <string name="sources_sort_manual">Susunan manual</string>
     <string name="sources_sort_manual_hint">Tekan lama sumber untuk menyusun semula</string>
     <string name="sources_sort_last_updated">Kemas kini terakhir</string>
     <string name="sources_sort_enabled_first">Diaktifkan dahulu</string>
@@ -164,7 +174,7 @@
     <string name="sources_management_report_issue">Laporkan isu</string>
     <string name="sources_management_failed_to_open_url">Gagal membuka URL</string>
     <string name="sources_apps">Aplikasi</string>
-    <string name="sources_apps_description">Aplikasi yang ditanda datang daripada sumber ini. Ketik aplikasi untuk mengeluarkannya atau membawanya kembali. Aplikasi akan meninggalkan skrin utama apabila tiada sumber yang membawanya, kecuali jika anda telah menampalnya</string>
+    <string name="sources_apps_description">Aplikasi yang ditanda berasal dari sumber ini. Ketik aplikasi untuk mengeluarkannya atau membawanya kembali, leretkannya untuk melihat tampalannya. Aplikasi tanpa sumber akan meninggalkan skrin utama, melainkan anda telah menampalnya</string>
     <string name="sources_apps_brought">Dibawa oleh sumber ini</string>
     <string name="sources_apps_left_out">Dikecualikan daripada sumber ini</string>
     <!-- Under an app left out of a source that keeps its home screen card because the user has patched it -->
@@ -1167,6 +1177,26 @@ Butiran: %2$s"</string>
     <string name="settings_system_hide_password_field">Sembunyikan kata laluan</string>
     <string name="settings_system_morphe_settings">Tetapan Morphe</string>
     <string name="settings_system_import_manager_settings_description">Menyandarkan dan memulihkan tetapan Morphe anda</string>
+    <string name="settings_system_export_manager_settings_title">Eksport tetapan Morphe</string>
+    <string name="settings_system_export_manager_settings_description">Menyimpan tetapan yang anda pilih ke dalam fail</string>
+    <string name="settings_system_import_manager_settings_file_description">Memulihkan tetapan daripada fail sandaran</string>
+    <string name="settings_system_auto_backup">Sandaran automatik</string>
+    <string name="settings_system_auto_backup_switch">Sandar secara automatik</string>
+    <string name="settings_system_auto_backup_now">Sandar sekarang</string>
+    <string name="settings_system_auto_backup_saved">Sandaran disimpan</string>
+    <string name="settings_system_auto_backup_interval_description">Morphe menunggu sekurang-kurangnya selama ini selepas salinan dibuat sebelum membuat salinan seterusnya</string>
+    <string name="settings_system_auto_backup_description">Menyimpan tetapan Morphe anda ke dalam folder yang anda pilih</string>
+    <string name="settings_system_auto_backup_last">Sandaran terakhir: %s</string>
+    <string name="settings_system_auto_backup_folder">Folder</string>
+    <string name="settings_system_auto_backup_folder_name">Sandaran Morphe</string>
+    <string name="settings_system_auto_backup_folder_failed">Tidak dapat menggunakan folder ini: %s</string>
+    <string name="settings_system_auto_backup_interval">Kekerapan sandaran</string>
+    <string name="settings_system_auto_backup_signing_key">Sertakan kunci menandatangani</string>
+    <string name="settings_system_auto_backup_signing_key_description">Menyimpan kunci yang menandatangani aplikasi yang ditampal di sebelah tetapan</string>
+    <string name="settings_system_auto_backup_signing_key_warning_title">Sandarkan kunci menandatangani?</string>
+    <string name="settings_system_auto_backup_signing_key_warning_message">Sesiapa yang mendapat fail ini boleh menandatangani kemas kini yang dipasang ke atas aplikasi yang anda tampal. Pastikan folder kekal peribadi dan kongsi hanya dengan peranti anda sendiri</string>
+    <string name="settings_system_auto_backup_footer">Salinan disimpan apabila anda meninggalkan Morphe selepas menukar sesuatu. %s terbaharu dikekalkan</string>
+    <string name="settings_system_auto_backup_failed">Sandaran terakhir tidak dapat disimpan. Pilih folder sekali lagi</string>
     <string name="settings_system_import_manager_settings_fail">Gagal mengimport tetapan Morphe: %s</string>
     <string name="settings_system_import_manager_settings_success">Tetapan Morphe telah diimport</string>
     <string name="settings_system_import_manager_settings_mode_title">Import tetapan Morphe</string>
@@ -1266,6 +1296,7 @@ Butiran: %2$s"</string>
     <string name="selection_set_deleted">%s dipadamkan</string>
     <string name="selection_set_renamed">Dinamakan semula kepada %s</string>
     <string name="selection_set_rename_title">Namakan semula set</string>
+    <string name="selection_set_rename_description">Menggunakan nama set lain akan menggantikan set tersebut</string>
     <string name="selection_set_delete_title">Padam set?</string>
     <string name="selection_set_delete_message">Ini akan memadamkan set %s secara kekal</string>
     <string name="copy_selection_empty">Tiada pilihan disimpan lain untuk disalin</string>
@@ -1295,13 +1326,17 @@ Butiran: %2$s"</string>
     <string name="file_picker_storages">Storan</string>
     <string name="file_saver_downloads_failed">Tidak dapat mencipta fail dalam Muat Turun</string>
     <string name="file_saver_saving_to_downloads">Peranti ini tidak mempunyai skrin simpan, jadi fail akan disimpan ke Muat Turun sebagai %1$s</string>
-    <string name="file_picker_sort_name_asc">Nama (A–Z)</string>
-    <string name="file_picker_sort_name_desc">Nama (Z–A)</string>
     <string name="file_picker_sort_size_desc">Saiz (terbesar dahulu)</string>
     <string name="file_picker_sort_size_asc">Saiz (terkecil dahulu)</string>
     <string name="file_picker_sort_date_desc">Tarikh (terbaharu dahulu)</string>
     <string name="file_picker_sort_date_asc">Tarikh (terlama dahulu)</string>
     <string name="file_picker_show_hidden_files">Paparkan fail tersembunyi</string>
+    <string name="file_picker_new_folder">Folder baharu</string>
+    <string name="file_picker_folder_name">Nama folder</string>
+    <string name="file_picker_new_folder_description">Dicipta dalam %1$s dan dibuka serta-merta</string>
+    <string name="file_picker_folder_name_taken">Sesuatu dengan nama ini sudah ada di sini</string>
+    <string name="file_picker_folder_name_invalid">Nama folder tidak boleh mengandungi \" * / : &lt; &gt; ? \\ |</string>
+    <string name="file_picker_new_folder_failed">Tidak dapat mencipta folder</string>
     <!-- Settings - System Tab - About Section -->
     <string name="settings_system_about">Mengenai</string>
     <string name="settings_system_manager_description">Projek sumber terbuka untuk tampalan moden dan diperkemas aplikasi Android popular, dipacu oleh maklum balas dan sumbangan komuniti</string>
@@ -1345,6 +1380,7 @@ Butiran: %2$s"</string>
     <string name="settings_section_about_summary">Ketahui lebih lanjut tentang Morphe dan dapatkan bantuan</string>
     <string name="settings_section_local_files">Fail</string>
     <string name="settings_section_backup">Sandaran</string>
+    <string name="settings_section_import_export">Import dan eksport</string>
     <string name="settings_search">Carian tetapan</string>
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>
@@ -1363,6 +1399,7 @@ Butiran: %2$s"</string>
     <string name="retry">Cuba semula</string>
     <string name="refresh">Segar semula</string>
     <string name="add">Tambah</string>
+    <string name="create">Cipta</string>
     <string name="close">Tutup</string>
     <string name="back">Kembali</string>
     <string name="next">Seterusnya</string>
@@ -1426,6 +1463,7 @@ Butiran: %2$s"</string>
     <string name="author">Pengarang</string>
     <!-- A file a patch source is added from, as a field label -->
     <string name="file">Fail</string>
+    <!-- Chip marking an install as a copy of an app kept alongside it, a noun rather than an action -->
     <string name="clone">Klon</string>
     <!-- Button that starts patching the selected app. A verb, as in "patch this app" -->
     <string name="patch">Tampalan</string>

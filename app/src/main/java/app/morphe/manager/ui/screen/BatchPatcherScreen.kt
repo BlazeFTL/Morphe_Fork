@@ -37,8 +37,6 @@ import app.morphe.manager.domain.batch.*
 import app.morphe.manager.domain.bundles.PatchBundleSource.Extensions.usesPrerelease
 import app.morphe.manager.domain.manager.PreferencesManager
 import app.morphe.manager.domain.repository.PatchBundleRepository
-import app.morphe.manager.patcher.patch.PatchSourceRef
-import app.morphe.manager.ui.model.PatchRunProgress
 import app.morphe.manager.ui.screen.home.*
 import app.morphe.manager.ui.screen.patcher.ExpertPatchingInProgress
 import app.morphe.manager.ui.screen.patcher.PatcherErrorDialog
@@ -144,18 +142,10 @@ fun BatchPatcherScreen(
     val autoDownloadApkHelpers by prefs.autoDownloadApkHelpersInBatch.getAsState()
 
     // Outlives its item so a round in play survives the gap between apps and the end of the queue
-    var lastRun by remember { mutableStateOf<PatchRunProgress?>(null) }
-    LaunchedEffect(current?.activeRun) {
-        current?.activeRun?.let { lastRun = it }
-    }
-    val heldRun = lastRun?.takeIf { useExpertMode && miniGameState.isPlaying }
+    val heldRun = rememberLatest(current?.activeRun)?.takeIf { useExpertMode && miniGameState.isPlaying }
 
     // The app last patched keeps its name and color on the progress once the queue moves past it
-    var lastPackageName by remember { mutableStateOf<String?>(null) }
-    LaunchedEffect(current?.activeItem?.packageName) {
-        current?.activeItem?.packageName?.let { lastPackageName = it }
-    }
-    val shownPackageName = current?.activeItem?.packageName ?: lastPackageName
+    val shownPackageName = rememberLatest(current?.activeItem?.packageName)
 
     // A queue that drains mid-round waits for the player, as a single run does. Keyed on the
     // phase so a retried queue waits again
@@ -482,11 +472,9 @@ fun BatchPatcherScreen(
                 appName = item.appName,
                 packageName = item.packageName,
                 appVersion = item.version.orEmpty(),
-                patchCount = item.selection.values.sumOf { it.size },
+                patchCount = item.patchCount,
                 failedPatch = item.failedPatch,
-                bundles = item.bundles.map {
-                    PatchSourceRef(name = it.name, version = null)
-                },
+                bundles = item.patchSources,
                 stripsNativeLibs = null
             ),
             onDismiss = { errorItem = null }
@@ -578,6 +566,7 @@ fun BatchPatcherScreen(
             header = {
                 // Headed like the other lists, with how the run stands where the subtitle goes
                 ListDialogHeader(
+                    decorativeIcon = true,
                     icon = { modifier ->
                         ListDialogHeaderIcon(icon = MaterialSymbols.Rounded.Auto_fix_high, color = accent, modifier = modifier)
                     },
@@ -805,17 +794,17 @@ private fun BatchRunHeader(state: BatchRunState) {
         }
 
         // Between apps there is no active item, and dropping the line would shift everything below
-        var lastAppName by remember { mutableStateOf("") }
-        val appName = state.activeItem?.appName ?: lastAppName
-        SideEffect { lastAppName = appName }
+        val appName = rememberLatest(state.activeItem?.appName).orEmpty()
 
-        Text(
+        CrossfadeText(
             text = appName,
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.SemiBold,
             color = MaterialTheme.colorScheme.onSurface,
             maxLines = 1,
-            overflow = TextOverflow.Ellipsis
+            overflow = TextOverflow.Ellipsis,
+            transitionSpec = Animations.counterTransitionSpec,
+            label = "batch_run_app_name"
         )
     }
 }
@@ -1151,7 +1140,7 @@ private fun BatchPatchItem.exportFileName(): String = ExportNameFormatter.format
         appName = appName,
         packageName = id,
         appVersion = version,
-        sources = bundles.map { PatchSourceRef(it.name, it.version) }
+        sources = patchSources
     )
 )
 
@@ -1191,10 +1180,11 @@ private fun itemDetails(item: BatchPatchItem): String = when (item.state) {
             item.patchCount.toString()
         )
         // Only the sources actually contributing patches, so a source the user took nothing
-        // from is not listed as one the app is patched from
-        val bundles = item.bundles
-            .filter { item.selection.isEmpty() || it.uid in item.selection.keys }
-            .joinToString(", ") { it.name }
+        // from is not listed as one the app is patched from. With nothing picked yet, every
+        // source the patches could come from
+        val bundles = item.patchSources.map { it.name }
+            .ifEmpty { item.bundles.map { it.name } }
+            .joinToString(", ")
             .takeIf { it.isNotEmpty() }
         listOfNotNull(item.version, source, patches, bundles).joinToString(" • ")
     }

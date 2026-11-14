@@ -5,7 +5,11 @@
     <string name="home_other_apps_action">სხვა აპლიკაციების არჩევა</string>
     <string name="home_not_patched_yet">ჯერ არ არის პატჩირებული</string>
     <string name="home_unpatched_version_installed">ინსტალირებულია დააპატჩერებელი ვერსია</string>
-    <string name="home_unpatched_badge">დაუპატჩებელი</string>
+    <string name="home_app_status_newer_version">განახლება %s-მდე</string>
+    <string name="home_app_status_newer_patches">ახალი პატჩები</string>
+    <!-- Mark on the card of an app built for a device other than a phone -->
+    <string name="form_factor_tv">ტელევიზორი</string>
+    <string name="form_factor_automotive">ავტომობილი</string>
     <string name="home_no_patches_available">პატჩები ხელმისაწვდომი არ არის</string>
     <string name="home_app_hide_title">ამის დამალვა?</string>
     <string name="home_more_apps_title">მეტი აპლიკაცია</string>
@@ -62,11 +66,17 @@
     <string name="home_search_apps">აპლიკაციების ძებნა</string>
     <string name="list_options_title">სორტირება და ფილტრაცია</string>
     <string name="list_options_state_description">დასორტირებული %1$s-ით, გაფილტრებული %2$s-ით</string>
+    <!-- Orders every sortable list offers -->
+    <string name="list_sort_manual">მექანიკური</string>
+    <string name="list_sort_name_asc">სახელი (A–Z)</string>
+    <string name="list_sort_name_desc">სახელი (Z–A)</string>
+    <string name="home_app_filter_all">ყველა</string>
+    <string name="home_app_filter_not_patched">არაპატჩებული</string>
     <string name="home_app_filter_clones">კლონები</string>
     <string name="home_app_grouping_none">არცერთი</string>
     <string name="home_app_sort_manual_hint">დააჭირეთ ხანგრძლივად აპლიკაციას, შემდეგ დააჭირეთ განლაგების შეცვლის ღილაკს</string>
-    <string name="home_app_sort_recommended">რეკომენდებული თანმიმდევრობა</string>
-    <string name="home_app_sort_updates_first">პატჩის განახლებები პირველ რიგში</string>
+    <string name="home_app_sort_recommended">რეკომენდებული</string>
+    <string name="home_app_sort_updates_first">განახლებები პირველად</string>
     <string name="home_app_sort_recently_patched">ბოლოს დაფატჩებული</string>
     <string name="home_no_apps_title">აპლიკაციები არ არის ხელმისაწვდომი</string>
     <string name="home_no_apps_subtitle">დაამატეთ პატჩის წყარო ან ჩართეთ არსებული %s-ში</string>
@@ -82,6 +92,7 @@
     <string name="home_category_new_title">ახალი კატეგორია</string>
     <string name="home_category_rename_title">კატეგორიის გადარქმევა</string>
     <string name="home_category_name">კატეგორიის სახელი</string>
+    <string name="home_category_name_description">მთავარი ეკრანი აპლიკაციებს ამ სახელის ქვეშ აჯგუფებს</string>
     <string name="home_category_move_to">კატეგორიაში გადატანა</string>
     <string name="home_category_move_selected_title">მონიშნული აპლიკაციების გადატანა</string>
     <!-- %s is the name of the category -->
@@ -155,7 +166,6 @@
     <string name="sources_search">წყაროებისა და პატჩების ძებნა</string>
     <!-- Which sources the sources page lists, each with what it keeps -->
     <string name="sources_filter_issues">საჭიროებს ყურადღებას</string>
-    <string name="sources_sort_manual">ხელით თანმიმდევრობა</string>
     <string name="sources_sort_manual_hint">თანმიმდევრობის შესაცვლელად, დააჭირეთ წყაროს ხანგრძლივად</string>
     <string name="sources_sort_last_updated">ბოლო განახლება</string>
     <string name="sources_sort_enabled_first">ჩართული პირველ რიგში</string>
@@ -164,7 +174,7 @@
     <string name="sources_management_report_issue">პრობლემის შეტყობინება</string>
     <string name="sources_management_failed_to_open_url">URL-ის გახსნა ვერ მოხერხდა</string>
     <string name="sources_apps">აპლიკაციები</string>
-    <string name="sources_apps_description">მონიშნული აპლიკაციები მოდის ამ წყაროდან. შეეხეთ აპლიკაციას მის ამოსაღებად ან დასაბრუნებლად. აპლიკაცია ქრება მთავარი ეკრანიდან, როცა აღარცერთი წყარო აღარ მოიტანს მას, გარდა იმ შემთხვევისა, თუ მას დააპატჩირებთ</string>
+    <string name="sources_apps_description">მონიშნული აპლიკაციები მოდის ამ წყაროდან. შეეხ impeding აპლიკაციას მის გამოსარიკვად ან დასაბრუნებლად, გადასვލეთ მის სანახავად პატჩების. აპლიკაცია, რომელსაც არ აქვს წყარო, ტოვებს მთავარ ეკრანს, თუ მას არ დააპატჩეთ</string>
     <string name="sources_apps_brought">მოტანილია ამ წყაროს მიერ</string>
     <string name="sources_apps_left_out">გამოტოვებულია ამ წყაროსგან</string>
     <!-- Under an app left out of a source that keeps its home screen card because the user has patched it -->
@@ -1166,6 +1176,26 @@ morphe_header_custom_dark.png
     <string name="settings_system_hide_password_field">პაროლის დამალვა</string>
     <string name="settings_system_morphe_settings">Morphe-ის პარამეტრები</string>
     <string name="settings_system_import_manager_settings_description">აკეთებს Morphe-ის პარამეტრების სარეზერვო ასლს და აღადგენს მათ</string>
+    <string name="settings_system_export_manager_settings_title">Morphe-ის პარამეტრების ექსპორტი</string>
+    <string name="settings_system_export_manager_settings_description">ინახავს თქვენ მიერ არჩეულ პარამეტრებს ფაილში</string>
+    <string name="settings_system_import_manager_settings_file_description">აღადგენს პარამეტრებს სარეზერვო ასლის ფაილიდან</string>
+    <string name="settings_system_auto_backup">ავტომატური სარეზერვო ასლი</string>
+    <string name="settings_system_auto_backup_switch">გაკეთეთ სარეზერვო ასლი ავტომატურად</string>
+    <string name="settings_system_auto_backup_now">სარეზერვო ასლის შექმნა ახლავე</string>
+    <string name="settings_system_auto_backup_saved">სარეზერვო ასლი შენახულია</string>
+    <string name="settings_system_auto_backup_interval_description">Morphe ელოდება სულ მცირე ამ დროს ერთი ასლის გაკეთებიდან მეორემდე</string>
+    <string name="settings_system_auto_backup_description">ინახავს თქვენი Morphe-ის პარამეტრებს თქვენ მიერ არჩეულ საქაღალდეში</string>
+    <string name="settings_system_auto_backup_last">ბოლო სარეზერვო ასლი: %s</string>
+    <string name="settings_system_auto_backup_folder">საქაღალდე</string>
+    <string name="settings_system_auto_backup_folder_name">Morphe-ის სარეზერვო ასლები</string>
+    <string name="settings_system_auto_backup_folder_failed">ამ საქაღალდის გამოყენება ვერ მოხერხდა: %s</string>
+    <string name="settings_system_auto_backup_interval">სარეზერვო ასლის სიხშირე</string>
+    <string name="settings_system_auto_backup_signing_key">ხელმოწერის გასაღების ჩართვა</string>
+    <string name="settings_system_auto_backup_signing_key_description">ინახავს გასაღებს, რომელიც ხელს მოაწერს პატჩირებულ აპლიკაციებს პარამეტრების გვერდით</string>
+    <string name="settings_system_auto_backup_signing_key_warning_title">გსურთ ხელმოწერის გასაღების სარეზერვო ასლის შექმნა?</string>
+    <string name="settings_system_auto_backup_signing_key_warning_message">ნებისვ ಯಾರც მოიპოვებს ამ ფაილს, შეძლებს განაახლოს თქვენი პატჩირებული აპლიკაციები. შეინარჩუნეთ საქაღალდე კონფიდენციალურად და გაუზიარეთ იგი მხოლოდ თქვენს მოწყობილობებს</string>
+    <string name="settings_system_auto_backup_footer">ასლი ინახვება, როდესაც ტოვებთ Morphe-ს რაიმე ცვლილების შეტანის შემდეგ. ინახება უახლესი %s</string>
+    <string name="settings_system_auto_backup_failed">ბოლო სარეზერვო ასლის შენახვა ვერ მოხერხდა. აირჩიეთ საქაღალდე ხელახლა</string>
     <string name="settings_system_import_manager_settings_fail">Morphe-ის პარამეტრების იმპორტი ვერ მოხერხდა: %s</string>
     <string name="settings_system_import_manager_settings_success">Morphe-ის პარამეტრები იმპორტირებულია</string>
     <string name="settings_system_import_manager_settings_mode_title">Morphe-ის პარამეტრების იმპორტი</string>
@@ -1265,6 +1295,7 @@ morphe_header_custom_dark.png
     <string name="selection_set_deleted">%s წაშლილია</string>
     <string name="selection_set_renamed">სახელი შეცვლილია %s-ით</string>
     <string name="selection_set_rename_title">სეტის სახელის შეცვლა</string>
+    <string name="selection_set_rename_description">სხვა ნაკრেবের სახელის присвоება ჩაანაცვლებს ამ ნაკრებს</string>
     <string name="selection_set_delete_title">წაიშალოს ნაკრები?</string>
     <string name="selection_set_delete_message">ეს სამუდამოდ წაშლის ნაკრებს %s</string>
     <string name="copy_selection_empty">საკოპირებლად სხვა შენახული არჩევანი არ არსებობს</string>
@@ -1294,13 +1325,17 @@ morphe_header_custom_dark.png
     <string name="file_picker_storages">საცავები</string>
     <string name="file_saver_downloads_failed">გადმოწერვების საქაღალდეში ფაილის შექმნა ვერ მოხერხდა</string>
     <string name="file_saver_saving_to_downloads">ამ მოწყობილობას არ აქვს შენახვის ეკრანი, ამიტომ ფაილი გადადის გადმოწერვებში სახელით %1$s</string>
-    <string name="file_picker_sort_name_asc">სახელი (A–Z)</string>
-    <string name="file_picker_sort_name_desc">სახელი (Z–A)</string>
     <string name="file_picker_sort_size_desc">ზომა (ჯერ ყველაზე დიდი)</string>
     <string name="file_picker_sort_size_asc">ზომა (ჯერ ყველაზე პატარა)</string>
     <string name="file_picker_sort_date_desc">თარიღი (უახლესი პირველი)</string>
     <string name="file_picker_sort_date_asc">თარიღი (უძველესი პირველი)</string>
     <string name="file_picker_show_hidden_files">დამალული ფაილების ჩვენება</string>
+    <string name="file_picker_new_folder">ახალი საქაღალდე</string>
+    <string name="file_picker_folder_name">საქაღალდის სახელი</string>
+    <string name="file_picker_new_folder_description">შექმნილია %1$s-ში და მომენტალურად გახსნილია</string>
+    <string name="file_picker_folder_name_taken">ამ სახელის მქონე ელემენტი უკვე არსებობს</string>
+    <string name="file_picker_folder_name_invalid">საქაღალდის სახელი არ შეიძლება შეიცავდეს სიმბოლოებს: \" * / : &lt; &gt; ? \\ |</string>
+    <string name="file_picker_new_folder_failed">საქაღალდის შექმნა ვერ მოხერხდა</string>
     <!-- Settings - System Tab - About Section -->
     <string name="settings_system_about">შესახებ</string>
     <string name="settings_system_manager_description">ღია კოდის პროექტი პოპულარული Android აპლიკაციების თანამედროვე და ოპტიმიზირებული პატჩინგისთვის, რომელიც ეფუძნება საზოგადოების უკუკავშირს და წვლილს</string>
@@ -1344,6 +1379,7 @@ morphe_header_custom_dark.png
     <string name="settings_section_about_summary">მეტი Morphe-ის შესახებ და დახმარების მიღება</string>
     <string name="settings_section_local_files">ფაილები</string>
     <string name="settings_section_backup">სარეზერვო ასლი</string>
+    <string name="settings_section_import_export">იმპორტი და ექსპორტი</string>
     <string name="settings_search">პარამეტრების ძებნა</string>
     <string name="yes">დიახ</string>
     <string name="no">არა</string>
@@ -1362,6 +1398,7 @@ morphe_header_custom_dark.png
     <string name="retry">გაიმეორეთ</string>
     <string name="refresh">განახლება</string>
     <string name="add">დამატება</string>
+    <string name="create">შექმნა</string>
     <string name="close">დახურვა</string>
     <string name="back">უკან</string>
     <string name="next">შემდეგი</string>
@@ -1425,6 +1462,7 @@ morphe_header_custom_dark.png
     <string name="author">ავტორი</string>
     <!-- A file a patch source is added from, as a field label -->
     <string name="file">ფაილი</string>
+    <!-- Chip marking an install as a copy of an app kept alongside it, a noun rather than an action -->
     <string name="clone">კლონირება</string>
     <!-- Button that starts patching the selected app. A verb, as in "patch this app" -->
     <string name="patch">პატჩირება</string>

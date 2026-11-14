@@ -5,7 +5,11 @@
     <string name="home_other_apps_action">অন্যান্য অ্যাপ নির্বাচন করুন</string>
     <string name="home_not_patched_yet">এখনো প্যাচ করা হয়নি</string>
     <string name="home_unpatched_version_installed">অ-প্যাচড সংস্করণ ইনস্টল করা হয়েছে</string>
-    <string name="home_unpatched_badge">প্যাচ করা হয়নি</string>
+    <string name="home_app_status_newer_version">%s-এ আপডেট করুন</string>
+    <string name="home_app_status_newer_patches">নতুন প্যাচগুলি</string>
+    <!-- Mark on the card of an app built for a device other than a phone -->
+    <string name="form_factor_tv">টিভি</string>
+    <string name="form_factor_automotive">অটোমোটিভ</string>
     <string name="home_no_patches_available">কোনো প্যাচ পাওয়া যায়নি</string>
     <string name="home_app_hide_title">এই অ্যাপটি লুকিয়ে রাখবেন?</string>
     <string name="home_more_apps_title">আরও অ্যাপ</string>
@@ -62,11 +66,17 @@
     <string name="home_search_apps">অ্যাপস অনুসন্ধান করুন</string>
     <string name="list_options_title">সাজান ও ফিল্টার করুন</string>
     <string name="list_options_state_description">%1$s দ্বারা সাজানো, %2$s দ্বারা ফিল্টার করা</string>
+    <!-- Orders every sortable list offers -->
+    <string name="list_sort_manual">ম্যানুয়াল</string>
+    <string name="list_sort_name_asc">নাম (A–Z)</string>
+    <string name="list_sort_name_desc">নাম (Z–A)</string>
+    <string name="home_app_filter_all">সবগুলো</string>
+    <string name="home_app_filter_not_patched">প্যাচ করা হয়নি</string>
     <string name="home_app_filter_clones">ক্লোন</string>
     <string name="home_app_grouping_none">কোনোটিই নয়</string>
     <string name="home_app_sort_manual_hint">একটি অ্যাপ দীর্ঘক্ষণ চেপে ধরুন, তারপর রিঅর্ডার বাটনে ট্যাপ করুন</string>
-    <string name="home_app_sort_recommended">সুপারিশকৃত ক্রম</string>
-    <string name="home_app_sort_updates_first">প্রথমে প্যাচ আপডেট</string>
+    <string name="home_app_sort_recommended">সুপারিশকৃত</string>
+    <string name="home_app_sort_updates_first">আপডেট আগে</string>
     <string name="home_app_sort_recently_patched">সম্প্রতি প্যাচ করা</string>
     <string name="home_no_apps_title">কোনো অ্যাপস পাওয়া যায়নি</string>
     <string name="home_no_apps_subtitle">একটি প্যাচ উৎস যোগ করুন অথবা %s-এ বিদ্যমান একটি সক্ষম করুন</string>
@@ -82,6 +92,7 @@
     <string name="home_category_new_title">নতুন বিভাগ</string>
     <string name="home_category_rename_title">বিভাগটির নাম পরিবর্তন করুন</string>
     <string name="home_category_name">বিভাগের নাম</string>
+    <string name="home_category_name_description">হোম স্ক্রিন এই নামের অধীনে তার অ্যাপগুলিকে গ্রুপ করে</string>
     <string name="home_category_move_to">বিভাগে সরান</string>
     <string name="home_category_move_selected_title">নির্বাচিত অ্যাপগুলি সরান</string>
     <!-- %s is the name of the category -->
@@ -155,7 +166,6 @@
     <string name="sources_search">উৎস এবং প্যাচ অনুসন্ধান করুন</string>
     <!-- Which sources the sources page lists, each with what it keeps -->
     <string name="sources_filter_issues">মনোযোগের প্রয়োজন</string>
-    <string name="sources_sort_manual">ম্যানুয়াল অর্ডার</string>
     <string name="sources_sort_manual_hint">পুনরায় সাজানোর জন্য একটি উৎসের উপর দীর্ঘক্ষণ চাপুন</string>
     <string name="sources_sort_last_updated">সর্বশেষ আপডেট করা হয়েছে</string>
     <string name="sources_sort_enabled_first">প্রথমে সক্ষম</string>
@@ -164,7 +174,7 @@
     <string name="sources_management_report_issue">একটি সমস্যা রিপোর্ট করুন</string>
     <string name="sources_management_failed_to_open_url">URL খুলতে ব্যর্থ হয়েছে</string>
     <string name="sources_apps">অ্যাপস</string>
-    <string name="sources_apps_description">এই উৎস থেকে টিক করা অ্যাপগুলি আসে। বাদ দিতে বা আবার আনতে একটি অ্যাপে ট্যাপ করুন। কোনো উৎস এটি আর নিয়ে না এলে হোম স্ক্রিন থেকে অ্যাপ চলে যায়, যতক্ষণ আপনি এটি প্যাচ করেন না</string>
+    <string name="sources_apps_description">টিক করা অ্যাপগুলো এই সোর্স থেকে এসেছে। কোনো অ্যাপ বাদ দিতে বা পুনরায় ফিরিয়ে আনতে সেটিতে ট্যাপ করুন, এর প্যাচগুলো দেখতে সোয়াইপ করুন। সোর্সহীন অ্যাপ হোম স্ক্রিন থেকে চলে যায়, যদি না আপনি সেটিকে প্যাচ করে থাকেন</string>
     <string name="sources_apps_brought">এই সোর্স থেকে আনা</string>
     <string name="sources_apps_left_out">এই সোর্স থেকে বাদ দেওয়া</string>
     <!-- Under an app left out of a source that keeps its home screen card because the user has patched it -->
@@ -1166,6 +1176,26 @@ morphe_header_custom_dark.png
     <string name="settings_system_hide_password_field">পাসওয়ার্ড লুকান</string>
     <string name="settings_system_morphe_settings">Morphe সেটিংস</string>
     <string name="settings_system_import_manager_settings_description">আপনার Morphe সেটিংসের ব্যাকআপ এবং পুনরুদ্ধার করে।</string>
+    <string name="settings_system_export_manager_settings_title">Morphe সেটিংস রপ্তানি করুন</string>
+    <string name="settings_system_export_manager_settings_description">আপনার বাছাই করা সেটিংসগুলি একটি ফাইলে সংরক্ষণ করে</string>
+    <string name="settings_system_import_manager_settings_file_description">একটি ব্যাকআপ ফাইল থেকে সেটিংস পুনরুদ্ধার করে</string>
+    <string name="settings_system_auto_backup">স্বয়ংক্রিয় ব্যাকআপ</string>
+    <string name="settings_system_auto_backup_switch">স্বয়ংক্রিয়ভাবে ব্যাকআপ নিন</string>
+    <string name="settings_system_auto_backup_now">এখনই ব্যাকআপ নিন</string>
+    <string name="settings_system_auto_backup_saved">ব্যাকআপ সংরক্ষণ করা হয়েছে</string>
+    <string name="settings_system_auto_backup_interval_description">একটি কপি করার পর পরবর্তী কপি করার আগে Morphe অন্তত এই সময়ের জন্য অপেক্ষা করে</string>
+    <string name="settings_system_auto_backup_description">আপনার Morphe সেটিংসগুলি আপনার বাছাই করা একটি ফোল্ডারে সংরক্ষণ করে</string>
+    <string name="settings_system_auto_backup_last">শেষ ব্যাকআপ: %s</string>
+    <string name="settings_system_auto_backup_folder">ফোল্ডার</string>
+    <string name="settings_system_auto_backup_folder_name">Morphe ব্যাকআপস</string>
+    <string name="settings_system_auto_backup_folder_failed">এই ফোল্ডারটি ব্যবহার করা সম্ভব হয়নি: %s</string>
+    <string name="settings_system_auto_backup_interval">ব্যাকআপের ব্যবধান</string>
+    <string name="settings_system_auto_backup_signing_key">সাইনিং কী অন্তর্ভুক্ত করুন</string>
+    <string name="settings_system_auto_backup_signing_key_description">সেটিংসের পাশে প্যাচ করা অ্যাপগুলিকে সাইন করার কী-টি সংরক্ষণ করে</string>
+    <string name="settings_system_auto_backup_signing_key_warning_title">সাইনিং কী ব্যাকআপ করবেন?</string>
+    <string name="settings_system_auto_backup_signing_key_warning_message">যে কেউ এই ফাইলটি পাবে তারা আপনার প্যাচ করা অ্যাপগুলোর উপর আপডেট সাইন করতে পারবে। ফোল্ডারটি ব্যক্তিগত রাখুন এবং শুধুমাত্র আপনার নিজস্ব ডিভাইসের সাথে শেয়ার করুন</string>
+    <string name="settings_system_auto_backup_footer">কোনো কিছু পরিবর্তন করার পর আপনি যখন Morphe থেকে বের হয়ে যান তখন একটি কপি সংরক্ষিত হয়। সর্বশেষ %s রাখা হয়</string>
+    <string name="settings_system_auto_backup_failed">শেষ ব্যাকআপটি সেভ করা যায়নি। পুনরায় ফোল্ডারটি নির্বাচন করুন</string>
     <string name="settings_system_import_manager_settings_fail">Morphe সেটিংস আমদানি করতে ব্যর্থ হয়েছে: %s</string>
     <string name="settings_system_import_manager_settings_success">Morphe সেটিংস আমদানি করা হয়েছে</string>
     <string name="settings_system_import_manager_settings_mode_title">Morphe সেটিংস আমদানি</string>
@@ -1265,6 +1295,7 @@ morphe_header_custom_dark.png
     <string name="selection_set_deleted">%s মুছে ফেলা হয়েছে</string>
     <string name="selection_set_renamed">%s নামে পুনঃনামকরণ করা হয়েছে</string>
     <string name="selection_set_rename_title">সেটের নাম পরিবর্তন করুন</string>
+    <string name="selection_set_rename_description">অন্য একটি সেটের নাম নিলে সেই সেটটি প্রতিস্থাপিত হবে</string>
     <string name="selection_set_delete_title">সেটটি কি মুছে ফেলবেন?</string>
     <string name="selection_set_delete_message">এটি স্থায়ীভাবে %s সেটটি মুছে ফেলবে</string>
     <string name="copy_selection_empty">কপি করার জন্য আর কোনো সংরক্ষিত নির্বাচন নেই</string>
@@ -1294,13 +1325,17 @@ morphe_header_custom_dark.png
     <string name="file_picker_storages">স্টোরেজ</string>
     <string name="file_saver_downloads_failed">Downloads-এ ফাইলটি তৈরি করা সম্ভব হয়নি</string>
     <string name="file_saver_saving_to_downloads">এই ডিভাইসে কোনো সেভ স্ক্রিন নেই, তাই ফাইলটি %1$s হিসেবে Downloads-এ যাচ্ছে</string>
-    <string name="file_picker_sort_name_asc">নাম (A–Z)</string>
-    <string name="file_picker_sort_name_desc">নাম (Z–A)</string>
     <string name="file_picker_sort_size_desc">সাইজ (বৃহত্তম প্রথমে)</string>
     <string name="file_picker_sort_size_asc">সাইজ (ক্ষুদ্রতম প্রথমে)</string>
     <string name="file_picker_sort_date_desc">তারিখ (নতুনতম প্রথমে)</string>
     <string name="file_picker_sort_date_asc">তারিখ (পুরানো প্রথমে)</string>
     <string name="file_picker_show_hidden_files">লুকানো ফাইল দেখান</string>
+    <string name="file_picker_new_folder">নতুন ফোল্ডার</string>
+    <string name="file_picker_folder_name">ফোল্ডারের নাম</string>
+    <string name="file_picker_new_folder_description">%1$s-এ তৈরি করা হয়েছে এবং সাথে সাথেই খোলা হয়েছে</string>
+    <string name="file_picker_folder_name_taken">এই নামের কিছু এখানে ইতিমধ্যেই আছে</string>
+    <string name="file_picker_folder_name_invalid">একটি ফোল্ডারের নামে \" * / : &lt; &gt; ? \\ | থাকতে পারবে না</string>
+    <string name="file_picker_new_folder_failed">ফোল্ডারটি তৈরি করা সম্ভব হয়নি</string>
     <!-- Settings - System Tab - About Section -->
     <string name="settings_system_about">সম্পর্কে</string>
     <string name="settings_system_manager_description">এটি একটি ওপেন-সোর্স প্রকল্প, যা জনপ্রিয় অ্যান্ড্রয়েড অ্যাপগুলির আধুনিক, সরলীকৃত প্যাচিংয়ের জন্য তৈরি করা হয়েছে, এবং এটি কমিউনিটির প্রতিক্রিয়া ও অবদানের মাধ্যমে পরিচালিত।</string>
@@ -1344,6 +1379,7 @@ morphe_header_custom_dark.png
     <string name="settings_section_about_summary">Morphe এবং সাহায্য পাওয়ার সম্পর্কে আরও জানুন</string>
     <string name="settings_section_local_files">ফাইল</string>
     <string name="settings_section_backup">ব্যাকআপ</string>
+    <string name="settings_section_import_export">ইমপোর্ট এবং এক্সপোর্ট</string>
     <string name="settings_search">সেটিংস অনুসন্ধান করুন</string>
     <string name="yes">হ্যাঁ</string>
     <string name="no">না</string>
@@ -1362,6 +1398,7 @@ morphe_header_custom_dark.png
     <string name="retry">আবার চেষ্টা করুন</string>
     <string name="refresh">রিফ্রেশ করুন</string>
     <string name="add">যোগ করুন</string>
+    <string name="create">তৈরি করুন</string>
     <string name="close">বন্ধ করুন</string>
     <string name="back">পিছিয়ে যান</string>
     <string name="next">পরবর্তী</string>
@@ -1425,6 +1462,7 @@ morphe_header_custom_dark.png
     <string name="author">লেখক</string>
     <!-- A file a patch source is added from, as a field label -->
     <string name="file">ফাইল</string>
+    <!-- Chip marking an install as a copy of an app kept alongside it, a noun rather than an action -->
     <string name="clone">ক্লোন করুন</string>
     <!-- Button that starts patching the selected app. A verb, as in "patch this app" -->
     <string name="patch">প্যাচ</string>

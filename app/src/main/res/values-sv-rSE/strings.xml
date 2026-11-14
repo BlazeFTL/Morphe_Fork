@@ -5,7 +5,11 @@
     <string name="home_other_apps_action">Välj andra appar</string>
     <string name="home_not_patched_yet">Inte modifierad än</string>
     <string name="home_unpatched_version_installed">Omodifierad version installerad</string>
-    <string name="home_unpatched_badge">Inte modifierad</string>
+    <string name="home_app_status_newer_version">Uppdatera till %s</string>
+    <string name="home_app_status_newer_patches">Nya patchar</string>
+    <!-- Mark on the card of an app built for a device other than a phone -->
+    <string name="form_factor_tv">TV</string>
+    <string name="form_factor_automotive">Bil</string>
     <string name="home_no_patches_available">Inga tillägg är tillgängliga</string>
     <string name="home_app_hide_title">Dölj den här appen?</string>
     <string name="home_more_apps_title">Fler appar</string>
@@ -62,11 +66,17 @@
     <string name="home_search_apps">Sök efter appar</string>
     <string name="list_options_title">Sortera och filtrera</string>
     <string name="list_options_state_description">Sorterad efter %1$s, filtrerad efter %2$s</string>
+    <!-- Orders every sortable list offers -->
+    <string name="list_sort_manual">Manuell</string>
+    <string name="list_sort_name_asc">Namn (A–Ö)</string>
+    <string name="list_sort_name_desc">Namn (Ö–A)</string>
+    <string name="home_app_filter_all">Alla</string>
+    <string name="home_app_filter_not_patched">Inte modifierad</string>
     <string name="home_app_filter_clones">Kloner</string>
     <string name="home_app_grouping_none">Ingen</string>
     <string name="home_app_sort_manual_hint">Tryck länge på en app och tryck sedan på knappen för att ändra ordning</string>
-    <string name="home_app_sort_recommended">Rekommenderad ordning</string>
-    <string name="home_app_sort_updates_first">Tilläggsuppdateringar först</string>
+    <string name="home_app_sort_recommended">Rekommenderas</string>
+    <string name="home_app_sort_updates_first">Uppdateringar först</string>
     <string name="home_app_sort_recently_patched">Nyligen modifierade</string>
     <string name="home_no_apps_title">Inga appar är tillgängliga</string>
     <string name="home_no_apps_subtitle">Lägg till en källa eller aktivera en befintlig i %s</string>
@@ -82,6 +92,7 @@
     <string name="home_category_new_title">Ny kategori</string>
     <string name="home_category_rename_title">Byt namn på kategori</string>
     <string name="home_category_name">Kategorinamn</string>
+    <string name="home_category_name_description">Hemskärmen grupperar sina appar under detta namn</string>
     <string name="home_category_move_to">Flytta till kategori</string>
     <string name="home_category_move_selected_title">Flytta markerade appar</string>
     <!-- %s is the name of the category -->
@@ -155,7 +166,6 @@
     <string name="sources_search">Sök efter källor och tillägg</string>
     <!-- Which sources the sources page lists, each with what it keeps -->
     <string name="sources_filter_issues">Åtgärd krävs</string>
-    <string name="sources_sort_manual">Manuell ordning</string>
     <string name="sources_sort_manual_hint">Tryck länge på en källa för att ändra ordning</string>
     <string name="sources_sort_last_updated">Senast uppdaterade</string>
     <string name="sources_sort_enabled_first">Aktiverade först</string>
@@ -164,7 +174,7 @@
     <string name="sources_management_report_issue">Rapportera ett problem</string>
     <string name="sources_management_failed_to_open_url">Det gick inte att öppna webbadressen</string>
     <string name="sources_apps">Appar</string>
-    <string name="sources_apps_description">De markerade apparna kommer från den här källan. Tryck på en app för att utesluta den eller inkludera den igen. En app tas bort från startskärmen om ingen källa inkluderar den, förutom om du har modifierat den</string>
+    <string name="sources_apps_description">De markerade apparna kommer från den här källan. Tryck på en app för att utesluta den eller inkludera den igen, svep på den för att se dess modifieringar. En app tas bort från startskärmen om ingen källa inkluderar den, förutom om du har modifierat den</string>
     <string name="sources_apps_brought">Tillhandahålls av den här källan</string>
     <string name="sources_apps_left_out">Utesluts från den här källan</string>
     <!-- Under an app left out of a source that keeps its home screen card because the user has patched it -->
@@ -1166,6 +1176,26 @@ Information: %2$s"</string>
     <string name="settings_system_hide_password_field">Dölj lösenord</string>
     <string name="settings_system_morphe_settings">Morphe-inställningar</string>
     <string name="settings_system_import_manager_settings_description">Säkerhetskopierar och återställer dina Morphe-inställningar</string>
+    <string name="settings_system_export_manager_settings_title">Exportera Morphe-inställningar</string>
+    <string name="settings_system_export_manager_settings_description">Sparar de inställningar du väljer till en fil</string>
+    <string name="settings_system_import_manager_settings_file_description">Återställer inställningar från en säkerhetskopieringsfil</string>
+    <string name="settings_system_auto_backup">Automatisk säkerhetskopiering</string>
+    <string name="settings_system_auto_backup_switch">Säkerhetskopiera automatiskt</string>
+    <string name="settings_system_auto_backup_now">Säkerhetskopiera nu</string>
+    <string name="settings_system_auto_backup_saved">Säkerhetskopiering sparad</string>
+    <string name="settings_system_auto_backup_interval_description">Morphe väntar minst så här länge efter en kopia innan nästa görs</string>
+    <string name="settings_system_auto_backup_description">Sparar dina Morphe-inställningar till en mapp du väljer</string>
+    <string name="settings_system_auto_backup_last">Senaste säkerhetskopian: %s</string>
+    <string name="settings_system_auto_backup_folder">Mapp</string>
+    <string name="settings_system_auto_backup_folder_name">Morphe-säkerhetskopior</string>
+    <string name="settings_system_auto_backup_folder_failed">Kunde inte använda den här mappen: %s</string>
+    <string name="settings_system_auto_backup_interval">Säkerhetskopieringsintervall</string>
+    <string name="settings_system_auto_backup_signing_key">Inkludera signeringsnyckel</string>
+    <string name="settings_system_auto_backup_signing_key_description">Sparar nyckeln som signerar patchade appar bredvid inställningarna</string>
+    <string name="settings_system_auto_backup_signing_key_warning_title">Säkerhetskopiera signeringsnyckeln?</string>
+    <string name="settings_system_auto_backup_signing_key_warning_message">Alla som får den här filen kan signera uppdateringar som installeras över dina patchade appar. Håll mappen privat och dela den endast med dina egna enheter</string>
+    <string name="settings_system_auto_backup_footer">En kopia sparas när du lämnar Morphe efter att ha ändrat något. De senaste %s behålls</string>
+    <string name="settings_system_auto_backup_failed">Den senaste säkerhetskopian kunde inte sparas. Välj mapp igen</string>
     <string name="settings_system_import_manager_settings_fail">Det gick inte att importera Morphe-inställningar: %s</string>
     <string name="settings_system_import_manager_settings_success">Morphe-inställningar importerades</string>
     <string name="settings_system_import_manager_settings_mode_title">Importera Morphe-inställningar</string>
@@ -1265,6 +1295,7 @@ Information: %2$s"</string>
     <string name="selection_set_deleted">%s raderades</string>
     <string name="selection_set_renamed">Bytt namn till %s</string>
     <string name="selection_set_rename_title">Byt namn på set</string>
+    <string name="selection_set_rename_description">Om man använder namnet på ett annat set ersätts det setet</string>
     <string name="selection_set_delete_title">Radera set?</string>
     <string name="selection_set_delete_message">Det här raderar setet %s permanent</string>
     <string name="copy_selection_empty">Inga andra sparade urval att kopiera från</string>
@@ -1294,13 +1325,17 @@ Information: %2$s"</string>
     <string name="file_picker_storages">Lagringsplatser</string>
     <string name="file_saver_downloads_failed">Kunde inte skapa filen i Hämtade filer</string>
     <string name="file_saver_saving_to_downloads">Den här enheten har ingen sparskärm, så filen sparas i Hämtade filer som %1$s</string>
-    <string name="file_picker_sort_name_asc">Namn (A–Ö)</string>
-    <string name="file_picker_sort_name_desc">Namn (Ö–A)</string>
     <string name="file_picker_sort_size_desc">Storlek (största först)</string>
     <string name="file_picker_sort_size_asc">Storlek (minsta först)</string>
     <string name="file_picker_sort_date_desc">Datum (nyaste först)</string>
     <string name="file_picker_sort_date_asc">Datum (äldsta först)</string>
     <string name="file_picker_show_hidden_files">Visa dolda filer</string>
+    <string name="file_picker_new_folder">Ny mapp</string>
+    <string name="file_picker_folder_name">Mappnamn</string>
+    <string name="file_picker_new_folder_description">Skapas i %1$s och öppnas direkt</string>
+    <string name="file_picker_folder_name_taken">Något med det här namnet finns redan här</string>
+    <string name="file_picker_folder_name_invalid">Ett mappnamn kan inte innehålla \" * / : &lt; &gt; ? \\ |</string>
+    <string name="file_picker_new_folder_failed">Kunde inte skapa mappen</string>
     <!-- Settings - System Tab - About Section -->
     <string name="settings_system_about">Om</string>
     <string name="settings_system_manager_description">Ett projekt med öppen källkod för modern och smidig modifiering av populära Android-appar som drivs av feedback och bidrag från communityn</string>
@@ -1344,6 +1379,7 @@ Information: %2$s"</string>
     <string name="settings_section_about_summary">Mer om Morphe och få hjälp</string>
     <string name="settings_section_local_files">Filer</string>
     <string name="settings_section_backup">Säkerhetskopiering</string>
+    <string name="settings_section_import_export">Importera och exportera</string>
     <string name="settings_search">Sök i inställningar</string>
     <string name="yes">Ja</string>
     <string name="no">Nej</string>
@@ -1362,6 +1398,7 @@ Information: %2$s"</string>
     <string name="retry">Försök igen</string>
     <string name="refresh">Uppdatera</string>
     <string name="add">Lägg till</string>
+    <string name="create">Skapa</string>
     <string name="close">Stäng</string>
     <string name="back">Tillbaka</string>
     <string name="next">Nästa</string>
@@ -1425,6 +1462,7 @@ Information: %2$s"</string>
     <string name="author">Upphovsperson</string>
     <!-- A file a patch source is added from, as a field label -->
     <string name="file">Fil</string>
+    <!-- Chip marking an install as a copy of an app kept alongside it, a noun rather than an action -->
     <string name="clone">Klona</string>
     <!-- Button that starts patching the selected app. A verb, as in "patch this app" -->
     <string name="patch">Modifiera</string>
