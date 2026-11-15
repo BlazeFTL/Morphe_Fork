@@ -42,6 +42,9 @@ import sys
 import textwrap
 from collections import namedtuple
 
+if not open(__file__, encoding="utf-8").read().rstrip().endswith("main()"):
+    sys.exit("error: patch.py is truncated (bad copy/paste); re-upload the file itself")
+
 FORK_APP_ID = "app.morphe.manages"
 FORK_APP_NAME = "MorpheFork"
 FORK_REPO = os.environ.get("FORK_REPO", "").strip()
@@ -510,6 +513,39 @@ def no_gms_edit(src):
     if GMS_RX.search(src):
         return GMS_RX.sub("false", src)
     return src if "hasGms" in src else None
+
+
+PARALLEL_LOAD = r'''package @@PKG@@
+
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+
+@OptIn(ExperimentalCoroutinesApi::class)
+private val bundleReadDispatcher = Dispatchers.IO.limitedParallelism(
+    Runtime.getRuntime().availableProcessors().coerceIn(2, 4)
+)
+
+/** [transform] for every entry at once on a few threads, instead of one entry after another. */
+internal suspend fun <K, V, R : Any> Map<K, V>.parallelMapNotNull(
+    transform: (Map.Entry<K, V>) -> R?
+): List<R> = coroutineScope {
+    entries.map { entry -> async(bundleReadDispatcher) { transform(entry) } }.awaitAll().filterNotNull()
+}
+'''
+
+
+def bundle_metadata_parallel(src):
+    if "parallelMapNotNull" in src:
+        return src
+    fail_rx = re.compile(r"\bval\s+failures\s*=\s*mutableListOf<Pair<Int,\s*Throwable>>\(\)")
+    map_rx = re.compile(r"(\bval\s+metadata\s*=\s*map\.)mapNotNull(\s*\{\s*\(bundle,\s*src\)\s*->)")
+    if len(fail_rx.findall(src)) != 1 or len(map_rx.findall(src)) != 1:
+        return None
+    out = fail_rx.sub("val failures = java.util.Collections.synchronizedList(mutableListOf<Pair<Int, Throwable>>())", src)
+    return map_rx.sub(r"\1parallelMapNotNull\2", out)
 
 
 def interval_default_edit(src):
@@ -2537,6 +2573,7 @@ def build_plan(ws):
             return None
         return hits[0]
 
+    bundle_repo = locate("PatchBundleRepository", r"\bclass\s+PatchBundleRepository\b", P + "domain/repository/PatchBundleRepository.kt")
     prefs = locate("PreferencesManager", r"^class\s+PreferencesManager\b", P + "domain/manager/PreferencesManager.kt")
     vm = locate("SettingsViewModel", r"^class\s+SettingsViewModel\b", P + "ui/viewmodel/SettingsViewModel.kt")
     # Newest layout: the Patching section of the settings page, whose Expert mode switch the skip row follows
@@ -2743,6 +2780,7 @@ def build_plan(ws):
         plan.append((str(api.relative_to(ws.root)), api, [("stable channel accepts dev versions", prerelease_filter_edit, False)]))
         plan.append((str(postprompts.relative_to(ws.root)), postprompts, [("update worker without GMS gate", no_gms_edit, False)]))
     plan.append((str(updates.relative_to(ws.root)), updates, [("patch update interval row", updates_row, False)]))
+    plan.append((str(bundle_repo.relative_to(ws.root)), bundle_repo, [("bundle metadata read in parallel", bundle_metadata_parallel, False)]))
     plan.append((str(hbar.relative_to(ws.root)), hbar, [
         ("header searchFirst param", hbar_param, False),
         ("header search toggle ahead of actions", hbar_layout, False),
@@ -2785,6 +2823,7 @@ def build_plan(ws):
         (pill.parent / "FullScreenPanel.kt", render(FULLSCREEN_PANEL, package_of(ws.get(pill)))),
         (prefs.parent / "PatchUpdateThrottle.kt", render(PATCH_UPDATE_THROTTLE, package_of(ws.get(prefs)))),
         (updates.parent / "PatchUpdateIntervalSetting.kt", render(PATCH_UPDATE_INTERVAL_SETTING, package_of(ws.get(updates)))),
+        (bundle_repo.parent / "ParallelLoad.kt", render(PARALLEL_LOAD, package_of(ws.get(bundle_repo)))),
     ]
     if symbols:
         new_files += [
