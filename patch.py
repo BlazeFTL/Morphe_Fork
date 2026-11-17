@@ -441,7 +441,12 @@ PATCH_INTERVAL_STRINGS = [
      '<string name="settings_patch_update_interval_on_launch_description">Checks every time the app starts, like stock Morphe</string>'),
 ]
 
-OUR_STRINGS = [n for n, _ in FAVORITE_STRINGS + SIGNING_STRINGS + APK_BUTTON_STRINGS + PATCH_INTERVAL_STRINGS]
+SELECTION_STRINGS = [
+    ("expert_mode_enable_all", '<string name="expert_mode_enable_all">Enable all</string>'),
+    ("expert_mode_disable_all", '<string name="expert_mode_disable_all">Disable all</string>'),
+]
+
+OUR_STRINGS = [n for n, _ in FAVORITE_STRINGS + SIGNING_STRINGS + APK_BUTTON_STRINGS + PATCH_INTERVAL_STRINGS + SELECTION_STRINGS]
 
 
 def app_name_edit(src):
@@ -2724,6 +2729,7 @@ def build_plan(ws):
         ("skip signing strings", strings_edit(SIGNING_STRINGS, "settings_advanced_strip_unused_libs_description"), False),
         ("app name", app_name_edit, False),
         ("select APK button string", strings_edit(APK_BUTTON_STRINGS, "home_other_apps_action"), False),
+        ("selection bar strings", strings_edit(SELECTION_STRINGS, "expert_mode_search"), False),
         ("patch update interval strings", strings_edit(PATCH_INTERVAL_STRINGS, "settings_advanced_update_interval"), False),
     ]))
     plan.append(("app/build.gradle.kts", gradle, [("applicationId", app_id_edit, False)]))
