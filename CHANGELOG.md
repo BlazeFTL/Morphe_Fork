@@ -1,3 +1,33 @@
+## [2.7.0-dev.2](https://github.com/MorpheApp/morphe-manager/compare/v2.7.0-dev.1...v2.7.0-dev.2) (2026-11-16)
+
+### Features
+
+* Move the mini-games to Help & info ([28f7a06](https://github.com/MorpheApp/morphe-manager/commit/28f7a06fe938c28ab2fb50f20df932d1690db8c9))
+
+### Performance Improvements
+
+* Download large files from a shared chunk queue ([0b1538a](https://github.com/MorpheApp/morphe-manager/commit/0b1538a55787b68b6950816a74cb45178ce62a81))
+
+### Bug Fixes
+
+* Keep swiped re-patch and queue alerts behind the bell across launches ([e0074e1](https://github.com/MorpheApp/morphe-manager/commit/e0074e10e946e05eaa13294ba46ed7c8dd5d4c19))
+* Stop crashing when the system denies network access ([96ff910](https://github.com/MorpheApp/morphe-manager/commit/96ff910c5c7bf2b0f96c8454777d6acdd102c33d))
+
+## [2.7.0-dev.1](https://github.com/MorpheApp/morphe-manager/compare/v2.6.0...v2.7.0-dev.1) (2026-11-16)
+
+### Features
+
+* Disable all web links of an app at once ([ec0359b](https://github.com/MorpheApp/morphe-manager/commit/ec0359b7bbc90a1291ff5b4ca78162eb2a03ba5f))
+* Mark cloned apps in exported APK names ([17f4775](https://github.com/MorpheApp/morphe-manager/commit/17f47754b594d66b9fc9c9f9b4a8daa8fb380078))
+* Redesign of the About dialog ([beedd3f](https://github.com/MorpheApp/morphe-manager/commit/beedd3fd9697abc61f8c040835f2f5be4d2b1615))
+* Search the options of a patch ([884ad7c](https://github.com/MorpheApp/morphe-manager/commit/884ad7c9558fd645dcb949643fb042e5d0b9f66a))
+
+### Bug Fixes
+
+* Fold and unfold dialog headers with the scrollbar ([3d9d202](https://github.com/MorpheApp/morphe-manager/commit/3d9d202aa0bf847795d5392188379b107db52a75))
+* Group the choices of patch mode, category and patch source dialogs ([1cc5bf0](https://github.com/MorpheApp/morphe-manager/commit/1cc5bf0bf7708e3060537db9423ca04b6db7979e))
+* Open the keyboard with the search when animations are off ([996eadc](https://github.com/MorpheApp/morphe-manager/commit/996eadcb5c338bf0786f2010d0b618227b074cd9))
+
 ## [2.6.0](https://github.com/MorpheApp/morphe-manager/compare/v2.5.0...v2.6.0) (2026-11-15)
 
 ### Features
