@@ -50,6 +50,9 @@ import app.morphe.manager.domain.repository.PeopleRepository.Person
 import app.morphe.manager.ui.screen.shared.*
 import app.morphe.manager.ui.viewmodel.AboutViewModel
 import app.morphe.manager.util.AvatarCache
+import app.morphe.manager.util.GITHUB_HOST
+import app.morphe.manager.util.MANAGER_REPO_URL
+import app.morphe.manager.util.MORPHE_GITHUB_ORG
 import app.morphe.manager.util.loadRemoteAvatar
 import com.composables.icons.materialsymbols.MaterialSymbols
 import com.composables.icons.materialsymbols.rounded.*
@@ -81,14 +84,14 @@ private data class Project(
     val person = Person(
         name = name,
         url = url,
-        avatar = "https://github.com/$organization.png?size=96".takeIf { ownPicture }
+        avatar = "https://$GITHUB_HOST/$organization.png?size=96".takeIf { ownPicture }
     )
 }
 
 private val currentProject = Project(
     name = "Morphe",
-    organization = "MorpheApp",
-    url = "https://github.com/MorpheApp/morphe-manager/graphs/contributors",
+    organization = MORPHE_GITHUB_ORG,
+    url = "$MANAGER_REPO_URL/graphs/contributors",
     ownPicture = true
 )
 
@@ -484,7 +487,7 @@ private fun ProjectItem(project: Project, entranceOrder: Int, onOpen: (String) -
             PersonAvatar(person = project.person, entranceOrder = entranceOrder, size = ProjectAvatarSize)
         },
         title = project.name,
-        subtitle = "github.com/${project.organization}",
+        subtitle = "$GITHUB_HOST/${project.organization}",
         // Leaves for the browser rather than going on within the dialog
         trailingContent = { ThemedIcon(icon = MaterialSymbols.Rounded.Open_in_new.autoMirrored) }
     )

@@ -11,7 +11,6 @@
 package app.morphe.manager.domain.repository
 
 import android.app.Application
-import android.content.Context
 import android.database.SQLException
 import android.util.Log
 import androidx.annotation.StringRes
@@ -21,6 +20,7 @@ import app.morphe.manager.data.platform.NetworkInfo
 import app.morphe.manager.data.redux.Action
 import app.morphe.manager.data.redux.ActionContext
 import app.morphe.manager.data.redux.Store
+import app.morphe.manager.data.platform.Filesystem
 import app.morphe.manager.data.room.AppDatabase
 import app.morphe.manager.data.room.AppDatabase.Companion.generateUid
 import app.morphe.manager.data.room.apps.installed.SelectionPayload
@@ -52,8 +52,6 @@ import kotlinx.coroutines.sync.withLock
 import java.io.File
 import java.io.FileInputStream
 import java.io.InputStream
-import java.net.URI
-import java.net.URISyntaxException
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.security.MessageDigest
@@ -72,9 +70,10 @@ class PatchBundleRepository(
     private val blocklistRepository: BlocklistRepository,
     private val sourceMuteRepository: SourceMuteRepository,
     db: AppDatabase,
+    fs: Filesystem,
 ) {
     private val dao = db.patchBundleDao()
-    private val bundlesDir = app.getDir("patch_bundles", Context.MODE_PRIVATE)
+    private val bundlesDir = fs.patchBundlesDir
 
     /** Crash attribution for every in-process bundle read, the patcher runtime's included. */
     val loadGuard = PatchBundleLoadGuard(app, bundlesDir)
@@ -428,13 +427,9 @@ class PatchBundleRepository(
     }
 
     private fun guessNameFromEndpoint(endpoint: String): String? {
-        val uri = try {
-            URI(endpoint)
-        } catch (_: URISyntaxException) {
-            return null
-        }
-        val host = uri.host?.lowercase(Locale.US) ?: return null
-        val segments = uri.path?.trim('/')?.split('/')?.filter { it.isNotBlank() }.orEmpty()
+        val source = SourceUrl.parse(endpoint) ?: return null
+        val host = source.host
+        val segments = source.segments
 
         // Prefer a segment containing "bundle" (case-insensitive), e.g. ".../piko-latest-patches-bundle.json".
         val bundleCandidates = segments.filter { it.contains("bundle", ignoreCase = true) }
@@ -461,8 +456,8 @@ class PatchBundleRepository(
         // Fallbacks for common GitHub URL patterns.
         if (segments.isEmpty()) return host
         return when (host) {
-            "github.com" if segments.size >= 2 -> segments[1]
-            "api.github.com" if segments.size >= 3 && segments[0] == "repos" -> segments[2]
+            GITHUB_HOST -> source.repo ?: host
+            GITHUB_API_HOST if segments.size >= 3 && segments[0] == "repos" -> segments[2]
             else -> host
         }
     }
@@ -593,18 +588,18 @@ class PatchBundleRepository(
                 if (error is PatchBundleHeldBackException) {
                     // The bundle took the process down with it, so the launch it would break is
                     // worth more than the patches it carries
-                    Log.e(tag, "Held back bundle ${src.name}", error)
+                    Log.e(LOG_TAG, "Held back bundle ${src.name}", error)
                 } else if (requiredPatcher != null && isPatcherOutdated(requiredPatcher)) {
                     // Loading fails with linkage errors when the bundle uses patcher APIs this
                     // manager does not have. Spell it out so logs are not just a NoSuchMethodError
                     Log.e(
-                        tag,
+                        LOG_TAG,
                         "Failed to load bundle ${src.name}: it requires patcher $requiredPatcher, " +
                                 "but this manager ships ${BuildConfig.PATCHER_VERSION}. Update the manager",
                         error
                     )
                 } else {
-                    Log.e(tag, "Failed to load bundle ${src.name}", error)
+                    Log.e(LOG_TAG, "Failed to load bundle ${src.name}", error)
                 }
                 null
             }
@@ -615,7 +610,7 @@ class PatchBundleRepository(
         try {
             sourceMuteRepository.leaveOutNewApps(metadata)
         } catch (e: SQLException) {
-            Log.e(tag, "Failed to leave out new apps", e)
+            Log.e(LOG_TAG, "Failed to leave out new apps", e)
         }
 
         if (failures.isNotEmpty()) {
@@ -716,7 +711,7 @@ class PatchBundleRepository(
 
     private suspend fun loadEntitiesEnforcingOfficialOrder(): List<PatchBundleEntity> {
         val entities = loadFromDb()
-        entities.forEach { Log.d(tag, "Bundle: $it") }
+        entities.forEach { Log.d(LOG_TAG, "Bundle: $it") }
         return entities
     }
 
@@ -951,12 +946,12 @@ class PatchBundleRepository(
 
             // After store is updated, trigger update for bundles that were just enabled
             if (beingEnabledUids.isNotEmpty()) {
-                Log.d(tag, "Triggering update for re-enabled bundles: $beingEnabledUids")
+                Log.d(LOG_TAG, "Triggering update for re-enabled bundles: $beingEnabledUids")
                 startRemoteUpdateJob(
                     UpdateRequest(
                         target = UpdateTarget(custom = { bundle ->
                             val matches = bundle.uid in beingEnabledUids && bundle.enabled
-                            Log.d(tag, "  predicate check uid=${bundle.uid} inEnabled=${bundle.uid in beingEnabledUids} enabled=${bundle.enabled} → $matches")
+                            Log.d(LOG_TAG, "  predicate check uid=${bundle.uid} inEnabled=${bundle.uid in beingEnabledUids} enabled=${bundle.enabled} → $matches")
                             matches
                         })
                     )
@@ -1141,7 +1136,7 @@ class PatchBundleRepository(
         var importedUid: Int? = null
         fun reportFailure(e: Exception) {
             if (e is CancellationException) throw e
-            Log.e(tag, "Got exception while importing bundle", e)
+            Log.e(LOG_TAG, "Got exception while importing bundle", e)
             if (e is PatchBundleSignerChangedException) {
                 messages.showIfInForeground(R.string.sources_signing_key_changed_local)
             } else {
@@ -1379,7 +1374,7 @@ class PatchBundleRepository(
                 for (url in urls) {
                     when (val check = checkRemoteUrl(url, takenKeys)) {
                         is RemoteUrlCheck.Rejected -> {
-                            Log.i(tag, "Skipped source $url: ${check.reason}")
+                            Log.i(LOG_TAG, "Skipped source $url: ${check.reason}")
                             rejections += check.reason
                         }
                         is RemoteUrlCheck.Accepted -> {
@@ -1506,7 +1501,7 @@ class PatchBundleRepository(
 
         // Auto-enable prerelease if asked for or if the URL explicitly targets the "dev" branch
         if (src is JsonPatchBundle &&
-            (src.endpointBranch == RemotePatchBundle.BRANCH_DEV || usePrerelease && src.supportsPrerelease)
+            (src.endpointBranch == BRANCH_DEV || usePrerelease && src.supportsPrerelease)
         ) {
             val current = prefs.bundlePrereleasesEnabled.get().toMutableSet()
             current.add(src.uid.toString())
@@ -1520,11 +1515,11 @@ class PatchBundleRepository(
      * Returns true if 'usePrerelease' should be enabled for a [JsonPatchBundle] with the given [url].
      * Prerelease is enabled if:
      * - the uid is already stored in [PreferencesManager.bundlePrereleasesEnabled] (user toggled it on)
-     * - the endpoint URL explicitly targets the "dev" branch.
+     * - the endpoint URL explicitly targets the [BRANCH_DEV] branch.
      */
     private fun shouldUsePrerelease(uid: Int, url: String): Boolean =
         prefs.bundlePrereleasesEnabled.getBlocking().contains(uid.toString()) ||
-                JsonPatchBundle.extractBranch(url) == "dev"
+                SourceUrl.parse(url)?.branch == BRANCH_DEV
 
     /**
      * Extracts the HTTP status code from an exception.
@@ -1540,7 +1535,7 @@ class PatchBundleRepository(
      */
     private fun handleBundleDownloadError(e: Exception, bundle: RemotePatchBundle) {
         val code = e.httpCodeOrNull()
-        Log.e(tag, "Failed to update bundle ${bundle.name} (HTTP $code)", e)
+        Log.e(LOG_TAG, "Failed to update bundle ${bundle.name} (HTTP $code)", e)
         if (e is PatchBundleSignerChangedException) {
             messages.showIfInForeground(R.string.sources_signing_key_changed_named, bundle.displayTitle)
         } else if (code != null && code in 400..499
@@ -1570,9 +1565,9 @@ class PatchBundleRepository(
             val entry = blocked[key] ?: return@mapNotNull null
             Triple(remote.endpoint, remote.name, entry)
         }
-        Log.d(tag, "logBlockedSources: blocked=${blocked.size}, matched=${matched.size}")
+        Log.d(LOG_TAG, "logBlockedSources: blocked=${blocked.size}, matched=${matched.size}")
         matched.forEach { (endpoint, name, entry) ->
-            Log.i(tag, "Blocked source disabled: $name endpoint=$endpoint reason=${entry.reason}")
+            Log.i(LOG_TAG, "Blocked source disabled: $name endpoint=$endpoint reason=${entry.reason}")
         }
     }
 
@@ -1581,19 +1576,8 @@ class PatchBundleRepository(
         bundleState.filterIsInstance<BundleState.Ready>().first()
 
     /** Returns the blocklist key for a normalized bundle URL, or null for non-GitHub/GitLab hosts. */
-    private fun toBlocklistKey(normalizedUrl: String): String? = try {
-        val parsed = Url(normalizedUrl)
-        val segments = parsed.encodedPath.trim('/').split('/').filter { it.isNotBlank() }
-        when {
-            segments.size < 2 -> null
-            parsed.host.equals("raw.githubusercontent.com", ignoreCase = true) ||
-                parsed.host.equals("github.com", ignoreCase = true) ->
-                "github=${segments[0]}/${segments[1]}".lowercase(Locale.US)
-            parsed.host.equals("gitlab.com", ignoreCase = true) ->
-                "gitlab=${segments[0]}/${segments[1]}".lowercase(Locale.US)
-            else -> null
-        }
-    } catch (_: Exception) { null }
+    private fun toBlocklistKey(normalizedUrl: String): String? =
+        SourceUrl.parse(normalizedUrl)?.repositoryKey?.lowercase(Locale.US)
 
     fun normalizeRemoteBundleUrl(input: String): String {
         // A link is usually pasted without its scheme, and every host here serves https
@@ -1608,7 +1592,7 @@ class PatchBundleRepository(
         val pathSegments = parsed.encodedPath.trim('/').split('/').filter { it.isNotBlank() }
 
         // Handle GitHub repository URLs
-        if (host.equals("github.com", ignoreCase = true)) {
+        if (host.equals(GITHUB_HOST, ignoreCase = true)) {
             if (pathSegments.size < 2) {
                 throw IllegalArgumentException("Invalid GitHub repository URL")
             }
@@ -1631,14 +1615,14 @@ class PatchBundleRepository(
                 pathSegments.size >= 4 && pathSegments[2] == "tree" -> {
                     val branchSegments = pathSegments.drop(3)
                     // Find where the branch name ends (could be multi-segment like "refs/heads/main")
-                    branchSegments.takeWhile { !it.endsWith(".json") }.joinToString("/")
+                    branchSegments.takeWhile { !it.endsWith(".$JSON_EXTENSION") }.joinToString("/")
                 }
                 // URL format: github.com/owner/repo/blob/branch/path...
                 pathSegments.size >= 4 && pathSegments[2] == "blob" -> {
                     pathSegments[3]
                 }
-                // Default to main branch
-                else -> "main"
+                // Default to the stable branch
+                else -> BRANCH_STABLE
             }
 
             // Get the remaining path after branch (if any)
@@ -1664,22 +1648,22 @@ class PatchBundleRepository(
                 append("/$owner/$repo/$branch")
                 if (remainingPath.isNotEmpty()) {
                     append("/$remainingPath")
-                    // Add patches-bundle.json only if the path doesn't already end with .json
-                    if (!remainingPath.endsWith(".json", ignoreCase = true)) {
-                        append("/patches-bundle.json")
+                    // Add the default bundle file only if the path doesn't already end with .json
+                    if (!remainingPath.endsWith(".$JSON_EXTENSION", ignoreCase = true)) {
+                        append("/$DEFAULT_BUNDLE_FILE")
                     }
                 } else {
-                    append("/patches-bundle.json")
+                    append("/$DEFAULT_BUNDLE_FILE")
                 }
             }
 
-            return "https://raw.githubusercontent.com$finalPath"
+            return "https://$GITHUB_RAW_HOST$finalPath"
         }
 
         // Handle GitLab repository URLs
         // Accepts short form: gitlab.com/owner/repo
         // Or full raw URL:    gitlab.com/owner/repo/-/raw/branch/patches-bundle.json
-        if (host.equals("gitlab.com", ignoreCase = true)) {
+        if (host.equals(GITLAB_HOST, ignoreCase = true)) {
             if (pathSegments.size < 2) {
                 throw IllegalArgumentException("Invalid GitLab repository URL")
             }
@@ -1693,11 +1677,11 @@ class PatchBundleRepository(
                 // Already a raw URL - normalize it
                 val normalizedPath = "/" + pathSegments.joinToString("/")
                 val pathNoQuery = normalizedPath.substringBefore('?').substringBefore('#')
-                if (!pathNoQuery.endsWith(".json", ignoreCase = true)) {
+                if (!pathNoQuery.endsWith(".$JSON_EXTENSION", ignoreCase = true)) {
                     throw IllegalArgumentException("Patch bundle URL must point to a .json file.")
                 }
                 val query = parsed.encodedQuery.takeIf { it.isNotEmpty() }?.let { "?$it" }.orEmpty()
-                return "https://gitlab.com$normalizedPath$query"
+                return "https://$GITLAB_HOST$normalizedPath$query"
             }
 
             // Determine branch from GitLab UI URLs (/-/tree/branch or /-/blob/branch)
@@ -1705,17 +1689,17 @@ class PatchBundleRepository(
             val blobIndex = pathSegments.indexOf("blob")
             val branch = when {
                 treeIndex >= 2 && pathSegments.getOrNull(treeIndex - 1) == "-" ->
-                    pathSegments.getOrNull(treeIndex + 1) ?: "main"
+                    pathSegments.getOrNull(treeIndex + 1) ?: BRANCH_STABLE
                 blobIndex >= 2 && pathSegments.getOrNull(blobIndex - 1) == "-" ->
-                    pathSegments.getOrNull(blobIndex + 1) ?: "main"
-                else -> "main"
+                    pathSegments.getOrNull(blobIndex + 1) ?: BRANCH_STABLE
+                else -> BRANCH_STABLE
             }
 
-            return "https://gitlab.com/$owner/$repo/-/raw/$branch/patches-bundle.json"
+            return "https://$GITLAB_HOST/$owner/$repo/-/raw/$branch/$DEFAULT_BUNDLE_FILE"
         }
 
         // Handle raw.githubusercontent.com URLs (legacy support)
-        if (host.equals("raw.githubusercontent.com", ignoreCase = true)) {
+        if (host.equals(GITHUB_RAW_HOST, ignoreCase = true)) {
             if (pathSegments.size < 3) {
                 throw IllegalArgumentException("Invalid raw GitHub URL")
             }
@@ -1723,7 +1707,7 @@ class PatchBundleRepository(
             val normalizedPath = "/" + pathSegments.joinToString("/")
             val pathNoQuery = normalizedPath.substringBefore('?').substringBefore('#')
 
-            if (!pathNoQuery.endsWith(".json", ignoreCase = true)) {
+            if (!pathNoQuery.endsWith(".$JSON_EXTENSION", ignoreCase = true)) {
                 throw IllegalArgumentException("Patch bundle URL must point to a .json file.")
             }
 
@@ -1735,7 +1719,7 @@ class PatchBundleRepository(
         val normalizedPath = "/" + pathSegments.joinToString("/")
         val pathNoQuery = normalizedPath.substringBefore('?').substringBefore('#')
 
-        if (!pathNoQuery.endsWith(".json", ignoreCase = true)) {
+        if (!pathNoQuery.endsWith(".$JSON_EXTENSION", ignoreCase = true)) {
             throw IllegalArgumentException("Patch bundle URL must point to a .json file.")
         }
 
@@ -1907,7 +1891,7 @@ class PatchBundleRepository(
                                 else
                                     null
                             } catch (e: Exception) {
-                                Log.w(tag, "Failed to check update for bundle ${bundle.name}", e)
+                                Log.w(LOG_TAG, "Failed to check update for bundle ${bundle.name}", e)
                                 null
                             }
                         }
@@ -1916,7 +1900,7 @@ class PatchBundleRepository(
                     .filterNotNull()
             }
         } catch (e: Exception) {
-            Log.e(tag, "Failed to quietly check for bundle updates", e)
+            Log.e(LOG_TAG, "Failed to quietly check for bundle updates", e)
             emptyList()
         }
     }
@@ -1932,7 +1916,7 @@ class PatchBundleRepository(
         }
 
         override suspend fun catch(exception: Exception) {
-            Log.e(tag, "Failed to update patches", exception)
+            Log.e(LOG_TAG, "Failed to update patches", exception)
             messages.showIfInForeground(R.string.sources_download_fail, exception.simpleMessage())
         }
     }
@@ -1946,7 +1930,7 @@ class PatchBundleRepository(
                 // the same bundles, so running the second one would download them twice and raise
                 // a duplicate progress snackbar
                 if (activeUpdateRequest?.covers(request) == true) {
-                    Log.d(tag, "Skipping update request already covered by the running one")
+                    Log.d(LOG_TAG, "Skipping update request already covered by the running one")
                     return
                 }
                 queued = true
@@ -1984,7 +1968,7 @@ class PatchBundleRepository(
             if (request.onLaunch && !allowUnsafeNetwork && !autoUpdates.checksOnLaunch) return@coroutineScope
 
             if (!networkInfo.isConnected()) {
-                Log.d(tag, "No internet connection for bundle update")
+                Log.d(LOG_TAG, "No internet connection for bundle update")
                 showFinished(BundleUpdateResult.NoInternet)
                 return@coroutineScope
             }
@@ -2043,7 +2027,7 @@ class PatchBundleRepository(
                         async(downloadDispatcher) {
                             if (isRemoteUpdateCancelled(bundle.uid)) return@async null
 
-                            Log.d(tag, "Updating patch bundle: ${bundle.name}")
+                            Log.d(LOG_TAG, "Updating patch bundle: ${bundle.name}")
 
                             activeNamesMap[bundle.uid] = progressLabelFor(bundle)
                             val active = activeNamesMap.entries.toMutableList()
@@ -2102,7 +2086,7 @@ class PatchBundleRepository(
                     }.awaitAll().filterNotNull().toMap()
                 }
             } catch (e: Exception) {
-                Log.e(tag, "Failed to update patches", e)
+                Log.e(LOG_TAG, "Failed to update patches", e)
                 showFinished(BundleUpdateResult.Error, phase = BundleUpdatePhase.Finalizing)
                 messages.showIfInForeground(R.string.sources_download_fail, e.simpleMessage())
                 return@coroutineScope
