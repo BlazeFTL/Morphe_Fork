@@ -2653,7 +2653,7 @@ def build_plan(ws):
     consts = api = postprompts = None
     if FORK_REPO:
         consts = locate("Constants", r"\bconst\s+val\s+MANAGER_RELEASE_JSON_URL\b", P + "util/Constants.kt")
-        api = locate("MorpheAPI.getAppUpdate", r"\bsuspend\s+fun\s+getAppUpdate\s*\(", P + "network/api/MorpheAPI.kt")
+        api = locate("ReleaseAPI.checkAppUpdate", r"\bsuspend\s+fun\s+(?:checkAppUpdate|getAppUpdate)\s*\(", P + "network/api/ReleaseAPI.kt")
         postprompts = locate("PostPatchPrompts", r"\bval\s+hasGms\s*=", P + "ui/model/PostPatchPrompts.kt")
 
     strings = ws.main / "res" / "values" / "strings.xml"
