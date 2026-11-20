@@ -793,6 +793,9 @@ class InstallViewModel(
             currentInstallType = InstallType.MOUNT
             installState = InstallState.Installing()
             var recordCreated = false
+            // Until the new module is staged, a failure leaves the one already there untouched
+            val hadModule = runCatching { rootInstaller.hasModuleCopies(packageName) }.getOrDefault(false)
+            var moduleStaged = false
 
             try {
                 val inputs = withContext(Dispatchers.IO) {
@@ -817,14 +820,15 @@ class InstallViewModel(
                             versionName == patchedVersion
 
                 // Either file can be a split archive, read through its base module, so they are
-                // only read when the installed app does not already match
-                val restorableStock = if (stockInfo?.matchesPatched() == true) null else withContext(Dispatchers.IO) {
+                // only read when the installed app does not already match or does not read as stock
+                suspend fun findRestorableStock() = withContext(Dispatchers.IO) {
                     inputs.stockFiles.firstNotNullOfOrNull { file ->
                         rootInstaller.readStockInfo(file)
                             ?.takeIf { it.matchesPatched() }
                             ?.let { MountStockCandidate(file, it) }
                     }
                 }
+                val restorableStock = if (stockInfo?.matchesPatched() == true) null else findRestorableStock()
 
                 // Only worth waiting for when nothing here can restore the stock app, since the
                 // install below reinstalls a matching one and waits for it on its own
@@ -868,11 +872,13 @@ class InstallViewModel(
                     packageName,
                     patchedVersion,
                     label,
+                    repairStock = { findRestorableStock()?.file },
                     onStage = { installState = InstallState.Installing(it) },
                     onStaged = {
                         val hadRecord = installedAppRepository.get(packageName) != null
                         onPersistApp(packageInfo.packageName, InstallType.MOUNT)
                         recordCreated = !hadRecord
+                        moduleStaged = true
                     }
                 )
 
@@ -891,10 +897,13 @@ class InstallViewModel(
                 Log.e(TAG, "Mount install failed", e)
                 handleInstallError(mountFailureMessage(e))
 
-                // Cleanup on failure
-                try {
-                    rootInstaller.uninstall(packageName)
-                } catch (_: Exception) {}
+                // The previous module still mounts its own build at the next boot, or stays unmounted
+                // when the installed app no longer matches it
+                if (moduleStaged || !hadModule) {
+                    try {
+                        rootInstaller.uninstall(packageName)
+                    } catch (_: Exception) {}
+                }
 
                 // The module is gone, so a record this attempt created would describe nothing,
                 // while one that was already there keeps the saved build to install again
@@ -933,12 +942,11 @@ class InstallViewModel(
         }
     }
 
-    private fun mountFailureMessage(e: Exception): String =
-        if (e is StockAppInstallException) {
-            app.getString(R.string.mount_stock_restore_failed_message)
-        } else {
-            app.getString(R.string.install_app_fail, e.simpleMessage() ?: e.javaClass.simpleName)
-        }
+    private fun mountFailureMessage(e: Exception): String = when (e) {
+        is StockAppInstallException -> app.getString(R.string.mount_stock_restore_failed_message)
+        is StockApkMismatchException -> app.getString(R.string.mount_stock_mismatch_message)
+        else -> app.getString(R.string.install_app_fail, e.simpleMessage() ?: e.javaClass.simpleName)
+    }
 
     fun installSavedMount(
         outputFile: File,
