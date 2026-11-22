@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-20T12:07:24",
-  "description": "## [2.7.0-dev.7](https://github.com/MorpheApp/morphe-manager/compare/v2.7.0-dev.6...v2.7.0-dev.7) (2026-11-20)\n\n### Bug Fixes\n\n* Ask for the local network permission for sources hosted there ([#1485](https://github.com/MorpheApp/morphe-manager/issues/1485)) ([8d2dd06](https://github.com/MorpheApp/morphe-manager/commit/8d2dd06da71eb1d4b947bd4299edcb36d33ef8b9))\n* Keep each source update result up for its full time ([e27e40f](https://github.com/MorpheApp/morphe-manager/commit/e27e40fc0ca2db1a3e8ab759e6a2d3f73bcd89c6))\n* Show uninstalled app icons using third-party fair use metadata service ([#1487](https://github.com/MorpheApp/morphe-manager/issues/1487)) ([e73871d](https://github.com/MorpheApp/morphe-manager/commit/e73871d4db8126312f0a8f267068d0cd9eeb9d54))",
-  "download_url": "https://github.com/MorpheApp/morphe-manager/releases/download/v2.7.0-dev.7/morphe-manager-2.7.0-dev.7.apk",
-  "signature_download_url": "https://github.com/MorpheApp/morphe-manager/releases/download/v2.7.0-dev.7/morphe-manager-2.7.0-dev.7.apk.asc",
-  "version": "2.7.0-dev.7"
+  "created_at": "2026-11-21T17:09:19",
+  "description": "## [2.7.1-dev.1](https://github.com/MorpheApp/morphe-manager/compare/v2.7.0...v2.7.1-dev.1) (2026-11-21)\n\n### Bug Fixes\n\n* Open files with non-ASCII characters in their path during patching ([e002389](https://github.com/MorpheApp/morphe-manager/commit/e0023891374c34ea81b1a1190546e6a5188347e2))",
+  "download_url": "https://github.com/MorpheApp/morphe-manager/releases/download/v2.7.1-dev.1/morphe-manager-2.7.1-dev.1.apk",
+  "signature_download_url": "https://github.com/MorpheApp/morphe-manager/releases/download/v2.7.1-dev.1/morphe-manager-2.7.1-dev.1.apk.asc",
+  "version": "2.7.1-dev.1"
 }
