@@ -23,8 +23,10 @@ patch.py -- apply fork changes to a MorpheApp/morphe-manager checkout (dev branc
      panel); the filter button is marked while a filter narrows the list
  13. Expert patch dialog: a row of buttons under the source tabs (enable all, recommended, saved
      selection, selection panel, disable all), as before the selection panel replaced it
- 14. Sources page: a pin button left of the disable button on each source card; pinned sources
-     lead the list in every sort mode (held off only while reordering)
+ 14. Sources page: a pin button left of the disable button on each source card (lit, with a
+     crossed pin, while pinned) and a pin mark on the pinned card; pinned sources lead the list
+     in every sort mode (held off only while reordering). A pin is remembered by the source's
+     link, so removing and adding the source again keeps it pinned
 
 Anchors are structural (function bodies, call arguments, parameter lists, single
 lines), never pasted multi-line context. Files are found by declaration; the path
@@ -385,8 +387,9 @@ ICONS_MATERIAL = {
     "LOCK_OPEN": "Icons.Outlined.LockOpen",
     "STAR_FILLED": "Icons.Filled.Star",
     "STAR_OUTLINE": "Icons.Outlined.StarBorder",
-    "PIN_FILLED": "Icons.Filled.PushPin",
-    "PIN_OUTLINE": "Icons.Outlined.PushPin",
+    "PIN": "Icons.Outlined.PushPin",
+    "UNPIN": "Icons.Outlined.PushPin",
+    "PIN_MARK": "Icons.Filled.PushPin",
 }
 
 # Newer upstream draws its icons from the Material Symbols library instead
@@ -403,8 +406,9 @@ ICONS_SYMBOLS = {
     "LOCK_OPEN": "MaterialSymbols.Rounded.Lock_open",
     "STAR_FILLED": "MaterialSymbols.RoundedFilled.Star",
     "STAR_OUTLINE": "MaterialSymbols.Rounded.Star",
-    "PIN_FILLED": "MaterialSymbols.RoundedFilled.Push_pin",
-    "PIN_OUTLINE": "MaterialSymbols.Rounded.Push_pin",
+    "PIN": "MaterialSymbols.Rounded.Push_pin",
+    "UNPIN": "MaterialSymbols.Rounded.Keep_off",
+    "PIN_MARK": "MaterialSymbols.RoundedFilled.Push_pin",
 }
 
 ICON = dict(ICONS_MATERIAL)
@@ -456,7 +460,6 @@ PIN_STRINGS = [
     ("sources_management_pin", '<string name="sources_management_pin">Pin to top</string>'),
     ("sources_management_unpin", '<string name="sources_management_unpin">Unpin</string>'),
     ("sources_management_source_pinned", '<string name="sources_management_source_pinned">Pinned</string>'),
-    ("sources_management_source_unpinned", '<string name="sources_management_source_unpinned">Unpinned</string>'),
 ]
 
 OUR_STRINGS = [n for n, _ in FAVORITE_STRINGS + SIGNING_STRINGS + APK_BUTTON_STRINGS + PATCH_INTERVAL_STRINGS + SELECTION_STRINGS + PIN_STRINGS]
@@ -645,9 +648,9 @@ PREFS_EDITS = [
         '\n/** Names of universal patches favorited by the user, displayed at the top of universal patch sections. */\nval favoriteUniversalPatches = stringSetPreference("favorite_universal_patches", emptySet())',
         [r"^[ \t]*val\s+useExpertMode\s*=[^\n]*$"]), False),
     ("pinned sources pref declaration", prefs_decl(
-        "pinnedSources",
-        '\n/** Uids of the sources pinned to the top of the Sources list. Local to the device, not part of a settings export. */\n'
-        'val pinnedSources = stringSetPreference("pinned_sources", emptySet())',
+        "pinnedSourceKeys",
+        '\n/** Keys (see pinKey) of the sources pinned to the top of the Sources list. Local to the device, not part of a settings export. */\n'
+        'val pinnedSourceKeys = stringSetPreference("pinned_source_keys", emptySet())',
         [r"^[ \t]*val\s+sourceBundleSortMode\s*=[^\n]*$", r"^[ \t]*val\s+useExpertMode\s*=[^\n]*$"]), False),
     ("skip signing pref declaration", prefs_decl(
         "skipApkSigning",
@@ -1585,56 +1588,80 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import @@BUNDLE_PKG@@.PatchBundleSource
+import @@BUNDLE_PKG@@.RemotePatchBundle
 import @@PREFS_PKG@@.PreferencesManager
 import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
+import java.util.Locale
 
-/** The sources pinned to the top of the Sources list, by uid. */
+/**
+ * What a pin is remembered by. A remote source gets a new uid each time it is added, so it is
+ * known by its link, which adding it again brings back. A local source's uid comes off the hash
+ * of its file, so the same file added again keeps it.
+ */
+internal fun pinKey(source: PatchBundleSource): String = when (source) {
+    is RemotePatchBundle -> "url:" + source.endpoint.lowercase(Locale.US)
+    else -> "uid:" + source.uid
+}
+
+/** The sources pinned to the top of the Sources list. */
 @Stable
 internal class PinnedSources(
-    val uids: Set<String>,
+    val keys: Set<String>,
     private val onToggle: (PatchBundleSource) -> Unit
 ) {
-    fun isPinned(source: PatchBundleSource): Boolean = source.uid.toString() in uids
+    fun isPinned(source: PatchBundleSource): Boolean = pinKey(source) in keys
 
     fun toggle(source: PatchBundleSource) = onToggle(source)
 
     /** Pinned sources first; the sort is stable, so each group keeps the order it came in. */
     fun pinnedFirst(sources: List<PatchBundleSource>): List<PatchBundleSource> =
-        if (uids.isEmpty()) sources else sources.sortedByDescending { isPinned(it) }
+        if (keys.isEmpty()) sources else sources.sortedByDescending { isPinned(it) }
 }
 
 @Composable
 internal fun rememberPinnedSources(): PinnedSources {
     val prefs: PreferencesManager = koinInject()
-    val uids by prefs.pinnedSources.getAsState()
+    val keys by prefs.pinnedSourceKeys.getAsState()
     val scope = rememberCoroutineScope()
-    return remember(uids) {
-        PinnedSources(uids) { source ->
-            val key = source.uid.toString()
-            val updated = if (key in uids) uids - key else uids + key
-            scope.launch { prefs.pinnedSources.update(updated) }
+    return remember(keys) {
+        PinnedSources(keys) { source ->
+            val key = pinKey(source)
+            val updated = if (key in keys) keys - key else keys + key
+            scope.launch { prefs.pinnedSourceKeys.update(updated) }
         }
     }
 }
 '''
 
-PIN_BUTTON = """// Pin button, which keeps the source at the top of the list
+PIN_BUTTON = '''// Pin button, which keeps the source at the top of the list. Pinned, the pill is lit and its
+// crossed pin offers to unpin
 val pinVerb = stringResource(
     if (actions.isPinned) R.string.sources_management_unpin else R.string.sources_management_pin
 )
 val pinDesc = pinVerb + " " + bundle.displayTitle
-val pinDone = stringResource(
-    if (actions.isPinned) R.string.sources_management_source_unpinned
-    else R.string.sources_management_source_pinned
-)
 ActionPillButton(
     onClick = actions.onTogglePin,
-    icon = if (actions.isPinned) @@PIN_FILLED@@ else @@PIN_OUTLINE@@,
+    icon = if (actions.isPinned) @@UNPIN@@ else @@PIN@@,
     contentDescription = pinDesc,
     tooltip = pinVerb,
-    confirmation = pinDone
-)"""
+    colors = if (actions.isPinned) ActionPillColors.primary() else ActionPillColors.neutral()
+)'''
+
+PIN_MARK = '''if (pinned) {
+    // Says the source is pinned to the top of the list, folded or opened
+    Icon(
+        imageVector = @@PIN_MARK@@,
+        contentDescription = null,
+        tint = cardStyle.subtitleColor,
+        modifier = Modifier.size(18.dp)
+    )
+}'''
+
+PIN_STATE_DESC = '''if (actions.isPinned) {
+    append(", ")
+    append(pinnedState)
+}'''
 
 
 def pin_state(src):
@@ -1736,14 +1763,85 @@ def pin_button(src):
         if src[pls:ls].strip().startswith("//"):
             ls = pls
     ind = indent_of(src, start)
-    text = PIN_BUTTON.replace("@@PIN_FILLED@@", ICON["PIN_FILLED"]).replace("@@PIN_OUTLINE@@", ICON["PIN_OUTLINE"])
+    text = PIN_BUTTON.replace("@@PIN@@", ICON["PIN"]).replace("@@UNPIN@@", ICON["UNPIN"])
     return src[:ls] + reindent(text, ind) + "\n\n" + src[ls:]
 
 
+def pin_header_param(src):
+    m = mask(src)
+    f = one(find_funs(m, "BundleCardHeader"))
+    if not f:
+        return None
+    if re.search(r"\bpinned\s*:", m[f.lp:f.rp]):
+        return src
+    hits = list(re.finditer(r"^([ \t]*)showChevron\s*:\s*Boolean\s*,[ \t]*$", m[f.lp:f.rp], re.M))
+    if len(hits) != 1:
+        return None
+    e = f.lp + hits[0].end()
+    return src[:e] + "\n" + hits[0].group(1) + "pinned: Boolean = false," + src[e:]
+
+
+def pin_header_call(src):
+    m = mask(src)
+    f = one(find_funs(m, "BundleManagementCard"))
+    if not f or f.bo is None:
+        return None
+    calls = find_calls(m, "BundleCardHeader", f.bo, f.bc)
+    if len(calls) != 1:
+        return None
+    return add_first_arg(src, m, calls[0], "pinned = actions.isPinned,", r"\bpinned\s*=")
+
+
+def pin_header_mark(src):
+    m = mask(src)
+    f = one(find_funs(m, "BundleCardHeader"))
+    if not f or f.bo is None:
+        return None
+    body = m[f.bo:f.bc]
+    if re.search(r"\bif\s*\(\s*pinned\s*\)", body):
+        return src
+    hits = list(re.finditer(r"^([ \t]*)if\s*\(\s*dragHandleModifier\s*!=\s*null\s*\)\s*\{[ \t]*$", body, re.M))
+    if len(hits) != 1:
+        return None
+    a = f.bo + hits[0].start()
+    text = PIN_MARK.replace("@@PIN_MARK@@", ICON["PIN_MARK"])
+    return src[:a] + reindent(text, hits[0].group(1)) + "\n\n" + src[a:]
+
+
+def pin_a11y(src):
+    m = mask(src)
+    f = one(find_funs(m, "BundleManagementCard"))
+    if not f or f.bo is None:
+        return None
+    body = m[f.bo:f.bc]
+    if re.search(r"\bpinnedState\b", body):
+        return src
+    d = list(re.finditer(r"^([ \t]*)val\s+disabledState\s*=\s*stringResource\(R\.string\.disabled\)[ \t]*$", body, re.M))
+    c = list(re.finditer(
+        r"\bval\s+contentDesc\s*=\s*remember\(bundle\.displayTitle,\s*isEnabled,\s*expanded,\s*folds(\)\s*\{)", body))
+    if len(d) != 1 or len(c) != 1:
+        return None
+    # Edits go in from the bottom of the function up, so earlier offsets stay true
+    cb = f.bo + c[0].end() - 1
+    ce = match_close(m, cb)
+    inner = m[cb:ce]
+    folds = list(re.finditer(r"^([ \t]*)if\s*\(\s*folds\s*\)\s*\{", inner, re.M))
+    if ce < 0 or len(folds) != 1:
+        return None
+    a = cb + folds[0].start()
+    out = src[:a] + reindent(PIN_STATE_DESC, folds[0].group(1)) + "\n" + src[a:]
+    k = f.bo + c[0].start(1)
+    out = out[:k] + ", actions.isPinned" + out[k:]
+    e = line_end(out, f.bo + d[0].end())
+    ind = d[0].group(1)
+    return out[:e] + "\n" + ind + "val pinnedState = stringResource(R.string.sources_management_source_pinned)" + out[e:]
+
+
 def sources_pin(src):
-    """Pin button left of the disable button; pinned sources lead the list in every sort mode."""
+    """Pin button left of the disable button and a pin mark on the card; pinned sources lead the list."""
     out = src
-    for step in (pin_state, pin_order, pin_alphabet, pin_actions_class, pin_actions_call, pin_button):
+    for step in (pin_state, pin_order, pin_alphabet, pin_actions_class, pin_actions_call, pin_button,
+                 pin_header_param, pin_header_call, pin_header_mark, pin_a11y):
         out = step(out)
         if out is None:
             return None
@@ -3002,6 +3100,7 @@ def build_plan(ws):
         ("sources pin button and pinned-first order", sources_pin, False),
         ("import pinned source icons", imp("com.composables.icons.materialsymbols.roundedfilled.*"), False),
         ("import rounded icons", imp("com.composables.icons.materialsymbols.rounded.*"), False),
+        ("import ActionPillColors", imp(package_of(ws.get(pill)) + ".ActionPillColors"), False),
     ] if symbols else [])))
     plan.append((str(addpanel.relative_to(ws.root)), addpanel, [("add source panel full screen", add_panel_full, False)]))
     host_path = host_ext[0]
@@ -3042,7 +3141,7 @@ def build_plan(ws):
         (r"\bfun\s+setSkipApkSigning\b", vm, "setSkipApkSigning"),
         (r"\bval\s+patchUpdateIntervalHours\s*=", prefs, "patchUpdateIntervalHours preference"),
         (r"\bval\s+lastPatchUpdateCheck\s*=", prefs, "lastPatchUpdateCheck preference"),
-        (r"\bval\s+pinnedSources\s*=", prefs, "pinnedSources preference"),
+        (r"\bval\s+pinnedSourceKeys\s*=", prefs, "pinnedSourceKeys preference"),
     ]
     return (plan, new_files, adv, needles), []
 
