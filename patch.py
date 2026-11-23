@@ -23,6 +23,8 @@ patch.py -- apply fork changes to a MorpheApp/morphe-manager checkout (dev branc
      panel); the filter button is marked while a filter narrows the list
  13. Expert patch dialog: a row of buttons under the source tabs (enable all, recommended, saved
      selection, selection panel, disable all), as before the selection panel replaced it
+ 14. Sources page: a pin button left of the disable button on each source card; pinned sources
+     lead the list in every sort mode (held off only while reordering)
 
 Anchors are structural (function bodies, call arguments, parameter lists, single
 lines), never pasted multi-line context. Files are found by declaration; the path
@@ -383,6 +385,8 @@ ICONS_MATERIAL = {
     "LOCK_OPEN": "Icons.Outlined.LockOpen",
     "STAR_FILLED": "Icons.Filled.Star",
     "STAR_OUTLINE": "Icons.Outlined.StarBorder",
+    "PIN_FILLED": "Icons.Filled.PushPin",
+    "PIN_OUTLINE": "Icons.Outlined.PushPin",
 }
 
 # Newer upstream draws its icons from the Material Symbols library instead
@@ -399,6 +403,8 @@ ICONS_SYMBOLS = {
     "LOCK_OPEN": "MaterialSymbols.Rounded.Lock_open",
     "STAR_FILLED": "MaterialSymbols.RoundedFilled.Star",
     "STAR_OUTLINE": "MaterialSymbols.Rounded.Star",
+    "PIN_FILLED": "MaterialSymbols.RoundedFilled.Push_pin",
+    "PIN_OUTLINE": "MaterialSymbols.Rounded.Push_pin",
 }
 
 ICON = dict(ICONS_MATERIAL)
@@ -446,7 +452,14 @@ SELECTION_STRINGS = [
     ("expert_mode_disable_all", '<string name="expert_mode_disable_all">Disable all</string>'),
 ]
 
-OUR_STRINGS = [n for n, _ in FAVORITE_STRINGS + SIGNING_STRINGS + APK_BUTTON_STRINGS + PATCH_INTERVAL_STRINGS + SELECTION_STRINGS]
+PIN_STRINGS = [
+    ("sources_management_pin", '<string name="sources_management_pin">Pin to top</string>'),
+    ("sources_management_unpin", '<string name="sources_management_unpin">Unpin</string>'),
+    ("sources_management_source_pinned", '<string name="sources_management_source_pinned">Pinned</string>'),
+    ("sources_management_source_unpinned", '<string name="sources_management_source_unpinned">Unpinned</string>'),
+]
+
+OUR_STRINGS = [n for n, _ in FAVORITE_STRINGS + SIGNING_STRINGS + APK_BUTTON_STRINGS + PATCH_INTERVAL_STRINGS + SELECTION_STRINGS + PIN_STRINGS]
 
 
 def app_name_edit(src):
@@ -631,6 +644,11 @@ PREFS_EDITS = [
         "favoriteUniversalPatches",
         '\n/** Names of universal patches favorited by the user, displayed at the top of universal patch sections. */\nval favoriteUniversalPatches = stringSetPreference("favorite_universal_patches", emptySet())',
         [r"^[ \t]*val\s+useExpertMode\s*=[^\n]*$"]), False),
+    ("pinned sources pref declaration", prefs_decl(
+        "pinnedSources",
+        '\n/** Uids of the sources pinned to the top of the Sources list. Local to the device, not part of a settings export. */\n'
+        'val pinnedSources = stringSetPreference("pinned_sources", emptySet())',
+        [r"^[ \t]*val\s+sourceBundleSortMode\s*=[^\n]*$", r"^[ \t]*val\s+useExpertMode\s*=[^\n]*$"]), False),
     ("skip signing pref declaration", prefs_decl(
         "skipApkSigning",
         '\n/** Leave patched APKs unsigned; the original META-INF signature files stay in the output. */\nval skipApkSigning = booleanPreference("skip_apk_signing", false)',
@@ -1555,6 +1573,181 @@ internal fun FavoriteStarButton(
     }
 }
 '''
+
+
+# ---------------------------------------------------------------- pinned sources
+
+PINNED_SOURCES = r'''package @@PKG@@
+
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Stable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import @@BUNDLE_PKG@@.PatchBundleSource
+import @@PREFS_PKG@@.PreferencesManager
+import kotlinx.coroutines.launch
+import org.koin.compose.koinInject
+
+/** The sources pinned to the top of the Sources list, by uid. */
+@Stable
+internal class PinnedSources(
+    val uids: Set<String>,
+    private val onToggle: (PatchBundleSource) -> Unit
+) {
+    fun isPinned(source: PatchBundleSource): Boolean = source.uid.toString() in uids
+
+    fun toggle(source: PatchBundleSource) = onToggle(source)
+
+    /** Pinned sources first; the sort is stable, so each group keeps the order it came in. */
+    fun pinnedFirst(sources: List<PatchBundleSource>): List<PatchBundleSource> =
+        if (uids.isEmpty()) sources else sources.sortedByDescending { isPinned(it) }
+}
+
+@Composable
+internal fun rememberPinnedSources(): PinnedSources {
+    val prefs: PreferencesManager = koinInject()
+    val uids by prefs.pinnedSources.getAsState()
+    val scope = rememberCoroutineScope()
+    return remember(uids) {
+        PinnedSources(uids) { source ->
+            val key = source.uid.toString()
+            val updated = if (key in uids) uids - key else uids + key
+            scope.launch { prefs.pinnedSources.update(updated) }
+        }
+    }
+}
+'''
+
+PIN_BUTTON = """// Pin button, which keeps the source at the top of the list
+val pinVerb = stringResource(
+    if (actions.isPinned) R.string.sources_management_unpin else R.string.sources_management_pin
+)
+val pinDesc = pinVerb + " " + bundle.displayTitle
+val pinDone = stringResource(
+    if (actions.isPinned) R.string.sources_management_source_unpinned
+    else R.string.sources_management_source_pinned
+)
+ActionPillButton(
+    onClick = actions.onTogglePin,
+    icon = if (actions.isPinned) @@PIN_FILLED@@ else @@PIN_OUTLINE@@,
+    contentDescription = pinDesc,
+    tooltip = pinVerb,
+    confirmation = pinDone
+)"""
+
+
+def pin_state(src):
+    m = mask(src)
+    if re.search(r"\brememberPinnedSources\s*\(", m):
+        return src
+    return insert_after_line(
+        src, m, r"^[ \t]*val\s+isManualSort\s*=[^\n]*$",
+        "// Sources the user pinned, which lead the list whatever the sort mode\nval pins = rememberPinnedSources()")
+
+
+def pin_order(src):
+    m = mask(src)
+    if re.search(r"\bpins\.pinnedFirst\s*\(", m):
+        return src
+    rx = (r"(val\s+orderedSources\s*=\s*remember\()localOrder,\s*sources,\s*sourceSortMode(\)\s*\{[ \t]*\n)"
+          r"([ \t]*)sources\.sortedForSourceSort\(sourceSortMode,\s*localOrder\)[ \t]*\n")
+    hits = list(re.finditer(rx, m))
+    if len(hits) != 1:
+        return None
+    h = hits[0]
+    ind = h.group(3)
+    new = (h.group(1) + "localOrder, sources, sourceSortMode, pins, state.isReordering" + h.group(2)
+           + ind + "val sorted = sources.sortedForSourceSort(sourceSortMode, localOrder)\n"
+           + ind + "// Pinned sources lead, except while reordering, where a drag moves list positions\n"
+           + ind + "if (state.isReordering) sorted else pins.pinnedFirst(sorted)\n")
+    return src[:h.start()] + new + src[h.end():]
+
+
+def pin_alphabet(src):
+    m = mask(src)
+    hits = list(re.finditer(r"\bval\s+alphabetScrollMode\s*=\s*!search\.isFiltering\s*&&", m))
+    if len(hits) != 1:
+        return None
+    e = hits[0].end()
+    if re.match(r"\s*orderedSources\.none\b", m[e:]):
+        return src
+    # The rail reads positions off a list in name order, which pinned sources at the top break
+    return src[:e] + " orderedSources.none { pins.isPinned(it) } &&" + src[e:]
+
+
+def pin_actions_class(src):
+    m = mask(src)
+    cm = re.search(r"\bclass\s+SourceCardActions\s*\(", m)
+    if not cm:
+        return None
+    lp = cm.end() - 1
+    rp = match_close(m, lp)
+    if rp < 0:
+        return None
+    if re.search(r"\bval\s+onTogglePin\b", m[lp:rp]):
+        return src
+    hits = list(re.finditer(r"^([ \t]*)val\s+onDisable\s*:\s*\(\)\s*->\s*Unit\s*,[ \t]*$", m[lp:rp], re.M))
+    if len(hits) != 1:
+        return None
+    ind = hits[0].group(1)
+    a = lp + hits[0].start()
+    return src[:a] + ind + "val isPinned: Boolean,\n" + ind + "val onTogglePin: () -> Unit,\n" + src[a:]
+
+
+def pin_actions_call(src):
+    m = mask(src)
+    calls = [lp for lp in find_calls(m, "SourceCardActions")
+             if not re.search(r"\bclass\s+$", m[:m.rfind("SourceCardActions", 0, lp)])]
+    if len(calls) != 1:
+        return None
+    lp = calls[0]
+    rp = match_close(m, lp)
+    if rp < 0:
+        return None
+    if re.search(r"\bonTogglePin\s*=", m[lp:rp]):
+        return src
+    hits = list(re.finditer(r"^([ \t]*)onDisable\s*=[^\n]*$", m[lp:rp], re.M))
+    if len(hits) != 1:
+        return None
+    ind = hits[0].group(1)
+    a = lp + hits[0].start()
+    return (src[:a] + ind + "isPinned = pins.isPinned(bundle),\n"
+            + ind + "onTogglePin = { pins.toggle(bundle) },\n" + src[a:])
+
+
+def pin_button(src):
+    m = mask(src)
+    f = one(find_funs(m, "BundleManagementCard"))
+    if not f or f.bo is None:
+        return None
+    if re.search(r"\bactions\.onTogglePin\b", m[f.bo:f.bc]):
+        return src
+    calls = [lp for lp in find_calls(m, "ActionPillButton", f.bo, f.bc)
+             if re.search(r"\bonClick\s*=\s*actions\.onDisable\b", m[lp:match_close(m, lp)])]
+    if len(calls) != 1:
+        return None
+    start = m.rfind("ActionPillButton", 0, calls[0])
+    ls = line_start(src, start)
+    if src[ls:start].strip():
+        return None
+    if ls > 0:
+        pls = line_start(src, ls - 1)
+        if src[pls:ls].strip().startswith("//"):
+            ls = pls
+    ind = indent_of(src, start)
+    text = PIN_BUTTON.replace("@@PIN_FILLED@@", ICON["PIN_FILLED"]).replace("@@PIN_OUTLINE@@", ICON["PIN_OUTLINE"])
+    return src[:ls] + reindent(text, ind) + "\n\n" + src[ls:]
+
+
+def sources_pin(src):
+    """Pin button left of the disable button; pinned sources lead the list in every sort mode."""
+    out = src
+    for step in (pin_state, pin_order, pin_alphabet, pin_actions_class, pin_actions_call, pin_button):
+        out = step(out)
+        if out is None:
+            return None
+    return out
 
 
 # ---------------------------------------------------------------- workspace
@@ -2645,6 +2838,7 @@ def build_plan(ws):
         problems.append("cannot locate the tour (OnboardingState / TourTarget / Modifier.tourTarget)")
     elif not re.search(r"\bADD_SOURCE\b", mask(ws.get(tour_enum[0]))):
         problems.append("TourTarget.ADD_SOURCE not found")
+    bundle_src = ws.find(r"\bsealed\s+class\s+PatchBundleSource\b", P + "domain/bundles/PatchBundleSource.kt")
     patchinfo = ws.find(r"\bclass\s+PatchInfo\b", P + "patcher/patch/PatchInfo.kt")
     toast = ws.find(r"\bfun\s+Context\.toast\s*\(", P + "util/Util.kt")
     # Newer upstream shows its messages through UserMessages instead of a toast helper
@@ -2675,8 +2869,8 @@ def build_plan(ws):
     upstream = idm.group(1) if idm and idm.group(1) != FORK_APP_ID else DEFAULT_UPSTREAM_APP_ID
     if not ns:
         return None, ["namespace not found in app/build.gradle.kts"]
-    if not (stripper and patchinfo and (usermsgs or toast)):
-        missing = [n for n, v in (("NativeLibs", stripper), ("PatchInfo", patchinfo),
+    if not (stripper and patchinfo and bundle_src and (usermsgs or toast)):
+        missing = [n for n, v in (("NativeLibs", stripper), ("PatchInfo", patchinfo), ("PatchBundleSource", bundle_src),
                                   ("UserMessages / Context.toast", usermsgs or toast)) if not v]
         return None, ["cannot locate " + ", ".join(missing)]
 
@@ -2698,6 +2892,7 @@ def build_plan(ws):
         "NS": ns.group(1),
         "PREFS_PKG": package_of(ws.get(prefs)),
         "PATCHINFO_PKG": package_of(ws.get(patchinfo[0])),
+        "BUNDLE_PKG": package_of(ws.get(bundle_src[0])),
         "TOAST_IMPORT": "import %s.UserMessages" % package_of(ws.get(usermsgs[0])) if usermsgs
         else "import %s.toast" % package_of(ws.get(toast[0])),
         "TOAST_DECL": "val messages: UserMessages = koinInject()" if usermsgs else "val context = LocalContext.current",
@@ -2731,6 +2926,7 @@ def build_plan(ws):
         ("select APK button string", strings_edit(APK_BUTTON_STRINGS, "home_other_apps_action"), False),
         ("selection bar strings", strings_edit(SELECTION_STRINGS, "expert_mode_search"), False),
         ("patch update interval strings", strings_edit(PATCH_INTERVAL_STRINGS, "settings_advanced_update_interval"), False),
+        ("pin strings", strings_edit(PIN_STRINGS, "sources_management_source_disabled"), False),
     ]))
     plan.append(("app/build.gradle.kts", gradle, [("applicationId", app_id_edit, False)]))
     if has_gservices:
@@ -2802,6 +2998,10 @@ def build_plan(ws):
     ] + ([
         ("sources sort and filter as a dropdown", sources_sort_dropdown, True),
         ("import ListOptionsMenuButton", imp(package_of(ws.get(pill)) + ".ListOptionsMenuButtons"), False),
+    ] if symbols else []) + ([
+        ("sources pin button and pinned-first order", sources_pin, False),
+        ("import pinned source icons", imp("com.composables.icons.materialsymbols.roundedfilled.*"), False),
+        ("import rounded icons", imp("com.composables.icons.materialsymbols.rounded.*"), False),
     ] if symbols else [])))
     plan.append((str(addpanel.relative_to(ws.root)), addpanel, [("add source panel full screen", add_panel_full, False)]))
     host_path = host_ext[0]
@@ -2830,7 +3030,7 @@ def build_plan(ws):
         (prefs.parent / "PatchUpdateThrottle.kt", render(PATCH_UPDATE_THROTTLE, package_of(ws.get(prefs)))),
         (updates.parent / "PatchUpdateIntervalSetting.kt", render(PATCH_UPDATE_INTERVAL_SETTING, package_of(ws.get(updates)))),
         (bundle_repo.parent / "ParallelLoad.kt", render(PARALLEL_LOAD, package_of(ws.get(bundle_repo)))),
-    ]
+    ] + ([(srcpage.parent / "PinnedSources.kt", render(PINNED_SOURCES, package_of(ws.get(srcpage))))] if symbols else [])
     if symbols:
         new_files += [
             (helper_dir / "ExpertSelectionBar.kt", render(EXPERT_SELECTION_BAR, helper_pkg)),
@@ -2842,6 +3042,7 @@ def build_plan(ws):
         (r"\bfun\s+setSkipApkSigning\b", vm, "setSkipApkSigning"),
         (r"\bval\s+patchUpdateIntervalHours\s*=", prefs, "patchUpdateIntervalHours preference"),
         (r"\bval\s+lastPatchUpdateCheck\s*=", prefs, "lastPatchUpdateCheck preference"),
+        (r"\bval\s+pinnedSources\s*=", prefs, "pinnedSources preference"),
     ]
     return (plan, new_files, adv, needles), []
 
