@@ -18,7 +18,6 @@ import android.os.ParcelFileDescriptor
 import android.os.Process
 import android.os.RemoteException
 import android.util.Log
-import androidx.annotation.RequiresApi
 import androidx.work.ForegroundInfo
 import app.morphe.manager.BuildConfig
 import app.morphe.manager.data.platform.Filesystem
@@ -34,6 +33,9 @@ import app.morphe.manager.patcher.runtime.jvm.JvmLaunch
 import app.morphe.manager.util.AppCoroutineScope
 import app.morphe.manager.util.LOG_TAG
 import app.morphe.manager.util.bytesToMebibytes
+import app.morphe.manager.util.describe
+import app.morphe.manager.util.processAbi
+import app.morphe.manager.util.processExits
 import kotlinx.coroutines.CancellableContinuation
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineStart
@@ -117,13 +119,17 @@ class PatcherProcesses(
         }
     }
 
-    /** The heap a JVM is started with: a third of the RAM within bounds, or half of it in a 32-bit process. */
+    /**
+     * The heap a JVM is started with: a third of the RAM within bounds, or half of it in a 32-bit
+     * process. The lower bound never takes more than [HEAP_LIMIT_MAXIMUM_RAM_PERCENT] of the RAM.
+     */
     private val jvmHeapLimitMb by lazy {
         val memoryInfo = ActivityManager.MemoryInfo()
         app.getSystemService(ActivityManager::class.java).getMemoryInfo(memoryInfo)
         val ramMb = bytesToMebibytes(memoryInfo.totalMem).toInt()
         if (Process.is64Bit()) {
-            (ramMb / 3).coerceIn(HEAP_LIMIT_MINIMUM_MB, HEAP_LIMIT_MAXIMUM_MB)
+            val minimum = minOf(HEAP_LIMIT_MINIMUM_MB, ramMb * HEAP_LIMIT_MAXIMUM_RAM_PERCENT / 100)
+            (ramMb / 3).coerceIn(minimum, HEAP_LIMIT_MAXIMUM_MB)
         } else {
             (ramMb / 2).coerceIn(HEAP_LIMIT_32_BIT_MINIMUM_MB, HEAP_LIMIT_32_BIT_MAXIMUM_MB)
         }
@@ -590,7 +596,7 @@ class PatcherProcesses(
             val age = (System.currentTimeMillis() - startedAt) / 1000
             logger.info(
                 "Patcher process: pid=${started.pid} vm=$vm heap=${started.heapLimitMb}MB bits=$bits " +
-                        "abis=${Build.SUPPORTED_ABIS.joinToString(",")} age=${age}s"
+                        "abi=${app.processAbi()} abis=${Build.SUPPORTED_ABIS.joinToString(",")} age=${age}s"
             )
             if (launch != null) logger.info("Patcher JVM: pid=${started.jvmPid} options=${tuning.joinToString(" ")}")
         }
@@ -643,11 +649,10 @@ class PatcherProcesses(
         private suspend fun killedException(): PatcherKilledException {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return PatcherKilledException(NO_EXIT_RECORD, crashed = false)
 
-            val activityManager = app.getSystemService(ActivityManager::class.java)
             return withTimeoutOrNull(EXIT_RECORD_TIMEOUT) {
                 var info: ApplicationExitInfo?
                 do {
-                    info = activityManager.getHistoricalProcessExitReasons(app.packageName, started.pid, 1).firstOrNull()
+                    info = app.processExits(limit = 1, pid = started.pid).firstOrNull()
                     if (info == null) delay(EXIT_RECORD_POLL)
                 } while (info == null)
                 val crashed = info.reason == ApplicationExitInfo.REASON_CRASH_NATIVE ||
@@ -730,23 +735,6 @@ class PatcherProcesses(
         HostEvent.Log(LogLevel.WARN, "Unreadable event of the patcher process: $line")
     }
 
-    @RequiresApi(Build.VERSION_CODES.R)
-    private fun ApplicationExitInfo.describe(): String {
-        val cause = when (reason) {
-            ApplicationExitInfo.REASON_LOW_MEMORY -> "killed for low memory"
-            ApplicationExitInfo.REASON_SIGNALED -> "killed by signal $status"
-            ApplicationExitInfo.REASON_CRASH_NATIVE -> "native crash"
-            ApplicationExitInfo.REASON_CRASH -> "crash"
-            ApplicationExitInfo.REASON_EXCESSIVE_RESOURCE_USAGE -> "killed for excessive resource usage"
-            ApplicationExitInfo.REASON_USER_REQUESTED -> "stopped by the user"
-            ApplicationExitInfo.REASON_EXIT_SELF -> "exited with $status"
-            else -> "ended for reason $reason"
-        }
-        // Both are reported in kilobytes, and left at 0 for a process killed before they were read
-        val memory = "pss=${bytesToMebibytes(pss * 1024)}MB rss=${bytesToMebibytes(rss * 1024)}MB".takeIf { rss > 0 }
-        return listOfNotNull(cause, description?.takeIf { it.isNotBlank() }, memory).joinToString(", ")
-    }
-
     /** A binding to [PatcherService] for a single run, which ends the service's process once closed. */
     private class PatcherConnection private constructor(private val context: Context) : ServiceConnection, Closeable {
         private var continuation: CancellableContinuation<IPatcherService>? = null
@@ -812,6 +800,10 @@ class PatcherProcesses(
         // keeps a runaway patch from taking the device
         const val HEAP_LIMIT_MINIMUM_MB = 2048
         const val HEAP_LIMIT_MAXIMUM_MB = 3072
+
+        // The system does not know of the JVM, a child of the patcher process, and frees the memory it
+        // takes by killing the app on screen. On 3 GB TikTok got it killed at 2048MB, and patched at 1280MB
+        const val HEAP_LIMIT_MAXIMUM_RAM_PERCENT = 40
 
         // TikTok with Hushfeed peaks at about 950MB on 32-bit ARM. The JVM starts in a process of its
         // own, whose address space still has room for the heap in one piece at the maximum

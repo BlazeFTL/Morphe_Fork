@@ -49,6 +49,7 @@ import app.morphe.manager.ui.screen.settings.system.InstallerFlowDialogs
 import app.morphe.manager.ui.screen.settings.system.PrePatchInstallerDialog
 import app.morphe.manager.ui.screen.shared.*
 import app.morphe.manager.ui.viewmodel.BatchPatcherViewModel
+import app.morphe.manager.ui.viewmodel.InstallQueueRequest
 import app.morphe.manager.ui.viewmodel.InstallViewModel
 import app.morphe.manager.util.*
 import com.composables.icons.materialsymbols.MaterialSymbols
@@ -78,7 +79,8 @@ fun BatchPatcherScreen(
     patchBundleRepository: PatchBundleRepository = koinInject(),
     onAppStateChanged: (String) -> Unit = {},
     onBackgroundSpeedChange: (Float) -> Unit = {},
-    onPatchingCompleted: () -> Unit = {}
+    onPatchingCompleted: () -> Unit = {},
+    onOpenGames: (() -> Unit)? = null
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val scope = rememberCoroutineScope()
@@ -506,7 +508,8 @@ fun BatchPatcherScreen(
                             patchProgress = shownRun,
                             packageName = shownPackageName,
                             queueHeader = { BatchRunHeader(state = current) },
-                            onCancelClick = { showCancelDialog = true }
+                            onCancelClick = { showCancelDialog = true },
+                            onGamesClick = onOpenGames
                         )
                     } else {
                         val longStepWarning by shownRun.showLongStepWarning.collectAsStateWithLifecycle()
@@ -517,7 +520,8 @@ fun BatchPatcherScreen(
                             packageName = shownPackageName,
                             showLongStepWarning = longStepWarning,
                             queueHeader = { BatchRunHeader(state = current) },
-                            onCancelClick = { showCancelDialog = true }
+                            onCancelClick = { showCancelDialog = true },
+                            onGamesClick = onOpenGames
                         )
                     }
                 }
