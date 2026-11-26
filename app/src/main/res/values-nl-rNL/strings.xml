@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">Deze patchbron is geblokkeerd en kan niet worden toegevoegd</string>
     <string name="sources_management_source_blocked_badge">Geblokkeerd</string>
     <string name="sources_management_metadata_unavailable">Metadata niet beschikbaar</string>
+    <string name="sources_management_bundle_missing_badge">Niet gedownload</string>
     <string name="sources_management_metadata_unavailable_hint">Het externe metadabestand is niet beschikbaar. Patchen met het geïnstalleerde bundel werkt nog steeds, maar automatische update is uitgeschakeld voor deze bron</string>
     <string name="sources_management_metadata_unavailable_hint_missing">De patch-bundel kon niet worden gedownload. De bron-URL is mogelijk onjuist of het bestand bestaat niet</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">De patchbundel kon niet worden gedownload. De bron-URL is mogelijk onjuist of het bestand bestaat niet. Tik om deze te wijzigen</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Vervangt %s</string>
     <string name="sources_dialog_url_valid">Geldige repository of JSON-URL</string>
-    <string name="sources_dialog_url_invalid">De URL moet verwijzen naar een GitHub/GitLab-repo of een .json-bestand</string>
+    <string name="sources_dialog_url_invalid">URL moet verwijzen naar een GitHub-, GitLab- of Codeberg-repo of .json-bestand</string>
     <string name="sources_dialog_preinstalled">Voorgeïnstalleerd</string>
     <string name="sources_dialog_community">Community-patches</string>
     <string name="sources_dialog_choose_apps">Kies apps</string>
@@ -772,6 +773,8 @@ Deïnstalleren wist alle app-gegevens permanent."</string>
     <!-- Mini-games -->
     <string name="mini_games">Mini-games</string>
     <string name="mini_games_description">Korte spelletjes om een verloren minuutje mee te vullen</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">Games</string>
     <string name="mini_game_score">Score %s</string>
     <string name="mini_game_best">Beste %s</string>
     <string name="mini_game_new_record">Nieuw record!</string>
@@ -1566,6 +1569,7 @@ Details: %2$s"</string>
     <string name="changelog_show_all">Alles tonen (%s)</string>
     <string name="changelog_show_less">Minder tonen</string>
     <string name="no_network_toast">Geen internetverbinding beschikbaar</string>
+    <string name="download_waiting_for_network">Wachten op netwerk</string>
     <string name="update_available">Een update is beschikbaar</string>
     <string name="ready_to_install_update">Klaar om update te installeren</string>
     <string name="update_completed">Update geïnstalleerd</string>

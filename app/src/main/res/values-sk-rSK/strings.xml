@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">Tento zdroj záplat je zablokovaný a nie je možné ho pridať</string>
     <string name="sources_management_source_blocked_badge">Zablokované</string>
     <string name="sources_management_metadata_unavailable">Metadáta N/A</string>
+    <string name="sources_management_bundle_missing_badge">Nestiahnuté</string>
     <string name="sources_management_metadata_unavailable_hint">Diaľkový metaúdajový súbor nie je dostupný. Oprava pomocou nainštalovaného balíka stále funguje, ale automatická aktualizácia je pre tento zdroj zakázaná</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Balík opráv sa nepodarilo stiahnuť. URL adresa zdroja môže byť nesprávna alebo súbor neexistuje</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">Balík záplat sa nepodarilo stiahnuť. Zdrojová URL môže byť nesprávna alebo súbor neexistuje. Klepnutím ju zmeňte</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Aktualizuje %s</string>
     <string name="sources_dialog_url_valid">Platný repozitár alebo URL adresa JSON</string>
-    <string name="sources_dialog_url_invalid">URL musí odkazovať na repozitár GitHub/GitLab alebo na súbor .json</string>
+    <string name="sources_dialog_url_invalid">URL musí odkazovať na repo GitHub, GitLab alebo Codeberg, prípadne na súbor .json</string>
     <string name="sources_dialog_preinstalled">Predinštalované</string>
     <string name="sources_dialog_community">Komunitné záplaty</string>
     <string name="sources_dialog_choose_apps">Vybrať aplikácie</string>
@@ -772,6 +773,8 @@ Odinštalovanie trvalo vymaže všetky údaje aplikácie."</string>
     <!-- Mini-games -->
     <string name="mini_games">Mini hry</string>
     <string name="mini_games_description">Rýchle hry na zaplnenie voľnej minútky</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">Hry</string>
     <string name="mini_game_score">Skóre %s</string>
     <string name="mini_game_best">Najlepšie %s</string>
     <string name="mini_game_new_record">Nový rekord!</string>
@@ -1566,6 +1569,7 @@ Podrobnosti: %2$s"</string>
     <string name="changelog_show_all">Zobraziť všetky (%s)</string>
     <string name="changelog_show_less">Zobraziť menej</string>
     <string name="no_network_toast">Žiadne internetové pripojenie</string>
+    <string name="download_waiting_for_network">Čakanie na sieť</string>
     <string name="update_available">Je dostupná aktualizácia</string>
     <string name="ready_to_install_update">Inštalácia aktualizácie je pripravená.</string>
     <string name="update_completed">Aktualizácia nainštalovaná</string>

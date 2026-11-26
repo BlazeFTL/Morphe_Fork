@@ -1,3 +1,43 @@
+## [2.8.0-dev.6](https://github.com/MorpheApp/morphe-manager/compare/v2.8.0-dev.5...v2.8.0-dev.6) (2026-11-25)
+
+### Features
+
+* Export patches from the source card and confirm renames ([0f23abd](https://github.com/MorpheApp/morphe-manager/commit/0f23abd51bfe003798d2695bb65c37c250b3dcd6))
+* Install patched apps compiled with their baseline profile ([#1523](https://github.com/MorpheApp/morphe-manager/issues/1523)) ([e436a28](https://github.com/MorpheApp/morphe-manager/commit/e436a28b8f70664baa639d3d91e669c6aa4e6ec9))
+
+## [2.8.0-dev.5](https://github.com/MorpheApp/morphe-manager/compare/v2.8.0-dev.4...v2.8.0-dev.5) (2026-11-25)
+
+### Features
+
+* Tell sources that failed to download apart from missing metadata ([3d01459](https://github.com/MorpheApp/morphe-manager/commit/3d014593b86203894c6bfbb0635b0204f45d9217))
+
+### Bug Fixes
+
+* Keep animated backgrounds seamless and density independent ([072083d](https://github.com/MorpheApp/morphe-manager/commit/072083d0e05b137a3cb7c68b5a0fc33c5ddfc450))
+* Keep the mesh background edge out of view after rotation ([f93e5ee](https://github.com/MorpheApp/morphe-manager/commit/f93e5eeb67ceabf6077b4c57dd6f238403ded5d0))
+
+## [2.8.0-dev.4](https://github.com/MorpheApp/morphe-manager/compare/v2.8.0-dev.3...v2.8.0-dev.4) (2026-11-25)
+
+### Features
+
+* Show what's new for queued apps in batch patching ([adde0f2](https://github.com/MorpheApp/morphe-manager/commit/adde0f2b0e4a3bff07edaac50e7a8189b2174929))
+* Wait for the network instead of restarting interrupted downloads ([357a9f6](https://github.com/MorpheApp/morphe-manager/commit/357a9f654d02ad394499d4adce900e4be2732c61))
+
+### Bug Fixes
+
+* Mirror version changes and layout direction in RTL languages ([cee8e3e](https://github.com/MorpheApp/morphe-manager/commit/cee8e3eb912a0cd3681fe92fb273e443571ea4cb))
+
+## [2.8.0-dev.3](https://github.com/MorpheApp/morphe-manager/compare/v2.8.0-dev.2...v2.8.0-dev.3) (2026-11-25)
+
+### Features
+
+* Fall back to the Morphe API for manager updates ([afd5ecb](https://github.com/MorpheApp/morphe-manager/commit/afd5ecbec594d7afe795ac67edb665c20a4dd503))
+* Support patch sources hosted on Codeberg ([1bfb971](https://github.com/MorpheApp/morphe-manager/commit/1bfb9714ab1b6724b1555304414f9b0de7ba6f53))
+
+### Bug Fixes
+
+* Improve patching speed for budget devices with 32-bit roms or less than 8 cores ([#1516](https://github.com/MorpheApp/morphe-manager/issues/1516)) ([2affc52](https://github.com/MorpheApp/morphe-manager/commit/2affc52cca07c7ee22e9b7b4cb672491e9975bc3))
+
 ## [2.8.0-dev.2](https://github.com/MorpheApp/morphe-manager/compare/v2.8.0-dev.1...v2.8.0-dev.2) (2026-11-24)
 
 ### Features

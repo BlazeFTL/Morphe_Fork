@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">Denne patchkilde er blokeret og kan ikke tilføjes</string>
     <string name="sources_management_source_blocked_badge">Blokeret</string>
     <string name="sources_management_metadata_unavailable">Metadata ikke tilgængelig</string>
+    <string name="sources_management_bundle_missing_badge">Ikke downloadet</string>
     <string name="sources_management_metadata_unavailable_hint">Den eksterne metadatafil er ikke tilgængelig. Opdatering med den installerede pakke fungerer stadig, men automatisk opdatering er deaktiveret for denne kilde</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Opdateringspakken kunne ikke hentes. Kilde-URL\'en kan være forkert, eller filen findes ikke</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">Patch-pakken kunne ikke downloades. Kilde-URL\'en er muligvis forkert, eller filen findes ikke. Tryk for at ændre den</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Opdaterer %s</string>
     <string name="sources_dialog_url_valid">Gyldigt repository eller JSON-URL</string>
-    <string name="sources_dialog_url_invalid">URL\'en skal pege på et GitHub/GitLab-lager eller en .json-fil</string>
+    <string name="sources_dialog_url_invalid">URL\'en skal pege på et GitHub-, GitLab- eller Codeberg-repo eller en .json-fil</string>
     <string name="sources_dialog_preinstalled">Forhåndsinstalleret</string>
     <string name="sources_dialog_community">Fællesskabets patches</string>
     <string name="sources_dialog_choose_apps">Vælg apps</string>
@@ -772,6 +773,8 @@ Afinstallation sletter permanent alle appdata."</string>
     <!-- Mini-games -->
     <string name="mini_games">Minispil</string>
     <string name="mini_games_description">Hurtige spil til at få tiden til at gå</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">Spil</string>
     <string name="mini_game_score">Score %s</string>
     <string name="mini_game_best">Bedste %s</string>
     <string name="mini_game_new_record">Ny rekord!</string>
@@ -1566,6 +1569,7 @@ Detaljer: %2$s"</string>
     <string name="changelog_show_all">Vis alle (%s)</string>
     <string name="changelog_show_less">Vis mindre</string>
     <string name="no_network_toast">Ingen internetforbindelse tilgængelig</string>
+    <string name="download_waiting_for_network">Venter på netværk</string>
     <string name="update_available">En opdatering er tilgængelig</string>
     <string name="ready_to_install_update">Klar til at installere opdatering</string>
     <string name="update_completed">Opdatering installeret</string>

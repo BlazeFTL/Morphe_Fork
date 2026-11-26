@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">Esta fonte de atualização está bloqueada e não pode ser adicionada</string>
     <string name="sources_management_source_blocked_badge">Bloqueado</string>
     <string name="sources_management_metadata_unavailable">Metadados não disponíveis</string>
+    <string name="sources_management_bundle_missing_badge">Não transferido</string>
     <string name="sources_management_metadata_unavailable_hint">O ficheiro de metadados remoto está indisponível. A aplicação de modificações com o pacote instalado ainda funciona, mas a atualização automática está desativada para esta fonte</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Não foi possível transferir o pacote de modificações. A URL da fonte pode estar incorreta ou o ficheiro não existe</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">Não foi possível transferir o pacote de modificações. A URL da fonte pode estar incorreta ou o ficheiro não existe. Toque para alterá-la</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Atualiza %s</string>
     <string name="sources_dialog_url_valid">Repositório ou URL JSON válido</string>
-    <string name="sources_dialog_url_invalid">O URL deve apontar para um repositório do GitHub/GitLab ou ficheiro .json</string>
+    <string name="sources_dialog_url_invalid">O URL deve apontar para um repositório do GitHub, GitLab ou Codeberg ou ficheiro .json</string>
     <string name="sources_dialog_preinstalled">Pré-instalado</string>
     <string name="sources_dialog_community">Patches da comunidade</string>
     <string name="sources_dialog_choose_apps">Escolher apps</string>
@@ -772,6 +773,8 @@ Desinstalar vai apagar permanentemente todos os dados da aplicação."</string>
     <!-- Mini-games -->
     <string name="mini_games">Minijogos</string>
     <string name="mini_games_description">Jogos rápidos para passar um minuto livre</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">Jogos</string>
     <string name="mini_game_score">Pontuação %s</string>
     <string name="mini_game_best">Melhor %s</string>
     <string name="mini_game_new_record">Novo recorde!</string>
@@ -1566,6 +1569,7 @@ Detalhes: %2$s"</string>
     <string name="changelog_show_all">Mostrar tudo (%s)</string>
     <string name="changelog_show_less">Mostrar menos</string>
     <string name="no_network_toast">Ligação à Internet indisponível</string>
+    <string name="download_waiting_for_network">A aguardar rede</string>
     <string name="update_available">Está disponível uma atualização</string>
     <string name="ready_to_install_update">Pronto para instalar a atualização</string>
     <string name="update_completed">Atualização instalada</string>

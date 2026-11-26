@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">ეს პატჩის წყარო დაბლოკილია და მისი დამატება შეუძლებელია</string>
     <string name="sources_management_source_blocked_badge">დაბლოკილი</string>
     <string name="sources_management_metadata_unavailable">მეტამონაცემები მიუწვდომელია</string>
+    <string name="sources_management_bundle_missing_badge">არ არის ჩამოტვირთული</string>
     <string name="sources_management_metadata_unavailable_hint">დისტანციური მეტამონაცემთა ფაილი მიუწვდომელია. დაპატჩვა დაინსტალირებული პაკეტით კვლავ მუშაობს, თუმცა ამ წყაროსთვის ავტო-განახლება გამორთულია</string>
     <string name="sources_management_metadata_unavailable_hint_missing">პატჩის პაკეტის ჩამოტვირთვა ვერ მოხერხდა. შესაძლოა წყაროს URL არასწორია ან ფაილი არ არსებობს</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">პატჩების პაკეტის ჩამოტვირთვა ვერ მოხერხდა. შესაძლოა წყაროს URL არასწორია ან ფაილი არ არსებობს. შეცვლისთვის დააჭირეთ</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">განახლებები %s</string>
     <string name="sources_dialog_url_valid">რეპოზიტორიუმის ან JSON-ის ვალიდური URL</string>
-    <string name="sources_dialog_url_invalid">URL უნდა მიუთითებდეს GitHub/GitLab რეპოზიტორზე ან .json ფაილზე</string>
+    <string name="sources_dialog_url_invalid">URL უნდა მიუთითებდეს GitHub-ის, GitLab-ის ან Codeberg-ის რეპოზიტორზე ან .json ფაილზე</string>
     <string name="sources_dialog_preinstalled">წინასწარ დაინსტალირებული</string>
     <string name="sources_dialog_community">საზოგადოების პატჩები</string>
     <string name="sources_dialog_choose_apps">აირჩიეთ აპლიკაციები</string>
@@ -772,6 +773,8 @@
     <!-- Mini-games -->
     <string name="mini_games">მინი-თამაშები</string>
     <string name="mini_games_description">სწრაფი თამაშები თავისუფალი წუთების გასატარებლად</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">თამაშები</string>
     <string name="mini_game_score">ქულა %s</string>
     <string name="mini_game_best">საუკეთესო %s</string>
     <string name="mini_game_new_record">ახალი რეკორდი!</string>
@@ -1566,6 +1569,7 @@ morphe_header_custom_dark.png
     <string name="changelog_show_all">ყველას ჩვენება (%s)</string>
     <string name="changelog_show_less">ნაკლების ჩვენება</string>
     <string name="no_network_toast">ინტერნეტთან კავშირი არ არის ხელმისაწვდომი</string>
+    <string name="download_waiting_for_network">ქსელის მოლოდინი</string>
     <string name="update_available">ხელმისაწვდომია განახლება</string>
     <string name="ready_to_install_update">მზადაა განახლების დასაინსტალირებლად</string>
     <string name="update_completed">განახლება დაინსტალირებულია</string>

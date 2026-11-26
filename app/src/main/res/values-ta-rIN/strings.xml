@@ -60,10 +60,12 @@
     <!-- Under the Bring new apps switch in a source's app list, whichever way it is set. "It" is the patch source -->
     <string name="expert_mode_unstable_notice">முன்பதிவு அல்லது சோதனை முயற்சியிலான பேட்ச்கள் நிலையற்றதாக இருக்கலாம்</string>
     <!-- Actions of the panel for several selected sources at once -->
+    <string name="sources_management_bundle_missing_badge">பதிவிறக்கம் செய்யப்படவில்லை</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">பேட்ச் பண்டிலை பதிவிறக்க முடியவில்லை. மூல URL தவறாக இருக்கலாம் அல்லது கோப்பு இல்லை. அதை மாற்ற தட்டவும்</string>
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_change_url">பேட்ச் மூலப்பொருள் பதிவிறக்கம் செய்யப்படும் இடத்தை மாற்றவும்</string>
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
+    <string name="sources_dialog_url_invalid">URL ஆனது GitHub, GitLab அல்லது Codeberg ரெப்போ அல்லது .json கோப்பைக் குறிக்க வேண்டும்</string>
     <!-- Shown before leaving Morphe for the community patches website. The sources listed there are not reviewed by Morphe -->
     <!-- Shown on Android 17 when the Nearby devices permission, which covers the local network, is refused while a source is hosted there -->
     <string name="sources_local_network_denied">அருகிலுள்ள சாதனங்கள் அனுமதி இல்லாமல் உங்கள் உள்ளூர் நெட்வொர்க்கில் உள்ள ஆதாரங்களை மேம்படுத்த முடியாது</string>
@@ -162,6 +164,8 @@
     <!-- Mini-games -->
     <string name="mini_games">மினி-கேம்கள்</string>
     <string name="mini_games_description">உறக்க நேரத்தை கழிக்க விரைவான விளையாட்டுகள்</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">விளையாட்டுகள்</string>
     <string name="mini_game_pause">நிறுத்து</string>
     <string name="mini_game_score_label">மதிப்பெண்</string>
     <string name="mini_game_best_label">சிறந்தது</string>
@@ -301,6 +305,7 @@
     <!-- Label of a footer button beside other buttons, which reads "Translate" until pressed. Keep it as short as "Translate", a longer one moves the buttons onto two rows -->
     <!-- Marks the version of a patch source downloaded to the manager, which patches with it rather than the one an installed app was patched with -->
     <!-- "%s" is the number of changes in the section -->
+    <string name="download_waiting_for_network">பிணையத்திற்காக காத்திருக்கிறது</string>
     <!-- Shown while downloading when the server does not report the total size. "%1$s" is the megabytes so far. -->
     <!-- Shown under the download percentage. "%1$s" is the megabytes so far, "%2$s" the total. -->
     <!-- Onboarding coach marks -->

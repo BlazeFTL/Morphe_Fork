@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">Այս փաթեթի աղբյուրը արգելված է և չի կարող ավելացվել</string>
     <string name="sources_management_source_blocked_badge">Արգելված է</string>
     <string name="sources_management_metadata_unavailable">Մետատվյալները հասանելի չեն</string>
+    <string name="sources_management_bundle_missing_badge">Չի ներբեռնվել</string>
     <string name="sources_management_metadata_unavailable_hint">Հեռակա մետատվյալների ֆայլը հասանելի չէ: Տեղադրված փաթեթի միջոցով փոփոխությունների կիրառումը դեռ աշխատում է, սակայն այս աղբյուրի համար ավտոմատ թարմացումը անջատված է</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Փոփոխությունների փաթեթը հնարավոր չեղավ ներբեռնել: Աղբյուրի URL-ը կարող է լինել սխալ, կամ ֆայլը գոյություն չունի</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">Թարմացման փաթեթը հնարավոր չեղավ ներբեռնել: Աղբյուրի URL-ը կարող է լինել սխալ, կամ ֆայլը գոյություն չունի: Պատկերեք փոփոխելու համար</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Թարմացումներ %s</string>
     <string name="sources_dialog_url_valid">Վավեր ռեպոզիտորիումի կամ JSON URL</string>
-    <string name="sources_dialog_url_invalid">URL-ն պետք է հղվի GitHub/GitLab ռեպոզիտորիային կամ .json ֆայլին</string>
+    <string name="sources_dialog_url_invalid">URL-ը պետք է հղվի GitHub, GitLab կամ Codeberg ռեպոզիտորիին կամ .json ֆայլին</string>
     <string name="sources_dialog_preinstalled">Նախատեղադրված</string>
     <string name="sources_dialog_community">Համայնքային փաթեթներ</string>
     <string name="sources_dialog_choose_apps">Ընտրել հավելվածները</string>
@@ -772,6 +773,8 @@
     <!-- Mini-games -->
     <string name="mini_games">Մինի-խաղեր</string>
     <string name="mini_games_description">Արագ խաղեր՝ ազատ րոպեները լրացնելու համար</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">Խաղեր</string>
     <string name="mini_game_score">Միավոր %s</string>
     <string name="mini_game_best">Լավագույն %s</string>
     <string name="mini_game_new_record">Նոր ռեկորդ։</string>
@@ -1566,6 +1569,7 @@ morphe_header_custom_dark.png
     <string name="changelog_show_all">Ցուցադրել բոլորը (%s)</string>
     <string name="changelog_show_less">Ցուցադրել ավելի քիչ</string>
     <string name="no_network_toast">Ինտերնետ կապ չկա</string>
+    <string name="download_waiting_for_network">Սպասում ենք ցանցին</string>
     <string name="update_available">Հասանելի է թարմացում</string>
     <string name="ready_to_install_update">Պատրաստ է թարմացման տեղադրմանը</string>
     <string name="update_completed">Թարմացումը տեղադրված է</string>

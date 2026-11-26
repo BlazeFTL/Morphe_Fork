@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">Овој извор на закрпи е блокиран и не може да се додаде</string>
     <string name="sources_management_source_blocked_badge">Блокирано</string>
     <string name="sources_management_metadata_unavailable">Метаподатоци N/A</string>
+    <string name="sources_management_bundle_missing_badge">Не е преземено</string>
     <string name="sources_management_metadata_unavailable_hint">На далечина датотеката со метаподатоци не е достапна. Закрпувањето со инсталираниот пакување сѐ уште функционира, но автоматското ажурирање е деактивирано за овој извор</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Не можеше да се преземе пакувањето со закрпи. URL адресата на изворот можеби е неточна или датотеката не постои</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">Пакетот со закрпи не можеше да се преземе. Изворниот URL можеби е неправилен или датотеката не постои. Допрете за да го промените</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Ажурира %s</string>
     <string name="sources_dialog_url_valid">Валидна репозиторија или URL адреса во JSON формат</string>
-    <string name="sources_dialog_url_invalid">URL мора да укажува на репозиториум GitHub/GitLab или датотека .json</string>
+    <string name="sources_dialog_url_invalid">URL-то мора да покажува кон GitHub, GitLab или Codeberg репозиториум или .json датотека</string>
     <string name="sources_dialog_preinstalled">Претходно инсталирано</string>
     <string name="sources_dialog_community">Крпежи од заедницата</string>
     <string name="sources_dialog_choose_apps">Изберете апликации</string>
@@ -771,6 +772,8 @@
     <!-- Mini-games -->
     <string name="mini_games">Мини-игры</string>
     <string name="mini_games_description">Брзи игри за да поминате неколку слободни минути</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">Игри</string>
     <string name="mini_game_score">Поени %s</string>
     <string name="mini_game_best">Најдобар %s</string>
     <string name="mini_game_new_record">Нов рекорд!</string>
@@ -1565,6 +1568,7 @@ morphe_header_custom_dark.png
     <string name="changelog_show_all">Прикажи ги сите (%s)</string>
     <string name="changelog_show_less">Прикажи помалку</string>
     <string name="no_network_toast">Нема достапна интернет врска</string>
+    <string name="download_waiting_for_network">Чекање на мрежа</string>
     <string name="update_available">Достапно е ажурирање</string>
     <string name="ready_to_install_update">Готово за инсталирање ажурирање</string>
     <string name="update_completed">Ажурирањето е инсталирано</string>

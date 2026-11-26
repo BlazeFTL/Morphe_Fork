@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">ئەم سەرچاوەی پاتچە بلۆکراوە و ناتوانرێت زیاد بکرێت</string>
     <string name="sources_management_source_blocked_badge">بلۆکراو</string>
     <string name="sources_management_metadata_unavailable">مێتاداتا N/A</string>
+    <string name="sources_management_bundle_missing_badge">داگرای نەبووە</string>
     <string name="sources_management_metadata_unavailable_hint">فایلی مێتاداتای دوور بەردەست نیە. پینەکردن لەگەڵ گورزەی دامەزراو هێشتا کاردەکات، بەڵام نوێکردنەوەی خۆکار بۆ ئەم سەرچاوەیە ناچالاک کراوە</string>
     <string name="sources_management_metadata_unavailable_hint_missing">نەتوانرا گورزەی پینەکردن دابەزێنرێت. سەرچاوەی بەستەر لەوانەیە هەڵە بێت یان فایلەکە بوونی نەبێت</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">نەتوانرا گورزەی پینەکردن دابەزێنرێت. سەرچاوەی بەستەر لەوانەیە هەڵە بێت یان فایلەکە بوونی نەبێت. کلیک بکە بۆ گۆڕینی</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">نوێکردنەوەکانی %s</string>
     <string name="sources_dialog_url_valid">عەمباری دروست یان URL JSON</string>
-    <string name="sources_dialog_url_invalid">بەستەرەکە دەبێت ئاماژە بە ڕیپۆیەکی GitHub/GitLab یان پەڕگەیەکی .json بکات</string>
+    <string name="sources_dialog_url_invalid">بەستەرەکە دەبێت ئاماژە بە ڕیپۆیەکی GitHub، GitLab یان Codeberg یان پەڕگەیەکی .json بکات</string>
     <string name="sources_dialog_preinstalled">پێشوەختە دامەزراو</string>
     <string name="sources_dialog_community">پاتچەکانی کۆمەڵگەی بەکارهێنەران</string>
     <string name="sources_dialog_choose_apps">ئەپەکان هەڵبژێرە</string>
@@ -773,6 +774,8 @@
     <!-- Mini-games -->
     <string name="mini_games">کێڵە-یارییەکان</string>
     <string name="mini_games_description">یارییە خێراکان بۆ بەسەربردنی خشتەیەک لە کاتی بەتاڵیدا</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">یارییەکان</string>
     <string name="mini_game_score">نمرە %s</string>
     <string name="mini_game_best">باشترین %s</string>
     <string name="mini_game_new_record">تۆمارێکی نوێ!</string>
@@ -1567,6 +1570,7 @@ morphe_header_custom_dark.png
     <string name="changelog_show_all">پیشاندانی هەمووی (%s)</string>
     <string name="changelog_show_less">کەمتر نیشان بدە</string>
     <string name="no_network_toast">هیچ پەیوەندییەکی ئینتەرنێت بەردەست نییە</string>
+    <string name="download_waiting_for_network">چاوەڕوانی تۆڕەکەم</string>
     <string name="update_available">نوێکردنەوە بەردەستە</string>
     <string name="ready_to_install_update">ئامادەیە بۆ دامەزراندنی نوێکردنەوە</string>
     <string name="update_completed">نوێکردنەوەکە دامەزرا</string>

@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">Tá an foinse paiste seo blocáilte agus ní féidir í a chur leis</string>
     <string name="sources_management_source_blocked_badge">Blocáilte</string>
     <string name="sources_management_metadata_unavailable">Meiteashonraí N/B</string>
+    <string name="sources_management_bundle_missing_badge">Ní híoslódáilte</string>
     <string name="sources_management_metadata_unavailable_hint">Níl an cianchomhad meiteashonraí ar fáil. Oibríonn paistí leis an mbeart suiteáilte fós, ach tá uath-nuashonrú díchumasaithe don fhoinse seo</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Níorbh fhéidir an pacáiste paiste a íoslódáil. B’fhéidir go bhfuil an URL foinse mícheart nó nach bhfuil an comhad ann.</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">Níorbh fhéidir an pacáiste paiste a íoslódáil. D’fhéadfadh sé go bhfuil an URL foinse mícheart, nó nach bhfuil an comhad ann. Beartaigh air chun é a athrú.</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Nuashonruithe do %s</string>
     <string name="sources_dialog_url_valid">URL bailí stórais nó JSON</string>
-    <string name="sources_dialog_url_invalid">Ní mór don URL pointeáil chuig stór GitHub/GitLab nó comhad .json</string>
+    <string name="sources_dialog_url_invalid">Ní mór don URL pointeáil chuig stór GitHub, GitLab nó Codeberg nó comhad .json</string>
     <string name="sources_dialog_preinstalled">Réamhshuiteáilte</string>
     <string name="sources_dialog_community">Paistí pobail</string>
     <string name="sources_dialog_choose_apps">Roghnaigh aipeanna</string>
@@ -772,6 +773,8 @@ Scriosfaidh díshuiteáil gach sonraí aip go buan."</string>
     <!-- Mini-games -->
     <string name="mini_games">Mion-chluichí</string>
     <string name="mini_games_description">Cluichí gasta chun nóiméad saor a chaitheamh</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">Cluichí</string>
     <string name="mini_game_score">Scór %s</string>
     <string name="mini_game_best">Is Fearr %s</string>
     <string name="mini_game_new_record">Taifead nua!</string>
@@ -1564,6 +1567,7 @@ Sonraí: %2$s"</string>
     <string name="changelog_show_all">Taispeáin go léir (%s)</string>
     <string name="changelog_show_less">Taispeáin níos lú</string>
     <string name="no_network_toast">Níl aon nasc idirlín ar fáil</string>
+    <string name="download_waiting_for_network">Ag fanacht ar an líonra</string>
     <string name="update_available">Tá nuashonrú ar fáil</string>
     <string name="ready_to_install_update">Réidh le nuashonrú a shuiteáil</string>
     <string name="update_completed">Nuashonrú suiteáilte</string>

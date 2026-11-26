@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">Aquesta font de pegats està bloquejada i no es pot afegir</string>
     <string name="sources_management_source_blocked_badge">Bloquejat</string>
     <string name="sources_management_metadata_unavailable">Metadades N/A</string>
+    <string name="sources_management_bundle_missing_badge">No descarregat</string>
     <string name="sources_management_metadata_unavailable_hint">El fitxer de metadades remot no està disponible. El pegat amb el paquet instal·lat segueix funcionant, però l\'actualització automàtica està desactivada per a aquesta font</string>
     <string name="sources_management_metadata_unavailable_hint_missing">No s\'ha pogut descarregar el paquet del pegat. La URL de la font pot ser incorrecta o el fitxer no existeix</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">No s\'ha pogut descarregar el paquet de patxes. És possible que l\'URL d\'origen sigui incorrecte o que el fitxer no existeixi. Toca per canviar-lo</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Actualitzacions de %s</string>
     <string name="sources_dialog_url_valid">URL de repositori o JSON vàlida</string>
-    <string name="sources_dialog_url_invalid">La URL ha d\'apuntar a un repo de GitHub/GitLab o a un fitxer .json</string>
+    <string name="sources_dialog_url_invalid">La URL ha d\'apuntar a un repo de GitHub, GitLab o Codeberg o a un fitxer .json</string>
     <string name="sources_dialog_preinstalled">Preinstal·lada</string>
     <string name="sources_dialog_community">Pegats de la comunitat</string>
     <string name="sources_dialog_choose_apps">Tria aplicacions</string>
@@ -772,6 +773,8 @@ Desinstal·lar-la esborrarà permanentment totes les dades de l'aplicació"</str
     <!-- Mini-games -->
     <string name="mini_games">Minijocs</string>
     <string name="mini_games_description">Jocs ràpids per passar un minut lliure</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">Jocs</string>
     <string name="mini_game_score">Puntuació %s</string>
     <string name="mini_game_best">Millor %s</string>
     <string name="mini_game_new_record">Nou rècord!</string>
@@ -1566,6 +1569,7 @@ Detalls: %2$s"</string>
     <string name="changelog_show_all">Mostra tots (%s)</string>
     <string name="changelog_show_less">Mostra menys</string>
     <string name="no_network_toast">No hi ha connexió a internet disponible</string>
+    <string name="download_waiting_for_network">Esperant la xarxa</string>
     <string name="update_available">Hi ha una actualització disponible</string>
     <string name="ready_to_install_update">Preparada per instal·lar l\'actualització</string>
     <string name="update_completed">Actualització instal·lada</string>

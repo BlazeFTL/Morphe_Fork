@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">यह पैच स्रोत अवरुद्ध है और इसे नहीं जोड़ा जा सकता</string>
     <string name="sources_management_source_blocked_badge">अवरुद्ध</string>
     <string name="sources_management_metadata_unavailable">मेटाडेटा उपलब्ध नहीं है</string>
+    <string name="sources_management_bundle_missing_badge">डाउनलोड नहीं किया गया</string>
     <string name="sources_management_metadata_unavailable_hint">रिमोट मेटाडेटा फ़ाइल अनुपलब्ध है। स्थापित बंडल के साथ पैचिंग अभी भी काम करती है, लेकिन इस स्रोत के लिए ऑटो-अपडेट अक्षम कर दिया गया है</string>
     <string name="sources_management_metadata_unavailable_hint_missing">पैच बंडल डाउनलोड नहीं किया जा सका। स्रोत URL गलत हो सकता है या फ़ाइल मौजूद नहीं है</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">पैच बंडल डाउनलोड नहीं किया जा सका। स्रोत URL गलत हो सकता है या फ़ाइल मौजूद नहीं है। इसे बदलने के लिए टैप करें</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">%s को अपडेट करता है</string>
     <string name="sources_dialog_url_valid">मान्य रिपॉजिटरी या JSON URL</string>
-    <string name="sources_dialog_url_invalid">URL GitHub/GitLab रिपो या .json फ़ाइल की ओर इंगित करना चाहिए</string>
+    <string name="sources_dialog_url_invalid">URL को GitHub, GitLab या Codeberg रेपो या .json फ़ाइल की ओर इशारा करना चाहिए</string>
     <string name="sources_dialog_preinstalled">पूर्व-स्थापित</string>
     <string name="sources_dialog_community">समुदाय पैच</string>
     <string name="sources_dialog_choose_apps">ऐप्स चुनें</string>
@@ -772,6 +773,8 @@
     <!-- Mini-games -->
     <string name="mini_games">मिनी-गेम्स</string>
     <string name="mini_games_description">खाली समय बिताने के लिए त्वरित गेम</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">गेम्स</string>
     <string name="mini_game_score">स्कोर %s</string>
     <string name="mini_game_best">सर्वश्रेष्ठ %s</string>
     <string name="mini_game_new_record">नया रिकॉर्ड!</string>
@@ -1566,6 +1569,7 @@ morphe_header_custom_dark.png
     <string name="changelog_show_all">सभी दिखाएँ (%s)</string>
     <string name="changelog_show_less">कम दिखाएँ</string>
     <string name="no_network_toast">इंटरनेट कनेक्शन उपलब्ध नहीं है</string>
+    <string name="download_waiting_for_network">नेटवर्क का इंतज़ार है</string>
     <string name="update_available">एक अपडेट उपलब्ध है</string>
     <string name="ready_to_install_update">अपडेट इंस्टॉल करने के लिए तैयार</string>
     <string name="update_completed">अपडेट इंस्टॉल हो गया</string>

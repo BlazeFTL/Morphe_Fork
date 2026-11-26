@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">Гэтая крыніца патча заблакавана і не можа быць дададзена.</string>
     <string name="sources_management_source_blocked_badge">Заблакавана</string>
     <string name="sources_management_metadata_unavailable">Метаданыя недаступны</string>
+    <string name="sources_management_bundle_missing_badge">Не спампавана</string>
     <string name="sources_management_metadata_unavailable_hint">Знешні файл метаданых недаступны. Патчынг з усталяваным пакетам яшчэ працуе, але аўтаматычныя абнаўленні для гэтай крыніцы адключаны</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Не ўдалося спампаваць пакет патчаў. Магчыма, URL-адрас крыніцы няправільны або файл не існуе</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">Не ўдалося спампаваць пакет патчаў. Магчыма, URL крыніцы няправільны або файл не існуе. Націсніце, каб змяніць яго</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Абнаўленні %s</string>
     <string name="sources_dialog_url_valid">Дзейны рэпазіторый або JSON URL</string>
-    <string name="sources_dialog_url_invalid">URL павінен паказваць на рэпазіторый GitHub/GitLab або файл .json</string>
+    <string name="sources_dialog_url_invalid">URL павінен паказваць на рэпазіторый GitHub, GitLab або Codeberg або файл .json</string>
     <string name="sources_dialog_preinstalled">Папярэдне ўсталяваны</string>
     <string name="sources_dialog_community">Супольнасць патчаў</string>
     <string name="sources_dialog_choose_apps">Выбраць праграмы</string>
@@ -773,6 +774,8 @@
     <!-- Mini-games -->
     <string name="mini_games">Міні-гульні</string>
     <string name="mini_games_description">Хуткі гульні, каб забіць вольную хвілінку</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">Гульні</string>
     <string name="mini_game_score">Лік %s</string>
     <string name="mini_game_best">Найлепшы вынік: %s</string>
     <string name="mini_game_new_record">Новы рэкорд!</string>
@@ -1567,6 +1570,7 @@ morphe_header_custom_dark.png
     <string name="changelog_show_all">Паказаць усё (%s)</string>
     <string name="changelog_show_less">Паказаць менш</string>
     <string name="no_network_toast">Інтэрнэт-злучэнне недаступна</string>
+    <string name="download_waiting_for_network">Чаканне сеткі</string>
     <string name="update_available">Даступна абнаўленне</string>
     <string name="ready_to_install_update">Гатова да ўсталёўкі абнаўлення</string>
     <string name="update_completed">Абнаўленне ўсталявана</string>

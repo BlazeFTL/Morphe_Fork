@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">Šis pataisų šaltinis užblokuotas ir jo negalima pridėti</string>
     <string name="sources_management_source_blocked_badge">Užblokuota</string>
     <string name="sources_management_metadata_unavailable">Metaduomenys N/A</string>
+    <string name="sources_management_bundle_missing_badge">Nusiunčiamas</string>
     <string name="sources_management_metadata_unavailable_hint">Nutolusių metaduomenų failas nepasiekiamas. Programėlė vis tiek funkcionuos su įdiegtu paketu, bet automatinis atnaujinimas šitam šaltiniui bus išjungtas</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Šaltinio paketo rinkinys nepavyko atsisiųsti. Galbūt neteisingas šaltinio URL arba failas neegzistuoja.</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">Pataisų rinkinio nepavyko atsisiųsti. Šaltinio URL gali būti neteisingas arba failo nėra. Bakstelėkite, kad jį pakeistumėte</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Atnaujina %s</string>
     <string name="sources_dialog_url_valid">Validus repozitorium arba JSON URL</string>
-    <string name="sources_dialog_url_invalid">URL turi rodyti į GitHub/GitLab repo arba .json failą</string>
+    <string name="sources_dialog_url_invalid">URL turi rodyti į GitHub, GitLab arba Codeberg repozitorijų arba .json failą</string>
     <string name="sources_dialog_preinstalled">iš anksto įdiegta</string>
     <string name="sources_dialog_community">Bendruomenės pataisos</string>
     <string name="sources_dialog_choose_apps">Pasirinkite programėles</string>
@@ -772,6 +773,8 @@ Pašalinus bus visam laikui ištrinti visi programos duomenys."</string>
     <!-- Mini-games -->
     <string name="mini_games">Mini žaidimai</string>
     <string name="mini_games_description">Greiti žaidimai, kuo galima užpildyti laisvą minutę</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">Žaidimai</string>
     <string name="mini_game_score">Rezultatas %s</string>
     <string name="mini_game_best">Geriausias %s</string>
     <string name="mini_game_new_record">Naujas rekordas!</string>
@@ -1566,6 +1569,7 @@ Išsami informacija: %2$s"</string>
     <string name="changelog_show_all">Rodyti visus (%s)</string>
     <string name="changelog_show_less">Rodyti mažiau</string>
     <string name="no_network_toast">Nėra interneto ryšio</string>
+    <string name="download_waiting_for_network">Laukiama tinklo</string>
     <string name="update_available">Yra naujinimas</string>
     <string name="ready_to_install_update">Naujinimas paruoštas diegimui</string>
     <string name="update_completed">Naujinimas įdiegtas</string>

@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">این منبع پچ مسدود شده و نمی‌توان آن را اضافه کرد</string>
     <string name="sources_management_source_blocked_badge">مسدودشده</string>
     <string name="sources_management_metadata_unavailable">فراداده در دسترس نیست</string>
+    <string name="sources_management_bundle_missing_badge">دانلود نشده است</string>
     <string name="sources_management_metadata_unavailable_hint">فایل فرادادهٔ راه دور در دسترس نیست. پچ‌کردن با بستهٔ نصب‌شده همچنان کار می‌کند، اما به‌روزرسانی خودکار برای این منبع غیرفعال است</string>
     <string name="sources_management_metadata_unavailable_hint_missing">بستهٔ پچ قابل دانلود نیست. ممکن است نشانی منبع نادرست باشد یا فایل وجود نداشته باشد</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">بستهٔ پچ قابل دانلود نیست. ممکن است نشانی منبع نادرست باشد یا فایل وجود نداشته باشد. برای تغییر آن ضربه بزنید</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">به‌روزرسانی %s</string>
     <string name="sources_dialog_url_valid">نشانی اینترنتی معتبر مخزن یا JSON</string>
-    <string name="sources_dialog_url_invalid">نشانی اینترنتی باید به یک مخزن GitHub/GitLab یا فایل .json اشاره کند</string>
+    <string name="sources_dialog_url_invalid">نشانی اینترنتی باید به یک مخزن GitHub، GitLab یا Codeberg یا یک فایل .json اشاره کند</string>
     <string name="sources_dialog_preinstalled">پیش نصب شده</string>
     <string name="sources_dialog_community">پچ‌های جامعه</string>
     <string name="sources_dialog_choose_apps">انتخاب اپلیکیشن‌ها</string>
@@ -772,6 +773,8 @@
     <!-- Mini-games -->
     <string name="mini_games">مینی‌گیم‌ها</string>
     <string name="mini_games_description">بازی‌های سریع برای پر کردن زمان‌های کوتاه</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">بازی‌ها</string>
     <string name="mini_game_score">امتیاز %s</string>
     <string name="mini_game_best">بهترین %s</string>
     <string name="mini_game_new_record">رکورد جدید!</string>
@@ -1568,6 +1571,7 @@ adb shell appops set %1$s MANAGE_EXTERNAL_STORAGE allow</string>
     <string name="changelog_show_all">نمایش همه (%s)</string>
     <string name="changelog_show_less">نمایش کمتر</string>
     <string name="no_network_toast">اتصال اینترنتی در دسترس نیست</string>
+    <string name="download_waiting_for_network">در انتظار شبکه</string>
     <string name="update_available">به‌روزرسانی در دسترس است</string>
     <string name="ready_to_install_update">به‌روزرسانی آمادهٔ نصب است</string>
     <string name="update_completed">به‌روزرسانی نصب شد</string>

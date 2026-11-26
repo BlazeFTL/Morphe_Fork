@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">এই পেচৰ উৎসটো বাৰিত কৰা হৈছে আৰু ইয়াক যোগ কৰিব নোৱাৰি</string>
     <string name="sources_management_source_blocked_badge">বাৰিত</string>
     <string name="sources_management_metadata_unavailable">মেটাডেটা উপলব্ধ নহয়</string>
+    <string name="sources_management_bundle_missing_badge">ডাউনলোড কৰা হোৱা নাই</string>
     <string name="sources_management_metadata_unavailable_hint">ৰিমোট মেটাডেটা ফাইলটো উপলব্ধ নহয়। সংস্থাপন কৰা বান্ডেলৰ সৈতে পেচিং কৰাটো আজিও কাম কৰিব, কিন্তু এই উৎসটোৰ বাবে অটো-আপডেট নিষ্ক্ৰীয় কৰা হৈছে</string>
     <string name="sources_management_metadata_unavailable_hint_missing">পেচ বান্ডেলটো ডাউনলোড কৰিব পৰা নগ\'ল। উৎস URL টো ভুল হ\'ব পাৰে বা ফাইলটো বিদ্যমান নাই</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">পাচ বান্ডিলটো ডাউনলোড কৰিব পৰা নগ’ল। উৎস URL টো ভুল হ’ব পাৰে বা ফাইলটো বিদ্যমান নাই। ইয়াৰ পৰিবৰ্তন কৰিবলৈ টেপ কৰক</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">আপডেট %s</string>
     <string name="sources_dialog_url_valid">বৈধ ৰিপজিটৰী বা JSON URL</string>
-    <string name="sources_dialog_url_invalid">URL-টো অবশ্যই এটা GitHub/GitLab ৰিপোজিটৰী বা .json ফাইলৰ দিশে নিৰ্দেশিত হ\'ব লাগিব</string>
+    <string name="sources_dialog_url_invalid">URL-টো এটা GitHub, GitLab বা Codeberg repo অথবা .json ফাইলৰ ফালে নিৰ্দেশ কৰিব লাগিব</string>
     <string name="sources_dialog_preinstalled">পূৰ্ব-প্ৰতিষ্ঠিত</string>
     <string name="sources_dialog_community">কমিউনিটি পেচবোৰ</string>
     <string name="sources_dialog_choose_apps">এপবোৰ বাছনি কৰক</string>
@@ -772,6 +773,8 @@
     <!-- Mini-games -->
     <string name="mini_games">মিনি-গেমছ</string>
     <string name="mini_games_description">খালী সময় কটাকটি কৰিবলৈ কিছু কম সময়ৰ গেম</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">খেলসমূহ</string>
     <string name="mini_game_score">স্কৰ %s</string>
     <string name="mini_game_best">শ্ৰেষ্ঠ %s</string>
     <string name="mini_game_new_record">নতুন ৰেকৰ্ড!</string>
@@ -1566,6 +1569,7 @@ morphe_header_custom_dark.png
     <string name="changelog_show_all">সকলো দেখুৱাওক (%s)</string>
     <string name="changelog_show_less">কম দেখুৱাওক</string>
     <string name="no_network_toast">কোনো ইণ্টাৰনেট সংযোগ উপলব্ধ নহয়</string>
+    <string name="download_waiting_for_network">নেটৱৰ্কৰ বাবে অপেক্ষা কৰিছে</string>
     <string name="update_available">এটা আপডেট উপলব্ধ হৈছে</string>
     <string name="ready_to_install_update">আপডেট ইনষ্টল কৰিবলৈ সাজু</string>
     <string name="update_completed">আপডেট ইনষ্টল হৈছে</string>

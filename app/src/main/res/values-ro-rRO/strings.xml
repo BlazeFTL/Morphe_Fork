@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">Această sursă de patch este blocată și nu poate fi adăugată</string>
     <string name="sources_management_source_blocked_badge">Blocată</string>
     <string name="sources_management_metadata_unavailable">Metadate indisponibile</string>
+    <string name="sources_management_bundle_missing_badge">Nedescărcat</string>
     <string name="sources_management_metadata_unavailable_hint">Fișierul de metadate de la distanță nu este disponibil. Aplicarea pachetului instalat funcționează în continuare, dar actualizarea automată este dezactivată pentru această sursă</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Pachetul de patch-uri nu a putut fi descărcat. URL-ul sursei poate fi incorect sau fișierul nu există</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">Pachetul de patch-uri nu a putut fi descărcat. URL-ul sursei ar putea fi incorect sau fișierul nu există. Apasă pentru a-l schimba</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Actualizează %s</string>
     <string name="sources_dialog_url_valid">URL valid al depozitului sau JSON</string>
-    <string name="sources_dialog_url_invalid">URL-ul trebuie să indice un depozit GitHub/GitLab sau un fișier .json</string>
+    <string name="sources_dialog_url_invalid">URL-ul trebuie să indice către un repo GitHub, GitLab sau Codeberg sau către un fișier .json</string>
     <string name="sources_dialog_preinstalled">Preinstalate</string>
     <string name="sources_dialog_community">Patch-uri comunitare</string>
     <string name="sources_dialog_choose_apps">Alege aplicațiile</string>
@@ -772,6 +773,8 @@ Dezinstalarea va șterge definitiv toate datele aplicației."</string>
     <!-- Mini-games -->
     <string name="mini_games">Mini-jocuri</string>
     <string name="mini_games_description">Jocuri rapide pentru a petrece un minut liber</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">Jocuri</string>
     <string name="mini_game_score">Scor %s</string>
     <string name="mini_game_best">Cel mai bun %s</string>
     <string name="mini_game_new_record">Record nou!</string>
@@ -1566,6 +1569,7 @@ Detalii: %2$s"</string>
     <string name="changelog_show_all">Afișează toate (%s)</string>
     <string name="changelog_show_less">Afișează mai puține</string>
     <string name="no_network_toast">Nu există conexiune la internet</string>
+    <string name="download_waiting_for_network">Așteptare rețea</string>
     <string name="update_available">Este disponibilă o actualizare</string>
     <string name="ready_to_install_update">Actualizare pregătită pentru instalare</string>
     <string name="update_completed">Actualizare instalată</string>

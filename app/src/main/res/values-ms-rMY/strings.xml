@@ -201,6 +201,7 @@
     <string name="sources_management_blocked">Sumber tampalan ini disekat dan tidak boleh ditambah</string>
     <string name="sources_management_source_blocked_badge">Disekat</string>
     <string name="sources_management_metadata_unavailable">Metadata tidak tersedia</string>
+    <string name="sources_management_bundle_missing_badge">Tidak dimuat turun</string>
     <string name="sources_management_metadata_unavailable_hint">Fail metadata jauh tidak tersedia. Menampal dengan berkas terpasang masih berfungsi, tetapi kemas kini automatik dilumpuhkan untuk sumber ini</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Berkas tampalan tidak dapat dimuat turun. URL sumber mungkin salah atau fail itu tidak ada</string>
     <string name="sources_management_metadata_unavailable_hint_missing_editable">Fail tampalan tidak dapat dimuat turun. URL sumber mungkin salah atau fail itu tidak wujud. Ketik untuk mengubahnya</string>
@@ -232,7 +233,7 @@
     <!-- %s is the name of the local source that another version of the same bundle replaces -->
     <string name="sources_dialog_local_updates">Mengemas kini %s</string>
     <string name="sources_dialog_url_valid">Repositori atau URL JSON yang sah</string>
-    <string name="sources_dialog_url_invalid">URL mestilah menghala ke repositori GitHub/GitLab atau fail .json</string>
+    <string name="sources_dialog_url_invalid">URL mestilah menghala ke repositori GitHub, GitLab atau Codeberg atau fail .json</string>
     <string name="sources_dialog_preinstalled">Prapasang</string>
     <string name="sources_dialog_community">Tampalan komuniti</string>
     <string name="sources_dialog_choose_apps">Pilih aplikasi</string>
@@ -773,6 +774,8 @@ Nyahpasang akan memadam semua data aplikasi secara kekal"</string>
     <!-- Mini-games -->
     <string name="mini_games">Permainan mini</string>
     <string name="mini_games_description">Permainan pantas untuk mengisi masa lapang</string>
+    <!-- Short label of the patcher button that opens the mini-games, shared with Cancel and Copy in one row -->
+    <string name="mini_games_short">Permainan</string>
     <string name="mini_game_score">Markah %s</string>
     <string name="mini_game_best">Terbaik %s</string>
     <string name="mini_game_new_record">Rekod baharu!</string>
@@ -1567,6 +1570,7 @@ Butiran: %2$s"</string>
     <string name="changelog_show_all">Paparkan semua (%s)</string>
     <string name="changelog_show_less">Paparkan kurang</string>
     <string name="no_network_toast">Tiada sambungan internet tersedia</string>
+    <string name="download_waiting_for_network">Menunggu rangkaian</string>
     <string name="update_available">Kemas kini tersedia</string>
     <string name="ready_to_install_update">Sedia untuk memasang kemas kini</string>
     <string name="update_completed">Kemas kini dipasang</string>
