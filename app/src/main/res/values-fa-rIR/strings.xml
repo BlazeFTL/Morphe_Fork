@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">این منبع غیرفعال است. پچ‌های آن فقط برای مرجع فهرست شده‌اند و اعمال نمی‌شوند</string>
     <string name="sources_management_open_in_browser">باز کردن در مرورگر</string>
     <string name="sources_management_report_issue">گزارش مشکل</string>
+    <string name="sources_management_export_patches">صادر کردن فایل پچ‌ها</string>
+    <string name="sources_management_export_patches_success">فایل پچ‌ها ذخیره شد</string>
+    <string name="sources_management_export_patches_failed">صادر کردن فایل پچ‌ها ناموفق بود</string>
     <string name="sources_management_failed_to_open_url">بازکردن نشانی اینترنتی ناموفق بود</string>
     <string name="sources_apps">برنامه‌ها</string>
     <string name="sources_apps_description">برنامه‌های علامت‌گذاری شده از این منبع می‌آیند. برای حذف یا بازگرداندن یک برنامه روی آن ضربه بزنید و برای مشاهده پچ‌های آن، آن را بکشید. برنامه‌ای که منبعی نداشته باشد از صفحه اصلی حذف می‌شود، مگر اینکه آن را پچ کرده باشید</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">نام نمایشی</string>
     <string name="sources_dialog_rename">تغییر نام منبع پچ</string>
+    <string name="sources_dialog_renamed">نام به %s تغییر یافت</string>
     <string name="sources_dialog_change_url">تغییر محل دانلود منبع پچ</string>
     <string name="sources_dialog_duplicate_name_error">یک منبع پچ با این نام قبلا وجود دارد</string>
     <string name="sources_dialog_missing_error">نتوانستم منبع این پچ را به روزرسانی کنم</string>
@@ -373,6 +377,11 @@
     <string name="home_invalid_signature_title">تأییدنشده APK</string>
     <string name="home_invalid_signature_message">فایل APK که برای &lt;b&gt;%s&lt;/b&gt; انتخاب کرده‌اید، با گواهی امضای موردانتظار مطابقت ندارد. ممکن است این فایل APK نسخهٔ اصلی نباشد.</string>
     <string name="home_invalid_signature_badge">ممکن است این APK نسخه اصلی نباشد</string>
+    <string name="home_invalid_signature_broken_message">فایل APK انتخاب‌شده برای &lt;b&gt;%s&lt;/b&gt; در بررسی امضا شکست خورد. احتمالا این فایل آسیب دیده یا هنوز به‌طور کامل دانلود نشده است، بنابراین دوباره آن را دانلود کنید یا فایل دیگری را انتخاب کنید</string>
+    <string name="home_invalid_signature_broken_badge">این APK ممکن است آسیب دیده یا ناقص باشد</string>
+    <string name="home_invalid_signature_expected">گواهینامه مورد انتظار</string>
+    <string name="home_invalid_signature_actual">گواهینامه APK</string>
+    <string name="home_invalid_signature_none">امضای معتبری یافت نشد</string>
     <string name="home_split_apk_warning_title">برنامه تقسیم‌شده شناسایی شد</string>
     <string name="home_split_apk_warning_message">"این فایل یک باندل APK است
 (&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).

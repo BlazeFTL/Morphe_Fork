@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">מקור זה מושבת. התיקונים שלו מופיעים לעיון ואינם מיושמים</string>
     <string name="sources_management_open_in_browser">פתח בדפדפן</string>
     <string name="sources_management_report_issue">דווח על בעיה</string>
+    <string name="sources_management_export_patches">ייצוא קובץ תיקונים</string>
+    <string name="sources_management_export_patches_success">קובץ התיקונים נשמר</string>
+    <string name="sources_management_export_patches_failed">ייצוא קובץ התיקונים נכשל</string>
     <string name="sources_management_failed_to_open_url">כישלון בפתיחת כתובת אינטרנט</string>
     <string name="sources_apps">אפליקציות</string>
     <string name="sources_apps_description">אפליקציות מסומנות מגיעות ממקור זה. הקישו על אפליקציה כדי להוציא אותה או להחזירה, והחליקו אותה כדי לראות את התיקונים שלה. אפליקציה ללא מקור המביא אותה תעזוב את המסך הביתי, אלא אם תיקנתם אותה</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">הצג שם</string>
     <string name="sources_dialog_rename">שנה את שם מקור התיקונים</string>
+    <string name="sources_dialog_renamed">שונה ל-%s</string>
     <string name="sources_dialog_change_url">שנה את מקור ההורדה של התיקונים</string>
     <string name="sources_dialog_duplicate_name_error">יש כבר מקור תיקונים עם שם זה</string>
     <string name="sources_dialog_missing_error">עדכון מקור התיקונים הזה נכשל</string>
@@ -373,6 +377,11 @@
     <string name="home_invalid_signature_title">APK לא מאומת</string>
     <string name="home_invalid_signature_message">ה-APK שבחרת עבור &lt;b&gt;%s&lt;/b&gt; אינו תואם לתעודת החתימה הצפויה. ייתכן שהוא שונה או ממקור לא מהימן</string>
     <string name="home_invalid_signature_badge">ייתכן שה-APK הזה אינו המקורי</string>
+    <string name="home_invalid_signature_broken_message">ה-APK שבחרת עבור &lt;b&gt;%s&lt;/b&gt; נכשל בבדיקת החתימה שלו. הוא כנראה פגום או שטרם ירד במלואו, לכן הורד אותו שוב או בחר קובץ אחר</string>
+    <string name="home_invalid_signature_broken_badge">ייתכן ש-APK זה פגום או אינו שלם</string>
+    <string name="home_invalid_signature_expected">אישור צפוי</string>
+    <string name="home_invalid_signature_actual">אישור של ה-APK</string>
+    <string name="home_invalid_signature_none">אין חתימה תקפה</string>
     <string name="home_split_apk_warning_title">APK מפולח זוהה</string>
     <string name="home_split_apk_warning_message">"קובץ זה הוא חבילת APK
 (&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).

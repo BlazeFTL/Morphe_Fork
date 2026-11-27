@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">Questa fonte è disabilitata. Le sue patch sono elencate come riferimento e non vengono applicate</string>
     <string name="sources_management_open_in_browser">Apri nel browser</string>
     <string name="sources_management_report_issue">Segnala un problema</string>
+    <string name="sources_management_export_patches">Esporta file patch</string>
+    <string name="sources_management_export_patches_success">File patch salvato</string>
+    <string name="sources_management_export_patches_failed">Impossibile esportare il file patch</string>
     <string name="sources_management_failed_to_open_url">Impossibile aprire l’URL</string>
     <string name="sources_apps">App</string>
     <string name="sources_apps_description">Le app selezionate provengono da questa sorgente. Tocca un\'app per escluderla o riaggiungerla, scorrila per vedere le sue patch. Un\'app senza sorgente lascia la schermata home, a meno che non sia stata patchata</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Nome visualizzato</string>
     <string name="sources_dialog_rename">Rinomina la fonte</string>
+    <string name="sources_dialog_renamed">Rinominato in %s</string>
     <string name="sources_dialog_change_url">Cambia l\'indirizzo di download della sorgente della patch</string>
     <string name="sources_dialog_duplicate_name_error">Esiste già una fonte delle patch con questo nome</string>
     <string name="sources_dialog_missing_error">Impossibile aggiornare questa fonte delle patch</string>
@@ -373,6 +377,11 @@ Scegli da dove scaricare l'APK."</string>
     <string name="home_invalid_signature_title">APK non verificato</string>
     <string name="home_invalid_signature_message">L\'APK selezionato per &lt;b&gt;%s&lt;/b&gt; non corrisponde al certificato di firma previsto. Potrebbe essere stato modificato o provenire da una fonte non attendibile</string>
     <string name="home_invalid_signature_badge">Questo APK potrebbe non essere l\'originale</string>
+    <string name="home_invalid_signature_broken_message">L\'APK selezionato per &lt;b&gt;%s&lt;/b&gt; non supera il controllo della firma. Probabilmente è danneggiato o non è stato scaricato completamente, quindi scaricalo di nuovo o scegli un altro file</string>
+    <string name="home_invalid_signature_broken_badge">Questo APK potrebbe essere danneggiato o incompleto</string>
+    <string name="home_invalid_signature_expected">Certificato previsto</string>
+    <string name="home_invalid_signature_actual">Certificato dell\'APK</string>
+    <string name="home_invalid_signature_none">Nessuna firma valida</string>
     <string name="home_split_apk_warning_title">Rilevato APK diviso</string>
     <string name="home_split_apk_warning_message">"Questo file è un APK bundle
 (&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).

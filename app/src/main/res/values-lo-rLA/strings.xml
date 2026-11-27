@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">ແຫຼ່ງທີ່ມານີ້ຖືກປິດໃຊ້ງານ. ແພັດຊ໌ຂອງມັນຖືກລາຍຊື່ໄວ້ເພື່ອອ້າງອີງ ແລະ ຈະບໍ່ຖືກນຳໃຊ້</string>
     <string name="sources_management_open_in_browser">ເປີດໃນບຣາວເຊີ</string>
     <string name="sources_management_report_issue">ລາຍງານບັນຫາ</string>
+    <string name="sources_management_export_patches">ສົ່ງອອກໄຟລ໌ patches</string>
+    <string name="sources_management_export_patches_success">ບັນທຶກໄຟລ໌ patches ແລ້ວ</string>
+    <string name="sources_management_export_patches_failed">ສົ່ງອອກໄຟລ໌ patches ບໍ່ສຳເລັດ</string>
     <string name="sources_management_failed_to_open_url">ເປີດ URL ລົ້ມເຫຼວ</string>
     <string name="sources_apps">ແອັບ</string>
     <string name="sources_apps_description">ແອັບທີ່ຖືກໝາຍແມ່ນມາຈາກແຫຼ່ງນີ້. ແຕະແອັບເພື່ອເອົາມັນອອກ ຫຼື ນຳມັນກັບຄືນມາ, ປັດມັນເພື່ອເບິ່ງການປັບປຸງຂອງມັນ. ແອັບທີ່ບໍ່ມີແຫຼ່ງທີ່ມາຈະອອກຈາກໜ້າຈໍຫຼັກ, ຍົກເວັ້ນວ່າທ່ານໄດ້ປັບປຸງມັນ</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">ຊື່ທີ່ສະແດງ</string>
     <string name="sources_dialog_rename">ປ່ຽນຊື່ແຫຼ່ງຊຸດແພດ</string>
+    <string name="sources_dialog_renamed">ປ່ຽນຊື່ເປັນ %s</string>
     <string name="sources_dialog_change_url">ປ່ຽນບ່ອນທີ່ດາວໂຫຼດແຫຼ່ງຂອງແພັດ</string>
     <string name="sources_dialog_duplicate_name_error">ມີແຫຼ່ງຊຸດແພດທີ່ມີຊື່ນີ້ຢູ່ແລ້ວ</string>
     <string name="sources_dialog_missing_error">ບໍ່ສາມາດອັບເດດແຫຼ່ງຊຸດແພດນີ້ໄດ້</string>
@@ -373,6 +377,11 @@
     <string name="home_invalid_signature_title">APK ທີ່ບໍ່ໄດ້ຢືນຢັນ</string>
     <string name="home_invalid_signature_message">APK ທີ່ທ່ານເລືອກສຳລັບ &lt;b&gt;%s&lt;/b&gt; ບໍ່ກົງກັບໃບຮັບຮອງການເຊັນທີ່ຄາດຫວັງ. ມັນອາດຖືກດັດແປງ ຫຼືມາຈາກແຫຼ່ງທີ່ບໍ່ໜ້າເຊື່ອຖື</string>
     <string name="home_invalid_signature_badge">APK ນີ້ອາດບໍ່ແມ່ນຕົ້ນສະບັບ</string>
+    <string name="home_invalid_signature_broken_message">APK ທີ່ທ່ານເລືອກສຳລັບ &lt;b&gt;%s&lt;/b&gt; ບໍ່ຜ່ານການກວດສອບລາຍເຊັນ. ມັນອາດຈະຖືກທຳລາຍ ຫຼື ຍັງດາວໂຫຼດບໍ່ສຳເລັດ, ດັ່ງນັ້ນ ໃຫ້ດາວໂຫຼດຄືນໃໝ່ ຫຼື ເລືອກໄຟລ໌ອື່ນ</string>
+    <string name="home_invalid_signature_broken_badge">APK ນີ້ອາດຈະຖືກທຳລາຍ ຫຼື ບໍ່ສົມບູນ</string>
+    <string name="home_invalid_signature_expected">ໃບຢັ້ງຢືນທີ່ຄາດໄວ້</string>
+    <string name="home_invalid_signature_actual">ໃບຢັ້ງຢືນຂອງ APK</string>
+    <string name="home_invalid_signature_none">ບໍ່ມີລາຍເຊັນທີ່ຖືກຕ້ອງ</string>
     <string name="home_split_apk_warning_title">ພົບ split APK</string>
     <string name="home_split_apk_warning_message">"ໄຟລ໌ນີ້ແມ່ນຊຸດ APK
 (&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).

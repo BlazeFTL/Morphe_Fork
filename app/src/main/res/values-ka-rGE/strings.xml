@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">ეს წყარო გათიშულია. მისი პატჩები ჩამოთვლილია მხოლოდ საინფორმაციოდ და არ გამოიყენება</string>
     <string name="sources_management_open_in_browser">გახსენით ბრაუზერში</string>
     <string name="sources_management_report_issue">პრობლემის შეტყობინება</string>
+    <string name="sources_management_export_patches">პატჩების ფაილის ექსპორტი</string>
+    <string name="sources_management_export_patches_success">პატჩების ფაილი შენახულია</string>
+    <string name="sources_management_export_patches_failed">პატჩების ფაილის ექსპორტი ვერ მოხერხდა</string>
     <string name="sources_management_failed_to_open_url">URL-ის გახსნა ვერ მოხერხდა</string>
     <string name="sources_apps">აპლიკაციები</string>
     <string name="sources_apps_description">მონიშნული აპლიკაციები მოდის ამ წყაროდან. შეეხ impeding აპლიკაციას მის გამოსარიკვად ან დასაბრუნებლად, გადასვލეთ მის სანახავად პატჩების. აპლიკაცია, რომელსაც არ აქვს წყარო, ტოვებს მთავარ ეკრანს, თუ მას არ დააპატჩეთ</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">ჩვენების სახელი</string>
     <string name="sources_dialog_rename">გადაარქვით სახელი პატჩის წყაროს</string>
+    <string name="sources_dialog_renamed">გადარქმევა %s-ად</string>
     <string name="sources_dialog_change_url">შეცვალეთ პატჩების წყაროს ჩამოტვირთვის მისამართი</string>
     <string name="sources_dialog_duplicate_name_error">ამ სახელის მქონე პატჩის წყარო უკვე არსებობს</string>
     <string name="sources_dialog_missing_error">ამ პატჩის წყაროს განახლება ვერ მოხერხდა</string>
@@ -373,6 +377,11 @@
     <string name="home_invalid_signature_title">უვერიფიცირებელი APK</string>
     <string name="home_invalid_signature_message">&lt;b&gt;%s&lt;/b&gt;-ისთვის არჩეული APK არ შეესაბამება მოსალოდნელ ხელმოწერის სერტიფიკატს. შესაძლოა იგი იყოს შეცვლილი ან მოდიფიცირებული არასანდო წყაროდან</string>
     <string name="home_invalid_signature_badge">ეს APK შესაძლოა არ იყოს ორიგინალი</string>
+    <string name="home_invalid_signature_broken_message">&lt;b&gt;%s&lt;/b&gt;თვის თქვენ მიერ არჩეულ APK-ს ხელმოწერის შემოწმება ვერ მოხერხდა. ის სავარაუდოდ დაზიანებულია ან ჯერ კიდევ არ არის სრულად ჩამოტვირთული, ამიტომ ჩამოტვირთეთ ის ხელახლა ან აირჩიეთ სხვა ფაილი</string>
+    <string name="home_invalid_signature_broken_badge">ეს APK შესაძლოა იყოს დაზიანებული ან არასრული</string>
+    <string name="home_invalid_signature_expected">მოსალოდნელი სერტიფიკატი</string>
+    <string name="home_invalid_signature_actual">APK-ს სერტიფიკატი</string>
+    <string name="home_invalid_signature_none">ვალიდური ხელმოწერა არ მოიძებნა</string>
     <string name="home_split_apk_warning_title">აღმოჩენილია Split APK</string>
     <string name="home_split_apk_warning_message">"ეს ფაილი არის APK ბანდლი
 (&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).

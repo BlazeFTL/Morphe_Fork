@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">Tento zdroj je vypnutý. Jeho záplaty jsou uvedeny pouze pro informaci a nejsou aplikovány</string>
     <string name="sources_management_open_in_browser">Otevřít v prohlížeči</string>
     <string name="sources_management_report_issue">Nahlásit problém</string>
+    <string name="sources_management_export_patches">Exportovat soubor záplat</string>
+    <string name="sources_management_export_patches_success">Soubor záplat byl uložen</string>
+    <string name="sources_management_export_patches_failed">Export souboru záplat se nezdařil</string>
     <string name="sources_management_failed_to_open_url">Nepodařilo se otevřít URL</string>
     <string name="sources_apps">Aplikace</string>
     <string name="sources_apps_description">Aplikace z tohoto zdroje mají zaškrtnutá pole. Klepnutím na aplikaci ji můžete vyloučit nebo znovu zahrnout, svisovným posunutím u ní uvidíte její záplaty. Aplikace zmizí z domovské obrazovky, jakmile ji žádný zdroj nepřináší, pokud jste ji nezáplatovali</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Zobrazit název</string>
     <string name="sources_dialog_rename">Přejmenovat zdroj záplat</string>
+    <string name="sources_dialog_renamed">Přejmenováno na %s</string>
     <string name="sources_dialog_change_url">Změnit místo stahování zdroje záplat</string>
     <string name="sources_dialog_duplicate_name_error">Zdroj záplat s tímto názvem již existuje</string>
     <string name="sources_dialog_missing_error">Nepodařilo se aktualizovat tento zdroj záplat</string>
@@ -373,6 +377,11 @@ Vyberte, odkud vzít její APK"</string>
     <string name="home_invalid_signature_title">Neověřené APK</string>
     <string name="home_invalid_signature_message">APK, který jste vybrali pro &lt;b&gt;%s&lt;/b&gt;, neodpovídá očekávanému podpisovému certifikátu. Může být upravený nebo z nedůvěryhodného zdroje</string>
     <string name="home_invalid_signature_badge">Toto APK nemusí být originální</string>
+    <string name="home_invalid_signature_broken_message">APK, kterou jste vybrali pro &lt;b&gt;%s&lt;/b&gt;, neprošla kontrolou podpisu. Pravděpodobně je poškozený nebo nebyl plně stažen, zkuste jej tedy stáhnout znovu nebo vybrat jiný soubor</string>
+    <string name="home_invalid_signature_broken_badge">Tento APK může být poškozený nebo neúplný</string>
+    <string name="home_invalid_signature_expected">Očekávaný certifikát</string>
+    <string name="home_invalid_signature_actual">Certifikát APK</string>
+    <string name="home_invalid_signature_none">Žádný platný podpis</string>
     <string name="home_split_apk_warning_title">Rozdělené APK detekováno</string>
     <string name="home_split_apk_warning_message">"Tento soubor je APK balíček
 (&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).

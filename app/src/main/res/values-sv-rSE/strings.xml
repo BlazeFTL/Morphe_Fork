@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">Den här källan är inaktiverad. Dess tillägg listas som referens och tillämpas inte</string>
     <string name="sources_management_open_in_browser">Öppna i webbläsare</string>
     <string name="sources_management_report_issue">Rapportera ett problem</string>
+    <string name="sources_management_export_patches">Exportera patch-fil</string>
+    <string name="sources_management_export_patches_success">Patch-fil sparad</string>
+    <string name="sources_management_export_patches_failed">Misslyckades med att exportera patch-fil</string>
     <string name="sources_management_failed_to_open_url">Det gick inte att öppna webbadressen</string>
     <string name="sources_apps">Appar</string>
     <string name="sources_apps_description">De markerade apparna kommer från den här källan. Tryck på en app för att utesluta den eller inkludera den igen, svep på den för att se dess modifieringar. En app tas bort från startskärmen om ingen källa inkluderar den, förutom om du har modifierat den</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Visningsnamn</string>
     <string name="sources_dialog_rename">Byt namn på tilläggskällan</string>
+    <string name="sources_dialog_renamed">Omdöpt till %s</string>
     <string name="sources_dialog_change_url">Ändra var tilläggskällan laddas ned ifrån</string>
     <string name="sources_dialog_duplicate_name_error">Det finns redan en tilläggskälla med det här namnet</string>
     <string name="sources_dialog_missing_error">Det gick inte att uppdatera den här tilläggskällan</string>
@@ -373,6 +377,11 @@ Välj var dess APK ska hämtas ifrån"</string>
     <string name="home_invalid_signature_title">Overifierad APK-fil</string>
     <string name="home_invalid_signature_message">Den APK-fil du har valt för &lt;b&gt;%s&lt;/b&gt; matchar inte det förväntade signeringscertifikatet. Den kan ha modifierats eller vara från en opålitlig källa.</string>
     <string name="home_invalid_signature_badge">Den här APK-filen kanske inte är den ursprungliga</string>
+    <string name="home_invalid_signature_broken_message">Den APK som du valde för &lt;b&gt;%s&lt;/b&gt; misslyckas med sin signaturkontroll. Den är förmodligen skadad eller har inte laddats ner helt ännu, så ladda ner den igen eller välj en annan fil</string>
+    <string name="home_invalid_signature_broken_badge">Denna APK kan vara skadad eller ofullständig</string>
+    <string name="home_invalid_signature_expected">Förväntat certifikat</string>
+    <string name="home_invalid_signature_actual">APK-certifikat</string>
+    <string name="home_invalid_signature_none">Ingen giltig signatur</string>
     <string name="home_split_apk_warning_title">Delad APK-fil upptäckt</string>
     <string name="home_split_apk_warning_message">"Den här filen är ett APK-arkiv
 (&lt;b&gt;APKM/APKS/XAPK&lt;/b&gt;). 

@@ -35,6 +35,7 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import java.io.File
 import java.io.IOException
+import java.io.InputStream
 import java.security.MessageDigest
 
 @SuppressLint("QueryPermissionsNeeded")
@@ -405,24 +406,34 @@ private fun ByteArray.toHex(): String = joinToString("") { byte -> "%02x".format
 /** SHA-256 fingerprint of an encoded certificate, alike from the platform, the APK signer or a keystore. */
 fun ByteArray.sha256Fingerprint(): String = MessageDigest.getInstance("SHA-256").digest(this).toHex()
 
+/**
+ * A short form of a [sha256Fingerprint] for people to compare, its first 8 bytes in groups of
+ * four. The same form PatchBundleSignature.fingerprint gives a patch bundle key, which hashes
+ * the key itself first, so the two read alike side by side.
+ */
+fun shortFingerprint(fingerprint: String): String = fingerprint.take(16).chunked(4).joinToString(" ")
+
+/** Reads this stream to its end, handing each chunk to [onChunk] as it goes, and returns its SHA-256. */
+inline fun InputStream.sha256Digest(onChunk: (buffer: ByteArray, read: Int) -> Unit = { _, _ -> }): ByteArray {
+    val digest = MessageDigest.getInstance("SHA-256")
+    val buffer = ByteArray(256 * 1024)
+    while (true) {
+        val read = read(buffer)
+        if (read == -1) break
+        digest.update(buffer, 0, read)
+        onChunk(buffer, read)
+    }
+    return digest.digest()
+}
+
 /** SHA-256 of this file, or null when it cannot be read. Stops reading as soon as its caller is canceled. */
 suspend fun File.sha256OrNull(): String? {
     if (!isFile) return null
-    val digest = MessageDigest.getInstance("SHA-256")
-    try {
-        inputStream().use { input ->
-            val buffer = ByteArray(DEFAULT_BUFFER_SIZE)
-            while (true) {
-                currentCoroutineContext().ensureActive()
-                val read = input.read(buffer)
-                if (read < 0) break
-                digest.update(buffer, 0, read)
-            }
-        }
+    return try {
+        inputStream().use { input -> input.sha256Digest { _, _ -> currentCoroutineContext().ensureActive() } }.toHex()
     } catch (_: IOException) {
-        return null
+        null
     }
-    return digest.digest().toHex()
 }
 
 /** Opens the system screen that lets the user grant the "install unknown apps" permission. */

@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">Deze bron is uitgeschakeld. De patches ervan worden ter referentie weergegeven en worden niet toegepast.</string>
     <string name="sources_management_open_in_browser">Openen in browser</string>
     <string name="sources_management_report_issue">Een probleem melden</string>
+    <string name="sources_management_export_patches">Exporteer patches-bestand</string>
+    <string name="sources_management_export_patches_success">Patches-bestand opgeslagen</string>
+    <string name="sources_management_export_patches_failed">Kan patches-bestand niet exporteren</string>
     <string name="sources_management_failed_to_open_url">Kan URL niet openen</string>
     <string name="sources_apps">Apps</string>
     <string name="sources_apps_description">Aangevinkte apps komen uit deze bron. Tik op een app om deze weg te laten of terug te brengen, veeg over een app om de patches ervan te zien. Een app zonder bron verlaat het startscherm, tenzij je deze hebt gepatcht</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Weergavenaam</string>
     <string name="sources_dialog_rename">Patchbron hernoemen</string>
+    <string name="sources_dialog_renamed">Hernoemd naar %s</string>
     <string name="sources_dialog_change_url">Wijzig de locatie waar de patchbron wordt gedownload</string>
     <string name="sources_dialog_duplicate_name_error">Er bestaat al een patchbron met deze naam</string>
     <string name="sources_dialog_missing_error">Kon deze patchbron niet bijwerken.</string>
@@ -373,6 +377,11 @@ Kies waar de APK vandaan moet worden gehaald"</string>
     <string name="home_invalid_signature_title">Onbevestigd APK</string>
     <string name="home_invalid_signature_message">Het APK-bestand dat u hebt geselecteerd voor &lt;b&gt;%s&lt;/b&gt; komt niet overeen met het verwachte ondertekeningscertificaat. Het kan gewijzigd zijn of afkomstig zijn van een onbetrouwbare bron</string>
     <string name="home_invalid_signature_badge">Dit APK-bestand is mogelijk niet het origineel</string>
+    <string name="home_invalid_signature_broken_message">De APK die u hebt geselecteerd voor &lt;b&gt;%s&lt;/b&gt; is niet geslaagd voor de handtekeningcontrole. Deze is waarschijnlijk beschadigd of nog niet volledig gedownload, download hem dus opnieuw of kies een ander bestand</string>
+    <string name="home_invalid_signature_broken_badge">Deze APK is mogelijk beschadigd of onvolledig</string>
+    <string name="home_invalid_signature_expected">Verwacht certificaat</string>
+    <string name="home_invalid_signature_actual">Certificaat van de APK</string>
+    <string name="home_invalid_signature_none">Geen geldige handtekening</string>
     <string name="home_split_apk_warning_title">Gesplitst APK gedetecteerd</string>
     <string name="home_split_apk_warning_message">"Dit bestand is een APK-bundel
 (&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).

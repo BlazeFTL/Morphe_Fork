@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">Sumber ini dilumpuhkan. Tampalannya disenaraikan untuk rujukan dan tidak digunakan</string>
     <string name="sources_management_open_in_browser">Buka dalam pelayar web</string>
     <string name="sources_management_report_issue">Laporkan isu</string>
+    <string name="sources_management_export_patches">Eksport fail tampalan</string>
+    <string name="sources_management_export_patches_success">Fail tampalan disimpan</string>
+    <string name="sources_management_export_patches_failed">Gagal untuk mengeksport fail tampalan</string>
     <string name="sources_management_failed_to_open_url">Gagal membuka URL</string>
     <string name="sources_apps">Aplikasi</string>
     <string name="sources_apps_description">Aplikasi yang ditanda berasal dari sumber ini. Ketik aplikasi untuk mengeluarkannya atau membawanya kembali, leretkannya untuk melihat tampalannya. Aplikasi tanpa sumber akan meninggalkan skrin utama, melainkan anda telah menampalnya</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Nama paparan</string>
     <string name="sources_dialog_rename">Namakan semula sumber tampalan</string>
+    <string name="sources_dialog_renamed">Dinamakan semula kepada %s</string>
     <string name="sources_dialog_change_url">Ubah lokasi muat turun sumber tampalan</string>
     <string name="sources_dialog_duplicate_name_error">Sumber tampalan dengan nama ini sudah ada</string>
     <string name="sources_dialog_missing_error">Sumber tampalan ini tidak dapat dikemas kini</string>
@@ -373,6 +377,11 @@ Pilih dari mana untuk mengambil APK tersebut"</string>
     <string name="home_invalid_signature_title">APK tidak terverifikasi</string>
     <string name="home_invalid_signature_message">APK yang anda pilih untuk &lt;b&gt;%s&lt;/b&gt; mempunyai tanda tangan yang tidak sama dengan sertifikasi tanda tangan. Ia berkemungkinan telah di ubah suai atau dari sumber tidak boleh dipercayai</string>
     <string name="home_invalid_signature_badge">APK ini berkemungkinan adalah bukan yang asli</string>
+    <string name="home_invalid_signature_broken_message">APK yang anda pilih untuk &lt;b&gt;%s&lt;/b&gt; gagal pemeriksaan tandatangannya. Ia mungkin rosak atau belum dimuat turun sepenuhnya, jadi muat turun semula atau pilih fail lain</string>
+    <string name="home_invalid_signature_broken_badge">APK ini mungkin rosak atau tidak lengkap</string>
+    <string name="home_invalid_signature_expected">Sijil yang dijangkakan</string>
+    <string name="home_invalid_signature_actual">Sijil APK</string>
+    <string name="home_invalid_signature_none">Tiada tandatangan sah</string>
     <string name="home_split_apk_warning_title">APK terpisah dikesan</string>
     <string name="home_split_apk_warning_message">"Ini ialah bundle APK
 (&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).

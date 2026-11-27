@@ -559,8 +559,24 @@ class RootInstaller(
 
     /** Moves the staged files of [targetPaths] over them in a single call, so the switch is near instant. */
     private suspend fun commitStaged(targetPaths: Collection<String>) {
-        execute(targetPaths.joinToString(" && ") { "mv -f ${staged(it).shellQuote()} ${it.shellQuote()}" })
+        execute(targetPaths.joinToString(" && ") { commitStagedCommand(it) })
             .assertSuccess("Failed to put the module in place")
+    }
+
+    /**
+     * Moves the staged file of [targetPath] over it. Kernels before 3.18 refuse to rename over a
+     * path mounted on in any other namespace until the next boot, so the staged contents are then
+     * written into the file in place, which keeps its owner, mode and SELinux context.
+     */
+    private fun commitStagedCommand(targetPath: String): String {
+        val staging = staged(targetPath).shellQuote()
+        val target = targetPath.shellQuote()
+        return $$"""
+            { err=$(mv -f $$staging $$target 2>&1) || case "$err" in
+                *"Device or resource busy"*) cat $$staging > $$target && rm -f $$staging ;;
+                *) echo "$err" >&2; false ;;
+            esac; }
+        """.trimIndent()
     }
 
     /**
@@ -900,8 +916,8 @@ class RootInstaller(
         /** Where [installPackage] copies the APK to, a directory system_server is allowed to read. */
         private const val INSTALL_TEMP_DIR = "/data/local/tmp/morphe-install"
 
-        /** The scripts the root manager runs, which have to be executable. */
-        private val MODULE_SCRIPTS = listOf("service.sh", "post-fs-data.sh")
+        /** The scripts the root manager runs, which have to be executable. action.sh opens the app from the module list. */
+        private val MODULE_SCRIPTS = listOf("service.sh", "post-fs-data.sh", "action.sh")
         private val MODULE_FILES = MODULE_SCRIPTS + "module.prop"
         private const val STOCK_PATHS_FILE = "stock-paths.txt"
 

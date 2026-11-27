@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">এই উৎসটি অক্ষম। এর প্যাচগুলি রেফারেন্সের জন্য তালিকাভুক্ত এবং প্রয়োগ করা হয় না।</string>
     <string name="sources_management_open_in_browser">ব্রাউজারে ওপেন করুন</string>
     <string name="sources_management_report_issue">একটি সমস্যা রিপোর্ট করুন</string>
+    <string name="sources_management_export_patches">প্যাচ ফাইল এক্সপোর্ট করুন</string>
+    <string name="sources_management_export_patches_success">প্যাচ ফাইল সংরক্ষণ করা হয়েছে</string>
+    <string name="sources_management_export_patches_failed">প্যাচ ফাইল এক্সপোর্ট করতে ব্যর্থ হয়েছে</string>
     <string name="sources_management_failed_to_open_url">URL খুলতে ব্যর্থ হয়েছে</string>
     <string name="sources_apps">অ্যাপস</string>
     <string name="sources_apps_description">টিক করা অ্যাপগুলো এই সোর্স থেকে এসেছে। কোনো অ্যাপ বাদ দিতে বা পুনরায় ফিরিয়ে আনতে সেটিতে ট্যাপ করুন, এর প্যাচগুলো দেখতে সোয়াইপ করুন। সোর্সহীন অ্যাপ হোম স্ক্রিন থেকে চলে যায়, যদি না আপনি সেটিকে প্যাচ করে থাকেন</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">প্রদর্শিত নাম</string>
     <string name="sources_dialog_rename">প্যাচ সোর্সের নাম পরিবর্তন করুন</string>
+    <string name="sources_dialog_renamed">%s নামে পুনঃনামকরণ করা হয়েছে</string>
     <string name="sources_dialog_change_url">প্যাচ সোর্সটি কোথায় থেকে ডাউনলোড হবে তা পরিবর্তন করুন</string>
     <string name="sources_dialog_duplicate_name_error">এই নামের একটি প্যাচ সোর্স ইতিমধ্যে রয়েছে</string>
     <string name="sources_dialog_missing_error">এই প্যাচ সোর্স আপডেট করা যায়নি</string>
@@ -373,6 +377,11 @@
     <string name="home_invalid_signature_title"> যাচাই করা হয়নি APK</string>
     <string name="home_invalid_signature_message">আপনি যে APK নির্বাচন করেছেন &lt;b&gt;%s&lt;/b&gt; তা প্রত্যাশিত সাইনিং সার্টিফিকেট-এর সাথে মেলে না। এটি পরিবর্তিত হতে পারে অথবা একটি অবিশ্বস্ত উৎস থেকে আসা হতে পারে</string>
     <string name="home_invalid_signature_badge">এই APK আসল নাও হতে পারে</string>
+    <string name="home_invalid_signature_broken_message">&lt;b&gt;%s&lt;/b&gt;-এর জন্য আপনার নির্বাচিত APK-টির সিগনেচার চেক ব্যর্থ হয়েছে। এটি সম্ভবত ক্ষতিগ্রস্ত হয়েছে অথবা এখনও সম্পূর্ণভাবে ডাউনলোড হয়নি, তাই এটি আবার ডাউনলোড করুন অথবা অন্য একটি ফাইল নির্বাচন করুন</string>
+    <string name="home_invalid_signature_broken_badge">এই APK-টি ক্ষতিগ্রস্ত বা অসম্পূর্ণ হতে পারে</string>
+    <string name="home_invalid_signature_expected">প্রত্যাশিত সার্টিফিকেট</string>
+    <string name="home_invalid_signature_actual">APK-টির সার্টিফিকেট</string>
+    <string name="home_invalid_signature_none">কোন বৈধ স্বাক্ষর নেই</string>
     <string name="home_split_apk_warning_title">স্প্লিট APK সনাক্ত করা হয়েছে</string>
     <string name="home_split_apk_warning_message">"এই ফাইলটি একটি APK বান্ডিল
 (&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).

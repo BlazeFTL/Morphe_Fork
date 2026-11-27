@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">Šis avots ir atspējots. Tā labojumi ir uzskaitīti informatīvi un netiek piemēroti</string>
     <string name="sources_management_open_in_browser">Atvērt pārlūkprogrammā</string>
     <string name="sources_management_report_issue">Ziņot par problēmu</string>
+    <string name="sources_management_export_patches">Eksportēt lāpīšanas failu</string>
+    <string name="sources_management_export_patches_success">Lāpīšanas fails saglabāts</string>
+    <string name="sources_management_export_patches_failed">Lāpīšanas faila eksportēšana neizdevās</string>
     <string name="sources_management_failed_to_open_url">Neizdevās atvērt URL</string>
     <string name="sources_apps">Lietotnes</string>
     <string name="sources_apps_description">Atzīmētās lietotnes nāk no šī avota. Pieskarieties lietotnei, lai to izslēgtu vai atgrieztu, vai slapjiet, lai redzētu tās patchus. Lietotne pazūd no sākuma ekrāna, ja to vairs nepiedāvā neviens avots, ja vien neesat to patchējis</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Rādīšanas nosaukums</string>
     <string name="sources_dialog_rename">Pārdēvējiet lāpījumu avotu</string>
+    <string name="sources_dialog_renamed">Pārdēvēts uz %s</string>
     <string name="sources_dialog_change_url">Mainīt vietu, no kuras tiek lejupielādēts patchu avots</string>
     <string name="sources_dialog_duplicate_name_error">Lāpījumu avots ar šādu nosaukumu jau eksistē</string>
     <string name="sources_dialog_missing_error">Neizdevās atjaunināt šo lāpījumu avotu</string>
@@ -373,6 +377,11 @@ Izvēlieties, no kurienes ņemt tās APK"</string>
     <string name="home_invalid_signature_title">Nenovērtēts APK</string>
     <string name="home_invalid_signature_message">APK, kuru izvēlējāties &lt;b&gt;%s&lt;/b&gt; lietotnei, neatbilst gaidītajam parakstīšanas sertifikātam. Tas var būt modificēts vai nākt no neuzticama avota</string>
     <string name="home_invalid_signature_badge">Šis APK var nebūt oriģināls</string>
+    <string name="home_invalid_signature_broken_message">APK, kuru izvēlējāties &lt;b&gt;%s&lt;/b&gt;, neiztur parakstura pārbaudi. Tas, iespējams, ir bojāts vai nav pilnībā lejupielādēts, tāpēc lejupielādējiet to vēlreiz vai izvēlieties citu failu</string>
+    <string name="home_invalid_signature_broken_badge">Šis APK var būt bojāts vai nepilnīgs</string>
+    <string name="home_invalid_signature_expected">Gaidāmais sertifikāts</string>
+    <string name="home_invalid_signature_actual">APK sertifikāts</string>
+    <string name="home_invalid_signature_none">Nav derīgas paraksta</string>
     <string name="home_split_apk_warning_title">Atklāts sadalīts APK</string>
     <string name="home_split_apk_warning_message">"Šis fails ir APK bundle
 (&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).

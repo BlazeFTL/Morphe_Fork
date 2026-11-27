@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">Aquesta font està desactivada. Els seus patches s\'enllisten per referència i no s\'apliquen</string>
     <string name="sources_management_open_in_browser">Obrir al navegador</string>
     <string name="sources_management_report_issue">Informa d\'un problema</string>
+    <string name="sources_management_export_patches">Exporta el fitxer de pegats</string>
+    <string name="sources_management_export_patches_success">Fitxer de pegats desat</string>
+    <string name="sources_management_export_patches_failed">Error en exportar el fitxer de pegats</string>
     <string name="sources_management_failed_to_open_url">Error en obrir l\'URL</string>
     <string name="sources_apps">Aplicacions</string>
     <string name="sources_apps_description">Les aplicacions marcades provenen d\'aquesta font. Toqueu una aplicació per excloure-la o recuperar-la, i deslliseu-la per veure els seus retalls. Una aplicació sense font surt de la pantalla d\'inici, a menys que l\'hayeu retallat</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Nom mostrat</string>
     <string name="sources_dialog_rename">Canviar la font del pegat</string>
+    <string name="sources_dialog_renamed">Renomat a %s</string>
     <string name="sources_dialog_change_url">Canvia d\'on es descarrega la font de patxes</string>
     <string name="sources_dialog_duplicate_name_error">Una font de pegats amb aquest nom ja existeix</string>
     <string name="sources_dialog_missing_error">No s\'ha pogut actualitzar aquesta font del patch</string>
@@ -373,6 +377,11 @@ Tria d'on vols obtenir l'APK"</string>
     <string name="home_invalid_signature_title">APK no verificat</string>
     <string name="home_invalid_signature_message">L\'APK que heu seleccionat per a &lt;b&gt;%s&lt;/b&gt; no coincideix amb el certificat de signatura esperat. Pot haver estat modificat o provenir d\'una font no fiable</string>
     <string name="home_invalid_signature_badge">Aquest APK pot no ser l\'original</string>
+    <string name="home_invalid_signature_broken_message">L\'APK que heu seleccionat per a &lt;b&gt;%s&lt;/b&gt; no ha passat la comprovació de la signatura. Probablement estigui danyat o no s\'hagi descarregat completament; torneu-lo a descarregar o trieu un altre fitxer</string>
+    <string name="home_invalid_signature_broken_badge">Aquest APK pot estar danyat o incomplete</string>
+    <string name="home_invalid_signature_expected">Certificat esperat</string>
+    <string name="home_invalid_signature_actual">Certificat de l\'APK</string>
+    <string name="home_invalid_signature_none">No hi ha cap signatura vàlida</string>
     <string name="home_split_apk_warning_title">S\'ha detectat un APK dividit</string>
     <string name="home_split_apk_warning_message">"Aquest fitxer és un paquet APK
 (&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).

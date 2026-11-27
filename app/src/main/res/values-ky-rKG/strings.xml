@@ -172,6 +172,9 @@
     <string name="sources_patches_source_disabled_hint">Бул булак өчүрүлгөн. Анын патчтары маалымат үчүн көрсөтүлгөн жана колдонулбайт</string>
     <string name="sources_management_open_in_browser">Браузерде ачуу</string>
     <string name="sources_management_report_issue">Көйгөйдү билдирүү</string>
+    <string name="sources_management_export_patches">Патчтар файлын экспорттоо</string>
+    <string name="sources_management_export_patches_success">Патчтар файлы сакталды</string>
+    <string name="sources_management_export_patches_failed">Патчтар файлын экспорттоо мүмкүн болгон жок</string>
     <string name="sources_management_failed_to_open_url">URL дарегин ачуу мүмкүн болгон жок</string>
     <string name="sources_apps">Тиркемелер</string>
     <string name="sources_apps_description">Белгиленген тиркемелер ушул булактан келет. Тиркемени алып салуу же кайтарып келтирүү үчүн аны басыңыз, патчтарын көрүү үчүн аны сүрүңүз. Эгерде сиз аны патчтабаган болсоңуз, булагы жок тиркеме башкы экрандан жоголот</string>
@@ -218,6 +221,7 @@
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Көрсөтүлүүчү ат</string>
     <string name="sources_dialog_rename">Патч булагын кайра аттоо</string>
+    <string name="sources_dialog_renamed">%s деп кайра аталды</string>
     <string name="sources_dialog_change_url">Патч булагы жүктөлүүчү жерди өзгөртүү</string>
     <string name="sources_dialog_duplicate_name_error">Бул аттуу патч булагы буга чейин эле бар</string>
     <string name="sources_dialog_missing_error">Бул патч булагын жаңыртуу мүмкүн болбоду</string>
@@ -373,6 +377,11 @@
     <string name="home_invalid_signature_title">Тастыкталбаган APK</string>
     <string name="home_invalid_signature_message">Сиз &lt;b&gt;%s&lt;/b&gt; үчүн тандаган APK күтүлгөн кол коюу сертификатына дал келбейт. Ал өзгөртүлгөн болушу мүмкүн же ишенимсиз булактан келген</string>
     <string name="home_invalid_signature_badge">Бул APK түп нускасы эмес болушу мүмкүн</string>
+    <string name="home_invalid_signature_broken_message">&lt;b&gt;%s&lt;/b&gt; үчүн сиз тандаган APK кол тамгасын текшерүүдөн өтпөй жатат. Ал бузулган болушу мүмкүн же али толук жүктөлгөн эмес, ошондуктан аны кайра жүктөп алыңыз же башка файлды тандаңыз</string>
+    <string name="home_invalid_signature_broken_badge">Бул APK бузулган же толук эмес болушу мүмкүн</string>
+    <string name="home_invalid_signature_expected">Күтүлгөн сертификат</string>
+    <string name="home_invalid_signature_actual">APKнин сертификаты</string>
+    <string name="home_invalid_signature_none">Жарамдуу кол тамга жок</string>
     <string name="home_split_apk_warning_title">Бөлүнгөн APK табылды</string>
     <string name="home_split_apk_warning_message">"Бул файл APK пакеттемеси
 (&lt;b&gt;APKM / APKS / XAPK&lt;/b&gt;).
