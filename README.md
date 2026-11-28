@@ -20,19 +20,21 @@
 # Morphe Manager Fork For Personal Use
 
 
-Script and CI workflow that apply custom features on top of [MorpheApp/morphe-manager](https://github.com/MorpheApp/morphe-manager) (`dev` branch) and build an installable APK.
+Script and CI workflows that apply custom features on top of [MorpheApp/morphe-manager](https://github.com/MorpheApp/morphe-manager) (`dev` branch) and build an installable APK, **MorpheFork**.
 
 
-Upstream stays untouched. `patch.py` edits a fresh checkout at build time, so the fork keeps up with upstream without merge conflicts.
+Upstream stays untouched. `patch.py` edits a fresh upstream checkout at build time, so the fork keeps up with upstream without merge conflicts.
 
 
 ## Features
 
 
-### Favorite universal patches
+### Expert mode
 
 
-Pin universal patches you use often in Expert mode.
+#### Favorite universal patches
+
+Pin universal patches you use often.
 
 
 - Star button on every universal patch card
@@ -43,8 +45,15 @@ Pin universal patches you use often in Expert mode.
 - Saved in preferences and included in settings export/import
 
 
-### Skip APK signing (Expert mode)
+#### Patch dialog
 
+- Bundles that contain a patch for the selected app, not only universal patches, are listed first
+- A row of buttons sits under the source tabs: enable all, recommended, saved selection, selection panel, disable all
+- Each button acts on the source whose tab is open and is grayed out when there is nothing for it to do
+- Enable all is staged: regular patches first, universal patches on the next tap after a warning
+
+
+#### Skip APK signing
 
 New switch under the Expert mode switch in **Settings > Patching** (older checkouts: Expert section of **Settings > Advanced**). Based on [morphe-manager PR #1008](https://github.com/MorpheApp/morphe-manager/pull/1008).
 
@@ -56,20 +65,47 @@ New switch under the Expert mode switch in **Settings > Patching** (older checko
 - Auto-install is disabled while this option is on
 - Saving and sending to the selected installer still work
 
-
 Android normally rejects unsigned APKs. Use this for external signing tools or workflows that re-sign afterwards.
 
 
-### Select APK button beside the bottom bar
+### Sources page
 
 
-- The select-APK action moves out of the apps toolbar into a labelled pill button beside the bottom navigation pill
+#### Pinned sources
+
+- Pin button left of the disable button on each source card; lit, with a crossed pin, while pinned
+- Pin mark on the pinned card, folded or open
+- Pinned sources lead the list in every sort mode (held off only while reordering)
+- A pin is remembered by the source's link (remote) or file hash (local), so removing and adding the source again keeps it pinned
+
+
+#### Header
+
+- Search toggle comes first, then Sort and Filter
+- Sort and filter are two header buttons, each opening a dropdown with the active option checked; no docked bottom panel
+- The filter button is marked while a filter narrows the list
+- Add (+) stays in the header in landscape only
+
+
+#### Add source
+
+- Opens as a full-screen panel instead of a bottom sheet
+- Title, form and Add stand together as one centered block; only the community and close icons stay at the top
+
+
+### Bottom bar button
+
+A labelled pill button beside the bottom navigation pill.
+
+
+- Sources page: **Add source**, opens the add source panel
+- Every other page: **Select APK**
+- Icon and label cross-fade as the page turns
 - Always visible from the first frame; it does not wait for apps or third-party sources to load
-- In portrait, it replaces the toolbar action; in landscape, the toolbar action remains
+- In portrait, it replaces the toolbar action (select APK) and the Sources header (+); in landscape, those stay
 
 
 ### Patch update check interval
-
 
 New row in **Settings > Advanced > Updates**: the automatic patch update check at launch can be limited to every 3, 6, 12 or 24 hours, or left on every launch. Default: 3 hours.
 
@@ -79,26 +115,28 @@ New row in **Settings > Advanced > Updates**: the automatic patch update check a
 - Offline launches skip the check without consuming the interval
 
 
-### Sources header order
+### Faster source loading
 
-
-On the Sources page, the search toggle is placed ahead of the actions: Search, Sort, Add (+).
-
-
-### Expert patch dialog ordering
-
-
-Bundles that contain a patch for the selected app, not only universal patches, are listed first.
+Bundle metadata is read in parallel on 2 to 4 threads instead of one bundle after another.
 
 
 ### Cleaner patcher log
 
-
 The loader notice "Universal patches must be declared with default false" is suppressed, including its indented bundle/patch list.
 
 
-### Fork identity
+### Self-update from this fork
 
+Active when `FORK_REPO=owner/repo` is set, which the CI workflow does.
+
+
+- Manager self-update URLs point at this repo (`updates` branch)
+- The stable channel accepts prerelease/dev versions
+- The Google Play Services update gate is removed
+- Self-update check default is hourly
+
+
+### Fork identity
 
 Installs side by side with the official Morphe Manager.
 
@@ -118,9 +156,11 @@ Installs side by side with the official Morphe Manager.
 
 - Files found by declaration (class or function name), path is only a hint
 - Edits target function bodies, call arguments, parameter lists and single lines
-- Feature code lives in new files (`SignatureRestorer.kt`, `FavoritePatches.kt`, `FloatingApkButton.kt`, `PatchUpdateThrottle.kt`, `PatchUpdateIntervalSetting.kt`), so upstream diffs stay small
+- Feature code lives in new files (`SignatureRestorer.kt`, `FavoritePatches.kt`, `FloatingApkButton.kt`, `FullScreenPanel.kt`, `PatchUpdateThrottle.kt`, `PatchUpdateIntervalSetting.kt`, `ParallelLoad.kt`, `PinnedSources.kt`, `ExpertSelectionBar.kt`, `ListOptionsMenu.kt`), so upstream diffs stay small
+- New strings are added to `strings.xml` (English only)
 - Idempotent: running twice changes nothing
 - All-or-nothing: nothing is written unless every required edit resolves and the result passes bracket and reference checks
+- Two edits are optional and skipped with a note when upstream moves their anchor: the Sources sort/filter dropdowns and the Expert patch dialog button row
 - Line endings and BOM of each file are preserved
 
 
@@ -136,19 +176,31 @@ python3 patch.py path/to/morphe-manager --check
 `--check` is a dry run. Exit code 1 means edits are pending or an anchor failed.
 
 
-Optional: set `FORK_REPO=owner/repo` before patching to redirect Manager self-update URLs to the fork, accept prerelease/dev versions, remove the Google Play Services update gate, and set the self-update check default to hourly.
+Set `FORK_REPO=owner/repo` before patching to enable [Self-update from this fork](#self-update-from-this-fork).
 
 
 ## CI
 
 
-The **Build APK** workflow:
+### Build APK
 
 
-1. Checks out this repo and upstream `dev`
-2. Runs `python3 patcher/patch.py source`
-3. Builds the release APK with Gradle
-4. Uploads the APK
+Runs twice a day (00:00 and 12:00 UTC), on pushes to `main` and `dev`, and on manual dispatch (inputs: `create_release`, `no_r8`).
 
 
-If upstream refactors code the script anchors on, step 2 fails with a line like `[!] cannot locate <name>` and nothing is built. Update the matching anchor in `patch.py`.
+1. Scheduled runs continue only if upstream `dev` has a version that differs from the one published on the `updates` branch and is not recorded in `failed.txt`; pushes and manual runs always build
+2. Checks out this repo and upstream `dev`
+3. Runs `python3 patcher/patch.py source` with `FORK_REPO` set
+4. Trims the build to `arm64-v8a` only
+5. Builds the release APK with Gradle (R8 on unless `no_r8` is set)
+6. Uploads the APK as `MorpheFork-V<version>.apk`
+7. When the version changed, or `create_release` is set: publishes a GitHub Release (`v<version>`, prerelease if the version has a suffix) and writes `app-release.json` to the `updates` branch, which in-app self-update reads
+8. A failed scheduled build records the upstream version in `updates/failed.txt`, so it is not retried until upstream bumps again
+
+If upstream refactors code the script anchors on, step 3 fails with a line like `[!] cannot locate <name>` or `[!] <file>: no matching anchor for: <edit>`, and nothing is built. Update the matching anchor in `patch.py`.
+
+
+### Sync upstream
+
+
+Runs daily at 23:30 UTC. Merges upstream `dev` into this repo's `dev`. A conflict in `README.md` is resolved in favor of this fork's README; any other conflict fails the run. Builds do not use the mirrored upstream tree; they patch a fresh upstream checkout.
