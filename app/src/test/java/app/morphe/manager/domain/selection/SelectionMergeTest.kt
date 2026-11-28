@@ -3,7 +3,7 @@
  * https://github.com/MorpheApp/morphe-manager
  */
 
-package app.morphe.manager.domain.batch
+package app.morphe.manager.domain.selection
 
 import app.morphe.manager.patcher.patch.PatchBundleInfo
 import app.morphe.manager.patcher.patch.PatchInfo
@@ -18,7 +18,7 @@ import kotlin.test.assertEquals
  * without ever asking. It has to answer exactly as the expert dialog does, or the same app comes
  * out of the queue patched differently than it would have been from the home screen.
  */
-class BatchSelectionMergeTest {
+class SelectionMergeTest {
     private val installer = InstallerType.STANDARD
     private val architecture = ApkArchitecture.UNIVERSAL
 

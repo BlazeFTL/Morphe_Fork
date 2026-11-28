@@ -1,3 +1,22 @@
+## [2.9.0-dev.3](https://github.com/MorpheApp/morphe-manager/compare/v2.9.0-dev.2...v2.9.0-dev.3) (2026-11-27)
+
+### Features
+
+* Pick up the APK downloaded in the browser automatically ([61225ac](https://github.com/MorpheApp/morphe-manager/commit/61225acbd2354b61627f373bb132b6c89b6bcb2a))
+
+### Bug Fixes
+
+* Drop patches a source no longer has when opening the selection ([0249d95](https://github.com/MorpheApp/morphe-manager/commit/0249d955d48b819dba2c24db8137072832b9cfcd))
+* Let a TV remote step through the feature tour ([fe191d6](https://github.com/MorpheApp/morphe-manager/commit/fe191d653e9c15ba152922353a98b6241b111427))
+* Reach the About dialog's update button with a TV remote ([21de490](https://github.com/MorpheApp/morphe-manager/commit/21de49050af5d930c9885c7ac9e4660db4b22d44))
+
+## [2.9.0-dev.2](https://github.com/MorpheApp/morphe-manager/compare/v2.9.0-dev.1...v2.9.0-dev.2) (2026-11-27)
+
+### Features
+
+* Add a setting to hide the games button on the patcher screens ([9e11dd0](https://github.com/MorpheApp/morphe-manager/commit/9e11dd01b4e51aece972988346ac1d78777a9b5e))
+* Fetch the supported APK in batch for apps past their patches ([10f58d1](https://github.com/MorpheApp/morphe-manager/commit/10f58d1d330239514f79d87f0fb94dcd5a2a5eac))
+
 ## [2.9.0-dev.1](https://github.com/MorpheApp/morphe-manager/compare/v2.8.0...v2.9.0-dev.1) (2026-11-26)
 
 ### Features
