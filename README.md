@@ -28,112 +28,17 @@ Upstream stays untouched. `patch.py` edits a fresh upstream checkout at build ti
 
 ## Features
 
-
-### Expert mode
-
-
-#### Favorite universal patches
-
-Pin universal patches you use often.
-
-
-- Star button on every universal patch card
-- Long-press a card to toggle favorite, with haptic feedback
-- Favorites float to the top of universal patch sections
-- Toast/message on add/remove
-- Screen reader label on the star ("patch name, Add to favorites")
-- Saved in preferences and included in settings export/import
-
-
-#### Patch dialog
-
-- Bundles that contain a patch for the selected app, not only universal patches, are listed first
-- A row of buttons sits under the source tabs: enable all, recommended, saved selection, selection panel, disable all
-- Each button acts on the source whose tab is open and is grayed out when there is nothing for it to do
-- Enable all is staged: regular patches first, universal patches on the next tap after a warning
-
-
-#### Skip APK signing
-
-New switch under the Expert mode switch in **Settings > Patching** (older checkouts: Expert section of **Settings > Advanced**). Based on [morphe-manager PR #1008](https://github.com/MorpheApp/morphe-manager/pull/1008).
-
-
-- Visible and honored only while Expert mode is on
-- Patched APK is left unsigned by the manager's keystore
-- Original `META-INF` signature files and APK Signing Block (v2/v3) are restored from the input APK
-- Split bundles (APKS/XAPK/APKM): merging already clears original signatures, so a warning is logged and the merged APK is saved as-is
-- Auto-install is disabled while this option is on
-- Saving and sending to the selected installer still work
-
-Android normally rejects unsigned APKs. Use this for external signing tools or workflows that re-sign afterwards.
-
-
-### Sources page
-
-
-#### Pinned sources
-
-- Pin button left of the disable button on each source card; lit, with a crossed pin, while pinned
-- Pin mark on the pinned card, folded or open
-- Pinned sources lead the list in every sort mode (held off only while reordering)
-- A pin is remembered by the source's link (remote) or file hash (local), so removing and adding the source again keeps it pinned
-
-
-#### Header
-
-- Search toggle comes first, then Sort and Filter
-- Sort and filter are two header buttons, each opening a dropdown with the active option checked; no docked bottom panel
-- The filter button is marked while a filter narrows the list
-- Add (+) stays in the header in landscape only
-
-
-#### Add source
-
-- Opens as a full-screen panel instead of a bottom sheet
-- Title, form and Add stand together as one centered block; only the community and close icons stay at the top
-
-
-### Bottom bar button
-
-A labelled pill button beside the bottom navigation pill.
-
-
-- Sources page: **Add source**, opens the add source panel
-- Every other page: **Select APK**
-- Icon and label cross-fade as the page turns
-- Always visible from the first frame; it does not wait for apps or third-party sources to load
-- In portrait, it replaces the toolbar action (select APK) and the Sources header (+); in landscape, those stay
-
-
-### Patch update check interval
-
-New row in **Settings > Advanced > Updates**: the automatic patch update check at launch can be limited to every 3, 6, 12 or 24 hours, or left on every launch. Default: 3 hours.
-
-
-- Choice is made in a radio dialog
-- Pull-to-refresh and notification-triggered checks always run
-- Offline launches skip the check without consuming the interval
-
-
-### Faster source loading
-
-Bundle metadata is read in parallel on 2 to 4 threads instead of one bundle after another.
-
-
-### Cleaner patcher log
-
-The loader notice "Universal patches must be declared with default false" is suppressed, including its indented bundle/patch list.
-
-
-### Self-update from this fork
-
-Active when `FORK_REPO=owner/repo` is set, which the CI workflow does.
-
-
-- Manager self-update URLs point at this repo (`updates` branch)
-- The stable channel accepts prerelease/dev versions
-- The Google Play Services update gate is removed
-- Self-update check default is hourly
+- **Favorite patches** — Star the patches you use often. They move to the top of the list and are remembered, including in settings backups.
+- **Faster patch picking** — The patch screen shows the most relevant patches first and adds one-tap buttons: select all, recommended, your last selection, or none. (Expert mode)
+- **Pin sources** — Keep your preferred patch sources at the top of the Sources page. A pin survives removing and re-adding the source.
+- **Cleaner Sources page** — Search, sort, and filter live in the header as simple menus. Adding a source opens a full-screen form.
+- **Quick action button** — A labelled button beside the bottom bar: "Add source" on the Sources page, "Select APK" everywhere else. Always visible.
+- **Update check schedule** — Choose how often patch updates are checked at launch: every launch, or every 3, 6, 12, or 24 hours (default: 3). Manual refresh always checks.
+- **Skip APK signing** (Expert mode) — Saves the patched APK unsigned, keeping the original signature files, so you can sign it with your own tool. Android will not install it until it is signed, and auto-install is turned off while this option is on.
+- **Faster source loading** — Sources open quicker.
+- **Quieter patch log** — Hides a repetitive technical notice.
+- **Updates from this fork** — The app updates itself from this fork's releases instead of official Morphe.
+- **Side-by-side install** — Installs as "MorpheFork", so the official Morphe Manager can stay installed.
 
 
 ### Fork identity
